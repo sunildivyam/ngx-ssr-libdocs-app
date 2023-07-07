@@ -1,0 +1,27 @@
+{
+  "name": "@annuadvent/ngx-ssr-libdocs-app",
+  "version": "0.0.0",
+  "private": true,
+  "author": "Annu advent",
+  "license": "MIT",
+  "description": "Angular app to serve documentation pages for angular libraries.",
+  "keywords": [
+    "Angular",
+    "SSR",
+    "app"
+  ],
+  "homepage": "https://github.com/sunildivyam/ngx-ssr-libdocs-app",
+  "bugs": "https://github.com/sunildivyam/ngx-ssr-libdocs-app/issues",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/sunildivyam/ngx-ssr-libdocs-app.git"
+  },
+  "engines": {
+    "node": "18.16.0",
+    "npm": "9.5.1"
+  },
+  "scripts": {},
+  "dependencies": {},
+  "devDependencies": {},
+  "peerDependencies": {}
+}
