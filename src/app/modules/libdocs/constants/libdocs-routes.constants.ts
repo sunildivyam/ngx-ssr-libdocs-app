@@ -3,7 +3,10 @@ import { LibdocsHomePageComponent } from '../components/libdocs-home-page/libdoc
 import { LibInfoPageComponent } from '../components/lib-info-page/lib-info-page.component';
 import { AssetTypeInfoPageComponent } from '../components/asset-type-info-page/asset-type-info-page.component';
 import { AssetInfoPageComponent } from '../components/asset-info-page/asset-info-page.component';
-import { assetInfoResolver, assetTypeInfoResolver, libInfoResolver } from '@annuadvent/ngx-lib-docs/docs-common';
+import { LibInfoResolver } from '../resolvers/lib-info.resolver';
+import { assetTypeInfoResolver } from '../resolvers/asset-type-info.resolver';
+import { assetInfoResolver } from '../resolvers/asset-info.resolver';
+
 export const routes: Routes = [
     {
         path: '',
@@ -13,7 +16,7 @@ export const routes: Routes = [
     {
         path: ':libName',
         component: LibInfoPageComponent,
-        resolve: { libInfo: libInfoResolver },
+        resolve: { libInfo: LibInfoResolver },
         runGuardsAndResolvers: 'always',
         children: [
             {

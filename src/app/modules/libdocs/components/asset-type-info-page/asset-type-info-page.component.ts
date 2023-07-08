@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
+import { LibAssetTypeEnums } from '@annuadvent/ngx-lib-docs/docs-common';
 
 @Component({
   selector: 'app-asset-type-info-page',
@@ -6,5 +8,16 @@ import { Component } from '@angular/core';
   styleUrls: ['./asset-type-info-page.component.scss']
 })
 export class AssetTypeInfoPageComponent {
+  assetType: LibAssetTypeEnums;
+  assets: Array<any> = [];
 
+  constructor(
+    private route: ActivatedRoute,
+  ) {
+    this.assetType = this.route.snapshot.params['assetType'];
+
+    this.route.data.subscribe((data: any) => {
+      this.assets = data?.assetTypeInfo;
+    })
+  }
 }

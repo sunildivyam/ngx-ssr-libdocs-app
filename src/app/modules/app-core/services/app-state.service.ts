@@ -66,4 +66,8 @@ export class AppStateService {
     // Return the new appState.
     return newAppState;
   }
+
+  public updateState(stateName: string, stateValue: any): void {
+    this.appState$.next({ ...this.appStateValue, [stateName]: stateValue });
+  }
 }

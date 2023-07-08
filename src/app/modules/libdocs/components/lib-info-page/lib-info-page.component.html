@@ -1,2 +1,23 @@
-<p>lib-info-page works!</p>
+<h2>Lib Info Page</h2>
+<a href="javascript:void(0)" (click)="updateNavs()">Update</a>
+<h2>{{libInfo?.name}}</h2>
+<h3>{{libInfo?.fullName}}</h3>
+<p>{{libInfo?.description}}</p>
+<ul>
+    <li *ngFor="let cmp of libInfo?.libAssetsInfo?.components">
+        {{cmp.name}}
+    </li>
+</ul>
+
+<ul>
+    <li *ngFor="let cmp of libInfo?.libAssetsInfo?.services">
+        {{cmp.name}}
+    </li>
+</ul>
+
+<ul>
+    <li *ngFor="let cmp of libInfo?.libAssetsInfo?.interfaces">
+        {{cmp.name}}
+    </li>
+</ul>
 <router-outlet></router-outlet>

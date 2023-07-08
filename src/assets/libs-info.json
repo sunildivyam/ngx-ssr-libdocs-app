@@ -1,0 +1,71 @@
+{
+	"ngx-common-ui": {
+		"name": "ngx-common-ui",
+		"fullName": "@annuadvent/ngx-common-ui",
+		"version": "0.0.1",
+		"description": "# @annuadvent/ngx-commonUi\r\n\r\nThis library was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.1.0.\r\n\r\n## Code scaffolding\r\n\r\nRun `ng generate component component-name --project ngx-common-ui` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module --project ngx-common-ui`.\r\n\r\n> Note: Don't forget to add `--project ngx-common-ui` or else it will be added to the default project in your `angular.json` file.\r\n\r\n## Build\r\n\r\nRun `ng build ngx-common-ui` to build the project. The build artifacts will be stored in the `dist/` directory.\r\n\r\n## Publishing\r\n\r\nAfter building your library with `ng build ngx-common-ui`, go to the dist folder `cd dist/ngx-common-ui` and run `npm publish`.\r\n\r\n## Running unit tests\r\n\r\nRun `ng test ngx-common-ui` to execute the unit tests via [Karma](https://karma-runner.github.io).\r\n\r\n## Further help\r\n\r\nTo get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.\r\n",
+		"homepage": "https://github.com/sunildivyam/ngx-common-ui",
+		"bugs": "https://github.com/sunildivyam/ngx-common-ui/issues",
+		"git": "https://github.com/sunildivyam/ngx-common-ui.git",
+		"dependencies": [
+			"@angular/common",
+			"@angular/core",
+			"prismjs"
+		],
+		"node": "18.16.0",
+		"npm": "9.5.1"
+	},
+	"ngx-cms": {
+		"name": "ngx-cms",
+		"fullName": "@annuadvent/ngx-cms",
+		"version": "0.0.1",
+		"description": "# NgxCms\n\nThis library was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.1.0.\n\n## Code scaffolding\n\nRun `ng generate component component-name --project ngx-cms` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module --project ngx-cms`.\n> Note: Don't forget to add `--project ngx-cms` or else it will be added to the default project in your `angular.json` file. \n\n## Build\n\nRun `ng build ngx-cms` to build the project. The build artifacts will be stored in the `dist/` directory.\n\n## Publishing\n\nAfter building your library with `ng build ngx-cms`, go to the dist folder `cd dist/ngx-cms` and run `npm publish`.\n\n## Running unit tests\n\nRun `ng test ngx-cms` to execute the unit tests via [Karma](https://karma-runner.github.io).\n\n## Further help\n\nTo get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.\n",
+		"homepage": "https://github.com/sunildivyam/ngx-cms",
+		"bugs": "https://github.com/sunildivyam/ngx-cms/issues",
+		"git": "https://github.com/sunildivyam/ngx-cms.git",
+		"dependencies": [
+			"@angular/common",
+			"@angular/core",
+			"showdown"
+		],
+		"node": "18.16.0",
+		"npm": "9.5.1"
+	},
+	"ngx-core": {
+		"name": "ngx-core",
+		"fullName": "@annuadvent/ngx-core",
+		"version": "0.0.1",
+		"description": "# @annuadvent/ngx-core\n\n## What this ngx-core library should contain:\n    - ngx-core should have fully independent modules/services/interfaces/pipes/constants etc.\n    - It should not contain UI components. Better define them in ngx-common-ui or other specefic library projects.\n\n\nThis library was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.1.0.\n\n## Code scaffolding\n\nRun `ng generate component component-name --project ngx-core` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module --project ngx-core`.\n> Note: Don't forget to add `--project ngx-core` or else it will be added to the default project in your `angular.json` file.\n\n## Build\n\nRun `ng build ngx-core` to build the project. The build artifacts will be stored in the `dist/` directory.\n\n## Publishing\n\nAfter building your library with `ng build ngx-core`, go to the dist folder `cd dist/ngx-core` and run `npm publish`.\n\n## Running unit tests\n\nRun `ng test ngx-core` to execute the unit tests via [Karma](https://karma-runner.github.io).\n\n## Further help\n\nTo get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.\n",
+		"homepage": "https://github.com/sunildivyam/ngx-core",
+		"bugs": "https://github.com/sunildivyam/ngx-core/issues",
+		"git": "https://github.com/sunildivyam/ngx-core.git",
+		"dependencies": [
+			"@angular/common",
+			"@angular/core"
+		],
+		"node": "18.16.0",
+		"npm": "9.5.1"
+	},
+	"ngx-tools": {
+		"name": "ngx-tools",
+		"fullName": "@annuadvent/ngx-tools",
+		"version": "0.0.1",
+		"description": "# @annuadvent/ngx-tools\n\nAngular @annuadvent/ngx-tools components library. Library should have sitemap, openai, firebase and similar modules.\n\nThis library was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.1.0.\n\n## Code scaffolding\n\nRun `ng generate component component-name --project ngx-tools` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module --project ngx-tools`.\n> Note: Don't forget to add `--project ngx-tools` or else it will be added to the default project in your `angular.json` file.\n\n## Build\n\nRun `ng build ngx-tools` to build the project. The build artifacts will be stored in the `dist/` directory.\n\n## Publishing\n\nAfter building your library with `ng build ngx-tools`, go to the dist folder `cd dist/ngx-tools` and run `npm publish`.\n\n## Running unit tests\n\nRun `ng test ngx-tools` to execute the unit tests via [Karma](https://karma-runner.github.io).\n\n## Further help\n\nTo get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.\n",
+		"homepage": "https://github.com/sunildivyam/ngx-tools",
+		"bugs": "https://github.com/sunildivyam/ngx-tools/issues",
+		"git": "https://github.com/sunildivyam/ngx-tools.git",
+		"dependencies": [
+			"@angular/common",
+			"@angular/core",
+			"openai",
+			"xml-js",
+			"@annuadvent/ngx-core",
+			"@annuadvent/ngx-common-ui",
+			"firebase",
+			"compressorjs",
+			"firebaseui"
+		],
+		"node": "18.16.0",
+		"npm": "9.5.1"
+	}
+}

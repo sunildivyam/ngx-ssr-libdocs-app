@@ -12,6 +12,7 @@ import { SpinnerModule } from '@annuadvent/ngx-common-ui/spinner';
 import { UtilsModule } from '@annuadvent/ngx-core/utils';
 import { SitemapComponent } from './components/sitemap/sitemap.component';
 import { FireCommonModule } from '@annuadvent/ngx-tools/fire-common';
+import { DocsCommonModule } from '@annuadvent/ngx-lib-docs/docs-common';
 
 
 @NgModule({
@@ -26,6 +27,7 @@ import { FireCommonModule } from '@annuadvent/ngx-tools/fire-common';
     FireStorageModule,
     UtilsModule,
     FireCommonModule,
+    DocsCommonModule,
   ],
   exports: [LoginComponent, ContactUsComponent, SitemapComponent],
 })

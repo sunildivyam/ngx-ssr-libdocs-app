@@ -1,1 +1,6 @@
-<p>asset-type-info-page works!</p>
+<h2>Asset Type Info Page</h2>
+<h3>{{assetType}}</h3>
+<ul *ngIf="assets && assets.length">
+    <li *ngFor="let asset of assets">{{asset.name}}</li>
+</ul>
+<router-outlet></router-outlet>

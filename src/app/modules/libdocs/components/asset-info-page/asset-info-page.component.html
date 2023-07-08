@@ -1,1 +1,31 @@
 <p>asset-info-page works!</p>
+<ng-container *ngIf="assetInfo">
+    <ng-container *ngIf="assetType === assetTypes.components">
+        <anu-component-info [componentInfo]="assetInfo" [componentType]="assetClass"
+            [componentData]="assetData"></anu-component-info>
+    </ng-container>
+
+    <ng-container *ngIf="assetType === assetTypes.services">
+        <anu-service-info [serviceInfo]="assetInfo" [serviceType]="assetClass"></anu-service-info>
+    </ng-container>
+
+    <ng-container *ngIf="assetType === assetTypes.directives">
+        <anu-directive-info [directiveInfo]="assetInfo"></anu-directive-info>
+    </ng-container>
+
+    <ng-container *ngIf="assetType === assetTypes.interfaces">
+        <anu-interface-info [interfaceInfo]="assetInfo"></anu-interface-info>
+    </ng-container>
+
+    <ng-container *ngIf="assetType === assetTypes.guards">
+        <anu-guard-info [guardInfo]="assetInfo"></anu-guard-info>
+    </ng-container>
+
+    <ng-container *ngIf="assetType === assetTypes.classes">
+        <anu-class-info [classInfo]="assetInfo"></anu-class-info>
+    </ng-container>
+
+    <ng-container *ngIf="assetType === assetTypes.interceptors">
+        <anu-interceptor-info [interceptorInfo]="assetInfo"></anu-interceptor-info>
+    </ng-container>
+</ng-container>
