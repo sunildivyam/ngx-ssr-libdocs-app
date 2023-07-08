@@ -9,7 +9,11 @@ export const routes: Routes = [
     },
     {
         path: 'dashboard',
-        loadChildren: () => import('../modules/dashboard').then(m => m.DashboardModule),
+        loadChildren: () => import('../modules/dashboard/dashboard.module').then(m => m.DashboardModule),
+    },
+    {
+        path: 'libs',
+        loadChildren: () => import('../modules/libdocs/libdocs.module').then(m => m.LibdocsModule),
     },
     {
         path: '**',
