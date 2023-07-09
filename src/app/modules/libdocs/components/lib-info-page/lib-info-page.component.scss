@@ -7,4 +7,22 @@
     anu-card-footer {
         overflow-x: auto;
     }
+
+    h1 {
+        font-size: 1.8rem;
+    }
+
+    anu-aside-nav {
+        position: absolute;
+        left: -0.5rem;
+        top: 0;
+    }
+
+    .aside-nav-container {
+        padding-left: 3rem;
+    }
+
+    .back-btn {
+        font-size: 1.5rem;
+    }
 }

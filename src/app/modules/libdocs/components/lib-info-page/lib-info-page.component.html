@@ -1,8 +1,41 @@
-<div class="flex-container primary-deep-light-bg spacing-half">
-    <h1>{{libInfo?.name}} Angular Library</h1>
+<div *ngIf="!libInfo" class="flex-container spacing">
+    <anu-error [code]="'404'" [message]="'Library not found.'"></anu-error>
+</div>
+<div *ngIf="libInfo" class="flex-container primary-deep-light-bg spacing-half">
+    <div class="row relative aside-nav-container">
+        <anu-aside-nav #vcAsideNav class=""
+            [drawerClassNames]="['drawer-relative', 'drawer-left', 'secondary-deep-light-bg', 'shadow', 'border-round', 'container' ]"
+            [hamburgerClassNames]="['size-md', 'spacing-around-vertical-half']" [isCollapsible]="true"
+            [isHamburgerStyle]="true" [items]="" [opened]="false">
+            <anu-aside-nav-header class="inside">
+                <strong class="back-btn">{{libInfo?.name}}</strong>
+            </anu-aside-nav-header>
+
+            <ng-container *ngFor="let astType of assetTypesArr">
+                <div *ngIf="libInfo?.libAssetsInfo[astType].length" class="container spacing-horizontal">
+                    <anu-collapsible [collapsed]="true" [hamBurgerClassNames]="['size-sm']" [isDropdownStyle]="true">
+                        <anu-collapsible-header class="">
+                            <strong>{{astType?.toUpperCase()}}</strong>
+                        </anu-collapsible-header>
+                        <anu-collapsible-content>
+                            <ul>
+                                <li *ngFor="let ast of libInfo?.libAssetsInfo[astType]">
+                                    <a [routerLink]="[astType, ast.name]" (click)="vcAsideNav.opened = false">
+                                        {{ast.name}} </a>
+                                </li>
+                            </ul>
+                        </anu-collapsible-content>
+                    </anu-collapsible>
+                </div>
+            </ng-container>
+
+        </anu-aside-nav>
+        <h1>{{libInfo?.name}} Angular Library</h1>
+    </div>
+
 </div>
 
-<div class="flex-container">
+<div *ngIf="!route.firstChild && libInfo" class="flex-container">
     <div class="row">
 
         <div class="border border-round col-sm-12 col-md-6 col-lg-6">
@@ -62,7 +95,7 @@
                             <h3>{{libInfo?.fullName}}</h3>
                             <ul>
                                 <li *ngFor="let ast of assetTypesArr">
-                                    <a [routerLink]="[libInfo.name, ast]">{{ast}}</a>
+                                    <a [routerLink]="[ast]">{{ast}}</a>
                                 </li>
                             </ul>
                         </anu-card-body>
@@ -89,18 +122,22 @@
     </div>
 </div>
 
-<div class="flex-container primary-deep-light-bg spacing-half spacing-around-vertical">
+<div *ngIf="libInfo" class="container">
+    <router-outlet class="container"></router-outlet>
+</div>
+
+<div *ngIf="libInfo" class="flex-container primary-deep-light-bg spacing-half spacing-around-vertical">
     <h2>{{libInfo?.fullName}} Angular Library full documentation</h2>
 </div>
 
-<div class="flex-container">
+<div *ngIf="libInfo" class="flex-container">
     <div class="row">
         <ng-container *ngFor="let astType of assetTypesArr">
             <div *ngIf="libInfo?.libAssetsInfo[astType].length"
                 class="col-sm-12 col-md-6 col-lg-4 shadow spacing-half border-round">
                 <anu-card>
                     <anu-card-title class="shadow border-round spacing-horizontal secondary-deep-light-bg">
-                        <h3>{{astType?.toUpperCase()}}</h3>
+                        <h3><a [routerLink]="[astType]">{{astType?.toUpperCase()}}</a></h3>
                     </anu-card-title>
                     <anu-card-body class="spacing">
                         <ul>
@@ -113,8 +150,4 @@
             </div>
         </ng-container>
     </div>
-</div>
-
-<div class="container">
-    <router-outlet class="container"></router-outlet>
 </div>

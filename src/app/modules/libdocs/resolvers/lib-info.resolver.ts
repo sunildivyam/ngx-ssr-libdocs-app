@@ -33,14 +33,16 @@ export class LibInfoResolver {
         libName,
         `${this.appConfigService.config.apiBaseUrl}/assets/${libName}/documentation.json`
       );
+
+      this.appStateService.updateState(
+        APP_STATE_KEYS.libsInfo,
+        {
+          ...libsInfo,
+          [libName]: libInfo
+        });
     }
 
-    this.appStateService.updateState(
-      APP_STATE_KEYS.libsInfo,
-      {
-        ...libsInfo,
-        [libName]: libInfo
-      });
+
 
     return libInfo;
   }

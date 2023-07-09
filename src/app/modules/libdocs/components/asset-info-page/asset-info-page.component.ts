@@ -16,6 +16,7 @@ export class AssetInfoPageComponent {
   assetTypes = LibAssetTypeEnums;
   assetClass: any = null;
   assetData: DocsData = null;
+  libNavOpened: boolean = false;
 
   constructor(
     private route: ActivatedRoute,

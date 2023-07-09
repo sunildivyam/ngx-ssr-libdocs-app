@@ -16,6 +16,11 @@ import { DirectiveInfoModule } from '@annuadvent/ngx-lib-docs/directive-info';
 import { GuardInfoModule } from '@annuadvent/ngx-lib-docs/guard-info';
 import { InterceptorInfoModule } from '@annuadvent/ngx-lib-docs/interceptor-info';
 import { CardModule } from '@annuadvent/ngx-common-ui/card';
+import { HamburgerModule } from '@annuadvent/ngx-common-ui/hamburger';
+import { DrawerModule } from '@annuadvent/ngx-common-ui/drawer';
+import { AsideNavModule } from '@annuadvent/ngx-common-ui/aside-nav';
+import { CollapsibleModule } from '@annuadvent/ngx-common-ui/collapsible';
+import { ErrorModule } from '@annuadvent/ngx-common-ui/error';
 
 
 
@@ -39,6 +44,9 @@ import { CardModule } from '@annuadvent/ngx-common-ui/card';
     GuardInfoModule,
     InterceptorInfoModule,
     CardModule,
+    AsideNavModule,
+    CollapsibleModule,
+    ErrorModule,
   ]
 })
 export class LibdocsModule { }

@@ -1,0 +1,14 @@
+:host {
+    width: 100%;
+
+    anu-card,
+    anu-card-title,
+    anu-card-body,
+    anu-card-footer {
+        word-wrap: break-word;
+    }
+
+    anu-card:hover {
+        background-color: var(--anu-primary-deep-light);
+    }
+}

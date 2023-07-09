@@ -47,9 +47,9 @@ export class LibdocsHomePageComponent {
       ...appMetaInfo,
       title: `${appMetaInfo.title} ${pageMetaInfo.title}`,
       "article:published_time": this.utilsService.currentDate,
-      "article:tag": pageMetaInfo['article:tag'] + ', ' + this.libsInfoArr.map(li => li.name).join(', '),
-      keywords: pageMetaInfo.keywords + ', ' + this.libsInfoArr.map(li => li.name).join(', '),
-      description: pageMetaInfo.description.replace('{{libNames}}', this.libsInfoArr.map(li => li.name).join(', ')),
+      "article:tag": pageMetaInfo['article:tag'] + ', ' + this.libsInfoArr.map(li => li?.name).join(', '),
+      keywords: pageMetaInfo.keywords + ', ' + this.libsInfoArr.map(li => li?.name).join(', '),
+      description: pageMetaInfo.description.replace('{{libNames}}', this.libsInfoArr.map(li => li?.name).join(', ')),
       url: this.router.url,
     }
     this.metaService.setPageMeta(this.pageMeta);

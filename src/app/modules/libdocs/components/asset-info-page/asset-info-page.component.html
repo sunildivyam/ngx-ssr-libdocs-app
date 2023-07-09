@@ -1,5 +1,6 @@
 <div class="flex-container">
-    <p>asset-info-page works!</p>
+    <anu-error *ngIf="!assetInfo" [code]="'404'" [message]="'Not found'"></anu-error>
+
     <ng-container *ngIf="assetInfo">
         <ng-container *ngIf="assetType === assetTypes.components">
             <anu-component-info class="container" [componentInfo]="assetInfo" [componentType]="assetClass"
