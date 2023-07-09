@@ -1,31 +1,120 @@
-<div class="container">
-    <router-outlet class="container"></router-outlet>
+<div class="flex-container primary-deep-light-bg spacing-half">
+    <h1>{{libInfo?.name}} Angular Library</h1>
 </div>
 
 <div class="flex-container">
-    <h2>Lib Info Page</h2>
-    <h2>{{libInfo?.name}}</h2>
-    <h3>{{libInfo?.fullName}}</h3>
-    <article [innerHTML]="libInfo?.description"></article>
-
-
     <div class="row">
-        <ul class="col-4 shadow">
-            <li *ngFor="let ast of libInfo?.libAssetsInfo?.components">
-                <a [routerLink]="['components', ast.name]"> {{ast.name}} </a>
-            </li>
-        </ul>
 
-        <ul class="col-4 shadow">
-            <li *ngFor="let ast of libInfo?.libAssetsInfo?.services">
-                <a [routerLink]="['services', ast.name]"> {{ast.name}} </a>
-            </li>
-        </ul>
+        <div class="border border-round col-sm-12 col-md-6 col-lg-6">
+            <anu-card>
+                <anu-card-title class="shadow border-round spacing-horizontal secondary-deep-light-bg">
+                    <h2>About {{libInfo?.name}} library</h2>
+                </anu-card-title>
+                <anu-card-body class="spacing">
+                    <article [innerHTML]="libInfo?.description"></article>
+                </anu-card-body>
+            </anu-card>
+        </div>
 
-        <ul class="col-4 shadow">
-            <li *ngFor="let ast of libInfo?.libAssetsInfo?.interfaces">
-                <a [routerLink]="['interfaces', ast.name]"> {{ast.name}} </a>
-            </li>
-        </ul>
+        <div class="col-sm-12 col-md-6 col-lg-6">
+            <div class="row">
+                <div class="border border-round col-sm-12 col-md-6 col-lg-6">
+                    <anu-card>
+                        <anu-card-title class="shadow border-round spacing-horizontal secondary-deep-light-bg">
+                            <h2>Github</h2>
+                        </anu-card-title>
+                        <anu-card-body class="spacing">
+                            <span>{{libInfo.fullName}}</span>
+                            <span>Version: {{libInfo.version}}</span>
+                            <label>
+                                Github:
+                                <a target="_blank" [href]="libInfo.homepage">Home</a> |
+                                <a target="_blank" [href]="libInfo.bugs">
+                                    Issues</a> |
+                                <a target="_blank" [href]="libInfo.git">
+                                    Repo</a>
+                            </label>
+                        </anu-card-body>
+                    </anu-card>
+                </div>
+
+                <div class="border border-round col-sm-12 col-md-6 col-lg-6">
+                    <anu-card>
+                        <anu-card-title class="shadow border-round spacing-horizontal secondary-deep-light-bg">
+                            <h2>Dependencies</h2>
+                        </anu-card-title>
+                        <anu-card-body class="spacing">
+                            <ul>
+                                <li *ngFor="let dep of libInfo.dependencies">
+                                    <a [href]="'https://npmjs.com/package/' + dep" target="_blank">{{dep}}</a>
+                                </li>
+                            </ul>
+                        </anu-card-body>
+                    </anu-card>
+                </div>
+
+                <div class="border border-round col-sm-12 col-md-6 col-lg-6">
+                    <anu-card>
+                        <anu-card-title class="shadow border-round spacing-horizontal secondary-deep-light-bg">
+                            <h2>Documentation</h2>
+                        </anu-card-title>
+                        <anu-card-body class="spacing">
+                            <h3>{{libInfo?.fullName}}</h3>
+                            <ul>
+                                <li *ngFor="let ast of assetTypesArr">
+                                    <a [routerLink]="[libInfo.name, ast]">{{ast}}</a>
+                                </li>
+                            </ul>
+                        </anu-card-body>
+                    </anu-card>
+                </div>
+
+                <div class="border border-round col-sm-12 col-md-6 col-lg-6">
+                    <anu-card>
+                        <anu-card-title class="shadow border-round spacing-horizontal secondary-deep-light-bg">
+                            <h2>Install from NPM</h2>
+                        </anu-card-title>
+                        <anu-card-body class="spacing">
+                            <p>You can install {{libInfo?.fullName}} npm package from npm.</p>
+                            <label>
+                                NPM: To install and see instructions click below:
+                                <a [href]="'https://npmjs.com/package/' + libInfo?.fullName"
+                                    target="_blank">{{libInfo?.fullName}}</a>
+                            </label>
+                        </anu-card-body>
+                    </anu-card>
+                </div>
+            </div>
+        </div>
     </div>
+</div>
+
+<div class="flex-container primary-deep-light-bg spacing-half spacing-around-vertical">
+    <h2>{{libInfo?.fullName}} Angular Library full documentation</h2>
+</div>
+
+<div class="flex-container">
+    <div class="row">
+        <ng-container *ngFor="let astType of assetTypesArr">
+            <div *ngIf="libInfo?.libAssetsInfo[astType].length"
+                class="col-sm-12 col-md-6 col-lg-4 shadow spacing-half border-round">
+                <anu-card>
+                    <anu-card-title class="shadow border-round spacing-horizontal secondary-deep-light-bg">
+                        <h3>{{astType?.toUpperCase()}}</h3>
+                    </anu-card-title>
+                    <anu-card-body class="spacing">
+                        <ul>
+                            <li *ngFor="let ast of libInfo?.libAssetsInfo[astType]">
+                                <a [routerLink]="[astType, ast.name]"> {{ast.name}} </a>
+                            </li>
+                        </ul>
+                    </anu-card-body>
+                </anu-card>
+            </div>
+        </ng-container>
+    </div>
+</div>
+
+<div class="container">
+    <router-outlet class="container"></router-outlet>
 </div>

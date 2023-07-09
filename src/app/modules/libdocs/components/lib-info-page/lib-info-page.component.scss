@@ -1,0 +1,10 @@
+:host {
+    width: 100%;
+
+    anu-card,
+    anu-card-title,
+    anu-card-body,
+    anu-card-footer {
+        overflow-x: auto;
+    }
+}

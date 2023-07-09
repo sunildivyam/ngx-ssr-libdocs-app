@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { LibInfo } from '@annuadvent/ngx-lib-docs/docs-common';
+import { LibAssetTypeEnums, LibInfo } from '@annuadvent/ngx-lib-docs/docs-common';
 import { APP_STATE_KEYS, AppState, AppStateService } from '../../../app-core';
 
 @Component({
@@ -10,6 +10,7 @@ import { APP_STATE_KEYS, AppState, AppStateService } from '../../../app-core';
 })
 export class LibInfoPageComponent {
   libInfo: LibInfo | null = null;
+  assetTypesArr: Array<string> = Object.values(LibAssetTypeEnums);
 
   constructor(
     private route: ActivatedRoute,
