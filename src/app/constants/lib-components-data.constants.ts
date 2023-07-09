@@ -3,6 +3,7 @@
 import { AsideNavComponent } from '@annuadvent/ngx-common-ui/aside-nav/src/components/aside-nav/aside-nav.docs';
 import { AsideNavHeaderComponent } from '@annuadvent/ngx-common-ui/aside-nav/src/components/aside-nav-header/aside-nav-header.docs';
 import { AsideNavItemComponent } from '@annuadvent/ngx-common-ui/aside-nav/src/components/aside-nav-item/aside-nav-item.docs';
+import { BreadcrumbComponent } from '@annuadvent/ngx-common-ui/breadcrumb/src/components/breadcrumb/breadcrumb.docs';
 import { CardBodyComponent } from '@annuadvent/ngx-common-ui/card/src/components/card-body/card-body.docs';
 import { CardComponent } from '@annuadvent/ngx-common-ui/card/src/components/card/card.docs';
 import { CardFooterComponent } from '@annuadvent/ngx-common-ui/card/src/components/card-footer/card-footer.docs';
@@ -66,6 +67,7 @@ export const libComponentData = {
         AsideNavComponent,
         AsideNavHeaderComponent,
         AsideNavItemComponent,
+        BreadcrumbComponent,
         CardBodyComponent,
         CardComponent,
         CardFooterComponent,

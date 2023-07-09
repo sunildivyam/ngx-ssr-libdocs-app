@@ -1268,7 +1268,7 @@
         },
         {
             "name": "MetaService",
-            "id": "injectable-MetaService-7693de7392a5b3418a666ec1c1e1a2b21de90c72b646a62cc72cdc8f38a112ae1541f2ee2dfe99ca3e9637b0821c3cfc23026ca9482686fcd5e0112c23ad81f1",
+            "id": "injectable-MetaService-035b069f6ce40ed8f76d4cf7a1f8580330667015f280ca6c142efa3977d7b0b6266c0a8d2daf5139ca6767affd5fbc537c9d538c6bb21908c04452d743a6e104",
             "file": "projects/ngx-common-ui/meta/src/services/meta.service.ts",
             "properties": [
                 {
@@ -1279,7 +1279,7 @@
                     "type": "string",
                     "optional": false,
                     "description": "",
-                    "line": 11,
+                    "line": 13,
                     "modifierKind": [
                         121
                     ]
@@ -1300,7 +1300,7 @@
                     "optional": false,
                     "returnType": "Array<MetaDefinition>",
                     "typeParameters": [],
-                    "line": 44,
+                    "line": 46,
                     "deprecated": false,
                     "deprecationMessage": "",
                     "modifierKind": [
@@ -1325,7 +1325,7 @@
                     "optional": false,
                     "returnType": "NodeListOf<Element>",
                     "typeParameters": [],
-                    "line": 123,
+                    "line": 125,
                     "deprecated": false,
                     "deprecationMessage": "",
                     "modifierKind": [
@@ -1345,7 +1345,7 @@
                     "optional": false,
                     "returnType": "MetaInfo",
                     "typeParameters": [],
-                    "line": 23,
+                    "line": 25,
                     "deprecated": false,
                     "deprecationMessage": "",
                     "modifierKind": [
@@ -1376,7 +1376,7 @@
                     "optional": false,
                     "returnType": "string",
                     "typeParameters": [],
-                    "line": 31,
+                    "line": 33,
                     "deprecated": false,
                     "deprecationMessage": "",
                     "modifierKind": [
@@ -1407,7 +1407,7 @@
                     "optional": false,
                     "returnType": "Array<string>",
                     "typeParameters": [],
-                    "line": 78,
+                    "line": 80,
                     "deprecated": false,
                     "deprecationMessage": "",
                     "modifierKind": [
@@ -1431,7 +1431,7 @@
                     "optional": false,
                     "returnType": "void",
                     "typeParameters": [],
-                    "line": 128,
+                    "line": 130,
                     "deprecated": false,
                     "deprecationMessage": "",
                     "modifierKind": [
@@ -1444,7 +1444,7 @@
                     "optional": false,
                     "returnType": "void",
                     "typeParameters": [],
-                    "line": 63,
+                    "line": 65,
                     "deprecated": false,
                     "deprecationMessage": "",
                     "modifierKind": [
@@ -1464,7 +1464,7 @@
                     "optional": false,
                     "returnType": "void",
                     "typeParameters": [],
-                    "line": 114,
+                    "line": 116,
                     "deprecated": false,
                     "deprecationMessage": "",
                     "modifierKind": [
@@ -1495,7 +1495,7 @@
                     "optional": false,
                     "returnType": "Array<HTMLMetaElement>",
                     "typeParameters": [],
-                    "line": 91,
+                    "line": 93,
                     "deprecated": false,
                     "deprecationMessage": "",
                     "modifierKind": [
@@ -1518,7 +1518,7 @@
             "deprecationMessage": "",
             "description": "",
             "rawdescription": "\n",
-            "sourceCode": "import { Inject, Injectable } from '@angular/core';\r\nimport { Meta, MetaDefinition, Title } from '@angular/platform-browser';\r\nimport { DOCUMENT } from '@angular/common';\r\nimport { META_PROPS } from '../constants/meta.constants';\r\nimport { MetaInfo, MetaProp, MetaPropertyType } from '../interfaces/meta.interface';\r\nimport { UtilsService } from '@annuadvent/ngx-core/utils';\r\nimport { AppConfigService } from '@annuadvent/ngx-core/app-config';\r\n\r\n@Injectable()\r\nexport class MetaService {\r\n  private apiBaseUrl: string = '';\r\n\r\n  constructor(\r\n    private meta: Meta,\r\n    private title: Title,\r\n    private utilsSvc: UtilsService,\r\n    private appConfigService: AppConfigService,\r\n    @Inject(DOCUMENT) private document: Document,\r\n  ) {\r\n    this.apiBaseUrl = this.appConfigService.config.apiBaseUrl;\r\n  }\r\n\r\n  private getMetaInfoWithBaseUrlAdded(metaInfo: MetaInfo): MetaInfo {\r\n    return {\r\n      ...metaInfo,\r\n      url: this.utilsSvc.getCanonicalUrl(metaInfo.url || '', '', this.apiBaseUrl || ''),\r\n      image: this.utilsSvc.getImageUrl(metaInfo.image || '', '', this.apiBaseUrl || ''),\r\n    } as MetaInfo;\r\n  }\r\n\r\n  private getTagAsString(metaDefinition: MetaDefinition): string {\r\n    let keyName = '';\r\n    if (metaDefinition.property) {\r\n      keyName = 'property';\r\n    } else if (metaDefinition.httpEquiv) {\r\n      keyName = 'http-equiv';\r\n    } else {\r\n      keyName = 'name';\r\n    }\r\n\r\n    return `<meta ${keyName}=\"${metaDefinition[keyName === 'http-equiv' ? 'httpEquiv' : keyName]}\" content=\"${metaDefinition.content}\">`;\r\n  }\r\n\r\n  private generateAllMetaDefinitions(pageMeta: MetaInfo = {}): Array<MetaDefinition> {\r\n    const metaDefinitions: Array<MetaDefinition> = [];\r\n    const metaProps = META_PROPS.map(p => ({ ...p }));\r\n\r\n    metaProps.forEach((p: MetaProp) => {\r\n      const content = pageMeta[p.name];\r\n      if (content) {\r\n        p.types.forEach((t: MetaPropertyType) => {\r\n          const metaDefinition: MetaDefinition = {};\r\n          metaDefinition[t.type] = t.subType ? `${t.subType}:${p.name}` : p.name;\r\n          metaDefinition.content = content;\r\n          metaDefinitions.push(metaDefinition);\r\n        })\r\n      }\r\n    });\r\n\r\n    return metaDefinitions;\r\n  }\r\n\r\n  private removeExistingMetaTags(): void {\r\n    const metaProps = META_PROPS.map(p => ({ ...p }));\r\n    // remove canonical link tag\r\n    this.removeCanonicalLinkTag();\r\n\r\n    //remove all other meta tags\r\n    metaProps.forEach((p: MetaProp) => {\r\n      p.types.forEach((t: MetaPropertyType) => {\r\n        const attrValue = t.subType ? `${t.subType}:${p.name}` : p.name;\r\n        const attr = `${t.type === 'httpEquiv' ? 'http-equiv' : t.type}=\"${attrValue}\"`;\r\n        this.meta.removeTag(attr);\r\n      })\r\n    });\r\n  }\r\n\r\n  public getTagsAsString(pageMeta: MetaInfo): Array<string> {\r\n    let metaInfo = this.getMetaInfoWithBaseUrlAdded(pageMeta);\r\n\r\n    const metaDefinitions = this.generateAllMetaDefinitions(metaInfo);\r\n\r\n    const tagsAsString: Array<string> = metaDefinitions.map(m => this.getTagAsString(m));\r\n    if (metaInfo.url) {\r\n      tagsAsString.push(`<link rel=\"canonical\" href=\"${metaInfo.url}\"/>`);\r\n    }\r\n\r\n    return tagsAsString;\r\n  }\r\n\r\n  public setPageMeta(pageMeta: MetaInfo): Array<HTMLMetaElement> {\r\n    let metaInfo = this.getMetaInfoWithBaseUrlAdded(pageMeta);\r\n\r\n    const metaDefinitions = this.generateAllMetaDefinitions(metaInfo);\r\n    const addedMetaElements: Array<HTMLMetaElement> = [];\r\n    // remove all existing meta tags, before adding new ones.\r\n    this.removeExistingMetaTags();\r\n\r\n    // sets title\r\n    this.title.setTitle(metaInfo?.title || '');\r\n\r\n    // sets canonical url link tag\r\n    this.setCanonicalLinkTag(metaInfo);\r\n\r\n    // sets all other meta tags.\r\n    for (let metaDef of metaDefinitions) {\r\n      const metaEl = this.meta.addTag(metaDef, false);\r\n      metaEl && addedMetaElements.push(metaEl);\r\n    }\r\n\r\n    return addedMetaElements;\r\n  }\r\n\r\n  public setCanonicalLinkTag(metaInfo: MetaInfo): void {\r\n    if (metaInfo.url) {\r\n      const linkEl = this.document.createElement('link');\r\n      linkEl.setAttribute('rel', 'canonical');\r\n      linkEl.setAttribute('href', metaInfo.url);\r\n      this.document.head.appendChild(linkEl);\r\n    }\r\n  }\r\n\r\n  public getCanonicalLinkTags(): NodeListOf<Element> {\r\n    const canonicalLinks = this.document.head.querySelectorAll('link[rel=\"canonical\"]');\r\n    return canonicalLinks;\r\n  }\r\n\r\n  public removeCanonicalLinkTag(): void {\r\n    const canonicalLinks = this.getCanonicalLinkTags();\r\n    if (canonicalLinks && canonicalLinks.length) {\r\n      canonicalLinks.forEach(link => this.document.head.removeChild(link));\r\n    }\r\n  }\r\n}\r\n",
+            "sourceCode": "import { Inject, Injectable } from '@angular/core';\r\nimport { Meta, MetaDefinition, Title } from '@angular/platform-browser';\r\nimport { DOCUMENT } from '@angular/common';\r\nimport { META_PROPS } from '../constants/meta.constants';\r\nimport { MetaInfo, MetaProp, MetaPropertyType } from '../interfaces/meta.interface';\r\nimport { UtilsService } from '@annuadvent/ngx-core/utils';\r\nimport { AppConfigService } from '@annuadvent/ngx-core/app-config';\r\n\r\n@Injectable({\r\n  providedIn: 'root'\r\n})\r\nexport class MetaService {\r\n  private apiBaseUrl: string = '';\r\n\r\n  constructor(\r\n    private meta: Meta,\r\n    private title: Title,\r\n    private utilsSvc: UtilsService,\r\n    private appConfigService: AppConfigService,\r\n    @Inject(DOCUMENT) private document: Document,\r\n  ) {\r\n    this.apiBaseUrl = this.appConfigService.config.apiBaseUrl;\r\n  }\r\n\r\n  private getMetaInfoWithBaseUrlAdded(metaInfo: MetaInfo): MetaInfo {\r\n    return {\r\n      ...metaInfo,\r\n      url: this.utilsSvc.getCanonicalUrl(metaInfo.url || '', '', this.apiBaseUrl || ''),\r\n      image: this.utilsSvc.getImageUrl(metaInfo.image || '', '', this.apiBaseUrl || ''),\r\n    } as MetaInfo;\r\n  }\r\n\r\n  private getTagAsString(metaDefinition: MetaDefinition): string {\r\n    let keyName = '';\r\n    if (metaDefinition.property) {\r\n      keyName = 'property';\r\n    } else if (metaDefinition.httpEquiv) {\r\n      keyName = 'http-equiv';\r\n    } else {\r\n      keyName = 'name';\r\n    }\r\n\r\n    return `<meta ${keyName}=\"${metaDefinition[keyName === 'http-equiv' ? 'httpEquiv' : keyName]}\" content=\"${metaDefinition.content}\">`;\r\n  }\r\n\r\n  private generateAllMetaDefinitions(pageMeta: MetaInfo = {}): Array<MetaDefinition> {\r\n    const metaDefinitions: Array<MetaDefinition> = [];\r\n    const metaProps = META_PROPS.map(p => ({ ...p }));\r\n\r\n    metaProps.forEach((p: MetaProp) => {\r\n      const content = pageMeta[p.name];\r\n      if (content) {\r\n        p.types.forEach((t: MetaPropertyType) => {\r\n          const metaDefinition: MetaDefinition = {};\r\n          metaDefinition[t.type] = t.subType ? `${t.subType}:${p.name}` : p.name;\r\n          metaDefinition.content = content;\r\n          metaDefinitions.push(metaDefinition);\r\n        })\r\n      }\r\n    });\r\n\r\n    return metaDefinitions;\r\n  }\r\n\r\n  private removeExistingMetaTags(): void {\r\n    const metaProps = META_PROPS.map(p => ({ ...p }));\r\n    // remove canonical link tag\r\n    this.removeCanonicalLinkTag();\r\n\r\n    //remove all other meta tags\r\n    metaProps.forEach((p: MetaProp) => {\r\n      p.types.forEach((t: MetaPropertyType) => {\r\n        const attrValue = t.subType ? `${t.subType}:${p.name}` : p.name;\r\n        const attr = `${t.type === 'httpEquiv' ? 'http-equiv' : t.type}=\"${attrValue}\"`;\r\n        this.meta.removeTag(attr);\r\n      })\r\n    });\r\n  }\r\n\r\n  public getTagsAsString(pageMeta: MetaInfo): Array<string> {\r\n    let metaInfo = this.getMetaInfoWithBaseUrlAdded(pageMeta);\r\n\r\n    const metaDefinitions = this.generateAllMetaDefinitions(metaInfo);\r\n\r\n    const tagsAsString: Array<string> = metaDefinitions.map(m => this.getTagAsString(m));\r\n    if (metaInfo.url) {\r\n      tagsAsString.push(`<link rel=\"canonical\" href=\"${metaInfo.url}\"/>`);\r\n    }\r\n\r\n    return tagsAsString;\r\n  }\r\n\r\n  public setPageMeta(pageMeta: MetaInfo): Array<HTMLMetaElement> {\r\n    let metaInfo = this.getMetaInfoWithBaseUrlAdded(pageMeta);\r\n\r\n    const metaDefinitions = this.generateAllMetaDefinitions(metaInfo);\r\n    const addedMetaElements: Array<HTMLMetaElement> = [];\r\n    // remove all existing meta tags, before adding new ones.\r\n    this.removeExistingMetaTags();\r\n\r\n    // sets title\r\n    this.title.setTitle(metaInfo?.title || '');\r\n\r\n    // sets canonical url link tag\r\n    this.setCanonicalLinkTag(metaInfo);\r\n\r\n    // sets all other meta tags.\r\n    for (let metaDef of metaDefinitions) {\r\n      const metaEl = this.meta.addTag(metaDef, false);\r\n      metaEl && addedMetaElements.push(metaEl);\r\n    }\r\n\r\n    return addedMetaElements;\r\n  }\r\n\r\n  public setCanonicalLinkTag(metaInfo: MetaInfo): void {\r\n    if (metaInfo.url) {\r\n      const linkEl = this.document.createElement('link');\r\n      linkEl.setAttribute('rel', 'canonical');\r\n      linkEl.setAttribute('href', metaInfo.url);\r\n      this.document.head.appendChild(linkEl);\r\n    }\r\n  }\r\n\r\n  public getCanonicalLinkTags(): NodeListOf<Element> {\r\n    const canonicalLinks = this.document.head.querySelectorAll('link[rel=\"canonical\"]');\r\n    return canonicalLinks;\r\n  }\r\n\r\n  public removeCanonicalLinkTag(): void {\r\n    const canonicalLinks = this.getCanonicalLinkTags();\r\n    if (canonicalLinks && canonicalLinks.length) {\r\n      canonicalLinks.forEach(link => this.document.head.removeChild(link));\r\n    }\r\n  }\r\n}\r\n",
             "constructorObj": {
                 "name": "constructor",
                 "description": "",
@@ -1556,7 +1556,7 @@
                         "deprecationMessage": ""
                     }
                 ],
-                "line": 11,
+                "line": 13,
                 "jsdoctags": [
                     {
                         "name": "meta",
@@ -2579,6 +2579,101 @@
                 "OnInit"
             ],
             "templateData": "<ng-content></ng-content>\r\n"
+        },
+        {
+            "name": "BreadcrumbComponent",
+            "id": "component-BreadcrumbComponent-ffce013af9d35b93f8dba65985d64c66c77d7763e1d0a79c430f4dba73c4df2bc12bb57f6c908f3ea49d723322c2a8dbd0cf79f53d23903c7d7f4b123d745c7f",
+            "file": "projects/ngx-common-ui/breadcrumb/src/components/breadcrumb/breadcrumb.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "anu-breadcrumb",
+            "styleUrls": [
+                "./breadcrumb.component.scss"
+            ],
+            "styles": [],
+            "templateUrl": [
+                "./breadcrumb.component.html"
+            ],
+            "viewProviders": [],
+            "hostDirectives": [],
+            "inputsClass": [],
+            "outputsClass": [],
+            "propertiesClass": [
+                {
+                    "name": "urlSegments",
+                    "defaultValue": "[]",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Array<string>",
+                    "optional": false,
+                    "description": "",
+                    "line": 10
+                }
+            ],
+            "methodsClass": [],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [],
+            "standalone": false,
+            "imports": [],
+            "description": "",
+            "rawdescription": "\n",
+            "type": "component",
+            "sourceCode": "import { Component } from '@angular/core';\nimport { ActivatedRoute, Router } from '@angular/router';\n\n@Component({\n  selector: 'anu-breadcrumb',\n  templateUrl: './breadcrumb.component.html',\n  styleUrls: ['./breadcrumb.component.scss']\n})\nexport class BreadcrumbComponent {\n  urlSegments: Array<string> = [];\n\n  constructor(private route: ActivatedRoute, private router: Router) {\n    this.route.url.subscribe(() => {\n      let url = this.router.url;\n      url = url.substring(url.indexOf('?'));\n      this.urlSegments = url.split('/');\n    })\n  }\n}\n",
+            "assetsDirs": [],
+            "styleUrlsData": [
+                {
+                    "data": "",
+                    "styleUrl": "./breadcrumb.component.scss"
+                }
+            ],
+            "stylesData": "",
+            "constructorObj": {
+                "name": "constructor",
+                "description": "",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "args": [
+                    {
+                        "name": "route",
+                        "type": "ActivatedRoute",
+                        "deprecated": false,
+                        "deprecationMessage": ""
+                    },
+                    {
+                        "name": "router",
+                        "type": "Router",
+                        "deprecated": false,
+                        "deprecationMessage": ""
+                    }
+                ],
+                "line": 10,
+                "jsdoctags": [
+                    {
+                        "name": "route",
+                        "type": "ActivatedRoute",
+                        "deprecated": false,
+                        "deprecationMessage": "",
+                        "tagName": {
+                            "text": "param"
+                        }
+                    },
+                    {
+                        "name": "router",
+                        "type": "Router",
+                        "deprecated": false,
+                        "deprecationMessage": "",
+                        "tagName": {
+                            "text": "param"
+                        }
+                    }
+                ]
+            },
+            "templateData": "<a *ngFor=\"let seg of urlSegments\" [routerLink]=\"[]\">{{seg}}</a>\n"
         },
         {
             "name": "CardBodyComponent",
@@ -8676,6 +8771,50 @@
             ]
         },
         {
+            "name": "BreadcrumbModule",
+            "id": "module-BreadcrumbModule-31db47d17b629847c88f206e1648a469ad6a66aa3b626b85681b1dd5518c3307327dd42e20997b2791f2c60d8683bf76a5fe91d4d7270796eeb35279217bdb06",
+            "description": "",
+            "deprecationMessage": "",
+            "deprecated": false,
+            "file": "projects/ngx-common-ui/breadcrumb/src/breadcrumb.module.ts",
+            "methods": [],
+            "sourceCode": "\nimport { NgModule } from '@angular/core';\nimport { CommonModule } from '@angular/common';\nimport { BreadcrumbComponent } from './components/breadcrumb/breadcrumb.component';\nimport { RouterModule } from '@angular/router';\n\n\n\n@NgModule({\n  declarations: [\n    BreadcrumbComponent\n  ],\n  imports: [\n    CommonModule,\n    RouterModule,\n  ],\n  exports: [\n    BreadcrumbComponent\n  ],\n})\nexport class BreadcrumbModule { }\n",
+            "children": [
+                {
+                    "type": "providers",
+                    "elements": []
+                },
+                {
+                    "type": "declarations",
+                    "elements": [
+                        {
+                            "name": "BreadcrumbComponent"
+                        }
+                    ]
+                },
+                {
+                    "type": "imports",
+                    "elements": []
+                },
+                {
+                    "type": "exports",
+                    "elements": [
+                        {
+                            "name": "BreadcrumbComponent"
+                        }
+                    ]
+                },
+                {
+                    "type": "bootstrap",
+                    "elements": []
+                },
+                {
+                    "type": "classes",
+                    "elements": []
+                }
+            ]
+        },
+        {
             "name": "CardModule",
             "id": "module-CardModule-189fa8a4dc10959a93bdb902f2811e01bac93a8a1c712931aa9e73930be1271dde8668e4c8656b0def85385fea185721b74f04329b5e85b1c071005015e5def7",
             "description": "",
@@ -11547,6 +11686,15 @@
                 "name": "NavItem",
                 "coveragePercent": 0,
                 "coverageCount": "0/6",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/ngx-common-ui/breadcrumb/src/components/breadcrumb/breadcrumb.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "BreadcrumbComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/3",
                 "status": "low"
             },
             {

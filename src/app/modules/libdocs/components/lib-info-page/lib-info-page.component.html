@@ -4,10 +4,11 @@
 
 <div class="flex-container">
     <h2>Lib Info Page</h2>
-    <a href="javascript:void(0)" (click)="updateNavs()">Update</a>
     <h2>{{libInfo?.name}}</h2>
     <h3>{{libInfo?.fullName}}</h3>
-    <p>{{libInfo?.description}}</p>
+    <article [innerHTML]="libInfo?.description"></article>
+
+
     <div class="row">
         <ul class="col-4 shadow">
             <li *ngFor="let ast of libInfo?.libAssetsInfo?.components">

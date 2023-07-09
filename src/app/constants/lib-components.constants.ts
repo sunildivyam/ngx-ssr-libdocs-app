@@ -3,6 +3,7 @@
 import { AsideNavComponent } from '@annuadvent/ngx-common-ui/aside-nav';
 import { AsideNavHeaderComponent } from '@annuadvent/ngx-common-ui/aside-nav';
 import { AsideNavItemComponent } from '@annuadvent/ngx-common-ui/aside-nav';
+import { BreadcrumbComponent } from '@annuadvent/ngx-common-ui/breadcrumb';
 import { CardBodyComponent } from '@annuadvent/ngx-common-ui/card';
 import { CardComponent } from '@annuadvent/ngx-common-ui/card';
 import { CardFooterComponent } from '@annuadvent/ngx-common-ui/card';
@@ -66,6 +67,7 @@ export const libComponentClasses = {
         AsideNavComponent,
         AsideNavHeaderComponent,
         AsideNavItemComponent,
+        BreadcrumbComponent,
         CardBodyComponent,
         CardComponent,
         CardFooterComponent,
