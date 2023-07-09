@@ -1,4 +1,57 @@
-<p>libdocs-home-page works!</p>
-<p>
-    {{libsInfo | json}}
-</p>
+<div class="flex-container primary-deep-light-bg spacing-half">
+    <h1>{{companyName}} Angular Libraries</h1>
+    <p *ngIf="pageMeta">{{pageMeta.description}}</p>
+</div>
+
+<div class="flex-container spacing-around-vertical">
+    <div class="row">
+        <div class="border col-sm-12 col-md-6 col-lg-3" *ngFor="let libInfo of libsInfoArr">
+            <anu-card class="spacing-half">
+                <anu-card-title class="primary-deep-light-bg spacing-half center border-round">
+                    <h2><a [routerLink]="[libInfo.name]">{{libInfo.name}}</a></h2>
+                </anu-card-title>
+                <anu-card-body>
+                    <span>{{libInfo.fullName}}</span>
+                    <span>Version: {{libInfo.version}}</span>
+                    <label>
+                        Github:
+                        <a target="_blank" [href]="libInfo.homepage">Home</a> |
+                        <a target="_blank" [href]="libInfo.bugs">
+                            Issues</a> |
+                        <a target="_blank" [href]="libInfo.git">
+                            Repo</a>
+                    </label>
+                    <div class="container">
+                        <label class="primary-deep-light-bg spacing-half">Dependencies</label>
+                        <ul>
+                            <li *ngFor="let dep of libInfo.dependencies">
+                                <a [href]="'https://npmjs.com/package/' + dep" target="_blank">{{dep}}</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="container">
+                        <label class="primary-deep-light-bg spacing-half">Documentation</label>
+                        <ul>
+                            <li *ngFor="let ast of assetTypesArr">
+                                <a [routerLink]="[libInfo.name, ast]">{{ast}}</a>
+                            </li>
+                        </ul>
+                    </div>
+                </anu-card-body>
+                <anu-card-footer class="center">
+                    <span class="center">For full documentation of {{libInfo.name}} angular library, click
+                        <a [routerLink]="[libInfo.name]">{{libInfo.name}}</a>.</span>
+                </anu-card-footer>
+            </anu-card>
+        </div>
+    </div>
+</div>
+
+<div class="flex-container primary-deep-light-bg spacing-half">
+    <h2>About the Team of {{companyName}}</h2>
+</div>
+<div class="flex-container spacing-around-vertical">
+    <div class="col-12">
+        <p [innerHTML]="description"></p>
+    </div>
+</div>

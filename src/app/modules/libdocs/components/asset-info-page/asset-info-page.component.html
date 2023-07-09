@@ -1,31 +1,33 @@
-<p>asset-info-page works!</p>
-<ng-container *ngIf="assetInfo">
-    <ng-container *ngIf="assetType === assetTypes.components">
-        <anu-component-info [componentInfo]="assetInfo" [componentType]="assetClass"
-            [componentData]="assetData"></anu-component-info>
-    </ng-container>
+<div class="flex-container">
+    <p>asset-info-page works!</p>
+    <ng-container *ngIf="assetInfo">
+        <ng-container *ngIf="assetType === assetTypes.components">
+            <anu-component-info class="container" [componentInfo]="assetInfo" [componentType]="assetClass"
+                [componentData]="assetData"></anu-component-info>
+        </ng-container>
 
-    <ng-container *ngIf="assetType === assetTypes.services">
-        <anu-service-info [serviceInfo]="assetInfo" [serviceType]="assetClass"></anu-service-info>
-    </ng-container>
+        <ng-container *ngIf="assetType === assetTypes.services">
+            <anu-service-info class="container" [serviceInfo]="assetInfo" [serviceType]="assetClass"></anu-service-info>
+        </ng-container>
 
-    <ng-container *ngIf="assetType === assetTypes.directives">
-        <anu-directive-info [directiveInfo]="assetInfo"></anu-directive-info>
-    </ng-container>
+        <ng-container *ngIf="assetType === assetTypes.directives">
+            <anu-directive-info class="container" [directiveInfo]="assetInfo"></anu-directive-info>
+        </ng-container>
 
-    <ng-container *ngIf="assetType === assetTypes.interfaces">
-        <anu-interface-info [interfaceInfo]="assetInfo"></anu-interface-info>
-    </ng-container>
+        <ng-container *ngIf="assetType === assetTypes.interfaces">
+            <anu-interface-info class="container" [interfaceInfo]="assetInfo"></anu-interface-info>
+        </ng-container>
 
-    <ng-container *ngIf="assetType === assetTypes.guards">
-        <anu-guard-info [guardInfo]="assetInfo"></anu-guard-info>
-    </ng-container>
+        <ng-container *ngIf="assetType === assetTypes.guards">
+            <anu-guard-info class="container" [guardInfo]="assetInfo"></anu-guard-info>
+        </ng-container>
 
-    <ng-container *ngIf="assetType === assetTypes.classes">
-        <anu-class-info [classInfo]="assetInfo"></anu-class-info>
-    </ng-container>
+        <ng-container *ngIf="assetType === assetTypes.classes">
+            <anu-class-info class="container" [classInfo]="assetInfo"></anu-class-info>
+        </ng-container>
 
-    <ng-container *ngIf="assetType === assetTypes.interceptors">
-        <anu-interceptor-info [interceptorInfo]="assetInfo"></anu-interceptor-info>
+        <ng-container *ngIf="assetType === assetTypes.interceptors">
+            <anu-interceptor-info class="container" [interceptorInfo]="assetInfo"></anu-interceptor-info>
+        </ng-container>
     </ng-container>
-</ng-container>
+</div>

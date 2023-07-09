@@ -15,6 +15,8 @@ import { ClassInfoModule } from '@annuadvent/ngx-lib-docs/class-info';
 import { DirectiveInfoModule } from '@annuadvent/ngx-lib-docs/directive-info';
 import { GuardInfoModule } from '@annuadvent/ngx-lib-docs/guard-info';
 import { InterceptorInfoModule } from '@annuadvent/ngx-lib-docs/interceptor-info';
+import { CardModule } from '@annuadvent/ngx-common-ui/card';
+
 
 
 @NgModule({
@@ -36,6 +38,7 @@ import { InterceptorInfoModule } from '@annuadvent/ngx-lib-docs/interceptor-info
     DirectiveInfoModule,
     GuardInfoModule,
     InterceptorInfoModule,
+    CardModule,
   ]
 })
 export class LibdocsModule { }
