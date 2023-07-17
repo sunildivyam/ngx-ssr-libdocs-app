@@ -17,7 +17,7 @@ Client side only build is deployed to firebase. SSR build is not deployed to fir
 
 ### Generates firebase build
 - Performs build and copy build files t firebase publish folder
-- Run `npm run firebase:serve:ngx-ssr-libdocs-app:[development | staging | production]`
+- Run `npm run firebase:build:ngx-ssr-libdocs-app:[development | staging | production]`
 
 ### Deploy to firebase hosting
     - Deploys generated build to firebase hosting app as per `firebase.json` and `.firebaserc`
