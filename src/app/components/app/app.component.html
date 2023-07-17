@@ -5,10 +5,6 @@
   <anu-menu class="flex-container primary-normal-bg center" [items]="mainMenuItems"
     [logoUrl]="'/assets/annu-advent-logo.png'" [heading]="appConfig.metaInfo.title || ''"
     (openStatusChanged)="mainMenuOpenStatusChanged($event)" [opened]="isMainNavOpen" [headingHref]="['./']">
-    <anu-login-status (profileClicked)="loginStatusClicked()" (signOutClicked)="loginStatusClicked()"
-      (signInClicked)="loginStatusClicked()" [loginPageUrl]="appConfig.loginUrl || ''"
-      [profilePageUrl]="appConfig.profileUrl || ''" [loggedOutPageUrl]="appConfig.logoutUrl || ''">
-    </anu-login-status>
   </anu-menu>
   <div class="flex-container center">
     <div class="row relative stretch">

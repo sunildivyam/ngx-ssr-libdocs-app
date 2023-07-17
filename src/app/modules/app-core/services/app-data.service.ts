@@ -33,7 +33,10 @@ export class AppDataService {
 
   public async getLibsInfo(): Promise<LibsInfo> {
     const url = `${this.appConfigService.config.apiBaseUrl}/assets/libs-info.json`;
-    const libsInfo = await this.docsInfoService.getLibsInfo(url);
+    const libsInfo = await this.docsInfoService.getLibsInfo(url)
+      .catch(err => {
+        return null;
+      });
 
     return libsInfo;
   }

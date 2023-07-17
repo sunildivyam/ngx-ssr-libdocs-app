@@ -1,27 +1,23 @@
 import { AppConfig } from '@annuadvent/ngx-core/app-config';
 
 export const appConfig: AppConfig = {
-  name: 'annuBusiness',
+  name: 'ngxSsrLibdocsApp',
   copyrightText: 'copyright©annu-business',
-  themeName: 'skyBlue',
+  themeName: 'armyGreen',
   apiBaseUrl: 'http://localhost:4200',
   imagesSourceUrl: '/getImage?imageId=',
-  loginUrl: '/login',
-  logoutUrl: '/login',
-  profileUrl: '/dashboard',
-  adminEmail: 'info@annubiztech.com',
   defaultPageSize: 5,
   tNcUrl: '/tnc/terms-and-conditions',
-  privacyPolicyUrl: '/privacy/privacy-policy',
+  privacyPolicyUrl: '/tnc/privacy-policy',
   contactUsUrl:
-    '/contact-us/contact-us-for-sales-enquiry-technology-consulting-business-consulting-research-consulting-or-a-general-enquiry',
-  aboutUsUrl: '/about-us/about-annu-advent',
+    '/contact-us',
+  aboutUsUrl: '/about-us',
   metaInfo: {
-    title: 'Annu Advent Docs',
+    title: 'Annu Business Angular Libraries',
     description:
-      'Annu Business is a dynamic and innovative team of digital content creators who are passionate about crafting captivating and immersive experiences for audiences across various digital platforms. With our diverse skill set and expertise, we specialize in producing high-quality and engaging content that leaves a lasting impact. At Annu Business we are driven by our commitment to excellence, innovation, and audience satisfaction. We embrace the ever-evolving digital landscape, constantly pushing boundaries, and exploring new avenues to deliver content that resonates with our viewers, readers, and listeners. Join us on this exciting journey as we continue to shape the digital content landscape with our creativity, expertise, and unwavering dedication.',
+      'Annu Business Angular Components Libraries are Angular libraries, consisting of ngx-common-ui, ngx-tools, ngx-cms, and ngx-core, offers a comprehensive set of UI components, services, and firebase functionality for developing web applications. These libraries are designed to simplify the development process by providing reusable and customizable components, handy tools, and seamless integration with Firebase services. By using these Angular libraries together, developers can accelerate their application development process while maintaining consistency and adherence to best practices. The libraries provide a robust set of UI components, utility functions, content management tools, and Firebase integration, enabling developers to create powerful and feature-rich web applications with ease.',
     keywords:
-      'Annu Business, Visual storytelling, Video content creators, Vlogs, Tutorials, Short films, Informative articles, Social media influencers, Entertaining stories, In-depth interviews, Graphic designers, Artists, Digital artwork, Infographics, Evolving digital landscape',
+      'Angular libraries, ngx-common-ui, ngx-tools, ngx-cms, ngx-core, UI components, Services, Firebase integration, Angular development, Content Management System (CMS)',
     robots: 'index, follow',
     'Content-Type': 'text/html; charset=utf-8',
     language: 'english',
@@ -30,10 +26,10 @@ export const appConfig: AppConfig = {
     type: 'article',
     'article:published_time': '2022-01-03T17:53:35.868Z',
     'article:author': 'Annu Business',
-    'article:section': 'business',
+    'article:section': 'technology',
     'article:tag':
-      'Annu Business, Visual storytelling, Video content creators, Vlogs, Tutorials, Short films, Informative articles, Social media influencers, Entertaining stories, In-depth interviews, Graphic designers, Artists, Digital artwork, Infographics, Evolving digital landscape',
-    image: '/assets/annu-advent-logo.png',
+      'Angular libraries, ngx-common-ui, ngx-tools, ngx-cms, ngx-core, UI components, Services, Firebase integration, Angular development, Content Management System (CMS)',
+    image: '/assets/ngx-libs-annu-advent.jpeg',
     url: '',
     card: 'summary_large_image',
     site_name: 'Annu Business',
@@ -42,20 +38,20 @@ export const appConfig: AppConfig = {
   },
   mainMenuItems: [
     {
-      title: 'Sample Category 1',
-      href: ['./sample-category-1'],
+      title: 'ngx-common-ui',
+      href: ['/libs/ngx-common-ui']
     },
     {
-      title: 'Sample Category 2',
-      href: ['./sample-category-2'],
+      title: 'ngx-tools',
+      href: ['/libs/ngx-tools']
     },
     {
-      title: 'Sample Category 3',
-      href: ['./sample-category-3'],
+      title: 'ngx-cms',
+      href: ['/libs/ngx-cms']
     },
     {
-      title: 'Sample Category 4',
-      href: ['./sample-category-4'],
+      title: 'ngx-core',
+      href: ['/libs/ngx-core']
     },
   ],
 };

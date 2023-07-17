@@ -1,21 +1,4 @@
 {
-  "firestore": {
-    "rules": "firestore.rules",
-    "indexes": "firestore.indexes.json"
-  },
-  "functions": [
-    {
-      "source": "functions",
-      "runtime": "nodejs18",
-      "codebase": "default",
-      "ignore": [
-        "node_modules",
-        ".git",
-        "firebase-debug.log",
-        "firebase-debug.*.log"
-      ]
-    }
-  ],
   "hosting": [
     {
       "target": "staging",
@@ -27,30 +10,31 @@
       ],
       "rewrites": [
         {
-          "source": "sitemap.xml",
-          "function": "getSitemapXmlDownloadUrlFn"
-        },
-        {
-          "source": "getImage",
-          "function": "getImageFn"
-        },
-        {
           "source": "**",
-          "function": "ssrAppFn"
+          "destination": "/index.html"
         }
       ],
       "headers": [
         {
-          "source": "**",
+          "source": "/",
           "headers": [
             {
               "key": "Cache-Control",
-              "value": "max-age=86400, s-max-age=86400"
+              "value": "max-age=31536000, s-max-age=31536000"
             }
           ]
         },
         {
-          "source": "getImage**",
+          "source": "libs",
+          "headers": [
+            {
+              "key": "Cache-Control",
+              "value": "max-age=31536000, s-max-age=31536000"
+            }
+          ]
+        },
+        {
+          "source": "@(assets|libs|tnc|privacy|about-us|contact-us)/**/**",
           "headers": [
             {
               "key": "Cache-Control",
@@ -64,15 +48,6 @@
             {
               "key": "Cache-Control",
               "value": "max-age=31536000, s-max-age=31536000"
-            }
-          ]
-        },
-        {
-          "source": "@(dashboard|login|logout|error)/**/**",
-          "headers": [
-            {
-              "key": "Cache-Control",
-              "value": "no-cache, no-store, must-revalidate"
             }
           ]
         }
@@ -88,30 +63,31 @@
       ],
       "rewrites": [
         {
-          "source": "sitemap.xml",
-          "function": "getSitemapXmlDownloadUrlFn"
-        },
-        {
-          "source": "getImage",
-          "function": "getImageFn"
-        },
-        {
           "source": "**",
-          "function": "ssrAppFn"
+          "destination": "/index.html"
         }
       ],
       "headers": [
         {
-          "source": "**",
+          "source": "/",
           "headers": [
             {
               "key": "Cache-Control",
-              "value": "max-age=604800, s-max-age=604800"
+              "value": "max-age=31536000, s-max-age=31536000"
             }
           ]
         },
         {
-          "source": "getImage**",
+          "source": "libs",
+          "headers": [
+            {
+              "key": "Cache-Control",
+              "value": "max-age=31536000, s-max-age=31536000"
+            }
+          ]
+        },
+        {
+          "source": "@(assets|libs|tnc|privacy|about-us|contact-us)/**/**",
           "headers": [
             {
               "key": "Cache-Control",
@@ -127,40 +103,13 @@
               "value": "max-age=31536000, s-max-age=31536000"
             }
           ]
-        },
-        {
-          "source": "@(dashboard|login|logout|error)/**/**",
-          "headers": [
-            {
-              "key": "Cache-Control",
-              "value": "no-cache, no-store, must-revalidate"
-            }
-          ]
         }
       ]
     }
   ],
-  "storage": {
-    "rules": "storage.rules"
-  },
   "emulators": {
-    "auth": {
-      "port": 9099
-    },
-    "functions": {
-      "port": 5001
-    },
-    "firestore": {
-      "port": 8080
-    },
-    "database": {
-      "port": 9000
-    },
     "hosting": {
       "port": 5000
-    },
-    "storage": {
-      "port": 9199
     },
     "ui": {
       "enabled": true

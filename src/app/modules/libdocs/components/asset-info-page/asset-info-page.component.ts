@@ -41,7 +41,6 @@ export class AssetInfoPageComponent {
               this.assetClass = null;
           }
         } catch (err) {
-          console.log(err);
           this.assetData = null;
           this.assetClass = null;
         }

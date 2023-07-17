@@ -4,7 +4,7 @@ import {
   FireStoreConfig,
   FirebaseConfig,
 } from '@annuadvent/ngx-tools/fire-common';
-import { appConfig } from './app.config.development';
+import { appConfig } from './app.config.staging';
 import { FIREBASE_AUTH_SIGNIN_METHODS } from '@annuadvent/ngx-tools/fire-auth';
 
 const ui = {

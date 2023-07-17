@@ -7,20 +7,20 @@
     "annu-business": {
       "hosting": {
         "staging": [
-          "annu-business"
+          "docs-annu-business"
         ],
         "production": [
-          "annu-business"
+          "docs-annu-business"
         ]
       }
     },
     "annuadvent-prod": {
       "hosting": {
         "staging": [
-          "annuadvent-prod"
+          "docs-annuadvent-prod"
         ],
         "production": [
-          "annuadvent-prod"
+          "docs-annuadvent-prod"
         ]
       }
     }

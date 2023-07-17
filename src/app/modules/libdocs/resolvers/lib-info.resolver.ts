@@ -27,7 +27,7 @@ export class LibInfoResolver {
       libInfo = libsInfo[libName];
     }
 
-    if (libInfo) {
+    if (libInfo && !libInfo.libAssetsInfo) {
       // Fetch all assets of the lib from the libs documentation.json
       libInfo.libAssetsInfo = await this.docsInfoService.getLibAssetsInfo(
         libName,
