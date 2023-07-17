@@ -1154,7 +1154,7 @@
     "injectables": [
         {
             "name": "HighlightService",
-            "id": "injectable-HighlightService-3997935f380f5f1ec3f0c109d000c216a6c934c6469f0a7486ca64142c1732663711cfcff27593d1782b271227c368f44e72da15b5cf15c69fd5ebe0421a67fe",
+            "id": "injectable-HighlightService-eaee6cf7e32dff15a921b9b6935ca3cbbc5f53a8b5ae594a623428facaa12fb6e91492d2a6e83858cca81daa663329c6bf808666a0a92d898ea81f46d8a9cbde",
             "file": "projects/ngx-common-ui/code-block/src/services/highlight.service.ts",
             "properties": [],
             "methods": [
@@ -1164,7 +1164,7 @@
                     "optional": false,
                     "returnType": "Array<SourceLanguage>",
                     "typeParameters": [],
-                    "line": 79,
+                    "line": 81,
                     "deprecated": false,
                     "deprecationMessage": "",
                     "modifierKind": [
@@ -1191,7 +1191,7 @@
                     "optional": false,
                     "returnType": "string",
                     "typeParameters": [],
-                    "line": 71,
+                    "line": 73,
                     "deprecated": false,
                     "deprecationMessage": "",
                     "modifierKind": [
@@ -1225,7 +1225,7 @@
                     "optional": false,
                     "returnType": "void",
                     "typeParameters": [],
-                    "line": 65,
+                    "line": 67,
                     "deprecated": false,
                     "deprecationMessage": "",
                     "modifierKind": [
@@ -1237,7 +1237,7 @@
             "deprecationMessage": "",
             "description": "",
             "rawdescription": "\n",
-            "sourceCode": "import { Inject, Injectable } from '@angular/core';\r\n\r\nimport { PLATFORM_ID } from '@angular/core';\r\nimport { isPlatformBrowser } from '@angular/common';\r\nimport { SOURCE_LANGUAGES } from '../constants/code-block.constants';\r\nimport { SourceLanguage } from '../interfaces/code-block.interface';\r\n\r\nimport 'prismjs';\r\n// import 'prismjs/plugins/toolbar/prism-toolbar';\r\n// import 'prismjs/plugins/copy-to-clipboard/prism-copy-to-clipboard';\r\nimport 'prismjs/plugins/line-numbers/prism-line-numbers';\r\n//Prism js loaded components. you can add more similarily.\r\n// NOTE: Do not change the order of import of prism components, it matters.\r\nimport 'prismjs/components/prism-markup';\r\nimport 'prismjs/components/prism-css';\r\nimport 'prismjs/components/prism-javascript';\r\nimport 'prismjs/components/prism-sql';\r\nimport 'prismjs/components/prism-actionscript';\r\nimport 'prismjs/components/prism-applescript';\r\nimport 'prismjs/components/prism-aspnet';\r\nimport 'prismjs/components/prism-bash';\r\nimport 'prismjs/components/prism-basic';\r\nimport 'prismjs/components/prism-c';\r\nimport 'prismjs/components/prism-csharp';\r\nimport 'prismjs/components/prism-cpp';\r\nimport 'prismjs/components/prism-coffeescript';\r\nimport 'prismjs/components/prism-clojure';\r\nimport 'prismjs/components/prism-d';\r\nimport 'prismjs/components/prism-dart';\r\nimport 'prismjs/components/prism-docker';\r\nimport 'prismjs/components/prism-git';\r\nimport 'prismjs/components/prism-graphql';\r\nimport 'prismjs/components/prism-haml';\r\nimport 'prismjs/components/prism-handlebars';\r\nimport 'prismjs/components/prism-http';\r\nimport 'prismjs/components/prism-java';\r\nimport 'prismjs/components/prism-json';\r\nimport 'prismjs/components/prism-kotlin';\r\nimport 'prismjs/components/prism-less';\r\nimport 'prismjs/components/prism-markdown';\r\nimport 'prismjs/components/prism-markup-templating';\r\nimport 'prismjs/components/prism-mel';\r\nimport 'prismjs/components/prism-objectivec';\r\nimport 'prismjs/components/prism-php';\r\nimport 'prismjs/components/prism-php-extras';\r\nimport 'prismjs/components/prism-plsql';\r\nimport 'prismjs/components/prism-python';\r\nimport 'prismjs/components/prism-jsx';\r\nimport 'prismjs/components/prism-tsx';\r\nimport 'prismjs/components/prism-sass';\r\nimport 'prismjs/components/prism-scss';\r\nimport 'prismjs/components/prism-scala';\r\nimport 'prismjs/components/prism-typescript';\r\nimport 'prismjs/components/prism-vbnet';\r\nimport 'prismjs/components/prism-visual-basic';\r\nimport 'prismjs/components/prism-yaml';\r\n\r\ndeclare var Prism: any;\r\n\r\n@Injectable()\r\nexport class HighlightService {\r\n\r\n  constructor(@Inject(PLATFORM_ID) private platformId: Object) {}\r\n\r\n  public highlightAll() {\r\n    if (isPlatformBrowser(this.platformId)) {\r\n      Prism.highlightAll();\r\n    }\r\n  }\r\n\r\n  public highlight(source: string, language = 'typescript'): string {\r\n    if (isPlatformBrowser(this.platformId) && source && language) {\r\n      return Prism.highlight(source, Prism.languages[language], language);\r\n    }\r\n\r\n    return source;\r\n  }\r\n\r\n  public getSourceLanguagesList(): Array<SourceLanguage> {\r\n    return [...(SOURCE_LANGUAGES.filter(lng=> lng.enabled === true))];\r\n  }\r\n}\r\n",
+            "sourceCode": "import { Inject, Injectable } from '@angular/core';\r\n\r\nimport { PLATFORM_ID } from '@angular/core';\r\nimport { isPlatformBrowser } from '@angular/common';\r\nimport { SOURCE_LANGUAGES } from '../constants/code-block.constants';\r\nimport { SourceLanguage } from '../interfaces/code-block.interface';\r\n\r\nimport 'prismjs';\r\n// import 'prismjs/plugins/toolbar/prism-toolbar';\r\n// import 'prismjs/plugins/copy-to-clipboard/prism-copy-to-clipboard';\r\nimport 'prismjs/plugins/line-numbers/prism-line-numbers';\r\n//Prism js loaded components. you can add more similarily.\r\n// NOTE: Do not change the order of import of prism components, it matters.\r\nimport 'prismjs/components/prism-markup';\r\nimport 'prismjs/components/prism-css';\r\nimport 'prismjs/components/prism-javascript';\r\nimport 'prismjs/components/prism-sql';\r\nimport 'prismjs/components/prism-actionscript';\r\nimport 'prismjs/components/prism-applescript';\r\nimport 'prismjs/components/prism-aspnet';\r\nimport 'prismjs/components/prism-bash';\r\nimport 'prismjs/components/prism-basic';\r\nimport 'prismjs/components/prism-c';\r\nimport 'prismjs/components/prism-csharp';\r\nimport 'prismjs/components/prism-cpp';\r\nimport 'prismjs/components/prism-coffeescript';\r\nimport 'prismjs/components/prism-clojure';\r\nimport 'prismjs/components/prism-d';\r\nimport 'prismjs/components/prism-dart';\r\nimport 'prismjs/components/prism-docker';\r\nimport 'prismjs/components/prism-git';\r\nimport 'prismjs/components/prism-graphql';\r\nimport 'prismjs/components/prism-haml';\r\nimport 'prismjs/components/prism-handlebars';\r\nimport 'prismjs/components/prism-http';\r\nimport 'prismjs/components/prism-java';\r\nimport 'prismjs/components/prism-json';\r\nimport 'prismjs/components/prism-kotlin';\r\nimport 'prismjs/components/prism-less';\r\nimport 'prismjs/components/prism-markdown';\r\nimport 'prismjs/components/prism-markup-templating';\r\nimport 'prismjs/components/prism-mel';\r\nimport 'prismjs/components/prism-objectivec';\r\nimport 'prismjs/components/prism-php';\r\nimport 'prismjs/components/prism-php-extras';\r\nimport 'prismjs/components/prism-plsql';\r\nimport 'prismjs/components/prism-python';\r\nimport 'prismjs/components/prism-jsx';\r\nimport 'prismjs/components/prism-tsx';\r\nimport 'prismjs/components/prism-sass';\r\nimport 'prismjs/components/prism-scss';\r\nimport 'prismjs/components/prism-scala';\r\nimport 'prismjs/components/prism-typescript';\r\nimport 'prismjs/components/prism-vbnet';\r\nimport 'prismjs/components/prism-visual-basic';\r\nimport 'prismjs/components/prism-yaml';\r\n\r\ndeclare var Prism: any;\r\n\r\n@Injectable({\r\n  providedIn: 'root'\r\n})\r\nexport class HighlightService {\r\n\r\n  constructor(@Inject(PLATFORM_ID) private platformId: Object) { }\r\n\r\n  public highlightAll() {\r\n    if (isPlatformBrowser(this.platformId)) {\r\n      Prism.highlightAll();\r\n    }\r\n  }\r\n\r\n  public highlight(source: string, language = 'typescript'): string {\r\n    if (isPlatformBrowser(this.platformId) && source && language) {\r\n      return Prism.highlight(source, Prism.languages[language], language);\r\n    }\r\n\r\n    return source;\r\n  }\r\n\r\n  public getSourceLanguagesList(): Array<SourceLanguage> {\r\n    return [...(SOURCE_LANGUAGES.filter(lng => lng.enabled === true))];\r\n  }\r\n}\r\n",
             "constructorObj": {
                 "name": "constructor",
                 "description": "",
@@ -1251,7 +1251,7 @@
                         "deprecationMessage": ""
                     }
                 ],
-                "line": 61,
+                "line": 63,
                 "jsdoctags": [
                     {
                         "name": "platformId",
@@ -2582,7 +2582,7 @@
         },
         {
             "name": "BreadcrumbComponent",
-            "id": "component-BreadcrumbComponent-ffce013af9d35b93f8dba65985d64c66c77d7763e1d0a79c430f4dba73c4df2bc12bb57f6c908f3ea49d723322c2a8dbd0cf79f53d23903c7d7f4b123d745c7f",
+            "id": "component-BreadcrumbComponent-7e7e52e848d7c34dcde7726703cb181145a7ff20d293b28bd2ff5082ef6ad771f20789dcdf145b12169d3840e27c6dad7e00489e1d0ca2260eabfcd2e09a1a95",
             "file": "projects/ngx-common-ui/breadcrumb/src/components/breadcrumb/breadcrumb.component.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -2613,7 +2613,41 @@
                     "line": 10
                 }
             ],
-            "methodsClass": [],
+            "methodsClass": [
+                {
+                    "name": "initBreadcrumb",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 20,
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "modifierKind": [
+                        121
+                    ]
+                },
+                {
+                    "name": "ngOnChanges",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 30,
+                    "deprecated": false,
+                    "deprecationMessage": ""
+                },
+                {
+                    "name": "ngOnInit",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 26,
+                    "deprecated": false,
+                    "deprecationMessage": ""
+                }
+            ],
             "deprecated": false,
             "deprecationMessage": "",
             "hostBindings": [],
@@ -2623,11 +2657,11 @@
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import { Component } from '@angular/core';\nimport { ActivatedRoute, Router } from '@angular/router';\n\n@Component({\n  selector: 'anu-breadcrumb',\n  templateUrl: './breadcrumb.component.html',\n  styleUrls: ['./breadcrumb.component.scss']\n})\nexport class BreadcrumbComponent {\n  urlSegments: Array<string> = [];\n\n  constructor(private route: ActivatedRoute, private router: Router) {\n    this.route.url.subscribe(() => {\n      let url = this.router.url;\n      url = url.substring(url.indexOf('?'));\n      this.urlSegments = url.split('/');\n    })\n  }\n}\n",
+            "sourceCode": "import { Component, OnChanges, OnInit, SimpleChanges } from '@angular/core';\nimport { NavigationEnd, Router } from '@angular/router';\n\n@Component({\n  selector: 'anu-breadcrumb',\n  templateUrl: './breadcrumb.component.html',\n  styleUrls: ['./breadcrumb.component.scss']\n})\nexport class BreadcrumbComponent implements OnInit, OnChanges {\n  urlSegments: Array<string> = [];\n\n  constructor(private router: Router) {\n    this.router.events.subscribe((event) => {\n      if (event instanceof NavigationEnd) {\n        this.initBreadcrumb();\n      }\n    })\n  }\n\n  private initBreadcrumb(): void {\n    let url = this.router.url;\n    url = url.substring(url.indexOf('?'));\n    this.urlSegments = url.split('/');\n  }\n\n  ngOnInit(): void {\n    this.initBreadcrumb();\n  }\n\n  ngOnChanges(): void {\n    this.initBreadcrumb();\n  }\n}\n",
             "assetsDirs": [],
             "styleUrlsData": [
                 {
-                    "data": "",
+                    "data": ":host {}\r\n",
                     "styleUrl": "./breadcrumb.component.scss"
                 }
             ],
@@ -2639,12 +2673,6 @@
                 "deprecationMessage": "",
                 "args": [
                     {
-                        "name": "route",
-                        "type": "ActivatedRoute",
-                        "deprecated": false,
-                        "deprecationMessage": ""
-                    },
-                    {
                         "name": "router",
                         "type": "Router",
                         "deprecated": false,
@@ -2653,15 +2681,6 @@
                 ],
                 "line": 10,
                 "jsdoctags": [
-                    {
-                        "name": "route",
-                        "type": "ActivatedRoute",
-                        "deprecated": false,
-                        "deprecationMessage": "",
-                        "tagName": {
-                            "text": "param"
-                        }
-                    },
                     {
                         "name": "router",
                         "type": "Router",
@@ -2673,7 +2692,11 @@
                     }
                 ]
             },
-            "templateData": "<a *ngFor=\"let seg of urlSegments\" [routerLink]=\"[]\">{{seg}}</a>\n"
+            "implements": [
+                "OnInit",
+                "OnChanges"
+            ],
+            "templateData": "<span class=\"breadcrumb__item\" *ngFor=\"let seg of urlSegments; let index = index\">\n    <span class=\"breadcrumb__separator\">/</span> <a class=\"breadcrumb__link spacing-around-horizontal-half\"\n        [routerLink]=\"urlSegments.slice(0, index + 1)\">{{index === 0 ? 'Home' : seg}}</a>\n</span>\n"
         },
         {
             "name": "CardBodyComponent",
@@ -8786,11 +8809,7 @@
                 },
                 {
                     "type": "declarations",
-                    "elements": [
-                        {
-                            "name": "BreadcrumbComponent"
-                        }
-                    ]
+                    "elements": []
                 },
                 {
                     "type": "imports",
@@ -8798,11 +8817,7 @@
                 },
                 {
                     "type": "exports",
-                    "elements": [
-                        {
-                            "name": "BreadcrumbComponent"
-                        }
-                    ]
+                    "elements": []
                 },
                 {
                     "type": "bootstrap",
@@ -9898,6 +9913,16 @@
                 "defaultValue": "{\r\n    projectionContent: 'Sample Aside Nav Item',\r\n    inputPropsValues: {}\r\n}"
             },
             {
+                "name": "BreadcrumbComponent",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/ngx-common-ui/breadcrumb/src/components/breadcrumb/breadcrumb.docs.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "any",
+                "defaultValue": "{\r\n    projectionContent: '',\r\n    inputPropsValues: {}\r\n}"
+            },
+            {
                 "name": "CARD_BODY",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
@@ -10744,6 +10769,18 @@
                     "deprecationMessage": "",
                     "type": "any",
                     "defaultValue": "{\r\n    projectionContent: 'Sample Aside Nav Item',\r\n    inputPropsValues: {}\r\n}"
+                }
+            ],
+            "projects/ngx-common-ui/breadcrumb/src/components/breadcrumb/breadcrumb.docs.ts": [
+                {
+                    "name": "BreadcrumbComponent",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/ngx-common-ui/breadcrumb/src/components/breadcrumb/breadcrumb.docs.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "any",
+                    "defaultValue": "{\r\n    projectionContent: '',\r\n    inputPropsValues: {}\r\n}"
                 }
             ],
             "projects/ngx-common-ui/card/src/components/card-body/card-body.docs.ts": [
@@ -11694,7 +11731,17 @@
                 "linktype": "component",
                 "name": "BreadcrumbComponent",
                 "coveragePercent": 0,
-                "coverageCount": "0/3",
+                "coverageCount": "0/6",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/ngx-common-ui/breadcrumb/src/components/breadcrumb/breadcrumb.docs.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "BreadcrumbComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
                 "status": "low"
             },
             {
