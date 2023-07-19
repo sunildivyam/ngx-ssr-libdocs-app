@@ -15,6 +15,10 @@ Client side only build is deployed to firebase. SSR build is not deployed to fir
  - Generates `app/constants/lib-components.constants.ts`, `app/constants/lib-components-data.constants.ts` and `app/constants/lib-services.constants.ts`
  - Run `npm run docs:imports:ngx-ssr-libdocs-app`
 
+### Generate sitemap.xml files for all environments.
+ - Generates `sitemap.xml` in each `sitemaps/[env-folder]`
+ - Run `npm run docs:sitemap:ngx-ssr-libdocs-app`
+
 ### Generates firebase build
 - Performs build and copy build files t firebase publish folder
 - Run `npm run firebase:build:ngx-ssr-libdocs-app:[development | staging | production]`
