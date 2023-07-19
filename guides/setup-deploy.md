@@ -4,6 +4,7 @@
 Client side only build is deployed to firebase. SSR build is not deployed to firebase. So following points to be noted:
 - No firebase function is used for SSR function.
 - `index.html` is generated from `angular.json` instead of `index.original.html`.
+- firebase staging config is used for production app, so that users can see working firebase services with dummy data.
 
 ## Steps:
 
