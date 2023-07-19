@@ -1,4 +1,4 @@
-<div class="flex-container primary-deep-light-bg spacing-half">
+<div class="flex-container primary-light-grad spacing-half">
     <h2>{{assetType?.toUpperCase()}}</h2>
 </div>
 
@@ -8,12 +8,12 @@
 <div class="flex-container spacing-around-vertical">
     <div class="row">
         <div *ngFor="let asset of assets" class="col-sm-12 col-md-4 col-lg-3 spacing-around-vertical">
-            <anu-card class="border-round">
+            <anu-card class="border-round shadow asset-type-info_thumbnail">
                 <anu-card-image>
                     <a [routerLink]="[asset.name]"><img src="assets/annu-advent-angular-asset.jpeg"
                             [alt]="asset.name" /></a>
                 </anu-card-image>
-                <anu-card-title class="shadow border-round spacing-horizontal">
+                <anu-card-title class="spacing-horizontal">
                     <strong><a [routerLink]="[asset.name]">{{asset.name}}</a></strong>
                 </anu-card-title>
             </anu-card>

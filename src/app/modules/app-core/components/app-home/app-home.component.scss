@@ -1,19 +1,24 @@
 @import 'mixins';
 
 :host {
-    #app-spinner {
-        bottom: auto;
-    }
+    width: 100%;
 
-    anu-theme-font-resizer {
-        transition: all 0.5s;
-        transform: scale(0.6);
-        position: absolute;
-        right: 0;
-        top: -0.5rem;
+    .image-container {
+        margin: calc(-1/2 * var(--anu-spacing));
 
-        &:hover {
-            transform: scale(1);
+        @include small {
+            overflow-y: hidden;
+            max-height: 10rem;
+        }
+
+        @include medium {
+            overflow-y: hidden;
+            max-height: 15rem;
+        }
+
+        @include large {
+            overflow-y: hidden;
+            max-height: 20rem;
         }
     }
 

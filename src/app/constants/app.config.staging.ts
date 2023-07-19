@@ -2,10 +2,15 @@ import { AppConfig } from '@annuadvent/ngx-core/app-config';
 
 export const appConfig: AppConfig = {
   name: 'Annu Business',
-  copyrightText: 'copyright©annu-business',
+  copyrightText: 'copyright©annu-business. All rights reserved.',
   themeName: 'armyGreen',
+  siteEmail: 'annuadvent@gmail.com',
+  adminEmail: 'sunil.divyam@gmail.com',
   apiBaseUrl: 'https://docs-annu-business.web.app',
   imagesSourceUrl: '/getImage?imageId=',
+  loginUrl: '/login',
+  logoutUrl: '/logout',
+  profileUrl: '/dashboard',
   defaultPageSize: 5,
   tNcUrl: '/tnc/terms-and-conditions',
   privacyPolicyUrl: '/tnc/privacy-policy',
@@ -15,9 +20,9 @@ export const appConfig: AppConfig = {
   metaInfo: {
     title: 'Annu Business',
     description:
-      'Annu Business Angular Components Libraries are Angular libraries, consisting of ngx-common-ui, ngx-tools, ngx-cms, and ngx-core, offers a comprehensive set of UI components, services, and firebase functionality for developing web applications. These libraries are designed to simplify the development process by providing reusable and customizable components, handy tools, and seamless integration with Firebase services. By using these Angular libraries together, developers can accelerate their application development process while maintaining consistency and adherence to best practices. The libraries provide a robust set of UI components, utility functions, content management tools, and Firebase integration, enabling developers to create powerful and feature-rich web applications with ease.',
+      'Annu Business Angular Components Libraries are Angular libraries, consisting of {{libNames}}, offers a comprehensive set of UI components, services, and firebase functionality for developing web applications. These libraries are designed to simplify the development process by providing reusable and customizable components, handy tools, and seamless integration with Firebase services. By using these Angular libraries together, developers can accelerate their application development process while maintaining consistency and adherence to best practices. The libraries provide a robust set of UI components, utility functions, content management tools, and Firebase integration, enabling developers to create powerful and feature-rich web applications with ease.',
     keywords:
-      'Angular libraries, ngx-common-ui, ngx-tools, ngx-cms, ngx-core, UI components, Services, Firebase integration, Angular development, Content Management System (CMS)',
+      'Angular libraries, UI components, Services, Firebase integration, Angular development, Content Management System (CMS)',
     robots: 'index, follow',
     'Content-Type': 'text/html; charset=utf-8',
     language: 'english',
@@ -28,7 +33,7 @@ export const appConfig: AppConfig = {
     'article:author': 'Annu Business',
     'article:section': 'technology',
     'article:tag':
-      'Angular libraries, ngx-common-ui, ngx-tools, ngx-cms, ngx-core, UI components, Services, Firebase integration, Angular development, Content Management System (CMS)',
+      'Angular libraries, UI components, Services, Firebase integration, Angular development, Content Management System (CMS)',
     image: '/assets/ngx-libs-annu-advent.jpeg',
     url: '',
     card: 'summary_large_image',

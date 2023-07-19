@@ -1,9 +1,8 @@
 import { Component } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { LibAssetTypeEnums, LibInfo } from '@annuadvent/ngx-lib-docs/docs-common';
-import { APP_STATE_KEYS, AppState, AppStateService } from '../../../app-core';
-import { MenuItem } from '@annuadvent/ngx-common-ui/menu';
 import { NavItem } from '@annuadvent/ngx-common-ui/aside-nav';
+import { LibdocsMetaService } from '../../services/libdocs-meta.service';
 
 @Component({
   selector: 'app-lib-info-page',
@@ -17,11 +16,13 @@ export class LibInfoPageComponent {
 
   constructor(
     public route: ActivatedRoute,
-    private appStateService: AppStateService,
+    private libdocsMetaService: LibdocsMetaService,
   ) {
     this.route.data.subscribe((data) => {
       this.libInfo = data.libInfo;
       this.asideNavItems = this.parseLibInfoToNavItems(this.libInfo);
+      // set page meta
+      this.libdocsMetaService.setLibInfoPageMeta(this.libInfo);
     });
   }
 

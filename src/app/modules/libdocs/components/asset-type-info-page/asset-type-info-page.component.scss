@@ -11,4 +11,12 @@
     anu-card:hover {
         background-color: var(--anu-primary-deep-light);
     }
+
+    .asset-type-info_thumbnail {
+        transition: all 0.3s;
+
+        &:hover {
+            box-shadow: none;
+        }
+    }
 }

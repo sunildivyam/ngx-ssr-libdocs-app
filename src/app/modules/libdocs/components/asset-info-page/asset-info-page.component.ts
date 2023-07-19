@@ -4,6 +4,7 @@ import { DocsData, LibAssetTypeEnums } from '@annuadvent/ngx-lib-docs/docs-commo
 import { libComponentData } from '../../../../constants/lib-components-data.constants';
 import { libComponentClasses } from '../../../../constants/lib-components.constants';
 import { libServiceClasses } from '../../../../constants/lib-services.constants';
+import { LibdocsMetaService } from '../../services/libdocs-meta.service';
 
 @Component({
   selector: 'app-asset-info-page',
@@ -20,12 +21,18 @@ export class AssetInfoPageComponent {
 
   constructor(
     private route: ActivatedRoute,
+    private libdocsMetaService: LibdocsMetaService,
   ) {
     this.route.data.subscribe((data: any) => {
       this.assetType = this.route.snapshot.params['assetType'];
+      const libName = this.route.parent.snapshot.params['libName'];
+      const libInfo = this.route.parent.snapshot.data['libInfo'];
       this.assetInfo = data?.assetInfo;
+
+      // sets page meta
+      this.libdocsMetaService.setAssetInfoPageMeta(libInfo, this.assetInfo)
+
       if (this.assetInfo) {
-        const libName = this.route.parent.snapshot.params['libName'];
         try {
           switch (this.assetType) {
             case this.assetTypes.components:

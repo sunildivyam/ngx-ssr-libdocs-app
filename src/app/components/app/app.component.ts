@@ -6,7 +6,7 @@ import { AppSpinnerService } from '../../modules/app-core/services/app-spinner.s
 import { AppStateService } from '../../modules/app-core/services/app-state.service';
 import { AppState } from '../../modules/app-core/interfaces/app-state.interface';
 import { AppConfigService, AppConfig } from '@annuadvent/ngx-core/app-config';
-import { LibsInfo } from '@annuadvent/ngx-lib-docs/docs-common';
+import { LibInfo, LibsInfo } from '@annuadvent/ngx-lib-docs/docs-common';
 import { APP_STATE_KEYS } from '../../modules/app-core';
 
 @Component({
@@ -21,6 +21,7 @@ export class AppComponent implements OnInit {
   isMainNavOpen: boolean = false;
   SpinnerMode = SpinnerMode;
   themeFontSizes: Array<string> = ['12px', '16px', '20px'];
+  libsInfoArr: Array<LibInfo> = [];
 
   constructor(
     private themeService: ThemeService,
@@ -31,6 +32,7 @@ export class AppComponent implements OnInit {
     this.appConfig = this.appConfigService.config;
 
     this.appStateService.appState.subscribe((appState: AppState) => {
+      this.libsInfoArr = Object.values(appState.libsInfo);
       this.mainMenuItems = this.getNavItems(appState.libsInfo);
       this.footerNavItems = this.getNavItems(appState.libsInfo);
     });

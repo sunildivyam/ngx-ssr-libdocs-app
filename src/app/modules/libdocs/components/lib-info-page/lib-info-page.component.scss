@@ -1,3 +1,5 @@
+@import 'mixins';
+
 :host {
     width: 100%;
 
@@ -24,5 +26,28 @@
 
     .back-btn {
         font-size: 1.5rem;
+    }
+
+    .image-container {
+
+        @include small {
+            max-height: 3rem;
+        }
+
+        @include medium {
+            max-height: 5rem;
+        }
+
+        @include large {
+            max-height: 10rem;
+        }
+
+        &.image-container-crop {
+            overflow-y: hidden;
+        }
+    }
+
+    .transparent-bg {
+        background-color: rgba(255, 255, 255, 0.8);
     }
 }
