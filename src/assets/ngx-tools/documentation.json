@@ -8106,7 +8106,204 @@
         }
     ],
     "guards": [],
-    "interceptors": [],
+    "interceptors": [
+        {
+            "name": "ApiInterceptor",
+            "id": "injectable-ApiInterceptor-67356fd676a624c9a3d57b52986f6df22b47ee1b5c3d3a699b521676ddec981ef44fe9745f335b51f85673eb50625c9fd72de5998f3933c32570119276b98afa",
+            "file": "projects/ngx-tools/fire-auth/src/interceptors/api.interceptor.ts",
+            "properties": [],
+            "methods": [
+                {
+                    "name": "intercept",
+                    "args": [
+                        {
+                            "name": "request",
+                            "type": "HttpRequest<>",
+                            "deprecated": false,
+                            "deprecationMessage": ""
+                        },
+                        {
+                            "name": "next",
+                            "type": "HttpHandler",
+                            "deprecated": false,
+                            "deprecationMessage": ""
+                        }
+                    ],
+                    "optional": false,
+                    "returnType": "Observable<HttpEvent<>>",
+                    "typeParameters": [],
+                    "line": 20,
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "jsdoctags": [
+                        {
+                            "name": "request",
+                            "type": "HttpRequest<>",
+                            "deprecated": false,
+                            "deprecationMessage": "",
+                            "tagName": {
+                                "text": "param"
+                            }
+                        },
+                        {
+                            "name": "next",
+                            "type": "HttpHandler",
+                            "deprecated": false,
+                            "deprecationMessage": "",
+                            "tagName": {
+                                "text": "param"
+                            }
+                        }
+                    ]
+                }
+            ],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "description": "",
+            "rawdescription": "\n",
+            "sourceCode": "import { Injectable } from '@angular/core';\r\nimport {\r\n  HttpRequest,\r\n  HttpHandler,\r\n  HttpEvent,\r\n  HttpInterceptor,\r\n} from '@angular/common/http';\r\nimport { from, Observable, switchMap } from 'rxjs';\r\nimport { AppConfigService } from '@annuadvent/ngx-core/app-config';\r\nimport { FireAuthService } from '../services/fire-auth.service';\r\nimport { FirebaseConfig } from '@annuadvent/ngx-tools/fire-common';\r\n\r\n@Injectable({\r\n  providedIn: 'root',\r\n})\r\nexport class ApiInterceptor implements HttpInterceptor {\r\n\r\n  constructor(private appConfigService: AppConfigService, private fireAuthService: FireAuthService) { }\r\n\r\n  intercept(request: HttpRequest<unknown>, next: HttpHandler): Observable<HttpEvent<unknown>> {\r\n    if (request.url.includes(`/api/`)) {\r\n      const apiKey = (this.appConfigService.firebase as FirebaseConfig)?.app?.apiKey;\r\n      let clonedRequest = request.clone({\r\n        setParams: { key: apiKey }\r\n      });\r\n      if (this.fireAuthService.getCurrentUserId()) {\r\n        return from(this.fireAuthService.getAccessToken()).pipe(\r\n          switchMap(token => {\r\n            if (token) {\r\n              clonedRequest = clonedRequest.clone({ setHeaders: { Authorization: `Bearer ${token}` } });\r\n            }\r\n\r\n            return next.handle(clonedRequest);\r\n          })\r\n        )\r\n      } else {\r\n        return next.handle(clonedRequest);\r\n      }\r\n\r\n    } else {\r\n      return next.handle(request);\r\n    }\r\n  }\r\n}\r\n",
+            "constructorObj": {
+                "name": "constructor",
+                "description": "",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "args": [
+                    {
+                        "name": "appConfigService",
+                        "type": "AppConfigService",
+                        "deprecated": false,
+                        "deprecationMessage": ""
+                    },
+                    {
+                        "name": "fireAuthService",
+                        "type": "FireAuthService",
+                        "deprecated": false,
+                        "deprecationMessage": ""
+                    }
+                ],
+                "line": 16,
+                "jsdoctags": [
+                    {
+                        "name": "appConfigService",
+                        "type": "AppConfigService",
+                        "deprecated": false,
+                        "deprecationMessage": "",
+                        "tagName": {
+                            "text": "param"
+                        }
+                    },
+                    {
+                        "name": "fireAuthService",
+                        "type": "FireAuthService",
+                        "deprecated": false,
+                        "deprecationMessage": "",
+                        "tagName": {
+                            "text": "param"
+                        }
+                    }
+                ]
+            },
+            "type": "interceptor"
+        },
+        {
+            "name": "FirebaseInterceptor",
+            "id": "injectable-FirebaseInterceptor-6fdf2a649759223b31ce71cb3747c43be98dcaac4bef1a98649e537e447e85a682ce1e288b6077eb7cc94d95f4abc99707908783be98976752b57af6ed88084d",
+            "file": "projects/ngx-tools/fire-auth/src/interceptors/firebase.interceptor.ts",
+            "properties": [],
+            "methods": [
+                {
+                    "name": "intercept",
+                    "args": [
+                        {
+                            "name": "request",
+                            "type": "HttpRequest<>",
+                            "deprecated": false,
+                            "deprecationMessage": ""
+                        },
+                        {
+                            "name": "next",
+                            "type": "HttpHandler",
+                            "deprecated": false,
+                            "deprecationMessage": ""
+                        }
+                    ],
+                    "optional": false,
+                    "returnType": "Observable<HttpEvent<>>",
+                    "typeParameters": [],
+                    "line": 21,
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "jsdoctags": [
+                        {
+                            "name": "request",
+                            "type": "HttpRequest<>",
+                            "deprecated": false,
+                            "deprecationMessage": "",
+                            "tagName": {
+                                "text": "param"
+                            }
+                        },
+                        {
+                            "name": "next",
+                            "type": "HttpHandler",
+                            "deprecated": false,
+                            "deprecationMessage": "",
+                            "tagName": {
+                                "text": "param"
+                            }
+                        }
+                    ]
+                }
+            ],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "description": "",
+            "rawdescription": "\n",
+            "sourceCode": "import { Injectable } from '@angular/core';\r\nimport {\r\n  HttpRequest,\r\n  HttpHandler,\r\n  HttpEvent,\r\n  HttpInterceptor,\r\n  HttpHeaders\r\n} from '@angular/common/http';\r\nimport { from, last, map, Observable, switchMap } from 'rxjs';\r\nimport { AppConfigService } from '@annuadvent/ngx-core/app-config';\r\nimport { FireAuthService } from '../services/fire-auth.service';\r\nimport { FirebaseConfig } from '@annuadvent/ngx-tools/fire-common';\r\n\r\n@Injectable({\r\n  providedIn: 'root',\r\n})\r\nexport class FirebaseInterceptor implements HttpInterceptor {\r\n\r\n  constructor(private appConfigService: AppConfigService, private fireAuthService: FireAuthService) { }\r\n\r\n  intercept(request: HttpRequest<unknown>, next: HttpHandler): Observable<HttpEvent<unknown>> {\r\n    // intercepts both firebase store and firebase storage http requests.\r\n    const fireStoreApiUrl = (this.appConfigService.firebase as FirebaseConfig)?.store?.firestoreBaseApiUrl;\r\n    const fireStorageApiUrl = (this.appConfigService.firebase as FirebaseConfig)?.storage?.fireStorageBaseApiUrl;\r\n\r\n    if (request.url.includes(fireStoreApiUrl) || request.url.includes(fireStorageApiUrl)) {\r\n      const apiKey = (this.appConfigService.firebase as FirebaseConfig)?.app.apiKey;\r\n\r\n      let clonedRequest = request.clone({\r\n        setParams: { key: apiKey }\r\n      });\r\n      if (this.fireAuthService.getCurrentUserId()) {\r\n        return from(this.fireAuthService.getAccessToken()).pipe(\r\n          switchMap(token => {\r\n            if (token) {\r\n              clonedRequest = clonedRequest.clone({ setHeaders: { Authorization: `Bearer ${token}` } });\r\n            }\r\n\r\n            return next.handle(clonedRequest);\r\n          })\r\n        )\r\n      } else {\r\n        return next.handle(clonedRequest);\r\n      }\r\n\r\n    } else {\r\n      return next.handle(request);\r\n    }\r\n  }\r\n}\r\n",
+            "constructorObj": {
+                "name": "constructor",
+                "description": "",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "args": [
+                    {
+                        "name": "appConfigService",
+                        "type": "AppConfigService",
+                        "deprecated": false,
+                        "deprecationMessage": ""
+                    },
+                    {
+                        "name": "fireAuthService",
+                        "type": "FireAuthService",
+                        "deprecated": false,
+                        "deprecationMessage": ""
+                    }
+                ],
+                "line": 17,
+                "jsdoctags": [
+                    {
+                        "name": "appConfigService",
+                        "type": "AppConfigService",
+                        "deprecated": false,
+                        "deprecationMessage": "",
+                        "tagName": {
+                            "text": "param"
+                        }
+                    },
+                    {
+                        "name": "fireAuthService",
+                        "type": "FireAuthService",
+                        "deprecated": false,
+                        "deprecationMessage": "",
+                        "tagName": {
+                            "text": "param"
+                        }
+                    }
+                ]
+            },
+            "type": "interceptor"
+        }
+    ],
     "classes": [
         {
             "name": "FirebaseConfig",
@@ -11096,6 +11293,24 @@
                 "name": "RoleTeacherGuard",
                 "coveragePercent": 0,
                 "coverageCount": "0/5",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/ngx-tools/fire-auth/src/interceptors/api.interceptor.ts",
+                "type": "interceptor",
+                "linktype": "interceptor",
+                "name": "ApiInterceptor",
+                "coveragePercent": 0,
+                "coverageCount": "0/3",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/ngx-tools/fire-auth/src/interceptors/firebase.interceptor.ts",
+                "type": "interceptor",
+                "linktype": "interceptor",
+                "name": "FirebaseInterceptor",
+                "coveragePercent": 0,
+                "coverageCount": "0/3",
                 "status": "low"
             },
             {
