@@ -2,44 +2,74 @@
   <anu-spinner id="app-spinner" [fullscreen]="true" [show]="appSpinner.isLoading" [mode]="SpinnerMode.Progress"
     size="md"></anu-spinner>
   <!-- App Header -->
-  <anu-menu class="flex-container primary-normal-bg center" [items]="mainMenuItems"
-    [logoUrl]="'/assets/annu-advent-logo.png'" [heading]="appConfig.metaInfo.title || ''"
-    (openStatusChanged)="mainMenuOpenStatusChanged($event)" [opened]="isMainNavOpen" [headingHref]="['./']">
-    <anu-login-status (profileClicked)="loginStatusClicked()" (signOutClicked)="loginStatusClicked()"
-      (signInClicked)="loginStatusClicked()" [loginPageUrl]="appConfig.loginUrl || ''"
-      [profilePageUrl]="appConfig.profileUrl || ''" [loggedOutPageUrl]="appConfig.logoutUrl || ''">
-    </anu-login-status>
+  <anu-menu class="flex-container primary-deep-dark-grad center" [items]="mainMenuItems"
+    [subHeading]="appConfig?.metaInfo?.title || ''" [logoUrl]="'/assets/annu-advent-logo.png'"
+    [heading]="appConfig?.name || ''" (openStatusChanged)="mainMenuOpenStatusChanged($event)" [opened]="isMainNavOpen"
+    [headingHref]="['./']">
   </anu-menu>
   <div class="flex-container center">
-    <anu-theme-font-resizer class="row right" [fontSizes]="themeFontSizes"></anu-theme-font-resizer>
+    <div class="row relative stretch">
+      <div class="col-12">
+        <anu-breadcrumb></anu-breadcrumb>
+      </div>
+      <anu-theme-font-resizer [fontSizes]="themeFontSizes"></anu-theme-font-resizer>
+    </div>
   </div>
+
+  <!-- App slideshow -->
+  <div class="flex-container spacing-around-vertical primary-lightest-grad">
+    <anu-slideshow class="container">
+      <anu-card class="slidehow_item border border-round spacing-around" [isRowLayout]="true"
+        [imageCssClasses]="['col-sm-4', 'col-md-4', 'col-lg-4']"
+        [contentCssClasses]="['col-sm-8', 'col-md-8', 'col-lg-8']" *ngFor="let libInfo of libsInfoArr">
+        <anu-card-image>
+          <a [routerLink]="['libs', libInfo?.name]">
+            <img class="border-round" [src]="'assets/'+ libInfo?.name + '.jpeg'" [alt]="libInfo?.name" />
+          </a>
+        </anu-card-image>
+        <anu-card-title class="">
+          <h3><a [routerLink]="['libs', libInfo?.name]">{{libInfo?.fullName}}</a></h3>
+        </anu-card-title>
+        <anu-card-body>
+          <span>Version: {{libInfo?.version}}</span>
+        </anu-card-body>
+        <anu-card-footer class="">
+          <div class="row right">
+            <a [routerLink]="['libs', libInfo?.name]">{{libInfo?.name}} Full documentation</a>.
+          </div>
+        </anu-card-footer>
+      </anu-card>
+
+    </anu-slideshow>
+  </div>
+
   <!-- App Content -->
   <div class="container center left" role="main">
     <router-outlet></router-outlet>
   </div>
 
   <!-- App Footer -->
-  <div class="flex-container primary-lightest-bg center">
+  <div class="flex-container primary-lightest-grad center">
     <footer class="container spacing-vertical">
-      <anu-footer-nav class="primary-lightest-bg" [copyrightText]="appConfig.copyrightText" [items]="footerNavItems">
+      <anu-footer-nav class="primary-lightest-grad" [copyrightText]="appConfig.copyrightText" [items]="footerNavItems">
       </anu-footer-nav>
 
       <div class="row">
-        <div class="col-sm-12 col-md-4 col-lg-4 shadow hidden">
+        <div class="col-sm-12 col-md-4 col-lg-4 hidden">
           <div class="container center">
             <h3>SHARE</h3>
             <!-- TODO: Add Share social media component -->
           </div>
         </div>
 
-        <div class="col-sm-12 col-md-4 col-lg-4 shadow">
+        <div class="col-sm-12 col-md-4 col-lg-4">
           <div class="container center">
             <a [routerLink]="appConfig?.aboutUsUrl">About us</a>
             <a [routerLink]="appConfig?.contactUsUrl">Contact us</a>
           </div>
         </div>
         <!-- Terms and condition links -->
-        <div class="col-sm-12 col-md-4 col-lg-4 shadow">
+        <div class="col-sm-12 col-md-4 col-lg-4">
           <small class="container center">
             <a [routerLink]="appConfig?.tNcUrl">Terms and conditions</a>
             <a [routerLink]="appConfig?.privacyPolicyUrl">Privacy policy</a>

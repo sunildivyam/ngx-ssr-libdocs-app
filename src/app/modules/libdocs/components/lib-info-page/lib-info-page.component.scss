@@ -1,0 +1,53 @@
+@import 'mixins';
+
+:host {
+    width: 100%;
+
+    anu-card,
+    anu-card-title,
+    anu-card-body,
+    anu-card-footer {
+        overflow-x: auto;
+    }
+
+    h1 {
+        font-size: 1.8rem;
+    }
+
+    anu-aside-nav {
+        position: absolute;
+        left: -0.5rem;
+        top: 0;
+    }
+
+    .aside-nav-container {
+        padding-left: 3rem;
+    }
+
+    .back-btn {
+        font-size: 1.5rem;
+    }
+
+    .image-container {
+
+        @include small {
+            max-height: 3rem;
+        }
+
+        @include medium {
+            max-height: 5rem;
+        }
+
+        @include large {
+            max-height: 10rem;
+        }
+
+        &.image-container-crop {
+            overflow-y: hidden;
+        }
+    }
+
+    .transparent-bg {
+        background-color: rgba(255, 255, 255, 0.8);
+    }
+}

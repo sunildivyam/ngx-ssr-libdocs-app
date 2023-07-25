@@ -1,15 +1,36 @@
-import { Route, Routes } from '@angular/router';
-import { LoginComponent } from '../modules/app-core';
+import { Routes } from '@angular/router';
+import {
+    ContactUsComponent,
+    AboutUsComponent,
+    PrivacyComponent,
+    TermsAndConditionsComponent,
+    AppHomeComponent,
+} from '../modules/app-core';
 
 export const routes: Routes = [
     {
-        path: 'login',
-        component: LoginComponent,
-        data: { title: 'Sign In' },
+        path: '',
+        component: AppHomeComponent,
     },
     {
-        path: 'dashboard',
-        loadChildren: () => import('../modules/dashboard').then(m => m.DashboardModule),
+        path: 'about-us',
+        component: AboutUsComponent,
+    },
+    {
+        path: 'contact-us',
+        component: ContactUsComponent,
+    },
+    {
+        path: 'tnc/terms-and-conditions',
+        component: TermsAndConditionsComponent,
+    },
+    {
+        path: 'tnc/privacy-policy',
+        component: PrivacyComponent,
+    },
+    {
+        path: 'libs',
+        loadChildren: () => import('../modules/libdocs/libdocs.module').then(m => m.LibdocsModule),
     },
     {
         path: '**',

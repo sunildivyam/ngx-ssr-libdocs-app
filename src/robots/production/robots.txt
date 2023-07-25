@@ -1,4 +1,4 @@
 User-agent: *
-Sitemap: https://www.annuadvent.com/sitemap.xml
+Sitemap: https://ngx-libs.annuadvent.com/sitemap.xml
 Allow: *
 Disallow: /dashboard/**/*

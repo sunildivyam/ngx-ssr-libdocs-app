@@ -4,7 +4,7 @@ import {
   FireStoreConfig,
   FirebaseConfig,
 } from '@annuadvent/ngx-tools/fire-common';
-import { appConfig } from './app.config.development';
+import { appConfig } from './app.config.production';
 import { FIREBASE_AUTH_SIGNIN_METHODS } from '@annuadvent/ngx-tools/fire-auth';
 
 const ui = {
@@ -61,19 +61,19 @@ const ui = {
 };
 
 const app: FireAppConfig = {
-  apiKey: '',
-  authDomain: 'annuadvent-prod.firebaseapp.com',
-  projectId: 'annuadvent-prod',
+  projectId: 'annu-business',
+  appId: '1:140977750488:web:870df7cc0848f6274ab2ad',
+  storageBucket: 'annu-business.appspot.com',
   locationId: 'us-central',
-  storageBucket: 'annuadvent-prod.appspot.com',
-  messagingSenderId: '354458643335',
-  appId: '1:354458643335:web:37b32c501e514509598122',
-  measurementId: 'G-RKZTBE5D10',
+  apiKey: '',
+  authDomain: 'annu-business.firebaseapp.com',
+  messagingSenderId: '140977750488',
+  measurementId: 'G-36J6R2BDWD',
 };
 
 const storage: FireStorageConfig = {
-  baseStoreUrl: 'annuadvent-prod/articles',
-  fireStorageBaseApiUrl: 'https://firebasestorage.googleapis.com/v0/b/annuadvent-prod.appspot.com/o',
+  baseStoreUrl: 'annu-business/articles',
+  fireStorageBaseApiUrl: 'https://firebasestorage.googleapis.com/v0/b/annu-business.appspot.com/o',
   imageDimensions: {
     maxKBs: 1024,
     maxWidth: 900,
@@ -84,7 +84,7 @@ const storage: FireStorageConfig = {
 };
 
 const store: FireStoreConfig = {
-  firestoreBaseApiUrl: 'https://firestore.googleapis.com/v1/projects/annuadvent-prod/databases/(default)/documents',
+  firestoreBaseApiUrl: 'https://firestore.googleapis.com/v1/projects/annu-business/databases/(default)/documents',
 };
 
 export const firebaseConfig: FirebaseConfig = {

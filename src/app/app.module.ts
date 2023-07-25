@@ -3,7 +3,7 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './components/app/app.component';
-import { FireAuthModule } from '@annuadvent/ngx-tools/fire-auth';
+import { ApiInterceptor, FireAuthModule, FirebaseInterceptor } from '@annuadvent/ngx-tools/fire-auth';
 import { AppCoreModule, AppStateService, appInit } from './modules/app-core';
 import { AppConfigModule, AppConfigService } from '@annuadvent/ngx-core/app-config';
 import { UtilsModule } from '@annuadvent/ngx-core/utils';
@@ -13,6 +13,11 @@ import { ThemeModule } from '@annuadvent/ngx-common-ui/theme';
 import { MenuModule } from '@annuadvent/ngx-common-ui/menu';
 import { FooterNavModule } from '@annuadvent/ngx-common-ui/footer-nav';
 import { ThemeFontResizerModule } from '@annuadvent/ngx-common-ui/theme-font-resizer';
+import { DocsCommonModule } from '@annuadvent/ngx-lib-docs/docs-common';
+import { BreadcrumbModule } from '@annuadvent/ngx-common-ui/breadcrumb';
+import { SlideshowModule } from '@annuadvent/ngx-common-ui/slideshow';
+import { CardModule } from '@annuadvent/ngx-common-ui/card';
+import { HTTP_INTERCEPTORS } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -30,6 +35,10 @@ import { ThemeFontResizerModule } from '@annuadvent/ngx-common-ui/theme-font-res
     FireAuthModule,
     UtilsModule,
     AppConfigModule,
+    DocsCommonModule,
+    BreadcrumbModule,
+    CardModule,
+    SlideshowModule,
   ],
   providers: [
     {
@@ -41,7 +50,17 @@ import { ThemeFontResizerModule } from '@annuadvent/ngx-common-ui/theme-font-res
         AppConfigService,
         FireCommonService,
       ],
-    }
+    },
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: FirebaseInterceptor,
+      multi: true,
+    },
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: ApiInterceptor,
+      multi: true,
+    },
   ],
   bootstrap: [AppComponent]
 })

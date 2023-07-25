@@ -6,6 +6,8 @@ import { AppSpinnerService } from '../../modules/app-core/services/app-spinner.s
 import { AppStateService } from '../../modules/app-core/services/app-state.service';
 import { AppState } from '../../modules/app-core/interfaces/app-state.interface';
 import { AppConfigService, AppConfig } from '@annuadvent/ngx-core/app-config';
+import { LibInfo, LibsInfo } from '@annuadvent/ngx-lib-docs/docs-common';
+import { APP_STATE_KEYS } from '../../modules/app-core';
 
 @Component({
   selector: 'app-root',
@@ -19,6 +21,7 @@ export class AppComponent implements OnInit {
   isMainNavOpen: boolean = false;
   SpinnerMode = SpinnerMode;
   themeFontSizes: Array<string> = ['12px', '16px', '20px'];
+  libsInfoArr: Array<LibInfo> = [];
 
   constructor(
     private themeService: ThemeService,
@@ -29,10 +32,23 @@ export class AppComponent implements OnInit {
     this.appConfig = this.appConfigService.config;
 
     this.appStateService.appState.subscribe((appState: AppState) => {
-      this.mainMenuItems = appState.mainNavItems as Array<MenuItem>;
-      this.footerNavItems = appState.mainNavItems as Array<MenuItem>;
+      this.libsInfoArr = Object.values(appState.libsInfo);
+      this.mainMenuItems = this.getNavItems(appState.libsInfo);
+      this.footerNavItems = this.getNavItems(appState.libsInfo);
     });
   }
+
+
+  public getNavItems(libsInfo: LibsInfo): Array<MenuItem> {
+    if (!libsInfo) return [];
+    let menuItems = Object.keys(libsInfo).map(libName => ({
+      href: ['libs', libName],
+      title: libName,
+    } as MenuItem));
+
+    return menuItems && menuItems.length ? menuItems : this.appConfigService.config.mainMenuItems;
+  }
+
 
   async ngOnInit(): Promise<void> {
     this.themeService.setTheme(this.appConfig.themeName, true);
@@ -44,5 +60,9 @@ export class AppComponent implements OnInit {
 
   public mainMenuOpenStatusChanged(opened: boolean): void {
     this.isMainNavOpen = opened;
+  }
+
+  public updateNavs(): void {
+    this.appStateService.updateState(APP_STATE_KEYS.libsInfo, null);
   }
 }
