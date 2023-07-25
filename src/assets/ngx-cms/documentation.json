@@ -3,12 +3,12 @@
     "interfaces": [
         {
             "name": "Article",
-            "id": "interface-Article-b7339487a6b5b330625fd4a8c2f6eccaf6593283219887e2764842bc82bace1e388bcc4f21ba0bac8228465c46fe6ae8df127d9d1b87b73f75669aef4b801d80",
+            "id": "interface-Article-0362cb6d1e18517b3631a2a5f313c37a2893fc7bae2aa6e5817c7db355a6d669b73bd72bf2899d24f01ee75de91e689161f944631df38faa167d73a7276e9190",
             "file": "projects/ngx-cms/article/src/interfaces/article.interface.ts",
             "deprecated": false,
             "deprecationMessage": "",
             "type": "interface",
-            "sourceCode": "import { EditorElement } from '@annuadvent/ngx-cms/content-editor';\r\nimport { ImageInfo } from '@annuadvent/ngx-common-ui/image-form';\r\nimport { MetaInfo } from '@annuadvent/ngx-common-ui/meta';\r\nimport { Category } from '@annuadvent/ngx-cms/category';\r\n\r\nexport interface Article {\r\n  id?: string; // dash separated article id, that can be used as router path.has to be unique, based on article title.\r\n  metaInfo?: MetaInfo; // This info will be used for SEO for the page., title, description, keywords etc.\r\n  image?: ImageInfo; // Thumbnail Image src\r\n  body?: EditorElement;\r\n  categories?: Array<string>;\r\n  categoriesGroup?: Array<Category>;\r\n  created?: string;\r\n  updated?: string;\r\n  userId?: string; // User Id from Users\r\n  isLive?: boolean; // true if published and live to web.\r\n  inReview?: boolean; // true if the article is up for review, if true, then isLive must be false\r\n  features?: Array<string | ArticleFeatures>;\r\n}\r\n\r\nexport enum ArticleFeatures {\r\n  featured = 'featured',\r\n  primaryNavigation = 'primary-navigation',\r\n  footerNavigation = 'footer-navigation',\r\n  primeShow = 'prime-show',\r\n  footerShow = 'footer-show',\r\n  primeShowAside = 'prime-show-aside',\r\n  inReview = 'in-review',\r\n  tnc = 'tnc',\r\n  privacy = 'privacy',\r\n  helpDocs = 'help-docs',\r\n  helpDocsAuthor = 'help-docs-author',\r\n  helpDocsAdmin = 'help-docs-admin',\r\n}\r\n",
+            "sourceCode": "import { EditorElement } from '@annuadvent/ngx-cms/content-editor';\r\nimport { ImageInfo } from '@annuadvent/ngx-common-ui/image-form';\r\nimport { MetaInfo } from '@annuadvent/ngx-common-ui/meta';\r\nimport { Category } from '@annuadvent/ngx-cms/category';\r\n\r\nexport interface Article {\r\n  id?: string; // dash separated article id, that can be used as router path.has to be unique, based on article title.\r\n  metaInfo?: MetaInfo; // This info will be used for SEO for the page., title, description, keywords etc.\r\n  image?: ImageInfo; // Thumbnail Image src\r\n  body?: EditorElement;\r\n  categories?: Array<string>;\r\n  categoriesGroup?: Array<Category>;\r\n  created?: string;\r\n  updated?: string;\r\n  userId?: string; // User Id from Users\r\n  isLive?: boolean; // true if published and live to web.\r\n  inReview?: boolean; // true if the article is up for review, if true, then isLive must be false\r\n  features?: Array<string | ArticleFeatures>;\r\n}\r\n\r\nexport enum ArticleFeatures {\r\n  featured = 'featured',\r\n  primaryNavigation = 'primary-navigation',\r\n  footerNavigation = 'footer-navigation',\r\n  primeShow = 'prime-show',\r\n  footerShow = 'footer-show',\r\n  primeShowAside = 'prime-show-aside',\r\n  mainShow = 'main-show',\r\n  inReview = 'in-review',\r\n  tnc = 'tnc',\r\n  privacy = 'privacy',\r\n  helpDocs = 'help-docs',\r\n  helpDocsAuthor = 'help-docs-author',\r\n  helpDocsAdmin = 'help-docs-admin',\r\n}\r\n",
             "properties": [
                 {
                     "name": "body",
@@ -594,7 +594,7 @@
     "injectables": [
         {
             "name": "ArticleEditorService",
-            "id": "injectable-ArticleEditorService-fb7db69aa9f171cd57d6d59d3d84e390c8347ca4cd92ffeececfd423b5e0563b3e9c542c079a10502092ffa4803e900c8eeec4a0adc77cf9481c7231e87ac877",
+            "id": "injectable-ArticleEditorService-3ad5020a1c955bdc4550ad724f8cd5b4c9e45f0c5696ad7b35558143bac07900b8ea351fe889be30650b658e37f3f42b9db35e4d19d466f4be97dd90d26fbfa9",
             "file": "projects/ngx-cms/article-editor/src/services/article-editor.service.ts",
             "properties": [
                 {
@@ -628,7 +628,7 @@
                     "optional": false,
                     "returnType": "EditorElement",
                     "typeParameters": [],
-                    "line": 313,
+                    "line": 311,
                     "deprecated": false,
                     "deprecationMessage": "",
                     "modifierKind": [
@@ -674,7 +674,7 @@
                     "optional": false,
                     "returnType": "EditorElement",
                     "typeParameters": [],
-                    "line": 329,
+                    "line": 327,
                     "deprecated": false,
                     "deprecationMessage": "",
                     "rawdescription": "\n\nCleans Open ai language keywords and tags with \\n only.\n\n",
@@ -685,8 +685,8 @@
                     "jsdoctags": [
                         {
                             "name": {
-                                "pos": 10411,
-                                "end": 10417,
+                                "pos": 10300,
+                                "end": 10306,
                                 "flags": 8421376,
                                 "modifierFlagsCache": 0,
                                 "transformFlags": 0,
@@ -697,8 +697,8 @@
                             "deprecated": false,
                             "deprecationMessage": "",
                             "tagName": {
-                                "pos": 10389,
-                                "end": 10394,
+                                "pos": 10278,
+                                "end": 10283,
                                 "flags": 8421376,
                                 "modifierFlagsCache": 0,
                                 "transformFlags": 0,
@@ -707,22 +707,22 @@
                             },
                             "comment": "",
                             "typeExpression": {
-                                "pos": 10395,
-                                "end": 10410,
+                                "pos": 10284,
+                                "end": 10299,
                                 "flags": 8421376,
                                 "modifierFlagsCache": 0,
                                 "transformFlags": 0,
                                 "kind": 312,
                                 "type": {
-                                    "pos": 10396,
-                                    "end": 10409,
+                                    "pos": 10285,
+                                    "end": 10298,
                                     "flags": 8388608,
                                     "modifierFlagsCache": 0,
                                     "transformFlags": 1,
                                     "kind": 180,
                                     "typeName": {
-                                        "pos": 10396,
-                                        "end": 10409,
+                                        "pos": 10285,
+                                        "end": 10298,
                                         "flags": 8388608,
                                         "modifierFlagsCache": 0,
                                         "transformFlags": 0,
@@ -734,8 +734,8 @@
                         },
                         {
                             "name": {
-                                "pos": 10447,
-                                "end": 10454,
+                                "pos": 10336,
+                                "end": 10343,
                                 "flags": 8421376,
                                 "modifierFlagsCache": 0,
                                 "transformFlags": 0,
@@ -746,8 +746,8 @@
                             "deprecated": false,
                             "deprecationMessage": "",
                             "tagName": {
-                                "pos": 10425,
-                                "end": 10430,
+                                "pos": 10314,
+                                "end": 10319,
                                 "flags": 8421376,
                                 "modifierFlagsCache": 0,
                                 "transformFlags": 0,
@@ -756,22 +756,22 @@
                             },
                             "comment": "",
                             "typeExpression": {
-                                "pos": 10431,
-                                "end": 10446,
+                                "pos": 10320,
+                                "end": 10335,
                                 "flags": 8421376,
                                 "modifierFlagsCache": 0,
                                 "transformFlags": 0,
                                 "kind": 312,
                                 "type": {
-                                    "pos": 10432,
-                                    "end": 10445,
+                                    "pos": 10321,
+                                    "end": 10334,
                                     "flags": 8388608,
                                     "modifierFlagsCache": 0,
                                     "transformFlags": 1,
                                     "kind": 180,
                                     "typeName": {
-                                        "pos": 10432,
-                                        "end": 10437,
+                                        "pos": 10321,
+                                        "end": 10326,
                                         "flags": 8388608,
                                         "modifierFlagsCache": 0,
                                         "transformFlags": 0,
@@ -780,8 +780,8 @@
                                     },
                                     "typeArguments": [
                                         {
-                                            "pos": 10438,
-                                            "end": 10444,
+                                            "pos": 10327,
+                                            "end": 10333,
                                             "flags": 8388608,
                                             "modifierFlagsCache": 0,
                                             "transformFlags": 1,
@@ -793,8 +793,8 @@
                         },
                         {
                             "tagName": {
-                                "pos": 10462,
-                                "end": 10469,
+                                "pos": 10351,
+                                "end": 10358,
                                 "flags": 8421376,
                                 "modifierFlagsCache": 0,
                                 "transformFlags": 0,
@@ -865,7 +865,7 @@
                     "optional": false,
                     "returnType": "EditorElement",
                     "typeParameters": [],
-                    "line": 362,
+                    "line": 360,
                     "deprecated": false,
                     "deprecationMessage": "",
                     "rawdescription": "\n\nFormats LI items those having an heading within, as strong.\n\n",
@@ -876,8 +876,8 @@
                     "jsdoctags": [
                         {
                             "name": {
-                                "pos": 11357,
-                                "end": 11359,
+                                "pos": 11246,
+                                "end": 11248,
                                 "flags": 8421376,
                                 "modifierFlagsCache": 0,
                                 "transformFlags": 0,
@@ -888,8 +888,8 @@
                             "deprecated": false,
                             "deprecationMessage": "",
                             "tagName": {
-                                "pos": 11335,
-                                "end": 11340,
+                                "pos": 11224,
+                                "end": 11229,
                                 "flags": 8421376,
                                 "modifierFlagsCache": 0,
                                 "transformFlags": 0,
@@ -898,22 +898,22 @@
                             },
                             "comment": "",
                             "typeExpression": {
-                                "pos": 11341,
-                                "end": 11356,
+                                "pos": 11230,
+                                "end": 11245,
                                 "flags": 8421376,
                                 "modifierFlagsCache": 0,
                                 "transformFlags": 0,
                                 "kind": 312,
                                 "type": {
-                                    "pos": 11342,
-                                    "end": 11355,
+                                    "pos": 11231,
+                                    "end": 11244,
                                     "flags": 8388608,
                                     "modifierFlagsCache": 0,
                                     "transformFlags": 1,
                                     "kind": 180,
                                     "typeName": {
-                                        "pos": 11342,
-                                        "end": 11355,
+                                        "pos": 11231,
+                                        "end": 11244,
                                         "flags": 8388608,
                                         "modifierFlagsCache": 0,
                                         "transformFlags": 0,
@@ -925,8 +925,8 @@
                         },
                         {
                             "tagName": {
-                                "pos": 11367,
-                                "end": 11374,
+                                "pos": 11256,
+                                "end": 11263,
                                 "flags": 8421376,
                                 "modifierFlagsCache": 0,
                                 "transformFlags": 0,
@@ -1184,7 +1184,7 @@
                     "optional": false,
                     "returnType": "string",
                     "typeParameters": [],
-                    "line": 306,
+                    "line": 304,
                     "deprecated": false,
                     "deprecationMessage": "",
                     "modifierKind": [
@@ -1262,7 +1262,7 @@
                     "optional": false,
                     "returnType": "EditorElement",
                     "typeParameters": [],
-                    "line": 294,
+                    "line": 292,
                     "deprecated": false,
                     "deprecationMessage": "",
                     "modifierKind": [
@@ -1339,7 +1339,7 @@
                     "optional": false,
                     "returnType": "string",
                     "typeParameters": [],
-                    "line": 256,
+                    "line": 254,
                     "deprecated": false,
                     "deprecationMessage": "",
                     "modifierKind": [
@@ -1370,7 +1370,7 @@
                     "optional": false,
                     "returnType": "Array<string>",
                     "typeParameters": [],
-                    "line": 272,
+                    "line": 270,
                     "deprecated": false,
                     "deprecationMessage": "",
                     "modifierKind": [
@@ -1393,7 +1393,7 @@
             "deprecationMessage": "",
             "description": "",
             "rawdescription": "\n",
-            "sourceCode": "import { Injectable } from '@angular/core';\r\nimport { Article } from '@annuadvent/ngx-cms/article';\r\nimport { UtilsService } from '@annuadvent/ngx-core/utils';\r\nimport { ImageInfo } from '@annuadvent/ngx-common-ui/image-form';\r\nimport {\r\n  EditorElement,\r\n  EditorElementData,\r\n} from '@annuadvent/ngx-cms/content-editor';\r\nimport { MetaInfo } from '@annuadvent/ngx-common-ui/meta';\r\nimport { META_ALLOWED_VALUES } from '@annuadvent/ngx-common-ui/meta';\r\nimport { AppConfig, AppConfigService } from '@annuadvent/ngx-core/app-config';\r\nimport { OpenaiService, OPENAI_ID_PHRASES } from '@annuadvent/ngx-tools/openai';\r\nimport {\r\n  CONTENT_PROMPT_PREFIX,\r\n  DESCRIPTION_PROMPT_PREFIX,\r\n  KEYWORDS_PROMPT_PREFIX,\r\n  MAX_STRONG_FORMATTING_CHAR_COUNT,\r\n  OPENAI_REQUESTS_LIMIT,\r\n  OPENAI_REQUEST_TIME_LIMIT,\r\n} from '../constants/article-editor.constants';\r\nimport { Html2JsonService } from '@annuadvent/ngx-cms/content-editor';\r\nimport { FireAuthService } from '@annuadvent/ngx-tools/fire-auth';\r\nimport { BehaviorSubject, Observable } from 'rxjs';\r\n\r\n@Injectable({\r\n  providedIn: 'root',\r\n})\r\nexport class ArticleEditorService {\r\n  article$ = new BehaviorSubject<Article>({});\r\n\r\n  constructor(\r\n    private utilsService: UtilsService,\r\n    private openaiService: OpenaiService,\r\n    private html2JsonService: Html2JsonService,\r\n    private appConfigService: AppConfigService,\r\n    private fireAuthService: FireAuthService\r\n  ) { }\r\n\r\n  public get article(): Observable<Article> {\r\n    return this.article$.asObservable();\r\n  }\r\n\r\n  public createInitializedArticle(\r\n    articleTitle: string,\r\n    appConfig: AppConfig\r\n  ): Article {\r\n    return {\r\n      id: this.utilsService.getUniqueFromString(articleTitle),\r\n      metaInfo: {\r\n        title: articleTitle,\r\n        description: '',\r\n        keywords: '',\r\n        robots: META_ALLOWED_VALUES.robots[0].name,\r\n        'Content-Type': META_ALLOWED_VALUES.contentTypes[0].name,\r\n        language: META_ALLOWED_VALUES.languages[0].name,\r\n        'revisit-after': '7 days',\r\n        author: appConfig?.metaInfo?.author,\r\n        type: META_ALLOWED_VALUES.types[0].name,\r\n        image: '',\r\n        url: '', // will be updated post assignment\r\n        card: META_ALLOWED_VALUES.cards[0].name,\r\n        site_name: appConfig?.metaInfo?.title,\r\n        audio: '',\r\n        video: '',\r\n        'article:published_time': this.utilsService.currentDate,\r\n        'article:author':\r\n          appConfig?.metaInfo && appConfig?.metaInfo['article:author'],\r\n        'article:section': META_ALLOWED_VALUES.articleSections[0].name,\r\n        'article:tag': '', // will be updated post assignment\r\n      } as MetaInfo,\r\n      image: {\r\n        src: '',\r\n        alt: articleTitle,\r\n      } as ImageInfo,\r\n      body: {} as EditorElement,\r\n      categories: [],\r\n      created: this.utilsService.currentDate,\r\n      updated: this.utilsService.currentDate,\r\n      userId: this.fireAuthService.getCurrentUserId(),\r\n      isLive: false,\r\n      inReview: true,\r\n      features: [],\r\n    };\r\n  }\r\n  public async generateArticleFromOpenai(\r\n    articleTitle: string,\r\n    appConfig: AppConfig,\r\n    keyWordsPromptPrefix: string,\r\n    descriptionPromptPrefix: string,\r\n    contentPromptPrefix: string\r\n  ): Promise<Article> {\r\n    const timeStarted = Date.now();\r\n\r\n    const article: Article = this.createInitializedArticle(\r\n      articleTitle,\r\n      appConfig\r\n    );\r\n    this.article$.next(article);\r\n\r\n    // set title prompt content for article body\r\n    article.body = await this.generateArticleContentFromOpenai(\r\n      articleTitle, // article title content.\r\n      contentPromptPrefix\r\n    );\r\n    this.article$.next(article);\r\n\r\n    // set keywords\r\n    article.metaInfo.keywords = (\r\n      await this.generateArticleKeywordsFromOpenai(\r\n        articleTitle,\r\n        keyWordsPromptPrefix\r\n      )\r\n    ).join(', ');\r\n    article.metaInfo['article:tag'] = article.metaInfo.keywords;\r\n    this.article$.next(article);\r\n\r\n    // set description\r\n    article.metaInfo.description =\r\n      (await this.generateArticleDescriptionFromOpenai(\r\n        articleTitle,\r\n        descriptionPromptPrefix\r\n      )) || '';\r\n    this.article$.next(article);\r\n\r\n    // Delay if OPENAI_REQUEST_TIME_LIMIT API time limit is not completed yet.\r\n    const millisecondsEllapsed: number = Date.now() - timeStarted;\r\n    if (millisecondsEllapsed < OPENAI_REQUEST_TIME_LIMIT) {\r\n      await this.utilsService.delay(\r\n        OPENAI_REQUEST_TIME_LIMIT - millisecondsEllapsed\r\n      );\r\n    }\r\n\r\n    // set body\r\n    article.body = await this.generateArticleBodyFromOpenai(\r\n      article.metaInfo.keywords.split(', '), // suheading are actually keywords\r\n      contentPromptPrefix\r\n    );\r\n    this.article$.next(article);\r\n\r\n    // set url/canonical\r\n    article.metaInfo.url = this.generateArticleUrl(\r\n      article.id,\r\n      article.categories\r\n    );\r\n\r\n    // set image\r\n    article.metaInfo.image = article.image.src;\r\n\r\n    return article;\r\n  }\r\n\r\n  public async generateArticleDescriptionFromOpenai(\r\n    articleTitle: string,\r\n    descriptionPromptPrefix: string\r\n  ): Promise<string> {\r\n    const promptText = `${descriptionPromptPrefix || DESCRIPTION_PROMPT_PREFIX\r\n      }${articleTitle}`;\r\n\r\n    const mdText = await this.openaiService.getChatResponse([promptText]);\r\n    const jsonEl = this.html2JsonService.html2json(\r\n      this.html2JsonService.md2html(mdText)\r\n    );\r\n\r\n    return this.readDescriptionFromEditorElement(jsonEl);\r\n  }\r\n\r\n  public async generateArticleKeywordsFromOpenai(\r\n    articleTitle: string,\r\n    descriptionPromptPrefix: string\r\n  ): Promise<Array<string>> {\r\n    const promptText = `${descriptionPromptPrefix || KEYWORDS_PROMPT_PREFIX\r\n      }${articleTitle}`;\r\n\r\n    const mdText = await this.openaiService.getChatResponse([promptText]);\r\n    const jsonEl = this.html2JsonService.html2json(\r\n      this.html2JsonService.md2html(mdText)\r\n    );\r\n\r\n    return this.readKeywordsFromEditorElement(jsonEl);\r\n  }\r\n\r\n  public async generateArticleContentFromOpenai(\r\n    articleTitle: string,\r\n    contentPromptPrefix: string\r\n  ): Promise<EditorElement> {\r\n    const promptText = `${contentPromptPrefix || CONTENT_PROMPT_PREFIX\r\n      }${articleTitle}`;\r\n\r\n    const mdText = await this.openaiService.getChatResponse([promptText]);\r\n    const jsonEl = this.html2JsonService.html2json(\r\n      this.html2JsonService.md2html(mdText)\r\n    );\r\n\r\n    return jsonEl;\r\n  }\r\n\r\n  public async generateArticleBodyFromOpenai(\r\n    articleSubHeadings: Array<string>,\r\n    contentPromptPrefix: string\r\n  ): Promise<EditorElement> {\r\n    let body: EditorElement = this.utilsService.deepCopy(\r\n      this.article$.value.body\r\n    );\r\n\r\n    for (let i = 0; i < articleSubHeadings.length; i += OPENAI_REQUESTS_LIMIT) {\r\n      const timeStarted = Date.now();\r\n      const chunkSubHeadings = articleSubHeadings.slice(\r\n        i,\r\n        i + OPENAI_REQUESTS_LIMIT\r\n      );\r\n      const chunkPromises = chunkSubHeadings.map((promptText) =>\r\n        this.generateArticleContentFromOpenai(promptText, contentPromptPrefix)\r\n      );\r\n      const chunkJsonElms = await Promise.all(chunkPromises);\r\n\r\n      chunkJsonElms.forEach((jsonEl, index) => {\r\n        const subHeadingEl: EditorElement = this.generateArticleSubheading(\r\n          articleSubHeadings[i + index]\r\n        );\r\n        body.children = body.children.concat(subHeadingEl, jsonEl.children);\r\n      });\r\n\r\n      // Inform article body generation progress of the subheadings\r\n      const tempArticle: Article = this.utilsService.deepCopy(\r\n        this.article$.value\r\n      );\r\n      tempArticle.body = this.cleanAndFormatEditorEl(body, OPENAI_ID_PHRASES);\r\n      this.article$.next(tempArticle);\r\n\r\n      // Delay if OPENAI_REQUEST_TIME_LIMIT API time limit is not completed yet.\r\n      const millisecondsEllapsed: number = Date.now() - timeStarted;\r\n      if (\r\n        millisecondsEllapsed < OPENAI_REQUEST_TIME_LIMIT &&\r\n        i + OPENAI_REQUESTS_LIMIT < articleSubHeadings.length\r\n      ) {\r\n        await this.utilsService.delay(\r\n          OPENAI_REQUEST_TIME_LIMIT - millisecondsEllapsed\r\n        );\r\n      }\r\n    }\r\n\r\n    return body;\r\n  }\r\n\r\n  public generateArticleUrl(\r\n    articleId: string,\r\n    articleCategories: Array<string>\r\n  ): string {\r\n    articleCategories = articleCategories || [];\r\n    const canonicalCategoryId = articleCategories.length\r\n      ? articleCategories[0]\r\n      : '';\r\n    return this.utilsService.getCanonicalUrl(canonicalCategoryId, articleId);\r\n  }\r\n\r\n  public readDescriptionFromEditorElement(el: EditorElement): string {\r\n    let str = [];\r\n    if (el.tagName.toLowerCase() === 'p' && el.data?.text) {\r\n      str.push(el.data.text);\r\n    }\r\n\r\n    if (el.children && el.children.length) {\r\n      el.children.forEach((chEl) => {\r\n        const chStr = this.readDescriptionFromEditorElement(chEl);\r\n        str.push(chStr);\r\n      });\r\n    }\r\n\r\n    return str.join(' ');\r\n  }\r\n\r\n  public readKeywordsFromEditorElement(el: EditorElement): Array<string> {\r\n    let str: Array<string> = [];\r\n    if (['ul', 'ol'].includes(el.tagName.toLowerCase())) {\r\n      el.children.forEach((chEl) => {\r\n        if (chEl.tagName.toLowerCase() === 'li' && chEl.data?.text) {\r\n          str.push(chEl.data.text);\r\n        }\r\n      });\r\n    }\r\n\r\n    if (el.children && el.children.length) {\r\n      el.children.forEach((chEl) => {\r\n        const chStr = this.readKeywordsFromEditorElement(chEl);\r\n        if (chStr && chStr.length) {\r\n          str = str.concat(chStr);\r\n        }\r\n      });\r\n    }\r\n\r\n    return str;\r\n  }\r\n\r\n  public generateArticleSubheading(subHeadingText: string): EditorElement {\r\n    const editorEl: EditorElement = {\r\n      name: `h2-${Date.now()}`,\r\n      tagName: 'h2',\r\n      isContainer: false,\r\n      focused: false,\r\n      data: { text: subHeadingText } as EditorElementData,\r\n    };\r\n\r\n    return editorEl;\r\n  }\r\n\r\n  public generateArticleImageUrl(imageFullPath: string): string {\r\n    return this.utilsService.getImageUrl(\r\n      imageFullPath,\r\n      this.appConfigService.config.imagesSourceUrl\r\n    );\r\n  }\r\n\r\n  public cleanAndFormatEditorEl(\r\n    jsonEl: EditorElement,\r\n    phrases: Array<string>\r\n  ): EditorElement {\r\n    return this.formatEditorElement(this.cleanEditorEl(jsonEl, phrases));\r\n  }\r\n\r\n  /**\r\n   * Cleans Open ai language keywords and tags with \\n only.\r\n   * @date 6/5/2023 - 12:48:30 AM\r\n   *\r\n   * @public\r\n   * @param {EditorElement} jsonEl\r\n   * @param {Array<string>} phrases\r\n   * @returns {EditorElement}\r\n   */\r\n  public cleanEditorEl(\r\n    jsonEl: EditorElement,\r\n    phrases: Array<string>\r\n  ): EditorElement {\r\n    if (!phrases || !phrases.length) return this.utilsService.deepCopy(jsonEl);\r\n    if (!jsonEl) return jsonEl;\r\n\r\n    const phrasesF = phrases.filter((phrase) =>\r\n      jsonEl?.data?.text.includes(phrase)\r\n    );\r\n    if (\r\n      phrasesF.length ||\r\n      (jsonEl?.tagName === '#text' && jsonEl?.data?.text === '\\n')\r\n    ) {\r\n      return null;\r\n    } else if (jsonEl?.children && jsonEl.children.length) {\r\n      jsonEl.children = jsonEl.children\r\n        .map((el) => this.cleanEditorEl(el, phrases))\r\n        .filter((el) => el !== null);\r\n      return jsonEl;\r\n    }\r\n\r\n    return jsonEl;\r\n  }\r\n\r\n  /**\r\n   * Formats LI items those having an heading within, as strong.\r\n   * @date 6/5/2023 - 12:55:14 AM\r\n   *\r\n   * @public\r\n   * @param {EditorElement} el\r\n   * @returns {EditorElement}\r\n   */\r\n  public formatEditorElement(el: EditorElement): EditorElement {\r\n    if (['ul', 'ol'].includes(el.tagName.toLowerCase())) {\r\n      el.children.forEach((chEl) => {\r\n        if (chEl.tagName.toLowerCase() === 'li' && chEl.data?.text) {\r\n          const str = chEl.data?.text || '';\r\n          const colonIndex = str.indexOf(':');\r\n          const pIndex = str.indexOf('<p>');\r\n          const pTag =\r\n            pIndex >= 0 && pIndex < MAX_STRONG_FORMATTING_CHAR_COUNT\r\n              ? '<p>'\r\n              : '';\r\n          if (colonIndex > 0 && colonIndex < MAX_STRONG_FORMATTING_CHAR_COUNT) {\r\n            // means is a bold text\r\n            let strongText = str.substring(0, colonIndex);\r\n            const normalText = str.substring(colonIndex);\r\n            strongText = pTag ? strongText.replace('<p>', '') : strongText;\r\n            chEl.data.text = `${pTag}<strong>${strongText}</strong>${normalText}`;\r\n          }\r\n        }\r\n      });\r\n    }\r\n\r\n    if (el.children && el.children.length) {\r\n      el.children = el.children.map((chEl) => this.formatEditorElement(chEl));\r\n    }\r\n\r\n    return el;\r\n  }\r\n}\r\n",
+            "sourceCode": "import { Injectable } from '@angular/core';\r\nimport { Article } from '@annuadvent/ngx-cms/article';\r\nimport { UtilsService } from '@annuadvent/ngx-core/utils';\r\nimport { ImageInfo } from '@annuadvent/ngx-common-ui/image-form';\r\nimport {\r\n  EditorElement,\r\n  EditorElementData,\r\n} from '@annuadvent/ngx-cms/content-editor';\r\nimport { MetaInfo } from '@annuadvent/ngx-common-ui/meta';\r\nimport { META_ALLOWED_VALUES } from '@annuadvent/ngx-common-ui/meta';\r\nimport { AppConfig, AppConfigService } from '@annuadvent/ngx-core/app-config';\r\nimport { OpenaiService, OPENAI_ID_PHRASES } from '@annuadvent/ngx-tools/openai';\r\nimport {\r\n  CONTENT_PROMPT_PREFIX,\r\n  DESCRIPTION_PROMPT_PREFIX,\r\n  KEYWORDS_PROMPT_PREFIX,\r\n  MAX_STRONG_FORMATTING_CHAR_COUNT,\r\n  OPENAI_REQUESTS_LIMIT,\r\n  OPENAI_REQUEST_TIME_LIMIT,\r\n} from '../constants/article-editor.constants';\r\nimport { Html2JsonService } from '@annuadvent/ngx-cms/content-editor';\r\nimport { FireAuthService } from '@annuadvent/ngx-tools/fire-auth';\r\nimport { BehaviorSubject, Observable } from 'rxjs';\r\n\r\n@Injectable({\r\n  providedIn: 'root',\r\n})\r\nexport class ArticleEditorService {\r\n  article$ = new BehaviorSubject<Article>({});\r\n\r\n  constructor(\r\n    private utilsService: UtilsService,\r\n    private openaiService: OpenaiService,\r\n    private html2JsonService: Html2JsonService,\r\n    private appConfigService: AppConfigService,\r\n    private fireAuthService: FireAuthService\r\n  ) { }\r\n\r\n  public get article(): Observable<Article> {\r\n    return this.article$.asObservable();\r\n  }\r\n\r\n  public createInitializedArticle(\r\n    articleTitle: string,\r\n    appConfig: AppConfig\r\n  ): Article {\r\n    return {\r\n      id: this.utilsService.getUniqueFromString(articleTitle),\r\n      metaInfo: {\r\n        title: articleTitle,\r\n        description: '',\r\n        keywords: '',\r\n        robots: META_ALLOWED_VALUES.robots[0].name,\r\n        'Content-Type': META_ALLOWED_VALUES.contentTypes[0].name,\r\n        language: META_ALLOWED_VALUES.languages[0].name,\r\n        'revisit-after': '7 days',\r\n        author: appConfig?.metaInfo?.author,\r\n        type: META_ALLOWED_VALUES.types[0].name,\r\n        image: '',\r\n        url: '', // will be updated post assignment\r\n        card: META_ALLOWED_VALUES.cards[0].name,\r\n        site_name: appConfig?.metaInfo?.title,\r\n        audio: '',\r\n        video: '',\r\n        'article:published_time': this.utilsService.currentDate,\r\n        'article:author':\r\n          appConfig?.metaInfo && appConfig?.metaInfo['article:author'],\r\n        'article:section': META_ALLOWED_VALUES.articleSections[0].name,\r\n        'article:tag': '', // will be updated post assignment\r\n      } as MetaInfo,\r\n      image: {\r\n        src: '',\r\n        alt: articleTitle,\r\n      } as ImageInfo,\r\n      body: {} as EditorElement,\r\n      categories: [],\r\n      created: this.utilsService.currentDate,\r\n      updated: this.utilsService.currentDate,\r\n      userId: this.fireAuthService.getCurrentUserId(),\r\n      isLive: false,\r\n      inReview: true,\r\n      features: [],\r\n    };\r\n  }\r\n  public async generateArticleFromOpenai(\r\n    articleTitle: string,\r\n    appConfig: AppConfig,\r\n    keyWordsPromptPrefix: string,\r\n    descriptionPromptPrefix: string,\r\n    contentPromptPrefix: string\r\n  ): Promise<Article> {\r\n    const timeStarted = Date.now();\r\n\r\n    const article: Article = this.createInitializedArticle(\r\n      articleTitle,\r\n      appConfig\r\n    );\r\n    this.article$.next(article);\r\n\r\n    // set title prompt content for article body\r\n    article.body = await this.generateArticleContentFromOpenai(\r\n      articleTitle, // article title content.\r\n      contentPromptPrefix\r\n    );\r\n    this.article$.next(article);\r\n\r\n    // set keywords\r\n    article.metaInfo.keywords = (\r\n      await this.generateArticleKeywordsFromOpenai(\r\n        articleTitle,\r\n        keyWordsPromptPrefix\r\n      )\r\n    ).join(', ');\r\n    article.metaInfo['article:tag'] = article.metaInfo.keywords;\r\n    this.article$.next(article);\r\n\r\n    // set description\r\n    article.metaInfo.description =\r\n      (await this.generateArticleDescriptionFromOpenai(\r\n        articleTitle,\r\n        descriptionPromptPrefix\r\n      )) || '';\r\n    this.article$.next(article);\r\n\r\n    // Delay if OPENAI_REQUEST_TIME_LIMIT API time limit is not completed yet.\r\n    const millisecondsEllapsed: number = Date.now() - timeStarted;\r\n    if (millisecondsEllapsed < OPENAI_REQUEST_TIME_LIMIT) {\r\n      await this.utilsService.delay(\r\n        OPENAI_REQUEST_TIME_LIMIT - millisecondsEllapsed\r\n      );\r\n    }\r\n\r\n    // set body\r\n    article.body = await this.generateArticleBodyFromOpenai(\r\n      article.metaInfo.keywords.split(', '), // suheading are actually keywords\r\n      contentPromptPrefix\r\n    );\r\n    this.article$.next(article);\r\n\r\n    // set url/canonical\r\n    article.metaInfo.url = this.generateArticleUrl(\r\n      article.id,\r\n      article.categories\r\n    );\r\n\r\n    // set image\r\n    article.metaInfo.image = article.image.src;\r\n\r\n    return article;\r\n  }\r\n\r\n  public async generateArticleDescriptionFromOpenai(\r\n    articleTitle: string,\r\n    descriptionPromptPrefix: string\r\n  ): Promise<string> {\r\n    const promptText = `${descriptionPromptPrefix || DESCRIPTION_PROMPT_PREFIX\r\n      }${articleTitle}`;\r\n\r\n    const mdText = await this.openaiService.getChatResponse([promptText]);\r\n    const jsonEl = this.html2JsonService.html2json(\r\n      this.html2JsonService.md2html(mdText)\r\n    );\r\n\r\n    return this.readDescriptionFromEditorElement(jsonEl);\r\n  }\r\n\r\n  public async generateArticleKeywordsFromOpenai(\r\n    articleTitle: string,\r\n    descriptionPromptPrefix: string\r\n  ): Promise<Array<string>> {\r\n    const promptText = `${descriptionPromptPrefix || KEYWORDS_PROMPT_PREFIX\r\n      }${articleTitle}`;\r\n\r\n    const mdText = await this.openaiService.getChatResponse([promptText]);\r\n    const jsonEl = this.html2JsonService.html2json(\r\n      this.html2JsonService.md2html(mdText)\r\n    );\r\n\r\n    return this.readKeywordsFromEditorElement(jsonEl);\r\n  }\r\n\r\n  public async generateArticleContentFromOpenai(\r\n    articleTitle: string,\r\n    contentPromptPrefix: string\r\n  ): Promise<EditorElement> {\r\n    const promptText = `${contentPromptPrefix || CONTENT_PROMPT_PREFIX\r\n      }${articleTitle}`;\r\n\r\n    const mdText = await this.openaiService.getChatResponse([promptText]);\r\n    const jsonEl = this.html2JsonService.html2json(\r\n      this.html2JsonService.md2html(mdText)\r\n    );\r\n\r\n    return jsonEl;\r\n  }\r\n\r\n  public async generateArticleBodyFromOpenai(\r\n    articleSubHeadings: Array<string>,\r\n    contentPromptPrefix: string\r\n  ): Promise<EditorElement> {\r\n    let body: EditorElement = this.utilsService.deepCopy(\r\n      this.article$.value.body\r\n    );\r\n\r\n    for (let i = 0; i < articleSubHeadings.length; i += OPENAI_REQUESTS_LIMIT) {\r\n      const timeStarted = Date.now();\r\n      const chunkSubHeadings = articleSubHeadings.slice(\r\n        i,\r\n        i + OPENAI_REQUESTS_LIMIT\r\n      );\r\n      const chunkPromises = chunkSubHeadings.map((promptText) =>\r\n        this.generateArticleContentFromOpenai(promptText, contentPromptPrefix)\r\n      );\r\n      const chunkJsonElms = await Promise.all(chunkPromises);\r\n\r\n      chunkJsonElms.forEach((jsonEl, index) => {\r\n        const subHeadingEl: EditorElement = this.generateArticleSubheading(\r\n          articleSubHeadings[i + index]\r\n        );\r\n        body.children = body.children.concat(subHeadingEl, jsonEl.children);\r\n      });\r\n\r\n      // Inform article body generation progress of the subheadings\r\n      const tempArticle: Article = this.utilsService.deepCopy(\r\n        this.article$.value\r\n      );\r\n      tempArticle.body = this.cleanAndFormatEditorEl(body, OPENAI_ID_PHRASES);\r\n      this.article$.next(tempArticle);\r\n\r\n      // Delay if OPENAI_REQUEST_TIME_LIMIT API time limit is not completed yet.\r\n      const millisecondsEllapsed: number = Date.now() - timeStarted;\r\n      if (\r\n        millisecondsEllapsed < OPENAI_REQUEST_TIME_LIMIT &&\r\n        i + OPENAI_REQUESTS_LIMIT < articleSubHeadings.length\r\n      ) {\r\n        await this.utilsService.delay(\r\n          OPENAI_REQUEST_TIME_LIMIT - millisecondsEllapsed\r\n        );\r\n      }\r\n    }\r\n\r\n    return body;\r\n  }\r\n\r\n  public generateArticleUrl(\r\n    articleId: string,\r\n    articleCategories: Array<string>\r\n  ): string {\r\n    articleCategories = articleCategories || [];\r\n\r\n    return this.utilsService.getCanonicalUrl('genre', articleId);\r\n  }\r\n\r\n  public readDescriptionFromEditorElement(el: EditorElement): string {\r\n    let str = [];\r\n    if (el.tagName.toLowerCase() === 'p' && el.data?.text) {\r\n      str.push(el.data.text);\r\n    }\r\n\r\n    if (el.children && el.children.length) {\r\n      el.children.forEach((chEl) => {\r\n        const chStr = this.readDescriptionFromEditorElement(chEl);\r\n        str.push(chStr);\r\n      });\r\n    }\r\n\r\n    return str.join(' ');\r\n  }\r\n\r\n  public readKeywordsFromEditorElement(el: EditorElement): Array<string> {\r\n    let str: Array<string> = [];\r\n    if (['ul', 'ol'].includes(el.tagName.toLowerCase())) {\r\n      el.children.forEach((chEl) => {\r\n        if (chEl.tagName.toLowerCase() === 'li' && chEl.data?.text) {\r\n          str.push(chEl.data.text);\r\n        }\r\n      });\r\n    }\r\n\r\n    if (el.children && el.children.length) {\r\n      el.children.forEach((chEl) => {\r\n        const chStr = this.readKeywordsFromEditorElement(chEl);\r\n        if (chStr && chStr.length) {\r\n          str = str.concat(chStr);\r\n        }\r\n      });\r\n    }\r\n\r\n    return str;\r\n  }\r\n\r\n  public generateArticleSubheading(subHeadingText: string): EditorElement {\r\n    const editorEl: EditorElement = {\r\n      name: `h2-${Date.now()}`,\r\n      tagName: 'h2',\r\n      isContainer: false,\r\n      focused: false,\r\n      data: { text: subHeadingText } as EditorElementData,\r\n    };\r\n\r\n    return editorEl;\r\n  }\r\n\r\n  public generateArticleImageUrl(imageFullPath: string): string {\r\n    return this.utilsService.getImageUrl(\r\n      imageFullPath,\r\n      this.appConfigService.config.imagesSourceUrl\r\n    );\r\n  }\r\n\r\n  public cleanAndFormatEditorEl(\r\n    jsonEl: EditorElement,\r\n    phrases: Array<string>\r\n  ): EditorElement {\r\n    return this.formatEditorElement(this.cleanEditorEl(jsonEl, phrases));\r\n  }\r\n\r\n  /**\r\n   * Cleans Open ai language keywords and tags with \\n only.\r\n   * @date 6/5/2023 - 12:48:30 AM\r\n   *\r\n   * @public\r\n   * @param {EditorElement} jsonEl\r\n   * @param {Array<string>} phrases\r\n   * @returns {EditorElement}\r\n   */\r\n  public cleanEditorEl(\r\n    jsonEl: EditorElement,\r\n    phrases: Array<string>\r\n  ): EditorElement {\r\n    if (!phrases || !phrases.length) return this.utilsService.deepCopy(jsonEl);\r\n    if (!jsonEl) return jsonEl;\r\n\r\n    const phrasesF = phrases.filter((phrase) =>\r\n      jsonEl?.data?.text.includes(phrase)\r\n    );\r\n    if (\r\n      phrasesF.length ||\r\n      (jsonEl?.tagName === '#text' && jsonEl?.data?.text === '\\n')\r\n    ) {\r\n      return null;\r\n    } else if (jsonEl?.children && jsonEl.children.length) {\r\n      jsonEl.children = jsonEl.children\r\n        .map((el) => this.cleanEditorEl(el, phrases))\r\n        .filter((el) => el !== null);\r\n      return jsonEl;\r\n    }\r\n\r\n    return jsonEl;\r\n  }\r\n\r\n  /**\r\n   * Formats LI items those having an heading within, as strong.\r\n   * @date 6/5/2023 - 12:55:14 AM\r\n   *\r\n   * @public\r\n   * @param {EditorElement} el\r\n   * @returns {EditorElement}\r\n   */\r\n  public formatEditorElement(el: EditorElement): EditorElement {\r\n    if (['ul', 'ol'].includes(el.tagName.toLowerCase())) {\r\n      el.children.forEach((chEl) => {\r\n        if (chEl.tagName.toLowerCase() === 'li' && chEl.data?.text) {\r\n          const str = chEl.data?.text || '';\r\n          const colonIndex = str.indexOf(':');\r\n          const pIndex = str.indexOf('<p>');\r\n          const pTag =\r\n            pIndex >= 0 && pIndex < MAX_STRONG_FORMATTING_CHAR_COUNT\r\n              ? '<p>'\r\n              : '';\r\n          if (colonIndex > 0 && colonIndex < MAX_STRONG_FORMATTING_CHAR_COUNT) {\r\n            // means is a bold text\r\n            let strongText = str.substring(0, colonIndex);\r\n            const normalText = str.substring(colonIndex);\r\n            strongText = pTag ? strongText.replace('<p>', '') : strongText;\r\n            chEl.data.text = `${pTag}<strong>${strongText}</strong>${normalText}`;\r\n          }\r\n        }\r\n      });\r\n    }\r\n\r\n    if (el.children && el.children.length) {\r\n      el.children = el.children.map((chEl) => this.formatEditorElement(chEl));\r\n    }\r\n\r\n    return el;\r\n  }\r\n}\r\n",
             "constructorObj": {
                 "name": "constructor",
                 "description": "",
@@ -3304,7 +3304,7 @@
         },
         {
             "name": "ArticleEditorComponent",
-            "id": "component-ArticleEditorComponent-94452e1409de75a9c9ac77ecc5002af632582f9fa3daede471605b7e1e752625a5fb20b41fe7f75a6560c9e16509db537a52dee0b5f0725aea52ee6b875723bd",
+            "id": "component-ArticleEditorComponent-1707e38cc2c5c6812b8fb68d97a39e1bf7da28416fde45c5e38cfbf2e39926371ddb0a39aaa2e61e609ef9969c1d845ea39185043a692f8b303dbad6fcce631a",
             "file": "projects/ngx-cms/article-editor/src/components/article-editor/article-editor.component.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -4031,7 +4031,7 @@
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import {\r\n  Component,\r\n  EventEmitter,\r\n  Input,\r\n  OnChanges,\r\n  OnInit,\r\n  Output,\r\n  SimpleChanges,\r\n} from '@angular/core';\r\nimport { UtilsService } from '@annuadvent/ngx-core/utils';\r\nimport { ImageInfo } from '@annuadvent/ngx-common-ui/image-form';\r\nimport { MetaInfo } from '@annuadvent/ngx-common-ui/meta';\r\nimport { Tab } from '@annuadvent/ngx-common-ui/tabs';\r\nimport { Article, ArticleFeatures } from '@annuadvent/ngx-cms/article';\r\nimport { Category } from '@annuadvent/ngx-cms/category';\r\nimport { EditorElement, EDITOR_ROOT_ELEMENT } from '@annuadvent/ngx-cms/content-editor';\r\nimport { ARTICLE_EDITOR_TABS } from '../../constants/article-editor.constants';\r\n\r\nconst SAMPLE_ARTICLE = {\r\n  body: { ...EDITOR_ROOT_ELEMENT },\r\n  metaInfo: {\r\n    title: EDITOR_ROOT_ELEMENT.children[0]?.data?.text,\r\n    description: EDITOR_ROOT_ELEMENT.children[1]?.data?.text,\r\n  },\r\n};\r\n\r\n@Component({\r\n  selector: 'anu-article-editor',\r\n  templateUrl: './article-editor.component.html',\r\n  styleUrls: ['./article-editor.component.scss'],\r\n})\r\nexport class ArticleEditorComponent implements OnInit, OnChanges {\r\n  @Input() value: Article | null;\r\n  @Input() imageHelpText: string = '';\r\n  @Input() readonlyId: boolean = true;\r\n  @Input() readonlyTitle: boolean = false;\r\n  @Input() enableUniqueId: boolean = true;\r\n  @Input() enablePublish: boolean = true;\r\n  @Input() enableDelete: boolean = true;\r\n  @Input() enableReadonlyIdToggle: boolean = true;\r\n  @Input() enableFeatures: boolean = true;\r\n  @Input() enableOpenai: boolean = false;\r\n  @Input() categories: Array<Category> = [];\r\n  @Output() changed = new EventEmitter<Article>();\r\n  @Output() saveClicked = new EventEmitter<Article>();\r\n  @Output() isLiveClicked = new EventEmitter<Article>();\r\n  @Output() inReviewClicked = new EventEmitter<Article>();\r\n  @Output() deleteClicked = new EventEmitter<Article>();\r\n\r\n  toggleImageForm: boolean = false;\r\n  tabs: Array<Tab> = ARTICLE_EDITOR_TABS.map((t) => ({ ...t }));\r\n\r\n  activeTab = this.tabs[0];\r\n  article: Article;\r\n  sampleArticle: Article;\r\n  selectedArticleCategories: Array<any> = [];\r\n  categoriesMultiSelectItems: Array<any> = [];\r\n  selectedArticleFeatures: Array<any> = [];\r\n  articleFeatures: Array<any> = [];\r\n  readonlyMetaProps: Array<string> = [];\r\n\r\n  constructor(private utils: UtilsService) {\r\n    this.sampleArticle = {\r\n      ...SAMPLE_ARTICLE,\r\n      id: this.utils.getUniqueFromString(SAMPLE_ARTICLE.metaInfo.title),\r\n      created: utils.currentDate,\r\n      updated: utils.currentDate,\r\n    };\r\n    this.article = { ...this.sampleArticle };\r\n    this.articleFeatures = Object.keys(ArticleFeatures).map((key) => ({\r\n      id: ArticleFeatures[key],\r\n      title: ArticleFeatures[key],\r\n    }));\r\n  }\r\n\r\n  private initArticle() {\r\n    if (this.value) {\r\n      this.article = JSON.parse(JSON.stringify(this.value));\r\n    } else {\r\n      this.article = JSON.parse(JSON.stringify(this.sampleArticle));\r\n      this.value = JSON.parse(JSON.stringify(this.sampleArticle));\r\n    }\r\n\r\n    // Init Article Categories\r\n    this.selectedArticleCategories = this.article.categories?.map((cat) => ({\r\n      id: cat,\r\n    }));\r\n    this.categoriesMultiSelectItems = this.categories?.map((cat) => ({\r\n      id: cat?.id,\r\n      title: cat?.metaInfo?.title,\r\n    }));\r\n\r\n    // Init ArticleFeatures\r\n    this.selectedArticleFeatures =\r\n      this.article?.features?.map((f) => ({ id: f, title: f })) || [];\r\n\r\n    // Init Meta form with readonly props\r\n    this.readonlyMetaProps = this.readonlyTitle === true ? ['title'] : [];\r\n  }\r\n\r\n  ngOnInit(): void {\r\n    this.initArticle();\r\n  }\r\n\r\n  ngOnChanges(changes: SimpleChanges): void {\r\n    this.initArticle();\r\n  }\r\n\r\n  public tabChanged(tab: Tab) {\r\n    this.activeTab = tab;\r\n  }\r\n\r\n  public articleBodyChanged(body: EditorElement) {\r\n    this.article = { ...this.article, body: { ...body } };\r\n    this.changed.emit({ ...this.article });\r\n  }\r\n\r\n  public articleMetaChanged(metaInfo: MetaInfo) {\r\n    if (metaInfo.title !== this.value.metaInfo.title) {\r\n      this.article.id = this.enableUniqueId\r\n        ? this.utils.getUniqueFromString(metaInfo.title)\r\n        : this.utils.toDashedString(metaInfo.title);\r\n    } else {\r\n      this.article.id = this.value.id;\r\n    }\r\n\r\n    this.article = { ...this.article, metaInfo: { ...metaInfo } };\r\n    this.changed.emit({ ...this.article });\r\n  }\r\n\r\n  public onCategoriesChanged(selectedCategories: Array<any> = []): void {\r\n    this.article = {\r\n      ...this.article,\r\n      categories: selectedCategories?.map((cat) => cat?.id),\r\n      metaInfo: {\r\n        ...this.article.metaInfo,\r\n        url: this.utils.getCanonicalUrl(\r\n          selectedCategories.length ? selectedCategories[0].id : '',\r\n          this.article.id\r\n        ),\r\n      },\r\n    };\r\n    this.selectedArticleCategories = [...selectedCategories];\r\n    this.changed.emit({ ...this.article });\r\n  }\r\n\r\n  public onArticleFeaturesChanged(\r\n    selectedArticleFeatures: Array<any> = []\r\n  ): void {\r\n    this.article = {\r\n      ...this.article,\r\n      features: selectedArticleFeatures?.map((f) => f.id),\r\n    };\r\n    this.selectedArticleFeatures = [...selectedArticleFeatures];\r\n    this.changed.emit({ ...this.article });\r\n  }\r\n\r\n  public isLiveChanged(isLive: boolean): void {\r\n    const inReview = isLive === true ? false : this.value.inReview;\r\n    this.article = { ...this.article, isLive, inReview };\r\n    this.isLiveClicked.emit({ ...this.article });\r\n  }\r\n\r\n  public inReviewChanged(inReview: boolean): void {\r\n    const isLive = inReview === true ? false : this.value.isLive;\r\n    this.article = { ...this.article, isLive, inReview };\r\n    this.inReviewClicked.emit({ ...this.article });\r\n  }\r\n\r\n  public changeImage(event: any, clear: boolean = false) {\r\n    event.preventDefault();\r\n    if (clear === true) {\r\n      this.article.image = null;\r\n      this.changed.emit({ ...this.article });\r\n    } else {\r\n      this.toggleImageForm = true;\r\n    }\r\n  }\r\n\r\n  public cancelImageChange() {\r\n    this.toggleImageForm = false;\r\n  }\r\n\r\n  public saveImageChange(image: ImageInfo) {\r\n    this.article.image = image;\r\n    this.article.metaInfo = {\r\n      ...this.article.metaInfo,\r\n      image: image?.src || '',\r\n    };\r\n    this.toggleImageForm = false;\r\n    this.changed.emit({ ...this.article });\r\n  }\r\n\r\n  public saveArticle(event: any): void {\r\n    event.preventDefault();\r\n    this.saveClicked.emit({ ...this.article });\r\n  }\r\n\r\n  public deleteArticle(event: any): void {\r\n    event.preventDefault();\r\n    this.deleteClicked.emit({ ...this.article });\r\n  }\r\n\r\n  public articledDblClick(event: any): void {\r\n    event.preventDefault();\r\n    if (this.enableReadonlyIdToggle) {\r\n      this.readonlyId = !this.readonlyId;\r\n    }\r\n  }\r\n}\r\n",
+            "sourceCode": "import {\r\n  Component,\r\n  EventEmitter,\r\n  Input,\r\n  OnChanges,\r\n  OnInit,\r\n  Output,\r\n  SimpleChanges,\r\n} from '@angular/core';\r\nimport { UtilsService } from '@annuadvent/ngx-core/utils';\r\nimport { ImageInfo } from '@annuadvent/ngx-common-ui/image-form';\r\nimport { MetaInfo } from '@annuadvent/ngx-common-ui/meta';\r\nimport { Tab } from '@annuadvent/ngx-common-ui/tabs';\r\nimport { Article, ArticleFeatures } from '@annuadvent/ngx-cms/article';\r\nimport { Category } from '@annuadvent/ngx-cms/category';\r\nimport { EditorElement, EDITOR_ROOT_ELEMENT } from '@annuadvent/ngx-cms/content-editor';\r\nimport { ARTICLE_EDITOR_TABS } from '../../constants/article-editor.constants';\r\n\r\nconst SAMPLE_ARTICLE = {\r\n  body: { ...EDITOR_ROOT_ELEMENT },\r\n  metaInfo: {\r\n    title: EDITOR_ROOT_ELEMENT.children[0]?.data?.text,\r\n    description: EDITOR_ROOT_ELEMENT.children[1]?.data?.text,\r\n  },\r\n};\r\n\r\n@Component({\r\n  selector: 'anu-article-editor',\r\n  templateUrl: './article-editor.component.html',\r\n  styleUrls: ['./article-editor.component.scss'],\r\n})\r\nexport class ArticleEditorComponent implements OnInit, OnChanges {\r\n  @Input() value: Article | null;\r\n  @Input() imageHelpText: string = '';\r\n  @Input() readonlyId: boolean = true;\r\n  @Input() readonlyTitle: boolean = false;\r\n  @Input() enableUniqueId: boolean = true;\r\n  @Input() enablePublish: boolean = true;\r\n  @Input() enableDelete: boolean = true;\r\n  @Input() enableReadonlyIdToggle: boolean = true;\r\n  @Input() enableFeatures: boolean = true;\r\n  @Input() enableOpenai: boolean = false;\r\n  @Input() categories: Array<Category> = [];\r\n  @Output() changed = new EventEmitter<Article>();\r\n  @Output() saveClicked = new EventEmitter<Article>();\r\n  @Output() isLiveClicked = new EventEmitter<Article>();\r\n  @Output() inReviewClicked = new EventEmitter<Article>();\r\n  @Output() deleteClicked = new EventEmitter<Article>();\r\n\r\n  toggleImageForm: boolean = false;\r\n  tabs: Array<Tab> = ARTICLE_EDITOR_TABS.map((t) => ({ ...t }));\r\n\r\n  activeTab = this.tabs[0];\r\n  article: Article;\r\n  sampleArticle: Article;\r\n  selectedArticleCategories: Array<any> = [];\r\n  categoriesMultiSelectItems: Array<any> = [];\r\n  selectedArticleFeatures: Array<any> = [];\r\n  articleFeatures: Array<any> = [];\r\n  readonlyMetaProps: Array<string> = [];\r\n\r\n  constructor(private utils: UtilsService) {\r\n    this.sampleArticle = {\r\n      ...SAMPLE_ARTICLE,\r\n      id: this.utils.getUniqueFromString(SAMPLE_ARTICLE.metaInfo.title),\r\n      created: utils.currentDate,\r\n      updated: utils.currentDate,\r\n    };\r\n    this.article = { ...this.sampleArticle };\r\n    this.articleFeatures = Object.keys(ArticleFeatures).map((key) => ({\r\n      id: ArticleFeatures[key],\r\n      title: ArticleFeatures[key],\r\n    }));\r\n  }\r\n\r\n  private initArticle() {\r\n    if (this.value) {\r\n      this.article = JSON.parse(JSON.stringify(this.value));\r\n    } else {\r\n      this.article = JSON.parse(JSON.stringify(this.sampleArticle));\r\n      this.value = JSON.parse(JSON.stringify(this.sampleArticle));\r\n    }\r\n\r\n    // Init Article Categories\r\n    this.selectedArticleCategories = this.article.categories?.map((cat) => ({\r\n      id: cat,\r\n    }));\r\n    this.categoriesMultiSelectItems = this.categories?.map((cat) => ({\r\n      id: cat?.id,\r\n      title: cat?.metaInfo?.title,\r\n    }));\r\n\r\n    // Init ArticleFeatures\r\n    this.selectedArticleFeatures =\r\n      this.article?.features?.map((f) => ({ id: f, title: f })) || [];\r\n\r\n    // Init Meta form with readonly props\r\n    this.readonlyMetaProps = this.readonlyTitle === true ? ['title'] : [];\r\n  }\r\n\r\n  ngOnInit(): void {\r\n    this.initArticle();\r\n  }\r\n\r\n  ngOnChanges(changes: SimpleChanges): void {\r\n    this.initArticle();\r\n  }\r\n\r\n  public tabChanged(tab: Tab) {\r\n    this.activeTab = tab;\r\n  }\r\n\r\n  public articleBodyChanged(body: EditorElement) {\r\n    this.article = { ...this.article, body: { ...body } };\r\n    this.changed.emit({ ...this.article });\r\n  }\r\n\r\n  public articleMetaChanged(metaInfo: MetaInfo) {\r\n    if (metaInfo.title !== this.value.metaInfo.title) {\r\n      this.article.id = this.enableUniqueId\r\n        ? this.utils.getUniqueFromString(metaInfo.title)\r\n        : this.utils.toDashedString(metaInfo.title);\r\n    } else {\r\n      this.article.id = this.value.id;\r\n    }\r\n\r\n    this.article = { ...this.article, metaInfo: { ...metaInfo } };\r\n    this.changed.emit({ ...this.article });\r\n  }\r\n\r\n  public onCategoriesChanged(selectedCategories: Array<any> = []): void {\r\n    this.article = {\r\n      ...this.article,\r\n      categories: selectedCategories?.map((cat) => cat?.id),\r\n      metaInfo: {\r\n        ...this.article.metaInfo,\r\n        url: this.utils.getCanonicalUrl(\r\n          'stories',\r\n          this.article.id\r\n        ),\r\n      },\r\n    };\r\n    this.selectedArticleCategories = [...selectedCategories];\r\n    this.changed.emit({ ...this.article });\r\n  }\r\n\r\n  public onArticleFeaturesChanged(\r\n    selectedArticleFeatures: Array<any> = []\r\n  ): void {\r\n    this.article = {\r\n      ...this.article,\r\n      features: selectedArticleFeatures?.map((f) => f.id),\r\n    };\r\n    this.selectedArticleFeatures = [...selectedArticleFeatures];\r\n    this.changed.emit({ ...this.article });\r\n  }\r\n\r\n  public isLiveChanged(isLive: boolean): void {\r\n    const inReview = isLive === true ? false : this.value.inReview;\r\n    this.article = { ...this.article, isLive, inReview };\r\n    this.isLiveClicked.emit({ ...this.article });\r\n  }\r\n\r\n  public inReviewChanged(inReview: boolean): void {\r\n    const isLive = inReview === true ? false : this.value.isLive;\r\n    this.article = { ...this.article, isLive, inReview };\r\n    this.inReviewClicked.emit({ ...this.article });\r\n  }\r\n\r\n  public changeImage(event: any, clear: boolean = false) {\r\n    event.preventDefault();\r\n    if (clear === true) {\r\n      this.article.image = null;\r\n      this.changed.emit({ ...this.article });\r\n    } else {\r\n      this.toggleImageForm = true;\r\n    }\r\n  }\r\n\r\n  public cancelImageChange() {\r\n    this.toggleImageForm = false;\r\n  }\r\n\r\n  public saveImageChange(image: ImageInfo) {\r\n    this.article.image = image;\r\n    this.article.metaInfo = {\r\n      ...this.article.metaInfo,\r\n      image: image?.src || '',\r\n    };\r\n    this.toggleImageForm = false;\r\n    this.changed.emit({ ...this.article });\r\n  }\r\n\r\n  public saveArticle(event: any): void {\r\n    event.preventDefault();\r\n    this.saveClicked.emit({ ...this.article });\r\n  }\r\n\r\n  public deleteArticle(event: any): void {\r\n    event.preventDefault();\r\n    this.deleteClicked.emit({ ...this.article });\r\n  }\r\n\r\n  public articledDblClick(event: any): void {\r\n    event.preventDefault();\r\n    if (this.enableReadonlyIdToggle) {\r\n      this.readonlyId = !this.readonlyId;\r\n    }\r\n  }\r\n}\r\n",
             "assetsDirs": [],
             "styleUrlsData": [
                 {
@@ -4231,7 +4231,7 @@
         },
         {
             "name": "ArticlesSlideshowComponent",
-            "id": "component-ArticlesSlideshowComponent-4f32d3708893a0481b2306a99e8b08b62d5873c49c91473ab589f3603e5d112b9467a147c5cf36b3e01e39c4c45c7fb1db1d73e8f87e4e1a2e79680df123ddda",
+            "id": "component-ArticlesSlideshowComponent-53faeab28e39eaabf0b149a5a790b39980ab2ef3437abb7b01dbd023c9f8ef9bd9f5a46c0f9bcba28495deecc84c73321566e3829e82dcb438a7430f3eda8c49",
             "file": "projects/ngx-cms/articles-slideshow/src/components/articles-slideshow/articles-slideshow.component.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -4249,6 +4249,15 @@
             "viewProviders": [],
             "hostDirectives": [],
             "inputsClass": [
+                {
+                    "name": "articleHref",
+                    "defaultValue": "''",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 25,
+                    "type": "string",
+                    "decorators": []
+                },
                 {
                     "name": "articles",
                     "defaultValue": "[]",
@@ -4307,7 +4316,7 @@
                     "type": "Array<string>",
                     "optional": false,
                     "description": "",
-                    "line": 27
+                    "line": 28
                 },
                 {
                     "name": "cardImageClasses",
@@ -4317,7 +4326,7 @@
                     "type": "Array<string>",
                     "optional": false,
                     "description": "",
-                    "line": 26
+                    "line": 27
                 }
             ],
             "methodsClass": [
@@ -4334,7 +4343,7 @@
                     "optional": false,
                     "returnType": "void",
                     "typeParameters": [],
-                    "line": 36,
+                    "line": 37,
                     "deprecated": false,
                     "deprecationMessage": "",
                     "jsdoctags": [
@@ -4355,7 +4364,7 @@
                     "optional": false,
                     "returnType": "void",
                     "typeParameters": [],
-                    "line": 32,
+                    "line": 33,
                     "deprecated": false,
                     "deprecationMessage": ""
                 },
@@ -4365,7 +4374,7 @@
                     "optional": false,
                     "returnType": "void",
                     "typeParameters": [],
-                    "line": 40,
+                    "line": 41,
                     "deprecated": false,
                     "deprecationMessage": "",
                     "modifierKind": [
@@ -4385,7 +4394,7 @@
                     "optional": false,
                     "returnType": "string",
                     "typeParameters": [],
-                    "line": 50,
+                    "line": 51,
                     "deprecated": false,
                     "deprecationMessage": "",
                     "modifierKind": [
@@ -4413,7 +4422,7 @@
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import {\r\n  Component,\r\n  Input,\r\n  OnChanges,\r\n  OnInit,\r\n  SimpleChanges,\r\n} from '@angular/core';\r\nimport { Article } from '@annuadvent/ngx-cms/article';\r\nimport { UtilsService } from '@annuadvent/ngx-core/utils';\r\n\r\n@Component({\r\n  selector: 'anu-articles-slideshow',\r\n  templateUrl: './articles-slideshow.component.html',\r\n  styleUrls: ['./articles-slideshow.component.scss'],\r\n})\r\nexport class ArticlesSlideshowComponent implements OnInit, OnChanges {\r\n  @Input() articles: Array<Article> = [];\r\n  @Input() isRowlayout: boolean = true;\r\n  /**\r\n   * sm, md or lg size names\r\n   */\r\n  @Input() size: string = 'sm';\r\n  @Input() showDescription: boolean = false;\r\n  @Input() descriptionCharCount: number = 0;\r\n\r\n  cardImageClasses: Array<string> = [];\r\n  cardContentClasses: Array<string> = [];\r\n\r\n  constructor(private utilsSvc: UtilsService) {\r\n    this.setCardClasses();\r\n  }\r\n  ngOnInit(): void {\r\n    this.setCardClasses();\r\n  }\r\n\r\n  ngOnChanges(changes: SimpleChanges): void {\r\n    this.setCardClasses();\r\n  }\r\n\r\n  private setCardClasses(): void {\r\n    if (this.isRowlayout) {\r\n      this.cardImageClasses = ['col-sm-4', 'col-md-4', 'col-lg-4'];\r\n      this.cardContentClasses = ['col-sm-8', 'col-md-8', 'col-lg-8'];\r\n    } else {\r\n      this.cardImageClasses = [];\r\n      this.cardContentClasses = [];\r\n    }\r\n  }\r\n\r\n  public trimDescription(description: string): string {\r\n    return this.utilsSvc.getTrimmedStringByChars(\r\n      description,\r\n      this.descriptionCharCount\r\n    );\r\n  }\r\n}\r\n",
+            "sourceCode": "import {\r\n  Component,\r\n  Input,\r\n  OnChanges,\r\n  OnInit,\r\n  SimpleChanges,\r\n} from '@angular/core';\r\nimport { Article } from '@annuadvent/ngx-cms/article';\r\nimport { UtilsService } from '@annuadvent/ngx-core/utils';\r\n\r\n@Component({\r\n  selector: 'anu-articles-slideshow',\r\n  templateUrl: './articles-slideshow.component.html',\r\n  styleUrls: ['./articles-slideshow.component.scss'],\r\n})\r\nexport class ArticlesSlideshowComponent implements OnInit, OnChanges {\r\n  @Input() articles: Array<Article> = [];\r\n  @Input() isRowlayout: boolean = true;\r\n  /**\r\n   * sm, md or lg size names\r\n   */\r\n  @Input() size: string = 'sm';\r\n  @Input() showDescription: boolean = false;\r\n  @Input() descriptionCharCount: number = 0;\r\n  @Input() articleHref: string = '';\r\n\r\n  cardImageClasses: Array<string> = [];\r\n  cardContentClasses: Array<string> = [];\r\n\r\n  constructor(private utilsSvc: UtilsService) {\r\n    this.setCardClasses();\r\n  }\r\n  ngOnInit(): void {\r\n    this.setCardClasses();\r\n  }\r\n\r\n  ngOnChanges(changes: SimpleChanges): void {\r\n    this.setCardClasses();\r\n  }\r\n\r\n  private setCardClasses(): void {\r\n    if (this.isRowlayout) {\r\n      this.cardImageClasses = ['col-sm-4', 'col-md-4', 'col-lg-4'];\r\n      this.cardContentClasses = ['col-sm-8', 'col-md-8', 'col-lg-8'];\r\n    } else {\r\n      this.cardImageClasses = [];\r\n      this.cardContentClasses = [];\r\n    }\r\n  }\r\n\r\n  public trimDescription(description: string): string {\r\n    return this.utilsSvc.getTrimmedStringByChars(\r\n      description,\r\n      this.descriptionCharCount\r\n    );\r\n  }\r\n}\r\n",
             "assetsDirs": [],
             "styleUrlsData": [
                 {
@@ -4435,7 +4444,7 @@
                         "deprecationMessage": ""
                     }
                 ],
-                "line": 27,
+                "line": 28,
                 "jsdoctags": [
                     {
                         "name": "utilsSvc",
@@ -4452,11 +4461,11 @@
                 "OnInit",
                 "OnChanges"
             ],
-            "templateData": "<anu-slideshow class=\"articles-slideshow\" [ngClass]=\"[size, !isRowlayout ? 'not-row-layout': '']\">\r\n    <anu-card *ngFor=\"let art of articles\" [imageCssClasses]=\"cardImageClasses\" [contentCssClasses]=\"cardContentClasses\"\r\n        [isRowLayout]=\"isRowlayout\" class=\"articles-slideshow_item border border-round spacing-around-horizontal-half\">\r\n        <anu-card-image *ngIf=\"art?.image?.src\">\r\n            <a [routerLink]=\"[art?.categories && art.categories[0] || '', art?.id]\" class=\"shadow\"><img\r\n                    [src]=\"art?.image?.src\" [alt]=\"art?.image?.alt\" /></a>\r\n        </anu-card-image>\r\n        <anu-card-title class=\"articles-slideshow_item_title spacing-horizontal-half\">\r\n            <a\r\n                [routerLink]=\"[art?.categories && art.categories[0] || '', art?.id]\"><strong>{{art?.metaInfo?.title}}</strong></a>\r\n        </anu-card-title>\r\n        <anu-card-body *ngIf=\"showDescription\" class=\"articles-slideshow_item_description spacing-horizontal-half\">\r\n            <p [innerHtml]=\"trimDescription(art?.metaInfo?.description)\"></p>\r\n        </anu-card-body>\r\n    </anu-card>\r\n</anu-slideshow>\r\n"
+            "templateData": "<anu-slideshow class=\"articles-slideshow\" [ngClass]=\"[size, !isRowlayout ? 'not-row-layout': '']\">\r\n    <anu-card *ngFor=\"let art of articles\" [imageCssClasses]=\"cardImageClasses\" [contentCssClasses]=\"cardContentClasses\"\r\n        [isRowLayout]=\"isRowlayout\" class=\"articles-slideshow_item border border-round spacing-around-horizontal-half\">\r\n        <anu-card-image *ngIf=\"art?.image?.src\">\r\n            <a [routerLink]=\"[articleHref, art?.id]\" class=\"shadow\"><img [src]=\"art?.image?.src\"\r\n                    [alt]=\"art?.image?.alt\" /></a>\r\n        </anu-card-image>\r\n        <anu-card-title class=\"articles-slideshow_item_title spacing-horizontal-half\">\r\n            <a [routerLink]=\"[articleHref, art?.id]\"><strong>{{art?.metaInfo?.title}}</strong></a>\r\n        </anu-card-title>\r\n        <anu-card-body *ngIf=\"showDescription\" class=\"articles-slideshow_item_description spacing-horizontal-half\">\r\n            <p [innerHtml]=\"trimDescription(art?.metaInfo?.description)\"></p>\r\n        </anu-card-body>\r\n    </anu-card>\r\n</anu-slideshow>\r\n"
         },
         {
             "name": "ArticleViewComponent",
-            "id": "component-ArticleViewComponent-86f7e399d90cabe126d62c19f19ca3d8bad80d04aa8ff6d8aa4243d8e555a026f0809c027e34403259a2b6fecb5b0ea41224230f8e47dba7c343ce109f7bb3cc",
+            "id": "component-ArticleViewComponent-9e2941aab100510ddbe2db0c4ce18549e337ed80d53379a848f1ab1bbf1df6baef132d9bbbfa052446b30a02183fc99187c0cc143eaf905de42eec19313cc283",
             "file": "projects/ngx-cms/article-view/src/components/article-view/article-view.component.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -4474,6 +4483,33 @@
             "viewProviders": [],
             "hostDirectives": [],
             "inputsClass": [
+                {
+                    "name": "leftAsideClasses",
+                    "defaultValue": "['col-sm-12', 'col-md-6', 'col-9']",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 14,
+                    "type": "Array<string>",
+                    "decorators": []
+                },
+                {
+                    "name": "rightAsideClasses",
+                    "defaultValue": "['col-sm-12', 'col-md-6', 'col-3']",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 15,
+                    "type": "Array<string>",
+                    "decorators": []
+                },
+                {
+                    "name": "showAside",
+                    "defaultValue": "false",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 13,
+                    "type": "boolean",
+                    "decorators": []
+                },
                 {
                     "name": "showMetaInfo",
                     "defaultValue": "false",
@@ -4502,7 +4538,7 @@
                     "type": "UtilsService",
                     "optional": false,
                     "description": "",
-                    "line": 14,
+                    "line": 17,
                     "modifierKind": [
                         123
                     ]
@@ -4515,7 +4551,7 @@
                     "optional": false,
                     "returnType": "void",
                     "typeParameters": [],
-                    "line": 16,
+                    "line": 19,
                     "deprecated": false,
                     "deprecationMessage": ""
                 }
@@ -4529,11 +4565,11 @@
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import { Component, Input, OnInit } from '@angular/core';\r\nimport { UtilsService } from '@annuadvent/ngx-core/utils';\r\nimport { Article } from '@annuadvent/ngx-cms/article';\r\n\r\n@Component({\r\n  selector: 'anu-article-view',\r\n  templateUrl: './article-view.component.html',\r\n  styleUrls: ['./article-view.component.scss']\r\n})\r\nexport class ArticleViewComponent implements OnInit {\r\n  @Input() value: Article | null = null;\r\n  @Input() showMetaInfo: boolean = false;\r\n\r\n  constructor(public utilsSvc: UtilsService) { }\r\n\r\n  ngOnInit(): void {\r\n  }\r\n\r\n}\r\n",
+            "sourceCode": "import { Component, Input, OnInit } from '@angular/core';\r\nimport { UtilsService } from '@annuadvent/ngx-core/utils';\r\nimport { Article } from '@annuadvent/ngx-cms/article';\r\n\r\n@Component({\r\n  selector: 'anu-article-view',\r\n  templateUrl: './article-view.component.html',\r\n  styleUrls: ['./article-view.component.scss']\r\n})\r\nexport class ArticleViewComponent implements OnInit {\r\n  @Input() value: Article | null = null;\r\n  @Input() showMetaInfo: boolean = false;\r\n  @Input() showAside: boolean = false;\r\n  @Input() leftAsideClasses: Array<string> = ['col-sm-12', 'col-md-6', 'col-9'];\r\n  @Input() rightAsideClasses: Array<string> = ['col-sm-12', 'col-md-6', 'col-3'];\r\n\r\n  constructor(public utilsSvc: UtilsService) { }\r\n\r\n  ngOnInit(): void {\r\n  }\r\n\r\n}\r\n",
             "assetsDirs": [],
             "styleUrlsData": [
                 {
-                    "data": "@import 'mixins';\r\n\r\n@mixin article-view-gradient {\r\n    background: var(--anu-primary-lightest);\r\n    background: -moz-linear-gradient(0deg, var(--anu-primary-lightest) 0%, var(--anu-primary-lightest) 51%, var(--anu-primary-lighter) 100%);\r\n    background: -webkit-linear-gradient(0deg, var(--anu-primary-lightest) 0%, var(--anu-primary-lightest) 51%, var(--anu-primary-lighter) 100%);\r\n    background: linear-gradient(0deg, var(--anu-primary-lightest) 0%, var(--anu-primary-lightest) 51%, var(--anu-primary-lighter) 100%);\r\n}\r\n\r\n:host {\r\n    display: flex;\r\n    flex-direction: column;\r\n    max-width: 100%;\r\n\r\n    .article-view {\r\n        &-image-container {\r\n            max-height: 6rem;\r\n            overflow-y: hidden;\r\n\r\n            @include small {\r\n                max-height: 10rem;\r\n            }\r\n\r\n            @include medium {\r\n                max-height: 14rem;\r\n            }\r\n\r\n            @include large {\r\n                max-height: 18rem;\r\n            }\r\n        }\r\n\r\n        &-heading {\r\n            width: 100%;\r\n            @include article-view-gradient;\r\n        }\r\n\r\n        &-image {\r\n            width: 100%;\r\n            height: auto;\r\n        }\r\n    }\r\n}\r\n",
+                    "data": "@import 'mixins';\r\n\r\n:host {\r\n    .article-view {\r\n\r\n        &-heading {\r\n            z-index: 1;\r\n            color: var(--anu-accent-deep-light);\r\n            background: rgba(0, 0, 0, 0.5);\r\n        }\r\n\r\n        &-image {\r\n            width: 100%;\r\n            height: auto;\r\n            position: absolute;\r\n        }\r\n\r\n        &-description {\r\n            z-index: 1;\r\n            color: var(--anu-accent-deep-light);\r\n            background: rgba(0, 0, 0, 0.5);\r\n        }\r\n\r\n        &-meta-container {\r\n            z-index: 1;\r\n        }\r\n\r\n        &-body-container {\r\n            z-index: 1;\r\n        }\r\n\r\n        &-header {\r\n            overflow-y: hidden;\r\n        }\r\n    }\r\n}\r\n",
                     "styleUrl": "./article-view.component.scss"
                 }
             ],
@@ -4551,7 +4587,7 @@
                         "deprecationMessage": ""
                     }
                 ],
-                "line": 12,
+                "line": 15,
                 "jsdoctags": [
                     {
                         "name": "utilsSvc",
@@ -4567,11 +4603,11 @@
             "implements": [
                 "OnInit"
             ],
-            "templateData": "<div class=\"container article-view-image-container shadow\">\r\n    <img class=\"article-view-image\" *ngIf=\"value?.image?.src\" [src]=\"value.image.src\" [alt]=\"value.image.alt\" />\r\n</div>\r\n<!-- Article heading -->\r\n<h1 class=\"article-view-heading shadow spacing\" [innerHtml]=\"value?.metaInfo?.title\"></h1>\r\n<!-- Article Meta info -->\r\n<small *ngIf=\"showMetaInfo\" class=\"row nowrap stretch\">\r\n    <!-- Implement userInfo Service first then uncomment this code\r\n        <div>\r\n            <strong>Author: </strong><span><small>{{getUserDisplayName(value?.userId)}}</small></span>\r\n        </div>\r\n    -->\r\n    <div>\r\n        <strong>Updated: </strong><span><small>{{utilsSvc.dateToLocalString(value?.updated)}}</small></span>\r\n    </div>\r\n    <!-- <div>\r\n        <strong>Created: </strong><span><small>{{utilsSvc.dateToLocalString(value?.created)}}</small></span>\r\n    </div> -->\r\n</small>\r\n<!-- Article Description -->\r\n<p class=\"article-view-description\" [innerHtml]=\"value?.metaInfo?.description\"></p>\r\n<!-- Article body -->\r\n<anu-article-element [value]=\"value?.body\"></anu-article-element>\r\n"
+            "templateData": "<div class=\"flex-container primary-lightest-grad relative article-view-header\">\r\n    <img class=\"article-view-image\" *ngIf=\"value?.image?.src\" [src]=\"value.image.src\" [alt]=\"value.image.alt\" />\r\n    <!-- Article heading -->\r\n    <h1 class=\"article-view-heading shadow container spacing\" [innerHtml]=\"value?.metaInfo?.title\"></h1>\r\n    <!-- Article Description -->\r\n    <p class=\"article-view-description container spacing\" [innerHtml]=\"value?.metaInfo?.description\"></p>\r\n</div>\r\n<div class=\"flex-container primary-deep-light-grad article-view-meta-container\">\r\n    <!-- Article Meta info -->\r\n    <small *ngIf=\"showMetaInfo\" class=\"row nowrap stretch\">\r\n        <!-- Implement userInfo Service first then uncomment this code\r\n        <div>\r\n            <strong>Author: </strong><span><small>{{getUserDisplayName(value?.userId)}}</small></span>\r\n        </div>\r\n    -->\r\n        <div>\r\n            <strong>Updated: </strong><span><small>{{utilsSvc.dateToLocalString(value?.updated)}}</small></span>\r\n        </div>\r\n        <!-- <div>\r\n        <strong>Created: </strong><span><small>{{utilsSvc.dateToLocalString(value?.created)}}</small></span>\r\n    </div> -->\r\n    </small>\r\n</div>\r\n\r\n<div *ngIf=\"!showAside\" class=\"flex-container article-view-body-container\">\r\n    <!-- Article body -->\r\n    <anu-article-element [value]=\"value?.body\"></anu-article-element>\r\n</div>\r\n\r\n<div *ngIf=\"showAside\" class=\"flex-container article-view-body-container\">\r\n    <div class=\"row\">\r\n        <div [ngClass]=\"leftAsideClasses\">\r\n            <!-- Article body -->\r\n            <anu-article-element [value]=\"value?.body\"></anu-article-element>\r\n        </div>\r\n        <div [ngClass]=\"rightAsideClasses\">\r\n            <ng-content></ng-content>\r\n        </div>\r\n    </div>\r\n</div>\r\n"
         },
         {
             "name": "CategoryArticlesListComponent",
-            "id": "component-CategoryArticlesListComponent-8a4c3c54a70c8c3a7f2b37d4f6704877ba7b73f10482198ae9a4d8a1cfb287c93c046c5b9551b75b0c8d1a684a4b8c8c8bd4b7acd8daee563cfd4e3e7c001b72",
+            "id": "component-CategoryArticlesListComponent-291653f92f1e94ae1380c658e21d05d8fe42ec7b0365cee3b62de6ac019843c4b2df8a5255ef816192c5f843698c0cb310ee0773c4cdf4f02b6131e7a2c9e2aa",
             "file": "projects/ngx-cms/category-articles-list/src/components/category-articles-list/category-articles-list.component.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -4590,6 +4626,15 @@
             "hostDirectives": [],
             "inputsClass": [
                 {
+                    "name": "articleHref",
+                    "defaultValue": "''",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 16,
+                    "type": "string",
+                    "decorators": []
+                },
+                {
                     "name": "articles",
                     "defaultValue": "[]",
                     "deprecated": false,
@@ -4607,6 +4652,15 @@
                     "decorators": []
                 },
                 {
+                    "name": "categoryHref",
+                    "defaultValue": "''",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 15,
+                    "type": "string",
+                    "decorators": []
+                },
+                {
                     "name": "headerClassNames",
                     "defaultValue": "[]",
                     "deprecated": false,
@@ -4616,21 +4670,21 @@
                     "decorators": []
                 },
                 {
-                    "name": "href",
-                    "defaultValue": "''",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "line": 15,
-                    "type": "string",
-                    "decorators": []
-                },
-                {
                     "name": "listClassNames",
                     "defaultValue": "[]",
                     "deprecated": false,
                     "deprecationMessage": "",
                     "line": 14,
                     "type": "Array<string>",
+                    "decorators": []
+                },
+                {
+                    "name": "readMoreLabel",
+                    "defaultValue": "''",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 17,
+                    "type": "string",
                     "decorators": []
                 }
             ],
@@ -4644,7 +4698,7 @@
                     "type": "string",
                     "optional": false,
                     "description": "",
-                    "line": 17
+                    "line": 19
                 }
             ],
             "methodsClass": [],
@@ -4657,7 +4711,7 @@
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import { Component, Input } from '@angular/core';\r\nimport { Category } from '@annuadvent/ngx-cms/category';\r\nimport { Article } from '@annuadvent/ngx-cms/article';\r\n\r\n@Component({\r\n  selector: 'anu-category-articles-list',\r\n  templateUrl: './category-articles-list.component.html',\r\n  styleUrls: ['./category-articles-list.component.scss']\r\n})\r\nexport class CategoryArticlesListComponent {\r\n  @Input() category: Category | null | undefined;\r\n  @Input() articles: Array<Article> = [];\r\n  @Input() headerClassNames: Array<string> = [];\r\n  @Input() listClassNames: Array<string> = [];\r\n  @Input() href: string = '';\r\n\r\n  noDataMessage: string = 'No data Available';\r\n\r\n  constructor() { }\r\n}\r\n",
+            "sourceCode": "import { Component, Input } from '@angular/core';\r\nimport { Category } from '@annuadvent/ngx-cms/category';\r\nimport { Article } from '@annuadvent/ngx-cms/article';\r\n\r\n@Component({\r\n  selector: 'anu-category-articles-list',\r\n  templateUrl: './category-articles-list.component.html',\r\n  styleUrls: ['./category-articles-list.component.scss']\r\n})\r\nexport class CategoryArticlesListComponent {\r\n  @Input() category: Category | null | undefined;\r\n  @Input() articles: Array<Article> = [];\r\n  @Input() headerClassNames: Array<string> = [];\r\n  @Input() listClassNames: Array<string> = [];\r\n  @Input() categoryHref: string = '';\r\n  @Input() articleHref: string = '';\r\n  @Input() readMoreLabel: string = '';\r\n\r\n  noDataMessage: string = 'No data Available';\r\n\r\n  constructor() { }\r\n}\r\n",
             "assetsDirs": [],
             "styleUrlsData": [
                 {
@@ -4672,9 +4726,9 @@
                 "deprecated": false,
                 "deprecationMessage": "",
                 "args": [],
-                "line": 17
+                "line": 19
             },
-            "templateData": "<h4 class=\"\" [ngClass]=\"headerClassNames\">\r\n    <a [routerLink]=\"[href, category?.id]\">{{category?.metaInfo?.title}}</a>\r\n</h4>\r\n<ul class=\"spacing-vertical\" [ngClass]=\"listClassNames\">\r\n    <li class=\"\" *ngFor=\"let art of articles\">\r\n        <a [routerLink]=\"[href, category?.id, art?.id]\">{{art?.metaInfo?.title}}</a>\r\n    </li>\r\n</ul>\r\n<div class=\"row right\">\r\n    <a [routerLink]=\"[href, category?.id]\">Click to read more related articles\r\n        on <strong>{{category?.metaInfo?.title}}</strong></a>\r\n</div>\r\n"
+            "templateData": "<h4 class=\"\" [ngClass]=\"headerClassNames\">\r\n    <a [routerLink]=\"[categoryHref, category?.id]\">{{category?.metaInfo?.title}}</a>\r\n</h4>\r\n<ul class=\"spacing-vertical\" [ngClass]=\"listClassNames\">\r\n    <li class=\"\" *ngFor=\"let art of articles\">\r\n        <a [routerLink]=\"[articleHref, art?.id]\">{{art?.metaInfo?.title}}</a>\r\n    </li>\r\n</ul>\r\n<div class=\"row right\">\r\n    <a [routerLink]=\"[categoryHref, category?.id]\">{{readMoreLabel}}</a>\r\n</div>\r\n"
         },
         {
             "name": "CategoryComponent",
@@ -4910,11 +4964,11 @@
                 "OnInit",
                 "OnChanges"
             ],
-            "templateData": "<anu-card [imageCssClasses]=\"['col-sm-12', 'col-md-4', 'col-lg-4']\"\r\n    [contentCssClasses]=\"['col-sm-12', 'col-md-8', 'col-lg-8']\"\r\n    class=\"nowrap-md nowrap-lg\">\r\n    <anu-card-image *ngIf=\"value?.image?.src\">\r\n        <a *ngIf=\"titleHref\" [routerLink]=\"titleHref\" class=\"shadow\"><img [src]=\"value?.image?.src\" [alt]=\"value?.image?.alt\" /></a>\r\n        <img *ngIf=\"!titleHref\" [src]=\"value?.image?.src\" [alt]=\"value?.image?.alt\" />\r\n    </anu-card-image>\r\n    <anu-card-image *ngIf=\"!value?.image?.src\">\r\n        <div class=\"article-thumb shadow\"></div>\r\n    </anu-card-image>\r\n    <anu-card-title>\r\n        <h2><a *ngIf=\"titleHref\" [routerLink]=\"titleHref\">{{value?.metaInfo?.title}}</a></h2>\r\n        <h2 *ngIf=\"!titleHref\" [innerHtml]=\"value?.metaInfo?.title\"></h2>\r\n        <h3 *ngIf=\"showShortTitle && value?.shortTitle\" [innerHtml]=\"value?.shortTitle\"></h3>\r\n        <small *ngIf=\"showMetaInfo\" class=\"row nowrap stretch\">\r\n            <div><strong>Updated:\r\n                </strong><span><small>{{utilsSvc.dateToLocalString(value?.updated)}}</small></span></div>\r\n            <div><strong>Created:\r\n                </strong><span><small>{{utilsSvc.dateToLocalString(value?.created)}}</small></span></div>\r\n        </small>\r\n    </anu-card-title>\r\n    <anu-card-body>\r\n        <p *ngIf=\"showDescription\" [innerHtml]=\"trimmedDescription\"></p>\r\n    </anu-card-body>\r\n    <anu-card-footer *ngIf=\"showMetaInfo || updateHref || readMoreHref\">\r\n        <small *ngIf=\"showMetaInfo && value?.features\" class=\"row\">\r\n            <span class=\"spacing-around-half spacing-half border border-round\" *ngFor=\"let feature of value.features\"><small>{{feature}}</small></span>\r\n        </small>\r\n        <div class=\"row right\">\r\n            <div *ngIf=\"showMetaInfo\" class=\"spacing-around-horizontal\">\r\n                <span [ngClass]=\"value?.isLive ? 'success' : 'warning'\">{{value?.isLive ? 'Published' :\r\n                    'Unpublished'}}</span>\r\n            </div>\r\n            <div *ngIf=\"showMetaInfo && value?.isFeatured\" class=\"spacing-around-horizontal\">\r\n                <span class=\"success\">Featured</span>\r\n            </div>\r\n            <div class=\"spacing-around-horizontal\" *ngIf=\"updateHref && updateHref.length\">\r\n                <a [routerLink]=\"updateHref\">Update</a>\r\n            </div>\r\n            <div class=\"spacing-around-horizontal\" *ngIf=\"readMoreHref && readMoreHref.length\">\r\n                <a [routerLink]=\"readMoreHref\">Read more...</a>\r\n            </div>\r\n        </div>\r\n    </anu-card-footer>\r\n</anu-card>\r\n"
+            "templateData": "<anu-card [imageCssClasses]=\"['col-sm-12', 'col-md-4', 'col-lg-4']\"\r\n    [contentCssClasses]=\"['col-sm-12', 'col-md-8', 'col-lg-8']\" class=\"nowrap-md nowrap-lg\">\r\n    <anu-card-image *ngIf=\"value?.image?.src\">\r\n        <a *ngIf=\"titleHref\" [routerLink]=\"titleHref\" class=\"shadow\"><img [src]=\"value?.image?.src\"\r\n                [alt]=\"value?.image?.alt\" /></a>\r\n        <img *ngIf=\"!titleHref\" [src]=\"value?.image?.src\" [alt]=\"value?.image?.alt\" />\r\n    </anu-card-image>\r\n    <anu-card-image *ngIf=\"!value?.image?.src\">\r\n        <div class=\"article-thumb shadow\"></div>\r\n    </anu-card-image>\r\n    <anu-card-title>\r\n        <h2><a *ngIf=\"titleHref\" [routerLink]=\"titleHref\">{{value?.metaInfo?.title}}</a></h2>\r\n        <h2 *ngIf=\"!titleHref\" [innerHtml]=\"value?.metaInfo?.title\"></h2>\r\n        <h3 *ngIf=\"showShortTitle && value?.shortTitle\" [innerHtml]=\"value?.shortTitle\"></h3>\r\n        <small *ngIf=\"showMetaInfo\" class=\"row nowrap stretch\">\r\n            <div><strong>Updated:\r\n                </strong><span><small>{{utilsSvc.dateToLocalString(value?.updated)}}</small></span></div>\r\n            <div><strong>Created:\r\n                </strong><span><small>{{utilsSvc.dateToLocalString(value?.created)}}</small></span></div>\r\n        </small>\r\n    </anu-card-title>\r\n    <anu-card-body>\r\n        <p *ngIf=\"showDescription\" [innerHtml]=\"trimmedDescription\"></p>\r\n    </anu-card-body>\r\n    <anu-card-footer *ngIf=\"showMetaInfo || updateHref || readMoreHref\">\r\n        <small *ngIf=\"showMetaInfo && value?.features\" class=\"row\">\r\n            <span class=\"spacing-around-half spacing-half border border-round\"\r\n                *ngFor=\"let feature of value.features\"><small>{{feature}}</small></span>\r\n        </small>\r\n        <div class=\"row right\">\r\n            <div *ngIf=\"showMetaInfo\" class=\"spacing-around-horizontal\">\r\n                <span [ngClass]=\"value?.isLive ? 'success' : 'warning'\">{{value?.isLive ? 'Published' :\r\n                    'Unpublished'}}</span>\r\n            </div>\r\n            <div *ngIf=\"showMetaInfo && value?.isFeatured\" class=\"spacing-around-horizontal\">\r\n                <span class=\"success\">Featured</span>\r\n            </div>\r\n            <div class=\"spacing-around-horizontal\" *ngIf=\"updateHref && updateHref.length\">\r\n                <a [routerLink]=\"updateHref\">Update</a>\r\n            </div>\r\n            <div class=\"spacing-around-horizontal\" *ngIf=\"readMoreHref && readMoreHref.length\">\r\n                <a [routerLink]=\"readMoreHref\">Read more...</a>\r\n            </div>\r\n        </div>\r\n    </anu-card-footer>\r\n</anu-card>\r\n"
         },
         {
             "name": "CategoryEditorComponent",
-            "id": "component-CategoryEditorComponent-3638ed601134727fb5b49c47808d6abdd0949b079e468ca36e0692ac88780f72c936de6689f3cd2220f70689b27285669be516c34aaafe3bdd53f49e13778248",
+            "id": "component-CategoryEditorComponent-aa890263863e08dff1eade198575ff03b1b4c42806f5bdc0aa715af3e17201e1abc31c1aee8c303e862e0edc0407d4a08e4cfd42a3479aa57fc630e3a204d286",
             "file": "projects/ngx-cms/category-editor/src/components/category-editor/category-editor.component.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -5592,7 +5646,7 @@
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import { Component, EventEmitter, Input, OnChanges, OnInit, Output, SimpleChanges } from '@angular/core';\r\nimport { UtilsService } from '@annuadvent/ngx-core/utils';\r\nimport { Category, SAMPLE_CATEGORY, CategoryFeatures } from '@annuadvent/ngx-cms/category';\r\nimport { CATEGORY_EDITOR_TABS } from '../../constants/category-editor.constants';\r\nimport { ImageInfo } from '@annuadvent/ngx-common-ui/image-form';\r\nimport { MetaInfo } from '@annuadvent/ngx-common-ui/meta';\r\nimport { Tab } from '@annuadvent/ngx-common-ui/tabs';\r\n\r\n@Component({\r\n  selector: 'anu-category-editor',\r\n  templateUrl: './category-editor.component.html',\r\n  styleUrls: ['./category-editor.component.scss']\r\n})\r\nexport class CategoryEditorComponent implements OnInit, OnChanges {\r\n  @Input() value: Category | null;\r\n  @Input() imageHelpText: string = '';\r\n  @Input() readonlyId: boolean = true;\r\n  @Input() readonlyTitle: boolean = false;\r\n  @Input() enableUniqueId: boolean = true;\r\n  @Input() enablePublish: boolean = true;\r\n  @Input() enableDelete: boolean = true;\r\n  @Input() enableReadonlyIdToggle: boolean = true;\r\n\r\n  @Output() changed = new EventEmitter<Category>();\r\n  @Output() saveClicked = new EventEmitter<Category>();\r\n  @Output() deleteClicked = new EventEmitter<Category>();\r\n  @Output() inReviewClicked = new EventEmitter<Category>();\r\n  @Output() isLiveClicked = new EventEmitter<Category>();\r\n\r\n  toggleImageForm: boolean = false;\r\n  tabs: Array<Tab> = CATEGORY_EDITOR_TABS.map(t => ({ ...t }));\r\n\r\n  activeTab = this.tabs[0];\r\n  category: Category;\r\n  sampleCategory: Category;\r\n  selectedCategoryFeatures: Array<any> = [];\r\n  categoryFeatures: Array<any> = [];\r\n  readonlyMetaProps: Array<string> = [];\r\n\r\n  constructor(private utils: UtilsService) {\r\n    this.sampleCategory = { ...SAMPLE_CATEGORY, id: this.utils.getUniqueFromString(SAMPLE_CATEGORY.metaInfo.title), created: utils.currentDate, updated: utils.currentDate };\r\n    this.category = { ...this.sampleCategory };\r\n    this.categoryFeatures = Object.keys(CategoryFeatures).map(key => ({ id: CategoryFeatures[key], title: CategoryFeatures[key] }));\r\n    this.categoryMetaChanged = this.categoryMetaChanged.bind(this);\r\n  }\r\n\r\n  private initCategory() {\r\n    if (this.value) {\r\n      this.category = { ...this.value, metaInfo: { ...this.value.metaInfo } };\r\n\r\n    } else {\r\n      this.value = { ...this.sampleCategory, metaInfo: { ...this.sampleCategory.metaInfo } };\r\n      this.category = { ...this.sampleCategory, metaInfo: { ...this.sampleCategory.metaInfo } };\r\n    }\r\n\r\n    // Init selected categories.\r\n    this.selectedCategoryFeatures = this.category?.features?.map(f => ({ id: f })) || [];\r\n\r\n    //Init meta form with readonly props\r\n    this.readonlyMetaProps = this.readonlyTitle === true ? ['title'] : [];\r\n  }\r\n\r\n  ngOnInit(): void {\r\n    this.initCategory();\r\n  }\r\n\r\n  ngOnChanges(changes: SimpleChanges): void {\r\n    this.initCategory();\r\n  }\r\n\r\n  public tabChanged(tab: Tab) {\r\n    this.activeTab = tab;\r\n  }\r\n\r\n  public categoryMetaChanged(metaInfo: MetaInfo) {\r\n    if (metaInfo.title !== this.value?.metaInfo?.title) {\r\n      this.category.id = this.enableUniqueId ? this.utils.getUniqueFromString(metaInfo.title) : this.utils.toDashedString(metaInfo.title);\r\n    } else {\r\n      this.category.id = this.value.id;\r\n    }\r\n\r\n    this.category = { ...this.category, metaInfo: { ...metaInfo, url: this.utils.getCanonicalUrl(this.category.id) } };\r\n    this.changed.emit({ ...this.category });\r\n  }\r\n\r\n  public isLiveChanged(isLive: boolean): void {\r\n    const inReview = isLive === true ? false : this.value.inReview;\r\n    this.category = { ...this.category, isLive, inReview };\r\n    this.isLiveClicked.emit({ ...this.category });\r\n  }\r\n\r\n  public inReviewChanged(inReview: boolean): void {\r\n    const isLive = inReview === true ? false : this.value.isLive;\r\n    this.category = { ...this.category, inReview, isLive };\r\n    this.inReviewClicked.emit({ ...this.category });\r\n  }\r\n\r\n  public isFeaturedChanged(isFeatured: boolean): void {\r\n    this.category = { ...this.category, isFeatured };\r\n    this.changed.emit({ ...this.category });\r\n  }\r\n\r\n  public onShortTitleChanged(event: any): void {\r\n    this.changed.emit({ ...this.category });\r\n  }\r\n\r\n  public changeImage(event: any, clear: boolean = false) {\r\n    event.preventDefault();\r\n    if (clear === true) {\r\n      this.category.image = { src: '', alt: '' } as ImageInfo;\r\n      this.category.metaInfo.image = '';\r\n      this.changed.emit({ ...this.category });\r\n    } else {\r\n      this.toggleImageForm = true;\r\n    }\r\n  }\r\n\r\n  public cancelImageChange() {\r\n    this.toggleImageForm = false;\r\n  }\r\n\r\n  public saveImageChange(image: ImageInfo) {\r\n    this.category.image = image;\r\n    this.category.metaInfo.image = image.src;\r\n    this.toggleImageForm = false;\r\n    this.changed.emit({ ...this.category });\r\n  }\r\n\r\n  public saveCategory(event: any): void {\r\n    event.preventDefault();\r\n    this.saveClicked.emit({ ...this.category });\r\n  }\r\n\r\n  public deleteCategory(event: any): void {\r\n    event.preventDefault();\r\n    this.deleteClicked.emit({ ...this.category });\r\n  }\r\n\r\n  public onCategoryFeaturesChanged(selectedCategoryFeatures: Array<any> = []): void {\r\n    this.category = { ...this.category, features: selectedCategoryFeatures?.map(catFeature => catFeature?.id) };\r\n    this.selectedCategoryFeatures = [...selectedCategoryFeatures];\r\n    this.changed.emit({ ...this.category });\r\n  }\r\n\r\n  public categoryIdDblClick(event: any): void {\r\n    event.preventDefault();\r\n    if (this.enableReadonlyIdToggle) {\r\n      this.readonlyId = !this.readonlyId;\r\n    }\r\n  }\r\n}\r\n",
+            "sourceCode": "import { Component, EventEmitter, Input, OnChanges, OnInit, Output, SimpleChanges } from '@angular/core';\r\nimport { UtilsService } from '@annuadvent/ngx-core/utils';\r\nimport { Category, SAMPLE_CATEGORY, CategoryFeatures } from '@annuadvent/ngx-cms/category';\r\nimport { CATEGORY_EDITOR_TABS } from '../../constants/category-editor.constants';\r\nimport { ImageInfo } from '@annuadvent/ngx-common-ui/image-form';\r\nimport { MetaInfo } from '@annuadvent/ngx-common-ui/meta';\r\nimport { Tab } from '@annuadvent/ngx-common-ui/tabs';\r\n\r\n@Component({\r\n  selector: 'anu-category-editor',\r\n  templateUrl: './category-editor.component.html',\r\n  styleUrls: ['./category-editor.component.scss']\r\n})\r\nexport class CategoryEditorComponent implements OnInit, OnChanges {\r\n  @Input() value: Category | null;\r\n  @Input() imageHelpText: string = '';\r\n  @Input() readonlyId: boolean = true;\r\n  @Input() readonlyTitle: boolean = false;\r\n  @Input() enableUniqueId: boolean = true;\r\n  @Input() enablePublish: boolean = true;\r\n  @Input() enableDelete: boolean = true;\r\n  @Input() enableReadonlyIdToggle: boolean = true;\r\n\r\n  @Output() changed = new EventEmitter<Category>();\r\n  @Output() saveClicked = new EventEmitter<Category>();\r\n  @Output() deleteClicked = new EventEmitter<Category>();\r\n  @Output() inReviewClicked = new EventEmitter<Category>();\r\n  @Output() isLiveClicked = new EventEmitter<Category>();\r\n\r\n  toggleImageForm: boolean = false;\r\n  tabs: Array<Tab> = CATEGORY_EDITOR_TABS.map(t => ({ ...t }));\r\n\r\n  activeTab = this.tabs[0];\r\n  category: Category;\r\n  sampleCategory: Category;\r\n  selectedCategoryFeatures: Array<any> = [];\r\n  categoryFeatures: Array<any> = [];\r\n  readonlyMetaProps: Array<string> = [];\r\n\r\n  constructor(private utils: UtilsService) {\r\n    this.sampleCategory = { ...SAMPLE_CATEGORY, id: this.utils.getUniqueFromString(SAMPLE_CATEGORY.metaInfo.title), created: utils.currentDate, updated: utils.currentDate };\r\n    this.category = { ...this.sampleCategory };\r\n    this.categoryFeatures = Object.keys(CategoryFeatures).map(key => ({ id: CategoryFeatures[key], title: CategoryFeatures[key] }));\r\n    this.categoryMetaChanged = this.categoryMetaChanged.bind(this);\r\n  }\r\n\r\n  private initCategory() {\r\n    if (this.value) {\r\n      this.category = { ...this.value, metaInfo: { ...this.value.metaInfo } };\r\n\r\n    } else {\r\n      this.value = { ...this.sampleCategory, metaInfo: { ...this.sampleCategory.metaInfo } };\r\n      this.category = { ...this.sampleCategory, metaInfo: { ...this.sampleCategory.metaInfo } };\r\n    }\r\n\r\n    // Init selected categories.\r\n    this.selectedCategoryFeatures = this.category?.features?.map(f => ({ id: f })) || [];\r\n\r\n    //Init meta form with readonly props\r\n    this.readonlyMetaProps = this.readonlyTitle === true ? ['title'] : [];\r\n  }\r\n\r\n  ngOnInit(): void {\r\n    this.initCategory();\r\n  }\r\n\r\n  ngOnChanges(changes: SimpleChanges): void {\r\n    this.initCategory();\r\n  }\r\n\r\n  public tabChanged(tab: Tab) {\r\n    this.activeTab = tab;\r\n  }\r\n\r\n  public categoryMetaChanged(metaInfo: MetaInfo) {\r\n    if (metaInfo.title !== this.value?.metaInfo?.title) {\r\n      this.category.id = this.enableUniqueId ? this.utils.getUniqueFromString(metaInfo.title) : this.utils.toDashedString(metaInfo.title);\r\n    } else {\r\n      this.category.id = this.value.id;\r\n    }\r\n\r\n    this.category = { ...this.category, metaInfo: { ...metaInfo, url: this.utils.getCanonicalUrl('genre', this.category.id) } };\r\n    this.changed.emit({ ...this.category });\r\n  }\r\n\r\n  public isLiveChanged(isLive: boolean): void {\r\n    const inReview = isLive === true ? false : this.value.inReview;\r\n    this.category = { ...this.category, isLive, inReview };\r\n    this.isLiveClicked.emit({ ...this.category });\r\n  }\r\n\r\n  public inReviewChanged(inReview: boolean): void {\r\n    const isLive = inReview === true ? false : this.value.isLive;\r\n    this.category = { ...this.category, inReview, isLive };\r\n    this.inReviewClicked.emit({ ...this.category });\r\n  }\r\n\r\n  public isFeaturedChanged(isFeatured: boolean): void {\r\n    this.category = { ...this.category, isFeatured };\r\n    this.changed.emit({ ...this.category });\r\n  }\r\n\r\n  public onShortTitleChanged(event: any): void {\r\n    this.changed.emit({ ...this.category });\r\n  }\r\n\r\n  public changeImage(event: any, clear: boolean = false) {\r\n    event.preventDefault();\r\n    if (clear === true) {\r\n      this.category.image = { src: '', alt: '' } as ImageInfo;\r\n      this.category.metaInfo.image = '';\r\n      this.changed.emit({ ...this.category });\r\n    } else {\r\n      this.toggleImageForm = true;\r\n    }\r\n  }\r\n\r\n  public cancelImageChange() {\r\n    this.toggleImageForm = false;\r\n  }\r\n\r\n  public saveImageChange(image: ImageInfo) {\r\n    this.category.image = image;\r\n    this.category.metaInfo.image = image.src;\r\n    this.toggleImageForm = false;\r\n    this.changed.emit({ ...this.category });\r\n  }\r\n\r\n  public saveCategory(event: any): void {\r\n    event.preventDefault();\r\n    this.saveClicked.emit({ ...this.category });\r\n  }\r\n\r\n  public deleteCategory(event: any): void {\r\n    event.preventDefault();\r\n    this.deleteClicked.emit({ ...this.category });\r\n  }\r\n\r\n  public onCategoryFeaturesChanged(selectedCategoryFeatures: Array<any> = []): void {\r\n    this.category = { ...this.category, features: selectedCategoryFeatures?.map(catFeature => catFeature?.id) };\r\n    this.selectedCategoryFeatures = [...selectedCategoryFeatures];\r\n    this.changed.emit({ ...this.category });\r\n  }\r\n\r\n  public categoryIdDblClick(event: any): void {\r\n    event.preventDefault();\r\n    if (this.enableReadonlyIdToggle) {\r\n      this.readonlyId = !this.readonlyId;\r\n    }\r\n  }\r\n}\r\n",
             "assetsDirs": [],
             "styleUrlsData": [
                 {
@@ -8731,6 +8785,12 @@
                         "value": "prime-show-aside"
                     },
                     {
+                        "name": "mainShow",
+                        "deprecated": false,
+                        "deprecationMessage": "",
+                        "value": "main-show"
+                    },
+                    {
                         "name": "inReview",
                         "deprecated": false,
                         "deprecationMessage": "",
@@ -9585,6 +9645,12 @@
                             "value": "prime-show-aside"
                         },
                         {
+                            "name": "mainShow",
+                            "deprecated": false,
+                            "deprecationMessage": "",
+                            "value": "main-show"
+                        },
+                        {
                             "name": "inReview",
                             "deprecated": false,
                             "deprecationMessage": "",
@@ -10031,7 +10097,7 @@
                 "linktype": "component",
                 "name": "ArticleViewComponent",
                 "coveragePercent": 0,
-                "coverageCount": "0/6",
+                "coverageCount": "0/9",
                 "status": "low"
             },
             {
@@ -10127,7 +10193,7 @@
                 "linktype": "component",
                 "name": "ArticlesSlideshowComponent",
                 "coveragePercent": 7,
-                "coverageCount": "1/13",
+                "coverageCount": "1/14",
                 "status": "low"
             },
             {
@@ -10146,7 +10212,7 @@
                 "linktype": "component",
                 "name": "CategoryArticlesListComponent",
                 "coveragePercent": 0,
-                "coverageCount": "0/8",
+                "coverageCount": "0/10",
                 "status": "low"
             },
             {

@@ -19,6 +19,7 @@ import { ErrorComponent } from '@annuadvent/ngx-common-ui/error';
 import { FiltersComponent } from '@annuadvent/ngx-common-ui/filters';
 import { FooterNavComponent } from '@annuadvent/ngx-common-ui/footer-nav';
 import { HamburgerComponent } from '@annuadvent/ngx-common-ui/hamburger';
+import { ImageBrowserComponent } from '@annuadvent/ngx-common-ui/image-browser';
 import { ImageFormComponent } from '@annuadvent/ngx-common-ui/image-form';
 import { LinkFormComponent } from '@annuadvent/ngx-common-ui/link-form';
 import { MenuComponent } from '@annuadvent/ngx-common-ui/menu';
@@ -83,6 +84,7 @@ export const libComponentClasses = {
         FiltersComponent,
         FooterNavComponent,
         HamburgerComponent,
+        ImageBrowserComponent,
         ImageFormComponent,
         LinkFormComponent,
         MenuComponent,

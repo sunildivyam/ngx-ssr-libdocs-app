@@ -206,7 +206,7 @@
     "injectables": [
         {
             "name": "AppConfigService",
-            "id": "injectable-AppConfigService-e291e78fc431423446a8c830ab2af44f7eb9589b9193c72d6fa9303b552fa17a25fd9589d88665ec3429653fe27d68d07b41f09d8af74c82f59ddd5cff5f3e3e",
+            "id": "injectable-AppConfigService-7be003c1e9873614238d0fb7e8e51a10a931f0235d6efdf6dccb2c07c74b0cee6f7cf6ef7ad1bda737d8fb3e90b42a9248da73510e852798b8e3fbf3199546bd",
             "file": "projects/ngx-core/app-config/src/services/app-config.service.ts",
             "properties": [
                 {
@@ -223,12 +223,44 @@
                     ]
                 }
             ],
-            "methods": [],
+            "methods": [
+                {
+                    "name": "getConfigById",
+                    "args": [
+                        {
+                            "name": "id",
+                            "type": "string",
+                            "deprecated": false,
+                            "deprecationMessage": ""
+                        }
+                    ],
+                    "optional": false,
+                    "returnType": "any",
+                    "typeParameters": [],
+                    "line": 42,
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "modifierKind": [
+                        123
+                    ],
+                    "jsdoctags": [
+                        {
+                            "name": "id",
+                            "type": "string",
+                            "deprecated": false,
+                            "deprecationMessage": "",
+                            "tagName": {
+                                "text": "param"
+                            }
+                        }
+                    ]
+                }
+            ],
             "deprecated": false,
             "deprecationMessage": "",
             "description": "",
             "rawdescription": "\n",
-            "sourceCode": "import { Injectable } from '@angular/core';\nimport { AppConfig } from '../interfaces/app-config.interface';\nimport { Router } from '@angular/router';\n\n@Injectable({\n  providedIn: 'root'\n})\nexport class AppConfigService {\n  private _appConfig: AppConfig = null;\n\n  constructor(private router: Router) { }\n\n\n  public get config(): AppConfig {\n    return this._appConfig;\n  }\n\n\n  public set config(v: AppConfig) {\n    this._appConfig = v;\n  }\n\n  public get openai(): any {\n    return this._appConfig.openai;\n  }\n\n\n  public set openai(v: any) {\n    this._appConfig.openai = v;\n  }\n\n\n  public get firebase(): any {\n    return this._appConfig.firebase;\n  }\n\n\n  public set firebase(v: any) {\n    this._appConfig.firebase = v;\n  }\n}\n",
+            "sourceCode": "import { Injectable } from '@angular/core';\nimport { AppConfig } from '../interfaces/app-config.interface';\nimport { Router } from '@angular/router';\n\n@Injectable({\n  providedIn: 'root'\n})\nexport class AppConfigService {\n  private _appConfig: AppConfig = null;\n\n  constructor(private router: Router) { }\n\n\n  public get config(): AppConfig {\n    return this._appConfig;\n  }\n\n\n  public set config(v: AppConfig) {\n    this._appConfig = v;\n  }\n\n  public get openai(): any {\n    return this._appConfig.openai;\n  }\n\n\n  public set openai(v: any) {\n    this._appConfig.openai = v;\n  }\n\n\n  public get firebase(): any {\n    return this._appConfig.firebase;\n  }\n\n\n  public set firebase(v: any) {\n    this._appConfig.firebase = v;\n  }\n\n  public getConfigById(id: string): any {\n    return this._appConfig[id];\n  }\n}\n",
             "constructorObj": {
                 "name": "constructor",
                 "description": "",
@@ -1894,7 +1926,7 @@
                 "linktype": "injectable",
                 "name": "AppConfigService",
                 "coveragePercent": 0,
-                "coverageCount": "0/3",
+                "coverageCount": "0/4",
                 "status": "low"
             },
             {

@@ -1914,20 +1914,9 @@
     "injectables": [
         {
             "name": "FireArticlesHttpService",
-            "id": "injectable-FireArticlesHttpService-9fc3bbb086c0d3e5729059e65d2cc5a788f610cfc32583c495e97c0c7e3ecffe79a800aacddda08fce336f417e3cc2290e4a30c72f0d4693bba83be02da81df9",
+            "id": "injectable-FireArticlesHttpService-b2c7d8b0d5ccfd67d064beae3e1c3146b827732777fecc981069cec9374abc6a50b5ad403a5424bd0cd8d8943118b993d48e8e8904735197ad45ba5e9f999ae1",
             "file": "projects/ngx-tools/fire-cms/src/services/fire-articles-http.service.ts",
-            "properties": [
-                {
-                    "name": "firestoreApiUrl",
-                    "defaultValue": "''",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "string",
-                    "optional": false,
-                    "description": "",
-                    "line": 19
-                }
-            ],
+            "properties": [],
             "methods": [
                 {
                     "name": "addArticle",
@@ -1942,7 +1931,7 @@
                     "optional": false,
                     "returnType": "Promise<Article>",
                     "typeParameters": [],
-                    "line": 445,
+                    "line": 441,
                     "deprecated": false,
                     "deprecationMessage": "",
                     "modifierKind": [
@@ -1981,7 +1970,7 @@
                     "optional": false,
                     "returnType": "Promise<PageArticles>",
                     "typeParameters": [],
-                    "line": 29,
+                    "line": 25,
                     "deprecated": false,
                     "deprecationMessage": "",
                     "modifierKind": [
@@ -2055,7 +2044,7 @@
                     "optional": false,
                     "returnType": "Promise<Array<Article>>",
                     "typeParameters": [],
-                    "line": 361,
+                    "line": 357,
                     "deprecated": false,
                     "deprecationMessage": "",
                     "modifierKind": [
@@ -2102,7 +2091,7 @@
                     "optional": false,
                     "returnType": "Promise<PageArticles>",
                     "typeParameters": [],
-                    "line": 251,
+                    "line": 247,
                     "deprecated": false,
                     "deprecationMessage": "",
                     "modifierKind": [
@@ -2176,7 +2165,7 @@
                     "optional": false,
                     "returnType": "Promise<PageArticles>",
                     "typeParameters": [],
-                    "line": 167,
+                    "line": 163,
                     "deprecated": false,
                     "deprecationMessage": "",
                     "modifierKind": [
@@ -2238,7 +2227,7 @@
                     "optional": false,
                     "returnType": "Promise<Article>",
                     "typeParameters": [],
-                    "line": 46,
+                    "line": 42,
                     "deprecated": false,
                     "deprecationMessage": "",
                     "modifierKind": [
@@ -2270,7 +2259,7 @@
                     "optional": false,
                     "returnType": "Promise<Article>",
                     "typeParameters": [],
-                    "line": 55,
+                    "line": 51,
                     "deprecated": false,
                     "deprecationMessage": "",
                     "modifierKind": [
@@ -2330,7 +2319,7 @@
                     "optional": false,
                     "returnType": "Promise<PageArticles>",
                     "typeParameters": [],
-                    "line": 399,
+                    "line": 395,
                     "deprecated": false,
                     "deprecationMessage": "",
                     "modifierKind": [
@@ -2423,7 +2412,7 @@
                     "optional": false,
                     "returnType": "Promise<Array<PageCategoryGroup>>",
                     "typeParameters": [],
-                    "line": 289,
+                    "line": 285,
                     "deprecated": false,
                     "deprecationMessage": "",
                     "modifierKind": [
@@ -2491,7 +2480,7 @@
                     "optional": false,
                     "returnType": "Promise<Article>",
                     "typeParameters": [],
-                    "line": 86,
+                    "line": 82,
                     "deprecated": false,
                     "deprecationMessage": "",
                     "modifierKind": [
@@ -2553,7 +2542,7 @@
                     "optional": false,
                     "returnType": "Promise<PageArticles>",
                     "typeParameters": [],
-                    "line": 206,
+                    "line": 202,
                     "deprecated": false,
                     "deprecationMessage": "",
                     "modifierKind": [
@@ -2642,7 +2631,7 @@
                     "optional": false,
                     "returnType": "Promise<PageArticles>",
                     "typeParameters": [],
-                    "line": 121,
+                    "line": 117,
                     "deprecated": false,
                     "deprecationMessage": "",
                     "modifierKind": [
@@ -2777,7 +2766,7 @@
                     "optional": false,
                     "returnType": "Promise<Article>",
                     "typeParameters": [],
-                    "line": 461,
+                    "line": 457,
                     "deprecated": false,
                     "deprecationMessage": "",
                     "modifierKind": [
@@ -2801,19 +2790,13 @@
             "deprecationMessage": "",
             "description": "",
             "rawdescription": "\n",
-            "sourceCode": "import { Injectable } from '@angular/core';\r\nimport { Category } from '../interfaces/fire-categories.interface';\r\nimport { Article } from '../interfaces/fire-articles.interface';\r\nimport { PageCategoryGroup } from '../interfaces/fire-categories.interface';\r\nimport { PageArticles } from '../interfaces/fire-articles.interface';\r\nimport {\r\n  ARTICLES_COLLECTION_ID,\r\n  SHALLOW_ARTICLE_FIELDS,\r\n  UPDATE_ARTICLE_FIELDS,\r\n} from '../constants/fire-articles-http.contants';\r\nimport { UtilsService } from '@annuadvent/ngx-core/utils';\r\nimport { FireOrderField, FireQuery, FireQueryFilter, FirestoreHttpService, StructuredQueryOperatorEnum, StructuredQueryValueType } from '@annuadvent/ngx-tools/fire-store';\r\nimport { FireCommonService } from '@annuadvent/ngx-tools/fire-common';\r\n\r\n@Injectable({\r\n  providedIn: 'root'\r\n})\r\nexport class FireArticlesHttpService {\r\n  firestoreApiUrl: string = '';\r\n\r\n  constructor(\r\n    private fireCommonService: FireCommonService,\r\n    private utilsSvc: UtilsService,\r\n    private firestoreHttpService: FirestoreHttpService,\r\n  ) {\r\n    this.firestoreApiUrl = this.fireCommonService.firebaseConfig.store.firestoreBaseApiUrl;\r\n  }\r\n\r\n  private async buildPageOfArticles(\r\n    articles: Array<Article>,\r\n    pageSize: number = 0\r\n  ): Promise<PageArticles> {\r\n    const articlesCount = articles?.length || 0;\r\n    const pageArticles: PageArticles = {\r\n      articles: articles || [],\r\n      startPage: articlesCount ? articles[0]?.updated : null,\r\n      endPage:\r\n        articlesCount && pageSize && articlesCount === pageSize\r\n          ? articles[articlesCount - 1]?.updated\r\n          : null,\r\n    };\r\n\r\n    return pageArticles;\r\n  }\r\n\r\n  public async getArticle(articleId: string): Promise<Article> {\r\n    try {\r\n      const article = await this.firestoreHttpService.runQueryById(ARTICLES_COLLECTION_ID, articleId);\r\n      return article;\r\n    } catch (error: any) {\r\n      throw error;\r\n    }\r\n  }\r\n\r\n  public async getLiveArticle(articleId: string): Promise<Article> {\r\n    if (!articleId) throw new Error('Please provide a valid article id.');\r\n\r\n    const fireQuery: FireQuery = {\r\n      collectionId: ARTICLES_COLLECTION_ID,\r\n      where: [\r\n        {\r\n          fieldPath: 'id',\r\n          operator: StructuredQueryOperatorEnum.EQUAL,\r\n          value: articleId,\r\n          valueType: StructuredQueryValueType.stringValue\r\n        } as FireQueryFilter,\r\n        {\r\n          fieldPath: 'isLive',\r\n          operator: StructuredQueryOperatorEnum.EQUAL,\r\n          value: true,\r\n          valueType: StructuredQueryValueType.booleanValue\r\n        } as FireQueryFilter,\r\n      ],\r\n    };\r\n\r\n    try {\r\n      const articles = await this.firestoreHttpService.runQueryByConfig(fireQuery);\r\n      const article = articles?.length ? articles[0] : null;\r\n\r\n      return article;\r\n    } catch (error: any) {\r\n      throw error;\r\n    }\r\n  }\r\n\r\n  public async getUsersArticle(\r\n    articleId: string,\r\n    userId: string\r\n  ): Promise<Article> {\r\n    if (!articleId) throw new Error('Please provide a valid article id.');\r\n    if (!userId) throw new Error('Please provide a valid article id.');\r\n\r\n    const fireQuery: FireQuery = {\r\n      collectionId: ARTICLES_COLLECTION_ID,\r\n      where: [\r\n        {\r\n          fieldPath: 'id',\r\n          operator: StructuredQueryOperatorEnum.EQUAL,\r\n          value: articleId,\r\n          valueType: StructuredQueryValueType.stringValue\r\n        } as FireQueryFilter,\r\n        {\r\n          fieldPath: 'userId',\r\n          operator: StructuredQueryOperatorEnum.EQUAL,\r\n          value: userId,\r\n          valueType: StructuredQueryValueType.stringValue\r\n        } as FireQueryFilter,\r\n      ],\r\n    };\r\n\r\n    try {\r\n      const articles = await this.firestoreHttpService.runQueryByConfig(fireQuery);\r\n      const article = articles?.length ? articles[0] : null;\r\n\r\n      return article;\r\n    } catch (error: any) {\r\n      throw error;\r\n    }\r\n  }\r\n\r\n  public async getUsersOnePageShallowArticles(\r\n    userId: string,\r\n    isLive: boolean | null,\r\n    pageSize: number = 0,\r\n    startPage: string | null = null,\r\n    isForwardDir: boolean = true\r\n  ): Promise<PageArticles> {\r\n\r\n    const fireQuery: FireQuery = {\r\n      collectionId: ARTICLES_COLLECTION_ID,\r\n      where: [\r\n        {\r\n          fieldPath: 'userId',\r\n          operator: StructuredQueryOperatorEnum.EQUAL,\r\n          value: userId,\r\n          valueType: StructuredQueryValueType.stringValue\r\n        } as FireQueryFilter,\r\n        {\r\n          fieldPath: 'isLive',\r\n          operator: StructuredQueryOperatorEnum.EQUAL,\r\n          value: isLive,\r\n          valueType: StructuredQueryValueType.booleanValue\r\n        } as FireQueryFilter,\r\n      ],\r\n      orderBy: [\r\n        {\r\n          fieldPath: 'updated',\r\n          fieldType: StructuredQueryValueType.stringValue,\r\n          isDesc: true\r\n        } as FireOrderField\r\n      ],\r\n      selectFields: SHALLOW_ARTICLE_FIELDS,\r\n      pageSize,\r\n      isForwardDir,\r\n      startPage: [startPage]\r\n    };\r\n\r\n    try {\r\n      const articles = await this.firestoreHttpService.runQueryByConfig(fireQuery);\r\n\r\n      return await this.buildPageOfArticles(articles, pageSize);\r\n    } catch (error: any) {\r\n      throw error;\r\n    }\r\n  }\r\n\r\n  public async getAllUsersOnePageShallowArticles(\r\n    isLive: boolean | null,\r\n    pageSize: number = 0,\r\n    startPage: string | null = null,\r\n    isForwardDir: boolean = true\r\n  ): Promise<PageArticles> {\r\n\r\n    const fireQuery: FireQuery = {\r\n      collectionId: ARTICLES_COLLECTION_ID,\r\n      where: [\r\n        {\r\n          fieldPath: 'isLive',\r\n          operator: StructuredQueryOperatorEnum.EQUAL,\r\n          value: isLive,\r\n          valueType: StructuredQueryValueType.booleanValue\r\n        } as FireQueryFilter,\r\n      ],\r\n      orderBy: [\r\n        {\r\n          fieldPath: 'updated',\r\n          fieldType: StructuredQueryValueType.stringValue,\r\n          isDesc: true\r\n        } as FireOrderField\r\n      ],\r\n      selectFields: SHALLOW_ARTICLE_FIELDS,\r\n      pageSize,\r\n      isForwardDir,\r\n      startPage: [startPage]\r\n    };\r\n\r\n    try {\r\n      const articles = await this.firestoreHttpService.runQueryByConfig(fireQuery);\r\n\r\n      return await this.buildPageOfArticles(articles, pageSize);\r\n    } catch (error: any) {\r\n      throw error;\r\n    }\r\n  }\r\n\r\n  public async getUsersOnePageInReviewShallowArticles(\r\n    userId: string,\r\n    pageSize: number = 0,\r\n    startPage: string | null = null,\r\n    isForwardDir: boolean = true\r\n  ): Promise<PageArticles> {\r\n\r\n    const fireQuery: FireQuery = {\r\n      collectionId: ARTICLES_COLLECTION_ID,\r\n      where: [\r\n        {\r\n          fieldPath: 'userId',\r\n          operator: StructuredQueryOperatorEnum.EQUAL,\r\n          value: userId,\r\n          valueType: StructuredQueryValueType.stringValue\r\n        } as FireQueryFilter,\r\n        {\r\n          fieldPath: 'isLive',\r\n          operator: StructuredQueryOperatorEnum.EQUAL,\r\n          value: null,\r\n          valueType: StructuredQueryValueType.booleanValue\r\n        } as FireQueryFilter,\r\n      ],\r\n      orderBy: [\r\n        {\r\n          fieldPath: 'updated',\r\n          fieldType: StructuredQueryValueType.stringValue,\r\n          isDesc: true\r\n        } as FireOrderField\r\n      ],\r\n      selectFields: SHALLOW_ARTICLE_FIELDS,\r\n      pageSize,\r\n      isForwardDir,\r\n      startPage: [startPage]\r\n    };\r\n\r\n    try {\r\n      const articles = await this.firestoreHttpService.runQueryByConfig(fireQuery);\r\n\r\n      return await this.buildPageOfArticles(articles, pageSize);\r\n    } catch (error: any) {\r\n      throw error;\r\n    }\r\n  }\r\n\r\n  public async getAllUsersOnePageInReviewShallowArticles(\r\n    pageSize: number = 0,\r\n    startPage: string | null = null,\r\n    isForwardDir: boolean = true\r\n  ): Promise<PageArticles> {\r\n\r\n    const fireQuery: FireQuery = {\r\n      collectionId: ARTICLES_COLLECTION_ID,\r\n      where: [\r\n        {\r\n          fieldPath: 'isLive',\r\n          operator: StructuredQueryOperatorEnum.EQUAL,\r\n          value: null,\r\n          valueType: StructuredQueryValueType.booleanValue\r\n        } as FireQueryFilter,\r\n      ],\r\n      orderBy: [\r\n        {\r\n          fieldPath: 'updated',\r\n          fieldType: StructuredQueryValueType.stringValue,\r\n          isDesc: true\r\n        } as FireOrderField\r\n      ],\r\n      selectFields: SHALLOW_ARTICLE_FIELDS,\r\n      pageSize,\r\n      isForwardDir,\r\n      startPage: [startPage]\r\n    };\r\n\r\n    try {\r\n      const articles = await this.firestoreHttpService.runQueryByConfig(fireQuery);\r\n\r\n      return await this.buildPageOfArticles(articles, pageSize);\r\n    } catch (error: any) {\r\n      throw error;\r\n    }\r\n  }\r\n\r\n  public async getLiveShallowArticlesOfCategories(\r\n    categories: Array<string> | Array<Category>,\r\n    pageSize: number = 0,\r\n    startPage: string | null = null,\r\n    isForwardDir: boolean = true\r\n  ): Promise<Array<PageCategoryGroup>> {\r\n    let pageCategoryGroups: Array<PageCategoryGroup> = [];\r\n\r\n    if (categories && categories.length) {\r\n      const fireQuery: FireQuery = {\r\n        collectionId: ARTICLES_COLLECTION_ID,\r\n        where: [\r\n          {\r\n            fieldPath: 'isLive',\r\n            operator: StructuredQueryOperatorEnum.EQUAL,\r\n            value: true,\r\n            valueType: StructuredQueryValueType.booleanValue\r\n          } as FireQueryFilter,\r\n          {\r\n            fieldPath: 'categories',\r\n            operator: StructuredQueryOperatorEnum.ARRAY_CONTAINS,\r\n            value: '',\r\n            valueType: StructuredQueryValueType.stringValue\r\n          } as FireQueryFilter,\r\n        ],\r\n        orderBy: [\r\n          {\r\n            fieldPath: 'updated',\r\n            fieldType: StructuredQueryValueType.stringValue,\r\n            isDesc: true\r\n          } as FireOrderField\r\n        ],\r\n        selectFields: SHALLOW_ARTICLE_FIELDS,\r\n        pageSize,\r\n        isForwardDir,\r\n        startPage: [startPage]\r\n      };\r\n\r\n      try {\r\n        pageCategoryGroups = await Promise.all(\r\n          categories.map(async (cat) => {\r\n            const catId = typeof cat === 'string' ? cat : cat.id;\r\n            fireQuery.where.find(wh => wh.fieldPath === 'categories').value = catId;\r\n\r\n            try {\r\n              const catArticles = await this.firestoreHttpService.runQueryByConfig(fireQuery);\r\n              // if a single category, then add pagearticles with previous and next page info else leave that info empty., so that pagination can be enebled for Category articles.\r\n              let pageArticles = await this.buildPageOfArticles(\r\n                catArticles,\r\n                pageSize\r\n              );\r\n\r\n              const pageCategoryGroup: PageCategoryGroup = {\r\n                category:\r\n                  typeof cat === 'string' ? ({ id: cat } as Category) : cat,\r\n                pageArticles,\r\n              };\r\n\r\n              return pageCategoryGroup;\r\n            } catch (error: any) {\r\n              throw error;\r\n            }\r\n          })\r\n        );\r\n      } catch (error: any) {\r\n        throw error;\r\n      }\r\n    }\r\n\r\n    return pageCategoryGroups;\r\n  }\r\n\r\n  public async getAllLiveArticlesFromDate(\r\n    fromDateTime: string\r\n  ): Promise<Array<Article>> {\r\n\r\n    const fireQuery: FireQuery = {\r\n      collectionId: ARTICLES_COLLECTION_ID,\r\n      where: [\r\n        {\r\n          fieldPath: 'updated',\r\n          operator: StructuredQueryOperatorEnum.GREATER_THAN_OR_EQUAL,\r\n          value: fromDateTime,\r\n          valueType: StructuredQueryValueType.stringValue\r\n        } as FireQueryFilter,\r\n        {\r\n          fieldPath: 'isLive',\r\n          operator: StructuredQueryOperatorEnum.EQUAL,\r\n          value: true,\r\n          valueType: StructuredQueryValueType.booleanValue\r\n        } as FireQueryFilter,\r\n      ],\r\n      orderBy: [\r\n        {\r\n          fieldPath: 'updated',\r\n          fieldType: StructuredQueryValueType.stringValue,\r\n          isDesc: true\r\n        } as FireOrderField\r\n      ],\r\n      selectFields: ['categories', 'updated'],\r\n    };\r\n\r\n    try {\r\n      const articles = await this.firestoreHttpService.runQueryByConfig(fireQuery);\r\n      return articles;\r\n    } catch (error: any) {\r\n      throw error;\r\n    }\r\n  }\r\n\r\n  public async getLiveOnePageShallowArticlesByFeatures(\r\n    features: Array<string>,\r\n    isLive: boolean = true,\r\n    pageSize: number = 0,\r\n    startPage: string | null = null,\r\n    isForwardDir: boolean = true\r\n  ): Promise<PageArticles> {\r\n\r\n    const fireQuery: FireQuery = {\r\n      collectionId: ARTICLES_COLLECTION_ID,\r\n      where: [\r\n        {\r\n          fieldPath: 'features',\r\n          operator: StructuredQueryOperatorEnum.ARRAY_CONTAINS_ANY,\r\n          value: features,\r\n          valueType: StructuredQueryValueType.stringValue\r\n        } as FireQueryFilter,\r\n        {\r\n          fieldPath: 'isLive',\r\n          operator: StructuredQueryOperatorEnum.EQUAL,\r\n          value: true,\r\n          valueType: StructuredQueryValueType.booleanValue\r\n        } as FireQueryFilter,\r\n      ],\r\n      orderBy: [\r\n        {\r\n          fieldPath: 'updated',\r\n          fieldType: StructuredQueryValueType.stringValue,\r\n          isDesc: true\r\n        } as FireOrderField\r\n      ],\r\n      selectFields: SHALLOW_ARTICLE_FIELDS,\r\n      pageSize,\r\n      isForwardDir,\r\n      startPage: [startPage]\r\n    };\r\n\r\n    try {\r\n      const articles = await this.firestoreHttpService.runQueryByConfig(fireQuery);\r\n\r\n      return await this.buildPageOfArticles(articles, pageSize);\r\n    } catch (error: any) {\r\n      throw error;\r\n    }\r\n  }\r\n\r\n  public async addArticle(article: Article): Promise<Article> {\r\n    const existedArticle = await this.getArticle(article.id).catch(\r\n      (error: any) => {\r\n        if (error.status === 404) {\r\n          return null;\r\n        } else {\r\n          throw error;\r\n        }\r\n      }\r\n    );\r\n    if (existedArticle) throw new Error('Article already Exist.');\r\n    return this.updateArticle(article).catch((error) => {\r\n      throw error;\r\n    });\r\n  }\r\n\r\n  public async updateArticle(article: Article): Promise<Article> {\r\n    const fieldsToUpdate = [...UPDATE_ARTICLE_FIELDS, 'isLive'];\r\n\r\n    const currentDate = this.utilsSvc.currentDate;\r\n    const pArticle = { ...article, updated: currentDate, isLive: false, inReview: false } as Article;\r\n    pArticle.metaInfo['article:published_time'] = currentDate;\r\n    if (!pArticle.created) pArticle.created = currentDate;\r\n    if (!pArticle.userId) throw new Error('Article userId is required.');\r\n\r\n    return this.firestoreHttpService.runQueryToUpdate(ARTICLES_COLLECTION_ID, article, fieldsToUpdate, false)\r\n      .catch((error) => {\r\n        throw error;\r\n      });\r\n  }\r\n\r\n  public async setArticleUpForReview(article: Article): Promise<Article> {\r\n    const fieldsToUpdate = ['inReview', 'isLive', 'updated', 'metaInfo'];\r\n\r\n    // Any modification to a article, will bring it to unpublished, and not up for review.\r\n    article.isLive = article.inReview === true ? false : article.isLive;\r\n    const currentDate = this.utilsSvc.currentDate;\r\n    article.updated = currentDate;\r\n    article.metaInfo['article:published_time'] = currentDate;\r\n\r\n    return this.firestoreHttpService.runQueryToUpdate(ARTICLES_COLLECTION_ID, article, fieldsToUpdate, false)\r\n      .catch((error) => {\r\n        throw error;\r\n      });\r\n  }\r\n\r\n  public async setArticleLive(article: Article): Promise<Article> {\r\n    const fieldsToUpdate = ['inReview', 'isLive', 'updated', 'metaInfo'];\r\n\r\n    // Any modification to a article, will bring it to unpublished, and not up for review.\r\n    article.inReview = article.isLive === true ? false : article.inReview;\r\n    const currentDate = this.utilsSvc.currentDate;\r\n    article.updated = currentDate;\r\n    article.metaInfo['article:published_time'] = currentDate;\r\n\r\n    return this.firestoreHttpService.runQueryToUpdate(ARTICLES_COLLECTION_ID, article, fieldsToUpdate, false)\r\n      .catch((error) => {\r\n        throw error;\r\n      });\r\n  }\r\n\r\n  public async deleteArticle(article: Article): Promise<boolean> {\r\n    return this.firestoreHttpService.runQueryToDelete(ARTICLES_COLLECTION_ID, article);\r\n  }\r\n}\r\n",
+            "sourceCode": "import { Injectable } from '@angular/core';\r\nimport { Category } from '../interfaces/fire-categories.interface';\r\nimport { Article } from '../interfaces/fire-articles.interface';\r\nimport { PageCategoryGroup } from '../interfaces/fire-categories.interface';\r\nimport { PageArticles } from '../interfaces/fire-articles.interface';\r\nimport {\r\n  ARTICLES_COLLECTION_ID,\r\n  SHALLOW_ARTICLE_FIELDS,\r\n  UPDATE_ARTICLE_FIELDS,\r\n} from '../constants/fire-articles-http.contants';\r\nimport { UtilsService } from '@annuadvent/ngx-core/utils';\r\nimport { FireOrderField, FireQuery, FireQueryFilter, FirestoreHttpService, StructuredQueryOperatorEnum, StructuredQueryValueType } from '@annuadvent/ngx-tools/fire-store';\r\n\r\n\r\n@Injectable({\r\n  providedIn: 'root'\r\n})\r\nexport class FireArticlesHttpService {\r\n\r\n  constructor(\r\n    private utilsSvc: UtilsService,\r\n    private firestoreHttpService: FirestoreHttpService,\r\n  ) { }\r\n\r\n  private async buildPageOfArticles(\r\n    articles: Array<Article>,\r\n    pageSize: number = 0\r\n  ): Promise<PageArticles> {\r\n    const articlesCount = articles?.length || 0;\r\n    const pageArticles: PageArticles = {\r\n      articles: articles || [],\r\n      startPage: articlesCount ? articles[0]?.updated : null,\r\n      endPage:\r\n        articlesCount && pageSize && articlesCount === pageSize\r\n          ? articles[articlesCount - 1]?.updated\r\n          : null,\r\n    };\r\n\r\n    return pageArticles;\r\n  }\r\n\r\n  public async getArticle(articleId: string): Promise<Article> {\r\n    try {\r\n      const article = await this.firestoreHttpService.runQueryById(ARTICLES_COLLECTION_ID, articleId);\r\n      return article;\r\n    } catch (error: any) {\r\n      throw error;\r\n    }\r\n  }\r\n\r\n  public async getLiveArticle(articleId: string): Promise<Article> {\r\n    if (!articleId) throw new Error('Please provide a valid article id.');\r\n\r\n    const fireQuery: FireQuery = {\r\n      collectionId: ARTICLES_COLLECTION_ID,\r\n      where: [\r\n        {\r\n          fieldPath: 'id',\r\n          operator: StructuredQueryOperatorEnum.EQUAL,\r\n          value: articleId,\r\n          valueType: StructuredQueryValueType.stringValue\r\n        } as FireQueryFilter,\r\n        {\r\n          fieldPath: 'isLive',\r\n          operator: StructuredQueryOperatorEnum.EQUAL,\r\n          value: true,\r\n          valueType: StructuredQueryValueType.booleanValue\r\n        } as FireQueryFilter,\r\n      ],\r\n    };\r\n\r\n    try {\r\n      const articles = await this.firestoreHttpService.runQueryByConfig(fireQuery);\r\n      const article = articles?.length ? articles[0] : null;\r\n\r\n      return article;\r\n    } catch (error: any) {\r\n      throw error;\r\n    }\r\n  }\r\n\r\n  public async getUsersArticle(\r\n    articleId: string,\r\n    userId: string\r\n  ): Promise<Article> {\r\n    if (!articleId) throw new Error('Please provide a valid article id.');\r\n    if (!userId) throw new Error('Please provide a valid article id.');\r\n\r\n    const fireQuery: FireQuery = {\r\n      collectionId: ARTICLES_COLLECTION_ID,\r\n      where: [\r\n        {\r\n          fieldPath: 'id',\r\n          operator: StructuredQueryOperatorEnum.EQUAL,\r\n          value: articleId,\r\n          valueType: StructuredQueryValueType.stringValue\r\n        } as FireQueryFilter,\r\n        {\r\n          fieldPath: 'userId',\r\n          operator: StructuredQueryOperatorEnum.EQUAL,\r\n          value: userId,\r\n          valueType: StructuredQueryValueType.stringValue\r\n        } as FireQueryFilter,\r\n      ],\r\n    };\r\n\r\n    try {\r\n      const articles = await this.firestoreHttpService.runQueryByConfig(fireQuery);\r\n      const article = articles?.length ? articles[0] : null;\r\n\r\n      return article;\r\n    } catch (error: any) {\r\n      throw error;\r\n    }\r\n  }\r\n\r\n  public async getUsersOnePageShallowArticles(\r\n    userId: string,\r\n    isLive: boolean | null,\r\n    pageSize: number = 0,\r\n    startPage: string | null = null,\r\n    isForwardDir: boolean = true\r\n  ): Promise<PageArticles> {\r\n\r\n    const fireQuery: FireQuery = {\r\n      collectionId: ARTICLES_COLLECTION_ID,\r\n      where: [\r\n        {\r\n          fieldPath: 'userId',\r\n          operator: StructuredQueryOperatorEnum.EQUAL,\r\n          value: userId,\r\n          valueType: StructuredQueryValueType.stringValue\r\n        } as FireQueryFilter,\r\n        {\r\n          fieldPath: 'isLive',\r\n          operator: StructuredQueryOperatorEnum.EQUAL,\r\n          value: isLive,\r\n          valueType: StructuredQueryValueType.booleanValue\r\n        } as FireQueryFilter,\r\n      ],\r\n      orderBy: [\r\n        {\r\n          fieldPath: 'updated',\r\n          fieldType: StructuredQueryValueType.stringValue,\r\n          isDesc: true\r\n        } as FireOrderField\r\n      ],\r\n      selectFields: SHALLOW_ARTICLE_FIELDS,\r\n      pageSize,\r\n      isForwardDir,\r\n      startPage: startPage ? [startPage] : null\r\n    };\r\n\r\n    try {\r\n      const articles = await this.firestoreHttpService.runQueryByConfig(fireQuery);\r\n\r\n      return await this.buildPageOfArticles(articles, pageSize);\r\n    } catch (error: any) {\r\n      throw error;\r\n    }\r\n  }\r\n\r\n  public async getAllUsersOnePageShallowArticles(\r\n    isLive: boolean | null,\r\n    pageSize: number = 0,\r\n    startPage: string | null = null,\r\n    isForwardDir: boolean = true\r\n  ): Promise<PageArticles> {\r\n\r\n    const fireQuery: FireQuery = {\r\n      collectionId: ARTICLES_COLLECTION_ID,\r\n      where: [\r\n        {\r\n          fieldPath: 'isLive',\r\n          operator: StructuredQueryOperatorEnum.EQUAL,\r\n          value: isLive,\r\n          valueType: StructuredQueryValueType.booleanValue\r\n        } as FireQueryFilter,\r\n      ],\r\n      orderBy: [\r\n        {\r\n          fieldPath: 'updated',\r\n          fieldType: StructuredQueryValueType.stringValue,\r\n          isDesc: true\r\n        } as FireOrderField\r\n      ],\r\n      selectFields: SHALLOW_ARTICLE_FIELDS,\r\n      pageSize,\r\n      isForwardDir,\r\n      startPage: startPage ? [startPage] : null\r\n    };\r\n\r\n    try {\r\n      const articles = await this.firestoreHttpService.runQueryByConfig(fireQuery);\r\n\r\n      return await this.buildPageOfArticles(articles, pageSize);\r\n    } catch (error: any) {\r\n      throw error;\r\n    }\r\n  }\r\n\r\n  public async getUsersOnePageInReviewShallowArticles(\r\n    userId: string,\r\n    pageSize: number = 0,\r\n    startPage: string | null = null,\r\n    isForwardDir: boolean = true\r\n  ): Promise<PageArticles> {\r\n\r\n    const fireQuery: FireQuery = {\r\n      collectionId: ARTICLES_COLLECTION_ID,\r\n      where: [\r\n        {\r\n          fieldPath: 'userId',\r\n          operator: StructuredQueryOperatorEnum.EQUAL,\r\n          value: userId,\r\n          valueType: StructuredQueryValueType.stringValue\r\n        } as FireQueryFilter,\r\n        {\r\n          fieldPath: 'isLive',\r\n          operator: StructuredQueryOperatorEnum.EQUAL,\r\n          value: null,\r\n          valueType: StructuredQueryValueType.booleanValue\r\n        } as FireQueryFilter,\r\n      ],\r\n      orderBy: [\r\n        {\r\n          fieldPath: 'updated',\r\n          fieldType: StructuredQueryValueType.stringValue,\r\n          isDesc: true\r\n        } as FireOrderField\r\n      ],\r\n      selectFields: SHALLOW_ARTICLE_FIELDS,\r\n      pageSize,\r\n      isForwardDir,\r\n      startPage: startPage ? [startPage] : null\r\n    };\r\n\r\n    try {\r\n      const articles = await this.firestoreHttpService.runQueryByConfig(fireQuery);\r\n\r\n      return await this.buildPageOfArticles(articles, pageSize);\r\n    } catch (error: any) {\r\n      throw error;\r\n    }\r\n  }\r\n\r\n  public async getAllUsersOnePageInReviewShallowArticles(\r\n    pageSize: number = 0,\r\n    startPage: string | null = null,\r\n    isForwardDir: boolean = true\r\n  ): Promise<PageArticles> {\r\n\r\n    const fireQuery: FireQuery = {\r\n      collectionId: ARTICLES_COLLECTION_ID,\r\n      where: [\r\n        {\r\n          fieldPath: 'isLive',\r\n          operator: StructuredQueryOperatorEnum.EQUAL,\r\n          value: null,\r\n          valueType: StructuredQueryValueType.booleanValue\r\n        } as FireQueryFilter,\r\n      ],\r\n      orderBy: [\r\n        {\r\n          fieldPath: 'updated',\r\n          fieldType: StructuredQueryValueType.stringValue,\r\n          isDesc: true\r\n        } as FireOrderField\r\n      ],\r\n      selectFields: SHALLOW_ARTICLE_FIELDS,\r\n      pageSize,\r\n      isForwardDir,\r\n      startPage: startPage ? [startPage] : null\r\n    };\r\n\r\n    try {\r\n      const articles = await this.firestoreHttpService.runQueryByConfig(fireQuery);\r\n\r\n      return await this.buildPageOfArticles(articles, pageSize);\r\n    } catch (error: any) {\r\n      throw error;\r\n    }\r\n  }\r\n\r\n  public async getLiveShallowArticlesOfCategories(\r\n    categories: Array<string> | Array<Category>,\r\n    pageSize: number = 0,\r\n    startPage: string | null = null,\r\n    isForwardDir: boolean = true\r\n  ): Promise<Array<PageCategoryGroup>> {\r\n    let pageCategoryGroups: Array<PageCategoryGroup> = [];\r\n\r\n    if (categories && categories.length) {\r\n      const fireQuery: FireQuery = {\r\n        collectionId: ARTICLES_COLLECTION_ID,\r\n        where: [\r\n          {\r\n            fieldPath: 'isLive',\r\n            operator: StructuredQueryOperatorEnum.EQUAL,\r\n            value: true,\r\n            valueType: StructuredQueryValueType.booleanValue\r\n          } as FireQueryFilter,\r\n          {\r\n            fieldPath: 'categories',\r\n            operator: StructuredQueryOperatorEnum.ARRAY_CONTAINS,\r\n            value: '',\r\n            valueType: StructuredQueryValueType.stringValue\r\n          } as FireQueryFilter,\r\n        ],\r\n        orderBy: [\r\n          {\r\n            fieldPath: 'updated',\r\n            fieldType: StructuredQueryValueType.stringValue,\r\n            isDesc: true\r\n          } as FireOrderField\r\n        ],\r\n        selectFields: SHALLOW_ARTICLE_FIELDS,\r\n        pageSize,\r\n        isForwardDir,\r\n        startPage: startPage ? [startPage] : null\r\n      };\r\n\r\n      try {\r\n        pageCategoryGroups = await Promise.all(\r\n          categories.map(async (cat) => {\r\n            const catId = typeof cat === 'string' ? cat : cat.id;\r\n            fireQuery.where.find(wh => wh.fieldPath === 'categories').value = catId;\r\n\r\n            try {\r\n              const catArticles = await this.firestoreHttpService.runQueryByConfig(fireQuery);\r\n              // if a single category, then add pagearticles with previous and next page info else leave that info empty., so that pagination can be enebled for Category articles.\r\n              let pageArticles = await this.buildPageOfArticles(\r\n                catArticles,\r\n                pageSize\r\n              );\r\n\r\n              const pageCategoryGroup: PageCategoryGroup = {\r\n                category:\r\n                  typeof cat === 'string' ? ({ id: cat } as Category) : cat,\r\n                pageArticles,\r\n              };\r\n\r\n              return pageCategoryGroup;\r\n            } catch (error: any) {\r\n              throw error;\r\n            }\r\n          })\r\n        );\r\n      } catch (error: any) {\r\n        throw error;\r\n      }\r\n    }\r\n\r\n    return pageCategoryGroups;\r\n  }\r\n\r\n  public async getAllLiveArticlesFromDate(\r\n    fromDateTime: string\r\n  ): Promise<Array<Article>> {\r\n\r\n    const fireQuery: FireQuery = {\r\n      collectionId: ARTICLES_COLLECTION_ID,\r\n      where: [\r\n        {\r\n          fieldPath: 'updated',\r\n          operator: StructuredQueryOperatorEnum.GREATER_THAN_OR_EQUAL,\r\n          value: fromDateTime,\r\n          valueType: StructuredQueryValueType.stringValue\r\n        } as FireQueryFilter,\r\n        {\r\n          fieldPath: 'isLive',\r\n          operator: StructuredQueryOperatorEnum.EQUAL,\r\n          value: true,\r\n          valueType: StructuredQueryValueType.booleanValue\r\n        } as FireQueryFilter,\r\n      ],\r\n      orderBy: [\r\n        {\r\n          fieldPath: 'updated',\r\n          fieldType: StructuredQueryValueType.stringValue,\r\n          isDesc: true\r\n        } as FireOrderField\r\n      ],\r\n      selectFields: ['categories', 'updated'],\r\n    };\r\n\r\n    try {\r\n      const articles = await this.firestoreHttpService.runQueryByConfig(fireQuery);\r\n      return articles;\r\n    } catch (error: any) {\r\n      throw error;\r\n    }\r\n  }\r\n\r\n  public async getLiveOnePageShallowArticlesByFeatures(\r\n    features: Array<string>,\r\n    isLive: boolean = true,\r\n    pageSize: number = 0,\r\n    startPage: string | null = null,\r\n    isForwardDir: boolean = true\r\n  ): Promise<PageArticles> {\r\n\r\n    const fireQuery: FireQuery = {\r\n      collectionId: ARTICLES_COLLECTION_ID,\r\n      where: [\r\n        {\r\n          fieldPath: 'features',\r\n          operator: StructuredQueryOperatorEnum.ARRAY_CONTAINS_ANY,\r\n          value: features,\r\n          valueType: StructuredQueryValueType.stringValue\r\n        } as FireQueryFilter,\r\n        {\r\n          fieldPath: 'isLive',\r\n          operator: StructuredQueryOperatorEnum.EQUAL,\r\n          value: isLive,\r\n          valueType: StructuredQueryValueType.booleanValue\r\n        } as FireQueryFilter,\r\n      ],\r\n      orderBy: [\r\n        {\r\n          fieldPath: 'updated',\r\n          fieldType: StructuredQueryValueType.stringValue,\r\n          isDesc: true\r\n        } as FireOrderField\r\n      ],\r\n      selectFields: SHALLOW_ARTICLE_FIELDS,\r\n      pageSize,\r\n      isForwardDir,\r\n      startPage: startPage ? [startPage] : null\r\n    };\r\n\r\n    try {\r\n      const articles = await this.firestoreHttpService.runQueryByConfig(fireQuery);\r\n\r\n      return await this.buildPageOfArticles(articles, pageSize);\r\n    } catch (error: any) {\r\n      throw error;\r\n    }\r\n  }\r\n\r\n  public async addArticle(article: Article): Promise<Article> {\r\n    const existedArticle = await this.getArticle(article.id).catch(\r\n      (error: any) => {\r\n        if (error.status === 404) {\r\n          return null;\r\n        } else {\r\n          throw error;\r\n        }\r\n      }\r\n    );\r\n    if (existedArticle) throw new Error('Article already Exist.');\r\n    return this.updateArticle(article).catch((error) => {\r\n      throw error;\r\n    });\r\n  }\r\n\r\n  public async updateArticle(article: Article): Promise<Article> {\r\n    const fieldsToUpdate = [...UPDATE_ARTICLE_FIELDS, 'isLive'];\r\n\r\n    const currentDate = this.utilsSvc.currentDate;\r\n    const pArticle = { ...article, updated: currentDate, isLive: false, inReview: false } as Article;\r\n    pArticle.metaInfo['article:published_time'] = currentDate;\r\n    if (!pArticle.created) pArticle.created = currentDate;\r\n    if (!pArticle.userId) throw new Error('Article userId is required.');\r\n\r\n    // Any modification to a article, will bring it to unpublished, and not up for review.\r\n    pArticle.isLive = false;\r\n    pArticle.inReview = false;\r\n\r\n    return this.firestoreHttpService.runQueryToUpdate(ARTICLES_COLLECTION_ID, article, fieldsToUpdate, false)\r\n      .catch((error) => {\r\n        throw error;\r\n      });\r\n  }\r\n\r\n  public async setArticleUpForReview(article: Article): Promise<Article> {\r\n    const fieldsToUpdate = ['inReview', 'isLive', 'updated', 'metaInfo'];\r\n\r\n    // Any modification to a article, will bring it to unpublished, and not up for review.\r\n    article.isLive = article.inReview === true ? false : article.isLive;\r\n    const currentDate = this.utilsSvc.currentDate;\r\n    article.updated = currentDate;\r\n    article.metaInfo['article:published_time'] = currentDate;\r\n\r\n    return this.firestoreHttpService.runQueryToUpdate(ARTICLES_COLLECTION_ID, article, fieldsToUpdate, false)\r\n      .catch((error) => {\r\n        throw error;\r\n      });\r\n  }\r\n\r\n  public async setArticleLive(article: Article): Promise<Article> {\r\n    const fieldsToUpdate = ['inReview', 'isLive', 'updated', 'metaInfo'];\r\n\r\n    // Any modification to a article, will bring it to unpublished, and not up for review.\r\n    article.inReview = article.isLive === true ? false : article.inReview;\r\n    const currentDate = this.utilsSvc.currentDate;\r\n    article.updated = currentDate;\r\n    article.metaInfo['article:published_time'] = currentDate;\r\n\r\n    return this.firestoreHttpService.runQueryToUpdate(ARTICLES_COLLECTION_ID, article, fieldsToUpdate, false)\r\n      .catch((error) => {\r\n        throw error;\r\n      });\r\n  }\r\n\r\n  public async deleteArticle(article: Article): Promise<boolean> {\r\n    return this.firestoreHttpService.runQueryToDelete(ARTICLES_COLLECTION_ID, article);\r\n  }\r\n}\r\n",
             "constructorObj": {
                 "name": "constructor",
                 "description": "",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "args": [
-                    {
-                        "name": "fireCommonService",
-                        "type": "FireCommonService",
-                        "deprecated": false,
-                        "deprecationMessage": ""
-                    },
                     {
                         "name": "utilsSvc",
                         "type": "UtilsService",
@@ -2827,17 +2810,8 @@
                         "deprecationMessage": ""
                     }
                 ],
-                "line": 19,
+                "line": 18,
                 "jsdoctags": [
-                    {
-                        "name": "fireCommonService",
-                        "type": "FireCommonService",
-                        "deprecated": false,
-                        "deprecationMessage": "",
-                        "tagName": {
-                            "text": "param"
-                        }
-                    },
                     {
                         "name": "utilsSvc",
                         "type": "UtilsService",
@@ -3282,20 +3256,9 @@
         },
         {
             "name": "FireCategoriesHttpService",
-            "id": "injectable-FireCategoriesHttpService-2a4e63be3569cf531aac256ce74cb78c61b91355d3fb18faf7b74f7847a7610dffacfba2275957abba5ae3fafe70cc7ca31b7ea539ebb9e693833c26f136caba",
+            "id": "injectable-FireCategoriesHttpService-05b2b2daddfa1595761517f7e65b770b107c18ec0204e8879b2ab03076278c619fbf8fd6f62dafb943a62a48e2ccde90d7adff4b661c627747d8e09334141385",
             "file": "projects/ngx-tools/fire-cms/src/services/fire-categories-http.service.ts",
-            "properties": [
-                {
-                    "name": "firestoreApiUrl",
-                    "defaultValue": "''",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "string",
-                    "optional": false,
-                    "description": "",
-                    "line": 30
-                }
-            ],
+            "properties": [],
             "methods": [
                 {
                     "name": "addCategory",
@@ -3310,7 +3273,7 @@
                     "optional": false,
                     "returnType": "Promise<Category>",
                     "typeParameters": [],
-                    "line": 417,
+                    "line": 413,
                     "deprecated": false,
                     "deprecationMessage": "",
                     "modifierKind": [
@@ -3349,7 +3312,7 @@
                     "optional": false,
                     "returnType": "Promise<PageCategories>",
                     "typeParameters": [],
-                    "line": 41,
+                    "line": 35,
                     "deprecated": false,
                     "deprecationMessage": "",
                     "modifierKind": [
@@ -3423,7 +3386,7 @@
                     "optional": false,
                     "returnType": "Promise<Array<Category>>",
                     "typeParameters": [],
-                    "line": 379,
+                    "line": 375,
                     "deprecated": false,
                     "deprecationMessage": "",
                     "rawdescription": "\n\nGet all Live categories since the given last updated, by date.\n\n",
@@ -3435,8 +3398,8 @@
                     "jsdoctags": [
                         {
                             "name": {
-                                "pos": 11100,
-                                "end": 11112,
+                                "pos": 10917,
+                                "end": 10929,
                                 "flags": 8421376,
                                 "modifierFlagsCache": 0,
                                 "transformFlags": 0,
@@ -3447,8 +3410,8 @@
                             "deprecated": false,
                             "deprecationMessage": "",
                             "tagName": {
-                                "pos": 11085,
-                                "end": 11090,
+                                "pos": 10902,
+                                "end": 10907,
                                 "flags": 8421376,
                                 "modifierFlagsCache": 0,
                                 "transformFlags": 0,
@@ -3457,15 +3420,15 @@
                             },
                             "comment": "",
                             "typeExpression": {
-                                "pos": 11091,
-                                "end": 11099,
+                                "pos": 10908,
+                                "end": 10916,
                                 "flags": 8421376,
                                 "modifierFlagsCache": 0,
                                 "transformFlags": 0,
                                 "kind": 312,
                                 "type": {
-                                    "pos": 11092,
-                                    "end": 11098,
+                                    "pos": 10909,
+                                    "end": 10915,
                                     "flags": 8388608,
                                     "modifierFlagsCache": 0,
                                     "transformFlags": 1,
@@ -3475,8 +3438,8 @@
                         },
                         {
                             "tagName": {
-                                "pos": 11120,
-                                "end": 11127,
+                                "pos": 10937,
+                                "end": 10944,
                                 "flags": 8421376,
                                 "modifierFlagsCache": 0,
                                 "transformFlags": 0,
@@ -3516,7 +3479,7 @@
                     "optional": false,
                     "returnType": "Promise<Array<PageCategoryGroup>>",
                     "typeParameters": [],
-                    "line": 133,
+                    "line": 127,
                     "deprecated": false,
                     "deprecationMessage": "",
                     "modifierKind": [
@@ -3570,7 +3533,7 @@
                     "optional": false,
                     "returnType": "Promise<Array<Category>>",
                     "typeParameters": [],
-                    "line": 102,
+                    "line": 96,
                     "deprecated": false,
                     "deprecationMessage": "",
                     "modifierKind": [
@@ -3624,7 +3587,7 @@
                     "optional": false,
                     "returnType": "Promise<PageCategories>",
                     "typeParameters": [],
-                    "line": 260,
+                    "line": 256,
                     "deprecated": false,
                     "deprecationMessage": "",
                     "modifierKind": [
@@ -3686,7 +3649,7 @@
                     "optional": false,
                     "returnType": "Promise<Category>",
                     "typeParameters": [],
-                    "line": 58,
+                    "line": 52,
                     "deprecated": false,
                     "deprecationMessage": "",
                     "modifierKind": [
@@ -3739,7 +3702,7 @@
                     "optional": false,
                     "returnType": "Promise<PageCategoryGroup>",
                     "typeParameters": [],
-                    "line": 171,
+                    "line": 165,
                     "deprecated": false,
                     "deprecationMessage": "",
                     "modifierKind": [
@@ -3801,7 +3764,7 @@
                     "optional": false,
                     "returnType": "Promise<Array<Category>>",
                     "typeParameters": [],
-                    "line": 298,
+                    "line": 294,
                     "deprecated": false,
                     "deprecationMessage": "",
                     "modifierKind": [
@@ -3840,7 +3803,7 @@
                     "optional": false,
                     "returnType": "Promise<Array<Category>>",
                     "typeParameters": [],
-                    "line": 329,
+                    "line": 325,
                     "deprecated": false,
                     "deprecationMessage": "",
                     "modifierKind": [
@@ -3888,7 +3851,7 @@
                     "optional": false,
                     "returnType": "Promise<Category>",
                     "typeParameters": [],
-                    "line": 67,
+                    "line": 61,
                     "deprecated": false,
                     "deprecationMessage": "",
                     "modifierKind": [
@@ -3956,7 +3919,7 @@
                     "optional": false,
                     "returnType": "Promise<PageCategories>",
                     "typeParameters": [],
-                    "line": 218,
+                    "line": 212,
                     "deprecated": false,
                     "deprecationMessage": "",
                     "modifierKind": [
@@ -4091,7 +4054,7 @@
                     "optional": false,
                     "returnType": "Promise<Category>",
                     "typeParameters": [],
-                    "line": 435,
+                    "line": 431,
                     "deprecated": false,
                     "deprecationMessage": "",
                     "modifierKind": [
@@ -4115,19 +4078,13 @@
             "deprecationMessage": "",
             "description": "",
             "rawdescription": "\n",
-            "sourceCode": "import { Injectable } from '@angular/core';\r\nimport { UtilsService } from '@annuadvent/ngx-core/utils';\r\nimport { Category } from '../interfaces/fire-categories.interface';\r\n\r\nimport {\r\n  FireOrderField,\r\n  FireQuery,\r\n  FireQueryFilter,\r\n  FirestoreHttpService,\r\n  StructuredQueryOperatorEnum,\r\n  StructuredQueryValueType,\r\n} from '@annuadvent/ngx-tools/fire-store';\r\nimport {\r\n  CATEGORIES_COLLECTION_ID,\r\n  SHALLOW_CATEGORY_FIELDS,\r\n  UPDATE_CATEGORY_FIELDS,\r\n} from '../constants/fire-categories.constants';\r\n\r\nimport {\r\n  PageCategories,\r\n  PageCategoryGroup,\r\n} from '../interfaces/fire-categories.interface';\r\nimport { FireArticlesHttpService } from './fire-articles-http.service';\r\nimport { FireCommonService } from '@annuadvent/ngx-tools/fire-common';\r\n\r\n@Injectable({\r\n  providedIn: 'root'\r\n})\r\nexport class FireCategoriesHttpService {\r\n  firestoreApiUrl: string = '';\r\n\r\n  constructor(\r\n    private fireCommonService: FireCommonService,\r\n    private utilsSvc: UtilsService,\r\n    private firestoreHttpService: FirestoreHttpService,\r\n    private fireArticlesHttpService: FireArticlesHttpService,\r\n  ) {\r\n    this.firestoreApiUrl = this.fireCommonService.firebaseConfig.store.firestoreBaseApiUrl;\r\n  }\r\n\r\n  private async buildPageOfCategories(\r\n    categories: Array<Category>,\r\n    pageSize: number = 0\r\n  ): Promise<PageCategories> {\r\n    const categoriesCount = categories?.length || 0;\r\n    const pageCategories: PageCategories = {\r\n      categories: categories || [],\r\n      startPage: categoriesCount ? categories[0]?.updated : null,\r\n      endPage:\r\n        categoriesCount && pageSize && categoriesCount === pageSize\r\n          ? categories[categoriesCount - 1]?.updated\r\n          : null,\r\n    };\r\n\r\n    return pageCategories;\r\n  }\r\n\r\n  public async getCategory(categoryId: string): Promise<Category> {\r\n    try {\r\n      const category: Category = await this.firestoreHttpService.runQueryById(CATEGORIES_COLLECTION_ID, categoryId);\r\n      return category;\r\n    } catch (error: any) {\r\n      throw error;\r\n    }\r\n  }\r\n\r\n  public async getUsersCategory(\r\n    userId: string,\r\n    categoryId: string\r\n  ): Promise<Category> {\r\n    if (!userId) throw new Error('Please provide a valid user id.');\r\n    if (!categoryId) throw new Error('Please Provide a valid category id.');\r\n\r\n    const fireQuery: FireQuery = {\r\n      collectionId: CATEGORIES_COLLECTION_ID,\r\n      where: [\r\n        {\r\n          fieldPath: 'id',\r\n          operator: StructuredQueryOperatorEnum.EQUAL,\r\n          value: categoryId,\r\n          valueType: StructuredQueryValueType.stringValue\r\n        } as FireQueryFilter,\r\n        {\r\n          fieldPath: 'userId',\r\n          operator: StructuredQueryOperatorEnum.EQUAL,\r\n          value: userId,\r\n          valueType: StructuredQueryValueType.stringValue\r\n        } as FireQueryFilter\r\n      ]\r\n    };\r\n\r\n    try {\r\n      const categories = await this.firestoreHttpService.runQueryByConfig(fireQuery);\r\n      const category = (categories?.length && categories[0]) || null;\r\n\r\n      return category;\r\n    } catch (error: any) {\r\n      throw error;\r\n    }\r\n  }\r\n\r\n  public async getAllLiveShallowCategories(\r\n    isLive: boolean = true\r\n  ): Promise<Array<Category>> {\r\n    const fireQuery: FireQuery = {\r\n      collectionId: CATEGORIES_COLLECTION_ID,\r\n      where: [\r\n        {\r\n          fieldPath: 'isLive',\r\n          operator: StructuredQueryOperatorEnum.EQUAL,\r\n          value: isLive,\r\n          valueType: StructuredQueryValueType.booleanValue\r\n        } as FireQueryFilter,\r\n      ],\r\n      orderBy: [\r\n        {\r\n          fieldPath: 'updated',\r\n          fieldType: StructuredQueryValueType.stringValue,\r\n          isDesc: true\r\n        } as FireOrderField\r\n      ],\r\n      selectFields: SHALLOW_CATEGORY_FIELDS,\r\n    };\r\n\r\n    try {\r\n      const categories = await this.firestoreHttpService.runQueryByConfig(fireQuery);\r\n      return categories;\r\n    } catch (error: any) {\r\n      throw error;\r\n    }\r\n  }\r\n\r\n  public async getAllLiveCategoriesWithOnePageShallowArticles(\r\n    pageSize: number = 0,\r\n    startPage: string | null = null,\r\n    isForwardDir: boolean = true\r\n  ): Promise<Array<PageCategoryGroup>> {\r\n    const fireQuery: FireQuery = {\r\n      collectionId: CATEGORIES_COLLECTION_ID,\r\n      where: [\r\n        {\r\n          fieldPath: 'isLive',\r\n          operator: StructuredQueryOperatorEnum.EQUAL,\r\n          value: true,\r\n          valueType: StructuredQueryValueType.booleanValue\r\n        } as FireQueryFilter,\r\n      ],\r\n      orderBy: [\r\n        {\r\n          fieldPath: 'updated',\r\n          fieldType: StructuredQueryValueType.stringValue,\r\n          isDesc: true\r\n        } as FireOrderField\r\n      ],\r\n      selectFields: SHALLOW_CATEGORY_FIELDS,\r\n    };\r\n\r\n    try {\r\n      const categories = await this.firestoreHttpService.runQueryByConfig(fireQuery);\r\n      return await this.fireArticlesHttpService.getLiveShallowArticlesOfCategories(\r\n        categories,\r\n        pageSize,\r\n        startPage,\r\n        isForwardDir\r\n      );\r\n    } catch (error: any) {\r\n      throw error;\r\n    }\r\n  }\r\n\r\n  public async getLiveCategoryWithOnePageShallowArticles(\r\n    categoryId: string,\r\n    pageSize: number = 0,\r\n    startPage: string | null = null,\r\n    isForwardDir: boolean = true\r\n  ): Promise<PageCategoryGroup> {\r\n    if (!categoryId) throw new Error('Please provide a valid category id.');\r\n\r\n    const fireQuery: FireQuery = {\r\n      collectionId: CATEGORIES_COLLECTION_ID,\r\n      where: [\r\n        {\r\n          fieldPath: 'id',\r\n          operator: StructuredQueryOperatorEnum.EQUAL,\r\n          value: categoryId,\r\n          valueType: StructuredQueryValueType.stringValue\r\n        } as FireQueryFilter,\r\n        {\r\n          fieldPath: 'isLive',\r\n          operator: StructuredQueryOperatorEnum.EQUAL,\r\n          value: true,\r\n          valueType: StructuredQueryValueType.booleanValue\r\n        } as FireQueryFilter,\r\n      ],\r\n      selectFields: SHALLOW_CATEGORY_FIELDS,\r\n    };\r\n\r\n    try {\r\n      const categories = await this.firestoreHttpService.runQueryByConfig(fireQuery);\r\n      const category = (categories?.length && categories[0]) || null;\r\n      if (category) {\r\n        const pageCategoryGroups: Array<PageCategoryGroup> =\r\n          await this.fireArticlesHttpService.getLiveShallowArticlesOfCategories(\r\n            [category],\r\n            pageSize,\r\n            startPage,\r\n            isForwardDir\r\n          );\r\n        return (pageCategoryGroups?.length && pageCategoryGroups[0]) || null;\r\n      }\r\n\r\n      return null;\r\n    } catch (error: any) {\r\n      throw error;\r\n    }\r\n  }\r\n\r\n  public async getUsersOnePageShallowCategories(\r\n    userId: string,\r\n    isLive: boolean | null,\r\n    pageSize: number = 0,\r\n    startPage: string | null = null,\r\n    isForwardDir: boolean = true\r\n  ): Promise<PageCategories> {\r\n\r\n    const fireQuery: FireQuery = {\r\n      collectionId: CATEGORIES_COLLECTION_ID,\r\n      where: [\r\n        {\r\n          fieldPath: 'userId',\r\n          operator: StructuredQueryOperatorEnum.EQUAL,\r\n          value: userId,\r\n          valueType: StructuredQueryValueType.stringValue\r\n        } as FireQueryFilter,\r\n        {\r\n          fieldPath: 'isLive',\r\n          operator: StructuredQueryOperatorEnum.EQUAL,\r\n          value: isLive,\r\n          valueType: StructuredQueryValueType.booleanValue\r\n        } as FireQueryFilter,\r\n      ],\r\n      orderBy: [\r\n        {\r\n          fieldPath: 'updated',\r\n          fieldType: StructuredQueryValueType.stringValue,\r\n          isDesc: true\r\n        } as FireOrderField\r\n      ],\r\n      selectFields: SHALLOW_CATEGORY_FIELDS,\r\n    };\r\n\r\n    try {\r\n      const categories = await this.firestoreHttpService.runQueryByConfig(fireQuery);\r\n      return await this.buildPageOfCategories(categories, pageSize);\r\n    } catch (error: any) {\r\n      throw error;\r\n    }\r\n  }\r\n\r\n  public async getAllUsersOnePageShallowCategories(\r\n    isLive: boolean | null,\r\n    pageSize: number = 0,\r\n    startPage: string | null = null,\r\n    isForwardDir: boolean = true\r\n  ): Promise<PageCategories> {\r\n\r\n    const fireQuery: FireQuery = {\r\n      collectionId: CATEGORIES_COLLECTION_ID,\r\n      where: [\r\n        {\r\n          fieldPath: 'isLive',\r\n          operator: StructuredQueryOperatorEnum.EQUAL,\r\n          value: isLive,\r\n          valueType: StructuredQueryValueType.booleanValue\r\n        } as FireQueryFilter,\r\n      ],\r\n      orderBy: [\r\n        {\r\n          fieldPath: 'updated',\r\n          fieldType: StructuredQueryValueType.stringValue,\r\n          isDesc: true\r\n        } as FireOrderField\r\n      ],\r\n      selectFields: SHALLOW_CATEGORY_FIELDS,\r\n      pageSize,\r\n      isForwardDir,\r\n      startPage: startPage ? [startPage] : null\r\n    };\r\n\r\n    try {\r\n      const categories = await this.firestoreHttpService.runQueryByConfig(fireQuery);\r\n      return await this.buildPageOfCategories(categories, pageSize);\r\n    } catch (error: any) {\r\n      throw error;\r\n    }\r\n  }\r\n\r\n  public async getShallowCategoriesByIds(\r\n    categoryIds: Array<string>\r\n  ): Promise<Array<Category>> {\r\n\r\n    const fireQuery: FireQuery = {\r\n      collectionId: CATEGORIES_COLLECTION_ID,\r\n      where: [\r\n        {\r\n          fieldPath: 'id',\r\n          operator: StructuredQueryOperatorEnum.IN,\r\n          value: categoryIds,\r\n          valueType: StructuredQueryValueType.stringValue\r\n        } as FireQueryFilter,\r\n      ],\r\n      orderBy: [\r\n        {\r\n          fieldPath: 'updated',\r\n          fieldType: StructuredQueryValueType.stringValue,\r\n          isDesc: true\r\n        } as FireOrderField\r\n      ],\r\n      selectFields: SHALLOW_CATEGORY_FIELDS,\r\n    };\r\n\r\n    try {\r\n      return await this.firestoreHttpService.runQueryByConfig(fireQuery);\r\n    } catch (error: any) {\r\n      throw error;\r\n    }\r\n  }\r\n\r\n  public async getShallowLiveCategoriesByFeatures(\r\n    features: string | Array<string>,\r\n    isLive: boolean = true\r\n  ): Promise<Array<Category>> {\r\n\r\n    const fireQuery: FireQuery = {\r\n      collectionId: CATEGORIES_COLLECTION_ID,\r\n      where: [\r\n        {\r\n          fieldPath: 'isLive',\r\n          operator: StructuredQueryOperatorEnum.EQUAL,\r\n          value: isLive,\r\n          valueType: StructuredQueryValueType.booleanValue\r\n        } as FireQueryFilter,\r\n        {\r\n          fieldPath: 'features',\r\n          operator: features instanceof Array ?\r\n            StructuredQueryOperatorEnum.ARRAY_CONTAINS_ANY :\r\n            StructuredQueryOperatorEnum.ARRAY_CONTAINS,\r\n          value: features,\r\n          valueType: StructuredQueryValueType.stringValue\r\n        } as FireQueryFilter,\r\n      ],\r\n      orderBy: [\r\n        {\r\n          fieldPath: 'updated',\r\n          fieldType: StructuredQueryValueType.stringValue,\r\n          isDesc: true\r\n        } as FireOrderField\r\n      ],\r\n      selectFields: SHALLOW_CATEGORY_FIELDS,\r\n    };\r\n\r\n\r\n    try {\r\n      return await this.firestoreHttpService.runQueryByConfig(fireQuery);\r\n    } catch (error: any) {\r\n      throw error;\r\n    }\r\n  }\r\n\r\n  /**\r\n   * Get all Live categories since the given last updated, by date.\r\n   * @date 2/27/2023 - 6:40:21 PM\r\n   *\r\n   * @public\r\n   * @async\r\n   * @param {string} fromDateTime\r\n   * @returns {Promise<Array<Category>>}\r\n   */\r\n  public async getAllLiveCategoriesFromDate(\r\n    fromDateTime: string\r\n  ): Promise<Array<Category>> {\r\n\r\n    const fireQuery: FireQuery = {\r\n      collectionId: CATEGORIES_COLLECTION_ID,\r\n      where: [\r\n        {\r\n          fieldPath: 'isLive',\r\n          operator: StructuredQueryOperatorEnum.EQUAL,\r\n          value: true,\r\n          valueType: StructuredQueryValueType.booleanValue\r\n        } as FireQueryFilter,\r\n        {\r\n          fieldPath: 'updated',\r\n          operator: StructuredQueryOperatorEnum.GREATER_THAN_OR_EQUAL,\r\n          value: fromDateTime,\r\n          valueType: StructuredQueryValueType.stringValue\r\n        } as FireQueryFilter,\r\n      ],\r\n      orderBy: [\r\n        {\r\n          fieldPath: 'updated',\r\n          fieldType: StructuredQueryValueType.stringValue,\r\n          isDesc: true\r\n        } as FireOrderField\r\n      ],\r\n      selectFields: ['updated'],\r\n    };\r\n\r\n    try {\r\n      const categories = await this.firestoreHttpService.runQueryByConfig(fireQuery);\r\n      return categories;\r\n    } catch (error: any) {\r\n      throw error;\r\n    }\r\n  }\r\n\r\n  public async addCategory(category: Category): Promise<Category> {\r\n    const existedCategory = await this.getCategory(category.id).catch(\r\n      (error: any) => {\r\n        if (error.status === 404) {\r\n          return null;\r\n        } else {\r\n          throw error;\r\n        }\r\n      }\r\n    );\r\n    if (existedCategory) throw new Error('Category already Exist.');\r\n\r\n    return this.updateCategory(category)\r\n      .catch((error) => {\r\n        throw error;\r\n      });\r\n  }\r\n\r\n  public async updateCategory(category: Category): Promise<Category> {\r\n    const fieldsToUpdate = [...UPDATE_CATEGORY_FIELDS, 'isLive'];\r\n\r\n    // Any modification to a category, will bring it to unpublished, and not up for review.\r\n    const currentDate = this.utilsSvc.currentDate;\r\n    const pCategory = { ...category, updated: currentDate, isLive: false, inReview: false };\r\n    pCategory.metaInfo['article:published_time'] = currentDate;\r\n    if (!pCategory.created) pCategory.created = currentDate;\r\n    if (!pCategory.userId) throw new Error('Category userId is required.');\r\n\r\n    return this.firestoreHttpService.runQueryToUpdate(CATEGORIES_COLLECTION_ID, pCategory, fieldsToUpdate, false)\r\n      .catch((error) => {\r\n        throw error;\r\n      });\r\n  }\r\n\r\n  public async setCategoryUpForReview(category: Category): Promise<Category> {\r\n    const fieldsToUpdate = ['inReview', 'isLive', 'updated', 'metaInfo'];\r\n\r\n    // Any modification to a category, will bring it to unpublished, and not up for review.\r\n    category.isLive = category.inReview === true ? false : category.isLive;\r\n\r\n    return this.firestoreHttpService.runQueryToUpdate(CATEGORIES_COLLECTION_ID, category, fieldsToUpdate, false)\r\n      .catch((error) => {\r\n        throw error;\r\n      });\r\n  }\r\n\r\n  public async setCategoryLive(category: Category): Promise<Category> {\r\n    const fieldsToUpdate = ['inReview', 'isLive', 'updated', 'metaInfo'];\r\n\r\n    // Any modification to a category, will bring it to unpublished, and not up for review.\r\n\r\n    category.inReview = category.isLive === true ? false : category.inReview;\r\n\r\n    return this.firestoreHttpService.runQueryToUpdate(CATEGORIES_COLLECTION_ID, category, fieldsToUpdate, false)\r\n      .catch((error) => {\r\n        throw error;\r\n      });\r\n  }\r\n\r\n  public async deleteCategory(category: Category): Promise<boolean> {\r\n    return this.firestoreHttpService.runQueryToDelete(CATEGORIES_COLLECTION_ID, category);\r\n  }\r\n}\r\n",
+            "sourceCode": "import { Injectable } from '@angular/core';\r\nimport { UtilsService } from '@annuadvent/ngx-core/utils';\r\nimport { Category } from '../interfaces/fire-categories.interface';\r\n\r\nimport {\r\n  FireOrderField,\r\n  FireQuery,\r\n  FireQueryFilter,\r\n  FirestoreHttpService,\r\n  StructuredQueryOperatorEnum,\r\n  StructuredQueryValueType,\r\n} from '@annuadvent/ngx-tools/fire-store';\r\nimport {\r\n  CATEGORIES_COLLECTION_ID,\r\n  SHALLOW_CATEGORY_FIELDS,\r\n  UPDATE_CATEGORY_FIELDS,\r\n} from '../constants/fire-categories.constants';\r\n\r\nimport {\r\n  PageCategories,\r\n  PageCategoryGroup,\r\n} from '../interfaces/fire-categories.interface';\r\nimport { FireArticlesHttpService } from './fire-articles-http.service';\r\n\r\n@Injectable({\r\n  providedIn: 'root'\r\n})\r\nexport class FireCategoriesHttpService {\r\n  constructor(\r\n    private utilsSvc: UtilsService,\r\n    private firestoreHttpService: FirestoreHttpService,\r\n    private fireArticlesHttpService: FireArticlesHttpService,\r\n  ) { }\r\n\r\n  private async buildPageOfCategories(\r\n    categories: Array<Category>,\r\n    pageSize: number = 0\r\n  ): Promise<PageCategories> {\r\n    const categoriesCount = categories?.length || 0;\r\n    const pageCategories: PageCategories = {\r\n      categories: categories || [],\r\n      startPage: categoriesCount ? categories[0]?.updated : null,\r\n      endPage:\r\n        categoriesCount && pageSize && categoriesCount === pageSize\r\n          ? categories[categoriesCount - 1]?.updated\r\n          : null,\r\n    };\r\n\r\n    return pageCategories;\r\n  }\r\n\r\n  public async getCategory(categoryId: string): Promise<Category> {\r\n    try {\r\n      const category: Category = await this.firestoreHttpService.runQueryById(CATEGORIES_COLLECTION_ID, categoryId);\r\n      return category;\r\n    } catch (error: any) {\r\n      throw error;\r\n    }\r\n  }\r\n\r\n  public async getUsersCategory(\r\n    userId: string,\r\n    categoryId: string\r\n  ): Promise<Category> {\r\n    if (!userId) throw new Error('Please provide a valid user id.');\r\n    if (!categoryId) throw new Error('Please Provide a valid category id.');\r\n\r\n    const fireQuery: FireQuery = {\r\n      collectionId: CATEGORIES_COLLECTION_ID,\r\n      where: [\r\n        {\r\n          fieldPath: 'id',\r\n          operator: StructuredQueryOperatorEnum.EQUAL,\r\n          value: categoryId,\r\n          valueType: StructuredQueryValueType.stringValue\r\n        } as FireQueryFilter,\r\n        {\r\n          fieldPath: 'userId',\r\n          operator: StructuredQueryOperatorEnum.EQUAL,\r\n          value: userId,\r\n          valueType: StructuredQueryValueType.stringValue\r\n        } as FireQueryFilter\r\n      ]\r\n    };\r\n\r\n    try {\r\n      const categories = await this.firestoreHttpService.runQueryByConfig(fireQuery);\r\n      const category = (categories?.length && categories[0]) || null;\r\n\r\n      return category;\r\n    } catch (error: any) {\r\n      throw error;\r\n    }\r\n  }\r\n\r\n  public async getAllLiveShallowCategories(\r\n    isLive: boolean = true\r\n  ): Promise<Array<Category>> {\r\n    const fireQuery: FireQuery = {\r\n      collectionId: CATEGORIES_COLLECTION_ID,\r\n      where: [\r\n        {\r\n          fieldPath: 'isLive',\r\n          operator: StructuredQueryOperatorEnum.EQUAL,\r\n          value: isLive,\r\n          valueType: StructuredQueryValueType.booleanValue\r\n        } as FireQueryFilter,\r\n      ],\r\n      orderBy: [\r\n        {\r\n          fieldPath: 'updated',\r\n          fieldType: StructuredQueryValueType.stringValue,\r\n          isDesc: true\r\n        } as FireOrderField\r\n      ],\r\n      selectFields: SHALLOW_CATEGORY_FIELDS,\r\n    };\r\n\r\n    try {\r\n      const categories = await this.firestoreHttpService.runQueryByConfig(fireQuery);\r\n      return categories;\r\n    } catch (error: any) {\r\n      throw error;\r\n    }\r\n  }\r\n\r\n  public async getAllLiveCategoriesWithOnePageShallowArticles(\r\n    pageSize: number = 0,\r\n    startPage: string | null = null,\r\n    isForwardDir: boolean = true\r\n  ): Promise<Array<PageCategoryGroup>> {\r\n    const fireQuery: FireQuery = {\r\n      collectionId: CATEGORIES_COLLECTION_ID,\r\n      where: [\r\n        {\r\n          fieldPath: 'isLive',\r\n          operator: StructuredQueryOperatorEnum.EQUAL,\r\n          value: true,\r\n          valueType: StructuredQueryValueType.booleanValue\r\n        } as FireQueryFilter,\r\n      ],\r\n      orderBy: [\r\n        {\r\n          fieldPath: 'updated',\r\n          fieldType: StructuredQueryValueType.stringValue,\r\n          isDesc: true\r\n        } as FireOrderField\r\n      ],\r\n      selectFields: SHALLOW_CATEGORY_FIELDS,\r\n    };\r\n\r\n    try {\r\n      const categories = await this.firestoreHttpService.runQueryByConfig(fireQuery);\r\n      return await this.fireArticlesHttpService.getLiveShallowArticlesOfCategories(\r\n        categories,\r\n        pageSize,\r\n        startPage,\r\n        isForwardDir\r\n      );\r\n    } catch (error: any) {\r\n      throw error;\r\n    }\r\n  }\r\n\r\n  public async getLiveCategoryWithOnePageShallowArticles(\r\n    categoryId: string,\r\n    pageSize: number = 0,\r\n    startPage: string | null = null,\r\n    isForwardDir: boolean = true\r\n  ): Promise<PageCategoryGroup> {\r\n    if (!categoryId) throw new Error('Please provide a valid category id.');\r\n\r\n    const fireQuery: FireQuery = {\r\n      collectionId: CATEGORIES_COLLECTION_ID,\r\n      where: [\r\n        {\r\n          fieldPath: 'id',\r\n          operator: StructuredQueryOperatorEnum.EQUAL,\r\n          value: categoryId,\r\n          valueType: StructuredQueryValueType.stringValue\r\n        } as FireQueryFilter,\r\n        {\r\n          fieldPath: 'isLive',\r\n          operator: StructuredQueryOperatorEnum.EQUAL,\r\n          value: true,\r\n          valueType: StructuredQueryValueType.booleanValue\r\n        } as FireQueryFilter,\r\n      ],\r\n      selectFields: SHALLOW_CATEGORY_FIELDS,\r\n    };\r\n\r\n    try {\r\n      const categories = await this.firestoreHttpService.runQueryByConfig(fireQuery);\r\n      const category = (categories?.length && categories[0]) || null;\r\n      if (category) {\r\n        const pageCategoryGroups: Array<PageCategoryGroup> =\r\n          await this.fireArticlesHttpService.getLiveShallowArticlesOfCategories(\r\n            [category],\r\n            pageSize,\r\n            startPage,\r\n            isForwardDir\r\n          );\r\n        return (pageCategoryGroups?.length && pageCategoryGroups[0]) || null;\r\n      }\r\n\r\n      return null;\r\n    } catch (error: any) {\r\n      throw error;\r\n    }\r\n  }\r\n\r\n  public async getUsersOnePageShallowCategories(\r\n    userId: string,\r\n    isLive: boolean | null,\r\n    pageSize: number = 0,\r\n    startPage: string | null = null,\r\n    isForwardDir: boolean = true\r\n  ): Promise<PageCategories> {\r\n\r\n    const fireQuery: FireQuery = {\r\n      collectionId: CATEGORIES_COLLECTION_ID,\r\n      where: [\r\n        {\r\n          fieldPath: 'userId',\r\n          operator: StructuredQueryOperatorEnum.EQUAL,\r\n          value: userId,\r\n          valueType: StructuredQueryValueType.stringValue\r\n        } as FireQueryFilter,\r\n        {\r\n          fieldPath: 'isLive',\r\n          operator: StructuredQueryOperatorEnum.EQUAL,\r\n          value: isLive,\r\n          valueType: StructuredQueryValueType.booleanValue\r\n        } as FireQueryFilter,\r\n      ],\r\n      orderBy: [\r\n        {\r\n          fieldPath: 'updated',\r\n          fieldType: StructuredQueryValueType.stringValue,\r\n          isDesc: true\r\n        } as FireOrderField\r\n      ],\r\n      selectFields: SHALLOW_CATEGORY_FIELDS,\r\n      startPage: startPage ? [startPage] : null,\r\n      isForwardDir,\r\n    };\r\n\r\n    try {\r\n      const categories = await this.firestoreHttpService.runQueryByConfig(fireQuery);\r\n      return await this.buildPageOfCategories(categories, pageSize);\r\n    } catch (error: any) {\r\n      throw error;\r\n    }\r\n  }\r\n\r\n  public async getAllUsersOnePageShallowCategories(\r\n    isLive: boolean | null,\r\n    pageSize: number = 0,\r\n    startPage: string | null = null,\r\n    isForwardDir: boolean = true\r\n  ): Promise<PageCategories> {\r\n\r\n    const fireQuery: FireQuery = {\r\n      collectionId: CATEGORIES_COLLECTION_ID,\r\n      where: [\r\n        {\r\n          fieldPath: 'isLive',\r\n          operator: StructuredQueryOperatorEnum.EQUAL,\r\n          value: isLive,\r\n          valueType: StructuredQueryValueType.booleanValue\r\n        } as FireQueryFilter,\r\n      ],\r\n      orderBy: [\r\n        {\r\n          fieldPath: 'updated',\r\n          fieldType: StructuredQueryValueType.stringValue,\r\n          isDesc: true\r\n        } as FireOrderField\r\n      ],\r\n      selectFields: SHALLOW_CATEGORY_FIELDS,\r\n      pageSize,\r\n      isForwardDir,\r\n      startPage: startPage ? [startPage] : null\r\n    };\r\n\r\n    try {\r\n      const categories = await this.firestoreHttpService.runQueryByConfig(fireQuery);\r\n      return await this.buildPageOfCategories(categories, pageSize);\r\n    } catch (error: any) {\r\n      throw error;\r\n    }\r\n  }\r\n\r\n  public async getShallowCategoriesByIds(\r\n    categoryIds: Array<string>\r\n  ): Promise<Array<Category>> {\r\n\r\n    const fireQuery: FireQuery = {\r\n      collectionId: CATEGORIES_COLLECTION_ID,\r\n      where: [\r\n        {\r\n          fieldPath: 'id',\r\n          operator: StructuredQueryOperatorEnum.IN,\r\n          value: categoryIds,\r\n          valueType: StructuredQueryValueType.stringValue\r\n        } as FireQueryFilter,\r\n      ],\r\n      orderBy: [\r\n        {\r\n          fieldPath: 'updated',\r\n          fieldType: StructuredQueryValueType.stringValue,\r\n          isDesc: true\r\n        } as FireOrderField\r\n      ],\r\n      selectFields: SHALLOW_CATEGORY_FIELDS,\r\n    };\r\n\r\n    try {\r\n      return await this.firestoreHttpService.runQueryByConfig(fireQuery);\r\n    } catch (error: any) {\r\n      throw error;\r\n    }\r\n  }\r\n\r\n  public async getShallowLiveCategoriesByFeatures(\r\n    features: string | Array<string>,\r\n    isLive: boolean = true\r\n  ): Promise<Array<Category>> {\r\n\r\n    const fireQuery: FireQuery = {\r\n      collectionId: CATEGORIES_COLLECTION_ID,\r\n      where: [\r\n        {\r\n          fieldPath: 'isLive',\r\n          operator: StructuredQueryOperatorEnum.EQUAL,\r\n          value: isLive,\r\n          valueType: StructuredQueryValueType.booleanValue\r\n        } as FireQueryFilter,\r\n        {\r\n          fieldPath: 'features',\r\n          operator: features instanceof Array ?\r\n            StructuredQueryOperatorEnum.ARRAY_CONTAINS_ANY :\r\n            StructuredQueryOperatorEnum.ARRAY_CONTAINS,\r\n          value: features,\r\n          valueType: StructuredQueryValueType.stringValue\r\n        } as FireQueryFilter,\r\n      ],\r\n      orderBy: [\r\n        {\r\n          fieldPath: 'updated',\r\n          fieldType: StructuredQueryValueType.stringValue,\r\n          isDesc: true\r\n        } as FireOrderField\r\n      ],\r\n      selectFields: SHALLOW_CATEGORY_FIELDS,\r\n    };\r\n\r\n\r\n    try {\r\n      return await this.firestoreHttpService.runQueryByConfig(fireQuery);\r\n    } catch (error: any) {\r\n      throw error;\r\n    }\r\n  }\r\n\r\n  /**\r\n   * Get all Live categories since the given last updated, by date.\r\n   * @date 2/27/2023 - 6:40:21 PM\r\n   *\r\n   * @public\r\n   * @async\r\n   * @param {string} fromDateTime\r\n   * @returns {Promise<Array<Category>>}\r\n   */\r\n  public async getAllLiveCategoriesFromDate(\r\n    fromDateTime: string\r\n  ): Promise<Array<Category>> {\r\n\r\n    const fireQuery: FireQuery = {\r\n      collectionId: CATEGORIES_COLLECTION_ID,\r\n      where: [\r\n        {\r\n          fieldPath: 'isLive',\r\n          operator: StructuredQueryOperatorEnum.EQUAL,\r\n          value: true,\r\n          valueType: StructuredQueryValueType.booleanValue\r\n        } as FireQueryFilter,\r\n        {\r\n          fieldPath: 'updated',\r\n          operator: StructuredQueryOperatorEnum.GREATER_THAN_OR_EQUAL,\r\n          value: fromDateTime,\r\n          valueType: StructuredQueryValueType.stringValue\r\n        } as FireQueryFilter,\r\n      ],\r\n      orderBy: [\r\n        {\r\n          fieldPath: 'updated',\r\n          fieldType: StructuredQueryValueType.stringValue,\r\n          isDesc: true\r\n        } as FireOrderField\r\n      ],\r\n      selectFields: ['updated'],\r\n    };\r\n\r\n    try {\r\n      const categories = await this.firestoreHttpService.runQueryByConfig(fireQuery);\r\n      return categories;\r\n    } catch (error: any) {\r\n      throw error;\r\n    }\r\n  }\r\n\r\n  public async addCategory(category: Category): Promise<Category> {\r\n    const existedCategory = await this.getCategory(category.id).catch(\r\n      (error: any) => {\r\n        if (error.status === 404) {\r\n          return null;\r\n        } else {\r\n          throw error;\r\n        }\r\n      }\r\n    );\r\n    if (existedCategory) throw new Error('Category already Exist.');\r\n\r\n    return this.updateCategory(category)\r\n      .catch((error) => {\r\n        throw error;\r\n      });\r\n  }\r\n\r\n  public async updateCategory(category: Category): Promise<Category> {\r\n    const fieldsToUpdate = [...UPDATE_CATEGORY_FIELDS, 'isLive'];\r\n\r\n    const currentDate = this.utilsSvc.currentDate;\r\n    const pCategory = { ...category, updated: currentDate, isLive: false, inReview: false };\r\n    pCategory.metaInfo['article:published_time'] = currentDate;\r\n    if (!pCategory.created) pCategory.created = currentDate;\r\n    if (!pCategory.userId) throw new Error('Category userId is required.');\r\n\r\n    // Any modification to a category, will bring it to unpublished, and not up for review.\r\n    pCategory.isLive = false;\r\n    pCategory.inReview = false;\r\n\r\n\r\n    return this.firestoreHttpService.runQueryToUpdate(CATEGORIES_COLLECTION_ID, pCategory, fieldsToUpdate, false)\r\n      .catch((error) => {\r\n        throw error;\r\n      });\r\n  }\r\n\r\n  public async setCategoryUpForReview(category: Category): Promise<Category> {\r\n    const fieldsToUpdate = ['inReview', 'isLive', 'updated', 'metaInfo'];\r\n\r\n    // Any modification to a category, will bring it to unpublished, and not up for review.\r\n    category.isLive = category.inReview === true ? false : category.isLive;\r\n\r\n    return this.firestoreHttpService.runQueryToUpdate(CATEGORIES_COLLECTION_ID, category, fieldsToUpdate, false)\r\n      .catch((error) => {\r\n        throw error;\r\n      });\r\n  }\r\n\r\n  public async setCategoryLive(category: Category): Promise<Category> {\r\n    const fieldsToUpdate = ['inReview', 'isLive', 'updated', 'metaInfo'];\r\n\r\n    // Any modification to a category, will bring it to unpublished, and not up for review.\r\n\r\n    category.inReview = category.isLive === true ? false : category.inReview;\r\n\r\n    return this.firestoreHttpService.runQueryToUpdate(CATEGORIES_COLLECTION_ID, category, fieldsToUpdate, false)\r\n      .catch((error) => {\r\n        throw error;\r\n      });\r\n  }\r\n\r\n  public async deleteCategory(category: Category): Promise<boolean> {\r\n    return this.firestoreHttpService.runQueryToDelete(CATEGORIES_COLLECTION_ID, category);\r\n  }\r\n}\r\n",
             "constructorObj": {
                 "name": "constructor",
                 "description": "",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "args": [
-                    {
-                        "name": "fireCommonService",
-                        "type": "FireCommonService",
-                        "deprecated": false,
-                        "deprecationMessage": ""
-                    },
                     {
                         "name": "utilsSvc",
                         "type": "UtilsService",
@@ -4147,17 +4104,8 @@
                         "deprecationMessage": ""
                     }
                 ],
-                "line": 30,
+                "line": 28,
                 "jsdoctags": [
-                    {
-                        "name": "fireCommonService",
-                        "type": "FireCommonService",
-                        "deprecated": false,
-                        "deprecationMessage": "",
-                        "tagName": {
-                            "text": "param"
-                        }
-                    },
                     {
                         "name": "utilsSvc",
                         "type": "UtilsService",
@@ -4949,20 +4897,9 @@
         },
         {
             "name": "FirestoreHttpService",
-            "id": "injectable-FirestoreHttpService-1013e2fba1e3f533d3adf614be65c2641ef9dd0fba93b5613348ca07f3678430f3d628744c7d56fccdf5601f40bacafbba4a1d46abc379e200708597bda8ff89",
+            "id": "injectable-FirestoreHttpService-e7e72f3b48990dace68c7e4f22aec5c14d08396fc9381f7a56ef2626c5171668f127cc9098e0b8480ded392906874cedc67c72b649c8089b2eda7c1b6486c71b",
             "file": "projects/ngx-tools/fire-store/src/services/firestore-http.service.ts",
-            "properties": [
-                {
-                    "name": "firestoreApiUrl",
-                    "defaultValue": "''",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "string",
-                    "optional": false,
-                    "description": "",
-                    "line": 13
-                }
-            ],
+            "properties": [],
             "methods": [
                 {
                     "name": "runQueryByConfig",
@@ -4977,7 +4914,7 @@
                     "optional": false,
                     "returnType": "Promise<Array<any>>",
                     "typeParameters": [],
-                    "line": 42,
+                    "line": 41,
                     "deprecated": false,
                     "deprecationMessage": "",
                     "modifierKind": [
@@ -5015,7 +4952,7 @@
                     "optional": false,
                     "returnType": "Promise<any>",
                     "typeParameters": [],
-                    "line": 24,
+                    "line": 21,
                     "deprecated": false,
                     "deprecationMessage": "",
                     "modifierKind": [
@@ -5062,7 +4999,7 @@
                     "optional": false,
                     "returnType": "Promise<boolean>",
                     "typeParameters": [],
-                    "line": 104,
+                    "line": 107,
                     "deprecated": false,
                     "deprecationMessage": "",
                     "modifierKind": [
@@ -5122,7 +5059,7 @@
                     "optional": false,
                     "returnType": "Promise<any>",
                     "typeParameters": [],
-                    "line": 66,
+                    "line": 67,
                     "deprecated": false,
                     "deprecationMessage": "",
                     "modifierKind": [
@@ -5174,7 +5111,7 @@
             "deprecationMessage": "",
             "description": "",
             "rawdescription": "\n",
-            "sourceCode": "import { HttpClient } from '@angular/common/http';\nimport { Injectable } from '@angular/core';\nimport { FireCommonService } from '@annuadvent/ngx-tools/fire-common';\nimport { FirestoreParserService } from './firestore-parser.service';\nimport { FireQuery } from '../interfaces/fire-query.interface';\nimport { FirestoreQueryService } from './firestore-query.service';\nimport { BIN_COLLECTION_POSTFIX, RUN_QUERY_KEYWORD } from '../constants/firestore.constants';\n\n@Injectable({\n  providedIn: 'root'\n})\nexport class FirestoreHttpService {\n  firestoreApiUrl: string = '';\n\n  constructor(\n    private fireCommonService: FireCommonService,\n    private http: HttpClient,\n    private firestoreParser: FirestoreParserService,\n    private firestoreQueryService: FirestoreQueryService,\n  ) {\n    this.firestoreApiUrl = this.fireCommonService.firebaseConfig.store.firestoreBaseApiUrl;\n  }\n\n  public async runQueryById(collectionId: string, id: string): Promise<any> {\n    return new Promise((resolve, reject) => {\n      if (!collectionId || !id) {\n        reject('Please provide a valid collection id and document id.');\n      } else {\n        const url = `${this.firestoreApiUrl}/${collectionId}/${id}`;\n        const httpSubscription = this.http.get(url).subscribe({\n          next: (queryResult: any) => {\n            const parsedQueryResult: any = this.firestoreParser.parse(queryResult);\n            httpSubscription.unsubscribe();\n            resolve(parsedQueryResult);\n          },\n          error: reject,\n        });\n      }\n    });\n  }\n\n  public async runQueryByConfig(\n    fireQuery: FireQuery\n  ): Promise<Array<any>> {\n    return new Promise((resolve, reject) => {\n      const url = `${this.firestoreApiUrl}${RUN_QUERY_KEYWORD}`;\n\n      const httpSubscription = this.http\n        .post(\n          url,\n          this.firestoreQueryService.fireToStructuredQuery(fireQuery)\n        )\n        .subscribe({\n          next: (queryResult: any) => {\n            const parsedQueryResult: Array<any> = this.firestoreParser.parse(\n              queryResult\n            );\n            httpSubscription.unsubscribe();\n            resolve(parsedQueryResult);\n          },\n          error: (err) => reject({ config: fireQuery, error: err }),\n        });\n    });\n  }\n\n  public async runQueryToUpdate(\n    collectionId: string,\n    collectionDoc: any,\n    fieldsToUpdate: Array<string>,\n    isBin: boolean = false\n  ): Promise<any> {\n    if (!collectionDoc || !collectionDoc.id) throw new Error('Please provide a valid collection document');\n\n    // If update to Bin collection, then postfix collectionId with '-bin'\n    if (isBin === true) collectionId = `${collectionId}${BIN_COLLECTION_POSTFIX}`;\n\n    const pCollectionDoc = { ...collectionDoc };\n    delete pCollectionDoc.id;\n\n    return new Promise((resolve, reject) => {\n      const url = `${this.firestoreApiUrl}/${collectionId}/${collectionDoc.id}`;\n      const body = this.firestoreParser.buildFirebaseFields(\n        pCollectionDoc,\n        fieldsToUpdate\n      );\n      const params =\n        this.firestoreParser.buildQueryParamsToUpdate(fieldsToUpdate);\n\n      const httpSubscription = this.http\n        .patch(url, body, { params })\n        .subscribe({\n          next: (queryResult: any) => {\n            const updatedCollectionDoc: any = this.firestoreParser.parse(\n              queryResult\n            );\n            httpSubscription.unsubscribe();\n            resolve(updatedCollectionDoc);\n          },\n          error: reject,\n        });\n    });\n  }\n\n  public async runQueryToDelete(collectionId: string, collectionDoc: any): Promise<boolean> {\n    if (!collectionDoc || !collectionDoc.id)\n      throw new Error('Please provide a valid collectionDoc.');\n\n    return new Promise((resolve, reject) => {\n      // Copy to collectionDocs bin, then delete from collectionDocs db.\n      this.runQueryToUpdate(collectionId, collectionDoc, null, true)\n        .then(() => {\n          const url = `${this.firestoreApiUrl}/${collectionId}/${collectionDoc.id}`;\n          // delete from collectionDocs db.\n          const httpSubscription = this.http.delete(url).subscribe({\n            next: (res: any) => {\n              httpSubscription.unsubscribe();\n              resolve(true);\n            },\n            error: reject,\n          });\n        })\n        .catch(reject);\n    });\n  }\n\n}\n",
+            "sourceCode": "import { HttpClient } from '@angular/common/http';\nimport { Injectable } from '@angular/core';\nimport { FireCommonService } from '@annuadvent/ngx-tools/fire-common';\nimport { FirestoreParserService } from './firestore-parser.service';\nimport { FireQuery } from '../interfaces/fire-query.interface';\nimport { FirestoreQueryService } from './firestore-query.service';\nimport { BIN_COLLECTION_POSTFIX, RUN_QUERY_KEYWORD } from '../constants/firestore.constants';\n\n@Injectable({\n  providedIn: 'root'\n})\nexport class FirestoreHttpService {\n\n  constructor(\n    private fireCommonService: FireCommonService,\n    private http: HttpClient,\n    private firestoreParser: FirestoreParserService,\n    private firestoreQueryService: FirestoreQueryService,\n  ) { }\n\n  public async runQueryById(collectionId: string, id: string): Promise<any> {\n    const firestoreApiUrl = this.fireCommonService.firebaseConfig?.store?.firestoreBaseApiUrl;\n\n    return new Promise((resolve, reject) => {\n      if (!collectionId || !id) {\n        reject('Please provide a valid collection id and document id.');\n      } else {\n        const url = `${firestoreApiUrl}/${collectionId}/${id}`;\n        const httpSubscription = this.http.get(url).subscribe({\n          next: (queryResult: any) => {\n            const parsedQueryResult: any = this.firestoreParser.parse(queryResult);\n            httpSubscription.unsubscribe();\n            resolve(parsedQueryResult);\n          },\n          error: reject,\n        });\n      }\n    });\n  }\n\n  public async runQueryByConfig(\n    fireQuery: FireQuery\n  ): Promise<Array<any>> {\n    const firestoreApiUrl = this.fireCommonService.firebaseConfig?.store?.firestoreBaseApiUrl;\n\n    return new Promise((resolve, reject) => {\n      const url = `${firestoreApiUrl}${RUN_QUERY_KEYWORD}`;\n\n      const httpSubscription = this.http\n        .post(\n          url,\n          this.firestoreQueryService.fireToStructuredQuery(fireQuery)\n        )\n        .subscribe({\n          next: (queryResult: any) => {\n            const parsedQueryResult: Array<any> = this.firestoreParser.parse(\n              queryResult\n            );\n            httpSubscription.unsubscribe();\n            resolve(parsedQueryResult);\n          },\n          error: (err) => reject({ config: fireQuery, error: err }),\n        });\n    });\n  }\n\n  public async runQueryToUpdate(\n    collectionId: string,\n    collectionDoc: any,\n    fieldsToUpdate: Array<string>,\n    isBin: boolean = false\n  ): Promise<any> {\n    const firestoreApiUrl = this.fireCommonService.firebaseConfig?.store?.firestoreBaseApiUrl;\n\n    if (!collectionDoc || !collectionDoc.id) throw new Error('Please provide a valid collection document');\n\n    // If update to Bin collection, then postfix collectionId with '-bin'\n    if (isBin === true) collectionId = `${collectionId}${BIN_COLLECTION_POSTFIX}`;\n\n    const pCollectionDoc = { ...collectionDoc };\n    delete pCollectionDoc.id;\n\n    return new Promise((resolve, reject) => {\n      const url = `${firestoreApiUrl}/${collectionId}/${collectionDoc.id}`;\n      const body = this.firestoreParser.buildFirebaseFields(\n        pCollectionDoc,\n        fieldsToUpdate\n      );\n      const params =\n        this.firestoreParser.buildQueryParamsToUpdate(fieldsToUpdate);\n\n      const httpSubscription = this.http\n        .patch(url, body, { params })\n        .subscribe({\n          next: (queryResult: any) => {\n            const updatedCollectionDoc: any = this.firestoreParser.parse(\n              queryResult\n            );\n            httpSubscription.unsubscribe();\n            resolve(updatedCollectionDoc);\n          },\n          error: reject,\n        });\n    });\n  }\n\n  public async runQueryToDelete(collectionId: string, collectionDoc: any): Promise<boolean> {\n    const firestoreApiUrl = this.fireCommonService.firebaseConfig?.store?.firestoreBaseApiUrl;\n\n    if (!collectionDoc || !collectionDoc.id)\n      throw new Error('Please provide a valid collectionDoc.');\n\n    return new Promise((resolve, reject) => {\n      // Copy to collectionDocs bin, then delete from collectionDocs db.\n      this.runQueryToUpdate(collectionId, collectionDoc, null, true)\n        .then(() => {\n          const url = `${firestoreApiUrl}/${collectionId}/${collectionDoc.id}`;\n          // delete from collectionDocs db.\n          const httpSubscription = this.http.delete(url).subscribe({\n            next: (res: any) => {\n              httpSubscription.unsubscribe();\n              resolve(true);\n            },\n            error: reject,\n          });\n        })\n        .catch(reject);\n    });\n  }\n\n}\n",
             "constructorObj": {
                 "name": "constructor",
                 "description": "",
@@ -5206,7 +5143,7 @@
                         "deprecationMessage": ""
                     }
                 ],
-                "line": 13,
+                "line": 12,
                 "jsdoctags": [
                     {
                         "name": "fireCommonService",
@@ -5442,23 +5379,9 @@
         },
         {
             "name": "FirestoreQueryService",
-            "id": "injectable-FirestoreQueryService-5f31ffc789feeae942705004bde524358901e9c4432de66ae8a02a46b01f9bbcabb34a1de7ed8844827a7e63af12dd2e324abeac6480dc3cbe42797aba17cc72",
+            "id": "injectable-FirestoreQueryService-ebe05b0660262563e50e6829cffb82f6ef7f3b7b6088d1ccdf38adb28421135c8b0fb94b8b4e0b5a8affaade0a06dd1c0c005adedf5aaf89dbdd0fc5ace062d6",
             "file": "projects/ngx-tools/fire-store/src/services/firestore-query.service.ts",
-            "properties": [
-                {
-                    "name": "firestoreApiUrl",
-                    "defaultValue": "''",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "string",
-                    "optional": false,
-                    "description": "",
-                    "line": 30,
-                    "modifierKind": [
-                        121
-                    ]
-                }
-            ],
+            "properties": [],
             "methods": [
                 {
                     "name": "fireToStructuredQuery",
@@ -5473,7 +5396,7 @@
                     "optional": false,
                     "returnType": "StructuredQuery",
                     "typeParameters": [],
-                    "line": 104,
+                    "line": 113,
                     "deprecated": false,
                     "deprecationMessage": "",
                     "modifierKind": [
@@ -5504,7 +5427,7 @@
                     "optional": false,
                     "returnType": "Array<StructuredQueryOrder>",
                     "typeParameters": [],
-                    "line": 42,
+                    "line": 39,
                     "deprecated": false,
                     "deprecationMessage": "",
                     "modifierKind": [
@@ -5535,7 +5458,7 @@
                     "optional": false,
                     "returnType": "StructuredQuerySelectProjection",
                     "typeParameters": [],
-                    "line": 36,
+                    "line": 33,
                     "deprecated": false,
                     "deprecationMessage": "",
                     "modifierKind": [
@@ -5572,7 +5495,7 @@
                     "optional": false,
                     "returnType": "StructuredQueryCursor",
                     "typeParameters": [],
-                    "line": 57,
+                    "line": 54,
                     "deprecated": false,
                     "deprecationMessage": "",
                     "modifierKind": [
@@ -5618,7 +5541,7 @@
                     "optional": false,
                     "returnType": "StructuredQueryFilter",
                     "typeParameters": [],
-                    "line": 65,
+                    "line": 62,
                     "deprecated": false,
                     "deprecationMessage": "",
                     "modifierKind": [
@@ -5650,7 +5573,7 @@
             "deprecationMessage": "",
             "description": "",
             "rawdescription": "\n",
-            "sourceCode": "import { Injectable } from '@angular/core';\r\nimport {\r\n  StructuredQuery,\r\n  StructuredQueryCollectionSelector,\r\n  StructuredQueryCursor,\r\n  StructuredQueryFieldFilter,\r\n  StructuredQueryFieldReference,\r\n  StructuredQueryFilter,\r\n  StructuredQueryOrder,\r\n  StructuredQuerySelectProjection,\r\n  StructuredQueryType,\r\n} from '../interfaces/structured-query.interface';\r\nimport {\r\n  FireOrderField,\r\n  FireQuery,\r\n  FireQueryFilter,\r\n} from '../interfaces/fire-query.interface';\r\nimport {\r\n  StructuredQueryDirectionEnum,\r\n  StructuredQueryOperatorEnum,\r\n  StructuredQueryValueType,\r\n} from '../enums/structured-query.enums';\r\nimport { FireCommonService } from '@annuadvent/ngx-tools/fire-common';\r\n\r\n\r\n@Injectable({\r\n  providedIn: 'root'\r\n})\r\nexport class FirestoreQueryService {\r\n  private firestoreApiUrl: string = '';\r\n\r\n  constructor(private fireCommonService: FireCommonService) {\r\n    this.firestoreApiUrl = this.fireCommonService.firebaseConfig.store.firestoreBaseApiUrl;\r\n  }\r\n\r\n  private getSelectFields(selectFields: Array<string>): StructuredQuerySelectProjection {\r\n    return {\r\n      fields: selectFields.map(field => ({ fieldPath: field }))\r\n    } as StructuredQuerySelectProjection;\r\n  }\r\n\r\n  private getOrderBy(orderBy: Array<FireOrderField>): Array<StructuredQueryOrder> {\r\n    return orderBy.map(orderByField => {\r\n      let { fieldPath, isDesc } = orderByField;\r\n\r\n      if (orderByField.fieldPath === 'id') {\r\n        fieldPath = '__name__';\r\n      }\r\n\r\n      return {\r\n        field: { fieldPath: fieldPath } as StructuredQueryFieldReference,\r\n        direction: isDesc === true ? StructuredQueryDirectionEnum.DESCENDING : StructuredQueryDirectionEnum.ASCENDING\r\n      } as StructuredQueryOrder\r\n    });\r\n  }\r\n\r\n  private getStartPage(startPage: Array<any>, orderBy: Array<FireOrderField>): StructuredQueryCursor {\r\n    const values = orderBy.map((orderField, index) => ({ [orderField.fieldType]: startPage[index] }))\r\n    return {\r\n      values,\r\n      before: false\r\n    } as StructuredQueryCursor;\r\n  }\r\n\r\n  private getWhere(where: Array<FireQueryFilter>, collectionId: string): StructuredQueryFilter {\r\n    const filters = where.map(fireFilter => {\r\n      let { fieldPath, operator, value, valueType } = fireFilter;\r\n\r\n      /*\r\n      * If Where has a filter for id, that means it has to be filtered on document's __name__ reference fieldpath.\r\n      * Also __name__ has to be in orderBy. So add it to orderBy separately.\r\n     */\r\n      if (fieldPath === 'id') {\r\n        const collectionUrl = this.firestoreApiUrl.substring(\r\n          this.firestoreApiUrl.indexOf('/projects/') + 1\r\n        );\r\n\r\n        fieldPath = '__name__';\r\n        value = value instanceof Array ?\r\n          value.map(val => `${collectionUrl}/${collectionId}/${val}`) :\r\n          `${collectionUrl}/${collectionId}/${value}`;\r\n        valueType = StructuredQueryValueType.referenceValue;\r\n      }\r\n\r\n      return {\r\n        fieldFilter: {\r\n          field: { fieldPath: fieldPath },\r\n          op: operator,\r\n          value: value instanceof Array ?\r\n            { arrayValue: { values: value.map(v => ({ [valueType]: v })) } } :\r\n            { [valueType]: value },\r\n        } as StructuredQueryFieldFilter\r\n      }\r\n    });\r\n\r\n    return {\r\n      compositeFilter: {\r\n        filters,\r\n        op: StructuredQueryOperatorEnum.AND\r\n      }\r\n    } as StructuredQueryFilter;\r\n  }\r\n\r\n  public fireToStructuredQuery(fireQuery: FireQuery): StructuredQuery {\r\n    if (!fireQuery) throw new Error('Invalid Fire Query.');\r\n    let { collectionId, selectFields, orderBy, where, isForwardDir, startPage, pageSize } = fireQuery;\r\n\r\n    let squery: StructuredQueryType = {\r\n      from: [{ collectionId, allDescendants: false } as StructuredQueryCollectionSelector]\r\n    };\r\n\r\n    /*\r\n    * If id is in the where filters, then add id(__name__) to orderBy, its mandatory.\r\n    */\r\n    if (where && where.length && where.find(filter => filter.fieldPath === 'id')) {\r\n      orderBy = orderBy ? [...orderBy] : [];\r\n      // if not, id orderBy already exist, then add it to order By\r\n      if (!orderBy.find(ord => ord.fieldPath === 'id')) {\r\n        orderBy.push(\r\n          {\r\n            fieldPath: 'id',\r\n            fieldType: StructuredQueryValueType.referenceValue,\r\n            isDesc: true,\r\n          } as FireOrderField\r\n        )\r\n      }\r\n    }\r\n\r\n\r\n    if (selectFields && selectFields.length) {\r\n      squery.select = this.getSelectFields(selectFields);\r\n    }\r\n\r\n    if (orderBy && orderBy.length) {\r\n      squery.orderBy = this.getOrderBy(orderBy);\r\n    }\r\n\r\n    if (startPage && orderBy && orderBy.length) {\r\n      if (isForwardDir === false) {\r\n        squery.endAt = this.getStartPage(startPage, orderBy);\r\n      } else {\r\n        squery.startAt = this.getStartPage(startPage, orderBy);\r\n      }\r\n    }\r\n\r\n    if (pageSize > 0) {\r\n      squery.limit = pageSize;\r\n    }\r\n\r\n    if (where && where.length) {\r\n      squery.where = this.getWhere(where, collectionId);\r\n    }\r\n\r\n    return { structuredQuery: squery } as StructuredQuery;\r\n  }\r\n\r\n}\r\n",
+            "sourceCode": "import { Injectable } from '@angular/core';\r\nimport {\r\n  StructuredQuery,\r\n  StructuredQueryCollectionSelector,\r\n  StructuredQueryCursor,\r\n  StructuredQueryFieldFilter,\r\n  StructuredQueryFieldReference,\r\n  StructuredQueryFilter,\r\n  StructuredQueryOrder,\r\n  StructuredQuerySelectProjection,\r\n  StructuredQueryType,\r\n} from '../interfaces/structured-query.interface';\r\nimport {\r\n  FireOrderField,\r\n  FireQuery,\r\n  FireQueryFilter,\r\n} from '../interfaces/fire-query.interface';\r\nimport {\r\n  StructuredQueryDirectionEnum,\r\n  StructuredQueryOperatorEnum,\r\n  StructuredQueryValueType,\r\n} from '../enums/structured-query.enums';\r\nimport { FireCommonService } from '@annuadvent/ngx-tools/fire-common';\r\n\r\n\r\n@Injectable({\r\n  providedIn: 'root'\r\n})\r\nexport class FirestoreQueryService {\r\n\r\n  constructor(private fireCommonService: FireCommonService) { }\r\n\r\n  private getSelectFields(selectFields: Array<string>): StructuredQuerySelectProjection {\r\n    return {\r\n      fields: selectFields.map(field => ({ fieldPath: field }))\r\n    } as StructuredQuerySelectProjection;\r\n  }\r\n\r\n  private getOrderBy(orderBy: Array<FireOrderField>): Array<StructuredQueryOrder> {\r\n    return orderBy.map(orderByField => {\r\n      let { fieldPath, isDesc } = orderByField;\r\n\r\n      if (orderByField.fieldPath === 'id') {\r\n        fieldPath = '__name__';\r\n      }\r\n\r\n      return {\r\n        field: { fieldPath: fieldPath } as StructuredQueryFieldReference,\r\n        direction: isDesc === true ? StructuredQueryDirectionEnum.DESCENDING : StructuredQueryDirectionEnum.ASCENDING\r\n      } as StructuredQueryOrder\r\n    });\r\n  }\r\n\r\n  private getStartPage(startPage: Array<any>, orderBy: Array<FireOrderField>): StructuredQueryCursor {\r\n    const values = orderBy.map((orderField, index) => ({ [orderField.fieldType]: startPage[index] || 'null' }))\r\n    return {\r\n      values,\r\n      before: false\r\n    } as StructuredQueryCursor;\r\n  }\r\n\r\n  private getWhere(where: Array<FireQueryFilter>, collectionId: string): StructuredQueryFilter {\r\n    const firestoreApiUrl = this.fireCommonService.firebaseConfig?.store?.firestoreBaseApiUrl;\r\n\r\n    const filters = where.map(fireFilter => {\r\n      let { fieldPath, operator, value, valueType } = fireFilter;\r\n\r\n      if (value === null || typeof value === 'undefined') {\r\n        return null;\r\n      }\r\n\r\n      /*\r\n      * If Where has a filter for id, that means it has to be filtered on document's __name__ reference fieldpath.\r\n      * Also __name__ has to be in orderBy. So add it to orderBy separately.\r\n     */\r\n      if (fieldPath === 'id') {\r\n        const collectionUrl = firestoreApiUrl.substring(\r\n          firestoreApiUrl.indexOf('/projects/') + 1\r\n        );\r\n\r\n        fieldPath = '__name__';\r\n        value = value instanceof Array ?\r\n          value.map(val => `${collectionUrl}/${collectionId}/${val}`) :\r\n          `${collectionUrl}/${collectionId}/${value}`;\r\n        valueType = StructuredQueryValueType.referenceValue;\r\n      }\r\n\r\n      return {\r\n        fieldFilter: {\r\n          field: { fieldPath: fieldPath },\r\n          op: operator,\r\n          value: value instanceof Array ?\r\n            { arrayValue: { values: value.map(v => ({ [valueType]: v })) } } :\r\n            { [valueType]: value },\r\n        } as StructuredQueryFieldFilter\r\n      }\r\n    });\r\n\r\n    const validFilters = filters.filter(ft => ft !== null);\r\n\r\n    if (validFilters && validFilters.length) {\r\n      return {\r\n        compositeFilter: {\r\n          filters,\r\n          op: StructuredQueryOperatorEnum.AND\r\n        }\r\n      } as StructuredQueryFilter;\r\n    } else {\r\n      return null;\r\n    }\r\n  }\r\n\r\n  public fireToStructuredQuery(fireQuery: FireQuery): StructuredQuery {\r\n    if (!fireQuery) throw new Error('Invalid Fire Query.');\r\n    let { collectionId, selectFields, orderBy, where, isForwardDir, startPage, pageSize } = fireQuery;\r\n\r\n    let squery: StructuredQueryType = {\r\n      from: [{ collectionId, allDescendants: false } as StructuredQueryCollectionSelector]\r\n    };\r\n\r\n    /*\r\n    * If id is in the where filters, then add id(__name__) to orderBy, its mandatory.\r\n    */\r\n    if (where && where.length && where.find(filter => filter.fieldPath === 'id')) {\r\n      orderBy = orderBy ? [...orderBy] : [];\r\n      // if not, id orderBy already exist, then add it to order By\r\n      if (!orderBy.find(ord => ord.fieldPath === 'id')) {\r\n        orderBy.push(\r\n          {\r\n            fieldPath: 'id',\r\n            fieldType: StructuredQueryValueType.referenceValue,\r\n            isDesc: true,\r\n          } as FireOrderField\r\n        )\r\n      }\r\n    }\r\n\r\n\r\n    if (selectFields && selectFields.length) {\r\n      squery.select = this.getSelectFields(selectFields);\r\n    }\r\n\r\n    if (orderBy && orderBy.length) {\r\n      squery.orderBy = this.getOrderBy(orderBy);\r\n    }\r\n\r\n    if (startPage && startPage.length && orderBy && orderBy.length && pageSize > 0) {\r\n      if (isForwardDir === false) {\r\n        squery.endAt = this.getStartPage(startPage, orderBy);\r\n      } else {\r\n        squery.startAt = this.getStartPage(startPage, orderBy);\r\n      }\r\n    }\r\n\r\n    if (pageSize > 0) {\r\n      squery.limit = pageSize;\r\n    }\r\n\r\n    if (where && where.length) {\r\n      const validWhere = this.getWhere(where, collectionId);\r\n      if (validWhere) {\r\n        squery.where = validWhere;\r\n      }\r\n    }\r\n\r\n    return { structuredQuery: squery } as StructuredQuery;\r\n  }\r\n\r\n}\r\n",
             "constructorObj": {
                 "name": "constructor",
                 "description": "",
@@ -5664,7 +5587,7 @@
                         "deprecationMessage": ""
                     }
                 ],
-                "line": 30,
+                "line": 29,
                 "jsdoctags": [
                     {
                         "name": "fireCommonService",
@@ -11460,7 +11383,7 @@
                 "linktype": "injectable",
                 "name": "FireArticlesHttpService",
                 "coveragePercent": 0,
-                "coverageCount": "0/19",
+                "coverageCount": "0/18",
                 "status": "low"
             },
             {
@@ -11469,7 +11392,7 @@
                 "linktype": "injectable",
                 "name": "FireCategoriesHttpService",
                 "coveragePercent": 5,
-                "coverageCount": "1/19",
+                "coverageCount": "1/18",
                 "status": "low"
             },
             {
@@ -11873,7 +11796,7 @@
                 "linktype": "injectable",
                 "name": "FirestoreHttpService",
                 "coveragePercent": 0,
-                "coverageCount": "0/7",
+                "coverageCount": "0/6",
                 "status": "low"
             },
             {
@@ -11891,7 +11814,7 @@
                 "linktype": "injectable",
                 "name": "FirestoreQueryService",
                 "coveragePercent": 0,
-                "coverageCount": "0/8",
+                "coverageCount": "0/7",
                 "status": "low"
             },
             {
