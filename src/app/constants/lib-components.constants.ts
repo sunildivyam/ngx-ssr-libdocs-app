@@ -19,7 +19,6 @@ import { ErrorComponent } from '@annuadvent/ngx-common-ui/error';
 import { FiltersComponent } from '@annuadvent/ngx-common-ui/filters';
 import { FooterNavComponent } from '@annuadvent/ngx-common-ui/footer-nav';
 import { HamburgerComponent } from '@annuadvent/ngx-common-ui/hamburger';
-import { ImageBrowserComponent } from '@annuadvent/ngx-common-ui/image-browser';
 import { ImageFormComponent } from '@annuadvent/ngx-common-ui/image-form';
 import { LinkFormComponent } from '@annuadvent/ngx-common-ui/link-form';
 import { MenuComponent } from '@annuadvent/ngx-common-ui/menu';
@@ -49,6 +48,7 @@ import { ArticleViewComponent } from '@annuadvent/ngx-cms/article-view';
 import { CategoryArticlesListComponent } from '@annuadvent/ngx-cms/category-articles-list';
 import { CategoryComponent } from '@annuadvent/ngx-cms/category';
 import { CategoryEditorComponent } from '@annuadvent/ngx-cms/category-editor';
+import { CmsImageFormComponent } from '@annuadvent/ngx-cms/cms-image-form';
 import { ContentEditorComponent } from '@annuadvent/ngx-cms/content-editor';
 import { ContentElementComponent } from '@annuadvent/ngx-cms/content-editor';
 import { LeafElementComponent } from '@annuadvent/ngx-cms/content-editor';
@@ -58,6 +58,7 @@ import { OpenaiAutoArticlesComponent } from '@annuadvent/ngx-cms/openai-auto-art
 
 
 // ngx-tools imports
+import { ImageBrowserComponent } from '@annuadvent/ngx-tools/fire-storage';
 import { LoginComponent } from '@annuadvent/ngx-tools/fire-auth';
 import { LoginStatusComponent } from '@annuadvent/ngx-tools/fire-auth';
 import { OpenaiFormComponent } from '@annuadvent/ngx-tools/openai';
@@ -84,7 +85,6 @@ export const libComponentClasses = {
         FiltersComponent,
         FooterNavComponent,
         HamburgerComponent,
-        ImageBrowserComponent,
         ImageFormComponent,
         LinkFormComponent,
         MenuComponent,
@@ -114,6 +114,7 @@ export const libComponentClasses = {
         CategoryArticlesListComponent,
         CategoryComponent,
         CategoryEditorComponent,
+        CmsImageFormComponent,
         ContentEditorComponent,
         ContentElementComponent,
         LeafElementComponent,
@@ -123,6 +124,7 @@ export const libComponentClasses = {
 
     },
     'ngx-tools': {
+        ImageBrowserComponent,
         LoginComponent,
         LoginStatusComponent,
         OpenaiFormComponent,

@@ -382,6 +382,47 @@
             "methods": []
         },
         {
+            "name": "ImageInfo",
+            "id": "interface-ImageInfo-1859d7098a68fe21569ae5329351a8d17d83e8e571a569bc8a135c53ba9db7515ca01bdc1ae2878712566c6084a7cd9252eac6a400282edff4773a8532817d43",
+            "file": "projects/ngx-cms/cms-image-form/src/interfaces/image-form.interface.ts",
+            "deprecated": false,
+            "deprecationMessage": "",
+            "type": "interface",
+            "sourceCode": "export interface ImageInfo {\r\n    src: string;\r\n    alt: string;\r\n    imageData?: any;\r\n};\r\n",
+            "properties": [
+                {
+                    "name": "alt",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "string",
+                    "optional": false,
+                    "description": "",
+                    "line": 4
+                },
+                {
+                    "name": "imageData",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "any",
+                    "optional": true,
+                    "description": "",
+                    "line": 5
+                },
+                {
+                    "name": "src",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "string",
+                    "optional": false,
+                    "description": "",
+                    "line": 3
+                }
+            ],
+            "indexSignatures": [],
+            "kind": 168,
+            "methods": []
+        },
+        {
             "name": "OpenaiArticleQueueItem",
             "id": "interface-OpenaiArticleQueueItem-0f1cc4a3f823522957703cf3f60b6e317c2ee673e58368a91a9ba127760c1cf4dedbb796e07434556db7c76470ddda0d93a82cc861f8b7d2dafe42ef114de7a2",
             "file": "projects/ngx-cms/openai-auto-articles/src/interfaces/openai-auto-articles.interface.ts",
@@ -4070,7 +4111,7 @@
                 "OnInit",
                 "OnChanges"
             ],
-            "templateData": "<h2>Article Editor</h2>\r\n<div class=\"row spacing-around-vertical\" *ngIf=\"!readonlyId && enableReadonlyIdToggle\">\r\n    <label (dblclick)=\"articledDblClick($event)\">Article Id</label>\r\n    <input type=\"text\" name=\"article-id\" [(ngModel)]=\"article.id\" />\r\n</div>\r\n<p *ngIf=\"readonlyId\" (dblclick)=\"articledDblClick($event)\">/{{article?.id}}</p>\r\n<section *ngIf=\"enableDelete\" class=\"row spacing-vertical right\">\r\n    <a class=\"btn error\" href=\"#\" (click)=\"deleteArticle($event)\">Delete Article</a>\r\n</section>\r\n<anu-tabs [tabs]=\"tabs\" [activeTab]=\"activeTab\" (changed)=\"tabChanged($event)\"></anu-tabs>\r\n<section class=\"container tab-body\">\r\n\r\n    <section class=\"tab-item-body col-12\" [ngClass]=\"{'active': activeTab.name === 'article'}\">\r\n        <anu-card class=\"shadow spacing article-card col-12\">\r\n            <anu-card-body class=\"col-12\">\r\n                <h1>{{article?.metaInfo?.title}}</h1>\r\n                <p>{{article?.metaInfo?.description}}</p>\r\n                <label>You can start writing your content below:</label>\r\n                <anu-content-editor [enableOpenai]=\"enableOpenai\" class=\"col-12\" [value]=\"article?.body\"\r\n                    (changed)=\"articleBodyChanged($event)\"></anu-content-editor>\r\n            </anu-card-body>\r\n        </anu-card>\r\n\r\n        <section class=\"row spacing-vertical right\">\r\n            <a class=\"btn\" href=\"#\" (click)=\"saveArticle($event)\">Save Article</a>\r\n        </section>\r\n    </section>\r\n\r\n    <section class=\"tab-item-body\" [ngClass]=\"{'active': activeTab.name === 'moreinfo'}\">\r\n        <anu-card\r\n            class=\"shadow spacing spacing-around-vertical moreinfo-card spacing-around-horizontal-md spacing-around-horizontal-lg\">\r\n            <anu-card-body>\r\n                <div class=\"row center stretch\">\r\n                    <div class=\"col-sm-12\">\r\n                        <a class=\"spacing-around\" href=\"#\" (click)=\"changeImage($event)\">Change image</a>\r\n                        <a class=\"spacing-around\" href=\"#\" (click)=\"changeImage($event, true)\">Remove image</a>\r\n                    </div>\r\n                </div>\r\n            </anu-card-body>\r\n        </anu-card>\r\n\r\n        <anu-card\r\n            class=\"shadow spacing spacing-around-vertical moreinfo-card spacing-around-horizontal-md spacing-around-horizontal-lg\">\r\n            <anu-card-title>\r\n                <h2>Link Categories to your Article</h2>\r\n            </anu-card-title>\r\n            <anu-card-body>\r\n                <div class=\"row\">\r\n                    <anu-multi-select-box keyField=\"id\" labelField=\"title\" [items]=\"categoriesMultiSelectItems\"\r\n                        [selectedItems]=\"selectedArticleCategories\" (changed)=\"onCategoriesChanged($event)\">\r\n                    </anu-multi-select-box>\r\n                </div>\r\n            </anu-card-body>\r\n        </anu-card>\r\n        <anu-card *ngIf=\"enableFeatures\"\r\n            class=\"shadow spacing spacing-around-vertical moreinfo-card spacing-around-horizontal-md spacing-around-horizontal-lg\">\r\n            <anu-card-title>\r\n                <h2>Link Features to your Article</h2>\r\n            </anu-card-title>\r\n            <anu-card-body>\r\n                <div class=\"row\">\r\n                    <anu-multi-select-box keyField=\"id\" labelField=\"title\" [items]=\"articleFeatures\"\r\n                        [selectedItems]=\"selectedArticleFeatures\" (changed)=\"onArticleFeaturesChanged($event)\">\r\n                    </anu-multi-select-box>\r\n                </div>\r\n            </anu-card-body>\r\n        </anu-card>\r\n        <anu-modal [opened]=\"toggleImageForm\" title=\"Choose an image\" (cancelClick)=\"cancelImageChange()\">\r\n            <anu-image-form [enableOpenaiAutoImage]=\"enableOpenai\" [helpText]=\"imageHelpText\"\r\n                [imageFileName]=\"article?.id + '.jpg'\" [imagePromptText]=\"article?.metaInfo?.title\"\r\n                [src]=\"article?.image?.src\" [alt]=\"article?.image?.alt\" (cancel)=\"cancelImageChange()\"\r\n                (save)=\"saveImageChange($event)\"></anu-image-form>\r\n        </anu-modal>\r\n\r\n        <section class=\"row spacing-vertical right\">\r\n            <a class=\"btn\" href=\"#\" (click)=\"saveArticle($event)\">Save Article</a>\r\n        </section>\r\n\r\n    </section>\r\n\r\n    <section class=\"tab-item-body\" [ngClass]=\"{'active': activeTab.name === 'metainfo'}\">\r\n        <small><i>The <strong>Page title</strong> and <strong>Page description</strong> ideally should be same as to\r\n                your article's content.</i></small>\r\n        <anu-meta-form [metaInfo]=\"article?.metaInfo\" [readonlyMetaProps]=\"readonlyMetaProps\"\r\n            (changed)=\"articleMetaChanged($event)\"></anu-meta-form>\r\n\r\n        <section class=\"row spacing-vertical right\">\r\n            <a class=\"btn\" href=\"#\" (click)=\"saveArticle($event)\">Save Article</a>\r\n        </section>\r\n    </section>\r\n\r\n    <section class=\"tab-item-body\" [ngClass]=\"{'active': activeTab.name === 'publish'}\">\r\n        <div class=\"row center stretch\">\r\n            <!-- inReview  -->\r\n            <div class=\"col-sm-12\">\r\n                <label class=\"spacing-horizontal\">In Review? <anu-toggle [rounded]=\"true\" [checked]=\"article?.inReview\"\r\n                        (changed)=\"inReviewChanged($event)\"></anu-toggle></label>\r\n            </div>\r\n            <div class=\"col-sm-12\">\r\n                <span *ngIf=\"!enablePublish\" [ngClass]=\"article?.isLive ? 'success' : 'warning'\">{{article?.isLive ?\r\n                    'Published' :\r\n                    'Unpublished'}}</span>\r\n                <label *ngIf=\"enablePublish\" class=\"spacing-horizontal\">Published? <anu-toggle [rounded]=\"true\"\r\n                        [checked]=\"article?.isLive\" (changed)=\"isLiveChanged($event)\"></anu-toggle></label>\r\n            </div>\r\n        </div>\r\n        <h2>Preview Card</h2>\r\n        <anu-article class=\"spacing-around-horizontal-md spacing-around-horizontal-lg\" [value]=\"article\"></anu-article>\r\n    </section>\r\n\r\n</section>\r\n"
+            "templateData": "<h2>Article Editor</h2>\r\n<div class=\"row spacing-around-vertical\" *ngIf=\"!readonlyId && enableReadonlyIdToggle\">\r\n    <label (dblclick)=\"articledDblClick($event)\">Article Id</label>\r\n    <input type=\"text\" name=\"article-id\" [(ngModel)]=\"article.id\" />\r\n</div>\r\n<p *ngIf=\"readonlyId\" (dblclick)=\"articledDblClick($event)\">/{{article?.id}}</p>\r\n<section *ngIf=\"enableDelete\" class=\"row spacing-vertical right\">\r\n    <a class=\"btn error\" href=\"#\" (click)=\"deleteArticle($event)\">Delete Article</a>\r\n</section>\r\n<anu-tabs [tabs]=\"tabs\" [activeTab]=\"activeTab\" (changed)=\"tabChanged($event)\"></anu-tabs>\r\n<section class=\"container tab-body\">\r\n\r\n    <section class=\"tab-item-body col-12\" [ngClass]=\"{'active': activeTab.name === 'article'}\">\r\n        <anu-card class=\"shadow spacing article-card col-12\">\r\n            <anu-card-body class=\"col-12\">\r\n                <h1>{{article?.metaInfo?.title}}</h1>\r\n                <p>{{article?.metaInfo?.description}}</p>\r\n                <label>You can start writing your content below:</label>\r\n                <anu-content-editor [enableOpenai]=\"enableOpenai\" class=\"col-12\" [value]=\"article?.body\"\r\n                    (changed)=\"articleBodyChanged($event)\"></anu-content-editor>\r\n            </anu-card-body>\r\n        </anu-card>\r\n\r\n        <section class=\"row spacing-vertical right\">\r\n            <a class=\"btn\" href=\"#\" (click)=\"saveArticle($event)\">Save Article</a>\r\n        </section>\r\n    </section>\r\n\r\n    <section class=\"tab-item-body\" [ngClass]=\"{'active': activeTab.name === 'moreinfo'}\">\r\n        <anu-card\r\n            class=\"shadow spacing spacing-around-vertical moreinfo-card spacing-around-horizontal-md spacing-around-horizontal-lg\">\r\n            <anu-card-body>\r\n                <div class=\"row center stretch\">\r\n                    <div class=\"col-sm-12\">\r\n                        <a class=\"spacing-around\" href=\"#\" (click)=\"changeImage($event)\">Change image</a>\r\n                        <a class=\"spacing-around\" href=\"#\" (click)=\"changeImage($event, true)\">Remove image</a>\r\n                    </div>\r\n                </div>\r\n            </anu-card-body>\r\n        </anu-card>\r\n\r\n        <anu-card\r\n            class=\"shadow spacing spacing-around-vertical moreinfo-card spacing-around-horizontal-md spacing-around-horizontal-lg\">\r\n            <anu-card-title>\r\n                <h2>Link Categories to your Article</h2>\r\n            </anu-card-title>\r\n            <anu-card-body>\r\n                <div class=\"row\">\r\n                    <anu-multi-select-box keyField=\"id\" labelField=\"title\" [items]=\"categoriesMultiSelectItems\"\r\n                        [selectedItems]=\"selectedArticleCategories\" (changed)=\"onCategoriesChanged($event)\">\r\n                    </anu-multi-select-box>\r\n                </div>\r\n            </anu-card-body>\r\n        </anu-card>\r\n        <anu-card *ngIf=\"enableFeatures\"\r\n            class=\"shadow spacing spacing-around-vertical moreinfo-card spacing-around-horizontal-md spacing-around-horizontal-lg\">\r\n            <anu-card-title>\r\n                <h2>Link Features to your Article</h2>\r\n            </anu-card-title>\r\n            <anu-card-body>\r\n                <div class=\"row\">\r\n                    <anu-multi-select-box keyField=\"id\" labelField=\"title\" [items]=\"articleFeatures\"\r\n                        [selectedItems]=\"selectedArticleFeatures\" (changed)=\"onArticleFeaturesChanged($event)\">\r\n                    </anu-multi-select-box>\r\n                </div>\r\n            </anu-card-body>\r\n        </anu-card>\r\n        <anu-modal [opened]=\"toggleImageForm\" title=\"Choose an image\" (cancelClick)=\"cancelImageChange()\">\r\n            <anu-image-form [src]=\"article?.image?.src\" [alt]=\"article?.image?.alt\" (cancel)=\"cancelImageChange()\"\r\n                (save)=\"saveImageChange($event)\"></anu-image-form>\r\n        </anu-modal>\r\n\r\n        <section class=\"row spacing-vertical right\">\r\n            <a class=\"btn\" href=\"#\" (click)=\"saveArticle($event)\">Save Article</a>\r\n        </section>\r\n\r\n    </section>\r\n\r\n    <section class=\"tab-item-body\" [ngClass]=\"{'active': activeTab.name === 'metainfo'}\">\r\n        <small><i>The <strong>Page title</strong> and <strong>Page description</strong> ideally should be same as to\r\n                your article's content.</i></small>\r\n        <anu-meta-form [metaInfo]=\"article?.metaInfo\" [readonlyMetaProps]=\"readonlyMetaProps\"\r\n            (changed)=\"articleMetaChanged($event)\"></anu-meta-form>\r\n\r\n        <section class=\"row spacing-vertical right\">\r\n            <a class=\"btn\" href=\"#\" (click)=\"saveArticle($event)\">Save Article</a>\r\n        </section>\r\n    </section>\r\n\r\n    <section class=\"tab-item-body\" [ngClass]=\"{'active': activeTab.name === 'publish'}\">\r\n        <div class=\"row center stretch\">\r\n            <!-- inReview  -->\r\n            <div class=\"col-sm-12\">\r\n                <label class=\"spacing-horizontal\">In Review? <anu-toggle [rounded]=\"true\" [checked]=\"article?.inReview\"\r\n                        (changed)=\"inReviewChanged($event)\"></anu-toggle></label>\r\n            </div>\r\n            <div class=\"col-sm-12\">\r\n                <span *ngIf=\"!enablePublish\" [ngClass]=\"article?.isLive ? 'success' : 'warning'\">{{article?.isLive ?\r\n                    'Published' :\r\n                    'Unpublished'}}</span>\r\n                <label *ngIf=\"enablePublish\" class=\"spacing-horizontal\">Published? <anu-toggle [rounded]=\"true\"\r\n                        [checked]=\"article?.isLive\" (changed)=\"isLiveChanged($event)\"></anu-toggle></label>\r\n            </div>\r\n        </div>\r\n        <h2>Preview Card</h2>\r\n        <anu-article class=\"spacing-around-horizontal-md spacing-around-horizontal-lg\" [value]=\"article\"></anu-article>\r\n    </section>\r\n\r\n</section>\r\n"
         },
         {
             "name": "ArticleElementComponent",
@@ -5685,7 +5726,267 @@
                 "OnInit",
                 "OnChanges"
             ],
-            "templateData": "<h2>Category Editor</h2>\r\n<div class=\"row spacing-around-vertical\" *ngIf=\"!readonlyId && enableReadonlyIdToggle\">\r\n    <label (dblclick)=\"categoryIdDblClick($event)\">Category Id</label>\r\n    <input type=\"text\" name=\"category-id\" [(ngModel)]=\"category.id\" />\r\n</div>\r\n<p *ngIf=\"readonlyId\" (dblclick)=\"categoryIdDblClick($event)\">/{{category?.id}}</p>\r\n<section *ngIf=\"enableDelete\" class=\"row spacing-vertical right\">\r\n    <a class=\"btn error\" href=\"#\" (click)=\"deleteCategory($event)\">Delete Category</a>\r\n</section>\r\n<anu-tabs [tabs]=\"tabs\" [activeTab]=\"activeTab\" (changed)=\"tabChanged($event)\"></anu-tabs>\r\n<section class=\"container tab-body\">\r\n\r\n    <section class=\"tab-item-body\" [ngClass]=\"{'active': activeTab.name === 'moreinfo'}\">\r\n        <anu-card\r\n            class=\"shadow spacing spacing-around-vertical moreinfo-card spacing-around-horizontal-md spacing-around-horizontal-lg\">\r\n            <anu-card-body>\r\n                <div class=\"row\">\r\n                    <label>Short Title</label>\r\n                    <input type=\"text\" name=\"category-short-title\" [(ngModel)]=\"category.shortTitle\"\r\n                        (blur)=\"onShortTitleChanged($event)\" (ngModelChange)=\"onShortTitleChanged($event)\" />\r\n                </div>\r\n                <div class=\"row center stretch\">\r\n                    <!-- Change/Remove Image -->\r\n                    <div class=\"col-sm-12\">\r\n                        <a class=\"spacing-around\" href=\"#\" (click)=\"changeImage($event)\">Change image</a>\r\n                        <a class=\"spacing-around\" href=\"#\" (click)=\"changeImage($event, true)\">Remove image</a>\r\n                    </div>\r\n                    <!-- IsFeatured -->\r\n                    <div class=\"col-sm-12\">\r\n                        <label class=\"spacing-horizontal\">Featured? <anu-toggle [rounded]=\"true\"\r\n                                [checked]=\"category?.isFeatured\"\r\n                                (changed)=\"isFeaturedChanged($event)\"></anu-toggle></label>\r\n                    </div>\r\n                </div>\r\n            </anu-card-body>\r\n        </anu-card>\r\n\r\n        <anu-card\r\n            class=\"shadow spacing spacing-around-vertical moreinfo-card spacing-around-horizontal-md spacing-around-horizontal-lg\">\r\n            <anu-card-title>\r\n                <h2>Link Features to your Category</h2>\r\n            </anu-card-title>\r\n            <anu-card-body>\r\n                <div class=\"row\">\r\n                    <anu-multi-select-box keyField=\"id\" labelField=\"title\" [items]=\"categoryFeatures\"\r\n                        [selectedItems]=\"selectedCategoryFeatures\" (changed)=\"onCategoryFeaturesChanged($event)\">\r\n                    </anu-multi-select-box>\r\n                </div>\r\n            </anu-card-body>\r\n        </anu-card>\r\n\r\n        <anu-modal [opened]=\"toggleImageForm\" title=\"Choose an image\" (cancelClick)=\"cancelImageChange()\">\r\n            <anu-image-form [helpText]=\"imageHelpText\" [src]=\"category?.image?.src\" [alt]=\"category?.image?.alt\" (cancel)=\"cancelImageChange()\"\r\n                (save)=\"saveImageChange($event)\"></anu-image-form>\r\n        </anu-modal>\r\n\r\n        <section class=\"row spacing-vertical right\">\r\n            <a class=\"btn\" href=\"#\" (click)=\"saveCategory($event)\">Save Category</a>\r\n        </section>\r\n    </section>\r\n\r\n    <section class=\"tab-item-body\" [ngClass]=\"{'active': activeTab.name === 'metainfo'}\">\r\n        <anu-meta-form [metaInfo]=\"category?.metaInfo\" [readonlyMetaProps]=\"readonlyMetaProps\" (changed)=\"categoryMetaChanged($event)\"></anu-meta-form>\r\n        <section class=\"row spacing-vertical right\">\r\n            <a class=\"btn\" href=\"#\" (click)=\"saveCategory($event)\">Save Category</a>\r\n        </section>\r\n    </section>\r\n\r\n    <section class=\"tab-item-body\" [ngClass]=\"{'active': activeTab.name === 'publish'}\">\r\n        <div class=\"row center stretch\">\r\n            <!-- inReview  -->\r\n            <div class=\"col-sm-12\">\r\n                <label class=\"spacing-horizontal\">In Review? <anu-toggle [rounded]=\"true\" [checked]=\"category?.inReview\"\r\n                        (changed)=\"inReviewChanged($event)\"></anu-toggle></label>\r\n            </div>\r\n            <!-- published -->\r\n            <div class=\"col-sm-12\">\r\n                <span *ngIf=\"!enablePublish\" [ngClass]=\"category?.isLive ? 'success' : 'warning'\">{{category?.isLive ?\r\n                    'Published' :\r\n                    'Unpublished'}}</span>\r\n                <label *ngIf=\"enablePublish\" class=\"spacing-horizontal\">Published? <anu-toggle [rounded]=\"true\"\r\n                        [checked]=\"category?.isLive\" (changed)=\"isLiveChanged($event)\"></anu-toggle></label>\r\n            </div>\r\n        </div>\r\n        <h2>Preview</h2>\r\n        <anu-category class=\"spacing-around-horizontal-md spacing-around-horizontal-lg\" [value]=\"category\"\r\n            [showMetaInfo]=\"true\"></anu-category>\r\n\r\n    </section>\r\n\r\n</section>\r\n"
+            "templateData": "<h2>Category Editor</h2>\r\n<div class=\"row spacing-around-vertical\" *ngIf=\"!readonlyId && enableReadonlyIdToggle\">\r\n    <label (dblclick)=\"categoryIdDblClick($event)\">Category Id</label>\r\n    <input type=\"text\" name=\"category-id\" [(ngModel)]=\"category.id\" />\r\n</div>\r\n<p *ngIf=\"readonlyId\" (dblclick)=\"categoryIdDblClick($event)\">/{{category?.id}}</p>\r\n<section *ngIf=\"enableDelete\" class=\"row spacing-vertical right\">\r\n    <a class=\"btn error\" href=\"#\" (click)=\"deleteCategory($event)\">Delete Category</a>\r\n</section>\r\n<anu-tabs [tabs]=\"tabs\" [activeTab]=\"activeTab\" (changed)=\"tabChanged($event)\"></anu-tabs>\r\n<section class=\"container tab-body\">\r\n\r\n    <section class=\"tab-item-body\" [ngClass]=\"{'active': activeTab.name === 'moreinfo'}\">\r\n        <anu-card\r\n            class=\"shadow spacing spacing-around-vertical moreinfo-card spacing-around-horizontal-md spacing-around-horizontal-lg\">\r\n            <anu-card-body>\r\n                <div class=\"row\">\r\n                    <label>Short Title</label>\r\n                    <input type=\"text\" name=\"category-short-title\" [(ngModel)]=\"category.shortTitle\"\r\n                        (blur)=\"onShortTitleChanged($event)\" (ngModelChange)=\"onShortTitleChanged($event)\" />\r\n                </div>\r\n                <div class=\"row center stretch\">\r\n                    <!-- Change/Remove Image -->\r\n                    <div class=\"col-sm-12\">\r\n                        <a class=\"spacing-around\" href=\"#\" (click)=\"changeImage($event)\">Change image</a>\r\n                        <a class=\"spacing-around\" href=\"#\" (click)=\"changeImage($event, true)\">Remove image</a>\r\n                    </div>\r\n                    <!-- IsFeatured -->\r\n                    <div class=\"col-sm-12\">\r\n                        <label class=\"spacing-horizontal\">Featured? <anu-toggle [rounded]=\"true\"\r\n                                [checked]=\"category?.isFeatured\"\r\n                                (changed)=\"isFeaturedChanged($event)\"></anu-toggle></label>\r\n                    </div>\r\n                </div>\r\n            </anu-card-body>\r\n        </anu-card>\r\n\r\n        <anu-card\r\n            class=\"shadow spacing spacing-around-vertical moreinfo-card spacing-around-horizontal-md spacing-around-horizontal-lg\">\r\n            <anu-card-title>\r\n                <h2>Link Features to your Category</h2>\r\n            </anu-card-title>\r\n            <anu-card-body>\r\n                <div class=\"row\">\r\n                    <anu-multi-select-box keyField=\"id\" labelField=\"title\" [items]=\"categoryFeatures\"\r\n                        [selectedItems]=\"selectedCategoryFeatures\" (changed)=\"onCategoryFeaturesChanged($event)\">\r\n                    </anu-multi-select-box>\r\n                </div>\r\n            </anu-card-body>\r\n        </anu-card>\r\n\r\n        <anu-modal [opened]=\"toggleImageForm\" title=\"Choose an image\" (cancelClick)=\"cancelImageChange()\">\r\n            <anu-image-form [src]=\"category?.image?.src\" [alt]=\"category?.image?.alt\" (cancel)=\"cancelImageChange()\"\r\n                (save)=\"saveImageChange($event)\"></anu-image-form>\r\n        </anu-modal>\r\n\r\n        <section class=\"row spacing-vertical right\">\r\n            <a class=\"btn\" href=\"#\" (click)=\"saveCategory($event)\">Save Category</a>\r\n        </section>\r\n    </section>\r\n\r\n    <section class=\"tab-item-body\" [ngClass]=\"{'active': activeTab.name === 'metainfo'}\">\r\n        <anu-meta-form [metaInfo]=\"category?.metaInfo\" [readonlyMetaProps]=\"readonlyMetaProps\"\r\n            (changed)=\"categoryMetaChanged($event)\"></anu-meta-form>\r\n        <section class=\"row spacing-vertical right\">\r\n            <a class=\"btn\" href=\"#\" (click)=\"saveCategory($event)\">Save Category</a>\r\n        </section>\r\n    </section>\r\n\r\n    <section class=\"tab-item-body\" [ngClass]=\"{'active': activeTab.name === 'publish'}\">\r\n        <div class=\"row center stretch\">\r\n            <!-- inReview  -->\r\n            <div class=\"col-sm-12\">\r\n                <label class=\"spacing-horizontal\">In Review? <anu-toggle [rounded]=\"true\" [checked]=\"category?.inReview\"\r\n                        (changed)=\"inReviewChanged($event)\"></anu-toggle></label>\r\n            </div>\r\n            <!-- published -->\r\n            <div class=\"col-sm-12\">\r\n                <span *ngIf=\"!enablePublish\" [ngClass]=\"category?.isLive ? 'success' : 'warning'\">{{category?.isLive ?\r\n                    'Published' :\r\n                    'Unpublished'}}</span>\r\n                <label *ngIf=\"enablePublish\" class=\"spacing-horizontal\">Published? <anu-toggle [rounded]=\"true\"\r\n                        [checked]=\"category?.isLive\" (changed)=\"isLiveChanged($event)\"></anu-toggle></label>\r\n            </div>\r\n        </div>\r\n        <h2>Preview</h2>\r\n        <anu-category class=\"spacing-around-horizontal-md spacing-around-horizontal-lg\" [value]=\"category\"\r\n            [showMetaInfo]=\"true\"></anu-category>\r\n\r\n    </section>\r\n\r\n</section>\r\n"
+        },
+        {
+            "name": "CmsImageFormComponent",
+            "id": "component-CmsImageFormComponent-f5ca066818f4dc38944c7f59f772239e189dae329411a78a79dcdb9aace97801a6e90f187e3b76f7fce3a2e67cbd3ecb24883c9122c7962b02a0dba229be1da2",
+            "file": "projects/ngx-cms/cms-image-form/src/components/cms-image-form/cms-image-form.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "anu-cms-image-form",
+            "styleUrls": [
+                "./cms-image-form.component.scss"
+            ],
+            "styles": [],
+            "templateUrl": [
+                "./cms-image-form.component.html"
+            ],
+            "viewProviders": [],
+            "hostDirectives": [],
+            "inputsClass": [
+                {
+                    "name": "alt",
+                    "defaultValue": "''",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 15,
+                    "type": "string",
+                    "decorators": []
+                },
+                {
+                    "name": "enableImageBrowser",
+                    "defaultValue": "true",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 17,
+                    "type": "boolean",
+                    "decorators": []
+                },
+                {
+                    "name": "enableOpenai",
+                    "defaultValue": "false",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 16,
+                    "type": "boolean",
+                    "decorators": []
+                },
+                {
+                    "name": "src",
+                    "defaultValue": "''",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 14,
+                    "type": "string",
+                    "decorators": []
+                }
+            ],
+            "outputsClass": [
+                {
+                    "name": "cancel",
+                    "defaultValue": "new EventEmitter()",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 19,
+                    "type": "EventEmitter"
+                },
+                {
+                    "name": "save",
+                    "defaultValue": "new EventEmitter<ImageInfo>()",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 20,
+                    "type": "EventEmitter"
+                }
+            ],
+            "propertiesClass": [],
+            "methodsClass": [
+                {
+                    "name": "cancelClicked",
+                    "args": [
+                        {
+                            "name": "event",
+                            "type": "any",
+                            "deprecated": false,
+                            "deprecationMessage": ""
+                        }
+                    ],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 38,
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "modifierKind": [
+                        123
+                    ],
+                    "jsdoctags": [
+                        {
+                            "name": "event",
+                            "type": "any",
+                            "deprecated": false,
+                            "deprecationMessage": "",
+                            "tagName": {
+                                "text": "param"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "ngOnInit",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 35,
+                    "deprecated": false,
+                    "deprecationMessage": ""
+                },
+                {
+                    "name": "openaiFileUploaded",
+                    "args": [
+                        {
+                            "name": "imageFile",
+                            "type": "any",
+                            "deprecated": false,
+                            "deprecationMessage": ""
+                        }
+                    ],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 48,
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "modifierKind": [
+                        123
+                    ],
+                    "jsdoctags": [
+                        {
+                            "name": "imageFile",
+                            "type": "any",
+                            "deprecated": false,
+                            "deprecationMessage": "",
+                            "tagName": {
+                                "text": "param"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "saveClicked",
+                    "args": [
+                        {
+                            "name": "event",
+                            "type": "any",
+                            "deprecated": false,
+                            "deprecationMessage": ""
+                        }
+                    ],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 43,
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "modifierKind": [
+                        123
+                    ],
+                    "jsdoctags": [
+                        {
+                            "name": "event",
+                            "type": "any",
+                            "deprecated": false,
+                            "deprecationMessage": "",
+                            "tagName": {
+                                "text": "param"
+                            }
+                        }
+                    ]
+                }
+            ],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [],
+            "standalone": false,
+            "imports": [],
+            "description": "",
+            "rawdescription": "\n",
+            "type": "component",
+            "sourceCode": "import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';\r\nimport { ImageInfo } from '../../interfaces/cms-image-form.interface';\r\nimport { ImageBrowserService, ImageFileInfo } from '@annuadvent/ngx-tools/fire-storage';\r\nimport { UtilsService } from '@annuadvent/ngx-core/utils';\r\nimport { AppConfigService } from '@annuadvent/ngx-core/app-config';\r\nimport { FireStorageConfig } from '@annuadvent/ngx-tools/fire-common';\r\n\r\n@Component({\r\n  selector: 'anu-cms-image-form',\r\n  templateUrl: './cms-image-form.component.html',\r\n  styleUrls: ['./cms-image-form.component.scss']\r\n})\r\nexport class CmsImageFormComponent implements OnInit {\r\n  @Input() src: string = '';\r\n  @Input() alt: string = '';\r\n  @Input() enableOpenai: boolean = false;\r\n  @Input() enableImageBrowser: boolean = true;\r\n\r\n  @Output() cancel = new EventEmitter();\r\n  @Output() save = new EventEmitter<ImageInfo>();\r\n\r\n  constructor(\r\n    private imageBrowserService: ImageBrowserService,\r\n    private utilsService: UtilsService,\r\n    private appConfigService: AppConfigService,\r\n  ) { \r\n    this.imageBrowserService.selected.subscribe((imageFile: ImageFileInfo) => {\r\n      this.src = this.utilsService.getImageUrl(\r\n        imageFile.fullPath,\r\n        (this.appConfigService.firebase?.storage as FireStorageConfig)?.baseStorageUrl,\r\n      );\r\n    })\r\n  }\r\n\r\n  ngOnInit(): void {\r\n  }\r\n\r\n  public cancelClicked(event: any) {\r\n    event.preventDefault();\r\n    this.cancel.emit();\r\n  }\r\n\r\n  public saveClicked(event: any) {\r\n    event.preventDefault();\r\n    this.save.emit({ src: this.src, alt: this.alt } as ImageInfo);\r\n  }\r\n\r\n  public openaiFileUploaded(imageFile: any): void {\r\n    this.src = this.utilsService.getImageUrl(\r\n          imageFile?.fullPath,\r\n          (this.appConfigService.firebase?.storage as FireStorageConfig)?.baseStorageUrl,\r\n        );\r\n  }  \r\n}\r\n",
+            "assetsDirs": [],
+            "styleUrlsData": [
+                {
+                    "data": ":host {\r\n    form {\r\n        display: flex;\r\n        flex-direction: column;\r\n    \r\n        &>anu-collapsible {\r\n            overflow-y: auto;\r\n        }\r\n    }\r\n}\r\n",
+                    "styleUrl": "./cms-image-form.component.scss"
+                }
+            ],
+            "stylesData": "",
+            "constructorObj": {
+                "name": "constructor",
+                "description": "",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "args": [
+                    {
+                        "name": "imageBrowserService",
+                        "type": "ImageBrowserService",
+                        "deprecated": false,
+                        "deprecationMessage": ""
+                    },
+                    {
+                        "name": "utilsService",
+                        "type": "UtilsService",
+                        "deprecated": false,
+                        "deprecationMessage": ""
+                    },
+                    {
+                        "name": "appConfigService",
+                        "type": "AppConfigService",
+                        "deprecated": false,
+                        "deprecationMessage": ""
+                    }
+                ],
+                "line": 20,
+                "jsdoctags": [
+                    {
+                        "name": "imageBrowserService",
+                        "type": "ImageBrowserService",
+                        "deprecated": false,
+                        "deprecationMessage": "",
+                        "tagName": {
+                            "text": "param"
+                        }
+                    },
+                    {
+                        "name": "utilsService",
+                        "type": "UtilsService",
+                        "deprecated": false,
+                        "deprecationMessage": "",
+                        "tagName": {
+                            "text": "param"
+                        }
+                    },
+                    {
+                        "name": "appConfigService",
+                        "type": "AppConfigService",
+                        "deprecated": false,
+                        "deprecationMessage": "",
+                        "tagName": {
+                            "text": "param"
+                        }
+                    }
+                ]
+            },
+            "implements": [
+                "OnInit"
+            ],
+            "templateData": "<form class=\"container disable-select\">\r\n    <label>Image source</label>\r\n    <input type=\"text\" [(ngModel)]=\"src\" name=\"image-src\" />\r\n    <label>Image alt text</label>\r\n    <input type=\"text\" [(ngModel)]=\"alt\" name=\"image-alt\" />\r\n\r\n    <anu-collapsible *ngIf=\"enableOpenai\" [collapsed]=\"false\" class=\"spacing-around-vertical\" [hamBurgerClassNames]=\"['size-sm']\">\r\n        <anu-collapsible-header>\r\n            Autogenerate Image\r\n        </anu-collapsible-header>\r\n        <anu-collapsible-content>\r\n            <anu-openai-image-form \r\n                (fileUploaded)=\"openaiFileUploaded($event)\"></anu-openai-image-form>\r\n        </anu-collapsible-content>\r\n    </anu-collapsible>\r\n\r\n    <anu-collapsible *ngIf=\"enableImageBrowser\" [collapsed]=\"false\" class=\"spacing-around-vertical\" [hamBurgerClassNames]=\"['size-sm']\">\r\n        <anu-collapsible-header>\r\n            Browse from Server\r\n        </anu-collapsible-header>\r\n        <anu-collapsible-content>\r\n            <anu-image-browser></anu-image-browser>\r\n        </anu-collapsible-content>\r\n    </anu-collapsible>\r\n\r\n    <div class=\"row spacing\">\r\n        <div class=\"col-6 center\"><a href=\"#\" (click)=\"cancelClicked($event)\">Cancel</a></div>\r\n        <div class=\"col-6 center\"><a href=\"#\" (click)=\"saveClicked($event)\">Save</a></div>\r\n    </div>\r\n</form>\r\n"
         },
         {
             "name": "ContentEditorComponent",
@@ -6044,7 +6345,7 @@
             "implements": [
                 "OnInit"
             ],
-            "templateData": "<anu-content-element [enableOpenai]=\"enableOpenai\" (changed)=\"contentChanged($event)\" [editorElement]=\"value\" [fullTree]=\"value\">\r\n</anu-content-element>\r\n\r\n<div #popup [ngClass]=\"{'opened': isTextSelected}\" class=\"popup\" [style.top.px]=\"selectionRect.bottom\"\r\n    [style.left.px]=\"selectionRect.left\">\r\n    <anu-toolbar [items]=\"formattingToolbar\" (changed)=\"formattingToolbarSelected($event)\"></anu-toolbar>\r\n    <!-- Link Form Modal-->\r\n    <anu-modal title=\"Update hyperlink information\" [opened]=\"toggleLinkForm\" (cancelClick)=\"cancelLinkModal()\">\r\n        <anu-link-form [href]=\"link.href\" [label]=\"link.label\" [title]=\"link.title\" [target]=\"link.target\"\r\n            (cancel)=\"cancelLinkModal()\" (save)=\"saveLink($event)\">\r\n        </anu-link-form>\r\n    </anu-modal>\r\n    <!-- Image Form Modal-->\r\n    <anu-modal title=\"Choose an image\" [opened]=\"toggleImageForm\"  (cancelClick)=\"cancelImageModal()\">\r\n        <anu-image-form [enableOpenaiAutoImage]=\"enableOpenai\" [src]=\"imageInfo.src\" [alt]=\"imageInfo.alt\" (cancel)=\"cancelImageModal()\"\r\n            (save)=\"saveImage($event)\">\r\n        </anu-image-form>\r\n    </anu-modal>\r\n</div>\r\n"
+            "templateData": "<anu-content-element [enableOpenai]=\"enableOpenai\" (changed)=\"contentChanged($event)\" [editorElement]=\"value\"\r\n    [fullTree]=\"value\">\r\n</anu-content-element>\r\n\r\n<div #popup [ngClass]=\"{'opened': isTextSelected}\" class=\"popup\" [style.top.px]=\"selectionRect.bottom\"\r\n    [style.left.px]=\"selectionRect.left\">\r\n    <anu-toolbar [items]=\"formattingToolbar\" (changed)=\"formattingToolbarSelected($event)\"></anu-toolbar>\r\n    <!-- Link Form Modal-->\r\n    <anu-modal title=\"Update hyperlink information\" [opened]=\"toggleLinkForm\" (cancelClick)=\"cancelLinkModal()\">\r\n        <anu-link-form [href]=\"link.href\" [label]=\"link.label\" [title]=\"link.title\" [target]=\"link.target\"\r\n            (cancel)=\"cancelLinkModal()\" (save)=\"saveLink($event)\">\r\n        </anu-link-form>\r\n    </anu-modal>\r\n    <!-- Image Form Modal-->\r\n    <anu-modal title=\"Choose an image\" [opened]=\"toggleImageForm\" (cancelClick)=\"cancelImageModal()\">\r\n        <anu-image-form [src]=\"imageInfo.src\" [alt]=\"imageInfo.alt\" (cancel)=\"cancelImageModal()\"\r\n            (save)=\"saveImage($event)\">\r\n        </anu-image-form>\r\n    </anu-modal>\r\n</div>\r\n"
         },
         {
             "name": "ContentElementComponent",
@@ -6482,7 +6783,7 @@
                 "AfterContentChecked",
                 "OnChanges"
             ],
-            "templateData": "<div *ngIf=\"!editorElement?.isContainer\" [ngClass]=\"{'visible': editorElement?.focused}\"\r\n    class=\"row center nowrap styles-toolbar\">\r\n    <a href=\"#\" class=\"toolbar-btn\" (click)=\"toggleToolbar($event, editorElement)\">&#187;</a>\r\n    <anu-toolbar [isVertical]=\"true\" [ngClass]=\"{'opened': isToolbar}\" [items]=\"styleToolbar\"\r\n        (changed)=\"styleToolbarSelected($event)\"></anu-toolbar>\r\n</div>\r\n\r\n<!-- Headings h1 - h6 -->\r\n<anu-leaf-element class=\"col-12\" *ngIf=\"['h1','h2','h3','h4','h5','h6', 'p', 'li', 'img', 'anu-code-block'].includes(editorElement?.tagName)\" [value]=\"editorElement\"\r\n    (changed)=\"onBlur()\" (focusin)=\"focusin()\" (enterKeyPressed)=\"enterKeyPressed($event)\"\r\n    (backspaceKeyPressed)=\"backspaceKeyPressed($event)\" [fullTree]=\"fullTree\"></anu-leaf-element>\r\n\r\n<!-- Container Elements -->\r\n<ng-container *ngIf=\"editorElement?.isContainer\">\r\n    <article *ngIf=\"editorElement?.tagName === 'article'\">\r\n        <ng-container *ngFor=\"let child of editorElement?.children\">\r\n            <anu-content-element [enableOpenai]=\"enableOpenai\" class=\"col-12\" [editorElement]=\"child\" [fullTree]=\"fullTree\" (changed)=\"onBlur()\"\r\n                (focusin)=\"focusin()\">\r\n            </anu-content-element>\r\n        </ng-container>\r\n    </article>\r\n    <div *ngIf=\"editorElement?.tagName === 'div'\">\r\n        <ng-container *ngFor=\"let child of editorElement?.children\">\r\n            <anu-content-element [enableOpenai]=\"enableOpenai\" class=\"col-12\" [editorElement]=\"child\" [fullTree]=\"fullTree\" (changed)=\"onBlur()\"\r\n                (focusin)=\"focusin()\">\r\n            </anu-content-element>\r\n        </ng-container>\r\n    </div>\r\n    <ul *ngIf=\"editorElement?.tagName === 'ul'\">\r\n        <ng-container *ngFor=\"let child of editorElement?.children\">\r\n            <anu-content-element [enableOpenai]=\"enableOpenai\" class=\"col-12\" [editorElement]=\"child\" [fullTree]=\"fullTree\" (changed)=\"onBlur()\"\r\n                (focusin)=\"focusin()\">\r\n            </anu-content-element>\r\n        </ng-container>\r\n    </ul>\r\n    <ol *ngIf=\"editorElement?.tagName === 'ol'\">\r\n        <ng-container *ngFor=\"let child of editorElement?.children\">\r\n            <anu-content-element [enableOpenai]=\"enableOpenai\" class=\"col-12\" [editorElement]=\"child\" [fullTree]=\"fullTree\" (changed)=\"onBlur()\"\r\n                (focusin)=\"focusin()\">\r\n            </anu-content-element>\r\n        </ng-container>\r\n    </ol>\r\n</ng-container>\r\n\r\n<!-- Image Form Modal-->\r\n<ng-container *ngIf=\"toggleImageForm\">\r\n    <anu-modal title=\"Choose an image\" [opened]=\"toggleImageForm\" (cancelClick)=\"cancelImageModal()\">\r\n        <anu-image-form [enableOpenaiAutoImage]=\"enableOpenai\" [src]=\"imageInfo.src\" [alt]=\"imageInfo.alt\" (cancel)=\"cancelImageModal()\"\r\n            (save)=\"saveImage($event)\">\r\n        </anu-image-form>\r\n    </anu-modal>\r\n</ng-container>\r\n"
+            "templateData": "<div *ngIf=\"!editorElement?.isContainer\" [ngClass]=\"{'visible': editorElement?.focused}\"\r\n    class=\"row center nowrap styles-toolbar\">\r\n    <a href=\"#\" class=\"toolbar-btn\" (click)=\"toggleToolbar($event, editorElement)\">&#187;</a>\r\n    <anu-toolbar [isVertical]=\"true\" [ngClass]=\"{'opened': isToolbar}\" [items]=\"styleToolbar\"\r\n        (changed)=\"styleToolbarSelected($event)\"></anu-toolbar>\r\n</div>\r\n\r\n<!-- Headings h1 - h6 -->\r\n<anu-leaf-element class=\"col-12\"\r\n    *ngIf=\"['h1','h2','h3','h4','h5','h6', 'p', 'li', 'img', 'anu-code-block'].includes(editorElement?.tagName)\"\r\n    [value]=\"editorElement\" (changed)=\"onBlur()\" (focusin)=\"focusin()\" (enterKeyPressed)=\"enterKeyPressed($event)\"\r\n    (backspaceKeyPressed)=\"backspaceKeyPressed($event)\" [fullTree]=\"fullTree\"></anu-leaf-element>\r\n\r\n<!-- Container Elements -->\r\n<ng-container *ngIf=\"editorElement?.isContainer\">\r\n    <article *ngIf=\"editorElement?.tagName === 'article'\">\r\n        <ng-container *ngFor=\"let child of editorElement?.children\">\r\n            <anu-content-element [enableOpenai]=\"enableOpenai\" class=\"col-12\" [editorElement]=\"child\"\r\n                [fullTree]=\"fullTree\" (changed)=\"onBlur()\" (focusin)=\"focusin()\">\r\n            </anu-content-element>\r\n        </ng-container>\r\n    </article>\r\n    <div *ngIf=\"editorElement?.tagName === 'div'\">\r\n        <ng-container *ngFor=\"let child of editorElement?.children\">\r\n            <anu-content-element [enableOpenai]=\"enableOpenai\" class=\"col-12\" [editorElement]=\"child\"\r\n                [fullTree]=\"fullTree\" (changed)=\"onBlur()\" (focusin)=\"focusin()\">\r\n            </anu-content-element>\r\n        </ng-container>\r\n    </div>\r\n    <ul *ngIf=\"editorElement?.tagName === 'ul'\">\r\n        <ng-container *ngFor=\"let child of editorElement?.children\">\r\n            <anu-content-element [enableOpenai]=\"enableOpenai\" class=\"col-12\" [editorElement]=\"child\"\r\n                [fullTree]=\"fullTree\" (changed)=\"onBlur()\" (focusin)=\"focusin()\">\r\n            </anu-content-element>\r\n        </ng-container>\r\n    </ul>\r\n    <ol *ngIf=\"editorElement?.tagName === 'ol'\">\r\n        <ng-container *ngFor=\"let child of editorElement?.children\">\r\n            <anu-content-element [enableOpenai]=\"enableOpenai\" class=\"col-12\" [editorElement]=\"child\"\r\n                [fullTree]=\"fullTree\" (changed)=\"onBlur()\" (focusin)=\"focusin()\">\r\n            </anu-content-element>\r\n        </ng-container>\r\n    </ol>\r\n</ng-container>\r\n\r\n<!-- Image Form Modal-->\r\n<ng-container *ngIf=\"toggleImageForm\">\r\n    <anu-modal title=\"Choose an image\" [opened]=\"toggleImageForm\" (cancelClick)=\"cancelImageModal()\">\r\n        <anu-image-form [src]=\"imageInfo.src\" [alt]=\"imageInfo.alt\" (cancel)=\"cancelImageModal()\"\r\n            (save)=\"saveImage($event)\">\r\n        </anu-image-form>\r\n    </anu-modal>\r\n</ng-container>\r\n"
         },
         {
             "name": "LeafElementComponent",
@@ -7862,6 +8163,9 @@
                         },
                         {
                             "name": "ContentEditorModule"
+                        },
+                        {
+                            "name": "ImageFormModule"
                         }
                     ]
                 },
@@ -8093,6 +8397,9 @@
                         },
                         {
                             "name": "ContentEditorModule"
+                        },
+                        {
+                            "name": "ImageFormModule"
                         }
                     ]
                 },
@@ -8176,7 +8483,11 @@
                 },
                 {
                     "type": "imports",
-                    "elements": []
+                    "elements": [
+                        {
+                            "name": "ImageFormModule"
+                        }
+                    ]
                 },
                 {
                     "type": "exports",
@@ -8191,6 +8502,42 @@
                             "name": "FormatInlineDirective"
                         }
                     ]
+                },
+                {
+                    "type": "bootstrap",
+                    "elements": []
+                },
+                {
+                    "type": "classes",
+                    "elements": []
+                }
+            ]
+        },
+        {
+            "name": "ImageFormModule",
+            "id": "module-ImageFormModule-8cc8c149647338ad65ad57a5751c25ec410ca8584e16ec9b5efa9204bb2d801307b58343d8cf1d08f70d71f982590fd0a2da3fc87fbf1248726a0db32cb0c06a",
+            "description": "",
+            "deprecationMessage": "",
+            "deprecated": false,
+            "file": "projects/ngx-cms/cms-image-form/src/image-form.module.ts",
+            "methods": [],
+            "sourceCode": "import { NgModule } from '@angular/core';\r\nimport { CommonModule } from '@angular/common';\r\nimport { FormsModule } from '@angular/forms';\r\n\r\nimport { CmsImageFormComponent } from './components/cms-image-form/cms-image-form.component';\r\nimport { ErrorModule } from '@annuadvent/ngx-common-ui/error';\r\nimport { CollapsibleModule } from '@annuadvent/ngx-common-ui/collapsible';\r\nimport { UtilsModule } from '@annuadvent/ngx-core/utils';\r\nimport { FireStorageModule } from '@annuadvent/ngx-tools/fire-storage';\r\nimport { OpenaiModule } from '@annuadvent/ngx-tools/openai';\r\n\r\n\r\n\r\n@NgModule({\r\n  declarations: [CmsImageFormComponent],\r\n  imports: [\r\n    CommonModule,\r\n    FormsModule,\r\n    ErrorModule,\r\n    CollapsibleModule,\r\n    UtilsModule,\r\n    FireStorageModule,\r\n    OpenaiModule,\r\n  ],\r\n  exports: [CmsImageFormComponent],\r\n})\r\nexport class ImageFormModule { }\r\n",
+            "children": [
+                {
+                    "type": "providers",
+                    "elements": []
+                },
+                {
+                    "type": "declarations",
+                    "elements": []
+                },
+                {
+                    "type": "imports",
+                    "elements": []
+                },
+                {
+                    "type": "exports",
+                    "elements": []
                 },
                 {
                     "type": "bootstrap",
@@ -8410,6 +8757,16 @@
                 "deprecationMessage": "",
                 "type": "any",
                 "defaultValue": "{\r\n    projectionContent: '',\r\n    inputPropsValues: {}\r\n}"
+            },
+            {
+                "name": "CmsImageFormComponent",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/ngx-cms/cms-image-form/src/components/cms-image-form/image-form.docs.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "any",
+                "defaultValue": "{\r\n    projectionContent: '',\r\n    inputPropsValues: {\r\n        src: '',\r\n        alt: 'sample alt text'\r\n\r\n    }\r\n}"
             },
             {
                 "name": "CONTENT_PROMPT_PREFIX",
@@ -9353,6 +9710,18 @@
                     "deprecationMessage": "",
                     "type": "any",
                     "defaultValue": "{\r\n    projectionContent: '',\r\n    inputPropsValues: {}\r\n}"
+                }
+            ],
+            "projects/ngx-cms/cms-image-form/src/components/cms-image-form/image-form.docs.ts": [
+                {
+                    "name": "CmsImageFormComponent",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/ngx-cms/cms-image-form/src/components/cms-image-form/image-form.docs.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "any",
+                    "defaultValue": "{\r\n    projectionContent: '',\r\n    inputPropsValues: {\r\n        src: '',\r\n        alt: 'sample alt text'\r\n\r\n    }\r\n}"
                 }
             ],
             "projects/ngx-cms/content-editor/src/components/content-editor/content-editor.docs.ts": [
@@ -10300,6 +10669,34 @@
                 "name": "Category",
                 "coveragePercent": 0,
                 "coverageCount": "0/12",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/ngx-cms/cms-image-form/src/components/cms-image-form/cms-image-form.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "CmsImageFormComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/12",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/ngx-cms/cms-image-form/src/components/cms-image-form/image-form.docs.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "CmsImageFormComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/ngx-cms/cms-image-form/src/interfaces/image-form.interface.ts",
+                "type": "interface",
+                "linktype": "interface",
+                "name": "ImageInfo",
+                "coveragePercent": 0,
+                "coverageCount": "0/4",
                 "status": "low"
             },
             {

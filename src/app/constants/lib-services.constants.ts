@@ -25,6 +25,7 @@ import { FireStorageSitemapService } from '@annuadvent/ngx-tools/fire-storage';
 import { FirestoreHttpService } from '@annuadvent/ngx-tools/fire-store';
 import { FirestoreParserService } from '@annuadvent/ngx-tools/fire-store';
 import { FirestoreQueryService } from '@annuadvent/ngx-tools/fire-store';
+import { ImageBrowserService } from '@annuadvent/ngx-tools/fire-storage';
 import { IsLoggedInGuard } from '@annuadvent/ngx-tools/fire-auth';
 import { OpenaiService } from '@annuadvent/ngx-tools/openai';
 import { RoleAdminGuard } from '@annuadvent/ngx-tools/fire-auth';
@@ -63,6 +64,7 @@ export const libServiceClasses = {
         FirestoreHttpService,
         FirestoreParserService,
         FirestoreQueryService,
+        ImageBrowserService,
         IsLoggedInGuard,
         OpenaiService,
         RoleAdminGuard,

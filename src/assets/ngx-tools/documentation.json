@@ -229,12 +229,12 @@
         },
         {
             "name": "FireAppConfig",
-            "id": "interface-FireAppConfig-fbb414064a9447b1f5a633f5ccfc3ce841f52db1f74267c1824d6ea04c4c9580838eef70b6cd0aae96a3d975b51e2344fa1d6b426fce7623e169f5c08fa2948f",
+            "id": "interface-FireAppConfig-c2ba39cf29eaa7708e861b0d1b5ae65316c5edf1c869d01fc02a76ca7b5dfce2e40c91d882c276f0300db8cfede26905cc7bebb6596391b7a2c66fa0a831b8e5",
             "file": "projects/ngx-tools/fire-common/src/interfaces/fire-common.interface.ts",
             "deprecated": false,
             "deprecationMessage": "",
             "type": "interface",
-            "sourceCode": "export class FirebaseConfig {\r\n    app: FireAppConfig;\r\n    ui: any;\r\n    store: FireStoreConfig;\r\n    storage: FireStorageConfig;\r\n}\r\nexport interface FireStorageImageSpecs {\r\n    maxKBs: number;\r\n    maxWidth: number;\r\n    maxHeight: number;\r\n    minWidth: number;\r\n    minHeight: number;\r\n};\r\n\r\nexport interface FireStorageConfig {\r\n    baseStoreUrl: string;     // folder path inside bucket, ex. annu-business/articles\r\n    fireStorageBaseApiUrl: string;  // API full base url\r\n    imageDimensions: FireStorageImageSpecs;\r\n};\r\n\r\nexport interface FireAppConfig {\r\n    projectId: string;\r\n    appId: string;\r\n    storageBucket: string;\r\n    locationId: string;\r\n    apiKey: string;\r\n    authDomain: string;\r\n    messagingSenderId: string;\r\n    measurementId: string;\r\n}\r\n\r\nexport interface FireStoreConfig {\r\n    firestoreBaseApiUrl: string;    // Firebase store db url, base api url\r\n}\r\n",
+            "sourceCode": "export class FirebaseConfig {\r\n    app: FireAppConfig;\r\n    ui: any;\r\n    store: FireStoreConfig;\r\n    storage: FireStorageConfig;\r\n}\r\nexport interface FireStorageImageSpecs {\r\n    maxKBs: number;\r\n    maxWidth: number;\r\n    maxHeight: number;\r\n    minWidth: number;\r\n    minHeight: number;\r\n};\r\n\r\nexport interface FireStorageConfig {\r\n    baseStorageUrl: string;     // folder path inside bucket, ex. annu-business/articles\r\n    fireStorageBaseApiUrl: string;  // API full base url\r\n    imageDimensions: FireStorageImageSpecs;\r\n};\r\n\r\nexport interface FireAppConfig {\r\n    projectId: string;\r\n    appId: string;\r\n    storageBucket: string;\r\n    locationId: string;\r\n    apiKey: string;\r\n    authDomain: string;\r\n    messagingSenderId: string;\r\n    measurementId: string;\r\n}\r\n\r\nexport interface FireStoreConfig {\r\n    firestoreBaseApiUrl: string;    // Firebase store db url, base api url\r\n}\r\n",
             "properties": [
                 {
                     "name": "apiKey",
@@ -533,15 +533,15 @@
         },
         {
             "name": "FireStorageConfig",
-            "id": "interface-FireStorageConfig-fbb414064a9447b1f5a633f5ccfc3ce841f52db1f74267c1824d6ea04c4c9580838eef70b6cd0aae96a3d975b51e2344fa1d6b426fce7623e169f5c08fa2948f",
+            "id": "interface-FireStorageConfig-c2ba39cf29eaa7708e861b0d1b5ae65316c5edf1c869d01fc02a76ca7b5dfce2e40c91d882c276f0300db8cfede26905cc7bebb6596391b7a2c66fa0a831b8e5",
             "file": "projects/ngx-tools/fire-common/src/interfaces/fire-common.interface.ts",
             "deprecated": false,
             "deprecationMessage": "",
             "type": "interface",
-            "sourceCode": "export class FirebaseConfig {\r\n    app: FireAppConfig;\r\n    ui: any;\r\n    store: FireStoreConfig;\r\n    storage: FireStorageConfig;\r\n}\r\nexport interface FireStorageImageSpecs {\r\n    maxKBs: number;\r\n    maxWidth: number;\r\n    maxHeight: number;\r\n    minWidth: number;\r\n    minHeight: number;\r\n};\r\n\r\nexport interface FireStorageConfig {\r\n    baseStoreUrl: string;     // folder path inside bucket, ex. annu-business/articles\r\n    fireStorageBaseApiUrl: string;  // API full base url\r\n    imageDimensions: FireStorageImageSpecs;\r\n};\r\n\r\nexport interface FireAppConfig {\r\n    projectId: string;\r\n    appId: string;\r\n    storageBucket: string;\r\n    locationId: string;\r\n    apiKey: string;\r\n    authDomain: string;\r\n    messagingSenderId: string;\r\n    measurementId: string;\r\n}\r\n\r\nexport interface FireStoreConfig {\r\n    firestoreBaseApiUrl: string;    // Firebase store db url, base api url\r\n}\r\n",
+            "sourceCode": "export class FirebaseConfig {\r\n    app: FireAppConfig;\r\n    ui: any;\r\n    store: FireStoreConfig;\r\n    storage: FireStorageConfig;\r\n}\r\nexport interface FireStorageImageSpecs {\r\n    maxKBs: number;\r\n    maxWidth: number;\r\n    maxHeight: number;\r\n    minWidth: number;\r\n    minHeight: number;\r\n};\r\n\r\nexport interface FireStorageConfig {\r\n    baseStorageUrl: string;     // folder path inside bucket, ex. annu-business/articles\r\n    fireStorageBaseApiUrl: string;  // API full base url\r\n    imageDimensions: FireStorageImageSpecs;\r\n};\r\n\r\nexport interface FireAppConfig {\r\n    projectId: string;\r\n    appId: string;\r\n    storageBucket: string;\r\n    locationId: string;\r\n    apiKey: string;\r\n    authDomain: string;\r\n    messagingSenderId: string;\r\n    measurementId: string;\r\n}\r\n\r\nexport interface FireStoreConfig {\r\n    firestoreBaseApiUrl: string;    // Firebase store db url, base api url\r\n}\r\n",
             "properties": [
                 {
-                    "name": "baseStoreUrl",
+                    "name": "baseStorageUrl",
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "string",
@@ -574,12 +574,12 @@
         },
         {
             "name": "FireStorageImageSpecs",
-            "id": "interface-FireStorageImageSpecs-fbb414064a9447b1f5a633f5ccfc3ce841f52db1f74267c1824d6ea04c4c9580838eef70b6cd0aae96a3d975b51e2344fa1d6b426fce7623e169f5c08fa2948f",
+            "id": "interface-FireStorageImageSpecs-c2ba39cf29eaa7708e861b0d1b5ae65316c5edf1c869d01fc02a76ca7b5dfce2e40c91d882c276f0300db8cfede26905cc7bebb6596391b7a2c66fa0a831b8e5",
             "file": "projects/ngx-tools/fire-common/src/interfaces/fire-common.interface.ts",
             "deprecated": false,
             "deprecationMessage": "",
             "type": "interface",
-            "sourceCode": "export class FirebaseConfig {\r\n    app: FireAppConfig;\r\n    ui: any;\r\n    store: FireStoreConfig;\r\n    storage: FireStorageConfig;\r\n}\r\nexport interface FireStorageImageSpecs {\r\n    maxKBs: number;\r\n    maxWidth: number;\r\n    maxHeight: number;\r\n    minWidth: number;\r\n    minHeight: number;\r\n};\r\n\r\nexport interface FireStorageConfig {\r\n    baseStoreUrl: string;     // folder path inside bucket, ex. annu-business/articles\r\n    fireStorageBaseApiUrl: string;  // API full base url\r\n    imageDimensions: FireStorageImageSpecs;\r\n};\r\n\r\nexport interface FireAppConfig {\r\n    projectId: string;\r\n    appId: string;\r\n    storageBucket: string;\r\n    locationId: string;\r\n    apiKey: string;\r\n    authDomain: string;\r\n    messagingSenderId: string;\r\n    measurementId: string;\r\n}\r\n\r\nexport interface FireStoreConfig {\r\n    firestoreBaseApiUrl: string;    // Firebase store db url, base api url\r\n}\r\n",
+            "sourceCode": "export class FirebaseConfig {\r\n    app: FireAppConfig;\r\n    ui: any;\r\n    store: FireStoreConfig;\r\n    storage: FireStorageConfig;\r\n}\r\nexport interface FireStorageImageSpecs {\r\n    maxKBs: number;\r\n    maxWidth: number;\r\n    maxHeight: number;\r\n    minWidth: number;\r\n    minHeight: number;\r\n};\r\n\r\nexport interface FireStorageConfig {\r\n    baseStorageUrl: string;     // folder path inside bucket, ex. annu-business/articles\r\n    fireStorageBaseApiUrl: string;  // API full base url\r\n    imageDimensions: FireStorageImageSpecs;\r\n};\r\n\r\nexport interface FireAppConfig {\r\n    projectId: string;\r\n    appId: string;\r\n    storageBucket: string;\r\n    locationId: string;\r\n    apiKey: string;\r\n    authDomain: string;\r\n    messagingSenderId: string;\r\n    measurementId: string;\r\n}\r\n\r\nexport interface FireStoreConfig {\r\n    firestoreBaseApiUrl: string;    // Firebase store db url, base api url\r\n}\r\n",
             "properties": [
                 {
                     "name": "maxHeight",
@@ -633,12 +633,12 @@
         },
         {
             "name": "FireStoreConfig",
-            "id": "interface-FireStoreConfig-fbb414064a9447b1f5a633f5ccfc3ce841f52db1f74267c1824d6ea04c4c9580838eef70b6cd0aae96a3d975b51e2344fa1d6b426fce7623e169f5c08fa2948f",
+            "id": "interface-FireStoreConfig-c2ba39cf29eaa7708e861b0d1b5ae65316c5edf1c869d01fc02a76ca7b5dfce2e40c91d882c276f0300db8cfede26905cc7bebb6596391b7a2c66fa0a831b8e5",
             "file": "projects/ngx-tools/fire-common/src/interfaces/fire-common.interface.ts",
             "deprecated": false,
             "deprecationMessage": "",
             "type": "interface",
-            "sourceCode": "export class FirebaseConfig {\r\n    app: FireAppConfig;\r\n    ui: any;\r\n    store: FireStoreConfig;\r\n    storage: FireStorageConfig;\r\n}\r\nexport interface FireStorageImageSpecs {\r\n    maxKBs: number;\r\n    maxWidth: number;\r\n    maxHeight: number;\r\n    minWidth: number;\r\n    minHeight: number;\r\n};\r\n\r\nexport interface FireStorageConfig {\r\n    baseStoreUrl: string;     // folder path inside bucket, ex. annu-business/articles\r\n    fireStorageBaseApiUrl: string;  // API full base url\r\n    imageDimensions: FireStorageImageSpecs;\r\n};\r\n\r\nexport interface FireAppConfig {\r\n    projectId: string;\r\n    appId: string;\r\n    storageBucket: string;\r\n    locationId: string;\r\n    apiKey: string;\r\n    authDomain: string;\r\n    messagingSenderId: string;\r\n    measurementId: string;\r\n}\r\n\r\nexport interface FireStoreConfig {\r\n    firestoreBaseApiUrl: string;    // Firebase store db url, base api url\r\n}\r\n",
+            "sourceCode": "export class FirebaseConfig {\r\n    app: FireAppConfig;\r\n    ui: any;\r\n    store: FireStoreConfig;\r\n    storage: FireStorageConfig;\r\n}\r\nexport interface FireStorageImageSpecs {\r\n    maxKBs: number;\r\n    maxWidth: number;\r\n    maxHeight: number;\r\n    minWidth: number;\r\n    minHeight: number;\r\n};\r\n\r\nexport interface FireStorageConfig {\r\n    baseStorageUrl: string;     // folder path inside bucket, ex. annu-business/articles\r\n    fireStorageBaseApiUrl: string;  // API full base url\r\n    imageDimensions: FireStorageImageSpecs;\r\n};\r\n\r\nexport interface FireAppConfig {\r\n    projectId: string;\r\n    appId: string;\r\n    storageBucket: string;\r\n    locationId: string;\r\n    apiKey: string;\r\n    authDomain: string;\r\n    messagingSenderId: string;\r\n    measurementId: string;\r\n}\r\n\r\nexport interface FireStoreConfig {\r\n    firestoreBaseApiUrl: string;    // Firebase store db url, base api url\r\n}\r\n",
             "properties": [
                 {
                     "name": "firestoreBaseApiUrl",
@@ -648,6 +648,52 @@
                     "optional": false,
                     "description": "",
                     "line": 33
+                }
+            ],
+            "indexSignatures": [],
+            "kind": 168,
+            "methods": []
+        },
+        {
+            "name": "ImageBrowserLoadings",
+            "id": "interface-ImageBrowserLoadings-babda1cb3e8f0de5d089bea856278b9c16b9bd7733b41e18a3b3c882a229862fa950dc3a4ce1edf5d93f8bff4facf10b5bdf95bb4b4ca5d618f47a6b224658fc",
+            "file": "projects/ngx-tools/fire-storage/src/interfaces/image-browser.interface.ts",
+            "deprecated": false,
+            "deprecationMessage": "",
+            "type": "interface",
+            "sourceCode": "import { ImageBrowserLoaderEnum } from \"../enums/image-browser.enums\";\r\n\r\nexport interface PreviewOnImages {\r\n    [key: string]: boolean;\r\n};\r\n\r\n\r\nexport interface ImageBrowserLoadings {\r\n    [ImageBrowserLoaderEnum.imageFile]?: {\r\n        [key: string]: boolean;\r\n    };\r\n    [ImageBrowserLoaderEnum.imageFiles]?: boolean;\r\n    [ImageBrowserLoaderEnum.uploadImageFile]?: boolean;\r\n    [ImageBrowserLoaderEnum.loadMore]?: boolean;\r\n};\r\n\r\n",
+            "properties": [
+                {
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "literal type",
+                    "optional": true,
+                    "description": "",
+                    "line": 9
+                },
+                {
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "boolean",
+                    "optional": true,
+                    "description": "",
+                    "line": 12
+                },
+                {
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "boolean",
+                    "optional": true,
+                    "description": "",
+                    "line": 13
+                },
+                {
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "boolean",
+                    "optional": true,
+                    "description": "",
+                    "line": 14
                 }
             ],
             "indexSignatures": [],
@@ -1183,6 +1229,35 @@
             ],
             "indexSignatures": [],
             "kind": 168,
+            "methods": []
+        },
+        {
+            "name": "PreviewOnImages",
+            "id": "interface-PreviewOnImages-babda1cb3e8f0de5d089bea856278b9c16b9bd7733b41e18a3b3c882a229862fa950dc3a4ce1edf5d93f8bff4facf10b5bdf95bb4b4ca5d618f47a6b224658fc",
+            "file": "projects/ngx-tools/fire-storage/src/interfaces/image-browser.interface.ts",
+            "deprecated": false,
+            "deprecationMessage": "",
+            "type": "interface",
+            "sourceCode": "import { ImageBrowserLoaderEnum } from \"../enums/image-browser.enums\";\r\n\r\nexport interface PreviewOnImages {\r\n    [key: string]: boolean;\r\n};\r\n\r\n\r\nexport interface ImageBrowserLoadings {\r\n    [ImageBrowserLoaderEnum.imageFile]?: {\r\n        [key: string]: boolean;\r\n    };\r\n    [ImageBrowserLoaderEnum.imageFiles]?: boolean;\r\n    [ImageBrowserLoaderEnum.uploadImageFile]?: boolean;\r\n    [ImageBrowserLoaderEnum.loadMore]?: boolean;\r\n};\r\n\r\n",
+            "properties": [],
+            "indexSignatures": [
+                {
+                    "id": "index-declaration-babda1cb3e8f0de5d089bea856278b9c16b9bd7733b41e18a3b3c882a229862fa950dc3a4ce1edf5d93f8bff4facf10b5bdf95bb4b4ca5d618f47a6b224658fc",
+                    "args": [
+                        {
+                            "name": "key",
+                            "type": "string",
+                            "deprecated": false,
+                            "deprecationMessage": ""
+                        }
+                    ],
+                    "returnType": "boolean",
+                    "line": 3,
+                    "deprecated": false,
+                    "deprecationMessage": ""
+                }
+            ],
+            "kind": 178,
             "methods": []
         },
         {
@@ -4225,11 +4300,11 @@
         },
         {
             "name": "FireStorageImageService",
-            "id": "injectable-FireStorageImageService-cb909d9a57c4581f7ff633fb7e9a57e5717f26bf0232eff072f3393bdd7f79798669d7b049b3b3572a4f80a5a8b79c60049fa6548401d44d1412212647eb2b1d",
+            "id": "injectable-FireStorageImageService-c690c8cc0152aea495f0d0fcdd8fac8fb43736e8e89e1347cbf2e132a80c5f05c9600275e199c2f760a80316f1739ab5e1e7334a99fb2090772efcbd787e9268",
             "file": "projects/ngx-tools/fire-storage/src/services/fire-storage-image.service.ts",
             "properties": [
                 {
-                    "name": "baseStoreUrl",
+                    "name": "baseStorageUrl",
                     "defaultValue": "''",
                     "deprecated": false,
                     "deprecationMessage": "",
@@ -4247,7 +4322,7 @@
                     "name": "buildImageUrl",
                     "args": [
                         {
-                            "name": "filePath",
+                            "name": "fullPathWithFileName",
                             "type": "string",
                             "deprecated": false,
                             "deprecationMessage": ""
@@ -4256,8 +4331,7 @@
                             "name": "userId",
                             "type": "string",
                             "deprecated": false,
-                            "deprecationMessage": "",
-                            "defaultValue": "''"
+                            "deprecationMessage": ""
                         }
                     ],
                     "optional": false,
@@ -4271,7 +4345,7 @@
                     ],
                     "jsdoctags": [
                         {
-                            "name": "filePath",
+                            "name": "fullPathWithFileName",
                             "type": "string",
                             "deprecated": false,
                             "deprecationMessage": "",
@@ -4284,7 +4358,6 @@
                             "type": "string",
                             "deprecated": false,
                             "deprecationMessage": "",
-                            "defaultValue": "''",
                             "tagName": {
                                 "text": "param"
                             }
@@ -4304,7 +4377,7 @@
                     "optional": false,
                     "returnType": "Promise<Blob>",
                     "typeParameters": [],
-                    "line": 248,
+                    "line": 253,
                     "deprecated": false,
                     "deprecationMessage": "",
                     "modifierKind": [
@@ -4342,7 +4415,7 @@
                     "optional": false,
                     "returnType": "Blob",
                     "typeParameters": [],
-                    "line": 279,
+                    "line": 284,
                     "deprecated": false,
                     "deprecationMessage": "",
                     "modifierKind": [
@@ -4373,7 +4446,7 @@
                     "name": "deleteImage",
                     "args": [
                         {
-                            "name": "filePath",
+                            "name": "fullPathWithFileName",
                             "type": "string",
                             "deprecated": false,
                             "deprecationMessage": ""
@@ -4387,9 +4460,9 @@
                         }
                     ],
                     "optional": false,
-                    "returnType": "Promise<void>",
+                    "returnType": "Promise<string>",
                     "typeParameters": [],
-                    "line": 173,
+                    "line": 178,
                     "deprecated": false,
                     "deprecationMessage": "",
                     "modifierKind": [
@@ -4398,7 +4471,7 @@
                     ],
                     "jsdoctags": [
                         {
-                            "name": "filePath",
+                            "name": "fullPathWithFileName",
                             "type": "string",
                             "deprecated": false,
                             "deprecationMessage": "",
@@ -4422,10 +4495,11 @@
                     "name": "getImagesList",
                     "args": [
                         {
-                            "name": "filePath",
+                            "name": "userId",
                             "type": "string",
                             "deprecated": false,
-                            "deprecationMessage": ""
+                            "deprecationMessage": "",
+                            "defaultValue": "''"
                         },
                         {
                             "name": "pageSize",
@@ -4440,19 +4514,12 @@
                             "deprecated": false,
                             "deprecationMessage": "",
                             "defaultValue": "null"
-                        },
-                        {
-                            "name": "userId",
-                            "type": "string",
-                            "deprecated": false,
-                            "deprecationMessage": "",
-                            "defaultValue": "''"
                         }
                     ],
                     "optional": false,
                     "returnType": "Promise<ImageFileInfoList>",
                     "typeParameters": [],
-                    "line": 191,
+                    "line": 197,
                     "deprecated": false,
                     "deprecationMessage": "",
                     "modifierKind": [
@@ -4461,10 +4528,11 @@
                     ],
                     "jsdoctags": [
                         {
-                            "name": "filePath",
+                            "name": "userId",
                             "type": "string",
                             "deprecated": false,
                             "deprecationMessage": "",
+                            "defaultValue": "''",
                             "tagName": {
                                 "text": "param"
                             }
@@ -4488,16 +4556,6 @@
                             "tagName": {
                                 "text": "param"
                             }
-                        },
-                        {
-                            "name": "userId",
-                            "type": "string",
-                            "deprecated": false,
-                            "deprecationMessage": "",
-                            "defaultValue": "''",
-                            "tagName": {
-                                "text": "param"
-                            }
                         }
                     ]
                 },
@@ -4505,7 +4563,7 @@
                     "name": "getImageUrl",
                     "args": [
                         {
-                            "name": "filePath",
+                            "name": "fullPathWithFileName",
                             "type": "string",
                             "deprecated": false,
                             "deprecationMessage": ""
@@ -4521,7 +4579,7 @@
                     "optional": false,
                     "returnType": "Promise<string>",
                     "typeParameters": [],
-                    "line": 153,
+                    "line": 158,
                     "deprecated": false,
                     "deprecationMessage": "",
                     "modifierKind": [
@@ -4530,7 +4588,7 @@
                     ],
                     "jsdoctags": [
                         {
-                            "name": "filePath",
+                            "name": "fullPathWithFileName",
                             "type": "string",
                             "deprecated": false,
                             "deprecationMessage": "",
@@ -4551,10 +4609,23 @@
                     ]
                 },
                 {
+                    "name": "getUploadImageValidationText",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "string",
+                    "typeParameters": [],
+                    "line": 40,
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "modifierKind": [
+                        123
+                    ]
+                },
+                {
                     "name": "imageExists",
                     "args": [
                         {
-                            "name": "filePath",
+                            "name": "fullPathWithFileName",
                             "type": "string",
                             "deprecated": false,
                             "deprecationMessage": ""
@@ -4570,7 +4641,7 @@
                     "optional": false,
                     "returnType": "Promise<boolean>",
                     "typeParameters": [],
-                    "line": 224,
+                    "line": 229,
                     "deprecated": false,
                     "deprecationMessage": "",
                     "modifierKind": [
@@ -4579,7 +4650,7 @@
                     ],
                     "jsdoctags": [
                         {
-                            "name": "filePath",
+                            "name": "fullPathWithFileName",
                             "type": "string",
                             "deprecated": false,
                             "deprecationMessage": "",
@@ -4603,7 +4674,7 @@
                     "name": "uploadImage",
                     "args": [
                         {
-                            "name": "filePath",
+                            "name": "fullPathWithFileName",
                             "type": "string",
                             "deprecated": false,
                             "deprecationMessage": ""
@@ -4639,7 +4710,7 @@
                     "optional": false,
                     "returnType": "Promise<ImageFileInfo>",
                     "typeParameters": [],
-                    "line": 105,
+                    "line": 110,
                     "deprecated": false,
                     "deprecationMessage": "",
                     "modifierKind": [
@@ -4648,7 +4719,7 @@
                     ],
                     "jsdoctags": [
                         {
-                            "name": "filePath",
+                            "name": "fullPathWithFileName",
                             "type": "string",
                             "deprecated": false,
                             "deprecationMessage": "",
@@ -4710,7 +4781,7 @@
                     "optional": false,
                     "returnType": "Promise<string>",
                     "typeParameters": [],
-                    "line": 40,
+                    "line": 45,
                     "deprecated": false,
                     "deprecationMessage": "",
                     "modifierKind": [
@@ -4742,7 +4813,7 @@
                     "optional": false,
                     "returnType": "Promise<string>",
                     "typeParameters": [],
-                    "line": 59,
+                    "line": 64,
                     "deprecated": false,
                     "deprecationMessage": "",
                     "modifierKind": [
@@ -4766,7 +4837,7 @@
             "deprecationMessage": "",
             "description": "",
             "rawdescription": "\n",
-            "sourceCode": "import { Injectable } from '@angular/core';\r\nimport { FireCommonService } from '@annuadvent/ngx-tools/fire-common';\r\nimport Compressor from 'compressorjs';\r\n\r\nimport {\r\n  getStorage,\r\n  ref,\r\n  uploadBytes,\r\n  getDownloadURL,\r\n  deleteObject,\r\n  list,\r\n  ListOptions,\r\n  ListResult,\r\n} from 'firebase/storage';\r\nimport {\r\n  ImageFileInfo,\r\n  ImageFileInfoList,\r\n} from '../interfaces/fire-storage-image.interface';\r\n\r\n@Injectable({\r\n  providedIn: 'root'\r\n})\r\nexport class FireStorageImageService {\r\n  public baseStoreUrl: string = '';\r\n\r\n  constructor(\r\n    private fireCommonService: FireCommonService,\r\n  ) {\r\n    this.baseStoreUrl = this.fireCommonService.firebaseConfig.storage.baseStoreUrl;\r\n  }\r\n\r\n  private buildImageUrl(filePath: string, userId: string = ''): string {\r\n    return (\r\n      this.baseStoreUrl +\r\n      '/' +\r\n      (userId ? `${userId}/${filePath}` : '' + filePath)\r\n    );\r\n  }\r\n\r\n  public async validateImage(imageData: any): Promise<string> {\r\n    if (!imageData) return 'Empty Image';\r\n\r\n    const { maxKBs } = this.fireCommonService.firebaseConfig.storage.imageDimensions;\r\n\r\n    // Type Check\r\n    if (imageData.type.indexOf('image/') < 0) {\r\n      return `Not a valid image file. Please try uploading a valid jpg/gif/png image file.`;\r\n    }\r\n\r\n    //Size Check\r\n    if (imageData.size > maxKBs * 1024) {\r\n      return `Image size exceeds the limit of ${maxKBs}KBs`;\r\n    }\r\n\r\n    // Dimension Check.\r\n    return await this.validateImageDimension(imageData);\r\n  }\r\n\r\n  public async validateImageDimension(imageData: any): Promise<string> {\r\n    const { maxWidth, maxHeight, minWidth, minHeight } =\r\n      this.fireCommonService.firebaseConfig.storage.imageDimensions;\r\n\r\n    var reader = new FileReader();\r\n\r\n    //Read the contents of Image File.\r\n    reader.readAsDataURL(imageData);\r\n\r\n    const promise = new Promise<string>((resolve, reject) => {\r\n      reader.onload = (e) => {\r\n        //Initiate the JavaScript Image object.\r\n        const image = new Image();\r\n\r\n        //Set the Base64 string return from FileReader as source.\r\n        image.src = e.target.result as string;\r\n        image.onload = () => {\r\n          // Natural size is the actual image size regardless of rendering.\r\n          // The 'normal' `width`/`height` are for the **rendered** size.\r\n          const width = image.naturalWidth;\r\n          const height = image.naturalHeight;\r\n\r\n          if (\r\n            width > maxWidth ||\r\n            minWidth < minWidth ||\r\n            maxHeight > maxHeight ||\r\n            minHeight < minHeight\r\n          ) {\r\n            resolve(\r\n              `Image dimensions are ${width}px X ${height}px and does not meet the requirement. Allowed width = ${minWidth}px to ${maxWidth}px and allowed height = ${minHeight}px to ${maxHeight}px`\r\n            );\r\n          } else {\r\n            resolve('');\r\n          }\r\n        };\r\n\r\n        // Reject promise on error\r\n        image.onerror = (error: any) => {\r\n          reject('Error loading Image');\r\n        };\r\n      };\r\n    });\r\n\r\n    return promise;\r\n  }\r\n\r\n  public async uploadImage(\r\n    filePath: string,\r\n    imageData: any,\r\n    overWrite: boolean = false,\r\n    userId: string = '',\r\n    isBas64: boolean = false\r\n  ): Promise<ImageFileInfo> {\r\n    const fireStorage = getStorage(\r\n      this.fireCommonService.initOrGetFirebaseApp(),\r\n      this.fireCommonService.firebaseConfig.app.storageBucket\r\n    );\r\n    const fileUrl = this.buildImageUrl(filePath, userId);\r\n    const fileRef = ref(fireStorage, fileUrl);\r\n\r\n    // If exists\r\n    if (!overWrite) {\r\n      try {\r\n        const isExists = await getDownloadURL(fileRef);\r\n        if (isExists) {\r\n          throw new Error('Image already exists -' + filePath);\r\n        }\r\n      } catch (error: any) {\r\n        if (error.code !== 'storage/object-not-found') {\r\n          throw error;\r\n        }\r\n      }\r\n    }\r\n\r\n    try {\r\n\r\n      if (isBas64) {\r\n        imageData = await this.compressBase64ToJpeg(imageData);\r\n      }\r\n\r\n      const uploadResult = await uploadBytes(fileRef, imageData);\r\n      const downloadUrl = await this.getImageUrl(filePath, userId);\r\n      const imageFileInfo: ImageFileInfo = {\r\n        name: uploadResult.ref.name,\r\n        fullPath: uploadResult.ref.fullPath,\r\n        downloadUrl,\r\n      };\r\n\r\n      return imageFileInfo;\r\n    } catch (error: any) {\r\n      throw error;\r\n    }\r\n  }\r\n\r\n  public async getImageUrl(\r\n    filePath: string,\r\n    userId: string = ''\r\n  ): Promise<string> {\r\n    const fireStorage = getStorage(\r\n      this.fireCommonService.initOrGetFirebaseApp(),\r\n      this.fireCommonService.firebaseConfig.app.storageBucket\r\n    );\r\n    const fileUrl = this.buildImageUrl(filePath, userId);\r\n    const fileRef = ref(fireStorage, fileUrl);\r\n\r\n    try {\r\n      const url = await getDownloadURL(fileRef);\r\n\r\n      return url;\r\n    } catch (error: any) {\r\n      throw error;\r\n    }\r\n  }\r\n\r\n  public async deleteImage(\r\n    filePath: string,\r\n    userId: string = ''\r\n  ): Promise<void> {\r\n    const fireStorage = getStorage(\r\n      this.fireCommonService.initOrGetFirebaseApp(),\r\n      this.fireCommonService.firebaseConfig.app.storageBucket\r\n    );\r\n    const fileUrl = this.buildImageUrl(filePath, userId);\r\n    const fileRef = ref(fireStorage, fileUrl);\r\n\r\n    try {\r\n      return await deleteObject(fileRef);\r\n    } catch (error: any) {\r\n      throw error;\r\n    }\r\n  }\r\n\r\n  public async getImagesList(\r\n    filePath: string,\r\n    pageSize: number = 10,\r\n    nextPageToken: any = null,\r\n    userId: string = ''\r\n  ): Promise<ImageFileInfoList> {\r\n    const fireStorage = getStorage(\r\n      this.fireCommonService.initOrGetFirebaseApp(),\r\n      this.fireCommonService.firebaseConfig.app.storageBucket\r\n    );\r\n    const lookinFolder = this.buildImageUrl(filePath, userId);\r\n    const listRef = ref(fireStorage, lookinFolder);\r\n\r\n    try {\r\n      const listOptions: ListOptions = { maxResults: pageSize };\r\n      if (nextPageToken) listOptions.pageToken = nextPageToken;\r\n\r\n      const imageList: ListResult = await list(listRef, listOptions);\r\n      const imageFileInfoList: ImageFileInfoList = {\r\n        imageFiles: imageList.items.map((img) => ({\r\n          name: img.name,\r\n          fullPath: img.fullPath,\r\n          downloadUrl: '',\r\n        })),\r\n        nextPageToken: imageList.nextPageToken,\r\n      };\r\n\r\n      return imageFileInfoList;\r\n    } catch (error: any) {\r\n      throw error;\r\n    }\r\n  }\r\n\r\n  public async imageExists(\r\n    filePath: string,\r\n    userId: string = ''\r\n  ): Promise<boolean> {\r\n    const fireStorage = getStorage(\r\n      this.fireCommonService.initOrGetFirebaseApp(),\r\n      this.fireCommonService.firebaseConfig.app.storageBucket\r\n    );\r\n    const fileUrl = this.buildImageUrl(filePath, userId);\r\n    const fileRef = ref(fireStorage, fileUrl);\r\n\r\n    try {\r\n      const url = await getDownloadURL(fileRef);\r\n\r\n      return !!url;\r\n    } catch (error: any) {\r\n      if (error.code !== 'storage/object-not-found') {\r\n        throw error;\r\n      } else {\r\n        return false;\r\n      }\r\n    }\r\n  }\r\n\r\n  public async compressBase64ToJpeg(base64Image: string): Promise<Blob> {\r\n    const { maxWidth } =\r\n      this.fireCommonService.firebaseConfig.storage.imageDimensions;\r\n\r\n    return new Promise((resolve, reject) => {\r\n      // Convert base64 to blob\r\n      const blob = this.dataURItoBlob(base64Image, 'image/jpeg');\r\n      const compressOptions: Compressor.Options = {\r\n        strict: true,\r\n        checkOrientation: true,\r\n        width: maxWidth, // Set the maximum width of the compressed image (optional)\r\n        height: maxWidth / 2,\r\n        maxWidth: maxWidth, // Set the maximum width of the compressed image (optional)\r\n        maxHeight: maxWidth / 2,\r\n        resize: 'cover',\r\n        convertTypes: 'image/jpg',\r\n        quality: 0.7, // Set the image quality (optional)\r\n\r\n        success: (compressedBlob: Blob) => {\r\n          // Handle the compressed image blob\r\n          resolve(compressedBlob);\r\n        },\r\n        error: (error: any) => {\r\n          reject(`Image compression error:${error.message}`);\r\n        },\r\n      }\r\n      // Create an image compressor instance\r\n      new Compressor(blob, compressOptions);\r\n    });\r\n  }\r\n\r\n  public dataURItoBlob(dataURI: string, type: string): Blob {\r\n    const byteString = atob(dataURI);\r\n    const arrayBuffer = new ArrayBuffer(byteString.length);\r\n    const uint8Array = new Uint8Array(arrayBuffer);\r\n\r\n    for (let i = 0; i < byteString.length; i++) {\r\n      uint8Array[i] = byteString.charCodeAt(i);\r\n    }\r\n\r\n    return new Blob([uint8Array], { type });\r\n  }\r\n}\r\n",
+            "sourceCode": "import { Injectable } from '@angular/core';\r\nimport { FireCommonService } from '@annuadvent/ngx-tools/fire-common';\r\nimport Compressor from 'compressorjs';\r\n\r\nimport {\r\n  getStorage,\r\n  ref,\r\n  uploadBytes,\r\n  getDownloadURL,\r\n  deleteObject,\r\n  list,\r\n  ListOptions,\r\n  ListResult,\r\n} from 'firebase/storage';\r\nimport {\r\n  ImageFileInfo,\r\n  ImageFileInfoList,\r\n} from '../interfaces/fire-storage-image.interface';\r\n\r\n@Injectable({\r\n  providedIn: 'root'\r\n})\r\nexport class FireStorageImageService {\r\n  public baseStorageUrl: string = '';\r\n\r\n  constructor(\r\n    private fireCommonService: FireCommonService,\r\n  ) {\r\n    this.baseStorageUrl = this.fireCommonService.firebaseConfig.storage.baseStorageUrl;\r\n  }\r\n\r\n  private buildImageUrl(fullPathWithFileName: string, userId: string): string {\r\n    return (\r\n      this.baseStorageUrl +\r\n      '/' +\r\n      (userId ? `${userId}/${fullPathWithFileName}` : '' + fullPathWithFileName)\r\n    );\r\n  }\r\n\r\n  public getUploadImageValidationText(): string {\r\n    const { maxKBs, maxWidth, maxHeight, minWidth, minHeight } = this.fireCommonService.firebaseConfig.storage.imageDimensions;\r\n    return `Allowed width is ${minWidth}px to ${maxWidth}px, height is ${minHeight}px to ${maxHeight}px and size is up to ${maxKBs}KBs`;\r\n  }\r\n\r\n  public async validateImage(imageData: any): Promise<string> {\r\n    if (!imageData) return 'Empty Image';\r\n\r\n    const { maxKBs } = this.fireCommonService.firebaseConfig.storage.imageDimensions;\r\n\r\n    // Type Check\r\n    if (imageData.type.indexOf('image/') < 0) {\r\n      return `Not a valid image file. Please try uploading a valid jpg/gif/png image file.`;\r\n    }\r\n\r\n    //Size Check\r\n    if (imageData.size > maxKBs * 1024) {\r\n      return `Image size exceeds the limit of ${maxKBs}KBs`;\r\n    }\r\n\r\n    // Dimension Check.\r\n    return await this.validateImageDimension(imageData);\r\n  }\r\n\r\n  public async validateImageDimension(imageData: any): Promise<string> {\r\n    const { maxWidth, maxHeight, minWidth, minHeight } =\r\n      this.fireCommonService.firebaseConfig.storage.imageDimensions;\r\n\r\n    var reader = new FileReader();\r\n\r\n    //Read the contents of Image File.\r\n    reader.readAsDataURL(imageData);\r\n\r\n    const promise = new Promise<string>((resolve, reject) => {\r\n      reader.onload = (e) => {\r\n        //Initiate the JavaScript Image object.\r\n        const image = new Image();\r\n\r\n        //Set the Base64 string return from FileReader as source.\r\n        image.src = e.target.result as string;\r\n        image.onload = () => {\r\n          // Natural size is the actual image size regardless of rendering.\r\n          // The 'normal' `width`/`height` are for the **rendered** size.\r\n          const width = image.naturalWidth;\r\n          const height = image.naturalHeight;\r\n\r\n          if (\r\n            width > maxWidth ||\r\n            minWidth < minWidth ||\r\n            maxHeight > maxHeight ||\r\n            minHeight < minHeight\r\n          ) {\r\n            resolve(\r\n              `Image dimensions are ${width}px X ${height}px and does not meet the requirement. Allowed width = ${minWidth}px to ${maxWidth}px and allowed height = ${minHeight}px to ${maxHeight}px`\r\n            );\r\n          } else {\r\n            resolve('');\r\n          }\r\n        };\r\n\r\n        // Reject promise on error\r\n        image.onerror = (error: any) => {\r\n          reject('Error loading Image');\r\n        };\r\n      };\r\n    });\r\n\r\n    return promise;\r\n  }\r\n\r\n  public async uploadImage(\r\n    fullPathWithFileName: string,\r\n    imageData: any,\r\n    overWrite: boolean = false,\r\n    userId: string = '',\r\n    isBas64: boolean = false\r\n  ): Promise<ImageFileInfo> {\r\n    const fireStorage = getStorage(\r\n      this.fireCommonService.initOrGetFirebaseApp(),\r\n      this.fireCommonService.firebaseConfig.app.storageBucket\r\n    );\r\n    const fileUrl = this.buildImageUrl(fullPathWithFileName, userId);\r\n    const fileRef = ref(fireStorage, fileUrl);\r\n\r\n    // If exists\r\n    if (!overWrite) {\r\n      try {\r\n        const isExists = await getDownloadURL(fileRef);\r\n        if (isExists) {\r\n          throw new Error('Image already exists -' + fullPathWithFileName);\r\n        }\r\n      } catch (error: any) {\r\n        if (error.code !== 'storage/object-not-found') {\r\n          throw error;\r\n        }\r\n      }\r\n    }\r\n\r\n    try {\r\n\r\n      if (isBas64) {\r\n        imageData = await this.compressBase64ToJpeg(imageData);\r\n      }\r\n\r\n      const uploadResult = await uploadBytes(fileRef, imageData);\r\n      const downloadUrl = await this.getImageUrl(fullPathWithFileName, userId);\r\n      const imageFileInfo: ImageFileInfo = {\r\n        name: uploadResult.ref.name,\r\n        fullPath: uploadResult.ref.fullPath,\r\n        downloadUrl,\r\n      };\r\n\r\n      return imageFileInfo;\r\n    } catch (error: any) {\r\n      throw error;\r\n    }\r\n  }\r\n\r\n  public async getImageUrl(\r\n    fullPathWithFileName: string,\r\n    userId: string = ''\r\n  ): Promise<string> {\r\n    const fireStorage = getStorage(\r\n      this.fireCommonService.initOrGetFirebaseApp(),\r\n      this.fireCommonService.firebaseConfig.app.storageBucket\r\n    );\r\n    const fileUrl = this.buildImageUrl(fullPathWithFileName, userId);\r\n    const fileRef = ref(fireStorage, fileUrl);\r\n\r\n    try {\r\n      const url = await getDownloadURL(fileRef);\r\n\r\n      return url;\r\n    } catch (error: any) {\r\n      throw error;\r\n    }\r\n  }\r\n\r\n  public async deleteImage(\r\n    fullPathWithFileName: string,\r\n    userId: string = ''\r\n  ): Promise<string> {\r\n    const fireStorage = getStorage(\r\n      this.fireCommonService.initOrGetFirebaseApp(),\r\n      this.fireCommonService.firebaseConfig.app.storageBucket\r\n    );\r\n    const fileUrl = this.buildImageUrl(fullPathWithFileName, userId);\r\n    const fileRef = ref(fireStorage, fileUrl);\r\n\r\n    try {\r\n      await deleteObject(fileRef);\r\n      return fileUrl;\r\n    } catch (error: any) {\r\n      throw error;\r\n    }\r\n  }\r\n\r\n  public async getImagesList(    \r\n    userId: string = '',\r\n    pageSize: number = 10,\r\n    nextPageToken: any = null,\r\n  ): Promise<ImageFileInfoList> {\r\n    const fireStorage = getStorage(\r\n      this.fireCommonService.initOrGetFirebaseApp(),\r\n      this.fireCommonService.firebaseConfig.app.storageBucket\r\n    );\r\n    const lookinFolder = this.buildImageUrl('', userId);\r\n    const listRef = ref(fireStorage, lookinFolder);\r\n\r\n    try {\r\n      const listOptions: ListOptions = { maxResults: pageSize };\r\n      if (nextPageToken) listOptions.pageToken = nextPageToken;\r\n\r\n      const imageList: ListResult = await list(listRef, listOptions);\r\n      const imageFileInfoList: ImageFileInfoList = {\r\n        imageFiles: imageList.items.map((img) => ({\r\n          name: img.name,\r\n          fullPath: img.fullPath,\r\n          downloadUrl: '',\r\n        })),\r\n        nextPageToken: imageList.nextPageToken,\r\n      };\r\n\r\n      return imageFileInfoList;\r\n    } catch (error: any) {\r\n      throw error;\r\n    }\r\n  }\r\n\r\n  public async imageExists(\r\n    fullPathWithFileName: string,\r\n    userId: string = ''\r\n  ): Promise<boolean> {\r\n    const fireStorage = getStorage(\r\n      this.fireCommonService.initOrGetFirebaseApp(),\r\n      this.fireCommonService.firebaseConfig.app.storageBucket\r\n    );\r\n    const fileUrl = this.buildImageUrl(fullPathWithFileName, userId);\r\n    const fileRef = ref(fireStorage, fileUrl);\r\n\r\n    try {\r\n      const url = await getDownloadURL(fileRef);\r\n\r\n      return !!url;\r\n    } catch (error: any) {\r\n      if (error.code !== 'storage/object-not-found') {\r\n        throw error;\r\n      } else {\r\n        return false;\r\n      }\r\n    }\r\n  }\r\n\r\n  public async compressBase64ToJpeg(base64Image: string): Promise<Blob> {\r\n    const { maxWidth } =\r\n      this.fireCommonService.firebaseConfig.storage.imageDimensions;\r\n\r\n    return new Promise((resolve, reject) => {\r\n      // Convert base64 to blob\r\n      const blob = this.dataURItoBlob(base64Image, 'image/jpeg');\r\n      const compressOptions: Compressor.Options = {\r\n        strict: true,\r\n        checkOrientation: true,\r\n        width: maxWidth, // Set the maximum width of the compressed image (optional)\r\n        height: maxWidth / 2,\r\n        maxWidth: maxWidth, // Set the maximum width of the compressed image (optional)\r\n        maxHeight: maxWidth / 2,\r\n        resize: 'cover',\r\n        convertTypes: 'image/jpg',\r\n        quality: 0.7, // Set the image quality (optional)\r\n\r\n        success: (compressedBlob: Blob) => {\r\n          // Handle the compressed image blob\r\n          resolve(compressedBlob);\r\n        },\r\n        error: (error: any) => {\r\n          reject(`Image compression error:${error.message}`);\r\n        },\r\n      }\r\n      // Create an image compressor instance\r\n      new Compressor(blob, compressOptions);\r\n    });\r\n  }\r\n\r\n  public dataURItoBlob(dataURI: string, type: string): Blob {\r\n    const byteString = atob(dataURI);\r\n    const arrayBuffer = new ArrayBuffer(byteString.length);\r\n    const uint8Array = new Uint8Array(arrayBuffer);\r\n\r\n    for (let i = 0; i < byteString.length; i++) {\r\n      uint8Array[i] = byteString.charCodeAt(i);\r\n    }\r\n\r\n    return new Blob([uint8Array], { type });\r\n  }\r\n}\r\n",
             "constructorObj": {
                 "name": "constructor",
                 "description": "",
@@ -4897,7 +4968,7 @@
         },
         {
             "name": "FirestoreHttpService",
-            "id": "injectable-FirestoreHttpService-e7e72f3b48990dace68c7e4f22aec5c14d08396fc9381f7a56ef2626c5171668f127cc9098e0b8480ded392906874cedc67c72b649c8089b2eda7c1b6486c71b",
+            "id": "injectable-FirestoreHttpService-71a797d5fec38ae69ee27434bf5fa80d0032569cb61090223f51109c34fed72e724f45eaadd9b00692fd9cba8bf651537b3997714e558650c457b3b8a60c89af",
             "file": "projects/ngx-tools/fire-store/src/services/firestore-http.service.ts",
             "properties": [],
             "methods": [
@@ -5111,7 +5182,7 @@
             "deprecationMessage": "",
             "description": "",
             "rawdescription": "\n",
-            "sourceCode": "import { HttpClient } from '@angular/common/http';\nimport { Injectable } from '@angular/core';\nimport { FireCommonService } from '@annuadvent/ngx-tools/fire-common';\nimport { FirestoreParserService } from './firestore-parser.service';\nimport { FireQuery } from '../interfaces/fire-query.interface';\nimport { FirestoreQueryService } from './firestore-query.service';\nimport { BIN_COLLECTION_POSTFIX, RUN_QUERY_KEYWORD } from '../constants/firestore.constants';\n\n@Injectable({\n  providedIn: 'root'\n})\nexport class FirestoreHttpService {\n\n  constructor(\n    private fireCommonService: FireCommonService,\n    private http: HttpClient,\n    private firestoreParser: FirestoreParserService,\n    private firestoreQueryService: FirestoreQueryService,\n  ) { }\n\n  public async runQueryById(collectionId: string, id: string): Promise<any> {\n    const firestoreApiUrl = this.fireCommonService.firebaseConfig?.store?.firestoreBaseApiUrl;\n\n    return new Promise((resolve, reject) => {\n      if (!collectionId || !id) {\n        reject('Please provide a valid collection id and document id.');\n      } else {\n        const url = `${firestoreApiUrl}/${collectionId}/${id}`;\n        const httpSubscription = this.http.get(url).subscribe({\n          next: (queryResult: any) => {\n            const parsedQueryResult: any = this.firestoreParser.parse(queryResult);\n            httpSubscription.unsubscribe();\n            resolve(parsedQueryResult);\n          },\n          error: reject,\n        });\n      }\n    });\n  }\n\n  public async runQueryByConfig(\n    fireQuery: FireQuery\n  ): Promise<Array<any>> {\n    const firestoreApiUrl = this.fireCommonService.firebaseConfig?.store?.firestoreBaseApiUrl;\n\n    return new Promise((resolve, reject) => {\n      const url = `${firestoreApiUrl}${RUN_QUERY_KEYWORD}`;\n\n      const httpSubscription = this.http\n        .post(\n          url,\n          this.firestoreQueryService.fireToStructuredQuery(fireQuery)\n        )\n        .subscribe({\n          next: (queryResult: any) => {\n            const parsedQueryResult: Array<any> = this.firestoreParser.parse(\n              queryResult\n            );\n            httpSubscription.unsubscribe();\n            resolve(parsedQueryResult);\n          },\n          error: (err) => reject({ config: fireQuery, error: err }),\n        });\n    });\n  }\n\n  public async runQueryToUpdate(\n    collectionId: string,\n    collectionDoc: any,\n    fieldsToUpdate: Array<string>,\n    isBin: boolean = false\n  ): Promise<any> {\n    const firestoreApiUrl = this.fireCommonService.firebaseConfig?.store?.firestoreBaseApiUrl;\n\n    if (!collectionDoc || !collectionDoc.id) throw new Error('Please provide a valid collection document');\n\n    // If update to Bin collection, then postfix collectionId with '-bin'\n    if (isBin === true) collectionId = `${collectionId}${BIN_COLLECTION_POSTFIX}`;\n\n    const pCollectionDoc = { ...collectionDoc };\n    delete pCollectionDoc.id;\n\n    return new Promise((resolve, reject) => {\n      const url = `${firestoreApiUrl}/${collectionId}/${collectionDoc.id}`;\n      const body = this.firestoreParser.buildFirebaseFields(\n        pCollectionDoc,\n        fieldsToUpdate\n      );\n      const params =\n        this.firestoreParser.buildQueryParamsToUpdate(fieldsToUpdate);\n\n      const httpSubscription = this.http\n        .patch(url, body, { params })\n        .subscribe({\n          next: (queryResult: any) => {\n            const updatedCollectionDoc: any = this.firestoreParser.parse(\n              queryResult\n            );\n            httpSubscription.unsubscribe();\n            resolve(updatedCollectionDoc);\n          },\n          error: reject,\n        });\n    });\n  }\n\n  public async runQueryToDelete(collectionId: string, collectionDoc: any): Promise<boolean> {\n    const firestoreApiUrl = this.fireCommonService.firebaseConfig?.store?.firestoreBaseApiUrl;\n\n    if (!collectionDoc || !collectionDoc.id)\n      throw new Error('Please provide a valid collectionDoc.');\n\n    return new Promise((resolve, reject) => {\n      // Copy to collectionDocs bin, then delete from collectionDocs db.\n      this.runQueryToUpdate(collectionId, collectionDoc, null, true)\n        .then(() => {\n          const url = `${firestoreApiUrl}/${collectionId}/${collectionDoc.id}`;\n          // delete from collectionDocs db.\n          const httpSubscription = this.http.delete(url).subscribe({\n            next: (res: any) => {\n              httpSubscription.unsubscribe();\n              resolve(true);\n            },\n            error: reject,\n          });\n        })\n        .catch(reject);\n    });\n  }\n\n}\n",
+            "sourceCode": "import { HttpClient } from '@angular/common/http';\r\nimport { Injectable } from '@angular/core';\r\nimport { FireCommonService } from '@annuadvent/ngx-tools/fire-common';\r\nimport { FirestoreParserService } from './firestore-parser.service';\r\nimport { FireQuery } from '../interfaces/fire-query.interface';\r\nimport { FirestoreQueryService } from './firestore-query.service';\r\nimport { BIN_COLLECTION_POSTFIX, RUN_QUERY_KEYWORD } from '../constants/firestore.constants';\r\n\r\n@Injectable({\r\n  providedIn: 'root'\r\n})\r\nexport class FirestoreHttpService {\r\n\r\n  constructor(\r\n    private fireCommonService: FireCommonService,\r\n    private http: HttpClient,\r\n    private firestoreParser: FirestoreParserService,\r\n    private firestoreQueryService: FirestoreQueryService,\r\n  ) { }\r\n\r\n  public async runQueryById(collectionId: string, id: string): Promise<any> {\r\n    const firestoreApiUrl = this.fireCommonService.firebaseConfig?.store?.firestoreBaseApiUrl;\r\n\r\n    return new Promise((resolve, reject) => {\r\n      if (!collectionId || !id) {\r\n        reject('Please provide a valid collection id and document id.');\r\n      } else {\r\n        const url = `${firestoreApiUrl}/${collectionId}/${id}`;\r\n        const httpSubscription = this.http.get(url).subscribe({\r\n          next: (queryResult: any) => {\r\n            const parsedQueryResult: any = this.firestoreParser.parse(queryResult);\r\n            httpSubscription.unsubscribe();\r\n            resolve(parsedQueryResult);\r\n          },\r\n          error: reject,\r\n        });\r\n      }\r\n    });\r\n  }\r\n\r\n  public async runQueryByConfig(\r\n    fireQuery: FireQuery\r\n  ): Promise<Array<any>> {\r\n    const firestoreApiUrl = this.fireCommonService.firebaseConfig?.store?.firestoreBaseApiUrl;\r\n\r\n    return new Promise((resolve, reject) => {\r\n      const url = `${firestoreApiUrl}${RUN_QUERY_KEYWORD}`;\r\n\r\n      const httpSubscription = this.http\r\n        .post(\r\n          url,\r\n          this.firestoreQueryService.fireToStructuredQuery(fireQuery)\r\n        )\r\n        .subscribe({\r\n          next: (queryResult: any) => {\r\n            const parsedQueryResult: Array<any> = this.firestoreParser.parse(\r\n              queryResult\r\n            );\r\n            httpSubscription.unsubscribe();\r\n            resolve(parsedQueryResult);\r\n          },\r\n          error: (err) => reject({ config: fireQuery, error: err }),\r\n        });\r\n    });\r\n  }\r\n\r\n  public async runQueryToUpdate(\r\n    collectionId: string,\r\n    collectionDoc: any,\r\n    fieldsToUpdate: Array<string>,\r\n    isBin: boolean = false\r\n  ): Promise<any> {\r\n    const firestoreApiUrl = this.fireCommonService.firebaseConfig?.store?.firestoreBaseApiUrl;\r\n\r\n    if (!collectionDoc || !collectionDoc.id) throw new Error('Please provide a valid collection document');\r\n\r\n    // If update to Bin collection, then postfix collectionId with '-bin'\r\n    if (isBin === true) collectionId = `${collectionId}${BIN_COLLECTION_POSTFIX}`;\r\n\r\n    const pCollectionDoc = { ...collectionDoc };\r\n    delete pCollectionDoc.id;\r\n\r\n    return new Promise((resolve, reject) => {\r\n      const url = `${firestoreApiUrl}/${collectionId}/${collectionDoc.id}`;\r\n      const body = this.firestoreParser.buildFirebaseFields(\r\n        pCollectionDoc,\r\n        fieldsToUpdate\r\n      );\r\n      const params =\r\n        this.firestoreParser.buildQueryParamsToUpdate(fieldsToUpdate);\r\n\r\n      const httpSubscription = this.http\r\n        .patch(url, body, { params })\r\n        .subscribe({\r\n          next: (queryResult: any) => {\r\n            const updatedCollectionDoc: any = this.firestoreParser.parse(\r\n              queryResult\r\n            );\r\n            httpSubscription.unsubscribe();\r\n            resolve(updatedCollectionDoc);\r\n          },\r\n          error: reject,\r\n        });\r\n    });\r\n  }\r\n\r\n  public async runQueryToDelete(collectionId: string, collectionDoc: any): Promise<boolean> {\r\n    const firestoreApiUrl = this.fireCommonService.firebaseConfig?.store?.firestoreBaseApiUrl;\r\n\r\n    if (!collectionDoc || !collectionDoc.id)\r\n      throw new Error('Please provide a valid collectionDoc.');\r\n\r\n    return new Promise((resolve, reject) => {\r\n      // Copy to collectionDocs bin, then delete from collectionDocs db.\r\n      this.runQueryToUpdate(collectionId, collectionDoc, null, true)\r\n        .then(() => {\r\n          const url = `${firestoreApiUrl}/${collectionId}/${collectionDoc.id}`;\r\n          // delete from collectionDocs db.\r\n          const httpSubscription = this.http.delete(url).subscribe({\r\n            next: (res: any) => {\r\n              httpSubscription.unsubscribe();\r\n              resolve(true);\r\n            },\r\n            error: reject,\r\n          });\r\n        })\r\n        .catch(reject);\r\n    });\r\n  }\r\n\r\n}\r\n",
             "constructorObj": {
                 "name": "constructor",
                 "description": "",
@@ -5599,6 +5670,407 @@
                         }
                     }
                 ]
+            },
+            "type": "injectable"
+        },
+        {
+            "name": "ImageBrowserService",
+            "id": "injectable-ImageBrowserService-a1e1e9544df4c984d13d6d3ad9f732b0d90ba295438426c997587e951218b2b27801ef936318b0364137d994d338343b70aabc8b1f14d1eaba44445eb331db1b",
+            "file": "projects/ngx-tools/fire-storage/src/services/image-browser.service.ts",
+            "properties": [
+                {
+                    "name": "_pageSize",
+                    "defaultValue": "10",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "number",
+                    "optional": false,
+                    "description": "",
+                    "line": 15,
+                    "modifierKind": [
+                        121
+                    ]
+                },
+                {
+                    "name": "imageFiles$",
+                    "defaultValue": "new BehaviorSubject<Array<ImageFileInfo>>([])",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 12,
+                    "modifierKind": [
+                        121
+                    ]
+                },
+                {
+                    "name": "nextPageToken",
+                    "defaultValue": "null",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "any",
+                    "optional": false,
+                    "description": "",
+                    "line": 18
+                },
+                {
+                    "name": "previewOnImages$",
+                    "defaultValue": "new BehaviorSubject<PreviewOnImages>({})",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 14,
+                    "modifierKind": [
+                        121
+                    ]
+                },
+                {
+                    "name": "selected$",
+                    "defaultValue": "new BehaviorSubject<ImageFileInfo>(null)",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 13,
+                    "modifierKind": [
+                        121
+                    ]
+                },
+                {
+                    "name": "uploadValidationText",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "string",
+                    "optional": false,
+                    "description": "",
+                    "line": 19
+                },
+                {
+                    "name": "userId",
+                    "defaultValue": "''",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "string",
+                    "optional": false,
+                    "description": "",
+                    "line": 17
+                }
+            ],
+            "methods": [
+                {
+                    "name": "clear",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 37,
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "modifierKind": [
+                        121
+                    ]
+                },
+                {
+                    "name": "delete",
+                    "args": [
+                        {
+                            "name": "imageFile",
+                            "type": "ImageFileInfo",
+                            "deprecated": false,
+                            "deprecationMessage": ""
+                        }
+                    ],
+                    "optional": false,
+                    "returnType": "Promise<ImageFileInfo>",
+                    "typeParameters": [],
+                    "line": 102,
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "modifierKind": [
+                        123,
+                        132
+                    ],
+                    "jsdoctags": [
+                        {
+                            "name": "imageFile",
+                            "type": "ImageFileInfo",
+                            "deprecated": false,
+                            "deprecationMessage": "",
+                            "tagName": {
+                                "text": "param"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "loadMore",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "Promise<Array<ImageFileInfo>>",
+                    "typeParameters": [],
+                    "line": 83,
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "modifierKind": [
+                        123,
+                        132
+                    ]
+                },
+                {
+                    "name": "previewImageFile",
+                    "args": [
+                        {
+                            "name": "imageFullFileName",
+                            "type": "string",
+                            "deprecated": false,
+                            "deprecationMessage": ""
+                        },
+                        {
+                            "name": "previewOn",
+                            "type": "boolean",
+                            "deprecated": false,
+                            "deprecationMessage": "",
+                            "defaultValue": "true"
+                        }
+                    ],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 158,
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "modifierKind": [
+                        123
+                    ],
+                    "jsdoctags": [
+                        {
+                            "name": "imageFullFileName",
+                            "type": "string",
+                            "deprecated": false,
+                            "deprecationMessage": "",
+                            "tagName": {
+                                "text": "param"
+                            }
+                        },
+                        {
+                            "name": "previewOn",
+                            "type": "boolean",
+                            "deprecated": false,
+                            "deprecationMessage": "",
+                            "defaultValue": "true",
+                            "tagName": {
+                                "text": "param"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "refreshList",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "Promise<Array<ImageFileInfo>>",
+                    "typeParameters": [],
+                    "line": 63,
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "modifierKind": [
+                        123,
+                        132
+                    ]
+                },
+                {
+                    "name": "selectImageFile",
+                    "args": [
+                        {
+                            "name": "imageFile",
+                            "type": "ImageFileInfo",
+                            "deprecated": false,
+                            "deprecationMessage": ""
+                        }
+                    ],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 154,
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "modifierKind": [
+                        123
+                    ],
+                    "jsdoctags": [
+                        {
+                            "name": "imageFile",
+                            "type": "ImageFileInfo",
+                            "deprecated": false,
+                            "deprecationMessage": "",
+                            "tagName": {
+                                "text": "param"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "upload",
+                    "args": [
+                        {
+                            "name": "imagePathWithFileName",
+                            "type": "string",
+                            "deprecated": false,
+                            "deprecationMessage": ""
+                        },
+                        {
+                            "name": "imageData",
+                            "type": "any",
+                            "deprecated": false,
+                            "deprecationMessage": ""
+                        }
+                    ],
+                    "optional": false,
+                    "returnType": "Promise<ImageFileInfo>",
+                    "typeParameters": [],
+                    "line": 122,
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "modifierKind": [
+                        123,
+                        132
+                    ],
+                    "jsdoctags": [
+                        {
+                            "name": "imagePathWithFileName",
+                            "type": "string",
+                            "deprecated": false,
+                            "deprecationMessage": "",
+                            "tagName": {
+                                "text": "param"
+                            }
+                        },
+                        {
+                            "name": "imageData",
+                            "type": "any",
+                            "deprecated": false,
+                            "deprecationMessage": "",
+                            "tagName": {
+                                "text": "param"
+                            }
+                        }
+                    ]
+                }
+            ],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "description": "",
+            "rawdescription": "\n",
+            "sourceCode": "import { Injectable } from '@angular/core';\nimport { BehaviorSubject, Observable } from 'rxjs';\nimport { ImageFileInfo, ImageFileInfoList } from '../interfaces/fire-storage-image.interface';\nimport { FireStorageImageService } from './fire-storage-image.service';\nimport { FireAuthService } from '@annuadvent/ngx-tools/fire-auth';\nimport { PreviewOnImages } from '../interfaces/image-browser.interface';\n\n@Injectable({\n  providedIn: 'root'\n})\nexport class ImageBrowserService {\n  private imageFiles$ = new BehaviorSubject<Array<ImageFileInfo>>([]);\n  private selected$ = new BehaviorSubject<ImageFileInfo>(null);\n  private previewOnImages$ = new BehaviorSubject<PreviewOnImages>({});\n  private _pageSize: number = 10;\n\n  userId: string = '';\n  nextPageToken: any = null;\n  uploadValidationText: string;\n\n  constructor(\n    private fireStorageImageService: FireStorageImageService,\n    private fireAuthService: FireAuthService,\n    ) { \n    // If logged in user changed or loged off, then list should be cleared.\n    this.fireAuthService.authStateChanged().subscribe((user: any) => {\n      if(user?.id && user.id !== this.userId) {\n        this.clear();\n        this.userId = user.id;\n      } else if(!user?.id) {\n        this.clear();\n        this.userId = null;\n      }\n    })\n  }\n\n  private clear(): void {\n    this.imageFiles$.next([]);\n    this.previewOnImages$.next({});\n    this.selected$.next(null);\n  }\n\n  public get pageSize() : number {\n    return this._pageSize;\n  }\n  \n  public set pageSize(v : number) {\n    this._pageSize = v;\n  }\n  \n  public get imageFiles(): Observable<Array<ImageFileInfo>> {\n    return this.imageFiles$.asObservable();\n  }\n\n  public get selected(): Observable<ImageFileInfo> {\n    return this.selected$.asObservable();\n  }\n\n  public get previewOnImages(): Observable<PreviewOnImages> {\n    return this.previewOnImages$.asObservable();\n  }\n\n  public async refreshList(): Promise<Array<ImageFileInfo>> {\n    this.userId = this.fireAuthService.getCurrentUserId();\n    if(!this.userId) {\n      throw new Error('User is not authenticated or logged in.');\n    }\n\n    const imageFileInfoList: ImageFileInfoList = await this.fireStorageImageService.getImagesList(this.userId, this.pageSize, this.nextPageToken)\n      .catch(err => {\n        throw err;\n      });\n\n    this.nextPageToken = imageFileInfoList?.nextPageToken || null;\n    this.uploadValidationText = this.fireStorageImageService.getUploadImageValidationText();\n    this.previewOnImages$.next({});\n    this.selected$.next(null);\n    this.imageFiles$.next(imageFileInfoList?.imageFiles || []);\n\n    return imageFileInfoList?.imageFiles || [];\n  }\n\n  public async loadMore(): Promise<Array<ImageFileInfo>> {\n    this.userId = this.fireAuthService.getCurrentUserId();\n    if(!this.userId) {\n      throw new Error('User is not authenticated or logged in.');\n    }\n    const imageFileInfoList: ImageFileInfoList = await this.fireStorageImageService.getImagesList(this.userId, this.pageSize, this.nextPageToken)\n      .catch(err => {\n        throw err;\n      });\n\n    this.nextPageToken = imageFileInfoList?.nextPageToken || null;\n    this.imageFiles$.next([\n      ...this.imageFiles$.value,\n      ...(imageFileInfoList?.imageFiles || [])\n    ]);\n\n    return imageFileInfoList?.imageFiles || [];\n  }\n\n  public async delete(imageFile: ImageFileInfo): Promise<ImageFileInfo> {  \n    this.userId = this.fireAuthService.getCurrentUserId();\n    if(!this.userId) {\n      throw new Error('User is not authenticated or logged in.');\n    }\n      \n    const deletedFileFullPath = await this.fireStorageImageService.deleteImage(imageFile?.name, this.userId)\n      .catch(err => {\n        throw err;\n      });\n\n    // Successful delete, remove it from the existing list too;\n\n    this.imageFiles$.next(\n      this.imageFiles$.value.filter(iFile => iFile.fullPath !== deletedFileFullPath)\n    );\n\n    return imageFile;\n  }\n\n  public async upload(imagePathWithFileName: string, imageData: any): Promise<ImageFileInfo> {\n    this.userId = this.fireAuthService.getCurrentUserId();\n    if(!this.userId) {\n      throw new Error('User is not authenticated or logged in.');\n    }\n\n    const errorMessage = await this.fireStorageImageService.validateImage(imageData)\n    .catch(err => err);\n    if(errorMessage) {\n      throw new Error(errorMessage);\n    }\n\n    const uploadedImageFile: ImageFileInfo = await this.fireStorageImageService.uploadImage(\n      imagePathWithFileName,\n      imageData,\n      false,\n      this.userId,\n      false,\n    )\n      .catch(err => {\n        throw err;\n      });\n\n    // Add uploaded file to \n    this.imageFiles$.next([\n      uploadedImageFile,\n      ...this.imageFiles$.value\n    ]);\n\n    return uploadedImageFile;\n  }\n\n  public selectImageFile(imageFile: ImageFileInfo): void {\n    this.selected$.next(imageFile);\n  }\n\n  public previewImageFile(imageFullFileName: string, previewOn: boolean = true): void {\n    this.previewOnImages$.next({\n      ...this.previewOnImages$.value,\n      [imageFullFileName]: previewOn\n    });\n  }\n\n}\n",
+            "constructorObj": {
+                "name": "constructor",
+                "description": "",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "args": [
+                    {
+                        "name": "fireStorageImageService",
+                        "type": "FireStorageImageService",
+                        "deprecated": false,
+                        "deprecationMessage": ""
+                    },
+                    {
+                        "name": "fireAuthService",
+                        "type": "FireAuthService",
+                        "deprecated": false,
+                        "deprecationMessage": ""
+                    }
+                ],
+                "line": 19,
+                "jsdoctags": [
+                    {
+                        "name": "fireStorageImageService",
+                        "type": "FireStorageImageService",
+                        "deprecated": false,
+                        "deprecationMessage": "",
+                        "tagName": {
+                            "text": "param"
+                        }
+                    },
+                    {
+                        "name": "fireAuthService",
+                        "type": "FireAuthService",
+                        "deprecated": false,
+                        "deprecationMessage": "",
+                        "tagName": {
+                            "text": "param"
+                        }
+                    }
+                ]
+            },
+            "accessors": {
+                "pageSize": {
+                    "name": "pageSize",
+                    "setSignature": {
+                        "name": "pageSize",
+                        "type": "void",
+                        "deprecated": false,
+                        "deprecationMessage": "",
+                        "args": [
+                            {
+                                "name": "v",
+                                "type": "number",
+                                "deprecated": false,
+                                "deprecationMessage": ""
+                            }
+                        ],
+                        "returnType": "void",
+                        "line": 47,
+                        "jsdoctags": [
+                            {
+                                "name": "v",
+                                "type": "number",
+                                "deprecated": false,
+                                "deprecationMessage": "",
+                                "tagName": {
+                                    "text": "param"
+                                }
+                            }
+                        ]
+                    },
+                    "getSignature": {
+                        "name": "pageSize",
+                        "type": "number",
+                        "returnType": "number",
+                        "line": 43
+                    }
+                },
+                "imageFiles": {
+                    "name": "imageFiles",
+                    "getSignature": {
+                        "name": "imageFiles",
+                        "type": "",
+                        "returnType": "Observable<Array<ImageFileInfo>>",
+                        "line": 51
+                    }
+                },
+                "selected": {
+                    "name": "selected",
+                    "getSignature": {
+                        "name": "selected",
+                        "type": "",
+                        "returnType": "Observable<ImageFileInfo>",
+                        "line": 55
+                    }
+                },
+                "previewOnImages": {
+                    "name": "previewOnImages",
+                    "getSignature": {
+                        "name": "previewOnImages",
+                        "type": "",
+                        "returnType": "Observable<PreviewOnImages>",
+                        "line": 59
+                    }
+                }
             },
             "type": "injectable"
         },
@@ -8230,12 +8702,12 @@
     "classes": [
         {
             "name": "FirebaseConfig",
-            "id": "class-FirebaseConfig-fbb414064a9447b1f5a633f5ccfc3ce841f52db1f74267c1824d6ea04c4c9580838eef70b6cd0aae96a3d975b51e2344fa1d6b426fce7623e169f5c08fa2948f",
+            "id": "class-FirebaseConfig-c2ba39cf29eaa7708e861b0d1b5ae65316c5edf1c869d01fc02a76ca7b5dfce2e40c91d882c276f0300db8cfede26905cc7bebb6596391b7a2c66fa0a831b8e5",
             "file": "projects/ngx-tools/fire-common/src/interfaces/fire-common.interface.ts",
             "deprecated": false,
             "deprecationMessage": "",
             "type": "class",
-            "sourceCode": "export class FirebaseConfig {\r\n    app: FireAppConfig;\r\n    ui: any;\r\n    store: FireStoreConfig;\r\n    storage: FireStorageConfig;\r\n}\r\nexport interface FireStorageImageSpecs {\r\n    maxKBs: number;\r\n    maxWidth: number;\r\n    maxHeight: number;\r\n    minWidth: number;\r\n    minHeight: number;\r\n};\r\n\r\nexport interface FireStorageConfig {\r\n    baseStoreUrl: string;     // folder path inside bucket, ex. annu-business/articles\r\n    fireStorageBaseApiUrl: string;  // API full base url\r\n    imageDimensions: FireStorageImageSpecs;\r\n};\r\n\r\nexport interface FireAppConfig {\r\n    projectId: string;\r\n    appId: string;\r\n    storageBucket: string;\r\n    locationId: string;\r\n    apiKey: string;\r\n    authDomain: string;\r\n    messagingSenderId: string;\r\n    measurementId: string;\r\n}\r\n\r\nexport interface FireStoreConfig {\r\n    firestoreBaseApiUrl: string;    // Firebase store db url, base api url\r\n}\r\n",
+            "sourceCode": "export class FirebaseConfig {\r\n    app: FireAppConfig;\r\n    ui: any;\r\n    store: FireStoreConfig;\r\n    storage: FireStorageConfig;\r\n}\r\nexport interface FireStorageImageSpecs {\r\n    maxKBs: number;\r\n    maxWidth: number;\r\n    maxHeight: number;\r\n    minWidth: number;\r\n    minHeight: number;\r\n};\r\n\r\nexport interface FireStorageConfig {\r\n    baseStorageUrl: string;     // folder path inside bucket, ex. annu-business/articles\r\n    fireStorageBaseApiUrl: string;  // API full base url\r\n    imageDimensions: FireStorageImageSpecs;\r\n};\r\n\r\nexport interface FireAppConfig {\r\n    projectId: string;\r\n    appId: string;\r\n    storageBucket: string;\r\n    locationId: string;\r\n    apiKey: string;\r\n    authDomain: string;\r\n    messagingSenderId: string;\r\n    measurementId: string;\r\n}\r\n\r\nexport interface FireStoreConfig {\r\n    firestoreBaseApiUrl: string;    // Firebase store db url, base api url\r\n}\r\n",
             "properties": [
                 {
                     "name": "app",
@@ -8359,6 +8831,641 @@
     ],
     "directives": [],
     "components": [
+        {
+            "name": "ImageBrowserComponent",
+            "id": "component-ImageBrowserComponent-c4c474cf0d8c9b40589fc73e749a795ba6a38d7b095cebc02de79181f699be147edefc63a5e25c405dc4505d94b17ecfdea8f36960fab42b4ffcd4136f150829",
+            "file": "projects/ngx-tools/fire-storage/src/components/image-browser/image-browser.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "anu-image-browser",
+            "styleUrls": [
+                "./image-browser.component.scss"
+            ],
+            "styles": [],
+            "templateUrl": [
+                "./image-browser.component.html"
+            ],
+            "viewProviders": [],
+            "hostDirectives": [],
+            "inputsClass": [
+                {
+                    "name": "imageFiles",
+                    "defaultValue": "[]",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 32,
+                    "type": "Array<ImageFileInfo>",
+                    "decorators": []
+                }
+            ],
+            "outputsClass": [],
+            "propertiesClass": [
+                {
+                    "name": "choosenFile",
+                    "defaultValue": "null",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "any",
+                    "optional": false,
+                    "description": "",
+                    "line": 40
+                },
+                {
+                    "name": "choosenFileName",
+                    "defaultValue": "''",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "string",
+                    "optional": false,
+                    "description": "",
+                    "line": 39
+                },
+                {
+                    "name": "deleteConfirmModalOpened",
+                    "defaultValue": "false",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "boolean",
+                    "optional": false,
+                    "description": "",
+                    "line": 45
+                },
+                {
+                    "name": "error",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "any",
+                    "optional": false,
+                    "description": "",
+                    "line": 43
+                },
+                {
+                    "name": "fileEl",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "ElementRef",
+                    "optional": false,
+                    "description": "",
+                    "line": 31,
+                    "decorators": [
+                        {
+                            "name": "ViewChild",
+                            "stringifiedArguments": "'fileInput'"
+                        }
+                    ],
+                    "modifierKind": [
+                        167
+                    ]
+                },
+                {
+                    "name": "imagesFilesFiltered",
+                    "defaultValue": "[]",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Array<ImageFileInfo>",
+                    "optional": false,
+                    "description": "",
+                    "line": 37
+                },
+                {
+                    "name": "loading",
+                    "defaultValue": "{}",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "ImageBrowserLoadings",
+                    "optional": false,
+                    "description": "",
+                    "line": 44
+                },
+                {
+                    "name": "nextPageToken",
+                    "defaultValue": "null",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "any",
+                    "optional": false,
+                    "description": "",
+                    "line": 41
+                },
+                {
+                    "name": "previewOnImages",
+                    "defaultValue": "{}",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "PreviewOnImages",
+                    "optional": false,
+                    "description": "",
+                    "line": 35
+                },
+                {
+                    "name": "selectedImageFile",
+                    "defaultValue": "null",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "ImageFileInfo",
+                    "optional": false,
+                    "description": "",
+                    "line": 34
+                },
+                {
+                    "name": "toDeleteImageFile",
+                    "defaultValue": "null",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "ImageFileInfo",
+                    "optional": false,
+                    "description": "",
+                    "line": 46
+                },
+                {
+                    "name": "uploadHelpText",
+                    "defaultValue": "''",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "string",
+                    "optional": false,
+                    "description": "",
+                    "line": 38
+                }
+            ],
+            "methodsClass": [
+                {
+                    "name": "deleteClick",
+                    "args": [
+                        {
+                            "name": "event",
+                            "type": "any",
+                            "deprecated": false,
+                            "deprecationMessage": ""
+                        },
+                        {
+                            "name": "imageFile",
+                            "type": "ImageFileInfo",
+                            "deprecated": false,
+                            "deprecationMessage": ""
+                        }
+                    ],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 148,
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "modifierKind": [
+                        123
+                    ],
+                    "jsdoctags": [
+                        {
+                            "name": "event",
+                            "type": "any",
+                            "deprecated": false,
+                            "deprecationMessage": "",
+                            "tagName": {
+                                "text": "param"
+                            }
+                        },
+                        {
+                            "name": "imageFile",
+                            "type": "ImageFileInfo",
+                            "deprecated": false,
+                            "deprecationMessage": "",
+                            "tagName": {
+                                "text": "param"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "deleteImageCancelClick",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 143,
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "modifierKind": [
+                        123
+                    ]
+                },
+                {
+                    "name": "deleteImageOkClick",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 128,
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "modifierKind": [
+                        123
+                    ]
+                },
+                {
+                    "name": "loadMoreClick",
+                    "args": [
+                        {
+                            "name": "event",
+                            "type": "any",
+                            "deprecated": false,
+                            "deprecationMessage": ""
+                        }
+                    ],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 116,
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "modifierKind": [
+                        123
+                    ],
+                    "jsdoctags": [
+                        {
+                            "name": "event",
+                            "type": "any",
+                            "deprecated": false,
+                            "deprecationMessage": "",
+                            "tagName": {
+                                "text": "param"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "ngOnInit",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 68,
+                    "deprecated": false,
+                    "deprecationMessage": ""
+                },
+                {
+                    "name": "onFileChange",
+                    "args": [
+                        {
+                            "name": "event",
+                            "type": "any",
+                            "deprecated": false,
+                            "deprecationMessage": ""
+                        }
+                    ],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 159,
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "modifierKind": [
+                        123
+                    ],
+                    "jsdoctags": [
+                        {
+                            "name": "event",
+                            "type": "any",
+                            "deprecated": false,
+                            "deprecationMessage": "",
+                            "tagName": {
+                                "text": "param"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "onImageListFilter",
+                    "args": [
+                        {
+                            "name": "imageFilesFiltered",
+                            "type": "Array<object>",
+                            "deprecated": false,
+                            "deprecationMessage": ""
+                        }
+                    ],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 95,
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "modifierKind": [
+                        123
+                    ],
+                    "jsdoctags": [
+                        {
+                            "name": "imageFilesFiltered",
+                            "type": "Array<object>",
+                            "deprecated": false,
+                            "deprecationMessage": "",
+                            "tagName": {
+                                "text": "param"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "previewClick",
+                    "args": [
+                        {
+                            "name": "event",
+                            "type": "any",
+                            "deprecated": false,
+                            "deprecationMessage": ""
+                        },
+                        {
+                            "name": "imageFile",
+                            "type": "ImageFileInfo",
+                            "deprecated": false,
+                            "deprecationMessage": ""
+                        }
+                    ],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 154,
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "modifierKind": [
+                        123
+                    ],
+                    "jsdoctags": [
+                        {
+                            "name": "event",
+                            "type": "any",
+                            "deprecated": false,
+                            "deprecationMessage": "",
+                            "tagName": {
+                                "text": "param"
+                            }
+                        },
+                        {
+                            "name": "imageFile",
+                            "type": "ImageFileInfo",
+                            "deprecated": false,
+                            "deprecationMessage": "",
+                            "tagName": {
+                                "text": "param"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "refreshClick",
+                    "args": [
+                        {
+                            "name": "event",
+                            "type": "any",
+                            "deprecated": false,
+                            "deprecationMessage": ""
+                        }
+                    ],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 99,
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "modifierKind": [
+                        123
+                    ],
+                    "jsdoctags": [
+                        {
+                            "name": "event",
+                            "type": "any",
+                            "deprecated": false,
+                            "deprecationMessage": "",
+                            "tagName": {
+                                "text": "param"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "selectClick",
+                    "args": [
+                        {
+                            "name": "event",
+                            "type": "any",
+                            "deprecated": false,
+                            "deprecationMessage": ""
+                        },
+                        {
+                            "name": "imageFile",
+                            "type": "ImageFileInfo",
+                            "deprecated": false,
+                            "deprecationMessage": ""
+                        }
+                    ],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 111,
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "modifierKind": [
+                        123
+                    ],
+                    "jsdoctags": [
+                        {
+                            "name": "event",
+                            "type": "any",
+                            "deprecated": false,
+                            "deprecationMessage": "",
+                            "tagName": {
+                                "text": "param"
+                            }
+                        },
+                        {
+                            "name": "imageFile",
+                            "type": "ImageFileInfo",
+                            "deprecated": false,
+                            "deprecationMessage": "",
+                            "tagName": {
+                                "text": "param"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "setErrorAndLoading",
+                    "args": [
+                        {
+                            "name": "loaderName",
+                            "type": "ImageBrowserLoaderEnum",
+                            "deprecated": false,
+                            "deprecationMessage": ""
+                        },
+                        {
+                            "name": "err",
+                            "type": "any",
+                            "deprecated": false,
+                            "deprecationMessage": "",
+                            "defaultValue": "null"
+                        },
+                        {
+                            "name": "loading",
+                            "type": "boolean",
+                            "deprecated": false,
+                            "deprecationMessage": "",
+                            "defaultValue": "true"
+                        },
+                        {
+                            "name": "subLoaderName",
+                            "type": "string",
+                            "deprecated": false,
+                            "deprecationMessage": "",
+                            "defaultValue": "''"
+                        }
+                    ],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 71,
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "modifierKind": [
+                        121
+                    ],
+                    "jsdoctags": [
+                        {
+                            "name": "loaderName",
+                            "type": "ImageBrowserLoaderEnum",
+                            "deprecated": false,
+                            "deprecationMessage": "",
+                            "tagName": {
+                                "text": "param"
+                            }
+                        },
+                        {
+                            "name": "err",
+                            "type": "any",
+                            "deprecated": false,
+                            "deprecationMessage": "",
+                            "defaultValue": "null",
+                            "tagName": {
+                                "text": "param"
+                            }
+                        },
+                        {
+                            "name": "loading",
+                            "type": "boolean",
+                            "deprecated": false,
+                            "deprecationMessage": "",
+                            "defaultValue": "true",
+                            "tagName": {
+                                "text": "param"
+                            }
+                        },
+                        {
+                            "name": "subLoaderName",
+                            "type": "string",
+                            "deprecated": false,
+                            "deprecationMessage": "",
+                            "defaultValue": "''",
+                            "tagName": {
+                                "text": "param"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "uploadClick",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 167,
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "modifierKind": [
+                        123
+                    ]
+                },
+                {
+                    "name": "uploadFileClick",
+                    "args": [
+                        {
+                            "name": "event",
+                            "type": "any",
+                            "deprecated": false,
+                            "deprecationMessage": ""
+                        }
+                    ],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 174,
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "modifierKind": [
+                        123
+                    ],
+                    "jsdoctags": [
+                        {
+                            "name": "event",
+                            "type": "any",
+                            "deprecated": false,
+                            "deprecationMessage": "",
+                            "tagName": {
+                                "text": "param"
+                            }
+                        }
+                    ]
+                }
+            ],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [],
+            "standalone": false,
+            "imports": [],
+            "description": "<p>Image Browser component allows logged in user to browse, select and upload images to fire store.\nImage Browser is implemented upon Image Browser service (ImageBrowserService), that exposes observables\nto listen to any changes to the components data.</p>\n<p>So It is recommended to use ImageBrowserService and its exposed observables to work with this component.</p>\n",
+            "rawdescription": "\n\nImage Browser component allows logged in user to browse, select and upload images to fire store.\nImage Browser is implemented upon Image Browser service (ImageBrowserService), that exposes observables\nto listen to any changes to the components data.\n\nSo It is recommended to use ImageBrowserService and its exposed observables to work with this component.\n",
+            "type": "component",
+            "sourceCode": "import {\r\n  Component,\r\n  ElementRef,\r\n  EventEmitter,\r\n  Input,\r\n  OnInit,\r\n  Output,\r\n  ViewChild,\r\n} from '@angular/core';\r\nimport { ImageBrowserService } from '../../services/image-browser.service';\r\nimport { ImageFileInfo } from '../../interfaces/fire-storage-image.interface';\r\nimport { ImageBrowserLoaderEnum } from '../../enums/image-browser.enums';\r\nimport { ImageBrowserLoadings, PreviewOnImages } from '../../interfaces/image-browser.interface';\r\n\r\nconst PAGE_SIZE = 30;\r\n\r\n/**\r\n * Image Browser component allows logged in user to browse, select and upload images to fire store.\r\n * Image Browser is implemented upon Image Browser service (ImageBrowserService), that exposes observables \r\n * to listen to any changes to the components data.\r\n * \r\n * So It is recommended to use ImageBrowserService and its exposed observables to work with this component.\r\n */\r\n\r\n@Component({\r\n  selector: 'anu-image-browser',\r\n  templateUrl: './image-browser.component.html',\r\n  styleUrls: ['./image-browser.component.scss'],\r\n})\r\nexport class ImageBrowserComponent implements OnInit {\r\n  @ViewChild('fileInput') fileEl: ElementRef;\r\n  @Input() imageFiles: Array<ImageFileInfo> = [];\r\n\r\n  selectedImageFile: ImageFileInfo = null;\r\n  previewOnImages: PreviewOnImages = {};\r\n\r\n  imagesFilesFiltered: Array<ImageFileInfo> = [];  \r\n  uploadHelpText: string = '';\r\n  choosenFileName: string = '';\r\n  choosenFile: any = null;\r\n  nextPageToken: any = null;\r\n\r\n  error: any;\r\n  loading: ImageBrowserLoadings = {};\r\n  deleteConfirmModalOpened: boolean = false;\r\n  toDeleteImageFile: ImageFileInfo = null;\r\n\r\n\r\n  constructor(private imageBrowserService: ImageBrowserService) { \r\n    this.imageBrowserService.pageSize = PAGE_SIZE;\r\n\r\n    // Subscriptions\r\n    this.imageBrowserService.imageFiles.subscribe((imageFiles => {\r\n      this.imageFiles = imageFiles;\r\n      this.nextPageToken = this.imageBrowserService.nextPageToken;\r\n      this.uploadHelpText = this.imageBrowserService.uploadValidationText;\r\n    }));\r\n\r\n    this.imageBrowserService.selected.subscribe((imageFile => {\r\n      this.selectedImageFile = imageFile;\r\n    }));\r\n\r\n    this.imageBrowserService.previewOnImages.subscribe((previewOnImages => {\r\n      this.previewOnImages = previewOnImages;\r\n    }));\r\n  }\r\n\r\n  ngOnInit(): void {    \r\n  }\r\n\r\n  private setErrorAndLoading(loaderName: ImageBrowserLoaderEnum, err: any = null, loading: boolean = true, subLoaderName: string = ''): void {\r\n    if(err) {\r\n      this.error = {code: err.code || err.status || 'UNKNOWN', message: err.message || err.text || err.toString()};\r\n    } else {\r\n      this.error = null;\r\n    }\r\n    if(subLoaderName) {\r\n      this.loading.imageFile = this.loading.imageFile || {};\r\n      this.loading.imageFile[subLoaderName] = loading;\r\n    } else {\r\n      switch(loaderName) {\r\n        case ImageBrowserLoaderEnum.imageFiles:\r\n          this.loading.imageFiles = loading;\r\n          break;\r\n        case ImageBrowserLoaderEnum.loadMore:\r\n          this.loading.loadMore = loading;\r\n          break;\r\n        case ImageBrowserLoaderEnum.uploadImageFile:\r\n          this.loading.uploadImageFile = loading;\r\n          break; \r\n      }      \r\n    }    \r\n  }\r\n  \r\n  public onImageListFilter(imageFilesFiltered: Array<object>): void {\r\n    this.imagesFilesFiltered = imageFilesFiltered as Array<ImageFileInfo>;\r\n  }\r\n\r\n  public refreshClick(event: any) {\r\n    event.preventDefault();\r\n    this.setErrorAndLoading(ImageBrowserLoaderEnum.imageFiles);\r\n    this.imageBrowserService.refreshList()\r\n    .then(() => {\r\n      this.setErrorAndLoading(ImageBrowserLoaderEnum.imageFiles, null, false);\r\n    },\r\n    (err) => {\r\n      this.setErrorAndLoading(ImageBrowserLoaderEnum.imageFiles, err, false);\r\n    });    \r\n  }\r\n\r\n  public selectClick(event: any, imageFile: ImageFileInfo): void {\r\n    event.preventDefault();\r\n    this.imageBrowserService.selectImageFile(imageFile);\r\n  }\r\n\r\n  public loadMoreClick(event: any) {\r\n    event.preventDefault();\r\n    this.setErrorAndLoading(ImageBrowserLoaderEnum.loadMore);\r\n    this.imageBrowserService.loadMore()\r\n    .then(() => {\r\n      this.setErrorAndLoading(ImageBrowserLoaderEnum.loadMore, null, false);\r\n    },\r\n    (err) => {\r\n      this.setErrorAndLoading(ImageBrowserLoaderEnum.loadMore, err, false);\r\n    }); \r\n  }\r\n\r\n  public deleteImageOkClick(): void {\r\n    this.deleteConfirmModalOpened = false;\r\n\r\n    this.setErrorAndLoading(ImageBrowserLoaderEnum.imageFile, null, true, this.toDeleteImageFile.fullPath);\r\n    this.imageBrowserService.delete(this.toDeleteImageFile)\r\n    .then(() => {\r\n      this.setErrorAndLoading(ImageBrowserLoaderEnum.imageFile, null, false, this.toDeleteImageFile.fullPath);\r\n      this.toDeleteImageFile = null;\r\n    },\r\n    (err) => {\r\n      this.setErrorAndLoading(ImageBrowserLoaderEnum.imageFile, err, false, this.toDeleteImageFile.fullPath);\r\n      this.toDeleteImageFile = null;\r\n    }); \r\n  }\r\n\r\n  public deleteImageCancelClick(): void {\r\n    this.deleteConfirmModalOpened = false;\r\n    this.toDeleteImageFile = null;\r\n  }\r\n\r\n  public deleteClick(event: any, imageFile: ImageFileInfo): void {\r\n    event.preventDefault();\r\n    this.deleteConfirmModalOpened = true;\r\n    this.toDeleteImageFile = imageFile;\r\n  }\r\n\r\n  public previewClick(event: any, imageFile: ImageFileInfo): void {\r\n    event.preventDefault();\r\n    this.imageBrowserService.previewImageFile(imageFile.fullPath)\r\n  }\r\n\r\n  public onFileChange(event: any) {\r\n    this.choosenFileName = '';\r\n    if (event.target.files.length > 0) {\r\n      this.choosenFile = event.target.files[0];\r\n      this.choosenFileName = this.choosenFile.name;            \r\n    }\r\n  }\r\n\r\n  public uploadClick(): void {\r\n    const fileInputEl = this.fileEl.nativeElement;\r\n    fileInputEl.value = '';\r\n    this.choosenFileName = '';\r\n    fileInputEl.click();\r\n  }\r\n\r\n  public uploadFileClick(event: any): void {\r\n    event.preventDefault();\r\n    if(!this.choosenFileName || !this.choosenFile) return;\r\n\r\n    this.setErrorAndLoading(ImageBrowserLoaderEnum.uploadImageFile);    \r\n      this.imageBrowserService.upload( this.choosenFileName || this.choosenFile.name, this.choosenFile)\r\n      .then((imageFile: ImageFileInfo) => {\r\n        this.imageBrowserService.selectImageFile(imageFile);\r\n        this.setErrorAndLoading(ImageBrowserLoaderEnum.uploadImageFile, null, false);\r\n      },\r\n      (err) => {\r\n        this.setErrorAndLoading(ImageBrowserLoaderEnum.uploadImageFile, err, false);\r\n      }); \r\n  }\r\n}\r\n",
+            "assetsDirs": [],
+            "styleUrlsData": [
+                {
+                    "data": "@import 'mixins';\r\n\r\n:host {\r\n    display: flex;\r\n    flex-direction: row;\r\n    flex-flow: wrap;\r\n    position: relative;\r\n\r\n    .image-list-item {\r\n        background-repeat: no-repeat;\r\n        background-size: cover;\r\n        min-height: 12rem;\r\n        overflow: hidden;\r\n        \r\n        &_controls {\r\n            position: absolute;\r\n            bottom: 0;\r\n            left: 0;\r\n            background-color: rgba(0,0,0,0.1);\r\n            \r\n        }\r\n\r\n        &_title {\r\n            background-color: rgba(0,0,0,0.5);\r\n            word-break: break-all;\r\n        }\r\n\r\n        &_control {\r\n            &.btn {\r\n                @include small {\r\n                    padding: 0.2rem 0.7rem;\r\n                }\r\n    \r\n                @include medium {\r\n                    padding: 0.2rem 0.7rem;\r\n                }\r\n    \r\n                @include large {\r\n                    padding: 0.2rem 0.7rem;\r\n                }\r\n            }\r\n        }\r\n    }\r\n\r\n    input[type=\"file\"] {\r\n        display: none;\r\n    }\r\n\r\n    anu-search-box {\r\n        transform: scale(0.7);\r\n    }\r\n\r\n}\r\n",
+                    "styleUrl": "./image-browser.component.scss"
+                }
+            ],
+            "stylesData": "",
+            "constructorObj": {
+                "name": "constructor",
+                "description": "",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "args": [
+                    {
+                        "name": "imageBrowserService",
+                        "type": "ImageBrowserService",
+                        "deprecated": false,
+                        "deprecationMessage": ""
+                    }
+                ],
+                "line": 46,
+                "jsdoctags": [
+                    {
+                        "name": "imageBrowserService",
+                        "type": "ImageBrowserService",
+                        "deprecated": false,
+                        "deprecationMessage": "",
+                        "tagName": {
+                            "text": "param"
+                        }
+                    }
+                ]
+            },
+            "implements": [
+                "OnInit"
+            ],
+            "templateData": "<anu-error class=\"container\" *ngIf=\"error\" [code]=\"error?.code\" [message]=\"error?.message\"></anu-error>\r\n\r\n<div class=\"row\">\r\n    <div class=\"col-sm-12 col-md-6 col-lg-6\">\r\n        <anu-card class=\"border-round shadow spacing-half relative\">\r\n            <anu-card-title>\r\n                <h3>Upload Image</h3>\r\n            </anu-card-title>\r\n            <anu-card-body>                \r\n                <span *ngIf=\"uploadHelpText\"><small>{{uploadHelpText}}</small></span>\r\n                <div class=\"form-group container center\">\r\n                    <input #fileInput id=\"file\" type=\"file\" class=\"\" (change)=\"onFileChange($event)\" />\r\n                    <input type=\"button\" class=\"btn\" (click)=\"uploadClick()\" value=\"Choose file to upload...\">\r\n                    <input type=\"text\" class=\"spacing-around-vertical-half\" [(ngModel)]=\"choosenFileName\" placeholder=\"No image to upload\"/>\r\n                    <a class=\"btn primary spacing-around-vertical-half\" href=\"#\" (click)=\"uploadFileClick($event)\" title=\"Upload\">Upload</a>\r\n                </div>\r\n                <anu-spinner class=\"col-12\" [show]=\"loading.uploadImageFile\"></anu-spinner>\r\n            </anu-card-body>\r\n        </anu-card>\r\n    </div>\r\n    <div class=\"col-sm-12 col-md-6 col-lg-6\">\r\n        <img *ngIf=\"selectedImageFile\" class=\"selected-image shadow\" [src]=\"'getImage?imageId=' + selectedImageFile?.fullPath\" [alt]=\"selectedImageFile?.name\" />\r\n    </div>\r\n</div>\r\n\r\n\r\n<div class=\"row border center\">\r\n    <!-- Count -->\r\n    <strong>{{imagesFilesFiltered?.length || 0}} / {{imageFiles?.length || 0}}</strong>\r\n    <!-- Image Files filter -->\r\n    <anu-search-box classs=\"col-12\" [items]=\"imageFiles\" [keys]=\"['name']\"\r\n        (changed)=\"onImageListFilter($event)\"></anu-search-box>\r\n    <!-- Reload list  -->\r\n    <a class=\"spacing\" href=\"#\" (click)=\"refreshClick($event)\" title=\"Reload List\">⟳ Reload</a>\r\n</div>\r\n<div class=\"row border\">    \r\n    <ng-container *ngFor=\"let imgFile of imagesFilesFiltered\">\r\n        <anu-card \r\n        class=\"image-list-item border-round border col-sm-12 col-md-4 col-lg-4 relative\" \r\n        [style.background-image]=\"previewOnImages[imgFile.fullPath] ? 'url(\\'getImage?imageId=' + imgFile.fullPath + '\\')': 'none'\"\r\n        [class.shadow]=\"imgFile.fullPath === selectedImageFile?.fullPath\">  \r\n            <anu-card-title class=\"spacing-half image-list-item_title accent-deep-light\">\r\n                {{imgFile.name}}\r\n                <anu-spinner class=\"col-12\" [show]=\"loading?.imageFile ? loading.imageFile[imgFile?.fullPath]: false\"></anu-spinner>\r\n            </anu-card-title>\r\n            <anu-card-footer>\r\n                <div class=\"row right nowrap image-list-item_controls spacing-vertical-half spacing-horizontal\">\r\n                    <a class=\"image-list-item_control btn primary accent-deep-light\" href=\"#\" (click)=\"previewClick($event, imgFile)\" *ngIf=\"!previewOnImages[imgFile.fullPath]\" title=\"Preview\">👁</a>                    \r\n                    <a class=\"image-list-item_control btn primary accent-deep-light\" href=\"#\" (click)=\"selectClick($event, imgFile)\" *ngIf=\"imgFile.fullPath !== selectedImageFile?.fullPath\" title=\"select\">✔</a>\r\n                    <a class=\"image-list-item_control btn error accent-deep-light\" href=\"#\" (click)=\"deleteClick($event, imgFile)\" title=\"delete\">X</a>\r\n                </div>\r\n            </anu-card-footer>\r\n        </anu-card>\r\n    </ng-container>\r\n\r\n    <anu-card *ngIf=\"nextPageToken\" class=\"image-list-item border-round border spacing-half col-sm-12 col-md-4 col-lg-4 relative\">\r\n        <anu-card-body class=\"center center-text col-12\">\r\n            <a href=\"#\" (click)=\"loadMoreClick($event)\">Load more...</a>\r\n            <anu-spinner class=\"col-12\" [show]=\"loading.loadMore\"></anu-spinner>\r\n        </anu-card-body>        \r\n    </anu-card>\r\n    <anu-spinner class=\"col-12\" [show]=\"loading.imageFiles\"></anu-spinner>\r\n</div>\r\n\r\n<anu-modal \r\n    (okClick)=\"deleteImageOkClick()\"\r\n    (cancelClick)=\"deleteImageCancelClick()\"\r\n\t[cancelLabel]=\"'No'\"\r\n\t[enableCancel]='true'\r\n\t[enableClose]='true'\r\n\t[enableOk]='true'\r\n\t[okLabel]=\"'Yes'\"\r\n\t[opened]=\"deleteConfirmModalOpened\"\r\n\t[title]=\"'Confirm Image Deletion'\">\r\n\t<p>This will delete the image file permanently and can not be restored.</p>\r\n    <strong>Do you want to continue?</strong>\r\n</anu-modal>"
+        },
         {
             "name": "LoginComponent",
             "id": "component-LoginComponent-2b13fdbbcaac1f819f30db7936abf27f5c26bd69bc0f79f26050cc4b3ad3e8e9ac8944a6dcf3c584f1d8a8694aa8943e0c0ad9ed1e4e91cb22b0ebcd921cb8d6",
@@ -9745,13 +10852,13 @@
     "modules": [
         {
             "name": "FireAuthModule",
-            "id": "module-FireAuthModule-d96e7ab3c354d86ba3b4191a8ccb2bec05c441c881cd0dd26bbbb21a0bb16a12a7c7411eeee90d5a86cd143592c2298d0f5f542fc22bae46d9de055e73f1472e",
+            "id": "module-FireAuthModule-d66ad8a3a3226ccb03b7c36d549c0452a10b708d42a920752fe32e23acfcab7f576959139f8dab62242e95d521a8c95d41b95d0886390d0bc2984875dd0a20ad",
             "description": "",
             "deprecationMessage": "",
             "deprecated": false,
             "file": "projects/ngx-tools/fire-auth/src/fire-auth.module.ts",
             "methods": [],
-            "sourceCode": "\nimport { NgModule } from '@angular/core';\nimport { CommonModule } from '@angular/common';\nimport { RouterModule } from '@angular/router';\nimport { SpinnerModule } from '@annuadvent/ngx-common-ui/spinner';\nimport { ErrorModule } from '@annuadvent/ngx-common-ui/error';\nimport { LoginComponent } from './components/login/login.component';\nimport { LoginStatusComponent } from './components/login-status/login-status.component';\nimport { FireCommonModule } from '@annuadvent/ngx-tools/fire-common';\n\n\n\n\n@NgModule({\n  declarations: [\n    LoginComponent,\n    LoginStatusComponent,\n  ],\n  providers: [],\n  imports: [\n    CommonModule,\n    RouterModule,\n    SpinnerModule,\n    ErrorModule,\n    FireCommonModule,\n  ],\n  exports: [\n    LoginComponent,\n    LoginStatusComponent,\n  ],\n})\nexport class FireAuthModule { }\n",
+            "sourceCode": "\r\nimport { NgModule } from '@angular/core';\r\nimport { CommonModule } from '@angular/common';\r\nimport { RouterModule } from '@angular/router';\r\nimport { SpinnerModule } from '@annuadvent/ngx-common-ui/spinner';\r\nimport { ErrorModule } from '@annuadvent/ngx-common-ui/error';\r\nimport { LoginComponent } from './components/login/login.component';\r\nimport { LoginStatusComponent } from './components/login-status/login-status.component';\r\nimport { FireCommonModule } from '@annuadvent/ngx-tools/fire-common';\r\n\r\n\r\n\r\n\r\n@NgModule({\r\n  declarations: [\r\n    LoginComponent,\r\n    LoginStatusComponent,\r\n  ],\r\n  providers: [],\r\n  imports: [\r\n    CommonModule,\r\n    RouterModule,\r\n    SpinnerModule,\r\n    ErrorModule,\r\n    FireCommonModule,\r\n  ],\r\n  exports: [\r\n    LoginComponent,\r\n    LoginStatusComponent,\r\n  ],\r\n})\r\nexport class FireAuthModule { }\r\n",
             "children": [
                 {
                     "type": "providers",
@@ -9785,13 +10892,13 @@
         },
         {
             "name": "FireCmsModule",
-            "id": "module-FireCmsModule-623fec082733fb87772851e5d0d42aacb4f25120311896a01896a334e3fc16102054c4a688731c288eede1c6d4a3783e0ba6db1f8dc7bfd6c05f8c1923961489",
+            "id": "module-FireCmsModule-203ada44afe7a664786ca1b3d6f0f6deb5020f9a839e7d8114dac122499cbef84541f14e32e085d4a6de69a94b1eb7a34b9979385cd4439ff5d9c0289f492f4a",
             "description": "",
             "deprecationMessage": "",
             "deprecated": false,
             "file": "projects/ngx-tools/fire-cms/src/fire-cms.module.ts",
             "methods": [],
-            "sourceCode": "\nimport { NgModule } from '@angular/core';\nimport { CommonModule } from '@angular/common';\n\n\n@NgModule({\n  declarations: [],\n  providers: [],\n  imports: [\n    CommonModule\n  ]\n})\nexport class FireCmsModule { }\n",
+            "sourceCode": "\r\nimport { NgModule } from '@angular/core';\r\nimport { CommonModule } from '@angular/common';\r\n\r\n\r\n@NgModule({\r\n  declarations: [],\r\n  providers: [],\r\n  imports: [\r\n    CommonModule\r\n  ]\r\n})\r\nexport class FireCmsModule { }\r\n",
             "children": [
                 {
                     "type": "providers",
@@ -9821,13 +10928,13 @@
         },
         {
             "name": "FireCommonModule",
-            "id": "module-FireCommonModule-8017fc6f440a67750f24c717944f847d3721467cb39de8c72789ca6ff57095c62f1efdd23ea0a747d6d98ac2ad7141daf82442b02c4e9e4aed4f2f1bb004b5e8",
+            "id": "module-FireCommonModule-7088b570f44a8e801d5be50fe0e205aac29b4f57007bfe730404fc1efcd6a1710cc705e3aebe799c2a26c4d98b0aaa156b624ea004973942cebe32145fd56fcd",
             "description": "",
             "deprecationMessage": "",
             "deprecated": false,
             "file": "projects/ngx-tools/fire-common/src/fire-common.module.ts",
             "methods": [],
-            "sourceCode": "\nimport { NgModule } from '@angular/core';\nimport { CommonModule } from '@angular/common';\n\n\n\n@NgModule({\n  declarations: [],\n  providers: [],\n  imports: [\n    CommonModule,\n  ]\n})\nexport class FireCommonModule { }\n",
+            "sourceCode": "\r\nimport { NgModule } from '@angular/core';\r\nimport { CommonModule } from '@angular/common';\r\n\r\n\r\n\r\n@NgModule({\r\n  declarations: [],\r\n  providers: [],\r\n  imports: [\r\n    CommonModule,\r\n  ]\r\n})\r\nexport class FireCommonModule { }\r\n",
             "children": [
                 {
                     "type": "providers",
@@ -9857,13 +10964,13 @@
         },
         {
             "name": "FireStorageModule",
-            "id": "module-FireStorageModule-59f5a889c64977d6fd3c4dc9f4a15c89e5640bc17a4b5b79dbba60501cbff0458dd79e165e2266fa9c5d8296aa0eb4105e3b9a273970012dad38e00113cab03b",
+            "id": "module-FireStorageModule-8c15d9bf1c330f0351cbaccc8b14b8c0c6a368d78ac65d1ad3eb567f403ac721c44686c45247462e0bde200184fa8f11fc40e63f296eaa7eae3dd4b97656ba36",
             "description": "",
             "deprecationMessage": "",
             "deprecated": false,
             "file": "projects/ngx-tools/fire-storage/src/fire-storage.module.ts",
             "methods": [],
-            "sourceCode": "\nimport { NgModule } from '@angular/core';\nimport { CommonModule } from '@angular/common';\nimport { CardModule } from '@annuadvent/ngx-common-ui/card';\nimport { CollapsibleModule } from '@annuadvent/ngx-common-ui/collapsible';\nimport { CodeBlockModule } from '@annuadvent/ngx-common-ui/code-block';\nimport { ModalModule } from '@annuadvent/ngx-common-ui/modal';\nimport { SitemapComponent } from './components/sitemap/sitemap.component';\n\n\n\n@NgModule({\n  declarations: [SitemapComponent],\n  providers: [],\n  imports: [\n    CommonModule,\n    CardModule,\n    CollapsibleModule,\n    CodeBlockModule,\n    ModalModule,\n  ],\n  exports: [SitemapComponent],\n})\nexport class FireStorageModule { }\n",
+            "sourceCode": "\r\nimport { NgModule } from '@angular/core';\r\nimport { CommonModule } from '@angular/common';\r\nimport { CardModule } from '@annuadvent/ngx-common-ui/card';\r\nimport { CollapsibleModule } from '@annuadvent/ngx-common-ui/collapsible';\r\nimport { CodeBlockModule } from '@annuadvent/ngx-common-ui/code-block';\r\nimport { ModalModule } from '@annuadvent/ngx-common-ui/modal';\r\nimport { SitemapComponent } from './components/sitemap/sitemap.component';\r\nimport { SpinnerModule } from '@annuadvent/ngx-common-ui/spinner';\r\nimport { ErrorModule } from '@annuadvent/ngx-common-ui/error';\r\nimport { SearchBoxModule } from '@annuadvent/ngx-common-ui/search-box';\r\nimport { ImageBrowserComponent } from './components/image-browser/image-browser.component';\r\nimport { FormsModule } from '@angular/forms';\r\n\r\n\r\n\r\n@NgModule({\r\n  declarations: [\r\n    SitemapComponent,\r\n    ImageBrowserComponent,\r\n  ],\r\n  providers: [],\r\n  imports: [\r\n    CommonModule,\r\n    FormsModule,\r\n    CardModule,\r\n    CollapsibleModule,\r\n    CodeBlockModule,\r\n    ModalModule,\r\n    SpinnerModule,\r\n    ErrorModule,\r\n    SearchBoxModule,\r\n  ],\r\n  exports: [\r\n    SitemapComponent,\r\n    ImageBrowserComponent,\r\n  ],\r\n})\r\nexport class FireStorageModule { }\r\n",
             "children": [
                 {
                     "type": "providers",
@@ -9893,13 +11000,13 @@
         },
         {
             "name": "FireStoreModule",
-            "id": "module-FireStoreModule-83bb717616cb7ab7760778a40bbb726e7baaf8986684c55ef22ecf182b972def721bd19e65db0bbffeb33d7d1a26fa6acf1cd6b2e42fb2075e4ff6e92f68ad67",
+            "id": "module-FireStoreModule-15ead3046c34f29df09e3a0692c3b55a63fd611fdba8c11c726de61871cf6fc4d96331524750b5cdde9c0c0e9f9b1bd01240c42a3d2a585ff3724079da5b3c06",
             "description": "",
             "deprecationMessage": "",
             "deprecated": false,
             "file": "projects/ngx-tools/fire-store/src/fire-store.module.ts",
             "methods": [],
-            "sourceCode": "\nimport { NgModule } from '@angular/core';\nimport { CommonModule } from '@angular/common';\n\n@NgModule({\n  declarations: [],\n  providers: [],\n  imports: [\n    CommonModule\n  ]\n})\nexport class FireStoreModule { }\n",
+            "sourceCode": "\r\nimport { NgModule } from '@angular/core';\r\nimport { CommonModule } from '@angular/common';\r\n\r\n@NgModule({\r\n  declarations: [],\r\n  providers: [],\r\n  imports: [\r\n    CommonModule\r\n  ]\r\n})\r\nexport class FireStoreModule { }\r\n",
             "children": [
                 {
                     "type": "providers",
@@ -9929,13 +11036,13 @@
         },
         {
             "name": "OpenaiModule",
-            "id": "module-OpenaiModule-7a44bd08ba9561bfae9569cc5235bb59fec6930baf1e30cafe3855f582adec1a49a0c5a08124894d3882970a1f5dfe4f1ed38da89e71651d3f9dccdc527f0f41",
+            "id": "module-OpenaiModule-68195ff65452c2962efe1ffcfa5b9d7289b373b36ef4eedaed20a9c505bbfde65f54dc373e0ad1f874ce6a8d06894eaae365e6636e3cf1a9f1726eff705cdecf",
             "description": "",
             "deprecationMessage": "",
             "deprecated": false,
             "file": "projects/ngx-tools/openai/src/openai.module.ts",
             "methods": [],
-            "sourceCode": "\nimport { NgModule } from '@angular/core';\nimport { CommonModule } from '@angular/common';\nimport { FormsModule } from '@angular/forms';\nimport { CollapsibleModule } from '@annuadvent/ngx-common-ui/collapsible';\nimport { SpinnerModule } from '@annuadvent/ngx-common-ui/spinner';\n\nimport { OpenaiFormComponent } from './components/openai-form/openai-form.component';\nimport { OpenaiImageFormComponent } from './components/openai-image-form/openai-image-form.component';\n\n\n\n\n@NgModule({\n  declarations: [OpenaiFormComponent, OpenaiImageFormComponent],\n  providers: [],\n  imports: [\n    CommonModule,\n    FormsModule,\n    CollapsibleModule,\n    SpinnerModule,\n  ],\n  exports: [OpenaiFormComponent, OpenaiImageFormComponent],\n})\nexport class OpenaiModule { }\n",
+            "sourceCode": "\r\nimport { NgModule } from '@angular/core';\r\nimport { CommonModule } from '@angular/common';\r\nimport { FormsModule } from '@angular/forms';\r\nimport { CollapsibleModule } from '@annuadvent/ngx-common-ui/collapsible';\r\nimport { SpinnerModule } from '@annuadvent/ngx-common-ui/spinner';\r\n\r\nimport { OpenaiFormComponent } from './components/openai-form/openai-form.component';\r\nimport { OpenaiImageFormComponent } from './components/openai-image-form/openai-image-form.component';\r\n\r\n\r\n\r\n\r\n@NgModule({\r\n  declarations: [OpenaiFormComponent, OpenaiImageFormComponent],\r\n  providers: [],\r\n  imports: [\r\n    CommonModule,\r\n    FormsModule,\r\n    CollapsibleModule,\r\n    SpinnerModule,\r\n  ],\r\n  exports: [OpenaiFormComponent, OpenaiImageFormComponent],\r\n})\r\nexport class OpenaiModule { }\r\n",
             "children": [
                 {
                     "type": "providers",
@@ -10047,6 +11154,16 @@
                 "defaultValue": "{\r\n    EMAIL_LINK: \"emailLink\",\r\n    EMAIL_PASSWORD: \"password\",\r\n    FACEBOOK: \"facebook.com\",\r\n    GITHUB: \"github.com\",\r\n    GOOGLE: \"google.com\",\r\n    PHONE: \"phone\",\r\n    TWITTER: \"twitter.com\",\r\n}"
             },
             {
+                "name": "ImageBrowserComponent",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/ngx-tools/fire-storage/src/components/image-browser/image-browser.docs.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "any",
+                "defaultValue": "{\r\n    projectionContent: '',\r\n    inputPropsValues: {        \r\n        imageFiles: []\r\n    }\r\n}"
+            },
+            {
                 "name": "LIB_NAME",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
@@ -10125,6 +11242,16 @@
                 "deprecationMessage": "",
                 "type": "any",
                 "defaultValue": "{\r\n    projectionContent: '',\r\n    inputPropsValues: {}\r\n}"
+            },
+            {
+                "name": "PAGE_SIZE",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/ngx-tools/fire-storage/src/components/image-browser/image-browser.component.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "number",
+                "defaultValue": "30"
             },
             {
                 "name": "RUN_QUERY_KEYWORD",
@@ -10210,6 +11337,41 @@
         "functions": [],
         "typealiases": [],
         "enumerations": [
+            {
+                "name": "ImageBrowserLoaderEnum",
+                "childs": [
+                    {
+                        "name": "imageFile",
+                        "deprecated": false,
+                        "deprecationMessage": "",
+                        "value": "imageFile"
+                    },
+                    {
+                        "name": "imageFiles",
+                        "deprecated": false,
+                        "deprecationMessage": "",
+                        "value": "imageFiles"
+                    },
+                    {
+                        "name": "loadMore",
+                        "deprecated": false,
+                        "deprecationMessage": "",
+                        "value": "loadMore"
+                    },
+                    {
+                        "name": "uploadImageFile",
+                        "deprecated": false,
+                        "deprecationMessage": "",
+                        "value": "uploadImageFile"
+                    }
+                ],
+                "ctype": "miscellaneous",
+                "subtype": "enum",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "description": "",
+                "file": "projects/ngx-tools/fire-storage/src/enums/image-browser.enums.ts"
+            },
             {
                 "name": "OpenaiImageSize",
                 "childs": [
@@ -10645,6 +11807,18 @@
                     "defaultValue": "'sitemap.xml'"
                 }
             ],
+            "projects/ngx-tools/fire-storage/src/components/image-browser/image-browser.docs.ts": [
+                {
+                    "name": "ImageBrowserComponent",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/ngx-tools/fire-storage/src/components/image-browser/image-browser.docs.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "any",
+                    "defaultValue": "{\r\n    projectionContent: '',\r\n    inputPropsValues: {        \r\n        imageFiles: []\r\n    }\r\n}"
+                }
+            ],
             "projects/ngx-tools/public-api.ts": [
                 {
                     "name": "LIB_NAME",
@@ -10758,10 +11932,59 @@
                     "type": "any",
                     "defaultValue": "{\r\n    projectionContent: '',\r\n    inputPropsValues: {}\r\n}"
                 }
+            ],
+            "projects/ngx-tools/fire-storage/src/components/image-browser/image-browser.component.ts": [
+                {
+                    "name": "PAGE_SIZE",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/ngx-tools/fire-storage/src/components/image-browser/image-browser.component.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "number",
+                    "defaultValue": "30"
+                }
             ]
         },
         "groupedFunctions": {},
         "groupedEnumerations": {
+            "projects/ngx-tools/fire-storage/src/enums/image-browser.enums.ts": [
+                {
+                    "name": "ImageBrowserLoaderEnum",
+                    "childs": [
+                        {
+                            "name": "imageFile",
+                            "deprecated": false,
+                            "deprecationMessage": "",
+                            "value": "imageFile"
+                        },
+                        {
+                            "name": "imageFiles",
+                            "deprecated": false,
+                            "deprecationMessage": "",
+                            "value": "imageFiles"
+                        },
+                        {
+                            "name": "loadMore",
+                            "deprecated": false,
+                            "deprecationMessage": "",
+                            "value": "loadMore"
+                        },
+                        {
+                            "name": "uploadImageFile",
+                            "deprecated": false,
+                            "deprecationMessage": "",
+                            "value": "uploadImageFile"
+                        }
+                    ],
+                    "ctype": "miscellaneous",
+                    "subtype": "enum",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "description": "",
+                    "file": "projects/ngx-tools/fire-storage/src/enums/image-browser.enums.ts"
+                }
+            ],
             "projects/ngx-tools/openai/src/interfaces/openai.interface.ts": [
                 {
                     "name": "OpenaiImageSize",
@@ -11450,6 +12673,35 @@
                 "status": "low"
             },
             {
+                "filePath": "projects/ngx-tools/fire-storage/src/components/image-browser/image-browser.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "ImageBrowserComponent",
+                "coveragePercent": 3,
+                "coverageCount": "1/28",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/ngx-tools/fire-storage/src/components/image-browser/image-browser.component.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "PAGE_SIZE",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/ngx-tools/fire-storage/src/components/image-browser/image-browser.docs.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "ImageBrowserComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
                 "filePath": "projects/ngx-tools/fire-storage/src/components/sitemap/sitemap.component.ts",
                 "type": "component",
                 "linktype": "component",
@@ -11573,12 +12825,30 @@
                 "status": "low"
             },
             {
+                "filePath": "projects/ngx-tools/fire-storage/src/interfaces/image-browser.interface.ts",
+                "type": "interface",
+                "linktype": "interface",
+                "name": "ImageBrowserLoadings",
+                "coveragePercent": 0,
+                "coverageCount": "0/5",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/ngx-tools/fire-storage/src/interfaces/image-browser.interface.ts",
+                "type": "interface",
+                "linktype": "interface",
+                "name": "PreviewOnImages",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
                 "filePath": "projects/ngx-tools/fire-storage/src/services/fire-storage-image.service.ts",
                 "type": "injectable",
                 "linktype": "injectable",
                 "name": "FireStorageImageService",
                 "coveragePercent": 0,
-                "coverageCount": "0/13",
+                "coverageCount": "0/14",
                 "status": "low"
             },
             {
@@ -11588,6 +12858,15 @@
                 "name": "FireStorageSitemapService",
                 "coveragePercent": 0,
                 "coverageCount": "0/5",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/ngx-tools/fire-storage/src/services/image-browser.service.ts",
+                "type": "injectable",
+                "linktype": "injectable",
+                "name": "ImageBrowserService",
+                "coveragePercent": 0,
+                "coverageCount": "0/16",
                 "status": "low"
             },
             {

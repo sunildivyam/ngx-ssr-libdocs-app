@@ -19,7 +19,6 @@ import { ErrorComponent } from '@annuadvent/ngx-common-ui/error/src/components/e
 import { FiltersComponent } from '@annuadvent/ngx-common-ui/filters/src/components/filters/filters.docs';
 import { FooterNavComponent } from '@annuadvent/ngx-common-ui/footer-nav/src/components/footer-nav/footer-nav.docs';
 import { HamburgerComponent } from '@annuadvent/ngx-common-ui/hamburger/src/components/hamburger/hamburger.docs';
-import { ImageBrowserComponent } from '@annuadvent/ngx-common-ui/image-browser/src/components/image-browser/image-browser.docs';
 import { ImageFormComponent } from '@annuadvent/ngx-common-ui/image-form/src/components/image-form/image-form.docs';
 import { LinkFormComponent } from '@annuadvent/ngx-common-ui/link-form/src/components/link-form/link-form.docs';
 import { MenuComponent } from '@annuadvent/ngx-common-ui/menu/src/components/menu/menu.docs';
@@ -49,6 +48,7 @@ import { ArticleViewComponent } from '@annuadvent/ngx-cms/article-view/src/compo
 import { CategoryArticlesListComponent } from '@annuadvent/ngx-cms/category-articles-list/src/components/category-articles-list/category-articles-list.docs';
 import { CategoryComponent } from '@annuadvent/ngx-cms/category/src/components/category/category.docs';
 import { CategoryEditorComponent } from '@annuadvent/ngx-cms/category-editor/src/components/category-editor/category-editor.docs';
+import { CmsImageFormComponent } from '@annuadvent/ngx-cms/cms-image-form/src/components/cms-image-form/cms-image-form.docs';
 import { ContentEditorComponent } from '@annuadvent/ngx-cms/content-editor/src/components/content-editor/content-editor.docs';
 import { ContentElementComponent } from '@annuadvent/ngx-cms/content-editor/src/components/content-element/content-element.docs';
 import { LeafElementComponent } from '@annuadvent/ngx-cms/content-editor/src/components/leaf-element/leaf-element.docs';
@@ -58,6 +58,7 @@ import { OpenaiAutoArticlesComponent } from '@annuadvent/ngx-cms/openai-auto-art
 
 
 // ngx-tools imports
+import { ImageBrowserComponent } from '@annuadvent/ngx-tools/fire-storage/src/components/image-browser/image-browser.docs';
 import { LoginComponent } from '@annuadvent/ngx-tools/fire-auth/src/components/login/login.docs';
 import { LoginStatusComponent } from '@annuadvent/ngx-tools/fire-auth/src/components/login-status/login-status.docs';
 import { OpenaiFormComponent } from '@annuadvent/ngx-tools/openai/src/components/openai-form/openai-form.docs';
@@ -84,7 +85,6 @@ export const libComponentData = {
         FiltersComponent,
         FooterNavComponent,
         HamburgerComponent,
-        ImageBrowserComponent,
         ImageFormComponent,
         LinkFormComponent,
         MenuComponent,
@@ -114,6 +114,7 @@ export const libComponentData = {
         CategoryArticlesListComponent,
         CategoryComponent,
         CategoryEditorComponent,
+        CmsImageFormComponent,
         ContentEditorComponent,
         ContentElementComponent,
         LeafElementComponent,
@@ -123,6 +124,7 @@ export const libComponentData = {
 
     },
     'ngx-tools': {
+        ImageBrowserComponent,
         LoginComponent,
         LoginStatusComponent,
         OpenaiFormComponent,
