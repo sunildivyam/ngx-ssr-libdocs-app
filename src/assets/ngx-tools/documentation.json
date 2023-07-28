@@ -1261,6 +1261,18 @@
             "methods": []
         },
         {
+            "name": "Queue",
+            "id": "interface-Queue-8e214ca7feb93ad37d17a847743b40bc28af86c0a5d29baae1c2c9fd9322431544ca89fd93aeeea5364ee1baaae98d27433d75a1a91d9b4042458c9f02d620af",
+            "file": "projects/ngx-tools/queue/src/interfaces/queue.interface.ts",
+            "deprecated": false,
+            "deprecationMessage": "",
+            "type": "interface",
+            "sourceCode": "export interface Queue {\n}\n",
+            "properties": [],
+            "indexSignatures": [],
+            "methods": []
+        },
+        {
             "name": "Sitemap",
             "id": "interface-Sitemap-595ca0d674e1317ca1acff930e60ec73bf09240cd0c576b91baade356817ec676196960b2d65c69a25e45848ba822e8160cb307d86052633719546abc1991d67",
             "file": "projects/ngx-tools/fire-storage/src/interfaces/fire-storage-sitemap.interface.ts",
@@ -8504,7 +8516,7 @@
     "interceptors": [
         {
             "name": "ApiInterceptor",
-            "id": "injectable-ApiInterceptor-67356fd676a624c9a3d57b52986f6df22b47ee1b5c3d3a699b521676ddec981ef44fe9745f335b51f85673eb50625c9fd72de5998f3933c32570119276b98afa",
+            "id": "injectable-ApiInterceptor-853bbf51d0408d8783c773c4cd0d335aa75e64a22068be1f3b4bfe32ff05e8904fbb948f4ae854a343f2666fa68d7dec1c4b3cb7b419a38c0fa7e4f10d42b1a1",
             "file": "projects/ngx-tools/fire-auth/src/interceptors/api.interceptor.ts",
             "properties": [],
             "methods": [
@@ -8556,7 +8568,7 @@
             "deprecationMessage": "",
             "description": "",
             "rawdescription": "\n",
-            "sourceCode": "import { Injectable } from '@angular/core';\r\nimport {\r\n  HttpRequest,\r\n  HttpHandler,\r\n  HttpEvent,\r\n  HttpInterceptor,\r\n} from '@angular/common/http';\r\nimport { from, Observable, switchMap } from 'rxjs';\r\nimport { AppConfigService } from '@annuadvent/ngx-core/app-config';\r\nimport { FireAuthService } from '../services/fire-auth.service';\r\nimport { FirebaseConfig } from '@annuadvent/ngx-tools/fire-common';\r\n\r\n@Injectable({\r\n  providedIn: 'root',\r\n})\r\nexport class ApiInterceptor implements HttpInterceptor {\r\n\r\n  constructor(private appConfigService: AppConfigService, private fireAuthService: FireAuthService) { }\r\n\r\n  intercept(request: HttpRequest<unknown>, next: HttpHandler): Observable<HttpEvent<unknown>> {\r\n    if (request.url.includes(`/api/`)) {\r\n      const apiKey = (this.appConfigService.firebase as FirebaseConfig)?.app?.apiKey;\r\n      let clonedRequest = request.clone({\r\n        setParams: { key: apiKey }\r\n      });\r\n      if (this.fireAuthService.getCurrentUserId()) {\r\n        return from(this.fireAuthService.getAccessToken()).pipe(\r\n          switchMap(token => {\r\n            if (token) {\r\n              clonedRequest = clonedRequest.clone({ setHeaders: { Authorization: `Bearer ${token}` } });\r\n            }\r\n\r\n            return next.handle(clonedRequest);\r\n          })\r\n        )\r\n      } else {\r\n        return next.handle(clonedRequest);\r\n      }\r\n\r\n    } else {\r\n      return next.handle(request);\r\n    }\r\n  }\r\n}\r\n",
+            "sourceCode": "import { Injectable } from '@angular/core';\r\nimport {\r\n  HttpRequest,\r\n  HttpHandler,\r\n  HttpEvent,\r\n  HttpInterceptor,\r\n} from '@angular/common/http';\r\nimport { from, Observable, switchMap } from 'rxjs';\r\nimport { AppConfigService } from '@annuadvent/ngx-core/app-config';\r\nimport { FireAuthService } from '../services/fire-auth.service';\r\nimport { FirebaseConfig } from '@annuadvent/ngx-tools/fire-common';\r\n\r\n@Injectable({\r\n  providedIn: 'root',\r\n})\r\nexport class ApiInterceptor implements HttpInterceptor {\r\n\r\n  constructor(private appConfigService: AppConfigService, private fireAuthService: FireAuthService) { }\r\n\r\n  intercept(request: HttpRequest<unknown>, next: HttpHandler): Observable<HttpEvent<unknown>> {\r\n    if (request.url.includes(`/api/`)) {\r\n      const apiKey = (this.appConfigService.firebase as FirebaseConfig)?.app?.apiKey;\r\n      \r\n      let clonedRequest = request.clone({\r\n        setParams: { key: apiKey }\r\n      });\r\n\r\n      if (this.fireAuthService.getCurrentUserId()) {\r\n        return from(this.fireAuthService.getAccessToken()).pipe(\r\n          switchMap(token => {\r\n            if (token) {\r\n              clonedRequest = clonedRequest.clone({ setHeaders: { Authorization: `Bearer ${token}` } });\r\n            }\r\n\r\n            return next.handle(clonedRequest);\r\n          })\r\n        )\r\n      } else {\r\n        return next.handle(clonedRequest);\r\n      }\r\n\r\n    } else {\r\n      return next.handle(request);\r\n    }\r\n  }\r\n}\r\n",
             "constructorObj": {
                 "name": "constructor",
                 "description": "",
@@ -8827,13 +8839,1013 @@
             "outputsClass": [],
             "hostBindings": [],
             "hostListeners": []
+        },
+        {
+            "name": "Queue",
+            "id": "class-Queue-8b13305b20582e81b81122873090dd12ce73134228e830067dd0d1a7570723df41429d3b4965fdfdabc3a55adb9f26a2c2ddab1950c03acff935782e90d91e5c",
+            "file": "projects/ngx-tools/queue/src/classes/queue.class.ts",
+            "deprecated": false,
+            "deprecationMessage": "",
+            "type": "class",
+            "sourceCode": "import { BehaviorSubject, Observable } from \"rxjs\";\nimport { QueueItem } from \"./queue-item.class\";\nimport { QueueStatusEnum } from \"../enums/queue.enums\";\n\nexport class Queue {\n    // Subjects\n    private queue$: BehaviorSubject<Array<QueueItem>>;\n    private currentBatch$: BehaviorSubject<Array<QueueItem>>;\n    private status$: BehaviorSubject<QueueStatusEnum>;\n    private timer$: BehaviorSubject<number>;\n\n    private startTime: number = 0;\n    private batchSize: number = 0;\n    private minBatchTime: number = 0;\n    private batchStartTime: number = 0;\n    private interval: any = null;\n\n    constructor() {\n        // Init Subjects\n        this.queue$ = new BehaviorSubject<Array<QueueItem>>([]);\n        this.currentBatch$ = new BehaviorSubject<Array<QueueItem>>([]);\n        this.status$ = new BehaviorSubject<QueueStatusEnum>(QueueStatusEnum.notstarted);\n        this.timer$ = new BehaviorSubject<number>(0);\n    }\n\n    // Subjects public Value getters\n    public get queueValue(): Array<QueueItem> {\n        return this.queue$.value;\n    }\n\n    public get currentBatchValue(): Array<QueueItem> {\n        return this.currentBatch$.value;\n    }\n\n    public get statusValue(): QueueStatusEnum {\n        return this.status$.value;\n    }\n\n    public get timerValue(): number {\n        return this.timer$.value;\n    }\n\n    // Subjects Value getters as observables\n\n    public get queue(): Observable<Array<QueueItem>> {\n        return this.queue$.asObservable();\n    }\n\n    public get currentBatch(): Observable<Array<QueueItem>> {\n        return this.currentBatch$.asObservable();\n    }\n\n    public get status(): Observable<QueueStatusEnum> {\n        return this.status$.asObservable();\n    }\n\n    public get timer(): Observable<number> {\n        return this.timer$.asObservable();\n    }\n\n    // private methods\n    private getUniqueFromString(str: string = ''): string {\n        const rndStr = Math.random().toString(36).substring(2);\n        const uniqueId = Date.now().toString(36) + rndStr.substring(rndStr.length / 3);\n\n        return `${str}-${uniqueId}`;\n    }\n\n    private find(id: string): QueueItem {\n        return this.queue$.value.find(item => item.id === id);\n    }\n\n    // private canMethods\n    private canAdd(item: QueueItem): boolean {\n        const isExist = this.find(item?.id);\n\n        return !!(\n            item &&\n            item.id &&\n            !isExist &&\n            item.status === QueueStatusEnum.notstarted\n        );\n    }\n\n    private canRemove(item: QueueItem): boolean {\n        const isExist = this.find(item?.id);\n\n        return !!(\n            item &&\n            item.id &&\n            isExist &&\n            item.status === QueueStatusEnum.notstarted\n        );\n    }\n\n    private canUpdate(item: QueueItem): boolean {\n        const isExist = this.find(item?.id);\n\n        return !!(\n            item &&\n            item.id &&\n            isExist &&      // Update is allowed on existing item only\n            isExist.status !== QueueStatusEnum.completed && // if already completed, no change allowed\n            item.status !== QueueStatusEnum.notstarted  // Can not reset item to notstarted, once added to queue(as notstarted already)\n        );\n    }\n\n    private canClear(): boolean {\n        return [\n            QueueStatusEnum.notstarted,\n            QueueStatusEnum.completed,\n        ].includes(this.statusValue);\n    }\n\n    private canStart(): boolean {\n        return this.statusValue === QueueStatusEnum.notstarted;\n    }\n\n    private canPause(): boolean {\n        return this.statusValue === QueueStatusEnum.inprogress;\n    }\n\n    private canResume(): boolean {\n        return [\n            QueueStatusEnum.paused, // paused can be resumed\n            QueueStatusEnum.completed, // completed can also be resumed, assuming some items are added later, if still empty, will be paused again.\n        ].includes(this.statusValue);\n    }\n\n    private canNotifyCurrentItems(): boolean {\n        return this.statusValue === QueueStatusEnum.inprogress;\n    }\n\n    // private Notify change in subjects methods.\n\n    private notifyQueueChange(items: Array<QueueItem>): void {\n        const qItems = items.map(item => new QueueItem(item));\n\n        this.queue$.next(qItems);\n    }\n\n    private notifyBatchAndQueue(batch: Array<QueueItem>): void {\n        const statusUpdatedItems = this.queueValue.map(item => {\n            const match = batch.find(it => it.id === item.id);\n            match && match.start();\n\n            return match || item;\n        });\n\n        this.batchStartTime = Date.now();\n        this.currentBatch$.next(batch);\n        this.notifyQueueChange(statusUpdatedItems);\n    }\n\n    private notifyStatusChange(status: QueueStatusEnum): void {\n        this.status$.next(status);\n\n        if (status === QueueStatusEnum.inprogress) {\n            this.notifyCurrentBatchChange();\n        }\n    }\n\n    private notifyCurrentBatchChange(clear: boolean = false): void {\n        if (clear) {\n            this.currentBatch$.next([]);\n            return;\n        }\n\n        if (this.canNotifyCurrentItems()) {\n            const nextItems = this.getNextCurrentItems();\n\n            if (!nextItems?.length) {\n                // pause queue, if all items are processed.\n                this.pause();\n            } else if (this.batchStartTime === 0) {\n                this.notifyBatchAndQueue(nextItems);\n            } else {\n                const batchEllapsedTime = Date.now() - this.batchStartTime;\n\n                if (batchEllapsedTime < this.minBatchTime) {\n                    setTimeout(() => this.notifyBatchAndQueue(nextItems), this.minBatchTime - batchEllapsedTime);\n                } else {\n                    this.notifyBatchAndQueue(nextItems);\n                }\n            }\n        }\n    }\n\n    private getNextCurrentItems(): Array<QueueItem> {\n        const failedOrNotstartedInQueue = this.queueValue\n            .filter(item => [\n                QueueStatusEnum.failed,\n                QueueStatusEnum.notstarted,\n            ].includes(item.status));\n\n        return failedOrNotstartedInQueue.slice(0, this.batchSize);\n    }\n\n    // Public methods\n\n    public add(items: Array<QueueItem>): void {\n        const newItems = items.filter(item => this.canAdd(item));\n\n        return this.notifyQueueChange([...this.queueValue, ...newItems]);\n    }\n\n    public remove(items: Array<QueueItem>): void {\n        const itemIdsToRemove = items\n            .filter(item => this.canRemove(item))\n            .map(item => item.id);\n        const itemsAfterRemoval = this.queueValue\n            .filter(item => !itemIdsToRemove.includes(item.id));\n\n        this.notifyQueueChange(itemsAfterRemoval);\n    }\n\n    public update(items: Array<QueueItem>): void {\n        const itemIdsToUpdate = items\n            .filter(item => this.canUpdate(item))\n            .map(item => item.id);\n        const itemsAfterUpdate = this.queueValue\n            .map(item => {\n                if (itemIdsToUpdate.includes(item.id)) {\n                    const matchedItem = items.find(uItem => uItem.id === item.id);\n                    return matchedItem || item;\n                } else {\n                    return item;\n                }\n            });\n\n        this.notifyQueueChange(itemsAfterUpdate);\n    }\n\n    public updateQueueBatch(items: Array<QueueItem>): void {\n        const itemIdsToUpdate = items.map(item => item.id);\n        const currentBatchAfterUpdate = this.currentBatchValue\n            .map(item => {\n                if (itemIdsToUpdate.includes(item.id)) {\n                    const matchedItem = items.find(uItem => uItem.id === item.id);\n                    return matchedItem || item;\n                } else {\n                    return item;\n                }\n            });\n\n        // Update and notify queue only, but not current batch\n        this.update(items);\n\n        // if currentBatch is finished with completed or failed, then get Next batch and notify currentBatch\n        const isBatchFinished = !currentBatchAfterUpdate.find(item => item.status === QueueStatusEnum.inprogress);\n        if (isBatchFinished) {\n            // notify next batch\n            this.notifyCurrentBatchChange();\n        }\n    }\n\n    // public Queue interaction methods\n\n    public start(\n        batchSize: number = 1,\n        minBatchTime: number = 0, // seconds\n    ): void {\n        if (!this.canStart()) return;\n\n        this.interval = setInterval(() => this.timer$.next(this.startTime), 1000);\n        this.startTime = Date.now();\n        this.batchSize = batchSize;\n        this.minBatchTime = minBatchTime * 1000; // convert to milliseconds\n        this.notifyStatusChange(QueueStatusEnum.inprogress);\n    }\n\n    public pause(): void {\n        if (!this.canPause()) return;\n\n        this.notifyStatusChange(QueueStatusEnum.paused);\n    }\n\n\n    public resume(): void {\n        if (!this.canResume()) return;\n\n        this.notifyStatusChange(QueueStatusEnum.inprogress);\n    }\n\n    public clear(): void {\n        if (!this.canClear()) return;\n\n        this.interval && clearInterval(this.interval);\n        this.interval = null;\n\n        this.notifyQueueChange([]);\n        this.notifyStatusChange(QueueStatusEnum.paused);\n    }\n}\n\n",
+            "constructorObj": {
+                "name": "constructor",
+                "description": "",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "args": [],
+                "line": 16
+            },
+            "properties": [
+                {
+                    "name": "batchSize",
+                    "defaultValue": "0",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "number",
+                    "optional": false,
+                    "description": "",
+                    "line": 13,
+                    "modifierKind": [
+                        121
+                    ]
+                },
+                {
+                    "name": "batchStartTime",
+                    "defaultValue": "0",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "number",
+                    "optional": false,
+                    "description": "",
+                    "line": 15,
+                    "modifierKind": [
+                        121
+                    ]
+                },
+                {
+                    "name": "currentBatch$",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "BehaviorSubject<Array<QueueItem>>",
+                    "optional": false,
+                    "description": "",
+                    "line": 8,
+                    "modifierKind": [
+                        121
+                    ]
+                },
+                {
+                    "name": "interval",
+                    "defaultValue": "null",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "any",
+                    "optional": false,
+                    "description": "",
+                    "line": 16,
+                    "modifierKind": [
+                        121
+                    ]
+                },
+                {
+                    "name": "minBatchTime",
+                    "defaultValue": "0",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "number",
+                    "optional": false,
+                    "description": "",
+                    "line": 14,
+                    "modifierKind": [
+                        121
+                    ]
+                },
+                {
+                    "name": "queue$",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "BehaviorSubject<Array<QueueItem>>",
+                    "optional": false,
+                    "description": "",
+                    "line": 7,
+                    "modifierKind": [
+                        121
+                    ]
+                },
+                {
+                    "name": "startTime",
+                    "defaultValue": "0",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "number",
+                    "optional": false,
+                    "description": "",
+                    "line": 12,
+                    "modifierKind": [
+                        121
+                    ]
+                },
+                {
+                    "name": "status$",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "BehaviorSubject<QueueStatusEnum>",
+                    "optional": false,
+                    "description": "",
+                    "line": 9,
+                    "modifierKind": [
+                        121
+                    ]
+                },
+                {
+                    "name": "timer$",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "BehaviorSubject<number>",
+                    "optional": false,
+                    "description": "",
+                    "line": 10,
+                    "modifierKind": [
+                        121
+                    ]
+                }
+            ],
+            "methods": [
+                {
+                    "name": "add",
+                    "args": [
+                        {
+                            "name": "items",
+                            "type": "Array<QueueItem>",
+                            "deprecated": false,
+                            "deprecationMessage": ""
+                        }
+                    ],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 201,
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "modifierKind": [
+                        123
+                    ],
+                    "jsdoctags": [
+                        {
+                            "name": "items",
+                            "type": "Array<QueueItem>",
+                            "deprecated": false,
+                            "deprecationMessage": "",
+                            "tagName": {
+                                "text": "param"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "canAdd",
+                    "args": [
+                        {
+                            "name": "item",
+                            "type": "QueueItem",
+                            "deprecated": false,
+                            "deprecationMessage": ""
+                        }
+                    ],
+                    "optional": false,
+                    "returnType": "boolean",
+                    "typeParameters": [],
+                    "line": 74,
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "modifierKind": [
+                        121
+                    ],
+                    "jsdoctags": [
+                        {
+                            "name": "item",
+                            "type": "QueueItem",
+                            "deprecated": false,
+                            "deprecationMessage": "",
+                            "tagName": {
+                                "text": "param"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "canClear",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "boolean",
+                    "typeParameters": [],
+                    "line": 108,
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "modifierKind": [
+                        121
+                    ]
+                },
+                {
+                    "name": "canNotifyCurrentItems",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "boolean",
+                    "typeParameters": [],
+                    "line": 130,
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "modifierKind": [
+                        121
+                    ]
+                },
+                {
+                    "name": "canPause",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "boolean",
+                    "typeParameters": [],
+                    "line": 119,
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "modifierKind": [
+                        121
+                    ]
+                },
+                {
+                    "name": "canRemove",
+                    "args": [
+                        {
+                            "name": "item",
+                            "type": "QueueItem",
+                            "deprecated": false,
+                            "deprecationMessage": ""
+                        }
+                    ],
+                    "optional": false,
+                    "returnType": "boolean",
+                    "typeParameters": [],
+                    "line": 85,
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "modifierKind": [
+                        121
+                    ],
+                    "jsdoctags": [
+                        {
+                            "name": "item",
+                            "type": "QueueItem",
+                            "deprecated": false,
+                            "deprecationMessage": "",
+                            "tagName": {
+                                "text": "param"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "canResume",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "boolean",
+                    "typeParameters": [],
+                    "line": 123,
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "modifierKind": [
+                        121
+                    ]
+                },
+                {
+                    "name": "canStart",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "boolean",
+                    "typeParameters": [],
+                    "line": 115,
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "modifierKind": [
+                        121
+                    ]
+                },
+                {
+                    "name": "canUpdate",
+                    "args": [
+                        {
+                            "name": "item",
+                            "type": "QueueItem",
+                            "deprecated": false,
+                            "deprecationMessage": ""
+                        }
+                    ],
+                    "optional": false,
+                    "returnType": "boolean",
+                    "typeParameters": [],
+                    "line": 96,
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "modifierKind": [
+                        121
+                    ],
+                    "jsdoctags": [
+                        {
+                            "name": "item",
+                            "type": "QueueItem",
+                            "deprecated": false,
+                            "deprecationMessage": "",
+                            "tagName": {
+                                "text": "param"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "clear",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 285,
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "modifierKind": [
+                        123
+                    ]
+                },
+                {
+                    "name": "find",
+                    "args": [
+                        {
+                            "name": "id",
+                            "type": "string",
+                            "deprecated": false,
+                            "deprecationMessage": ""
+                        }
+                    ],
+                    "optional": false,
+                    "returnType": "QueueItem",
+                    "typeParameters": [],
+                    "line": 69,
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "modifierKind": [
+                        121
+                    ],
+                    "jsdoctags": [
+                        {
+                            "name": "id",
+                            "type": "string",
+                            "deprecated": false,
+                            "deprecationMessage": "",
+                            "tagName": {
+                                "text": "param"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "getNextCurrentItems",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "Array<QueueItem>",
+                    "typeParameters": [],
+                    "line": 189,
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "modifierKind": [
+                        121
+                    ]
+                },
+                {
+                    "name": "getUniqueFromString",
+                    "args": [
+                        {
+                            "name": "str",
+                            "type": "string",
+                            "deprecated": false,
+                            "deprecationMessage": "",
+                            "defaultValue": "''"
+                        }
+                    ],
+                    "optional": false,
+                    "returnType": "string",
+                    "typeParameters": [],
+                    "line": 62,
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "modifierKind": [
+                        121
+                    ],
+                    "jsdoctags": [
+                        {
+                            "name": "str",
+                            "type": "string",
+                            "deprecated": false,
+                            "deprecationMessage": "",
+                            "defaultValue": "''",
+                            "tagName": {
+                                "text": "param"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "notifyBatchAndQueue",
+                    "args": [
+                        {
+                            "name": "batch",
+                            "type": "Array<QueueItem>",
+                            "deprecated": false,
+                            "deprecationMessage": ""
+                        }
+                    ],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 142,
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "modifierKind": [
+                        121
+                    ],
+                    "jsdoctags": [
+                        {
+                            "name": "batch",
+                            "type": "Array<QueueItem>",
+                            "deprecated": false,
+                            "deprecationMessage": "",
+                            "tagName": {
+                                "text": "param"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "notifyCurrentBatchChange",
+                    "args": [
+                        {
+                            "name": "clear",
+                            "type": "boolean",
+                            "deprecated": false,
+                            "deprecationMessage": "",
+                            "defaultValue": "false"
+                        }
+                    ],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 163,
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "modifierKind": [
+                        121
+                    ],
+                    "jsdoctags": [
+                        {
+                            "name": "clear",
+                            "type": "boolean",
+                            "deprecated": false,
+                            "deprecationMessage": "",
+                            "defaultValue": "false",
+                            "tagName": {
+                                "text": "param"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "notifyQueueChange",
+                    "args": [
+                        {
+                            "name": "items",
+                            "type": "Array<QueueItem>",
+                            "deprecated": false,
+                            "deprecationMessage": ""
+                        }
+                    ],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 136,
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "modifierKind": [
+                        121
+                    ],
+                    "jsdoctags": [
+                        {
+                            "name": "items",
+                            "type": "Array<QueueItem>",
+                            "deprecated": false,
+                            "deprecationMessage": "",
+                            "tagName": {
+                                "text": "param"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "notifyStatusChange",
+                    "args": [
+                        {
+                            "name": "status",
+                            "type": "QueueStatusEnum",
+                            "deprecated": false,
+                            "deprecationMessage": ""
+                        }
+                    ],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 155,
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "modifierKind": [
+                        121
+                    ],
+                    "jsdoctags": [
+                        {
+                            "name": "status",
+                            "type": "QueueStatusEnum",
+                            "deprecated": false,
+                            "deprecationMessage": "",
+                            "tagName": {
+                                "text": "param"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "pause",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 272,
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "modifierKind": [
+                        123
+                    ]
+                },
+                {
+                    "name": "remove",
+                    "args": [
+                        {
+                            "name": "items",
+                            "type": "Array<QueueItem>",
+                            "deprecated": false,
+                            "deprecationMessage": ""
+                        }
+                    ],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 207,
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "modifierKind": [
+                        123
+                    ],
+                    "jsdoctags": [
+                        {
+                            "name": "items",
+                            "type": "Array<QueueItem>",
+                            "deprecated": false,
+                            "deprecationMessage": "",
+                            "tagName": {
+                                "text": "param"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "resume",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 279,
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "modifierKind": [
+                        123
+                    ]
+                },
+                {
+                    "name": "start",
+                    "args": [
+                        {
+                            "name": "batchSize",
+                            "type": "number",
+                            "deprecated": false,
+                            "deprecationMessage": "",
+                            "defaultValue": "1"
+                        },
+                        {
+                            "name": "minBatchTime",
+                            "type": "number",
+                            "deprecated": false,
+                            "deprecationMessage": "",
+                            "defaultValue": "0"
+                        }
+                    ],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 259,
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "modifierKind": [
+                        123
+                    ],
+                    "jsdoctags": [
+                        {
+                            "name": "batchSize",
+                            "type": "number",
+                            "deprecated": false,
+                            "deprecationMessage": "",
+                            "defaultValue": "1",
+                            "tagName": {
+                                "text": "param"
+                            }
+                        },
+                        {
+                            "name": "minBatchTime",
+                            "type": "number",
+                            "deprecated": false,
+                            "deprecationMessage": "",
+                            "defaultValue": "0",
+                            "tagName": {
+                                "text": "param"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "update",
+                    "args": [
+                        {
+                            "name": "items",
+                            "type": "Array<QueueItem>",
+                            "deprecated": false,
+                            "deprecationMessage": ""
+                        }
+                    ],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 217,
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "modifierKind": [
+                        123
+                    ],
+                    "jsdoctags": [
+                        {
+                            "name": "items",
+                            "type": "Array<QueueItem>",
+                            "deprecated": false,
+                            "deprecationMessage": "",
+                            "tagName": {
+                                "text": "param"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "updateQueueBatch",
+                    "args": [
+                        {
+                            "name": "items",
+                            "type": "Array<QueueItem>",
+                            "deprecated": false,
+                            "deprecationMessage": ""
+                        }
+                    ],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 234,
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "modifierKind": [
+                        123
+                    ],
+                    "jsdoctags": [
+                        {
+                            "name": "items",
+                            "type": "Array<QueueItem>",
+                            "deprecated": false,
+                            "deprecationMessage": "",
+                            "tagName": {
+                                "text": "param"
+                            }
+                        }
+                    ]
+                }
+            ],
+            "indexSignatures": [],
+            "accessors": {
+                "queueValue": {
+                    "name": "queueValue",
+                    "getSignature": {
+                        "name": "queueValue",
+                        "type": "",
+                        "returnType": "Array<QueueItem>",
+                        "line": 27
+                    }
+                },
+                "currentBatchValue": {
+                    "name": "currentBatchValue",
+                    "getSignature": {
+                        "name": "currentBatchValue",
+                        "type": "",
+                        "returnType": "Array<QueueItem>",
+                        "line": 31
+                    }
+                },
+                "statusValue": {
+                    "name": "statusValue",
+                    "getSignature": {
+                        "name": "statusValue",
+                        "type": "",
+                        "returnType": "QueueStatusEnum",
+                        "line": 35
+                    }
+                },
+                "timerValue": {
+                    "name": "timerValue",
+                    "getSignature": {
+                        "name": "timerValue",
+                        "type": "number",
+                        "returnType": "number",
+                        "line": 39
+                    }
+                },
+                "queue": {
+                    "name": "queue",
+                    "getSignature": {
+                        "name": "queue",
+                        "type": "",
+                        "returnType": "Observable<Array<QueueItem>>",
+                        "line": 45
+                    }
+                },
+                "currentBatch": {
+                    "name": "currentBatch",
+                    "getSignature": {
+                        "name": "currentBatch",
+                        "type": "",
+                        "returnType": "Observable<Array<QueueItem>>",
+                        "line": 49
+                    }
+                },
+                "status": {
+                    "name": "status",
+                    "getSignature": {
+                        "name": "status",
+                        "type": "",
+                        "returnType": "Observable<QueueStatusEnum>",
+                        "line": 53
+                    }
+                },
+                "timer": {
+                    "name": "timer",
+                    "getSignature": {
+                        "name": "timer",
+                        "type": "",
+                        "returnType": "Observable<number>",
+                        "line": 57
+                    }
+                }
+            },
+            "inputsClass": [],
+            "outputsClass": [],
+            "hostBindings": [],
+            "hostListeners": []
+        },
+        {
+            "name": "QueueItem",
+            "id": "class-QueueItem-dcc113701b46ead008fb3c91c7ffc1c52c6d400419a16528e72361e2d2ed158f8dcbebdd2a43c1d26a186f231699acea76f74aa31fe1be6e32542b8a7b19c155",
+            "file": "projects/ngx-tools/queue/src/classes/queue-item.class.ts",
+            "deprecated": false,
+            "deprecationMessage": "",
+            "type": "class",
+            "sourceCode": "import { QueueStatusEnum } from \"../enums/queue.enums\";\n\nexport class QueueItem {\n    id: string = '';\n    data: any;\n    status: QueueStatusEnum = QueueStatusEnum.notstarted;\n    startTime: number = 0;\n    completedTime: number = 0;\n\n    constructor(\n        idOrQueueItem: string | QueueItem = '',\n        data: any = null,\n        status: QueueStatusEnum = QueueStatusEnum.notstarted,\n        startTime: number = 0,\n        completedTime: number = 0,\n    ) {\n        if (!idOrQueueItem) return;\n\n\n        if (typeof idOrQueueItem === 'string') {\n            // if id is provided, then fill oitem with rest of the params\n            this.id = idOrQueueItem as string;\n            this.data = data;\n            this.status = status;\n            this.startTime = startTime;\n            this.completedTime = completedTime;\n        } else {\n            // if QueueItem object is provided, then ignore other params, and fill from object\n            const { id, data, status, startTime, completedTime } = idOrQueueItem;\n\n            this.id = id;\n            this.data = data;\n            this.status = status;\n            this.startTime = startTime;\n            this.completedTime = completedTime;\n        }\n    }\n\n\n    public get timeEllapsed(): number {\n        if (this.startTime === 0) return 0;\n\n        return Math.round((this.completedTime > 0 ?\n            this.completedTime - this.startTime :\n            Date.now() - this.startTime) / 1000);\n    }\n\n    public start(): void {\n        this.status = QueueStatusEnum.inprogress;\n        this.startTime = Date.now();\n    }\n\n    public complete(): void {\n        this.status = QueueStatusEnum.completed;\n        this.completedTime = Date.now();\n    }\n\n    public fail(): void {\n        this.status = QueueStatusEnum.failed;\n        this.completedTime = Date.now();\n    }\n}\n",
+            "constructorObj": {
+                "name": "constructor",
+                "description": "",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "args": [
+                    {
+                        "name": "idOrQueueItem",
+                        "type": "string | QueueItem",
+                        "deprecated": false,
+                        "deprecationMessage": "",
+                        "defaultValue": "''"
+                    },
+                    {
+                        "name": "data",
+                        "type": "any",
+                        "deprecated": false,
+                        "deprecationMessage": "",
+                        "defaultValue": "null"
+                    },
+                    {
+                        "name": "status",
+                        "type": "QueueStatusEnum",
+                        "deprecated": false,
+                        "deprecationMessage": "",
+                        "defaultValue": "QueueStatusEnum.notstarted"
+                    },
+                    {
+                        "name": "startTime",
+                        "type": "number",
+                        "deprecated": false,
+                        "deprecationMessage": "",
+                        "defaultValue": "0"
+                    },
+                    {
+                        "name": "completedTime",
+                        "type": "number",
+                        "deprecated": false,
+                        "deprecationMessage": "",
+                        "defaultValue": "0"
+                    }
+                ],
+                "line": 8,
+                "jsdoctags": [
+                    {
+                        "name": "idOrQueueItem",
+                        "type": "string | QueueItem",
+                        "deprecated": false,
+                        "deprecationMessage": "",
+                        "defaultValue": "''",
+                        "tagName": {
+                            "text": "param"
+                        }
+                    },
+                    {
+                        "name": "data",
+                        "type": "any",
+                        "deprecated": false,
+                        "deprecationMessage": "",
+                        "defaultValue": "null",
+                        "tagName": {
+                            "text": "param"
+                        }
+                    },
+                    {
+                        "name": "status",
+                        "type": "QueueStatusEnum",
+                        "deprecated": false,
+                        "deprecationMessage": "",
+                        "defaultValue": "QueueStatusEnum.notstarted",
+                        "tagName": {
+                            "text": "param"
+                        }
+                    },
+                    {
+                        "name": "startTime",
+                        "type": "number",
+                        "deprecated": false,
+                        "deprecationMessage": "",
+                        "defaultValue": "0",
+                        "tagName": {
+                            "text": "param"
+                        }
+                    },
+                    {
+                        "name": "completedTime",
+                        "type": "number",
+                        "deprecated": false,
+                        "deprecationMessage": "",
+                        "defaultValue": "0",
+                        "tagName": {
+                            "text": "param"
+                        }
+                    }
+                ]
+            },
+            "properties": [
+                {
+                    "name": "completedTime",
+                    "defaultValue": "0",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "number",
+                    "optional": false,
+                    "description": "",
+                    "line": 8
+                },
+                {
+                    "name": "data",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "any",
+                    "optional": false,
+                    "description": "",
+                    "line": 5
+                },
+                {
+                    "name": "id",
+                    "defaultValue": "''",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "string",
+                    "optional": false,
+                    "description": "",
+                    "line": 4
+                },
+                {
+                    "name": "startTime",
+                    "defaultValue": "0",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "number",
+                    "optional": false,
+                    "description": "",
+                    "line": 7
+                },
+                {
+                    "name": "status",
+                    "defaultValue": "QueueStatusEnum.notstarted",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "QueueStatusEnum",
+                    "optional": false,
+                    "description": "",
+                    "line": 6
+                }
+            ],
+            "methods": [
+                {
+                    "name": "complete",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 53,
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "modifierKind": [
+                        123
+                    ]
+                },
+                {
+                    "name": "fail",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 58,
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "modifierKind": [
+                        123
+                    ]
+                },
+                {
+                    "name": "start",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 48,
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "modifierKind": [
+                        123
+                    ]
+                }
+            ],
+            "indexSignatures": [],
+            "accessors": {
+                "timeEllapsed": {
+                    "name": "timeEllapsed",
+                    "getSignature": {
+                        "name": "timeEllapsed",
+                        "type": "number",
+                        "returnType": "number",
+                        "line": 40
+                    }
+                }
+            },
+            "inputsClass": [],
+            "outputsClass": [],
+            "hostBindings": [],
+            "hostListeners": []
         }
     ],
     "directives": [],
     "components": [
         {
             "name": "ImageBrowserComponent",
-            "id": "component-ImageBrowserComponent-c4c474cf0d8c9b40589fc73e749a795ba6a38d7b095cebc02de79181f699be147edefc63a5e25c405dc4505d94b17ecfdea8f36960fab42b4ffcd4136f150829",
+            "id": "component-ImageBrowserComponent-976f5cfd467ef3c164ab9e84421ccaf8c81e06168dc3800f80226f7700998298ad63126d6947c5ee3eb4b4887ae81a4a86d1d7780dcf239f961accfacea087ff",
             "file": "projects/ngx-tools/fire-storage/src/components/image-browser/image-browser.component.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -8871,7 +9883,7 @@
                     "type": "any",
                     "optional": false,
                     "description": "",
-                    "line": 40
+                    "line": 42
                 },
                 {
                     "name": "choosenFileName",
@@ -8881,7 +9893,7 @@
                     "type": "string",
                     "optional": false,
                     "description": "",
-                    "line": 39
+                    "line": 41
                 },
                 {
                     "name": "deleteConfirmModalOpened",
@@ -8891,7 +9903,7 @@
                     "type": "boolean",
                     "optional": false,
                     "description": "",
-                    "line": 45
+                    "line": 47
                 },
                 {
                     "name": "error",
@@ -8900,7 +9912,7 @@
                     "type": "any",
                     "optional": false,
                     "description": "",
-                    "line": 43
+                    "line": 45
                 },
                 {
                     "name": "fileEl",
@@ -8931,6 +9943,16 @@
                     "line": 37
                 },
                 {
+                    "name": "imagesFilesFilteredCount",
+                    "defaultValue": "0",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "number",
+                    "optional": false,
+                    "description": "",
+                    "line": 38
+                },
+                {
                     "name": "loading",
                     "defaultValue": "{}",
                     "deprecated": false,
@@ -8938,7 +9960,7 @@
                     "type": "ImageBrowserLoadings",
                     "optional": false,
                     "description": "",
-                    "line": 44
+                    "line": 46
                 },
                 {
                     "name": "nextPageToken",
@@ -8948,7 +9970,7 @@
                     "type": "any",
                     "optional": false,
                     "description": "",
-                    "line": 41
+                    "line": 43
                 },
                 {
                     "name": "previewOnImages",
@@ -8978,7 +10000,7 @@
                     "type": "ImageFileInfo",
                     "optional": false,
                     "description": "",
-                    "line": 46
+                    "line": 48
                 },
                 {
                     "name": "uploadHelpText",
@@ -8988,187 +10010,12 @@
                     "type": "string",
                     "optional": false,
                     "description": "",
-                    "line": 38
+                    "line": 40
                 }
             ],
             "methodsClass": [
                 {
                     "name": "deleteClick",
-                    "args": [
-                        {
-                            "name": "event",
-                            "type": "any",
-                            "deprecated": false,
-                            "deprecationMessage": ""
-                        },
-                        {
-                            "name": "imageFile",
-                            "type": "ImageFileInfo",
-                            "deprecated": false,
-                            "deprecationMessage": ""
-                        }
-                    ],
-                    "optional": false,
-                    "returnType": "void",
-                    "typeParameters": [],
-                    "line": 148,
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "modifierKind": [
-                        123
-                    ],
-                    "jsdoctags": [
-                        {
-                            "name": "event",
-                            "type": "any",
-                            "deprecated": false,
-                            "deprecationMessage": "",
-                            "tagName": {
-                                "text": "param"
-                            }
-                        },
-                        {
-                            "name": "imageFile",
-                            "type": "ImageFileInfo",
-                            "deprecated": false,
-                            "deprecationMessage": "",
-                            "tagName": {
-                                "text": "param"
-                            }
-                        }
-                    ]
-                },
-                {
-                    "name": "deleteImageCancelClick",
-                    "args": [],
-                    "optional": false,
-                    "returnType": "void",
-                    "typeParameters": [],
-                    "line": 143,
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "modifierKind": [
-                        123
-                    ]
-                },
-                {
-                    "name": "deleteImageOkClick",
-                    "args": [],
-                    "optional": false,
-                    "returnType": "void",
-                    "typeParameters": [],
-                    "line": 128,
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "modifierKind": [
-                        123
-                    ]
-                },
-                {
-                    "name": "loadMoreClick",
-                    "args": [
-                        {
-                            "name": "event",
-                            "type": "any",
-                            "deprecated": false,
-                            "deprecationMessage": ""
-                        }
-                    ],
-                    "optional": false,
-                    "returnType": "void",
-                    "typeParameters": [],
-                    "line": 116,
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "modifierKind": [
-                        123
-                    ],
-                    "jsdoctags": [
-                        {
-                            "name": "event",
-                            "type": "any",
-                            "deprecated": false,
-                            "deprecationMessage": "",
-                            "tagName": {
-                                "text": "param"
-                            }
-                        }
-                    ]
-                },
-                {
-                    "name": "ngOnInit",
-                    "args": [],
-                    "optional": false,
-                    "returnType": "void",
-                    "typeParameters": [],
-                    "line": 68,
-                    "deprecated": false,
-                    "deprecationMessage": ""
-                },
-                {
-                    "name": "onFileChange",
-                    "args": [
-                        {
-                            "name": "event",
-                            "type": "any",
-                            "deprecated": false,
-                            "deprecationMessage": ""
-                        }
-                    ],
-                    "optional": false,
-                    "returnType": "void",
-                    "typeParameters": [],
-                    "line": 159,
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "modifierKind": [
-                        123
-                    ],
-                    "jsdoctags": [
-                        {
-                            "name": "event",
-                            "type": "any",
-                            "deprecated": false,
-                            "deprecationMessage": "",
-                            "tagName": {
-                                "text": "param"
-                            }
-                        }
-                    ]
-                },
-                {
-                    "name": "onImageListFilter",
-                    "args": [
-                        {
-                            "name": "imageFilesFiltered",
-                            "type": "Array<object>",
-                            "deprecated": false,
-                            "deprecationMessage": ""
-                        }
-                    ],
-                    "optional": false,
-                    "returnType": "void",
-                    "typeParameters": [],
-                    "line": 95,
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "modifierKind": [
-                        123
-                    ],
-                    "jsdoctags": [
-                        {
-                            "name": "imageFilesFiltered",
-                            "type": "Array<object>",
-                            "deprecated": false,
-                            "deprecationMessage": "",
-                            "tagName": {
-                                "text": "param"
-                            }
-                        }
-                    ]
-                },
-                {
-                    "name": "previewClick",
                     "args": [
                         {
                             "name": "event",
@@ -9214,6 +10061,181 @@
                     ]
                 },
                 {
+                    "name": "deleteImageCancelClick",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 149,
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "modifierKind": [
+                        123
+                    ]
+                },
+                {
+                    "name": "deleteImageOkClick",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 134,
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "modifierKind": [
+                        123
+                    ]
+                },
+                {
+                    "name": "loadMoreClick",
+                    "args": [
+                        {
+                            "name": "event",
+                            "type": "any",
+                            "deprecated": false,
+                            "deprecationMessage": ""
+                        }
+                    ],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 122,
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "modifierKind": [
+                        123
+                    ],
+                    "jsdoctags": [
+                        {
+                            "name": "event",
+                            "type": "any",
+                            "deprecated": false,
+                            "deprecationMessage": "",
+                            "tagName": {
+                                "text": "param"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "ngOnInit",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 70,
+                    "deprecated": false,
+                    "deprecationMessage": ""
+                },
+                {
+                    "name": "onFileChange",
+                    "args": [
+                        {
+                            "name": "event",
+                            "type": "any",
+                            "deprecated": false,
+                            "deprecationMessage": ""
+                        }
+                    ],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 165,
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "modifierKind": [
+                        123
+                    ],
+                    "jsdoctags": [
+                        {
+                            "name": "event",
+                            "type": "any",
+                            "deprecated": false,
+                            "deprecationMessage": "",
+                            "tagName": {
+                                "text": "param"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "onImageListFilter",
+                    "args": [
+                        {
+                            "name": "imageFilesFiltered",
+                            "type": "Array<object>",
+                            "deprecated": false,
+                            "deprecationMessage": ""
+                        }
+                    ],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 97,
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "modifierKind": [
+                        123
+                    ],
+                    "jsdoctags": [
+                        {
+                            "name": "imageFilesFiltered",
+                            "type": "Array<object>",
+                            "deprecated": false,
+                            "deprecationMessage": "",
+                            "tagName": {
+                                "text": "param"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "previewClick",
+                    "args": [
+                        {
+                            "name": "event",
+                            "type": "any",
+                            "deprecated": false,
+                            "deprecationMessage": ""
+                        },
+                        {
+                            "name": "imageFile",
+                            "type": "ImageFileInfo",
+                            "deprecated": false,
+                            "deprecationMessage": ""
+                        }
+                    ],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 160,
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "modifierKind": [
+                        123
+                    ],
+                    "jsdoctags": [
+                        {
+                            "name": "event",
+                            "type": "any",
+                            "deprecated": false,
+                            "deprecationMessage": "",
+                            "tagName": {
+                                "text": "param"
+                            }
+                        },
+                        {
+                            "name": "imageFile",
+                            "type": "ImageFileInfo",
+                            "deprecated": false,
+                            "deprecationMessage": "",
+                            "tagName": {
+                                "text": "param"
+                            }
+                        }
+                    ]
+                },
+                {
                     "name": "refreshClick",
                     "args": [
                         {
@@ -9226,7 +10248,7 @@
                     "optional": false,
                     "returnType": "void",
                     "typeParameters": [],
-                    "line": 99,
+                    "line": 105,
                     "deprecated": false,
                     "deprecationMessage": "",
                     "modifierKind": [
@@ -9263,7 +10285,7 @@
                     "optional": false,
                     "returnType": "void",
                     "typeParameters": [],
-                    "line": 111,
+                    "line": 117,
                     "deprecated": false,
                     "deprecationMessage": "",
                     "modifierKind": [
@@ -9324,7 +10346,7 @@
                     "optional": false,
                     "returnType": "void",
                     "typeParameters": [],
-                    "line": 71,
+                    "line": 73,
                     "deprecated": false,
                     "deprecationMessage": "",
                     "modifierKind": [
@@ -9378,7 +10400,7 @@
                     "optional": false,
                     "returnType": "void",
                     "typeParameters": [],
-                    "line": 167,
+                    "line": 173,
                     "deprecated": false,
                     "deprecationMessage": "",
                     "modifierKind": [
@@ -9398,7 +10420,7 @@
                     "optional": false,
                     "returnType": "void",
                     "typeParameters": [],
-                    "line": 174,
+                    "line": 180,
                     "deprecated": false,
                     "deprecationMessage": "",
                     "modifierKind": [
@@ -9426,7 +10448,7 @@
             "description": "<p>Image Browser component allows logged in user to browse, select and upload images to fire store.\nImage Browser is implemented upon Image Browser service (ImageBrowserService), that exposes observables\nto listen to any changes to the components data.</p>\n<p>So It is recommended to use ImageBrowserService and its exposed observables to work with this component.</p>\n",
             "rawdescription": "\n\nImage Browser component allows logged in user to browse, select and upload images to fire store.\nImage Browser is implemented upon Image Browser service (ImageBrowserService), that exposes observables\nto listen to any changes to the components data.\n\nSo It is recommended to use ImageBrowserService and its exposed observables to work with this component.\n",
             "type": "component",
-            "sourceCode": "import {\r\n  Component,\r\n  ElementRef,\r\n  EventEmitter,\r\n  Input,\r\n  OnInit,\r\n  Output,\r\n  ViewChild,\r\n} from '@angular/core';\r\nimport { ImageBrowserService } from '../../services/image-browser.service';\r\nimport { ImageFileInfo } from '../../interfaces/fire-storage-image.interface';\r\nimport { ImageBrowserLoaderEnum } from '../../enums/image-browser.enums';\r\nimport { ImageBrowserLoadings, PreviewOnImages } from '../../interfaces/image-browser.interface';\r\n\r\nconst PAGE_SIZE = 30;\r\n\r\n/**\r\n * Image Browser component allows logged in user to browse, select and upload images to fire store.\r\n * Image Browser is implemented upon Image Browser service (ImageBrowserService), that exposes observables \r\n * to listen to any changes to the components data.\r\n * \r\n * So It is recommended to use ImageBrowserService and its exposed observables to work with this component.\r\n */\r\n\r\n@Component({\r\n  selector: 'anu-image-browser',\r\n  templateUrl: './image-browser.component.html',\r\n  styleUrls: ['./image-browser.component.scss'],\r\n})\r\nexport class ImageBrowserComponent implements OnInit {\r\n  @ViewChild('fileInput') fileEl: ElementRef;\r\n  @Input() imageFiles: Array<ImageFileInfo> = [];\r\n\r\n  selectedImageFile: ImageFileInfo = null;\r\n  previewOnImages: PreviewOnImages = {};\r\n\r\n  imagesFilesFiltered: Array<ImageFileInfo> = [];  \r\n  uploadHelpText: string = '';\r\n  choosenFileName: string = '';\r\n  choosenFile: any = null;\r\n  nextPageToken: any = null;\r\n\r\n  error: any;\r\n  loading: ImageBrowserLoadings = {};\r\n  deleteConfirmModalOpened: boolean = false;\r\n  toDeleteImageFile: ImageFileInfo = null;\r\n\r\n\r\n  constructor(private imageBrowserService: ImageBrowserService) { \r\n    this.imageBrowserService.pageSize = PAGE_SIZE;\r\n\r\n    // Subscriptions\r\n    this.imageBrowserService.imageFiles.subscribe((imageFiles => {\r\n      this.imageFiles = imageFiles;\r\n      this.nextPageToken = this.imageBrowserService.nextPageToken;\r\n      this.uploadHelpText = this.imageBrowserService.uploadValidationText;\r\n    }));\r\n\r\n    this.imageBrowserService.selected.subscribe((imageFile => {\r\n      this.selectedImageFile = imageFile;\r\n    }));\r\n\r\n    this.imageBrowserService.previewOnImages.subscribe((previewOnImages => {\r\n      this.previewOnImages = previewOnImages;\r\n    }));\r\n  }\r\n\r\n  ngOnInit(): void {    \r\n  }\r\n\r\n  private setErrorAndLoading(loaderName: ImageBrowserLoaderEnum, err: any = null, loading: boolean = true, subLoaderName: string = ''): void {\r\n    if(err) {\r\n      this.error = {code: err.code || err.status || 'UNKNOWN', message: err.message || err.text || err.toString()};\r\n    } else {\r\n      this.error = null;\r\n    }\r\n    if(subLoaderName) {\r\n      this.loading.imageFile = this.loading.imageFile || {};\r\n      this.loading.imageFile[subLoaderName] = loading;\r\n    } else {\r\n      switch(loaderName) {\r\n        case ImageBrowserLoaderEnum.imageFiles:\r\n          this.loading.imageFiles = loading;\r\n          break;\r\n        case ImageBrowserLoaderEnum.loadMore:\r\n          this.loading.loadMore = loading;\r\n          break;\r\n        case ImageBrowserLoaderEnum.uploadImageFile:\r\n          this.loading.uploadImageFile = loading;\r\n          break; \r\n      }      \r\n    }    \r\n  }\r\n  \r\n  public onImageListFilter(imageFilesFiltered: Array<object>): void {\r\n    this.imagesFilesFiltered = imageFilesFiltered as Array<ImageFileInfo>;\r\n  }\r\n\r\n  public refreshClick(event: any) {\r\n    event.preventDefault();\r\n    this.setErrorAndLoading(ImageBrowserLoaderEnum.imageFiles);\r\n    this.imageBrowserService.refreshList()\r\n    .then(() => {\r\n      this.setErrorAndLoading(ImageBrowserLoaderEnum.imageFiles, null, false);\r\n    },\r\n    (err) => {\r\n      this.setErrorAndLoading(ImageBrowserLoaderEnum.imageFiles, err, false);\r\n    });    \r\n  }\r\n\r\n  public selectClick(event: any, imageFile: ImageFileInfo): void {\r\n    event.preventDefault();\r\n    this.imageBrowserService.selectImageFile(imageFile);\r\n  }\r\n\r\n  public loadMoreClick(event: any) {\r\n    event.preventDefault();\r\n    this.setErrorAndLoading(ImageBrowserLoaderEnum.loadMore);\r\n    this.imageBrowserService.loadMore()\r\n    .then(() => {\r\n      this.setErrorAndLoading(ImageBrowserLoaderEnum.loadMore, null, false);\r\n    },\r\n    (err) => {\r\n      this.setErrorAndLoading(ImageBrowserLoaderEnum.loadMore, err, false);\r\n    }); \r\n  }\r\n\r\n  public deleteImageOkClick(): void {\r\n    this.deleteConfirmModalOpened = false;\r\n\r\n    this.setErrorAndLoading(ImageBrowserLoaderEnum.imageFile, null, true, this.toDeleteImageFile.fullPath);\r\n    this.imageBrowserService.delete(this.toDeleteImageFile)\r\n    .then(() => {\r\n      this.setErrorAndLoading(ImageBrowserLoaderEnum.imageFile, null, false, this.toDeleteImageFile.fullPath);\r\n      this.toDeleteImageFile = null;\r\n    },\r\n    (err) => {\r\n      this.setErrorAndLoading(ImageBrowserLoaderEnum.imageFile, err, false, this.toDeleteImageFile.fullPath);\r\n      this.toDeleteImageFile = null;\r\n    }); \r\n  }\r\n\r\n  public deleteImageCancelClick(): void {\r\n    this.deleteConfirmModalOpened = false;\r\n    this.toDeleteImageFile = null;\r\n  }\r\n\r\n  public deleteClick(event: any, imageFile: ImageFileInfo): void {\r\n    event.preventDefault();\r\n    this.deleteConfirmModalOpened = true;\r\n    this.toDeleteImageFile = imageFile;\r\n  }\r\n\r\n  public previewClick(event: any, imageFile: ImageFileInfo): void {\r\n    event.preventDefault();\r\n    this.imageBrowserService.previewImageFile(imageFile.fullPath)\r\n  }\r\n\r\n  public onFileChange(event: any) {\r\n    this.choosenFileName = '';\r\n    if (event.target.files.length > 0) {\r\n      this.choosenFile = event.target.files[0];\r\n      this.choosenFileName = this.choosenFile.name;            \r\n    }\r\n  }\r\n\r\n  public uploadClick(): void {\r\n    const fileInputEl = this.fileEl.nativeElement;\r\n    fileInputEl.value = '';\r\n    this.choosenFileName = '';\r\n    fileInputEl.click();\r\n  }\r\n\r\n  public uploadFileClick(event: any): void {\r\n    event.preventDefault();\r\n    if(!this.choosenFileName || !this.choosenFile) return;\r\n\r\n    this.setErrorAndLoading(ImageBrowserLoaderEnum.uploadImageFile);    \r\n      this.imageBrowserService.upload( this.choosenFileName || this.choosenFile.name, this.choosenFile)\r\n      .then((imageFile: ImageFileInfo) => {\r\n        this.imageBrowserService.selectImageFile(imageFile);\r\n        this.setErrorAndLoading(ImageBrowserLoaderEnum.uploadImageFile, null, false);\r\n      },\r\n      (err) => {\r\n        this.setErrorAndLoading(ImageBrowserLoaderEnum.uploadImageFile, err, false);\r\n      }); \r\n  }\r\n}\r\n",
+            "sourceCode": "import {\r\n  Component,\r\n  ElementRef,\r\n  EventEmitter,\r\n  Input,\r\n  OnInit,\r\n  Output,\r\n  ViewChild,\r\n} from '@angular/core';\r\nimport { ImageBrowserService } from '../../services/image-browser.service';\r\nimport { ImageFileInfo } from '../../interfaces/fire-storage-image.interface';\r\nimport { ImageBrowserLoaderEnum } from '../../enums/image-browser.enums';\r\nimport { ImageBrowserLoadings, PreviewOnImages } from '../../interfaces/image-browser.interface';\r\n\r\nconst PAGE_SIZE = 30;\r\n\r\n/**\r\n * Image Browser component allows logged in user to browse, select and upload images to fire store.\r\n * Image Browser is implemented upon Image Browser service (ImageBrowserService), that exposes observables \r\n * to listen to any changes to the components data.\r\n * \r\n * So It is recommended to use ImageBrowserService and its exposed observables to work with this component.\r\n */\r\n\r\n@Component({\r\n  selector: 'anu-image-browser',\r\n  templateUrl: './image-browser.component.html',\r\n  styleUrls: ['./image-browser.component.scss'],\r\n})\r\nexport class ImageBrowserComponent implements OnInit {\r\n  @ViewChild('fileInput') fileEl: ElementRef;\r\n  @Input() imageFiles: Array<ImageFileInfo> = [];\r\n\r\n  selectedImageFile: ImageFileInfo = null;\r\n  previewOnImages: PreviewOnImages = {};\r\n\r\n  imagesFilesFiltered: Array<ImageFileInfo> = [];  \r\n  imagesFilesFilteredCount: number = 0;\r\n\r\n  uploadHelpText: string = '';\r\n  choosenFileName: string = '';\r\n  choosenFile: any = null;\r\n  nextPageToken: any = null;\r\n\r\n  error: any;\r\n  loading: ImageBrowserLoadings = {};\r\n  deleteConfirmModalOpened: boolean = false;\r\n  toDeleteImageFile: ImageFileInfo = null;\r\n\r\n\r\n  constructor(private imageBrowserService: ImageBrowserService) { \r\n    this.imageBrowserService.pageSize = PAGE_SIZE;\r\n\r\n    // Subscriptions\r\n    this.imageBrowserService.imageFiles.subscribe((imageFiles => {\r\n      this.imageFiles = imageFiles;\r\n      this.nextPageToken = this.imageBrowserService.nextPageToken;\r\n      this.uploadHelpText = this.imageBrowserService.uploadValidationText;\r\n    }));\r\n\r\n    this.imageBrowserService.selected.subscribe((imageFile => {\r\n      this.selectedImageFile = imageFile;\r\n    }));\r\n\r\n    this.imageBrowserService.previewOnImages.subscribe((previewOnImages => {\r\n      this.previewOnImages = previewOnImages;\r\n    }));\r\n  }\r\n\r\n  ngOnInit(): void {    \r\n  }\r\n\r\n  private setErrorAndLoading(loaderName: ImageBrowserLoaderEnum, err: any = null, loading: boolean = true, subLoaderName: string = ''): void {\r\n    if(err) {\r\n      this.error = {code: err.code || err.status || 'UNKNOWN', message: err.message || err.text || err.toString()};\r\n    } else {\r\n      this.error = null;\r\n    }\r\n    if(subLoaderName) {\r\n      this.loading.imageFile = this.loading.imageFile || {};\r\n      this.loading.imageFile[subLoaderName] = loading;\r\n    } else {\r\n      switch(loaderName) {\r\n        case ImageBrowserLoaderEnum.imageFiles:\r\n          this.loading.imageFiles = loading;\r\n          break;\r\n        case ImageBrowserLoaderEnum.loadMore:\r\n          this.loading.loadMore = loading;\r\n          break;\r\n        case ImageBrowserLoaderEnum.uploadImageFile:\r\n          this.loading.uploadImageFile = loading;\r\n          break; \r\n      }      \r\n    }    \r\n  }\r\n  \r\n  public onImageListFilter(imageFilesFiltered: Array<object>): void {\r\n    this.imagesFilesFiltered = imageFilesFiltered as Array<ImageFileInfo>;\r\n    \r\n    setTimeout(() => {\r\n      this.imagesFilesFilteredCount = this.imagesFilesFiltered?.length || 0;\r\n    })\r\n  }\r\n\r\n  public refreshClick(event: any) {\r\n    event.preventDefault();\r\n    this.setErrorAndLoading(ImageBrowserLoaderEnum.imageFiles);\r\n    this.imageBrowserService.refreshList()\r\n    .then(() => {\r\n      this.setErrorAndLoading(ImageBrowserLoaderEnum.imageFiles, null, false);\r\n    },\r\n    (err) => {\r\n      this.setErrorAndLoading(ImageBrowserLoaderEnum.imageFiles, err, false);\r\n    });    \r\n  }\r\n\r\n  public selectClick(event: any, imageFile: ImageFileInfo): void {\r\n    event.preventDefault();\r\n    this.imageBrowserService.selectImageFile(imageFile);\r\n  }\r\n\r\n  public loadMoreClick(event: any) {\r\n    event.preventDefault();\r\n    this.setErrorAndLoading(ImageBrowserLoaderEnum.loadMore);\r\n    this.imageBrowserService.loadMore()\r\n    .then(() => {\r\n      this.setErrorAndLoading(ImageBrowserLoaderEnum.loadMore, null, false);\r\n    },\r\n    (err) => {\r\n      this.setErrorAndLoading(ImageBrowserLoaderEnum.loadMore, err, false);\r\n    }); \r\n  }\r\n\r\n  public deleteImageOkClick(): void {\r\n    this.deleteConfirmModalOpened = false;\r\n\r\n    this.setErrorAndLoading(ImageBrowserLoaderEnum.imageFile, null, true, this.toDeleteImageFile.fullPath);\r\n    this.imageBrowserService.delete(this.toDeleteImageFile)\r\n    .then(() => {\r\n      this.setErrorAndLoading(ImageBrowserLoaderEnum.imageFile, null, false, this.toDeleteImageFile.fullPath);\r\n      this.toDeleteImageFile = null;\r\n    },\r\n    (err) => {\r\n      this.setErrorAndLoading(ImageBrowserLoaderEnum.imageFile, err, false, this.toDeleteImageFile.fullPath);\r\n      this.toDeleteImageFile = null;\r\n    }); \r\n  }\r\n\r\n  public deleteImageCancelClick(): void {\r\n    this.deleteConfirmModalOpened = false;\r\n    this.toDeleteImageFile = null;\r\n  }\r\n\r\n  public deleteClick(event: any, imageFile: ImageFileInfo): void {\r\n    event.preventDefault();\r\n    this.deleteConfirmModalOpened = true;\r\n    this.toDeleteImageFile = imageFile;\r\n  }\r\n\r\n  public previewClick(event: any, imageFile: ImageFileInfo): void {\r\n    event.preventDefault();\r\n    this.imageBrowserService.previewImageFile(imageFile.fullPath)\r\n  }\r\n\r\n  public onFileChange(event: any) {\r\n    this.choosenFileName = '';\r\n    if (event.target.files.length > 0) {\r\n      this.choosenFile = event.target.files[0];\r\n      this.choosenFileName = this.choosenFile.name;            \r\n    }\r\n  }\r\n\r\n  public uploadClick(): void {\r\n    const fileInputEl = this.fileEl.nativeElement;\r\n    fileInputEl.value = '';\r\n    this.choosenFileName = '';\r\n    fileInputEl.click();\r\n  }\r\n\r\n  public uploadFileClick(event: any): void {\r\n    event.preventDefault();\r\n    if(!this.choosenFileName || !this.choosenFile) return;\r\n\r\n    this.setErrorAndLoading(ImageBrowserLoaderEnum.uploadImageFile);    \r\n      this.imageBrowserService.upload( this.choosenFileName || this.choosenFile.name, this.choosenFile)\r\n      .then((imageFile: ImageFileInfo) => {\r\n        this.imageBrowserService.selectImageFile(imageFile);\r\n        this.setErrorAndLoading(ImageBrowserLoaderEnum.uploadImageFile, null, false);\r\n      },\r\n      (err) => {\r\n        this.setErrorAndLoading(ImageBrowserLoaderEnum.uploadImageFile, err, false);\r\n      }); \r\n  }\r\n}\r\n",
             "assetsDirs": [],
             "styleUrlsData": [
                 {
@@ -9448,7 +10470,7 @@
                         "deprecationMessage": ""
                     }
                 ],
-                "line": 46,
+                "line": 48,
                 "jsdoctags": [
                     {
                         "name": "imageBrowserService",
@@ -9464,7 +10486,7 @@
             "implements": [
                 "OnInit"
             ],
-            "templateData": "<anu-error class=\"container\" *ngIf=\"error\" [code]=\"error?.code\" [message]=\"error?.message\"></anu-error>\r\n\r\n<div class=\"row\">\r\n    <div class=\"col-sm-12 col-md-6 col-lg-6\">\r\n        <anu-card class=\"border-round shadow spacing-half relative\">\r\n            <anu-card-title>\r\n                <h3>Upload Image</h3>\r\n            </anu-card-title>\r\n            <anu-card-body>                \r\n                <span *ngIf=\"uploadHelpText\"><small>{{uploadHelpText}}</small></span>\r\n                <div class=\"form-group container center\">\r\n                    <input #fileInput id=\"file\" type=\"file\" class=\"\" (change)=\"onFileChange($event)\" />\r\n                    <input type=\"button\" class=\"btn\" (click)=\"uploadClick()\" value=\"Choose file to upload...\">\r\n                    <input type=\"text\" class=\"spacing-around-vertical-half\" [(ngModel)]=\"choosenFileName\" placeholder=\"No image to upload\"/>\r\n                    <a class=\"btn primary spacing-around-vertical-half\" href=\"#\" (click)=\"uploadFileClick($event)\" title=\"Upload\">Upload</a>\r\n                </div>\r\n                <anu-spinner class=\"col-12\" [show]=\"loading.uploadImageFile\"></anu-spinner>\r\n            </anu-card-body>\r\n        </anu-card>\r\n    </div>\r\n    <div class=\"col-sm-12 col-md-6 col-lg-6\">\r\n        <img *ngIf=\"selectedImageFile\" class=\"selected-image shadow\" [src]=\"'getImage?imageId=' + selectedImageFile?.fullPath\" [alt]=\"selectedImageFile?.name\" />\r\n    </div>\r\n</div>\r\n\r\n\r\n<div class=\"row border center\">\r\n    <!-- Count -->\r\n    <strong>{{imagesFilesFiltered?.length || 0}} / {{imageFiles?.length || 0}}</strong>\r\n    <!-- Image Files filter -->\r\n    <anu-search-box classs=\"col-12\" [items]=\"imageFiles\" [keys]=\"['name']\"\r\n        (changed)=\"onImageListFilter($event)\"></anu-search-box>\r\n    <!-- Reload list  -->\r\n    <a class=\"spacing\" href=\"#\" (click)=\"refreshClick($event)\" title=\"Reload List\">⟳ Reload</a>\r\n</div>\r\n<div class=\"row border\">    \r\n    <ng-container *ngFor=\"let imgFile of imagesFilesFiltered\">\r\n        <anu-card \r\n        class=\"image-list-item border-round border col-sm-12 col-md-4 col-lg-4 relative\" \r\n        [style.background-image]=\"previewOnImages[imgFile.fullPath] ? 'url(\\'getImage?imageId=' + imgFile.fullPath + '\\')': 'none'\"\r\n        [class.shadow]=\"imgFile.fullPath === selectedImageFile?.fullPath\">  \r\n            <anu-card-title class=\"spacing-half image-list-item_title accent-deep-light\">\r\n                {{imgFile.name}}\r\n                <anu-spinner class=\"col-12\" [show]=\"loading?.imageFile ? loading.imageFile[imgFile?.fullPath]: false\"></anu-spinner>\r\n            </anu-card-title>\r\n            <anu-card-footer>\r\n                <div class=\"row right nowrap image-list-item_controls spacing-vertical-half spacing-horizontal\">\r\n                    <a class=\"image-list-item_control btn primary accent-deep-light\" href=\"#\" (click)=\"previewClick($event, imgFile)\" *ngIf=\"!previewOnImages[imgFile.fullPath]\" title=\"Preview\">👁</a>                    \r\n                    <a class=\"image-list-item_control btn primary accent-deep-light\" href=\"#\" (click)=\"selectClick($event, imgFile)\" *ngIf=\"imgFile.fullPath !== selectedImageFile?.fullPath\" title=\"select\">✔</a>\r\n                    <a class=\"image-list-item_control btn error accent-deep-light\" href=\"#\" (click)=\"deleteClick($event, imgFile)\" title=\"delete\">X</a>\r\n                </div>\r\n            </anu-card-footer>\r\n        </anu-card>\r\n    </ng-container>\r\n\r\n    <anu-card *ngIf=\"nextPageToken\" class=\"image-list-item border-round border spacing-half col-sm-12 col-md-4 col-lg-4 relative\">\r\n        <anu-card-body class=\"center center-text col-12\">\r\n            <a href=\"#\" (click)=\"loadMoreClick($event)\">Load more...</a>\r\n            <anu-spinner class=\"col-12\" [show]=\"loading.loadMore\"></anu-spinner>\r\n        </anu-card-body>        \r\n    </anu-card>\r\n    <anu-spinner class=\"col-12\" [show]=\"loading.imageFiles\"></anu-spinner>\r\n</div>\r\n\r\n<anu-modal \r\n    (okClick)=\"deleteImageOkClick()\"\r\n    (cancelClick)=\"deleteImageCancelClick()\"\r\n\t[cancelLabel]=\"'No'\"\r\n\t[enableCancel]='true'\r\n\t[enableClose]='true'\r\n\t[enableOk]='true'\r\n\t[okLabel]=\"'Yes'\"\r\n\t[opened]=\"deleteConfirmModalOpened\"\r\n\t[title]=\"'Confirm Image Deletion'\">\r\n\t<p>This will delete the image file permanently and can not be restored.</p>\r\n    <strong>Do you want to continue?</strong>\r\n</anu-modal>"
+            "templateData": "<anu-error class=\"container\" *ngIf=\"error\" [code]=\"error?.code\" [message]=\"error?.message\"></anu-error>\r\n\r\n<div class=\"row\">\r\n    <div class=\"col-sm-12 col-md-6 col-lg-6\">\r\n        <anu-card class=\"border-round shadow spacing-half relative\">\r\n            <anu-card-title>\r\n                <h3>Upload Image</h3>\r\n            </anu-card-title>\r\n            <anu-card-body>                \r\n                <span *ngIf=\"uploadHelpText\"><small>{{uploadHelpText}}</small></span>\r\n                <div class=\"form-group container center\">\r\n                    <input #fileInput id=\"file\" type=\"file\" class=\"\" (change)=\"onFileChange($event)\" />\r\n                    <input type=\"button\" class=\"btn\" (click)=\"uploadClick()\" value=\"Choose file to upload...\">\r\n                    <input type=\"text\" class=\"spacing-around-vertical-half\" [(ngModel)]=\"choosenFileName\" placeholder=\"No image to upload\"/>\r\n                    <a class=\"btn primary spacing-around-vertical-half\" href=\"#\" (click)=\"uploadFileClick($event)\" title=\"Upload\">Upload</a>\r\n                </div>\r\n                <anu-spinner class=\"col-12\" [show]=\"loading.uploadImageFile\"></anu-spinner>\r\n            </anu-card-body>\r\n        </anu-card>\r\n    </div>\r\n    <div class=\"col-sm-12 col-md-6 col-lg-6\">\r\n        <img *ngIf=\"selectedImageFile\" class=\"selected-image shadow\" [src]=\"'getImage?imageId=' + selectedImageFile?.fullPath\" [alt]=\"selectedImageFile?.name\" />\r\n    </div>\r\n</div>\r\n\r\n\r\n<div class=\"row border center\">\r\n    <!-- Count -->\r\n    <strong>{{imagesFilesFilteredCount}} / {{imageFiles?.length || 0}}</strong>\r\n    <!-- Image Files filter -->\r\n    <anu-search-box classs=\"col-12\" [items]=\"imageFiles\" [keys]=\"['name']\"\r\n        (changed)=\"onImageListFilter($event)\"></anu-search-box>\r\n    <!-- Reload list  -->\r\n    <a class=\"spacing\" href=\"#\" (click)=\"refreshClick($event)\" title=\"Reload List\">⟳ Reload</a>\r\n</div>\r\n<div class=\"row border\">    \r\n    <ng-container *ngFor=\"let imgFile of imagesFilesFiltered\">\r\n        <anu-card \r\n        class=\"image-list-item border-round border col-sm-12 col-md-4 col-lg-4 relative\" \r\n        [style.background-image]=\"previewOnImages[imgFile.fullPath] ? 'url(\\'getImage?imageId=' + imgFile.fullPath + '\\')': 'none'\"\r\n        [class.shadow]=\"imgFile.fullPath === selectedImageFile?.fullPath\">  \r\n            <anu-card-title class=\"spacing-half image-list-item_title accent-deep-light\">\r\n                {{imgFile.name}}\r\n                <anu-spinner class=\"col-12\" [show]=\"loading?.imageFile ? loading.imageFile[imgFile?.fullPath]: false\"></anu-spinner>\r\n            </anu-card-title>\r\n            <anu-card-footer>\r\n                <div class=\"row right nowrap image-list-item_controls spacing-vertical-half spacing-horizontal\">\r\n                    <a class=\"image-list-item_control btn primary accent-deep-light\" href=\"#\" (click)=\"previewClick($event, imgFile)\" *ngIf=\"!previewOnImages[imgFile.fullPath]\" title=\"Preview\">👁</a>                    \r\n                    <a class=\"image-list-item_control btn primary accent-deep-light\" href=\"#\" (click)=\"selectClick($event, imgFile)\" *ngIf=\"imgFile.fullPath !== selectedImageFile?.fullPath\" title=\"select\">✔</a>\r\n                    <a class=\"image-list-item_control btn error accent-deep-light\" href=\"#\" (click)=\"deleteClick($event, imgFile)\" title=\"delete\">X</a>\r\n                </div>\r\n            </anu-card-footer>\r\n        </anu-card>\r\n    </ng-container>\r\n\r\n    <anu-card *ngIf=\"nextPageToken\" class=\"image-list-item border-round border spacing-half col-sm-12 col-md-4 col-lg-4 relative\">\r\n        <anu-card-body class=\"center center-text col-12\">\r\n            <a href=\"#\" (click)=\"loadMoreClick($event)\">Load more...</a>\r\n            <anu-spinner class=\"col-12\" [show]=\"loading.loadMore\"></anu-spinner>\r\n        </anu-card-body>        \r\n    </anu-card>\r\n    <anu-spinner class=\"col-12\" [show]=\"loading.imageFiles\"></anu-spinner>\r\n</div>\r\n\r\n<anu-modal \r\n    (okClick)=\"deleteImageOkClick()\"\r\n    (cancelClick)=\"deleteImageCancelClick()\"\r\n\t[cancelLabel]=\"'No'\"\r\n\t[enableCancel]='true'\r\n\t[enableClose]='true'\r\n\t[enableOk]='true'\r\n\t[okLabel]=\"'Yes'\"\r\n\t[opened]=\"deleteConfirmModalOpened\"\r\n\t[modalTitle]=\"'Confirm Image Deletion'\">\r\n\t<p>This will delete the image file permanently and can not be restored.</p>\r\n    <strong>Do you want to continue?</strong>\r\n</anu-modal>"
         },
         {
             "name": "LoginComponent",
@@ -10242,7 +11264,7 @@
         },
         {
             "name": "OpenaiImageFormComponent",
-            "id": "component-OpenaiImageFormComponent-f7412c268ce4e8a3cf41c9acce7fd210f2de389c00109f0504555007b5ca925fc36ffcac668081d04bc81ec341a92542fb5cf283dabbc40e98b69b52e783dd7e",
+            "id": "component-OpenaiImageFormComponent-3394edd534e7d2e669cd79e3bc6cb7bd4bdb3ddf6c3f405ca87a31bd18bd98b508ca10e5f4aa50aac2eada5aaf1802e29825166f6ccf53fd99905bc85eeba39a",
             "file": "projects/ngx-tools/openai/src/components/openai-image-form/openai-image-form.component.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -10265,7 +11287,7 @@
                     "defaultValue": "''",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "line": 12,
+                    "line": 14,
                     "type": "string",
                     "decorators": []
                 },
@@ -10274,18 +11296,26 @@
                     "defaultValue": "''",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "line": 11,
+                    "line": 13,
                     "type": "string",
                     "decorators": []
                 }
             ],
             "outputsClass": [
                 {
+                    "name": "fileUploaded",
+                    "defaultValue": "new EventEmitter<ImageFileInfo>()",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 16,
+                    "type": "EventEmitter"
+                },
+                {
                     "name": "imageGenerated",
                     "defaultValue": "new EventEmitter<string>()",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "line": 13,
+                    "line": 15,
                     "type": "EventEmitter"
                 }
             ],
@@ -10298,7 +11328,7 @@
                     "type": "string",
                     "optional": false,
                     "description": "",
-                    "line": 18
+                    "line": 21
                 },
                 {
                     "name": "generatedBase64Image",
@@ -10308,7 +11338,7 @@
                     "type": "string",
                     "optional": false,
                     "description": "",
-                    "line": 15
+                    "line": 18
                 },
                 {
                     "name": "loading",
@@ -10318,7 +11348,7 @@
                     "type": "boolean",
                     "optional": false,
                     "description": "",
-                    "line": 17
+                    "line": 20
                 },
                 {
                     "name": "savedImageUrl",
@@ -10328,7 +11358,7 @@
                     "type": "string",
                     "optional": false,
                     "description": "",
-                    "line": 16
+                    "line": 19
                 }
             ],
             "methodsClass": [
@@ -10338,7 +11368,7 @@
                     "optional": false,
                     "returnType": "Promise<string>",
                     "typeParameters": [],
-                    "line": 24,
+                    "line": 29,
                     "deprecated": false,
                     "deprecationMessage": "",
                     "modifierKind": [
@@ -10352,7 +11382,7 @@
                     "optional": false,
                     "returnType": "void",
                     "typeParameters": [],
-                    "line": 44,
+                    "line": 84,
                     "deprecated": false,
                     "deprecationMessage": "",
                     "modifierKind": [
@@ -10373,7 +11403,7 @@
                     "optional": false,
                     "returnType": "void",
                     "typeParameters": [],
-                    "line": 49,
+                    "line": 89,
                     "deprecated": false,
                     "deprecationMessage": "",
                     "modifierKind": [
@@ -10396,13 +11426,14 @@
                     "name": "uploadImage",
                     "args": [],
                     "optional": false,
-                    "returnType": "void",
+                    "returnType": "Promise<void>",
                     "typeParameters": [],
-                    "line": 54,
+                    "line": 49,
                     "deprecated": false,
                     "deprecationMessage": "",
                     "modifierKind": [
-                        123
+                        123,
+                        132
                     ]
                 }
             ],
@@ -10415,7 +11446,7 @@
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import { Component, EventEmitter, Input, Output } from '@angular/core';\r\nimport { OpenaiService } from '../../services/openai.service';\r\nimport { OpenaiImageSize } from '../../interfaces/openai.interface';\r\n\r\n@Component({\r\n  selector: 'anu-openai-image-form',\r\n  templateUrl: './openai-image-form.component.html',\r\n  styleUrls: ['./openai-image-form.component.scss'],\r\n})\r\nexport class OpenaiImageFormComponent {\r\n  @Input() imagePromptText: string = '';\r\n  @Input() imageFileName: string = '';\r\n  @Output() imageGenerated = new EventEmitter<string>();\r\n\r\n  generatedBase64Image: string = '';\r\n  savedImageUrl: string = '';\r\n  loading: boolean = false;\r\n  errorMsg: string = '';\r\n\r\n  constructor(\r\n    private openaiService: OpenaiService,\r\n  ) { }\r\n\r\n  public async generateImage(): Promise<string> {\r\n    if (!this.imagePromptText.trim()) return '';\r\n    this.startLoading();\r\n    try {\r\n      [this.generatedBase64Image] = await this.openaiService.getImagetResponse(\r\n        this.imagePromptText,\r\n        1,\r\n        OpenaiImageSize._1024x1024\r\n      );\r\n      this.stopLoading();\r\n      this.imageGenerated.emit(this.generatedBase64Image);\r\n      return this.generatedBase64Image;\r\n    } catch (err: any) {\r\n      this.generatedBase64Image = '';\r\n      this.stopLoading(err?.message);\r\n      this.imageGenerated.emit('');\r\n      return '';\r\n    }\r\n  }\r\n\r\n  private startLoading(): void {\r\n    this.loading = true;\r\n    this.errorMsg = '';\r\n  }\r\n\r\n  private stopLoading(err: string = ''): void {\r\n    this.loading = false;\r\n    this.errorMsg = err;\r\n  }\r\n\r\n  public uploadImage() { }\r\n}\r\n",
+            "sourceCode": "import { Component, EventEmitter, Input, Output } from '@angular/core';\r\nimport { OpenaiService } from '../../services/openai.service';\r\nimport { OpenaiImageSize } from '../../interfaces/openai.interface';\r\nimport { FireStorageImageService, ImageFileInfo } from '@annuadvent/ngx-tools/fire-storage';\r\nimport { FireAuthService } from '@annuadvent/ngx-tools/fire-auth';\r\n\r\n@Component({\r\n  selector: 'anu-openai-image-form',\r\n  templateUrl: './openai-image-form.component.html',\r\n  styleUrls: ['./openai-image-form.component.scss'],\r\n})\r\nexport class OpenaiImageFormComponent {\r\n  @Input() imagePromptText: string = '';\r\n  @Input() imageFileName: string = '';\r\n  @Output() imageGenerated = new EventEmitter<string>();\r\n  @Output() fileUploaded = new EventEmitter<ImageFileInfo>();\r\n\r\n  generatedBase64Image: string = '';\r\n  savedImageUrl: string = '';\r\n  loading: boolean = false;\r\n  errorMsg: string = '';\r\n\r\n  constructor(\r\n    private openaiService: OpenaiService,\r\n    private fireStorageImageService: FireStorageImageService,\r\n    private fireAuthService: FireAuthService,\r\n  ) { }\r\n\r\n  public async generateImage(): Promise<string> {\r\n    if (!this.imagePromptText.trim()) return '';\r\n    this.startLoading();\r\n    try {\r\n      [this.generatedBase64Image] = await this.openaiService.getImagetResponse(\r\n        this.imagePromptText,\r\n        1,\r\n        OpenaiImageSize._1024x1024\r\n      );\r\n      this.stopLoading();\r\n      this.imageGenerated.emit(this.generatedBase64Image);\r\n      return this.generatedBase64Image;\r\n    } catch (err: any) {\r\n      this.generatedBase64Image = '';\r\n      this.stopLoading(err?.message);\r\n      this.imageGenerated.emit('');\r\n      return '';\r\n    }\r\n  }\r\n\r\n  public async uploadImage(): Promise<void> {\r\n    this.startLoading();\r\n    if (!this.generatedBase64Image || !this.imageFileName) {\r\n      this.stopLoading('Empty Image or not a valid file name');\r\n      return;\r\n    }\r\n    \r\n\r\n    const userId = this.fireAuthService.getCurrentUserId();\r\n    if(!userId) {\r\n      this.stopLoading('User is not authenticated or logged in.');\r\n      return;\r\n    }\r\n    \r\n    try {\r\n      const imageFileInfo: ImageFileInfo =\r\n        await this.fireStorageImageService.uploadImage(\r\n          this.imageFileName,\r\n          this.generatedBase64Image,\r\n          true,\r\n          userId,\r\n          true\r\n        );\r\n        this.generatedBase64Image = '';\r\n      this.savedImageUrl = `getImage?imageId=${imageFileInfo.fullPath}`;\r\n      this.fileUploaded.emit(imageFileInfo);\r\n\r\n      this.stopLoading();\r\n      return;\r\n    } catch (err) {\r\n      this.stopLoading(err.message);\r\n      return;\r\n    }\r\n  }\r\n\r\n  private startLoading(): void {\r\n    this.loading = true;\r\n    this.errorMsg = '';\r\n  }\r\n\r\n  private stopLoading(err: string = ''): void {\r\n    this.loading = false;\r\n    this.errorMsg = err;\r\n  }\r\n\r\n}\r\n",
             "assetsDirs": [],
             "styleUrlsData": [
                 {
@@ -10435,9 +11466,21 @@
                         "type": "OpenaiService",
                         "deprecated": false,
                         "deprecationMessage": ""
+                    },
+                    {
+                        "name": "fireStorageImageService",
+                        "type": "FireStorageImageService",
+                        "deprecated": false,
+                        "deprecationMessage": ""
+                    },
+                    {
+                        "name": "fireAuthService",
+                        "type": "FireAuthService",
+                        "deprecated": false,
+                        "deprecationMessage": ""
                     }
                 ],
-                "line": 18,
+                "line": 21,
                 "jsdoctags": [
                     {
                         "name": "openaiService",
@@ -10447,10 +11490,227 @@
                         "tagName": {
                             "text": "param"
                         }
+                    },
+                    {
+                        "name": "fireStorageImageService",
+                        "type": "FireStorageImageService",
+                        "deprecated": false,
+                        "deprecationMessage": "",
+                        "tagName": {
+                            "text": "param"
+                        }
+                    },
+                    {
+                        "name": "fireAuthService",
+                        "type": "FireAuthService",
+                        "deprecated": false,
+                        "deprecationMessage": "",
+                        "tagName": {
+                            "text": "param"
+                        }
                     }
                 ]
             },
-            "templateData": "<form class=\"container relative disable-select\">\r\n    <label>Image Prompt</label>\r\n    <input type=\"text\" [(ngModel)]=\"imagePromptText\" name=\"imagePromptText\" />\r\n    <label>Image file name to save generated image<small class=\"error\">* Any image with this filename will be\r\n            overwritten in your image library.</small></label>\r\n    <input type=\"text\" [(ngModel)]=\"imageFileName\" name=\"imageFileName\" />\r\n    <div *ngIf=\"!!generatedBase64Image\" class=\"row\">\r\n        <label>Generated Image <a class=\"primary\" href=\"javascript:void(0)\"\r\n                (click)=\"generatedBase64Image = ''\">Clear</a></label>\r\n        <img class=\"oif_image spacing-around-vertical\" [src]=\"'data:image/image/jpg;base64,'+ generatedBase64Image\" />\r\n    </div>\r\n    <div *ngIf=\"savedImageUrl\" class=\"row\">\r\n        <img class=\"oif_image spacing-around-vertical\" [src]=\"savedImageUrl\" />\r\n    </div>\r\n\r\n    <p *ngIf=\"errorMsg\">{{errorMsg}}</p>\r\n    <div class=\"row spacing\">\r\n        <div class=\"col-6 center\"><a class=\"btn primary\" href=\"javascript:void(0)\"\r\n                (click)=\"generateImage()\">Generate</a></div>\r\n        <div class=\"col-6 center\"><a class=\"btn primary\" href=\"javascript:void(0)\" (click)=\"uploadImage()\">Upload</a>\r\n        </div>\r\n    </div>\r\n    <anu-spinner [show]=\"loading\"></anu-spinner>\r\n</form>\r\n"
+            "templateData": "<anu-error *ngIf=\"errorMsg\" code=\"UNKNOWN\" [message]=\"errorMsg\"></anu-error>\r\n<form class=\"container relative disable-select\">\r\n    <label>Image Prompt</label>\r\n    <input type=\"text\" [(ngModel)]=\"imagePromptText\" name=\"imagePromptText\" />\r\n    <label>Image file name to save generated image<small class=\"error\">* Any image with this filename will be\r\n            overwritten in your image library.</small></label>\r\n    <input type=\"text\" [(ngModel)]=\"imageFileName\" name=\"imageFileName\" />\r\n    <div *ngIf=\"!!generatedBase64Image\" class=\"row\">\r\n        <label>Generated Image <a class=\"primary\" href=\"javascript:void(0)\"\r\n                (click)=\"generatedBase64Image = ''\">Clear</a></label>\r\n        <img class=\"oif_image spacing-around-vertical\" [src]=\"'data:image/image/jpg;base64,'+ generatedBase64Image\" />\r\n    </div>\r\n    <div *ngIf=\"savedImageUrl\" class=\"row\">\r\n        <img class=\"oif_image spacing-around-vertical\" [src]=\"savedImageUrl\" />\r\n    </div>\r\n\r\n    <p *ngIf=\"errorMsg\">{{errorMsg}}</p>\r\n    <div class=\"row spacing\">\r\n        <div class=\"col-6 center\"><a class=\"btn primary\" href=\"javascript:void(0)\"\r\n                (click)=\"generateImage()\">Generate</a></div>\r\n        <div class=\"col-6 center\"><a class=\"btn primary\" href=\"javascript:void(0)\" (click)=\"uploadImage()\">Upload</a>\r\n        </div>\r\n    </div>\r\n    <anu-spinner [show]=\"loading\"></anu-spinner>\r\n</form>\r\n"
+        },
+        {
+            "name": "QueueStatusComponent",
+            "id": "component-QueueStatusComponent-0b4d223af2651bccbebe19138e4242a63e5bdc3ae66a11f9aa6a7eda158d89aaa73e4429768ba7fb11927973faebeda1465c7c8c9af966cb43a12e7d47ae16da",
+            "file": "projects/ngx-tools/queue/src/components/queue-status/queue-status.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "anu-queue-status",
+            "styleUrls": [
+                "./queue-status.component.scss"
+            ],
+            "styles": [],
+            "templateUrl": [
+                "./queue-status.component.html"
+            ],
+            "viewProviders": [],
+            "hostDirectives": [],
+            "inputsClass": [
+                {
+                    "name": "queue",
+                    "defaultValue": "null",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 12,
+                    "type": "Queue",
+                    "decorators": []
+                }
+            ],
+            "outputsClass": [
+                {
+                    "name": "startClick",
+                    "defaultValue": "new EventEmitter<void>()",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 13,
+                    "type": "EventEmitter"
+                }
+            ],
+            "propertiesClass": [
+                {
+                    "name": "completedCount",
+                    "defaultValue": "0",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "number",
+                    "optional": false,
+                    "description": "",
+                    "line": 18
+                },
+                {
+                    "name": "failedCount",
+                    "defaultValue": "0",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "number",
+                    "optional": false,
+                    "description": "",
+                    "line": 20
+                },
+                {
+                    "name": "inprogressCount",
+                    "defaultValue": "0",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "number",
+                    "optional": false,
+                    "description": "",
+                    "line": 21
+                },
+                {
+                    "name": "notstartedCount",
+                    "defaultValue": "0",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "number",
+                    "optional": false,
+                    "description": "",
+                    "line": 19
+                },
+                {
+                    "name": "qItems",
+                    "defaultValue": "[]",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Array<QueueItem>",
+                    "optional": false,
+                    "description": "",
+                    "line": 15
+                },
+                {
+                    "name": "qStatus",
+                    "defaultValue": "QueueStatusEnum.notstarted",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "QueueStatusEnum",
+                    "optional": false,
+                    "description": "",
+                    "line": 16
+                },
+                {
+                    "name": "totalCount",
+                    "defaultValue": "0",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "number",
+                    "optional": false,
+                    "description": "",
+                    "line": 17
+                }
+            ],
+            "methodsClass": [
+                {
+                    "name": "refreshQueueCounters",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 40,
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "modifierKind": [
+                        121
+                    ]
+                },
+                {
+                    "name": "startClicked",
+                    "args": [
+                        {
+                            "name": "event",
+                            "type": "any",
+                            "deprecated": false,
+                            "deprecationMessage": ""
+                        }
+                    ],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 66,
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "modifierKind": [
+                        123
+                    ],
+                    "jsdoctags": [
+                        {
+                            "name": "event",
+                            "type": "any",
+                            "deprecated": false,
+                            "deprecationMessage": "",
+                            "tagName": {
+                                "text": "param"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "subscribeQueue",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 27,
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "modifierKind": [
+                        121
+                    ]
+                }
+            ],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [],
+            "standalone": false,
+            "imports": [],
+            "description": "",
+            "rawdescription": "\n",
+            "type": "component",
+            "sourceCode": "import { Component, EventEmitter, Input, Output } from '@angular/core';\nimport { Queue } from '../../classes/queue.class';\nimport { QueueItem } from '../../classes/queue-item.class';\nimport { QueueStatusEnum } from '../../enums/queue.enums';\n\n@Component({\n  selector: 'anu-queue-status',\n  templateUrl: './queue-status.component.html',\n  styleUrls: ['./queue-status.component.scss']\n})\nexport class QueueStatusComponent {\n  @Input() queue: Queue = null;\n  @Output() startClick = new EventEmitter<void>();\n\n  qItems: Array<QueueItem> = [];\n  qStatus: QueueStatusEnum = QueueStatusEnum.notstarted;\n  totalCount: number = 0;\n  completedCount: number = 0;\n  notstartedCount: number = 0;\n  failedCount: number = 0;\n  inprogressCount: number = 0;\n\n  constructor() {\n\n  }\n\n  private subscribeQueue(): void {\n    if (!this.queue) return;\n\n    // Subscribe queue items change\n    this.queue.queue.subscribe((qItems: Array<QueueItem>) => {\n      this.qItems = qItems;\n      this.refreshQueueCounters();\n    });\n\n    // Subscribe queue status change\n    this.queue.status.subscribe((status: QueueStatusEnum) => this.qStatus = status);\n  }\n\n  private refreshQueueCounters(): void {\n    this.totalCount = 0;\n    this.completedCount = 0;\n    this.notstartedCount = 0;\n    this.failedCount = 0;\n    this.inprogressCount = 0;\n\n    // Calculate counters by cheching all items\n    this.qItems.map(qItem => {\n      switch (qItem.status) {\n        case QueueStatusEnum.notstarted:\n          this.notstartedCount++;\n          break;\n        case QueueStatusEnum.inprogress:\n          this.inprogressCount++;\n          break;\n        case QueueStatusEnum.completed:\n          this.completedCount++;\n          break;\n        case QueueStatusEnum.failed:\n          this.failedCount++;\n          break;\n      }\n    });\n  }\n\n  public startClicked(event: any): void {\n    switch (this.qStatus) {\n      case QueueStatusEnum.notstarted:\n        this.startClick.emit();\n        break;\n      case QueueStatusEnum.inprogress:\n        this.queue?.pause();\n        break;\n      case QueueStatusEnum.paused:\n        this.queue?.resume();\n        break;\n      default:\n        console.log('Queue is complted or stopped already Or may be not initialized yet.');\n    }\n  }\n}\n\n",
+            "assetsDirs": [],
+            "styleUrlsData": [
+                {
+                    "data": "$queue_badge_size: 2rem;\r\n\r\n:host {\r\n\r\n    .queue {\r\n        &_badge {\r\n            border-radius: 50%;\r\n            width: $queue_badge_size;\r\n            height: $queue_badge_size;\r\n            line-height: $queue_badge_size;\r\n\r\n            &.notstarted {\r\n                background-color: rgba(124, 124, 124, 0.651);\r\n            }\r\n\r\n            &.completed {\r\n                background-color: rgba(25, 121, 0, 0.548);\r\n            }\r\n\r\n            &.inprogress {\r\n                background-color: rgba(0, 238, 12, 0.5);\r\n            }\r\n\r\n            &.failed {\r\n                background-color: rgba(235, 0, 0, 0.5);\r\n            }\r\n\r\n            &.paused {\r\n                background-color: rgba(14, 187, 255, 0.534);\r\n            }\r\n        }\r\n    }\r\n}",
+                    "styleUrl": "./queue-status.component.scss"
+                }
+            ],
+            "stylesData": "",
+            "constructorObj": {
+                "name": "constructor",
+                "description": "",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "args": [],
+                "line": 21
+            },
+            "templateData": "<span [title]=\"qStatus\" class=\"queue_badge\" [ngClass]=\"qStatus\">{{totalCount}}</span>\n<span title=\"notstarted\" class=\"queue_badge notstarted\">{{notstartedCount}}</span>\n<span title=\"completed\" class=\"queue_badge completed\">{{completedCount}}</span>\n<span title=\"inprogress\" class=\"queue_badge inprogress\">{{inprogressCount}}</span>\n<span title=\"failed\" class=\"queue_badge failed\">{{failedCount}}</span>\n<span class=\"queue_badge\">\n    <a href=\"javascript:void()\" (click)=\"startClicked($event)\">{{ qStatus === 'inprogress' ? '⏸' : '⏵'}}</a>\n</span>\n<ng-content></ng-content>"
         },
         {
             "name": "SitemapComponent",
@@ -10846,7 +12106,7 @@
                     }
                 ]
             },
-            "templateData": "<div class=\"flex-container center\">\r\n    <div class=\"container\">\r\n        <div class=\"row\">\r\n            <!-- Current Sitemap Urls -->\r\n            <anu-card class=\"col-12 shadow spacing\">\r\n                <anu-card-title>\r\n                    <a href=\"#\" class=\"\" (click)=\"loadSitemap($event)\">Load sitemap.xml</a>\r\n                </anu-card-title>\r\n                <anu-card-body>\r\n                    <anu-collapsible class=\"spacing-vertical\" *ngIf=\"sitemapInfo || sitemap\"\r\n                        [collapsed]=\"currentSitemapCollapsed\" [hamBurgerClassNames]=\"['size-md']\"\r\n                        [isDropdownStyle]=\"true\" (changed)=\"currentSitemapCollapsed = !currentSitemapCollapsed\">\r\n                        <anu-collapsible-header>Current Sitemap</anu-collapsible-header>\r\n                        <anu-collapsible-content>\r\n                            <h3 *ngIf=\"sitemapInfo\">Sitemap was last updated on:\r\n                                <strong>{{sitemapInfo.updated}}</strong>\r\n                            </h3>\r\n                            <ol *ngIf=\"sitemap?.urlset?.url\">\r\n                                <li *ngFor=\"let url of sitemap.urlset.url\">\r\n                                    {{url.lastmod._text}} | {{url.priority._text}} | {{url.loc._text}}\r\n                                </li>\r\n                            </ol>\r\n                            <div class=\"row right spacing-vertical\">\r\n                                <a href=\"#\" title=\"View in xml\" (click)=\"showXmlString($event, sitemap)\">XML</a>\r\n                            </div>\r\n                        </anu-collapsible-content>\r\n                    </anu-collapsible>\r\n                </anu-card-body>\r\n            </anu-card>\r\n\r\n            <!-- New Urls to be added -->\r\n            <anu-card *ngIf=\"sitemap\" class=\"col-12 shadow spacing\">\r\n                <anu-card-title>\r\n                    <a href=\"#\" class=\"\" (click)=\"checkNewUrls($event)\">Check for new Urls</a>\r\n                </anu-card-title>\r\n                <anu-card-body>\r\n                    <anu-collapsible *ngIf=\"newUrls\" class=\"spacing-vertical\" [collapsed]=\"checkNewUrlsCollapsed\"\r\n                        [hamBurgerClassNames]=\"['size-md']\" [isDropdownStyle]=\"true\"\r\n                        (changed)=\"checkNewUrlsCollapsed = !checkNewUrlsCollapsed\">\r\n                        <anu-collapsible-header class=\"bg-secondary\">Sitemap new Urls</anu-collapsible-header>\r\n                        <anu-collapsible-content>\r\n                            <ol *ngIf=\"newUrls?.length\">\r\n                                <li *ngFor=\"let url of newUrls\">\r\n                                    {{url.lastmod._text}} | {{url.priority._text}} | {{url.loc._text}}\r\n                                </li>\r\n                            </ol>\r\n                            <p *ngIf=\"!newUrls?.length\" class=\"warning\">No new urls available</p>\r\n                        </anu-collapsible-content>\r\n                    </anu-collapsible>\r\n                </anu-card-body>\r\n            </anu-card>\r\n\r\n\r\n            <!-- Preview Merged Urls -->\r\n            <anu-card *ngIf=\"newUrls?.length\" class=\"col-12 shadow spacing\">\r\n                <anu-card-title>\r\n                    <a href=\"#\" class=\"\" (click)=\"previewSitemap($event)\">Preview sitemap.xml (Ready to update)</a>\r\n                </anu-card-title>\r\n                <anu-card-body>\r\n                    <anu-collapsible *ngIf=\"newSitemap\" class=\"spacing-vertical\" [collapsed]=\"previewCollapsed\"\r\n                        [hamBurgerClassNames]=\"['size-md']\" [isDropdownStyle]=\"true\"\r\n                        (changed)=\"previewCollapsed = !previewCollapsed\">\r\n                        <anu-collapsible-header class=\"bg-secondary\">New Sitemap (Ready to\r\n                            update)</anu-collapsible-header>\r\n                        <anu-collapsible-content>\r\n                            <div class=\"row\">\r\n                                <span class=\"spacing-half spacing-around\"><small><strong>LEGENDS:</strong>\r\n                                    </small></span>\r\n                                <span class=\"spacing-half spacing-around\"><small>No change</small></span>\r\n                                <span class=\"spacing-half spacing-around success\"><small>Added</small></span>\r\n                                <span class=\"spacing-half spacing-around warning\"><small>Updated</small></span>\r\n                            </div>\r\n                            <ol *ngIf=\"newSitemap?.urlset?.url\">\r\n                                <li *ngFor=\"let url of newSitemap.urlset.url\" [class.success]=\"url.status === true\"\r\n                                    [class.warning]=\"url.status === false\">\r\n                                    {{url.lastmod._text}} | {{url.priority._text}} | {{url.loc._text}}\r\n                                </li>\r\n                            </ol>\r\n                            <div class=\"row right spacing-vertical\">\r\n                                <a href=\"#\" title=\"View in xml\" (click)=\"showXmlString($event, newSitemap)\">XML</a>\r\n                            </div>\r\n                        </anu-collapsible-content>\r\n                    </anu-collapsible>\r\n                </anu-card-body>\r\n                <anu-card-footer *ngIf=\"newSitemap\">\r\n                    <a href=\"#\" class=\"btn btn-primary\" (click)=\"saveSitemap($event)\">Save</a>\r\n                </anu-card-footer>\r\n            </anu-card>\r\n        </div>\r\n    </div>\r\n</div>\r\n\r\n<anu-modal [cancelLabel]=\"'Cancel'\" [enableCancel]=\"true\" [enableClose]=\"true\" [enableOk]=\"false\" [okLabel]=\"'Ok'\"\r\n    [opened]=\"showXmlModal\" [title]=\"'XML view of sitemap'\" (cancelClick)=\"xmlModalClosed()\">\r\n\r\n    <anu-code-block class=\"col-12\" [enableEdit]='false' [language]=\"'xml'\" [source]=\"sitemapXmlStr\">\r\n    </anu-code-block>\r\n\r\n</anu-modal>\r\n"
+            "templateData": "<div class=\"flex-container center\">\r\n    <div class=\"container\">\r\n        <div class=\"row\">\r\n            <!-- Current Sitemap Urls -->\r\n            <anu-card class=\"col-12 shadow spacing\">\r\n                <anu-card-title>\r\n                    <a href=\"#\" class=\"\" (click)=\"loadSitemap($event)\">Load sitemap.xml</a>\r\n                </anu-card-title>\r\n                <anu-card-body>\r\n                    <anu-collapsible class=\"spacing-vertical\" *ngIf=\"sitemapInfo || sitemap\"\r\n                        [collapsed]=\"currentSitemapCollapsed\" [hamBurgerClassNames]=\"['size-md']\"\r\n                        [isDropdownStyle]=\"true\" (changed)=\"currentSitemapCollapsed = !currentSitemapCollapsed\">\r\n                        <anu-collapsible-header>Current Sitemap</anu-collapsible-header>\r\n                        <anu-collapsible-content>\r\n                            <h3 *ngIf=\"sitemapInfo\">Sitemap was last updated on:\r\n                                <strong>{{sitemapInfo.updated}}</strong>\r\n                            </h3>\r\n                            <ol *ngIf=\"sitemap?.urlset?.url\">\r\n                                <li *ngFor=\"let url of sitemap.urlset.url\">\r\n                                    {{url.lastmod._text}} | {{url.priority._text}} | {{url.loc._text}}\r\n                                </li>\r\n                            </ol>\r\n                            <div class=\"row right spacing-vertical\">\r\n                                <a href=\"#\" title=\"View in xml\" (click)=\"showXmlString($event, sitemap)\">XML</a>\r\n                            </div>\r\n                        </anu-collapsible-content>\r\n                    </anu-collapsible>\r\n                </anu-card-body>\r\n            </anu-card>\r\n\r\n            <!-- New Urls to be added -->\r\n            <anu-card *ngIf=\"sitemap\" class=\"col-12 shadow spacing\">\r\n                <anu-card-title>\r\n                    <a href=\"#\" class=\"\" (click)=\"checkNewUrls($event)\">Check for new Urls</a>\r\n                </anu-card-title>\r\n                <anu-card-body>\r\n                    <anu-collapsible *ngIf=\"newUrls\" class=\"spacing-vertical\" [collapsed]=\"checkNewUrlsCollapsed\"\r\n                        [hamBurgerClassNames]=\"['size-md']\" [isDropdownStyle]=\"true\"\r\n                        (changed)=\"checkNewUrlsCollapsed = !checkNewUrlsCollapsed\">\r\n                        <anu-collapsible-header class=\"bg-secondary\">Sitemap new Urls</anu-collapsible-header>\r\n                        <anu-collapsible-content>\r\n                            <ol *ngIf=\"newUrls?.length\">\r\n                                <li *ngFor=\"let url of newUrls\">\r\n                                    {{url.lastmod._text}} | {{url.priority._text}} | {{url.loc._text}}\r\n                                </li>\r\n                            </ol>\r\n                            <p *ngIf=\"!newUrls?.length\" class=\"warning\">No new urls available</p>\r\n                        </anu-collapsible-content>\r\n                    </anu-collapsible>\r\n                </anu-card-body>\r\n            </anu-card>\r\n\r\n\r\n            <!-- Preview Merged Urls -->\r\n            <anu-card *ngIf=\"newUrls?.length\" class=\"col-12 shadow spacing\">\r\n                <anu-card-title>\r\n                    <a href=\"#\" class=\"\" (click)=\"previewSitemap($event)\">Preview sitemap.xml (Ready to update)</a>\r\n                </anu-card-title>\r\n                <anu-card-body>\r\n                    <anu-collapsible *ngIf=\"newSitemap\" class=\"spacing-vertical\" [collapsed]=\"previewCollapsed\"\r\n                        [hamBurgerClassNames]=\"['size-md']\" [isDropdownStyle]=\"true\"\r\n                        (changed)=\"previewCollapsed = !previewCollapsed\">\r\n                        <anu-collapsible-header class=\"bg-secondary\">New Sitemap (Ready to\r\n                            update)</anu-collapsible-header>\r\n                        <anu-collapsible-content>\r\n                            <div class=\"row\">\r\n                                <span class=\"spacing-half spacing-around\"><small><strong>LEGENDS:</strong>\r\n                                    </small></span>\r\n                                <span class=\"spacing-half spacing-around\"><small>No change</small></span>\r\n                                <span class=\"spacing-half spacing-around success\"><small>Added</small></span>\r\n                                <span class=\"spacing-half spacing-around warning\"><small>Updated</small></span>\r\n                            </div>\r\n                            <ol *ngIf=\"newSitemap?.urlset?.url\">\r\n                                <li *ngFor=\"let url of newSitemap.urlset.url\" [class.success]=\"url.status === true\"\r\n                                    [class.warning]=\"url.status === false\">\r\n                                    {{url.lastmod._text}} | {{url.priority._text}} | {{url.loc._text}}\r\n                                </li>\r\n                            </ol>\r\n                            <div class=\"row right spacing-vertical\">\r\n                                <a href=\"#\" title=\"View in xml\" (click)=\"showXmlString($event, newSitemap)\">XML</a>\r\n                            </div>\r\n                        </anu-collapsible-content>\r\n                    </anu-collapsible>\r\n                </anu-card-body>\r\n                <anu-card-footer *ngIf=\"newSitemap\">\r\n                    <a href=\"#\" class=\"btn btn-primary\" (click)=\"saveSitemap($event)\">Save</a>\r\n                </anu-card-footer>\r\n            </anu-card>\r\n        </div>\r\n    </div>\r\n</div>\r\n\r\n<anu-modal [cancelLabel]=\"'Cancel'\" [enableCancel]=\"true\" [enableClose]=\"true\" [enableOk]=\"false\" [okLabel]=\"'Ok'\"\r\n    [opened]=\"showXmlModal\" [modalTitle]=\"'XML view of sitemap'\" (cancelClick)=\"xmlModalClosed()\">\r\n\r\n    <anu-code-block class=\"col-12\" [enableEdit]='false' [language]=\"'xml'\" [source]=\"sitemapXmlStr\">\r\n    </anu-code-block>\r\n\r\n</anu-modal>\r\n"
         }
     ],
     "modules": [
@@ -11036,13 +12296,13 @@
         },
         {
             "name": "OpenaiModule",
-            "id": "module-OpenaiModule-68195ff65452c2962efe1ffcfa5b9d7289b373b36ef4eedaed20a9c505bbfde65f54dc373e0ad1f874ce6a8d06894eaae365e6636e3cf1a9f1726eff705cdecf",
+            "id": "module-OpenaiModule-2639582476794df10294b90ef07864473255dee6470e80633694d06db5c6c4e7b8c86e7faf11fe91e4736e3e04a78264f1cf4d2bb6b6288f741c8c8a63854d08",
             "description": "",
             "deprecationMessage": "",
             "deprecated": false,
             "file": "projects/ngx-tools/openai/src/openai.module.ts",
             "methods": [],
-            "sourceCode": "\r\nimport { NgModule } from '@angular/core';\r\nimport { CommonModule } from '@angular/common';\r\nimport { FormsModule } from '@angular/forms';\r\nimport { CollapsibleModule } from '@annuadvent/ngx-common-ui/collapsible';\r\nimport { SpinnerModule } from '@annuadvent/ngx-common-ui/spinner';\r\n\r\nimport { OpenaiFormComponent } from './components/openai-form/openai-form.component';\r\nimport { OpenaiImageFormComponent } from './components/openai-image-form/openai-image-form.component';\r\n\r\n\r\n\r\n\r\n@NgModule({\r\n  declarations: [OpenaiFormComponent, OpenaiImageFormComponent],\r\n  providers: [],\r\n  imports: [\r\n    CommonModule,\r\n    FormsModule,\r\n    CollapsibleModule,\r\n    SpinnerModule,\r\n  ],\r\n  exports: [OpenaiFormComponent, OpenaiImageFormComponent],\r\n})\r\nexport class OpenaiModule { }\r\n",
+            "sourceCode": "\r\nimport { NgModule } from '@angular/core';\r\nimport { CommonModule } from '@angular/common';\r\nimport { FormsModule } from '@angular/forms';\r\nimport { CollapsibleModule } from '@annuadvent/ngx-common-ui/collapsible';\r\nimport { SpinnerModule } from '@annuadvent/ngx-common-ui/spinner';\r\n\r\nimport { OpenaiFormComponent } from './components/openai-form/openai-form.component';\r\nimport { OpenaiImageFormComponent } from './components/openai-image-form/openai-image-form.component';\r\nimport { ErrorModule } from '@annuadvent/ngx-common-ui/error';\r\n\r\n\r\n\r\n\r\n@NgModule({\r\n  declarations: [OpenaiFormComponent, OpenaiImageFormComponent],\r\n  providers: [],\r\n  imports: [\r\n    CommonModule,\r\n    FormsModule,\r\n    CollapsibleModule,\r\n    SpinnerModule,\r\n    ErrorModule,\r\n  ],\r\n  exports: [OpenaiFormComponent, OpenaiImageFormComponent],\r\n})\r\nexport class OpenaiModule { }\r\n",
             "children": [
                 {
                     "type": "providers",
@@ -11059,6 +12319,50 @@
                 {
                     "type": "exports",
                     "elements": []
+                },
+                {
+                    "type": "bootstrap",
+                    "elements": []
+                },
+                {
+                    "type": "classes",
+                    "elements": []
+                }
+            ]
+        },
+        {
+            "name": "QueueModule",
+            "id": "module-QueueModule-9efe42d35c3c40ed8f269e2135ea2ef8337eeed75f6f410992094eb30df33d8091f449556b67d83e758b169055290fda92a8c07f3a487d5278611457ae918fb6",
+            "description": "",
+            "deprecationMessage": "",
+            "deprecated": false,
+            "file": "projects/ngx-tools/queue/src/queue.module.ts",
+            "methods": [],
+            "sourceCode": "\nimport { NgModule } from '@angular/core';\nimport { CommonModule } from '@angular/common';\nimport { QueueStatusComponent } from './components/queue-status/queue-status.component';\n\n\n\n@NgModule({\n  declarations: [\n    QueueStatusComponent\n  ],\n  imports: [\n    CommonModule\n  ],\n  exports: [\n    QueueStatusComponent\n  ],\n})\nexport class QueueModule { }\n",
+            "children": [
+                {
+                    "type": "providers",
+                    "elements": []
+                },
+                {
+                    "type": "declarations",
+                    "elements": [
+                        {
+                            "name": "QueueStatusComponent"
+                        }
+                    ]
+                },
+                {
+                    "type": "imports",
+                    "elements": []
+                },
+                {
+                    "type": "exports",
+                    "elements": [
+                        {
+                            "name": "QueueStatusComponent"
+                        }
+                    ]
                 },
                 {
                     "type": "bootstrap",
@@ -11441,6 +12745,47 @@
                 "deprecationMessage": "",
                 "description": "",
                 "file": "projects/ngx-tools/openai/src/enums/openai.enums.ts"
+            },
+            {
+                "name": "QueueStatusEnum",
+                "childs": [
+                    {
+                        "name": "notstarted",
+                        "deprecated": false,
+                        "deprecationMessage": "",
+                        "value": "notstarted"
+                    },
+                    {
+                        "name": "inprogress",
+                        "deprecated": false,
+                        "deprecationMessage": "",
+                        "value": "inprogress"
+                    },
+                    {
+                        "name": "completed",
+                        "deprecated": false,
+                        "deprecationMessage": "",
+                        "value": "completed"
+                    },
+                    {
+                        "name": "failed",
+                        "deprecated": false,
+                        "deprecationMessage": "",
+                        "value": "failed"
+                    },
+                    {
+                        "name": "paused",
+                        "deprecated": false,
+                        "deprecationMessage": "",
+                        "value": "paused"
+                    }
+                ],
+                "ctype": "miscellaneous",
+                "subtype": "enum",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "description": "",
+                "file": "projects/ngx-tools/queue/src/enums/queue.enums.ts"
             },
             {
                 "name": "StructuredQueryDirectionEnum",
@@ -12057,6 +13402,49 @@
                     "deprecationMessage": "",
                     "description": "",
                     "file": "projects/ngx-tools/openai/src/enums/openai.enums.ts"
+                }
+            ],
+            "projects/ngx-tools/queue/src/enums/queue.enums.ts": [
+                {
+                    "name": "QueueStatusEnum",
+                    "childs": [
+                        {
+                            "name": "notstarted",
+                            "deprecated": false,
+                            "deprecationMessage": "",
+                            "value": "notstarted"
+                        },
+                        {
+                            "name": "inprogress",
+                            "deprecated": false,
+                            "deprecationMessage": "",
+                            "value": "inprogress"
+                        },
+                        {
+                            "name": "completed",
+                            "deprecated": false,
+                            "deprecationMessage": "",
+                            "value": "completed"
+                        },
+                        {
+                            "name": "failed",
+                            "deprecated": false,
+                            "deprecationMessage": "",
+                            "value": "failed"
+                        },
+                        {
+                            "name": "paused",
+                            "deprecated": false,
+                            "deprecationMessage": "",
+                            "value": "paused"
+                        }
+                    ],
+                    "ctype": "miscellaneous",
+                    "subtype": "enum",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "description": "",
+                    "file": "projects/ngx-tools/queue/src/enums/queue.enums.ts"
                 }
             ],
             "projects/ngx-tools/fire-store/src/enums/structured-query.enums.ts": [
@@ -12678,7 +14066,7 @@
                 "linktype": "component",
                 "name": "ImageBrowserComponent",
                 "coveragePercent": 3,
-                "coverageCount": "1/28",
+                "coverageCount": "1/29",
                 "status": "low"
             },
             {
@@ -13121,7 +14509,7 @@
                 "linktype": "component",
                 "name": "OpenaiImageFormComponent",
                 "coveragePercent": 0,
-                "coverageCount": "0/13",
+                "coverageCount": "0/14",
                 "status": "low"
             },
             {
@@ -13186,6 +14574,42 @@
                 "linktype": "miscellaneous",
                 "linksubtype": "variable",
                 "name": "LIB_NAME",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/ngx-tools/queue/src/classes/queue-item.class.ts",
+                "type": "class",
+                "linktype": "classe",
+                "name": "QueueItem",
+                "coveragePercent": 0,
+                "coverageCount": "0/10",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/ngx-tools/queue/src/classes/queue.class.ts",
+                "type": "class",
+                "linktype": "classe",
+                "name": "Queue",
+                "coveragePercent": 0,
+                "coverageCount": "0/34",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/ngx-tools/queue/src/components/queue-status/queue-status.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "QueueStatusComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/14",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/ngx-tools/queue/src/interfaces/queue.interface.ts",
+                "type": "interface",
+                "linktype": "interface",
+                "name": "Queue",
                 "coveragePercent": 0,
                 "coverageCount": "0/1",
                 "status": "low"

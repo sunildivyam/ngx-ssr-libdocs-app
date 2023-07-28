@@ -63,6 +63,7 @@ import { LoginComponent } from '@annuadvent/ngx-tools/fire-auth/src/components/l
 import { LoginStatusComponent } from '@annuadvent/ngx-tools/fire-auth/src/components/login-status/login-status.docs';
 import { OpenaiFormComponent } from '@annuadvent/ngx-tools/openai/src/components/openai-form/openai-form.docs';
 import { OpenaiImageFormComponent } from '@annuadvent/ngx-tools/openai/src/components/openai-image-form/openai-image-form.docs';
+import { QueueStatusComponent } from '@annuadvent/ngx-tools/queue/src/components/queue-status/queue-status.docs';
 import { SitemapComponent } from '@annuadvent/ngx-tools/fire-storage/src/components/sitemap/sitemap.docs';
 export const libComponentData = {
     'ngx-common-ui': {
@@ -129,6 +130,7 @@ export const libComponentData = {
         LoginStatusComponent,
         OpenaiFormComponent,
         OpenaiImageFormComponent,
+        QueueStatusComponent,
         SitemapComponent
     },
 }

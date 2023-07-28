@@ -63,6 +63,7 @@ import { LoginComponent } from '@annuadvent/ngx-tools/fire-auth';
 import { LoginStatusComponent } from '@annuadvent/ngx-tools/fire-auth';
 import { OpenaiFormComponent } from '@annuadvent/ngx-tools/openai';
 import { OpenaiImageFormComponent } from '@annuadvent/ngx-tools/openai';
+import { QueueStatusComponent } from '@annuadvent/ngx-tools/queue';
 import { SitemapComponent } from '@annuadvent/ngx-tools/fire-storage';
 export const libComponentClasses = {
     'ngx-common-ui': {
@@ -129,6 +130,7 @@ export const libComponentClasses = {
         LoginStatusComponent,
         OpenaiFormComponent,
         OpenaiImageFormComponent,
+        QueueStatusComponent,
         SitemapComponent
     },
 }
