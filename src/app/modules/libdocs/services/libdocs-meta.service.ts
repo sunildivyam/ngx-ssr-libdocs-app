@@ -31,7 +31,7 @@ export class LibdocsMetaService {
     const pageMeta: MetaInfo = {
       ...appMetaInfo,
       title: title || appMetaInfo.title,
-      description: description || appMetaInfo.description,
+      description: description || appMetaInfo.description.replace('{{libNames}}', ''),
       keywords: keywords?.length ? keywords.join(', ') : appMetaInfo.keywords,
       "article:tag": keywords?.length ? keywords.join(', ') : appMetaInfo.keywords,
       "article:published_time": this.utilsService.currentDate,

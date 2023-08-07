@@ -8,6 +8,7 @@ import { AppState } from '../../modules/app-core/interfaces/app-state.interface'
 import { AppConfigService, AppConfig } from '@annuadvent/ngx-core/app-config';
 import { LibInfo, LibsInfo } from '@annuadvent/ngx-lib-docs/docs-common';
 import { APP_STATE_KEYS } from '../../modules/app-core';
+import { SOCIAL_MEDIA_BUTTONS, SocialMediaButton } from '@annuadvent/ngx-common-ui/social-media';
 
 @Component({
   selector: 'app-root',
@@ -22,6 +23,7 @@ export class AppComponent implements OnInit {
   SpinnerMode = SpinnerMode;
   themeFontSizes: Array<string> = ['12px', '16px', '20px'];
   libsInfoArr: Array<LibInfo> = [];
+  socialMediaButtons: Array<SocialMediaButton> = [];
 
   constructor(
     private themeService: ThemeService,
@@ -36,6 +38,9 @@ export class AppComponent implements OnInit {
       this.mainMenuItems = this.getNavItems(appState.libsInfo);
       this.footerNavItems = this.getNavItems(appState.libsInfo);
     });
+
+    // init social media
+    this.initSocialMedia();
   }
 
 
@@ -64,5 +69,16 @@ export class AppComponent implements OnInit {
 
   public updateNavs(): void {
     this.appStateService.updateState(APP_STATE_KEYS.libsInfo, null);
+  }
+
+  public initSocialMedia(): void {
+    const socialMeidaConfig = this.appConfigService.config.socialMedia || {};
+
+    this.socialMediaButtons = SOCIAL_MEDIA_BUTTONS.map(btn => {
+      return {
+        ...btn,
+        url: socialMeidaConfig[btn.id]
+      }
+    });
   }
 }

@@ -24,8 +24,8 @@
 			"@annuadvent/ngx-core",
 			"prismjs"
 		],
-		"node": "18.16.0",
-		"npm": "9.5.1"
+		"node": "18.17.0",
+		"npm": "9.6.7"
 	},
 	"ngx-cms": {
 		"name": "ngx-cms",
@@ -55,8 +55,8 @@
 			"@annuadvent/ngx-tools",
 			"showdown"
 		],
-		"node": "18.16.0",
-		"npm": "9.5.1"
+		"node": "18.17.0",
+		"npm": "9.6.7"
 	},
 	"ngx-core": {
 		"name": "ngx-core",
@@ -81,8 +81,8 @@
 			"@angular/common",
 			"@angular/core"
 		],
-		"node": "18.16.0",
-		"npm": "9.5.1"
+		"node": "18.17.0",
+		"npm": "9.6.7"
 	},
 	"ngx-tools": {
 		"name": "ngx-tools",
@@ -117,7 +117,7 @@
 			"compressorjs",
 			"firebaseui"
 		],
-		"node": "18.16.0",
-		"npm": "9.5.1"
+		"node": "18.17.0",
+		"npm": "9.6.7"
 	}
 }
