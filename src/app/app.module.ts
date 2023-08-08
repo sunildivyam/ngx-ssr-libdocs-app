@@ -18,6 +18,7 @@ import { BreadcrumbModule } from '@annuadvent/ngx-common-ui/breadcrumb';
 import { SlideshowModule } from '@annuadvent/ngx-common-ui/slideshow';
 import { CardModule } from '@annuadvent/ngx-common-ui/card';
 import { HTTP_INTERCEPTORS } from '@angular/common/http';
+import { SocialMediaModule } from '@annuadvent/ngx-common-ui/social-media';
 
 @NgModule({
   declarations: [
@@ -39,6 +40,7 @@ import { HTTP_INTERCEPTORS } from '@angular/common/http';
     BreadcrumbModule,
     CardModule,
     SlideshowModule,
+    SocialMediaModule,
   ],
   providers: [
     {

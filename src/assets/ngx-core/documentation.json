@@ -3,12 +3,12 @@
     "interfaces": [
         {
             "name": "AppConfig",
-            "id": "interface-AppConfig-2cefb6c15b145099c5e6842b98accfb7f88a02a4717c2bb7dbfdcaa48a184b26ae8915db54e277f126743384d45440662f06b1329b937404f8a6e1d534c57037",
+            "id": "interface-AppConfig-55fbfe92790d64a8dd336116f75c3fa323a50d39d5a482bf3d54e5a42530fc922f22fa8c4c66dce97ce9cfd11ae2ae88b6276e7f056fa886bb78e87d08f9f643",
             "file": "projects/ngx-core/app-config/src/interfaces/app-config.interface.ts",
             "deprecated": false,
             "deprecationMessage": "",
             "type": "interface",
-            "sourceCode": "export interface AppConfig {\r\n    name: string;\r\n    copyrightText: string;\r\n    themeName: string;\r\n    adminEmail?: string;\r\n    siteEmail?: string;\r\n    defaultPageSize: number;\r\n    metaInfo: any;\r\n    mainMenuItems: Array<any>;\r\n\r\n    // Urls\r\n    apiBaseUrl: string;\r\n    imagesSourceUrl: string;\r\n    loginUrl?: string;\r\n    logoutUrl?: string;\r\n    profileUrl?: string;\r\n    tNcUrl: string;\r\n    privacyPolicyUrl: string;\r\n    contactUsUrl?: string;\r\n    aboutUsUrl?: string;\r\n\r\n    //Firebase\r\n    firebase?: any;\r\n\r\n    // Openai\r\n    openai?: any;\r\n\r\n    // Any custom key value\r\n    [key: string]: any,\r\n}\r\n",
+            "sourceCode": "export interface AppConfig {\r\n    name: string;\r\n    copyrightText: string;\r\n    themeName: string;\r\n    adminEmail?: string;\r\n    siteEmail?: string;\r\n    defaultPageSize: number;\r\n    metaInfo: any;\r\n    mainMenuItems: Array<any>;\r\n\r\n    // Urls\r\n    apiBaseUrl: string;\r\n    imagesSourceUrl: string;\r\n    loginUrl?: string;\r\n    logoutUrl?: string;\r\n    profileUrl?: string;\r\n    tNcUrl: string;\r\n    privacyPolicyUrl: string;\r\n    contactUsUrl?: string;\r\n    aboutUsUrl?: string;\r\n\r\n    //Firebase\r\n    firebase?: any;\r\n\r\n    // Openai\r\n    openai?: any;\r\n\r\n    // Openai\r\n    socialMedia?: any;\r\n\r\n    // Any custom key value\r\n    [key: string]: any,\r\n}\r\n",
             "properties": [
                 {
                     "name": "aboutUsUrl",
@@ -164,6 +164,15 @@
                     "line": 6
                 },
                 {
+                    "name": "socialMedia",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "any",
+                    "optional": true,
+                    "description": "",
+                    "line": 29
+                },
+                {
                     "name": "themeName",
                     "deprecated": false,
                     "deprecationMessage": "",
@@ -184,7 +193,7 @@
             ],
             "indexSignatures": [
                 {
-                    "id": "index-declaration-2cefb6c15b145099c5e6842b98accfb7f88a02a4717c2bb7dbfdcaa48a184b26ae8915db54e277f126743384d45440662f06b1329b937404f8a6e1d534c57037",
+                    "id": "index-declaration-55fbfe92790d64a8dd336116f75c3fa323a50d39d5a482bf3d54e5a42530fc922f22fa8c4c66dce97ce9cfd11ae2ae88b6276e7f056fa886bb78e87d08f9f643",
                     "args": [
                         {
                             "name": "key",
@@ -194,7 +203,7 @@
                         }
                     ],
                     "returnType": "any",
-                    "line": 26,
+                    "line": 29,
                     "deprecated": false,
                     "deprecationMessage": ""
                 }
@@ -206,7 +215,7 @@
     "injectables": [
         {
             "name": "AppConfigService",
-            "id": "injectable-AppConfigService-7be003c1e9873614238d0fb7e8e51a10a931f0235d6efdf6dccb2c07c74b0cee6f7cf6ef7ad1bda737d8fb3e90b42a9248da73510e852798b8e3fbf3199546bd",
+            "id": "injectable-AppConfigService-36e5759cfdd89fa9e25ca85d1bde9314236a7d7ff7954a034407796f3d27848e782a448641a02cf990d3f702214a67d7af1ae847b897dc951fa4cd80ee05aeca",
             "file": "projects/ngx-core/app-config/src/services/app-config.service.ts",
             "properties": [
                 {
@@ -260,7 +269,7 @@
             "deprecationMessage": "",
             "description": "",
             "rawdescription": "\n",
-            "sourceCode": "import { Injectable } from '@angular/core';\nimport { AppConfig } from '../interfaces/app-config.interface';\nimport { Router } from '@angular/router';\n\n@Injectable({\n  providedIn: 'root'\n})\nexport class AppConfigService {\n  private _appConfig: AppConfig = null;\n\n  constructor(private router: Router) { }\n\n\n  public get config(): AppConfig {\n    return this._appConfig;\n  }\n\n\n  public set config(v: AppConfig) {\n    this._appConfig = v;\n  }\n\n  public get openai(): any {\n    return this._appConfig.openai;\n  }\n\n\n  public set openai(v: any) {\n    this._appConfig.openai = v;\n  }\n\n\n  public get firebase(): any {\n    return this._appConfig.firebase;\n  }\n\n\n  public set firebase(v: any) {\n    this._appConfig.firebase = v;\n  }\n\n  public getConfigById(id: string): any {\n    return this._appConfig[id];\n  }\n}\n",
+            "sourceCode": "import { Injectable } from '@angular/core';\r\nimport { AppConfig } from '../interfaces/app-config.interface';\r\nimport { Router } from '@angular/router';\r\n\r\n@Injectable({\r\n  providedIn: 'root'\r\n})\r\nexport class AppConfigService {\r\n  private _appConfig: AppConfig = null;\r\n\r\n  constructor(private router: Router) { }\r\n\r\n\r\n  public get config(): AppConfig {\r\n    return this._appConfig;\r\n  }\r\n\r\n\r\n  public set config(v: AppConfig) {\r\n    this._appConfig = v;\r\n  }\r\n\r\n  public get openai(): any {\r\n    return this._appConfig.openai;\r\n  }\r\n\r\n\r\n  public set openai(v: any) {\r\n    this._appConfig.openai = v;\r\n  }\r\n\r\n\r\n  public get firebase(): any {\r\n    return this._appConfig.firebase;\r\n  }\r\n\r\n\r\n  public set firebase(v: any) {\r\n    this._appConfig.firebase = v;\r\n  }\r\n\r\n  public getConfigById(id: string): any {\r\n    return this._appConfig[id];\r\n  }\r\n}\r\n",
             "constructorObj": {
                 "name": "constructor",
                 "description": "",
@@ -1797,13 +1806,13 @@
     "modules": [
         {
             "name": "AppConfigModule",
-            "id": "module-AppConfigModule-60315ea009ab63104cc70c88ef6efce2cd748d29d842cd6de221b5173cb5c3e9bfb16519cc400359675f187595e5a9ca5f9b0e0ad8c1b64e5140bd20cd85048a",
+            "id": "module-AppConfigModule-eb915119bc6953e410ed211afdaba637166573b370153e843b01344fc2aa4291f5b783947539f1863655e602195f629184b263ecdf68ad2189abc9bfb9ef7675",
             "description": "<p>Responsible for adding Library configuration as a provider in the root,\nso that all library modules can use it, if needed. This module should be imported in App module with .forRoot().</p>\n",
             "deprecationMessage": "",
             "deprecated": false,
             "file": "projects/ngx-core/app-config/src/app-config.module.ts",
             "methods": [],
-            "sourceCode": "import { NgModule } from '@angular/core';\nimport { CommonModule } from '@angular/common';\nimport { RouterModule } from '@angular/router';\n\n\n/**\n * Responsible for adding Library configuration as a provider in the root,\n * so that all library modules can use it, if needed. This module should be imported in App module with .forRoot().\n * @date 17/3/2022 - 7:58:51 pm\n *\n * @export\n * @class AppConfigModule\n * @typedef {AppConfigModule}\n */\n@NgModule({\n  declarations: [],\n  providers: [],\n  imports: [\n    CommonModule,\n    RouterModule,\n  ],\n  exports: [],\n})\nexport class AppConfigModule {\n  constructor() { }\n}\n",
+            "sourceCode": "import { NgModule } from '@angular/core';\r\nimport { CommonModule } from '@angular/common';\r\nimport { RouterModule } from '@angular/router';\r\n\r\n\r\n/**\r\n * Responsible for adding Library configuration as a provider in the root,\r\n * so that all library modules can use it, if needed. This module should be imported in App module with .forRoot().\r\n * @date 17/3/2022 - 7:58:51 pm\r\n *\r\n * @export\r\n * @class AppConfigModule\r\n * @typedef {AppConfigModule}\r\n */\r\n@NgModule({\r\n  declarations: [],\r\n  providers: [],\r\n  imports: [\r\n    CommonModule,\r\n    RouterModule,\r\n  ],\r\n  exports: [],\r\n})\r\nexport class AppConfigModule {\r\n  constructor() { }\r\n}\r\n",
             "children": [
                 {
                     "type": "providers",
@@ -1833,13 +1842,13 @@
         },
         {
             "name": "UtilsModule",
-            "id": "module-UtilsModule-27444677647e98265d2b58cce8dbc75ab7eff300072dcd6049aba72c08cb364dbf131bd241c985fab875f97634298c6cb0bde57db101697be6026ce3c964b3e7",
+            "id": "module-UtilsModule-0b00d4a9ab05507605bec0f3d6866391a40038dd4d3d5dcdc0cde350248eb4793ba2c917f8dfbe2a7aeb3389e7acecc98f22ef41c6efb7911547c7bc5c601207",
             "description": "",
             "deprecationMessage": "",
             "deprecated": false,
             "file": "projects/ngx-core/utils/src/utils.module.ts",
             "methods": [],
-            "sourceCode": "\nimport { NgModule } from '@angular/core';\nimport { CommonModule } from '@angular/common';\nimport { UtilsService } from './services/utils.service';\n\n\n\n@NgModule({\n  declarations: [],\n  providers: [UtilsService],\n  imports: [\n    CommonModule\n  ],\n  exports: []\n})\nexport class UtilsModule { }\n",
+            "sourceCode": "\r\nimport { NgModule } from '@angular/core';\r\nimport { CommonModule } from '@angular/common';\r\nimport { UtilsService } from './services/utils.service';\r\n\r\n\r\n\r\n@NgModule({\r\n  declarations: [],\r\n  providers: [UtilsService],\r\n  imports: [\r\n    CommonModule\r\n  ],\r\n  exports: []\r\n})\r\nexport class UtilsModule { }\r\n",
             "children": [
                 {
                     "type": "providers",
@@ -1917,7 +1926,7 @@
                 "linktype": "interface",
                 "name": "AppConfig",
                 "coveragePercent": 0,
-                "coverageCount": "0/20",
+                "coverageCount": "0/21",
                 "status": "low"
             },
             {

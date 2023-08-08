@@ -55,19 +55,22 @@
       </anu-footer-nav>
 
       <div class="row">
-        <div class="col-sm-12 col-md-4 col-lg-4 hidden">
+        <!-- Social Media -->
+        <div class="col-sm-12 col-md-4 col-lg-4">
           <div class="container center">
-            <h3>SHARE</h3>
-            <!-- TODO: Add Share social media component -->
+            <h3>Find us on Social Media</h3>
+            <anu-social-media-buttons class="row center" [buttons]="socialMediaButtons"></anu-social-media-buttons>
           </div>
         </div>
 
+        <!-- About and contact -->
         <div class="col-sm-12 col-md-4 col-lg-4">
           <div class="container center">
             <a [routerLink]="appConfig?.aboutUsUrl">About us</a>
             <a [routerLink]="appConfig?.contactUsUrl">Contact us</a>
           </div>
         </div>
+
         <!-- Terms and condition links -->
         <div class="col-sm-12 col-md-4 col-lg-4">
           <small class="container center">
@@ -78,4 +81,7 @@
       </div>
     </footer>
   </div>
+
+  <!-- Share Page on Social Media -->
+  <anu-social-media-share-buttons [fullscreenMode]="true"></anu-social-media-share-buttons>
 </div>
