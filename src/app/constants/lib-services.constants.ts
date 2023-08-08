@@ -5,6 +5,7 @@
         import { ThemeService } from '@annuadvent/ngx-common-ui/theme';
         
         // ngx-cms imports
+        import { AiArticlesService } from '@annuadvent/ngx-cms/openai-auto-articles';
         import { ArticleEditorService } from '@annuadvent/ngx-cms/article-editor';
         import { ContentEditorService } from '@annuadvent/ngx-cms/content-editor';
         import { Html2JsonService } from '@annuadvent/ngx-cms/content-editor';
@@ -46,7 +47,8 @@
     ThemeService
 },
     'ngx-cms': {
-        ArticleEditorService,
+        AiArticlesService,
+    ArticleEditorService,
     ContentEditorService,
     Html2JsonService,
     SelectionService

@@ -41,6 +41,7 @@
         import { TypographyComponent } from '@annuadvent/ngx-common-ui/typography/src/components/typography/typography.docs';
         
         // ngx-cms imports
+        import { AiArticlesComponent } from '@annuadvent/ngx-cms/openai-auto-articles/src/components/ai-articles/ai-articles.docs';
         import { ArticleComponent } from '@annuadvent/ngx-cms/article/src/components/article/article.docs';
         import { ArticleEditorComponent } from '@annuadvent/ngx-cms/article-editor/src/components/article-editor/article-editor.docs';
         import { ArticleElementComponent } from '@annuadvent/ngx-cms/article/src/components/article-element/article-element.docs';
@@ -111,7 +112,8 @@
     TypographyComponent
 },
     'ngx-cms': {
-        ArticleComponent,
+        AiArticlesComponent,
+    ArticleComponent,
     ArticleEditorComponent,
     ArticleElementComponent,
     ArticleListComponent,

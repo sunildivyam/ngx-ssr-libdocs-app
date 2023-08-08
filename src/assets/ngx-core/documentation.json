@@ -3,12 +3,12 @@
     "interfaces": [
         {
             "name": "AppConfig",
-            "id": "interface-AppConfig-2cefb6c15b145099c5e6842b98accfb7f88a02a4717c2bb7dbfdcaa48a184b26ae8915db54e277f126743384d45440662f06b1329b937404f8a6e1d534c57037",
+            "id": "interface-AppConfig-55fbfe92790d64a8dd336116f75c3fa323a50d39d5a482bf3d54e5a42530fc922f22fa8c4c66dce97ce9cfd11ae2ae88b6276e7f056fa886bb78e87d08f9f643",
             "file": "projects/ngx-core/app-config/src/interfaces/app-config.interface.ts",
             "deprecated": false,
             "deprecationMessage": "",
             "type": "interface",
-            "sourceCode": "export interface AppConfig {\r\n    name: string;\r\n    copyrightText: string;\r\n    themeName: string;\r\n    adminEmail?: string;\r\n    siteEmail?: string;\r\n    defaultPageSize: number;\r\n    metaInfo: any;\r\n    mainMenuItems: Array<any>;\r\n\r\n    // Urls\r\n    apiBaseUrl: string;\r\n    imagesSourceUrl: string;\r\n    loginUrl?: string;\r\n    logoutUrl?: string;\r\n    profileUrl?: string;\r\n    tNcUrl: string;\r\n    privacyPolicyUrl: string;\r\n    contactUsUrl?: string;\r\n    aboutUsUrl?: string;\r\n\r\n    //Firebase\r\n    firebase?: any;\r\n\r\n    // Openai\r\n    openai?: any;\r\n\r\n    // Any custom key value\r\n    [key: string]: any,\r\n}\r\n",
+            "sourceCode": "export interface AppConfig {\r\n    name: string;\r\n    copyrightText: string;\r\n    themeName: string;\r\n    adminEmail?: string;\r\n    siteEmail?: string;\r\n    defaultPageSize: number;\r\n    metaInfo: any;\r\n    mainMenuItems: Array<any>;\r\n\r\n    // Urls\r\n    apiBaseUrl: string;\r\n    imagesSourceUrl: string;\r\n    loginUrl?: string;\r\n    logoutUrl?: string;\r\n    profileUrl?: string;\r\n    tNcUrl: string;\r\n    privacyPolicyUrl: string;\r\n    contactUsUrl?: string;\r\n    aboutUsUrl?: string;\r\n\r\n    //Firebase\r\n    firebase?: any;\r\n\r\n    // Openai\r\n    openai?: any;\r\n\r\n    // Openai\r\n    socialMedia?: any;\r\n\r\n    // Any custom key value\r\n    [key: string]: any,\r\n}\r\n",
             "properties": [
                 {
                     "name": "aboutUsUrl",
@@ -164,6 +164,15 @@
                     "line": 6
                 },
                 {
+                    "name": "socialMedia",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "any",
+                    "optional": true,
+                    "description": "",
+                    "line": 29
+                },
+                {
                     "name": "themeName",
                     "deprecated": false,
                     "deprecationMessage": "",
@@ -184,7 +193,7 @@
             ],
             "indexSignatures": [
                 {
-                    "id": "index-declaration-2cefb6c15b145099c5e6842b98accfb7f88a02a4717c2bb7dbfdcaa48a184b26ae8915db54e277f126743384d45440662f06b1329b937404f8a6e1d534c57037",
+                    "id": "index-declaration-55fbfe92790d64a8dd336116f75c3fa323a50d39d5a482bf3d54e5a42530fc922f22fa8c4c66dce97ce9cfd11ae2ae88b6276e7f056fa886bb78e87d08f9f643",
                     "args": [
                         {
                             "name": "key",
@@ -194,7 +203,7 @@
                         }
                     ],
                     "returnType": "any",
-                    "line": 26,
+                    "line": 29,
                     "deprecated": false,
                     "deprecationMessage": ""
                 }
@@ -1917,7 +1926,7 @@
                 "linktype": "interface",
                 "name": "AppConfig",
                 "coveragePercent": 0,
-                "coverageCount": "0/20",
+                "coverageCount": "0/21",
                 "status": "low"
             },
             {
