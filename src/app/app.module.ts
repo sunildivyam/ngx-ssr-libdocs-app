@@ -1,6 +1,6 @@
 import { APP_INITIALIZER, NgModule } from '@angular/core';
-import { BrowserModule } from '@angular/platform-browser';
-
+import { BrowserModule, provideClientHydration } from '@angular/platform-browser';
+import { provideHttpClient, withFetch } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './components/app/app.component';
 import { ApiInterceptor, FireAuthModule, FirebaseInterceptor } from '@annuadvent/ngx-tools/fire-auth';
@@ -43,6 +43,8 @@ import { SocialMediaModule } from '@annuadvent/ngx-common-ui/social-media';
     SocialMediaModule,
   ],
   providers: [
+    provideClientHydration(),
+    provideHttpClient(withFetch()),
     {
       provide: APP_INITIALIZER,
       useFactory: appInit,
