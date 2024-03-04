@@ -1,45 +1,78 @@
 <div class="app-container container">
-  <anu-spinner id="app-spinner" [fullscreen]="true" [show]="appSpinner.isLoading" [mode]="SpinnerMode.Progress"
-    size="md"></anu-spinner>
+  <anu-spinner
+    id="app-spinner"
+    [fullscreen]="true"
+    [show]="appSpinner.isLoading"
+    [mode]="SpinnerMode.Progress"
+    size="md"
+  ></anu-spinner>
   <!-- App Header -->
-  <anu-menu class="flex-container primary-deep-dark-grad center" [items]="mainMenuItems"
-    [subHeading]="appConfig?.metaInfo?.title || ''" [logoUrl]="'/assets/annu-advent-logo.png'"
-    [heading]="appConfig?.name || ''" (openStatusChanged)="mainMenuOpenStatusChanged($event)" [opened]="isMainNavOpen"
-    [headingHref]="['./']">
+  <anu-menu
+    class="flex-container primary-normal-grad center accent-deep-light"
+    [items]="mainMenuItems"
+    [subHeading]="appConfig?.metaInfo?.title || ''"
+    [logoUrl]="'/assets/annu-advent-logo.png'"
+    [heading]="appConfig?.name || ''"
+    (openStatusChanged)="mainMenuOpenStatusChanged($event)"
+    [opened]="isMainNavOpen"
+    [headingHref]="['./']"
+    [menuClassNames]="[]"
+    [menuItemClassNames]="[
+      'primary-normal-grad',
+      'accent-deep-light',
+      'border-round',
+      'shadow'
+    ]"
+  >
   </anu-menu>
   <div class="flex-container center">
     <div class="row relative stretch">
       <div class="col-12">
         <anu-breadcrumb></anu-breadcrumb>
       </div>
-      <anu-theme-font-resizer [fontSizes]="themeFontSizes"></anu-theme-font-resizer>
+      <anu-theme-font-resizer
+        [fontSizes]="themeFontSizes"
+      ></anu-theme-font-resizer>
     </div>
   </div>
 
   <!-- App slideshow -->
   <div class="flex-container spacing-around-vertical primary-lightest-grad">
     <anu-slideshow class="container">
-      <anu-card class="slidehow_item border border-round spacing-around" [isRowLayout]="true"
+      <anu-card
+        class="slidehow_item border border-round spacing-around"
+        [isRowLayout]="true"
         [imageCssClasses]="['col-sm-4', 'col-md-4', 'col-lg-4']"
-        [contentCssClasses]="['col-sm-8', 'col-md-8', 'col-lg-8']" *ngFor="let libInfo of libsInfoArr">
+        [contentCssClasses]="['col-sm-8', 'col-md-8', 'col-lg-8']"
+        *ngFor="let libInfo of libsInfoArr"
+      >
         <anu-card-image>
           <a [routerLink]="['libs', libInfo?.name]">
-            <img class="border-round" [src]="'assets/'+ libInfo?.name + '.jpeg'" [alt]="libInfo?.name" />
+            <img
+              class="border-round"
+              [src]="'assets/' + libInfo?.name + '.jpeg'"
+              [alt]="libInfo?.name"
+            />
           </a>
         </anu-card-image>
         <anu-card-title class="">
-          <h3><a [routerLink]="['libs', libInfo?.name]">{{libInfo?.fullName}}</a></h3>
+          <h3>
+            <a [routerLink]="['libs', libInfo?.name]">{{
+              libInfo?.fullName
+            }}</a>
+          </h3>
         </anu-card-title>
         <anu-card-body>
-          <span>Version: {{libInfo?.version}}</span>
+          <span>Version: {{ libInfo?.version }}</span>
         </anu-card-body>
         <anu-card-footer class="">
           <div class="row right">
-            <a [routerLink]="['libs', libInfo?.name]">{{libInfo?.name}} Full documentation</a>.
+            <a [routerLink]="['libs', libInfo?.name]"
+              >{{ libInfo?.name }} Full documentation</a
+            >.
           </div>
         </anu-card-footer>
       </anu-card>
-
     </anu-slideshow>
   </div>
 
@@ -51,7 +84,11 @@
   <!-- App Footer -->
   <div class="flex-container primary-lightest-grad center">
     <footer class="container spacing-vertical">
-      <anu-footer-nav class="primary-lightest-grad" [copyrightText]="appConfig.copyrightText" [items]="footerNavItems">
+      <anu-footer-nav
+        class="primary-lightest-grad"
+        [copyrightText]="appConfig.copyrightText"
+        [items]="footerNavItems"
+      >
       </anu-footer-nav>
 
       <div class="row">
@@ -59,7 +96,10 @@
         <div class="col-sm-12 col-md-4 col-lg-4">
           <div class="container center">
             <h3>Find us on Social Media</h3>
-            <anu-social-media-buttons class="row center" [buttons]="socialMediaButtons"></anu-social-media-buttons>
+            <anu-social-media-buttons
+              class="row center"
+              [buttons]="socialMediaButtons"
+            ></anu-social-media-buttons>
           </div>
         </div>
 
@@ -83,5 +123,7 @@
   </div>
 
   <!-- Share Page on Social Media -->
-  <anu-social-media-share-buttons [fullscreenMode]="true"></anu-social-media-share-buttons>
+  <anu-social-media-share-buttons
+    [fullscreenMode]="true"
+  ></anu-social-media-share-buttons>
 </div>
