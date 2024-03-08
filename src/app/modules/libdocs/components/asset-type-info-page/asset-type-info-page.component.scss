@@ -1,22 +1,19 @@
 :host {
-    width: 100%;
+  width: 100%;
 
-    anu-card,
-    anu-card-title,
-    anu-card-body,
-    anu-card-footer {
-        word-wrap: break-word;
-    }
+  anu-card,
+  anu-card-title,
+  anu-card-body,
+  anu-card-footer {
+    word-wrap: break-word;
+  }
 
-    anu-card:hover {
-        background-color: var(--anu-primary-deep-light);
-    }
+  anu-card:hover {
+    background-color: var(--anu-primary-deep-light);
+    transform: scale(1.05);
+  }
 
-    .asset-type-info_thumbnail {
-        transition: all 0.3s;
-
-        &:hover {
-            box-shadow: none;
-        }
-    }
+  .asset-type-info_thumbnail {
+    transition: all 0.3s;
+  }
 }

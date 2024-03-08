@@ -8,21 +8,17 @@
   ></anu-spinner>
   <!-- App Header -->
   <anu-menu
-    class="flex-container primary-normal-grad center accent-deep-light"
+    class="flex-container center primary-normal-grad-h"
     [items]="mainMenuItems"
     [subHeading]="appConfig?.metaInfo?.title || ''"
     [logoUrl]="'/assets/annu-advent-logo.png'"
     [heading]="appConfig?.name || ''"
     (openStatusChanged)="mainMenuOpenStatusChanged($event)"
     [opened]="isMainNavOpen"
+    [enableSeparator]="true"
     [headingHref]="['./']"
     [menuClassNames]="[]"
-    [menuItemClassNames]="[
-      'primary-normal-grad',
-      'accent-deep-light',
-      'border-round',
-      'shadow'
-    ]"
+    [menuItemClassNames]="[]"
   >
   </anu-menu>
   <div class="flex-container center">
@@ -37,7 +33,7 @@
   </div>
 
   <!-- App slideshow -->
-  <div class="flex-container spacing-around-vertical primary-lightest-grad">
+  <div class="flex-container spacing-around-v primary-lightest-grad">
     <anu-slideshow class="container">
       <anu-card
         class="slidehow_item border border-round spacing-around"
@@ -83,7 +79,7 @@
 
   <!-- App Footer -->
   <div class="flex-container primary-lightest-grad center">
-    <footer class="container spacing-vertical">
+    <footer class="container spacing-v">
       <anu-footer-nav
         class="primary-lightest-grad"
         [copyrightText]="appConfig.copyrightText"

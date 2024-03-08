@@ -56,6 +56,8 @@
         import { ContentElementComponent } from '@annuadvent/ngx-cms/content-editor';
         import { LeafElementComponent } from '@annuadvent/ngx-cms/content-editor';
         import { OpenaiAutoArticlesComponent } from '@annuadvent/ngx-cms/openai-auto-articles';
+        import { TableComponent } from '@annuadvent/ngx-cms/content-editor';
+        import { TableFormComponent } from '@annuadvent/ngx-cms/content-editor';
         
         // ngx-core imports
         
@@ -126,7 +128,9 @@
     ContentEditorComponent,
     ContentElementComponent,
     LeafElementComponent,
-    OpenaiAutoArticlesComponent
+    OpenaiAutoArticlesComponent,
+    TableComponent,
+    TableFormComponent
 },
     'ngx-core': {
         

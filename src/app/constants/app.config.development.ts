@@ -1,7 +1,7 @@
 import { AppConfig } from "@annuadvent/ngx-core/app-config";
 
 export const appConfig: AppConfig = {
-  name: "ngxSsrLibdocsApp",
+  name: "Annu Business",
   copyrightText: "copyright©annu-business. All rights reserved.",
   themeName: "armyGreen",
   siteEmail: "annuadvent@gmail.com",
@@ -33,7 +33,7 @@ export const appConfig: AppConfig = {
     image: "/assets/ngx-libs-annu-advent.jpeg",
     url: "",
     card: "summary_large_image",
-    site_name: "ngxSsrLibdocsApp",
+    site_name: "Annu Business",
     audio: "",
     video: "",
   },
