@@ -41,6 +41,9 @@
         import { RoleStudentGuard } from '@annuadvent/ngx-tools/fire-auth';
         import { RoleTeacherGuard } from '@annuadvent/ngx-tools/fire-auth';
         import { SitemapService } from '@annuadvent/ngx-tools/fire-storage';
+        
+        // ngx-ecommerce imports
+        
         export const libServiceClasses = {
     'ngx-common-ui': {
         HighlightService,
@@ -84,5 +87,8 @@
     RoleStudentGuard,
     RoleTeacherGuard,
     SitemapService
+},
+    'ngx-ecommerce': {
+        
 },
 }

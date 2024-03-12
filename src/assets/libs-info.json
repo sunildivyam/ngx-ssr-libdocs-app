@@ -119,5 +119,32 @@
 		],
 		"node": "18.17.0",
 		"npm": "9.6.7"
+	},
+	"ngx-ecommerce": {
+		"name": "ngx-ecommerce",
+		"fullName": "@annuadvent/ngx-ecommerce",
+		"version": "1.0.0",
+		"description": "Angular components library for ecommerce",
+		"descriptionHtml": "<h1 id=\"annuadventngxecommerce\">@annuadvent/ngx-ecommerce:</h1>\n<h2 id=\"boostyourecommercedevelopmentwithngxecommerce\">Boost Your E-commerce Development with ngx-ecommerce</h2>\n<p><code>ngx-ecommerce</code> is a comprehensive Angular library designed to streamline the development process for building modern e-commerce applications.</p>\n<h2 id=\"keyfeatures\">Key Features:</h2>\n<ul>\n<li><p><strong>Pre-built Angular Components:</strong> Out-of-the-box components for common e-commerce functionalities like product listings, shopping carts, checkout forms, and more.</p></li>\n<li><p><strong>Enhanced Developer Experience:</strong> Save time and effort by utilizing pre-built components and focus on customizing the look and feel to match your unique brand identity.</p></li>\n<li><p><strong>Streamlined Development Workflow:</strong> The library offers a consistent development experience, allowing you to build e-commerce features faster and more efficiently.</p></li>\n</ul>\n<h2 id=\"benefits\">Benefits:</h2>\n<ul>\n<li><p><strong>Rapid Prototyping:</strong> Quickly set up the core functionalities of your e-commerce application.\nReduced Development Time: Focus on building unique features and functionalities instead of reinventing the wheel.</p></li>\n<li><p><strong>Improved Code Maintainability:</strong> Leverage well-structured and reusable components for better code organization.</p></li>\n</ul>\n<h2 id=\"usefullinks\">Useful Links</h2>\n<p><a href=\"https://ngx-libs.annuadvent.com/libs/ngx-ecommerce\">ngx-ecommerce Documentation</a></p>\n<p><a href=\"https://github.com/sunildivyam/ngx-ecommerce\">ngx-ecommerce Github</a></p>\n<p><a href=\"https://npmjs.com/package/@annuadvent/ngx-ecommerce\">ngx-ecommerce NPM</a></p>\n<h2 id=\"workspacerepository\">Workspace repository</h2>\n<ul>\n<li>To contribute code with <code>ngx-ecommerce</code> library, it is recommended to work through <code>ngx-workspace</code> project, that integrates all libraries and provides all required scripts to <code>build, deploy and test</code> them.</li>\n<li><a href=\"https://github.com/sunildivyam/ngx-workspace\">ngx-workspace Github</a></li>\n</ul>",
+		"keywords": [
+			"Angular Ecommerce Components",
+			"Angular Ecommerce library",
+			"Ecommerce",
+			"Angular components",
+			"Angular ui components",
+			"ngx-common-ui",
+			"TypeScript",
+			"javascript",
+			"javascript framework"
+		],
+		"homepage": "https://github.com/sunildivyam/ngx-ecommerce",
+		"bugs": "https://github.com/sunildivyam/ngx-ecommerce/issues",
+		"git": "https://github.com/sunildivyam/ngx-ecommerce.git",
+		"dependencies": [
+			"@angular/common",
+			"@angular/core"
+		],
+		"node": "18.16.0",
+		"npm": "9.5.1"
 	}
 }

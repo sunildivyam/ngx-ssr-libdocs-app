@@ -1,0 +1,184 @@
+{
+    "pipes": [],
+    "interfaces": [],
+    "injectables": [],
+    "guards": [],
+    "interceptors": [],
+    "classes": [],
+    "directives": [],
+    "components": [
+        {
+            "name": "ProductThumbComponent",
+            "id": "component-ProductThumbComponent-a0a1a2ed87fb1be1c9a77927474eed86dd472e84bed1a844d8954c1e41efbf5bccdaad9a9a4181565d87ef4802d6ea9ea2478653be6380756a9c8dbc33266279",
+            "file": "projects/ngx-ecommerce/product-thumb/src/components/product-thumb/product-thumb.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "anu-product-thumb",
+            "styleUrls": [
+                "./product-thumb.component.scss"
+            ],
+            "styles": [],
+            "templateUrl": [
+                "./product-thumb.component.html"
+            ],
+            "viewProviders": [],
+            "hostDirectives": [],
+            "inputsClass": [],
+            "outputsClass": [],
+            "propertiesClass": [],
+            "methodsClass": [],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [],
+            "standalone": false,
+            "imports": [],
+            "description": "<p>ProductThumb: A Reusable Component for Product Listings</p>\n<p>The ProductThumb component provides a visually appealing and interactive way to showcase product thumbnails within your e-commerce application.</p>\n<p>Key Features:</p>\n<p>Displays Product Information: Presents essential product details like image, title, price, and potentially other relevant information.\nClickable Design: Allows users to seamlessly navigate to the product&#39;s detail view for further exploration with a single click.\nCustomizable Appearance: Tailor the look and feel of the thumbnail to match your brand identity through CSS classes or component properties.\nBenefits:</p>\n<p>Enhances User Experience: Provides a clear and concise overview of products, allowing users to efficiently browse through the catalog.\nPromotes Product Discovery: Eye-catching thumbnails can entice users to explore specific products in more detail.\nReduces Development Time: This pre-built component eliminates the need to manually create product thumbnails from scratch.\nIdeal for:</p>\n<p>Displaying product listings within product catalogs, search results, and similar sections of your e-commerce application.</p>\n",
+            "rawdescription": "\n\n\nProductThumb: A Reusable Component for Product Listings\n\nThe ProductThumb component provides a visually appealing and interactive way to showcase product thumbnails within your e-commerce application.\n\nKey Features:\n\nDisplays Product Information: Presents essential product details like image, title, price, and potentially other relevant information.\nClickable Design: Allows users to seamlessly navigate to the product's detail view for further exploration with a single click.\nCustomizable Appearance: Tailor the look and feel of the thumbnail to match your brand identity through CSS classes or component properties.\nBenefits:\n\nEnhances User Experience: Provides a clear and concise overview of products, allowing users to efficiently browse through the catalog.\nPromotes Product Discovery: Eye-catching thumbnails can entice users to explore specific products in more detail.\nReduces Development Time: This pre-built component eliminates the need to manually create product thumbnails from scratch.\nIdeal for:\n\nDisplaying product listings within product catalogs, search results, and similar sections of your e-commerce application.\n",
+            "type": "component",
+            "sourceCode": "import { Component } from '@angular/core';\n\n/**\n *\n * ProductThumb: A Reusable Component for Product Listings\n *\n * The ProductThumb component provides a visually appealing and interactive way to showcase product thumbnails within your e-commerce application.\n *\n * Key Features:\n *\n * Displays Product Information: Presents essential product details like image, title, price, and potentially other relevant information.\n * Clickable Design: Allows users to seamlessly navigate to the product's detail view for further exploration with a single click.\n * Customizable Appearance: Tailor the look and feel of the thumbnail to match your brand identity through CSS classes or component properties.\n * Benefits:\n *\n * Enhances User Experience: Provides a clear and concise overview of products, allowing users to efficiently browse through the catalog.\n * Promotes Product Discovery: Eye-catching thumbnails can entice users to explore specific products in more detail.\n * Reduces Development Time: This pre-built component eliminates the need to manually create product thumbnails from scratch.\n * Ideal for:\n *\n * Displaying product listings within product catalogs, search results, and similar sections of your e-commerce application.\n */\n@Component({\n  selector: 'anu-product-thumb',\n  templateUrl: './product-thumb.component.html',\n  styleUrls: ['./product-thumb.component.scss'],\n})\nexport class ProductThumbComponent {}\n",
+            "assetsDirs": [],
+            "styleUrlsData": [
+                {
+                    "data": "",
+                    "styleUrl": "./product-thumb.component.scss"
+                }
+            ],
+            "stylesData": "",
+            "templateData": "<anu-card>\n  <anu-card-title> Product Info </anu-card-title>\n  <anu-card-body> Product description </anu-card-body>\n  <anu-card-footer> Product Buy </anu-card-footer>\n</anu-card>\n"
+        }
+    ],
+    "modules": [
+        {
+            "name": "ProductThumbModule",
+            "id": "module-ProductThumbModule-867241328717f27f9e3ee6dcbc77ac313af1a66ca82f563d10af27b2241438896ecff90d16c00bbbf0f930953ebd2c0cb5e0a60edfce57e64b892cec7d0fad00",
+            "description": "",
+            "deprecationMessage": "",
+            "deprecated": false,
+            "file": "projects/ngx-ecommerce/product-thumb/src/product-thumb.module.ts",
+            "methods": [],
+            "sourceCode": "import { NgModule } from '@angular/core';\nimport { CommonModule } from '@angular/common';\nimport { ProductThumbComponent } from './components/product-thumb/product-thumb.component';\nimport { CardModule } from '@annuadvent/ngx-common-ui/card';\n\n@NgModule({\n  declarations: [ProductThumbComponent],\n  imports: [CommonModule, CardModule],\n  exports: [ProductThumbComponent],\n})\nexport class ProductThumbModule {}\n",
+            "children": [
+                {
+                    "type": "providers",
+                    "elements": []
+                },
+                {
+                    "type": "declarations",
+                    "elements": []
+                },
+                {
+                    "type": "imports",
+                    "elements": []
+                },
+                {
+                    "type": "exports",
+                    "elements": []
+                },
+                {
+                    "type": "bootstrap",
+                    "elements": []
+                },
+                {
+                    "type": "classes",
+                    "elements": []
+                }
+            ]
+        }
+    ],
+    "miscellaneous": {
+        "variables": [
+            {
+                "name": "LIB_NAME",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/ngx-ecommerce/public-api.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "string",
+                "defaultValue": "'ngx-ecommerce'"
+            },
+            {
+                "name": "ProductThumbComponent",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/ngx-ecommerce/product-thumb/src/components/product-thumb/product-thumb.docs.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "any",
+                "defaultValue": "{\r\n  projectionContent: '',\r\n  inputPropsValues: {},\r\n}"
+            }
+        ],
+        "functions": [],
+        "typealiases": [],
+        "enumerations": [],
+        "groupedVariables": {
+            "projects/ngx-ecommerce/public-api.ts": [
+                {
+                    "name": "LIB_NAME",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/ngx-ecommerce/public-api.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "string",
+                    "defaultValue": "'ngx-ecommerce'"
+                }
+            ],
+            "projects/ngx-ecommerce/product-thumb/src/components/product-thumb/product-thumb.docs.ts": [
+                {
+                    "name": "ProductThumbComponent",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/ngx-ecommerce/product-thumb/src/components/product-thumb/product-thumb.docs.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "any",
+                    "defaultValue": "{\r\n  projectionContent: '',\r\n  inputPropsValues: {},\r\n}"
+                }
+            ]
+        },
+        "groupedFunctions": {},
+        "groupedEnumerations": {},
+        "groupedTypeAliases": {}
+    },
+    "routes": [],
+    "coverage": {
+        "count": 33,
+        "status": "medium",
+        "files": [
+            {
+                "filePath": "projects/ngx-ecommerce/product-thumb/src/components/product-thumb/product-thumb.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "ProductThumbComponent",
+                "coveragePercent": 100,
+                "coverageCount": "1/1",
+                "status": "very-good"
+            },
+            {
+                "filePath": "projects/ngx-ecommerce/product-thumb/src/components/product-thumb/product-thumb.docs.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "ProductThumbComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/ngx-ecommerce/public-api.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "LIB_NAME",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            }
+        ]
+    }
+}

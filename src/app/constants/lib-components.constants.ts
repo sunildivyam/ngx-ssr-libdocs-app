@@ -72,6 +72,9 @@
         import { OpenaiImageFormComponent } from '@annuadvent/ngx-tools/openai';
         import { QueueStatusComponent } from '@annuadvent/ngx-tools/queue';
         import { SitemapComponent } from '@annuadvent/ngx-tools/fire-storage';
+        
+        // ngx-ecommerce imports
+        import { ProductThumbComponent } from '@annuadvent/ngx-ecommerce/product-thumb';
         export const libComponentClasses = {
     'ngx-common-ui': {
         AsideNavComponent,
@@ -146,5 +149,8 @@
     OpenaiImageFormComponent,
     QueueStatusComponent,
     SitemapComponent
+},
+    'ngx-ecommerce': {
+        ProductThumbComponent
 },
 }
