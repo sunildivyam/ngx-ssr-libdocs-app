@@ -10,9 +10,9 @@
   <anu-menu
     class="flex-container center primary-normal-grad-h"
     [items]="mainMenuItems"
-    [subHeading]="appConfig?.metaInfo?.title || ''"
+    [subHeading]="''"
     [logoUrl]="'/assets/annu-advent-logo.png'"
-    [heading]="appConfig?.name || ''"
+    [heading]="'Ngx Libs'"
     (openStatusChanged)="mainMenuOpenStatusChanged($event)"
     [opened]="isMainNavOpen"
     [enableSeparator]="true"
