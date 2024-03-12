@@ -410,10 +410,70 @@
         },
         {
             "name": "UtilsService",
-            "id": "injectable-UtilsService-4ad738a763fb83c26a5372648a57ffb7b1629b1f3ad8ac8d0203693acec673401b2dcf7075876989cfeb2d2c1ce967d577f0f9bc69c7df955ff8d641866fe67b",
+            "id": "injectable-UtilsService-5c80977d83ea3adb6e38c381efb21906e93f84ab401791b66322188576d6334d94897e145a41ce1df09af1facd2c68b12397bc3b61310a9adb252f27adef054d",
             "file": "projects/ngx-core/utils/src/services/utils.service.ts",
             "properties": [],
             "methods": [
+                {
+                    "name": "camelCaseToDashCase",
+                    "args": [
+                        {
+                            "name": "str",
+                            "type": "string",
+                            "deprecated": false,
+                            "deprecationMessage": ""
+                        }
+                    ],
+                    "optional": false,
+                    "returnType": "string",
+                    "typeParameters": [],
+                    "line": 23,
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "rawdescription": "\n\nReplaces all upperCase letters to lowercase precided with '-' dash\n",
+                    "description": "<p>Replaces all upperCase letters to lowercase precided with &#39;-&#39; dash</p>\n",
+                    "modifierKind": [
+                        123
+                    ],
+                    "jsdoctags": [
+                        {
+                            "name": {
+                                "pos": 394,
+                                "end": 397,
+                                "flags": 8421376,
+                                "modifierFlagsCache": 0,
+                                "transformFlags": 0,
+                                "kind": 79,
+                                "escapedText": "str"
+                            },
+                            "type": "string",
+                            "deprecated": false,
+                            "deprecationMessage": "",
+                            "tagName": {
+                                "pos": 388,
+                                "end": 393,
+                                "flags": 8421376,
+                                "modifierFlagsCache": 0,
+                                "transformFlags": 0,
+                                "kind": 79,
+                                "escapedText": "param"
+                            },
+                            "comment": ""
+                        },
+                        {
+                            "tagName": {
+                                "pos": 405,
+                                "end": 412,
+                                "flags": 8421376,
+                                "modifierFlagsCache": 0,
+                                "transformFlags": 0,
+                                "kind": 79,
+                                "escapedText": "returns"
+                            },
+                            "comment": "<p>dashed string</p>\n"
+                        }
+                    ]
+                },
                 {
                     "name": "dateStringToTotalTimeString",
                     "args": [
@@ -427,7 +487,7 @@
                     "optional": false,
                     "returnType": "string",
                     "typeParameters": [],
-                    "line": 86,
+                    "line": 101,
                     "deprecated": false,
                     "deprecationMessage": "",
                     "rawdescription": "\n\nConverts ISOString date string to its equivalent time in milliseconds since 1970, returns numeric value as a string.\n\n",
@@ -438,8 +498,8 @@
                     "jsdoctags": [
                         {
                             "name": {
-                                "pos": 2194,
-                                "end": 2201,
+                                "pos": 2545,
+                                "end": 2552,
                                 "flags": 8421376,
                                 "modifierFlagsCache": 0,
                                 "transformFlags": 0,
@@ -450,8 +510,8 @@
                             "deprecated": false,
                             "deprecationMessage": "",
                             "tagName": {
-                                "pos": 2179,
-                                "end": 2184,
+                                "pos": 2530,
+                                "end": 2535,
                                 "flags": 8421376,
                                 "modifierFlagsCache": 0,
                                 "transformFlags": 0,
@@ -460,15 +520,15 @@
                             },
                             "comment": "",
                             "typeExpression": {
-                                "pos": 2185,
-                                "end": 2193,
+                                "pos": 2536,
+                                "end": 2544,
                                 "flags": 8421376,
                                 "modifierFlagsCache": 0,
                                 "transformFlags": 0,
                                 "kind": 312,
                                 "type": {
-                                    "pos": 2186,
-                                    "end": 2192,
+                                    "pos": 2537,
+                                    "end": 2543,
                                     "flags": 8388608,
                                     "modifierFlagsCache": 0,
                                     "transformFlags": 1,
@@ -478,8 +538,8 @@
                         },
                         {
                             "tagName": {
-                                "pos": 2209,
-                                "end": 2216,
+                                "pos": 2560,
+                                "end": 2567,
                                 "flags": 8421376,
                                 "modifierFlagsCache": 0,
                                 "transformFlags": 0,
@@ -499,13 +559,13 @@
                             "type": "string",
                             "deprecated": false,
                             "deprecationMessage": "",
-                            "defaultValue": "\"\""
+                            "defaultValue": "''"
                         }
                     ],
                     "optional": false,
                     "returnType": "string",
                     "typeParameters": [],
-                    "line": 71,
+                    "line": 86,
                     "deprecated": false,
                     "deprecationMessage": "",
                     "rawdescription": "\n\nReturns a local date string\n\n",
@@ -516,8 +576,8 @@
                     "jsdoctags": [
                         {
                             "name": {
-                                "pos": 1695,
-                                "end": 1699,
+                                "pos": 2046,
+                                "end": 2050,
                                 "flags": 8421376,
                                 "modifierFlagsCache": 0,
                                 "transformFlags": 0,
@@ -527,10 +587,10 @@
                             "type": "string",
                             "deprecated": false,
                             "deprecationMessage": "",
-                            "defaultValue": "\"\"",
+                            "defaultValue": "''",
                             "tagName": {
-                                "pos": 1680,
-                                "end": 1685,
+                                "pos": 2031,
+                                "end": 2036,
                                 "flags": 8421376,
                                 "modifierFlagsCache": 0,
                                 "transformFlags": 0,
@@ -539,15 +599,15 @@
                             },
                             "comment": "",
                             "typeExpression": {
-                                "pos": 1686,
-                                "end": 1694,
+                                "pos": 2037,
+                                "end": 2045,
                                 "flags": 8421376,
                                 "modifierFlagsCache": 0,
                                 "transformFlags": 0,
                                 "kind": 312,
                                 "type": {
-                                    "pos": 1687,
-                                    "end": 1693,
+                                    "pos": 2038,
+                                    "end": 2044,
                                     "flags": 8388608,
                                     "modifierFlagsCache": 0,
                                     "transformFlags": 1,
@@ -557,8 +617,8 @@
                         },
                         {
                             "tagName": {
-                                "pos": 1707,
-                                "end": 1714,
+                                "pos": 2058,
+                                "end": 2065,
                                 "flags": 8421376,
                                 "modifierFlagsCache": 0,
                                 "transformFlags": 0,
@@ -583,7 +643,7 @@
                     "optional": false,
                     "returnType": "any",
                     "typeParameters": [],
-                    "line": 237,
+                    "line": 252,
                     "deprecated": false,
                     "deprecationMessage": "",
                     "rawdescription": "\n\nDeep copy an object or an array\n\n",
@@ -594,8 +654,8 @@
                     "jsdoctags": [
                         {
                             "name": {
-                                "pos": 6169,
-                                "end": 6174,
+                                "pos": 6520,
+                                "end": 6525,
                                 "flags": 8421376,
                                 "modifierFlagsCache": 0,
                                 "transformFlags": 0,
@@ -606,8 +666,8 @@
                             "deprecated": false,
                             "deprecationMessage": "",
                             "tagName": {
-                                "pos": 6155,
-                                "end": 6160,
+                                "pos": 6506,
+                                "end": 6511,
                                 "flags": 8421376,
                                 "modifierFlagsCache": 0,
                                 "transformFlags": 0,
@@ -616,22 +676,22 @@
                             },
                             "comment": "",
                             "typeExpression": {
-                                "pos": 6161,
-                                "end": 6168,
+                                "pos": 6512,
+                                "end": 6519,
                                 "flags": 8421376,
                                 "modifierFlagsCache": 0,
                                 "transformFlags": 0,
                                 "kind": 312,
                                 "type": {
-                                    "pos": 6162,
-                                    "end": 6167,
+                                    "pos": 6513,
+                                    "end": 6518,
                                     "flags": 8388608,
                                     "modifierFlagsCache": 0,
                                     "transformFlags": 1,
                                     "kind": 193,
                                     "type": {
-                                        "pos": 6163,
-                                        "end": 6166,
+                                        "pos": 6514,
+                                        "end": 6517,
                                         "flags": 8388608,
                                         "modifierFlagsCache": 0,
                                         "transformFlags": 1,
@@ -642,8 +702,8 @@
                         },
                         {
                             "tagName": {
-                                "pos": 6182,
-                                "end": 6189,
+                                "pos": 6533,
+                                "end": 6540,
                                 "flags": 8421376,
                                 "modifierFlagsCache": 0,
                                 "transformFlags": 0,
@@ -668,7 +728,7 @@
                     "optional": false,
                     "returnType": "Promise<>",
                     "typeParameters": [],
-                    "line": 245,
+                    "line": 260,
                     "deprecated": false,
                     "deprecationMessage": "",
                     "modifierKind": [
@@ -700,20 +760,20 @@
                             "type": "string",
                             "deprecated": false,
                             "deprecationMessage": "",
-                            "defaultValue": "\"\""
+                            "defaultValue": "''"
                         },
                         {
                             "name": "baseUrl",
                             "type": "string",
                             "deprecated": false,
                             "deprecationMessage": "",
-                            "defaultValue": "\"\""
+                            "defaultValue": "''"
                         }
                     ],
                     "optional": false,
                     "returnType": "string",
                     "typeParameters": [],
-                    "line": 281,
+                    "line": 296,
                     "deprecated": false,
                     "deprecationMessage": "",
                     "rawdescription": "\n\nGenerates the canonical categiry or article url.\nNote: Do not provide base url, while saving urls to db, but while displaying only.\n\nProvide only when displaying the url, and not while saving to db.\n",
@@ -724,8 +784,8 @@
                     "jsdoctags": [
                         {
                             "name": {
-                                "pos": 7342,
-                                "end": 7352,
+                                "pos": 7693,
+                                "end": 7703,
                                 "flags": 8421376,
                                 "modifierFlagsCache": 0,
                                 "transformFlags": 0,
@@ -736,8 +796,8 @@
                             "deprecated": false,
                             "deprecationMessage": "",
                             "tagName": {
-                                "pos": 7327,
-                                "end": 7332,
+                                "pos": 7678,
+                                "end": 7683,
                                 "flags": 8421376,
                                 "modifierFlagsCache": 0,
                                 "transformFlags": 0,
@@ -746,15 +806,15 @@
                             },
                             "comment": "",
                             "typeExpression": {
-                                "pos": 7333,
-                                "end": 7341,
+                                "pos": 7684,
+                                "end": 7692,
                                 "flags": 8421376,
                                 "modifierFlagsCache": 0,
                                 "transformFlags": 0,
                                 "kind": 312,
                                 "type": {
-                                    "pos": 7334,
-                                    "end": 7340,
+                                    "pos": 7685,
+                                    "end": 7691,
                                     "flags": 8388608,
                                     "modifierFlagsCache": 0,
                                     "transformFlags": 1,
@@ -764,8 +824,8 @@
                         },
                         {
                             "name": {
-                                "pos": 7376,
-                                "end": 7385,
+                                "pos": 7727,
+                                "end": 7736,
                                 "flags": 8421376,
                                 "modifierFlagsCache": 0,
                                 "transformFlags": 0,
@@ -775,10 +835,10 @@
                             "type": "string",
                             "deprecated": false,
                             "deprecationMessage": "",
-                            "defaultValue": "\"\"",
+                            "defaultValue": "''",
                             "tagName": {
-                                "pos": 7360,
-                                "end": 7365,
+                                "pos": 7711,
+                                "end": 7716,
                                 "flags": 8421376,
                                 "modifierFlagsCache": 0,
                                 "transformFlags": 0,
@@ -787,15 +847,15 @@
                             },
                             "comment": "<p>Provide only when displaying the url, and not while saving to db.</p>\n",
                             "typeExpression": {
-                                "pos": 7366,
-                                "end": 7374,
+                                "pos": 7717,
+                                "end": 7725,
                                 "flags": 8421376,
                                 "modifierFlagsCache": 0,
                                 "transformFlags": 0,
                                 "kind": 312,
                                 "type": {
-                                    "pos": 7367,
-                                    "end": 7373,
+                                    "pos": 7718,
+                                    "end": 7724,
                                     "flags": 8388608,
                                     "modifierFlagsCache": 0,
                                     "transformFlags": 1,
@@ -805,8 +865,8 @@
                         },
                         {
                             "name": {
-                                "pos": 7485,
-                                "end": 7492,
+                                "pos": 7836,
+                                "end": 7843,
                                 "flags": 8421376,
                                 "modifierFlagsCache": 0,
                                 "transformFlags": 0,
@@ -816,10 +876,10 @@
                             "type": "string",
                             "deprecated": false,
                             "deprecationMessage": "",
-                            "defaultValue": "\"\"",
+                            "defaultValue": "''",
                             "tagName": {
-                                "pos": 7469,
-                                "end": 7474,
+                                "pos": 7820,
+                                "end": 7825,
                                 "flags": 8421376,
                                 "modifierFlagsCache": 0,
                                 "transformFlags": 0,
@@ -828,15 +888,15 @@
                             },
                             "comment": "",
                             "typeExpression": {
-                                "pos": 7475,
-                                "end": 7483,
+                                "pos": 7826,
+                                "end": 7834,
                                 "flags": 8421376,
                                 "modifierFlagsCache": 0,
                                 "transformFlags": 0,
                                 "kind": 312,
                                 "type": {
-                                    "pos": 7476,
-                                    "end": 7482,
+                                    "pos": 7827,
+                                    "end": 7833,
                                     "flags": 8388608,
                                     "modifierFlagsCache": 0,
                                     "transformFlags": 1,
@@ -846,8 +906,8 @@
                         },
                         {
                             "tagName": {
-                                "pos": 7504,
-                                "end": 7511,
+                                "pos": 7855,
+                                "end": 7862,
                                 "flags": 8421376,
                                 "modifierFlagsCache": 0,
                                 "transformFlags": 0,
@@ -879,13 +939,13 @@
                             "type": "string",
                             "deprecated": false,
                             "deprecationMessage": "",
-                            "defaultValue": "\"\""
+                            "defaultValue": "''"
                         }
                     ],
                     "optional": false,
                     "returnType": "string",
                     "typeParameters": [],
-                    "line": 260,
+                    "line": 275,
                     "deprecated": false,
                     "deprecationMessage": "",
                     "rawdescription": "\n\nGenerates Image source urls to be displayed from API.\nNote: Do not provide base url, while saving urls to db, but while displaying only.\n\n",
@@ -896,8 +956,8 @@
                     "jsdoctags": [
                         {
                             "name": {
-                                "pos": 6727,
-                                "end": 6740,
+                                "pos": 7078,
+                                "end": 7091,
                                 "flags": 8421376,
                                 "modifierFlagsCache": 0,
                                 "transformFlags": 0,
@@ -908,8 +968,8 @@
                             "deprecated": false,
                             "deprecationMessage": "",
                             "tagName": {
-                                "pos": 6712,
-                                "end": 6717,
+                                "pos": 7063,
+                                "end": 7068,
                                 "flags": 8421376,
                                 "modifierFlagsCache": 0,
                                 "transformFlags": 0,
@@ -918,15 +978,15 @@
                             },
                             "comment": "",
                             "typeExpression": {
-                                "pos": 6718,
-                                "end": 6726,
+                                "pos": 7069,
+                                "end": 7077,
                                 "flags": 8421376,
                                 "modifierFlagsCache": 0,
                                 "transformFlags": 0,
                                 "kind": 312,
                                 "type": {
-                                    "pos": 6719,
-                                    "end": 6725,
+                                    "pos": 7070,
+                                    "end": 7076,
                                     "flags": 8388608,
                                     "modifierFlagsCache": 0,
                                     "transformFlags": 1,
@@ -936,8 +996,8 @@
                         },
                         {
                             "name": {
-                                "pos": 6763,
-                                "end": 6779,
+                                "pos": 7114,
+                                "end": 7130,
                                 "flags": 8421376,
                                 "modifierFlagsCache": 0,
                                 "transformFlags": 0,
@@ -948,8 +1008,8 @@
                             "deprecated": false,
                             "deprecationMessage": "",
                             "tagName": {
-                                "pos": 6748,
-                                "end": 6753,
+                                "pos": 7099,
+                                "end": 7104,
                                 "flags": 8421376,
                                 "modifierFlagsCache": 0,
                                 "transformFlags": 0,
@@ -958,15 +1018,15 @@
                             },
                             "comment": "",
                             "typeExpression": {
-                                "pos": 6754,
-                                "end": 6762,
+                                "pos": 7105,
+                                "end": 7113,
                                 "flags": 8421376,
                                 "modifierFlagsCache": 0,
                                 "transformFlags": 0,
                                 "kind": 312,
                                 "type": {
-                                    "pos": 6755,
-                                    "end": 6761,
+                                    "pos": 7106,
+                                    "end": 7112,
                                     "flags": 8388608,
                                     "modifierFlagsCache": 0,
                                     "transformFlags": 1,
@@ -976,8 +1036,8 @@
                         },
                         {
                             "name": {
-                                "pos": 6803,
-                                "end": 6810,
+                                "pos": 7154,
+                                "end": 7161,
                                 "flags": 8421376,
                                 "modifierFlagsCache": 0,
                                 "transformFlags": 0,
@@ -987,10 +1047,10 @@
                             "type": "string",
                             "deprecated": false,
                             "deprecationMessage": "",
-                            "defaultValue": "\"\"",
+                            "defaultValue": "''",
                             "tagName": {
-                                "pos": 6787,
-                                "end": 6792,
+                                "pos": 7138,
+                                "end": 7143,
                                 "flags": 8421376,
                                 "modifierFlagsCache": 0,
                                 "transformFlags": 0,
@@ -999,15 +1059,15 @@
                             },
                             "comment": "",
                             "typeExpression": {
-                                "pos": 6793,
-                                "end": 6801,
+                                "pos": 7144,
+                                "end": 7152,
                                 "flags": 8421376,
                                 "modifierFlagsCache": 0,
                                 "transformFlags": 0,
                                 "kind": 312,
                                 "type": {
-                                    "pos": 6794,
-                                    "end": 6800,
+                                    "pos": 7145,
+                                    "end": 7151,
                                     "flags": 8388608,
                                     "modifierFlagsCache": 0,
                                     "transformFlags": 1,
@@ -1017,8 +1077,8 @@
                         },
                         {
                             "tagName": {
-                                "pos": 6822,
-                                "end": 6829,
+                                "pos": 7173,
+                                "end": 7180,
                                 "flags": 8421376,
                                 "modifierFlagsCache": 0,
                                 "transformFlags": 0,
@@ -1043,7 +1103,7 @@
                     "optional": false,
                     "returnType": "string",
                     "typeParameters": [],
-                    "line": 127,
+                    "line": 142,
                     "deprecated": false,
                     "deprecationMessage": "",
                     "rawdescription": "\n\nStripe out all special characters from the string too except A-Z, a-z, 0-9.\n\n",
@@ -1054,8 +1114,8 @@
                     "jsdoctags": [
                         {
                             "name": {
-                                "pos": 3149,
-                                "end": 3152,
+                                "pos": 3500,
+                                "end": 3503,
                                 "flags": 8421376,
                                 "modifierFlagsCache": 0,
                                 "transformFlags": 0,
@@ -1066,8 +1126,8 @@
                             "deprecated": false,
                             "deprecationMessage": "",
                             "tagName": {
-                                "pos": 3134,
-                                "end": 3139,
+                                "pos": 3485,
+                                "end": 3490,
                                 "flags": 8421376,
                                 "modifierFlagsCache": 0,
                                 "transformFlags": 0,
@@ -1076,15 +1136,15 @@
                             },
                             "comment": "",
                             "typeExpression": {
-                                "pos": 3140,
-                                "end": 3148,
+                                "pos": 3491,
+                                "end": 3499,
                                 "flags": 8421376,
                                 "modifierFlagsCache": 0,
                                 "transformFlags": 0,
                                 "kind": 312,
                                 "type": {
-                                    "pos": 3141,
-                                    "end": 3147,
+                                    "pos": 3492,
+                                    "end": 3498,
                                     "flags": 8388608,
                                     "modifierFlagsCache": 0,
                                     "transformFlags": 1,
@@ -1094,8 +1154,8 @@
                         },
                         {
                             "tagName": {
-                                "pos": 3160,
-                                "end": 3167,
+                                "pos": 3511,
+                                "end": 3518,
                                 "flags": 8421376,
                                 "modifierFlagsCache": 0,
                                 "transformFlags": 0,
@@ -1127,7 +1187,7 @@
                     "optional": false,
                     "returnType": "string",
                     "typeParameters": [],
-                    "line": 204,
+                    "line": 219,
                     "deprecated": false,
                     "deprecationMessage": "",
                     "modifierKind": [
@@ -1163,13 +1223,13 @@
                             "type": "string",
                             "deprecated": false,
                             "deprecationMessage": "",
-                            "defaultValue": "\"\""
+                            "defaultValue": "''"
                         }
                     ],
                     "optional": false,
                     "returnType": "string",
                     "typeParameters": [],
-                    "line": 220,
+                    "line": 235,
                     "deprecated": false,
                     "deprecationMessage": "",
                     "rawdescription": "\n\nGenerates a unique ID from a string by adding dashes for spaces and adding a unique string.\n\n",
@@ -1180,8 +1240,8 @@
                     "jsdoctags": [
                         {
                             "name": {
-                                "pos": 5706,
-                                "end": 5709,
+                                "pos": 6057,
+                                "end": 6060,
                                 "flags": 8421376,
                                 "modifierFlagsCache": 0,
                                 "transformFlags": 0,
@@ -1191,10 +1251,10 @@
                             "type": "string",
                             "deprecated": false,
                             "deprecationMessage": "",
-                            "defaultValue": "\"\"",
+                            "defaultValue": "''",
                             "tagName": {
-                                "pos": 5690,
-                                "end": 5695,
+                                "pos": 6041,
+                                "end": 6046,
                                 "flags": 8421376,
                                 "modifierFlagsCache": 0,
                                 "transformFlags": 0,
@@ -1203,15 +1263,15 @@
                             },
                             "comment": "",
                             "typeExpression": {
-                                "pos": 5696,
-                                "end": 5704,
+                                "pos": 6047,
+                                "end": 6055,
                                 "flags": 8421376,
                                 "modifierFlagsCache": 0,
                                 "transformFlags": 0,
                                 "kind": 312,
                                 "type": {
-                                    "pos": 5697,
-                                    "end": 5703,
+                                    "pos": 6048,
+                                    "end": 6054,
                                     "flags": 8388608,
                                     "modifierFlagsCache": 0,
                                     "transformFlags": 1,
@@ -1221,8 +1281,8 @@
                         },
                         {
                             "tagName": {
-                                "pos": 5721,
-                                "end": 5728,
+                                "pos": 6072,
+                                "end": 6079,
                                 "flags": 8421376,
                                 "modifierFlagsCache": 0,
                                 "transformFlags": 0,
@@ -1247,7 +1307,7 @@
                     "optional": false,
                     "returnType": "string",
                     "typeParameters": [],
-                    "line": 21,
+                    "line": 36,
                     "deprecated": false,
                     "deprecationMessage": "",
                     "rawdescription": "\n\nJoins the Url segments and forms a url, stripes out any trailing extra slashes from the segments before joing them.\n",
@@ -1258,8 +1318,8 @@
                     "jsdoctags": [
                         {
                             "name": {
-                                "pos": 435,
-                                "end": 446,
+                                "pos": 786,
+                                "end": 797,
                                 "flags": 8421376,
                                 "modifierFlagsCache": 0,
                                 "transformFlags": 0,
@@ -1270,8 +1330,8 @@
                             "deprecated": false,
                             "deprecationMessage": "",
                             "tagName": {
-                                "pos": 429,
-                                "end": 434,
+                                "pos": 780,
+                                "end": 785,
                                 "flags": 8421376,
                                 "modifierFlagsCache": 0,
                                 "transformFlags": 0,
@@ -1282,8 +1342,8 @@
                         },
                         {
                             "tagName": {
-                                "pos": 454,
-                                "end": 461,
+                                "pos": 805,
+                                "end": 812,
                                 "flags": 8421376,
                                 "modifierFlagsCache": 0,
                                 "transformFlags": 0,
@@ -1307,7 +1367,7 @@
                     "optional": false,
                     "returnType": "string",
                     "typeParameters": [],
-                    "line": 330,
+                    "line": 345,
                     "deprecated": false,
                     "deprecationMessage": "",
                     "rawdescription": "\n\nGives a natural comma separetd string from an array of strings.\nLast comma in the string is replaced with 'and', being a natural language string.\n",
@@ -1318,8 +1378,8 @@
                     "jsdoctags": [
                         {
                             "name": {
-                                "pos": 8796,
-                                "end": 8807,
+                                "pos": 9147,
+                                "end": 9158,
                                 "flags": 8421376,
                                 "modifierFlagsCache": 0,
                                 "transformFlags": 0,
@@ -1330,8 +1390,8 @@
                             "deprecated": false,
                             "deprecationMessage": "",
                             "tagName": {
-                                "pos": 8790,
-                                "end": 8795,
+                                "pos": 9141,
+                                "end": 9146,
                                 "flags": 8421376,
                                 "modifierFlagsCache": 0,
                                 "transformFlags": 0,
@@ -1342,8 +1402,8 @@
                         },
                         {
                             "tagName": {
-                                "pos": 8815,
-                                "end": 8822,
+                                "pos": 9166,
+                                "end": 9173,
                                 "flags": 8421376,
                                 "modifierFlagsCache": 0,
                                 "transformFlags": 0,
@@ -1367,7 +1427,7 @@
                     "optional": false,
                     "returnType": "string",
                     "typeParameters": [],
-                    "line": 298,
+                    "line": 313,
                     "deprecated": false,
                     "deprecationMessage": "",
                     "rawdescription": "\n\nReplaces single quotes in a string with double quotes.\n",
@@ -1378,8 +1438,8 @@
                     "jsdoctags": [
                         {
                             "name": {
-                                "pos": 7996,
-                                "end": 7999,
+                                "pos": 8347,
+                                "end": 8350,
                                 "flags": 8421376,
                                 "modifierFlagsCache": 0,
                                 "transformFlags": 0,
@@ -1390,8 +1450,8 @@
                             "deprecated": false,
                             "deprecationMessage": "",
                             "tagName": {
-                                "pos": 7990,
-                                "end": 7995,
+                                "pos": 8341,
+                                "end": 8346,
                                 "flags": 8421376,
                                 "modifierFlagsCache": 0,
                                 "transformFlags": 0,
@@ -1402,8 +1462,8 @@
                         },
                         {
                             "tagName": {
-                                "pos": 8007,
-                                "end": 8014,
+                                "pos": 8358,
+                                "end": 8365,
                                 "flags": 8421376,
                                 "modifierFlagsCache": 0,
                                 "transformFlags": 0,
@@ -1428,7 +1488,7 @@
                     "optional": false,
                     "returnType": "void",
                     "typeParameters": [],
-                    "line": 198,
+                    "line": 213,
                     "deprecated": false,
                     "deprecationMessage": "",
                     "rawdescription": "\n\nScrolls the page to the desired top position.\n\n",
@@ -1439,8 +1499,8 @@
                     "jsdoctags": [
                         {
                             "name": {
-                                "pos": 5156,
-                                "end": 5159,
+                                "pos": 5507,
+                                "end": 5510,
                                 "flags": 8421376,
                                 "modifierFlagsCache": 0,
                                 "transformFlags": 0,
@@ -1452,8 +1512,8 @@
                             "deprecationMessage": "",
                             "defaultValue": "0",
                             "tagName": {
-                                "pos": 5141,
-                                "end": 5146,
+                                "pos": 5492,
+                                "end": 5497,
                                 "flags": 8421376,
                                 "modifierFlagsCache": 0,
                                 "transformFlags": 0,
@@ -1462,15 +1522,15 @@
                             },
                             "comment": "",
                             "typeExpression": {
-                                "pos": 5147,
-                                "end": 5155,
+                                "pos": 5498,
+                                "end": 5506,
                                 "flags": 8421376,
                                 "modifierFlagsCache": 0,
                                 "transformFlags": 0,
                                 "kind": 312,
                                 "type": {
-                                    "pos": 5148,
-                                    "end": 5154,
+                                    "pos": 5499,
+                                    "end": 5505,
                                     "flags": 8388608,
                                     "modifierFlagsCache": 0,
                                     "transformFlags": 1,
@@ -1493,7 +1553,7 @@
                     "optional": false,
                     "returnType": "string",
                     "typeParameters": [],
-                    "line": 310,
+                    "line": 325,
                     "deprecated": false,
                     "deprecationMessage": "",
                     "rawdescription": "\n\nStrips out starting and ending single/double quotes from a string.\n",
@@ -1504,8 +1564,8 @@
                     "jsdoctags": [
                         {
                             "name": {
-                                "pos": 8266,
-                                "end": 8269,
+                                "pos": 8617,
+                                "end": 8620,
                                 "flags": 8421376,
                                 "modifierFlagsCache": 0,
                                 "transformFlags": 0,
@@ -1516,8 +1576,8 @@
                             "deprecated": false,
                             "deprecationMessage": "",
                             "tagName": {
-                                "pos": 8260,
-                                "end": 8265,
+                                "pos": 8611,
+                                "end": 8616,
                                 "flags": 8421376,
                                 "modifierFlagsCache": 0,
                                 "transformFlags": 0,
@@ -1528,8 +1588,8 @@
                         },
                         {
                             "tagName": {
-                                "pos": 8277,
-                                "end": 8284,
+                                "pos": 8628,
+                                "end": 8635,
                                 "flags": 8421376,
                                 "modifierFlagsCache": 0,
                                 "transformFlags": 0,
@@ -1548,13 +1608,13 @@
                             "type": "string",
                             "deprecated": false,
                             "deprecationMessage": "",
-                            "defaultValue": "\"\""
+                            "defaultValue": "''"
                         }
                     ],
                     "optional": false,
                     "returnType": "string",
                     "typeParameters": [],
-                    "line": 182,
+                    "line": 197,
                     "deprecated": false,
                     "deprecationMessage": "",
                     "rawdescription": "\n\nConverts a string into dashed string. All spaces are replaced with dashes.\nThis converted string can be used for getting a unique name for a title of any content like, article etc.\n\n",
@@ -1565,8 +1625,8 @@
                     "jsdoctags": [
                         {
                             "name": {
-                                "pos": 4560,
-                                "end": 4565,
+                                "pos": 4911,
+                                "end": 4916,
                                 "flags": 8421376,
                                 "modifierFlagsCache": 0,
                                 "transformFlags": 0,
@@ -1576,10 +1636,10 @@
                             "type": "string",
                             "deprecated": false,
                             "deprecationMessage": "",
-                            "defaultValue": "\"\"",
+                            "defaultValue": "''",
                             "tagName": {
-                                "pos": 4554,
-                                "end": 4559,
+                                "pos": 4905,
+                                "end": 4910,
                                 "flags": 8421376,
                                 "modifierFlagsCache": 0,
                                 "transformFlags": 0,
@@ -1590,8 +1650,8 @@
                         },
                         {
                             "tagName": {
-                                "pos": 4573,
-                                "end": 4580,
+                                "pos": 4924,
+                                "end": 4931,
                                 "flags": 8421376,
                                 "modifierFlagsCache": 0,
                                 "transformFlags": 0,
@@ -1615,7 +1675,7 @@
                     "optional": false,
                     "returnType": "string",
                     "typeParameters": [],
-                    "line": 107,
+                    "line": 122,
                     "deprecated": false,
                     "deprecationMessage": "",
                     "rawdescription": "\n\nConverts total time in milliseconds since 1970 (numbered string) to its equivalent ISOString date string.\n\n",
@@ -1626,8 +1686,8 @@
                     "jsdoctags": [
                         {
                             "name": {
-                                "pos": 2697,
-                                "end": 2704,
+                                "pos": 3048,
+                                "end": 3055,
                                 "flags": 8421376,
                                 "modifierFlagsCache": 0,
                                 "transformFlags": 0,
@@ -1638,8 +1698,8 @@
                             "deprecated": false,
                             "deprecationMessage": "",
                             "tagName": {
-                                "pos": 2682,
-                                "end": 2687,
+                                "pos": 3033,
+                                "end": 3038,
                                 "flags": 8421376,
                                 "modifierFlagsCache": 0,
                                 "transformFlags": 0,
@@ -1648,15 +1708,15 @@
                             },
                             "comment": "",
                             "typeExpression": {
-                                "pos": 2688,
-                                "end": 2696,
+                                "pos": 3039,
+                                "end": 3047,
                                 "flags": 8421376,
                                 "modifierFlagsCache": 0,
                                 "transformFlags": 0,
                                 "kind": 312,
                                 "type": {
-                                    "pos": 2689,
-                                    "end": 2695,
+                                    "pos": 3040,
+                                    "end": 3046,
                                     "flags": 8388608,
                                     "modifierFlagsCache": 0,
                                     "transformFlags": 1,
@@ -1666,8 +1726,8 @@
                         },
                         {
                             "tagName": {
-                                "pos": 2712,
-                                "end": 2719,
+                                "pos": 3063,
+                                "end": 3070,
                                 "flags": 8421376,
                                 "modifierFlagsCache": 0,
                                 "transformFlags": 0,
@@ -1692,7 +1752,7 @@
                     "optional": false,
                     "returnType": "string",
                     "typeParameters": [],
-                    "line": 154,
+                    "line": 169,
                     "deprecated": false,
                     "deprecationMessage": "",
                     "rawdescription": "\n\nTrims out additional consecutive spaces from a string, also trims spaces from end of the string.\n\n",
@@ -1703,8 +1763,8 @@
                     "jsdoctags": [
                         {
                             "name": {
-                                "pos": 3834,
-                                "end": 3837,
+                                "pos": 4185,
+                                "end": 4188,
                                 "flags": 8421376,
                                 "modifierFlagsCache": 0,
                                 "transformFlags": 0,
@@ -1715,8 +1775,8 @@
                             "deprecated": false,
                             "deprecationMessage": "",
                             "tagName": {
-                                "pos": 3819,
-                                "end": 3824,
+                                "pos": 4170,
+                                "end": 4175,
                                 "flags": 8421376,
                                 "modifierFlagsCache": 0,
                                 "transformFlags": 0,
@@ -1725,15 +1785,15 @@
                             },
                             "comment": "",
                             "typeExpression": {
-                                "pos": 3825,
-                                "end": 3833,
+                                "pos": 4176,
+                                "end": 4184,
                                 "flags": 8421376,
                                 "modifierFlagsCache": 0,
                                 "transformFlags": 0,
                                 "kind": 312,
                                 "type": {
-                                    "pos": 3826,
-                                    "end": 3832,
+                                    "pos": 4177,
+                                    "end": 4183,
                                     "flags": 8388608,
                                     "modifierFlagsCache": 0,
                                     "transformFlags": 1,
@@ -1743,8 +1803,8 @@
                         },
                         {
                             "tagName": {
-                                "pos": 3845,
-                                "end": 3852,
+                                "pos": 4196,
+                                "end": 4203,
                                 "flags": 8421376,
                                 "modifierFlagsCache": 0,
                                 "transformFlags": 0,
@@ -1761,7 +1821,7 @@
             "deprecationMessage": "",
             "description": "<p>UtilsService exports all the methods that provides some common utility.</p>\n",
             "rawdescription": "\n\nUtilsService exports all the methods that provides some common utility.\n\n",
-            "sourceCode": "import { Injectable } from \"@angular/core\";\r\n\r\n/**\r\n * UtilsService exports all the methods that provides some common utility.\r\n *\r\n * @export\r\n * @class UtilsService\r\n * @typedef {UtilsService}\r\n */\r\n@Injectable({\r\n  providedIn: \"root\",\r\n})\r\nexport class UtilsService {\r\n  constructor() {}\r\n\r\n  /**\r\n   * Joins the Url segments and forms a url, stripes out any trailing extra slashes from the segments before joing them.\r\n   * @param urlSegments\r\n   * @returns joined Urls\r\n   */\r\n  public joinUrl(urlSegments: Array<string>): string {\r\n    const cleanedSegmenmts = urlSegments.map((str, index) => {\r\n      let cleanSegment = str;\r\n\r\n      switch (index) {\r\n        case 0:\r\n          if (str.endsWith(\"/\")) {\r\n            cleanSegment = str.substring(0, str.length - 2);\r\n          }\r\n          break;\r\n        case urlSegments.length - 1:\r\n          if (str.startsWith(\"/\")) {\r\n            cleanSegment = str.substring(1, str.length);\r\n          }\r\n          break;\r\n        default:\r\n          if (cleanSegment.endsWith(\"/\")) {\r\n            cleanSegment = cleanSegment.substring(0, cleanSegment.length - 2);\r\n          }\r\n\r\n          if (cleanSegment.startsWith(\"/\")) {\r\n            cleanSegment = cleanSegment.substring(1, cleanSegment.length);\r\n          }\r\n      }\r\n\r\n      return cleanSegment;\r\n    });\r\n\r\n    return cleanedSegmenmts.join(\"/\");\r\n  }\r\n\r\n  /**\r\n   * Returns the current Date from browser in the ISO format.\r\n   *\r\n   * @public\r\n   * @readonly\r\n   * @type {string}\r\n   */\r\n  public get currentDate(): string {\r\n    return new Date().toISOString();\r\n  }\r\n\r\n  /**\r\n   * Returns a local date string\r\n   * @date 26/2/2022 - 9:48:21 am\r\n   *\r\n   * @public\r\n   * @param {string} date\r\n   * @returns {string}\r\n   */\r\n  public dateToLocalString(date: string = \"\"): string {\r\n    if (!date) return \"\";\r\n    const options: any = { year: \"numeric\", month: \"short\", day: \"numeric\" };\r\n    const dt = new Date(date);\r\n    return dt.toLocaleDateString(\"en-US\", options);\r\n  }\r\n\r\n  /**\r\n   * Converts ISOString date string to its equivalent time in milliseconds since 1970, returns numeric value as a string.\r\n   * @date 12/28/2022 - 6:04:39 PM\r\n   *\r\n   * @public\r\n   * @param {string} dateStr\r\n   * @returns {string}\r\n   */\r\n  public dateStringToTotalTimeString(dateStr: string): string {\r\n    let timeStr = \"\";\r\n\r\n    try {\r\n      if (dateStr) {\r\n        const dt = new Date(dateStr);\r\n        timeStr = dt.getTime().toString();\r\n      }\r\n    } catch (err) {}\r\n\r\n    return timeStr;\r\n  }\r\n\r\n  /**\r\n   * Converts total time in milliseconds since 1970 (numbered string) to its equivalent ISOString date string.\r\n   * @date 12/28/2022 - 6:04:39 PM\r\n   *\r\n   * @public\r\n   * @param {string} timeStr\r\n   * @returns {string}\r\n   */\r\n  public totalTimeStringToUTCdateString(timeStr: string): string {\r\n    let dateStr = \"\";\r\n\r\n    try {\r\n      if (timeStr) {\r\n        dateStr = new Date(Number(timeStr)).toISOString();\r\n      }\r\n    } catch (err) {}\r\n\r\n    return dateStr;\r\n  }\r\n\r\n  /**\r\n   * Stripe out all special characters from the string too except A-Z, a-z, 0-9.\r\n   * @date 2/12/2023 - 2:01:20 PM\r\n   *\r\n   * @public\r\n   * @param {string} str\r\n   * @returns {string}\r\n   */\r\n  public getStringWithNoSpecialChars(str: string): string {\r\n    if (!str) return \"\";\r\n    const strArr = str.split(\"\");\r\n    const filteredStr = strArr.filter((char) => {\r\n      if (\r\n        (char >= \"A\" && char <= \"Z\") ||\r\n        (char >= \"a\" && char <= \"z\") ||\r\n        (char >= \"0\" && char <= \"9\") ||\r\n        char === \" \"\r\n      ) {\r\n        return true;\r\n      } else {\r\n        return false;\r\n      }\r\n    });\r\n\r\n    return filteredStr.join(\"\");\r\n  }\r\n\r\n  /**\r\n   * Trims out additional consecutive spaces from a string, also trims spaces from end of the string.\r\n   * @date 2/12/2023 - 9:54:48 PM\r\n   *\r\n   * @public\r\n   * @param {string} str\r\n   * @returns {string}\r\n   */\r\n  public trimConsecutiveSpaces(str: string): string {\r\n    if (!str) return \"\";\r\n\r\n    return str\r\n      .split(\"\")\r\n      .filter((char, index) => {\r\n        if (char === \" \") {\r\n          if (index === str.length - 1) {\r\n            return false;\r\n          } else if (str[index + 1] === \" \") {\r\n            return false;\r\n          } else {\r\n            return true;\r\n          }\r\n        } else {\r\n          return true;\r\n        }\r\n      })\r\n      .join(\"\");\r\n  }\r\n\r\n  /**\r\n   * Converts a string into dashed string. All spaces are replaced with dashes.\r\n   * This converted string can be used for getting a unique name for a title of any content like, article etc.\r\n   *\r\n   * @param title\r\n   * @returns\r\n   */\r\n  public toDashedString(title: string = \"\"): string {\r\n    // trims additional spaces from a string.\r\n    const spacesTrimmedStr = this.trimConsecutiveSpaces(title);\r\n    // Stripe out all special characters from the string too except A-Z, a-z, 0-9.\r\n    const titleWithNoSpecialChars =\r\n      this.getStringWithNoSpecialChars(spacesTrimmedStr);\r\n    return titleWithNoSpecialChars.split(\" \").join(\"-\").toLocaleLowerCase();\r\n  }\r\n\r\n  /**\r\n   * Scrolls the page to the desired top position.\r\n   * @date 25/2/2022 - 5:28:11 pm\r\n   *\r\n   * @public\r\n   * @param {number} top\r\n   */\r\n  public scrollTo(top: number = 0) {\r\n    if (typeof window !== \"undefined\") {\r\n      window.scrollTo({ top: top });\r\n    }\r\n  }\r\n\r\n  public getTrimmedStringByChars(str: string, count: number = 0): string {\r\n    if (!str || typeof str !== \"string\" || !count || count <= 0) {\r\n      return str;\r\n    }\r\n\r\n    return str.substring(0, count) + \"...\";\r\n  }\r\n\r\n  /**\r\n   * Generates a unique ID from a string by adding dashes for spaces and adding a unique string.\r\n   * @date 14/4/2022 - 2:39:05 pm\r\n   *\r\n   * @public\r\n   * @param {string} [str='']\r\n   * @returns {string}\r\n   */\r\n  public getUniqueFromString(str: string = \"\"): string {\r\n    const dashed = this.toDashedString(str);\r\n    const rndStr = Math.random().toString(36).substring(2);\r\n    const uniqueId =\r\n      Date.now().toString(36) + rndStr.substring(rndStr.length / 3);\r\n\r\n    return `${dashed}-${uniqueId}`;\r\n  }\r\n\r\n  /**\r\n   * Deep copy an object or an array\r\n   * @date 2/28/2023 - 3:22:38 AM\r\n   *\r\n   * @public\r\n   * @param {(any)} value\r\n   * @returns {(any)}\r\n   */\r\n  public deepCopy(value: any): any {\r\n    try {\r\n      return JSON.parse(JSON.stringify(value));\r\n    } catch (err) {\r\n      return null;\r\n    }\r\n  }\r\n\r\n  public delay(miliseconds: number): Promise<unknown> {\r\n    return new Promise((resolve) => setTimeout(resolve, miliseconds));\r\n  }\r\n\r\n  /**\r\n   * Generates Image source urls to be displayed from API.\r\n   * Note: Do not provide base url, while saving urls to db, but while displaying only.\r\n   * @date 6/4/2023 - 12:27:34 AM\r\n   *\r\n   * @public\r\n   * @param {string} imageFullPath\r\n   * @param {string} imageApiEndpoint\r\n   * @param {string} [baseUrl='']\r\n   * @returns {string}\r\n   */\r\n  public getImageUrl(\r\n    imageFullPath: string,\r\n    imageApiEndpoint: string,\r\n    baseUrl: string = \"\"\r\n  ): string {\r\n    const imageApiUrl = `${imageApiEndpoint}${imageFullPath}`;\r\n    return baseUrl ? this.joinUrl([baseUrl, imageApiUrl]) : imageApiUrl;\r\n  }\r\n\r\n  /**\r\n   * Generates the canonical categiry or article url.\r\n   * Note: Do not provide base url, while saving urls to db, but while displaying only.\r\n   * @date 6/4/2023 - 12:17:52 AM\r\n   *\r\n   * @public\r\n   * @param {string} categoryid\r\n   * @param {string} [articleId='']\r\n   * Provide only when displaying the url, and not while saving to db.\r\n   * @param {string} [baseUrl='']\r\n   * @returns {string}\r\n   */\r\n  public getCanonicalUrl(\r\n    categoryid: string,\r\n    articleId: string = \"\",\r\n    baseUrl: string = \"\"\r\n  ): string {\r\n    const articleSegment = articleId ? `/${articleId}` : \"\";\r\n    const catId = categoryid.indexOf(\"/\") === 0 ? categoryid : `/${categoryid}`;\r\n    return baseUrl\r\n      ? this.joinUrl([baseUrl, catId, articleSegment])\r\n      : `${catId}${articleSegment}`;\r\n  }\r\n\r\n  /**\r\n   * Replaces single quotes in a string with double quotes.\r\n   * @param str\r\n   * @returns\r\n   */\r\n  public replaceSingleWithDoubleQuotes(str: string): string {\r\n    if (!str) return str;\r\n    str = str.replace(/'/g, '\"');\r\n\r\n    return str;\r\n  }\r\n\r\n  /**\r\n   * Strips out starting and ending single/double quotes from a string.\r\n   * @param str\r\n   * @returns\r\n   */\r\n  public stripsOutQuotesFromStartAndEnd(str: string): string {\r\n    if (!str) return str;\r\n\r\n    if (\r\n      (str.startsWith(\"'\") && str.endsWith(\"'\")) ||\r\n      (str.startsWith('\"') && str.endsWith('\"'))\r\n    ) {\r\n      str = str.substring(1);\r\n      str = str.substring(0, str.length - 1);\r\n    }\r\n\r\n    return str;\r\n  }\r\n\r\n  /**\r\n   * Gives a natural comma separetd string from an array of strings.\r\n   * Last comma in the string is replaced with 'and', being a natural language string.\r\n   * @param stringArray\r\n   * @returns string\r\n   */\r\n  public nauturalJoinArray(stringArray: Array<string>): string {\r\n    return `${stringArray.slice(0, stringArray.length - 1).join(\", \")} and ${\r\n      stringArray[stringArray.length - 1]\r\n    }`;\r\n  }\r\n}\r\n",
+            "sourceCode": "import { Injectable } from '@angular/core';\r\n\r\n/**\r\n * UtilsService exports all the methods that provides some common utility.\r\n *\r\n * @export\r\n * @class UtilsService\r\n * @typedef {UtilsService}\r\n */\r\n@Injectable({\r\n  providedIn: 'root',\r\n})\r\nexport class UtilsService {\r\n  constructor() {}\r\n\r\n  //\r\n\r\n  /**\r\n   * Replaces all upperCase letters to lowercase precided with '-' dash\r\n   * @param str\r\n   * @returns dashed string\r\n   */\r\n  public camelCaseToDashCase(str: string): string {\r\n    if (!str) return '';\r\n    return str\r\n      .split('')\r\n      .map((c) => (c === c.toUpperCase() ? `-${c.toLowerCase()}` : c))\r\n      .join('');\r\n  }\r\n\r\n  /**\r\n   * Joins the Url segments and forms a url, stripes out any trailing extra slashes from the segments before joing them.\r\n   * @param urlSegments\r\n   * @returns joined Urls\r\n   */\r\n  public joinUrl(urlSegments: Array<string>): string {\r\n    const cleanedSegmenmts = urlSegments.map((str, index) => {\r\n      let cleanSegment = str;\r\n\r\n      switch (index) {\r\n        case 0:\r\n          if (str.endsWith('/')) {\r\n            cleanSegment = str.substring(0, str.length - 2);\r\n          }\r\n          break;\r\n        case urlSegments.length - 1:\r\n          if (str.startsWith('/')) {\r\n            cleanSegment = str.substring(1, str.length);\r\n          }\r\n          break;\r\n        default:\r\n          if (cleanSegment.endsWith('/')) {\r\n            cleanSegment = cleanSegment.substring(0, cleanSegment.length - 2);\r\n          }\r\n\r\n          if (cleanSegment.startsWith('/')) {\r\n            cleanSegment = cleanSegment.substring(1, cleanSegment.length);\r\n          }\r\n      }\r\n\r\n      return cleanSegment;\r\n    });\r\n\r\n    return cleanedSegmenmts.join('/');\r\n  }\r\n\r\n  /**\r\n   * Returns the current Date from browser in the ISO format.\r\n   *\r\n   * @public\r\n   * @readonly\r\n   * @type {string}\r\n   */\r\n  public get currentDate(): string {\r\n    return new Date().toISOString();\r\n  }\r\n\r\n  /**\r\n   * Returns a local date string\r\n   * @date 26/2/2022 - 9:48:21 am\r\n   *\r\n   * @public\r\n   * @param {string} date\r\n   * @returns {string}\r\n   */\r\n  public dateToLocalString(date: string = ''): string {\r\n    if (!date) return '';\r\n    const options: any = { year: 'numeric', month: 'short', day: 'numeric' };\r\n    const dt = new Date(date);\r\n    return dt.toLocaleDateString('en-US', options);\r\n  }\r\n\r\n  /**\r\n   * Converts ISOString date string to its equivalent time in milliseconds since 1970, returns numeric value as a string.\r\n   * @date 12/28/2022 - 6:04:39 PM\r\n   *\r\n   * @public\r\n   * @param {string} dateStr\r\n   * @returns {string}\r\n   */\r\n  public dateStringToTotalTimeString(dateStr: string): string {\r\n    let timeStr = '';\r\n\r\n    try {\r\n      if (dateStr) {\r\n        const dt = new Date(dateStr);\r\n        timeStr = dt.getTime().toString();\r\n      }\r\n    } catch (err) {}\r\n\r\n    return timeStr;\r\n  }\r\n\r\n  /**\r\n   * Converts total time in milliseconds since 1970 (numbered string) to its equivalent ISOString date string.\r\n   * @date 12/28/2022 - 6:04:39 PM\r\n   *\r\n   * @public\r\n   * @param {string} timeStr\r\n   * @returns {string}\r\n   */\r\n  public totalTimeStringToUTCdateString(timeStr: string): string {\r\n    let dateStr = '';\r\n\r\n    try {\r\n      if (timeStr) {\r\n        dateStr = new Date(Number(timeStr)).toISOString();\r\n      }\r\n    } catch (err) {}\r\n\r\n    return dateStr;\r\n  }\r\n\r\n  /**\r\n   * Stripe out all special characters from the string too except A-Z, a-z, 0-9.\r\n   * @date 2/12/2023 - 2:01:20 PM\r\n   *\r\n   * @public\r\n   * @param {string} str\r\n   * @returns {string}\r\n   */\r\n  public getStringWithNoSpecialChars(str: string): string {\r\n    if (!str) return '';\r\n    const strArr = str.split('');\r\n    const filteredStr = strArr.filter((char) => {\r\n      if (\r\n        (char >= 'A' && char <= 'Z') ||\r\n        (char >= 'a' && char <= 'z') ||\r\n        (char >= '0' && char <= '9') ||\r\n        char === ' '\r\n      ) {\r\n        return true;\r\n      } else {\r\n        return false;\r\n      }\r\n    });\r\n\r\n    return filteredStr.join('');\r\n  }\r\n\r\n  /**\r\n   * Trims out additional consecutive spaces from a string, also trims spaces from end of the string.\r\n   * @date 2/12/2023 - 9:54:48 PM\r\n   *\r\n   * @public\r\n   * @param {string} str\r\n   * @returns {string}\r\n   */\r\n  public trimConsecutiveSpaces(str: string): string {\r\n    if (!str) return '';\r\n\r\n    return str\r\n      .split('')\r\n      .filter((char, index) => {\r\n        if (char === ' ') {\r\n          if (index === str.length - 1) {\r\n            return false;\r\n          } else if (str[index + 1] === ' ') {\r\n            return false;\r\n          } else {\r\n            return true;\r\n          }\r\n        } else {\r\n          return true;\r\n        }\r\n      })\r\n      .join('');\r\n  }\r\n\r\n  /**\r\n   * Converts a string into dashed string. All spaces are replaced with dashes.\r\n   * This converted string can be used for getting a unique name for a title of any content like, article etc.\r\n   *\r\n   * @param title\r\n   * @returns\r\n   */\r\n  public toDashedString(title: string = ''): string {\r\n    // trims additional spaces from a string.\r\n    const spacesTrimmedStr = this.trimConsecutiveSpaces(title);\r\n    // Stripe out all special characters from the string too except A-Z, a-z, 0-9.\r\n    const titleWithNoSpecialChars =\r\n      this.getStringWithNoSpecialChars(spacesTrimmedStr);\r\n    return titleWithNoSpecialChars.split(' ').join('-').toLocaleLowerCase();\r\n  }\r\n\r\n  /**\r\n   * Scrolls the page to the desired top position.\r\n   * @date 25/2/2022 - 5:28:11 pm\r\n   *\r\n   * @public\r\n   * @param {number} top\r\n   */\r\n  public scrollTo(top: number = 0) {\r\n    if (typeof window !== 'undefined') {\r\n      window.scrollTo({ top: top });\r\n    }\r\n  }\r\n\r\n  public getTrimmedStringByChars(str: string, count: number = 0): string {\r\n    if (!str || typeof str !== 'string' || !count || count <= 0) {\r\n      return str;\r\n    }\r\n\r\n    return str.substring(0, count) + '...';\r\n  }\r\n\r\n  /**\r\n   * Generates a unique ID from a string by adding dashes for spaces and adding a unique string.\r\n   * @date 14/4/2022 - 2:39:05 pm\r\n   *\r\n   * @public\r\n   * @param {string} [str='']\r\n   * @returns {string}\r\n   */\r\n  public getUniqueFromString(str: string = ''): string {\r\n    const dashed = this.toDashedString(str);\r\n    const rndStr = Math.random().toString(36).substring(2);\r\n    const uniqueId =\r\n      Date.now().toString(36) + rndStr.substring(rndStr.length / 3);\r\n\r\n    return `${dashed}-${uniqueId}`;\r\n  }\r\n\r\n  /**\r\n   * Deep copy an object or an array\r\n   * @date 2/28/2023 - 3:22:38 AM\r\n   *\r\n   * @public\r\n   * @param {(any)} value\r\n   * @returns {(any)}\r\n   */\r\n  public deepCopy(value: any): any {\r\n    try {\r\n      return JSON.parse(JSON.stringify(value));\r\n    } catch (err) {\r\n      return null;\r\n    }\r\n  }\r\n\r\n  public delay(miliseconds: number): Promise<unknown> {\r\n    return new Promise((resolve) => setTimeout(resolve, miliseconds));\r\n  }\r\n\r\n  /**\r\n   * Generates Image source urls to be displayed from API.\r\n   * Note: Do not provide base url, while saving urls to db, but while displaying only.\r\n   * @date 6/4/2023 - 12:27:34 AM\r\n   *\r\n   * @public\r\n   * @param {string} imageFullPath\r\n   * @param {string} imageApiEndpoint\r\n   * @param {string} [baseUrl='']\r\n   * @returns {string}\r\n   */\r\n  public getImageUrl(\r\n    imageFullPath: string,\r\n    imageApiEndpoint: string,\r\n    baseUrl: string = ''\r\n  ): string {\r\n    const imageApiUrl = `${imageApiEndpoint}${imageFullPath}`;\r\n    return baseUrl ? this.joinUrl([baseUrl, imageApiUrl]) : imageApiUrl;\r\n  }\r\n\r\n  /**\r\n   * Generates the canonical categiry or article url.\r\n   * Note: Do not provide base url, while saving urls to db, but while displaying only.\r\n   * @date 6/4/2023 - 12:17:52 AM\r\n   *\r\n   * @public\r\n   * @param {string} categoryid\r\n   * @param {string} [articleId='']\r\n   * Provide only when displaying the url, and not while saving to db.\r\n   * @param {string} [baseUrl='']\r\n   * @returns {string}\r\n   */\r\n  public getCanonicalUrl(\r\n    categoryid: string,\r\n    articleId: string = '',\r\n    baseUrl: string = ''\r\n  ): string {\r\n    const articleSegment = articleId ? `/${articleId}` : '';\r\n    const catId = categoryid.indexOf('/') === 0 ? categoryid : `/${categoryid}`;\r\n    return baseUrl\r\n      ? this.joinUrl([baseUrl, catId, articleSegment])\r\n      : `${catId}${articleSegment}`;\r\n  }\r\n\r\n  /**\r\n   * Replaces single quotes in a string with double quotes.\r\n   * @param str\r\n   * @returns\r\n   */\r\n  public replaceSingleWithDoubleQuotes(str: string): string {\r\n    if (!str) return str;\r\n    str = str.replace(/'/g, '\"');\r\n\r\n    return str;\r\n  }\r\n\r\n  /**\r\n   * Strips out starting and ending single/double quotes from a string.\r\n   * @param str\r\n   * @returns\r\n   */\r\n  public stripsOutQuotesFromStartAndEnd(str: string): string {\r\n    if (!str) return str;\r\n\r\n    if (\r\n      (str.startsWith(\"'\") && str.endsWith(\"'\")) ||\r\n      (str.startsWith('\"') && str.endsWith('\"'))\r\n    ) {\r\n      str = str.substring(1);\r\n      str = str.substring(0, str.length - 1);\r\n    }\r\n\r\n    return str;\r\n  }\r\n\r\n  /**\r\n   * Gives a natural comma separetd string from an array of strings.\r\n   * Last comma in the string is replaced with 'and', being a natural language string.\r\n   * @param stringArray\r\n   * @returns string\r\n   */\r\n  public nauturalJoinArray(stringArray: Array<string>): string {\r\n    return `${stringArray.slice(0, stringArray.length - 1).join(', ')} and ${\r\n      stringArray[stringArray.length - 1]\r\n    }`;\r\n  }\r\n}\r\n",
             "constructorObj": {
                 "name": "constructor",
                 "description": "",
@@ -1777,20 +1837,20 @@
                         "name": "currentDate",
                         "type": "string",
                         "returnType": "string",
-                        "line": 59,
+                        "line": 74,
                         "rawdescription": "\n\nReturns the current Date from browser in the ISO format.\n\n",
                         "description": "<p>Returns the current Date from browser in the ISO format.</p>\n",
                         "jsdoctags": [
                             {
-                                "pos": 1442,
-                                "end": 1456,
+                                "pos": 1793,
+                                "end": 1807,
                                 "flags": 8421376,
                                 "modifierFlagsCache": 0,
                                 "transformFlags": 0,
                                 "kind": 336,
                                 "tagName": {
-                                    "pos": 1443,
-                                    "end": 1449,
+                                    "pos": 1794,
+                                    "end": 1800,
                                     "flags": 8421376,
                                     "modifierFlagsCache": 0,
                                     "transformFlags": 0,
@@ -1800,15 +1860,15 @@
                                 "comment": ""
                             },
                             {
-                                "pos": 1456,
-                                "end": 1472,
+                                "pos": 1807,
+                                "end": 1823,
                                 "flags": 8421376,
                                 "modifierFlagsCache": 0,
                                 "transformFlags": 0,
                                 "kind": 339,
                                 "tagName": {
-                                    "pos": 1457,
-                                    "end": 1465,
+                                    "pos": 1808,
+                                    "end": 1816,
                                     "flags": 8421376,
                                     "modifierFlagsCache": 0,
                                     "transformFlags": 0,
@@ -1818,15 +1878,15 @@
                                 "comment": ""
                             },
                             {
-                                "pos": 1472,
-                                "end": 1491,
+                                "pos": 1823,
+                                "end": 1842,
                                 "flags": 8421376,
                                 "modifierFlagsCache": 0,
                                 "transformFlags": 0,
                                 "kind": 347,
                                 "tagName": {
-                                    "pos": 1473,
-                                    "end": 1477,
+                                    "pos": 1824,
+                                    "end": 1828,
                                     "flags": 8421376,
                                     "modifierFlagsCache": 0,
                                     "transformFlags": 0,
@@ -1835,15 +1895,15 @@
                                 },
                                 "comment": "",
                                 "typeExpression": {
-                                    "pos": 1478,
-                                    "end": 1486,
+                                    "pos": 1829,
+                                    "end": 1837,
                                     "flags": 8421376,
                                     "modifierFlagsCache": 0,
                                     "transformFlags": 0,
                                     "kind": 312,
                                     "type": {
-                                        "pos": 1479,
-                                        "end": 1485,
+                                        "pos": 1830,
+                                        "end": 1836,
                                         "flags": 8388608,
                                         "modifierFlagsCache": 0,
                                         "transformFlags": 1,
@@ -2013,8 +2073,8 @@
                 "type": "injectable",
                 "linktype": "injectable",
                 "name": "UtilsService",
-                "coveragePercent": 84,
-                "coverageCount": "16/19",
+                "coveragePercent": 85,
+                "coverageCount": "17/20",
                 "status": "very-good"
             }
         ]

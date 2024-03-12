@@ -10,6 +10,7 @@
         import { ContentEditorService } from '@annuadvent/ngx-cms/content-editor';
         import { Html2JsonService } from '@annuadvent/ngx-cms/content-editor';
         import { SelectionService } from '@annuadvent/ngx-cms/content-editor';
+        import { TableService } from '@annuadvent/ngx-cms/content-editor';
         
         // ngx-core imports
         import { AppConfigService } from '@annuadvent/ngx-core/app-config';
@@ -51,7 +52,8 @@
     ArticleEditorService,
     ContentEditorService,
     Html2JsonService,
-    SelectionService
+    SelectionService,
+    TableService
 },
     'ngx-core': {
         AppConfigService,

@@ -15,6 +15,7 @@
         import { CollapsibleHeaderComponent } from '@annuadvent/ngx-common-ui/collapsible';
         import { ColorPaletteComponent } from '@annuadvent/ngx-common-ui/theme';
         import { DrawerComponent } from '@annuadvent/ngx-common-ui/drawer';
+        import { ElementStylesComponent } from '@annuadvent/ngx-common-ui/element-styles';
         import { ErrorComponent } from '@annuadvent/ngx-common-ui/error';
         import { FiltersComponent } from '@annuadvent/ngx-common-ui/filters';
         import { FooterNavComponent } from '@annuadvent/ngx-common-ui/footer-nav';
@@ -88,6 +89,7 @@
     CollapsibleHeaderComponent,
     ColorPaletteComponent,
     DrawerComponent,
+    ElementStylesComponent,
     ErrorComponent,
     FiltersComponent,
     FooterNavComponent,
