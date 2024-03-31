@@ -111,11 +111,13 @@
 			"@angular/core",
 			"openai",
 			"xml-js",
+			"compressorjs",
 			"@annuadvent/ngx-core",
 			"@annuadvent/ngx-common-ui",
 			"firebase",
-			"compressorjs",
-			"firebaseui"
+			"firebaseui",
+			"firebase-admin",
+			"firebase-functions"
 		],
 		"node": "18.17.0",
 		"npm": "9.6.7"

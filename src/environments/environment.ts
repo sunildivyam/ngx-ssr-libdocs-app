@@ -1,9 +1,9 @@
-import { AppConfig } from "@annuadvent/ngx-core/app-config";
-import { appConfig } from "../app/constants/app.config.development";
-import { firebaseConfig } from "../app/constants/firebase.config.development";
-import { openaiConfig } from "../app/constants/openai.config.development";
+import { AppConfig } from '@annuadvent/ngx-core/app-config';
+import { appConfig } from '../app/constants/app.config.development';
+import { firebaseConfig } from '../app/constants/firebase.config.development';
+import { openaiConfig } from '../app/constants/openai.config.development';
 
-firebaseConfig.app.apiKey = '';
+firebaseConfig.app.apiKey = 'AIzaSyDlzVES09CQFxt8oJI0u2srZFpH12wOAKk';
 openaiConfig.apiKey = '';
 openaiConfig.organization = 'org-Cdw4eLOkxkrRo6ZOQFayrg4q';
 

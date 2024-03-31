@@ -39,8 +39,9 @@
                 }
             ],
             "indexSignatures": [],
-            "kind": 168,
-            "methods": []
+            "kind": 171,
+            "methods": [],
+            "extends": []
         },
         {
             "name": "ColorPalette",
@@ -89,8 +90,9 @@
                 }
             ],
             "indexSignatures": [],
-            "kind": 168,
-            "methods": []
+            "kind": 171,
+            "methods": [],
+            "extends": []
         },
         {
             "name": "CssVar",
@@ -121,8 +123,9 @@
                 }
             ],
             "indexSignatures": [],
-            "kind": 168,
-            "methods": []
+            "kind": 171,
+            "methods": [],
+            "extends": []
         },
         {
             "name": "Filter",
@@ -180,8 +183,129 @@
                 }
             ],
             "indexSignatures": [],
-            "kind": 168,
-            "methods": []
+            "kind": 171,
+            "methods": [],
+            "extends": []
+        },
+        {
+            "name": "FormError",
+            "id": "interface-FormError-9d34ded845c75f730b691407e406fe43f451be5eedade20582657cde107dcf343bf25b083ef38c009bf2ccc3e308af689be9e9621d34b040abd26c75981f7c93",
+            "file": "projects/ngx-common-ui/reactive-form/src/interfaces/form-error.interface.ts",
+            "deprecated": false,
+            "deprecationMessage": "",
+            "type": "interface",
+            "sourceCode": "export interface FormErrorValue {\r\n  min?: number;\r\n  max?: number;\r\n  actual?: number;\r\n  requiredLength?: number;\r\n  actualLength?: number;\r\n  requiredPattern?: string;\r\n  actualValue?: string;\r\n  message?: string;\r\n}\r\nexport interface FormError {\r\n  key: string;\r\n  value: FormErrorValue;\r\n}\r\n",
+            "properties": [
+                {
+                    "name": "key",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "string",
+                    "optional": false,
+                    "description": "",
+                    "line": 12
+                },
+                {
+                    "name": "value",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "FormErrorValue",
+                    "optional": false,
+                    "description": "",
+                    "line": 13
+                }
+            ],
+            "indexSignatures": [],
+            "kind": 171,
+            "methods": [],
+            "extends": []
+        },
+        {
+            "name": "FormErrorValue",
+            "id": "interface-FormErrorValue-9d34ded845c75f730b691407e406fe43f451be5eedade20582657cde107dcf343bf25b083ef38c009bf2ccc3e308af689be9e9621d34b040abd26c75981f7c93",
+            "file": "projects/ngx-common-ui/reactive-form/src/interfaces/form-error.interface.ts",
+            "deprecated": false,
+            "deprecationMessage": "",
+            "type": "interface",
+            "sourceCode": "export interface FormErrorValue {\r\n  min?: number;\r\n  max?: number;\r\n  actual?: number;\r\n  requiredLength?: number;\r\n  actualLength?: number;\r\n  requiredPattern?: string;\r\n  actualValue?: string;\r\n  message?: string;\r\n}\r\nexport interface FormError {\r\n  key: string;\r\n  value: FormErrorValue;\r\n}\r\n",
+            "properties": [
+                {
+                    "name": "actual",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "number",
+                    "optional": true,
+                    "description": "",
+                    "line": 4
+                },
+                {
+                    "name": "actualLength",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "number",
+                    "optional": true,
+                    "description": "",
+                    "line": 6
+                },
+                {
+                    "name": "actualValue",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "string",
+                    "optional": true,
+                    "description": "",
+                    "line": 8
+                },
+                {
+                    "name": "max",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "number",
+                    "optional": true,
+                    "description": "",
+                    "line": 3
+                },
+                {
+                    "name": "message",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "string",
+                    "optional": true,
+                    "description": "",
+                    "line": 9
+                },
+                {
+                    "name": "min",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "number",
+                    "optional": true,
+                    "description": "",
+                    "line": 2
+                },
+                {
+                    "name": "requiredLength",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "number",
+                    "optional": true,
+                    "description": "",
+                    "line": 5
+                },
+                {
+                    "name": "requiredPattern",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "string",
+                    "optional": true,
+                    "description": "",
+                    "line": 7
+                }
+            ],
+            "indexSignatures": [],
+            "kind": 171,
+            "methods": [],
+            "extends": []
         },
         {
             "name": "ImageInfo",
@@ -221,8 +345,9 @@
                 }
             ],
             "indexSignatures": [],
-            "kind": 168,
-            "methods": []
+            "kind": 171,
+            "methods": [],
+            "extends": []
         },
         {
             "name": "Link",
@@ -271,8 +396,9 @@
                 }
             ],
             "indexSignatures": [],
-            "kind": 168,
-            "methods": []
+            "kind": 171,
+            "methods": [],
+            "extends": []
         },
         {
             "name": "LinkTarget",
@@ -303,8 +429,9 @@
                 }
             ],
             "indexSignatures": [],
-            "kind": 168,
-            "methods": []
+            "kind": 171,
+            "methods": [],
+            "extends": []
         },
         {
             "name": "MenuItem",
@@ -344,8 +471,9 @@
                 }
             ],
             "indexSignatures": [],
-            "kind": 168,
-            "methods": []
+            "kind": 171,
+            "methods": [],
+            "extends": []
         },
         {
             "name": "MetaInfo",
@@ -529,8 +657,9 @@
                 }
             ],
             "indexSignatures": [],
-            "kind": 168,
-            "methods": []
+            "kind": 171,
+            "methods": [],
+            "extends": []
         },
         {
             "name": "MetaProp",
@@ -633,8 +762,9 @@
                 }
             ],
             "indexSignatures": [],
-            "kind": 168,
-            "methods": []
+            "kind": 171,
+            "methods": [],
+            "extends": []
         },
         {
             "name": "MetaPropertyType",
@@ -665,8 +795,9 @@
                 }
             ],
             "indexSignatures": [],
-            "kind": 168,
-            "methods": []
+            "kind": 171,
+            "methods": [],
+            "extends": []
         },
         {
             "name": "MetaPropValue",
@@ -697,8 +828,9 @@
                 }
             ],
             "indexSignatures": [],
-            "kind": 168,
-            "methods": []
+            "kind": 171,
+            "methods": [],
+            "extends": []
         },
         {
             "name": "NavItem",
@@ -756,8 +888,9 @@
                 }
             ],
             "indexSignatures": [],
-            "kind": 168,
-            "methods": []
+            "kind": 171,
+            "methods": [],
+            "extends": []
         },
         {
             "name": "Page",
@@ -806,8 +939,9 @@
                 }
             ],
             "indexSignatures": [],
-            "kind": 168,
-            "methods": []
+            "kind": 171,
+            "methods": [],
+            "extends": []
         },
         {
             "name": "PaletteColor",
@@ -865,8 +999,9 @@
                 }
             ],
             "indexSignatures": [],
-            "kind": 168,
-            "methods": []
+            "kind": 171,
+            "methods": [],
+            "extends": []
         },
         {
             "name": "SocialMediaButton",
@@ -915,8 +1050,9 @@
                 }
             ],
             "indexSignatures": [],
-            "kind": 168,
-            "methods": []
+            "kind": 171,
+            "methods": [],
+            "extends": []
         },
         {
             "name": "SocialMediaShareButton",
@@ -992,8 +1128,9 @@
                 }
             ],
             "indexSignatures": [],
-            "kind": 168,
-            "methods": []
+            "kind": 171,
+            "methods": [],
+            "extends": []
         },
         {
             "name": "SocialMediaShareButtonParams",
@@ -1021,8 +1158,9 @@
                     "deprecationMessage": ""
                 }
             ],
-            "kind": 178,
-            "methods": []
+            "kind": 181,
+            "methods": [],
+            "extends": []
         },
         {
             "name": "SourceLanguage",
@@ -1062,8 +1200,9 @@
                 }
             ],
             "indexSignatures": [],
-            "kind": 168,
-            "methods": []
+            "kind": 171,
+            "methods": [],
+            "extends": []
         },
         {
             "name": "Tab",
@@ -1112,8 +1251,9 @@
                 }
             ],
             "indexSignatures": [],
-            "kind": 168,
-            "methods": []
+            "kind": 171,
+            "methods": [],
+            "extends": []
         },
         {
             "name": "Theme",
@@ -1171,8 +1311,9 @@
                 }
             ],
             "indexSignatures": [],
-            "kind": 168,
-            "methods": []
+            "kind": 171,
+            "methods": [],
+            "extends": []
         },
         {
             "name": "ToolbarItem",
@@ -1239,8 +1380,9 @@
                 }
             ],
             "indexSignatures": [],
-            "kind": 168,
-            "methods": []
+            "kind": 171,
+            "methods": [],
+            "extends": []
         },
         {
             "name": "Typography",
@@ -1271,8 +1413,9 @@
                 }
             ],
             "indexSignatures": [],
-            "kind": 168,
-            "methods": []
+            "kind": 171,
+            "methods": [],
+            "extends": []
         }
     ],
     "injectables": [
@@ -1292,7 +1435,7 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "modifierKind": [
-                        123
+                        125
                     ]
                 },
                 {
@@ -1319,7 +1462,7 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "modifierKind": [
-                        123
+                        125
                     ],
                     "jsdoctags": [
                         {
@@ -1353,7 +1496,7 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "modifierKind": [
-                        123
+                        125
                     ]
                 }
             ],
@@ -1388,6 +1531,7 @@
                     }
                 ]
             },
+            "extends": [],
             "type": "injectable"
         },
         {
@@ -1405,7 +1549,7 @@
                     "description": "",
                     "line": 13,
                     "modifierKind": [
-                        121
+                        123
                     ]
                 }
             ],
@@ -1428,7 +1572,7 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "modifierKind": [
-                        121
+                        123
                     ],
                     "jsdoctags": [
                         {
@@ -1453,7 +1597,7 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "modifierKind": [
-                        123
+                        125
                     ]
                 },
                 {
@@ -1473,7 +1617,7 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "modifierKind": [
-                        121
+                        123
                     ],
                     "jsdoctags": [
                         {
@@ -1504,7 +1648,7 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "modifierKind": [
-                        121
+                        123
                     ],
                     "jsdoctags": [
                         {
@@ -1535,7 +1679,7 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "modifierKind": [
-                        123
+                        125
                     ],
                     "jsdoctags": [
                         {
@@ -1559,7 +1703,7 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "modifierKind": [
-                        123
+                        125
                     ]
                 },
                 {
@@ -1572,7 +1716,7 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "modifierKind": [
-                        121
+                        123
                     ]
                 },
                 {
@@ -1592,7 +1736,7 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "modifierKind": [
-                        123
+                        125
                     ],
                     "jsdoctags": [
                         {
@@ -1623,7 +1767,7 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "modifierKind": [
-                        123
+                        125
                     ],
                     "jsdoctags": [
                         {
@@ -1729,6 +1873,7 @@
                     }
                 ]
             },
+            "extends": [],
             "type": "injectable"
         },
         {
@@ -1745,7 +1890,7 @@
                     "description": "",
                     "line": 33,
                     "modifierKind": [
-                        121
+                        123
                     ]
                 },
                 {
@@ -1757,7 +1902,7 @@
                     "description": "",
                     "line": 31,
                     "modifierKind": [
-                        121
+                        123
                     ]
                 },
                 {
@@ -1769,7 +1914,7 @@
                     "description": "",
                     "line": 32,
                     "modifierKind": [
-                        121
+                        123
                     ]
                 }
             ],
@@ -1798,7 +1943,7 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "modifierKind": [
-                        121
+                        123
                     ],
                     "jsdoctags": [
                         {
@@ -1839,7 +1984,7 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "modifierKind": [
-                        123
+                        125
                     ],
                     "jsdoctags": [
                         {
@@ -1876,7 +2021,7 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "modifierKind": [
-                        123
+                        125
                     ],
                     "jsdoctags": [
                         {
@@ -1909,7 +2054,7 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "modifierKind": [
-                        123
+                        125
                     ]
                 },
                 {
@@ -1929,7 +2074,7 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "modifierKind": [
-                        123
+                        125
                     ],
                     "jsdoctags": [
                         {
@@ -1960,7 +2105,7 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "modifierKind": [
-                        121
+                        123
                     ],
                     "jsdoctags": [
                         {
@@ -1999,7 +2144,7 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "modifierKind": [
-                        123
+                        125
                     ],
                     "jsdoctags": [
                         {
@@ -2041,7 +2186,7 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "modifierKind": [
-                        123
+                        125
                     ],
                     "jsdoctags": [
                         {
@@ -2079,7 +2224,7 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "modifierKind": [
-                        123
+                        125
                     ],
                     "jsdoctags": [
                         {
@@ -2209,6 +2354,7 @@
                     }
                 }
             },
+            "extends": [],
             "type": "injectable"
         }
     ],
@@ -2343,7 +2489,7 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "modifierKind": [
-                        123
+                        125
                     ],
                     "jsdoctags": [
                         {
@@ -2380,7 +2526,7 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "modifierKind": [
-                        123
+                        125
                     ],
                     "jsdoctags": [
                         {
@@ -2457,6 +2603,7 @@
                 "args": [],
                 "line": 57
             },
+            "extends": [],
             "implements": [
                 "OnInit"
             ],
@@ -2542,6 +2689,7 @@
                 "args": [],
                 "line": 8
             },
+            "extends": [],
             "implements": [
                 "OnInit"
             ],
@@ -2607,6 +2755,7 @@
                 "args": [],
                 "line": 8
             },
+            "extends": [],
             "implements": [
                 "OnInit"
             ],
@@ -2656,7 +2805,7 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "modifierKind": [
-                        121
+                        123
                     ]
                 },
                 {
@@ -2724,6 +2873,7 @@
                     }
                 ]
             },
+            "extends": [],
             "implements": [
                 "OnInit",
                 "OnChanges"
@@ -2790,6 +2940,7 @@
                 "args": [],
                 "line": 8
             },
+            "extends": [],
             "implements": [
                 "OnInit"
             ],
@@ -2881,6 +3032,7 @@
                 "args": [],
                 "line": 24
             },
+            "extends": [],
             "accessors": {
                 "isRowLayoutMethod": {
                     "name": "isRowLayoutMethod",
@@ -2954,6 +3106,7 @@
                 "args": [],
                 "line": 8
             },
+            "extends": [],
             "implements": [
                 "OnInit"
             ],
@@ -3019,6 +3172,7 @@
                 "args": [],
                 "line": 8
             },
+            "extends": [],
             "implements": [
                 "OnInit"
             ],
@@ -3084,6 +3238,7 @@
                 "args": [],
                 "line": 8
             },
+            "extends": [],
             "implements": [
                 "OnInit"
             ],
@@ -3234,7 +3389,7 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "modifierKind": [
-                        121
+                        123
                     ]
                 },
                 {
@@ -3254,7 +3409,7 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "modifierKind": [
-                        123
+                        125
                     ],
                     "jsdoctags": [
                         {
@@ -3285,7 +3440,7 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "modifierKind": [
-                        123
+                        125
                     ],
                     "jsdoctags": [
                         {
@@ -3354,7 +3509,7 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "modifierKind": [
-                        123
+                        125
                     ],
                     "jsdoctags": [
                         {
@@ -3413,6 +3568,7 @@
                     }
                 ]
             },
+            "extends": [],
             "implements": [
                 "OnInit",
                 "OnChanges"
@@ -3506,7 +3662,7 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "modifierKind": [
-                        123
+                        125
                     ],
                     "jsdoctags": [
                         {
@@ -3547,6 +3703,7 @@
                 "args": [],
                 "line": 12
             },
+            "extends": [],
             "implements": [
                 "OnInit"
             ],
@@ -3612,6 +3769,7 @@
                 "args": [],
                 "line": 8
             },
+            "extends": [],
             "implements": [
                 "OnInit"
             ],
@@ -3677,6 +3835,7 @@
                 "args": [],
                 "line": 8
             },
+            "extends": [],
             "implements": [
                 "OnInit"
             ],
@@ -3757,7 +3916,7 @@
                     "description": "",
                     "line": 119,
                     "modifierKind": [
-                        123
+                        125
                     ]
                 },
                 {
@@ -3780,7 +3939,7 @@
                     "description": "",
                     "line": 129,
                     "modifierKind": [
-                        123
+                        125
                     ]
                 },
                 {
@@ -3803,7 +3962,7 @@
                     "description": "",
                     "line": 124,
                     "modifierKind": [
-                        123
+                        125
                     ]
                 },
                 {
@@ -3828,7 +3987,7 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "modifierKind": [
-                        121
+                        123
                     ]
                 },
                 {
@@ -3848,7 +4007,7 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "modifierKind": [
-                        123
+                        125
                     ],
                     "jsdoctags": [
                         {
@@ -3872,7 +4031,7 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "modifierKind": [
-                        123
+                        125
                     ]
                 },
                 {
@@ -3907,7 +4066,7 @@
                     "rawdescription": "\n\nBuilds the palette from current hue and saturation, and emits the valueChanges event, with the colorPalette object.\n",
                     "description": "<p>Builds the palette from current hue and saturation, and emits the valueChanges event, with the colorPalette object.</p>\n",
                     "modifierKind": [
-                        123
+                        125
                     ],
                     "jsdoctags": [
                         {
@@ -4000,6 +4159,7 @@
                     }
                 ]
             },
+            "extends": [],
             "implements": [
                 "OnInit",
                 "OnChanges"
@@ -4128,6 +4288,7 @@
                 "args": [],
                 "line": 46
             },
+            "extends": [],
             "implements": [
                 "OnInit"
             ],
@@ -4334,7 +4495,7 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "modifierKind": [
-                        121
+                        123
                     ],
                     "jsdoctags": [
                         {
@@ -4359,7 +4520,7 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "modifierKind": [
-                        121
+                        123
                     ]
                 },
                 {
@@ -4417,7 +4578,7 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "modifierKind": [
-                        123
+                        125
                     ],
                     "jsdoctags": [
                         {
@@ -4441,7 +4602,7 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "modifierKind": [
-                        121
+                        123
                     ]
                 }
             ],
@@ -4489,6 +4650,7 @@
                     }
                 ]
             },
+            "extends": [],
             "implements": [
                 "OnInit",
                 "OnChanges"
@@ -4574,6 +4736,7 @@
                 "args": [],
                 "line": 10
             },
+            "extends": [],
             "implements": [
                 "OnInit"
             ],
@@ -4644,7 +4807,7 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "modifierKind": [
-                        123
+                        125
                     ],
                     "jsdoctags": [
                         {
@@ -4690,7 +4853,7 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "modifierKind": [
-                        123
+                        125
                     ],
                     "jsdoctags": [
                         {
@@ -4746,7 +4909,7 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "modifierKind": [
-                        123
+                        125
                     ],
                     "jsdoctags": [
                         {
@@ -4788,6 +4951,7 @@
                 }
             ],
             "stylesData": "",
+            "extends": [],
             "implements": [
                 "OnInit"
             ],
@@ -4861,7 +5025,7 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "modifierKind": [
-                        123
+                        125
                     ],
                     "jsdoctags": [
                         {
@@ -4912,10 +5076,189 @@
                 "args": [],
                 "line": 13
             },
+            "extends": [],
             "implements": [
                 "OnInit"
             ],
             "templateData": "<nav\r\n  role=\"navigation\"\r\n  araia-label=\"Footer navigation\"\r\n  class=\"annuFooterNav container\"\r\n>\r\n  <ul class=\"row-lg middle\">\r\n    <li *ngIf=\"copyrightText\" class=\"annuFooterNav_copyright spacing-h\">\r\n      <small>{{ copyrightText }}</small>\r\n    </li>\r\n    <li *ngFor=\"let item of items\">\r\n      <a\r\n        class=\"spacing-h\"\r\n        [routerLink]=\"item.href\"\r\n        routerLinkActive=\"active\"\r\n        (click)=\"itemCliked(item)\"\r\n        >{{ item.title }}</a\r\n      >\r\n    </li>\r\n  </ul>\r\n</nav>\r\n"
+        },
+        {
+            "name": "FormErrorComponent",
+            "id": "component-FormErrorComponent-7f464f258579e01160734df8c460370f284b191bbaacbbc2f7e50a9869cf9655ad5c4ae2f1281ba12c09f652076f0f2c4d512cf9f355195587ccc5a254e45028",
+            "file": "projects/ngx-common-ui/reactive-form/src/components/form-error/form-error.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "anu-form-error",
+            "styleUrls": [
+                "./form-error.component.scss"
+            ],
+            "styles": [],
+            "templateUrl": [
+                "./form-error.component.html"
+            ],
+            "viewProviders": [],
+            "hostDirectives": [],
+            "inputsClass": [
+                {
+                    "name": "errors",
+                    "defaultValue": "null",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 21,
+                    "type": "ValidationErrors",
+                    "decorators": []
+                }
+            ],
+            "outputsClass": [],
+            "propertiesClass": [
+                {
+                    "name": "messages",
+                    "defaultValue": "[]",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Array<string>",
+                    "optional": false,
+                    "description": "",
+                    "line": 23
+                }
+            ],
+            "methodsClass": [
+                {
+                    "name": "getMessage",
+                    "args": [
+                        {
+                            "name": "err",
+                            "type": "any",
+                            "deprecated": false,
+                            "deprecationMessage": ""
+                        }
+                    ],
+                    "optional": false,
+                    "returnType": "string",
+                    "typeParameters": [],
+                    "line": 44,
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "modifierKind": [
+                        125
+                    ],
+                    "jsdoctags": [
+                        {
+                            "name": "err",
+                            "type": "any",
+                            "deprecated": false,
+                            "deprecationMessage": "",
+                            "tagName": {
+                                "text": "param"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "initMessages",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 34,
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "modifierKind": [
+                        123
+                    ]
+                },
+                {
+                    "name": "ngOnChanges",
+                    "args": [
+                        {
+                            "name": "changes",
+                            "type": "SimpleChanges",
+                            "deprecated": false,
+                            "deprecationMessage": ""
+                        }
+                    ],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 30,
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "jsdoctags": [
+                        {
+                            "name": "changes",
+                            "type": "SimpleChanges",
+                            "deprecated": false,
+                            "deprecationMessage": "",
+                            "tagName": {
+                                "text": "param"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "ngOnInit",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 26,
+                    "deprecated": false,
+                    "deprecationMessage": ""
+                }
+            ],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [],
+            "standalone": false,
+            "imports": [],
+            "description": "<p>FormError component shows one or more error messages for the form field, if it has validation errors.</p>\n",
+            "rawdescription": "\n\nFormError component shows one or more error messages for the form field, if it has validation errors.\n",
+            "type": "component",
+            "sourceCode": "import {\n  Component,\n  Input,\n  OnChanges,\n  OnInit,\n  SimpleChanges,\n} from '@angular/core';\nimport { ValidationErrors } from '@angular/forms';\nimport { FormError } from '../../interfaces/form-error.interface';\nimport { ObjectToArrayPipe } from '@annuadvent/ngx-core/utils';\n\n/**\n * FormError component shows one or more error messages for the form field, if it has validation errors.\n */\n@Component({\n  selector: 'anu-form-error',\n  templateUrl: './form-error.component.html',\n  styleUrls: ['./form-error.component.scss'],\n})\nexport class FormErrorComponent implements OnInit, OnChanges {\n  @Input() errors: ValidationErrors = null;\n\n  messages: Array<string> = [];\n\n  constructor(private objectToArrayPipe: ObjectToArrayPipe) {}\n  ngOnInit(): void {\n    this.initMessages();\n  }\n\n  ngOnChanges(changes: SimpleChanges): void {\n    this.initMessages();\n  }\n\n  private initMessages(): void {\n    if (!this.errors) {\n      this.messages = [];\n    } else {\n      this.messages = this.objectToArrayPipe\n        .transform(this.errors)\n        .map((error) => this.getMessage(error));\n    }\n  }\n\n  public getMessage(err: any): string {\n    const error = err as FormError;\n\n    let msg = '';\n    switch (error.key) {\n      case 'min':\n        msg = `required minimum value is ${error.value.min}, while entered value is ${error.value.actual}.`;\n        break;\n      case 'max':\n        msg = `required maximum value is ${error.value.max}, while entered value is ${error.value.actual}.`;\n        break;\n      case 'required':\n        msg = 'required.';\n        break;\n      case 'requiredtrue':\n        msg = 'required.';\n        break;\n      case 'email':\n        msg = 'Invalid email format.';\n        break;\n      case 'minlength':\n        msg = `required minimum length is ${error.value.requiredLength}, while entered length is ${error.value.actualLength}.`;\n        break;\n      case 'maxlength':\n        msg = `required maximum length is ${error.value.requiredLength}, while entered length is ${error.value.actualLength}.`;\n        break;\n      case 'pattern':\n        msg = `required pattern is ${error.value.requiredPattern}, while entered pattern is ${error.value.actualValue}.`;\n        break;\n      default:\n        msg = error.value.message || '';\n    }\n\n    return msg;\n  }\n}\n",
+            "assetsDirs": [],
+            "styleUrlsData": [
+                {
+                    "data": "",
+                    "styleUrl": "./form-error.component.scss"
+                }
+            ],
+            "stylesData": "",
+            "constructorObj": {
+                "name": "constructor",
+                "description": "",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "args": [
+                    {
+                        "name": "objectToArrayPipe",
+                        "type": "ObjectToArrayPipe",
+                        "deprecated": false,
+                        "deprecationMessage": ""
+                    }
+                ],
+                "line": 23,
+                "jsdoctags": [
+                    {
+                        "name": "objectToArrayPipe",
+                        "type": "ObjectToArrayPipe",
+                        "deprecated": false,
+                        "deprecationMessage": "",
+                        "tagName": {
+                            "text": "param"
+                        }
+                    }
+                ]
+            },
+            "extends": [],
+            "implements": [
+                "OnInit",
+                "OnChanges"
+            ],
+            "templateData": "<ng-container *ngIf=\"errors && messages && messages.length\">\n  <small class=\"error\" *ngFor=\"let msg of messages\">\n    <span>* </span><span>{{ msg }}</span>\n  </small>\n</ng-container>\n"
         },
         {
             "name": "HamburgerComponent",
@@ -5016,7 +5359,7 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "modifierKind": [
-                        123
+                        125
                     ]
                 },
                 {
@@ -5037,7 +5380,7 @@
                         }
                     ],
                     "modifierKind": [
-                        167
+                        170
                     ]
                 }
             ],
@@ -5099,6 +5442,7 @@
                 "args": [],
                 "line": 57
             },
+            "extends": [],
             "implements": [
                 "OnInit"
             ],
@@ -5204,7 +5548,7 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "modifierKind": [
-                        123
+                        125
                     ],
                     "jsdoctags": [
                         {
@@ -5245,7 +5589,7 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "modifierKind": [
-                        123
+                        125
                     ],
                     "jsdoctags": [
                         {
@@ -5286,6 +5630,7 @@
                 "args": [],
                 "line": 14
             },
+            "extends": [],
             "implements": [
                 "OnInit"
             ],
@@ -5408,7 +5753,7 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "modifierKind": [
-                        123
+                        125
                     ],
                     "jsdoctags": [
                         {
@@ -5449,7 +5794,7 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "modifierKind": [
-                        123
+                        125
                     ],
                     "jsdoctags": [
                         {
@@ -5490,6 +5835,7 @@
                 "args": [],
                 "line": 45
             },
+            "extends": [],
             "implements": [
                 "OnInit"
             ],
@@ -5694,7 +6040,7 @@
                         }
                     ],
                     "modifierKind": [
-                        167
+                        170
                     ]
                 },
                 {
@@ -5736,7 +6082,7 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "modifierKind": [
-                        123
+                        125
                     ],
                     "jsdoctags": [
                         {
@@ -5793,7 +6139,7 @@
                         }
                     ],
                     "modifierKind": [
-                        167
+                        170
                     ],
                     "jsdoctags": [
                         {
@@ -5824,7 +6170,7 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "modifierKind": [
-                        123
+                        125
                     ],
                     "jsdoctags": [
                         {
@@ -5883,6 +6229,7 @@
                 "args": [],
                 "line": 60
             },
+            "extends": [],
             "implements": [
                 "OnInit",
                 "AfterViewInit"
@@ -5948,7 +6295,7 @@
                     "description": "",
                     "line": 22,
                     "modifierKind": [
-                        123
+                        125
                     ]
                 },
                 {
@@ -5961,7 +6308,7 @@
                     "description": "",
                     "line": 25,
                     "modifierKind": [
-                        123
+                        125
                     ]
                 },
                 {
@@ -5973,7 +6320,7 @@
                     "description": "",
                     "line": 21,
                     "modifierKind": [
-                        123
+                        125
                     ]
                 },
                 {
@@ -5986,7 +6333,7 @@
                     "description": "",
                     "line": 24,
                     "modifierKind": [
-                        123
+                        125
                     ]
                 },
                 {
@@ -5999,7 +6346,7 @@
                     "description": "",
                     "line": 23,
                     "modifierKind": [
-                        123
+                        125
                     ]
                 }
             ],
@@ -6021,7 +6368,7 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "modifierKind": [
-                        123
+                        125
                     ],
                     "jsdoctags": [
                         {
@@ -6059,7 +6406,7 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "modifierKind": [
-                        123
+                        125
                     ],
                     "jsdoctags": [
                         {
@@ -6138,7 +6485,7 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "modifierKind": [
-                        123
+                        125
                     ],
                     "jsdoctags": [
                         {
@@ -6169,7 +6516,7 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "modifierKind": [
-                        123
+                        125
                     ],
                     "jsdoctags": [
                         {
@@ -6200,7 +6547,7 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "modifierKind": [
-                        121
+                        123
                     ],
                     "jsdoctags": [
                         {
@@ -6274,6 +6621,7 @@
                     }
                 ]
             },
+            "extends": [],
             "implements": [
                 "OnInit",
                 "OnChanges"
@@ -6412,7 +6760,7 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "modifierKind": [
-                        123
+                        125
                     ]
                 },
                 {
@@ -6445,7 +6793,7 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "modifierKind": [
-                        123
+                        125
                     ]
                 }
             ],
@@ -6486,6 +6834,7 @@
                 "args": [],
                 "line": 66
             },
+            "extends": [],
             "implements": [
                 "OnInit",
                 "OnChanges"
@@ -6591,7 +6940,7 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "modifierKind": [
-                        123
+                        125
                     ],
                     "jsdoctags": [
                         {
@@ -6638,7 +6987,7 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "modifierKind": [
-                        123
+                        125
                     ],
                     "jsdoctags": [
                         {
@@ -6675,7 +7024,7 @@
             "assetsDirs": [],
             "styleUrlsData": [
                 {
-                    "data": "@import 'mixins';\r\n\r\n:host {\r\n  display: flex;\r\n  flex-direction: row;\r\n  flex-flow: wrap;\r\n  width: 100%;\r\n\r\n  .multi-select-item {\r\n    width: auto;\r\n    border: 1px solid var(--anu-primary-normal);\r\n    font-weight: normal;\r\n    text-align: left;\r\n    cursor: pointer;\r\n\r\n    &.selected {\r\n      border: 1px solid var(--anu-primary-darkest);\r\n      font-weight: bold;\r\n      color: var(--anu-accent-darkest);\r\n    }\r\n\r\n    &:hover {\r\n      border-color: var(--anu-primary-darkest);\r\n      color: var(--anu-accent-darkest);\r\n    }\r\n  }\r\n}\r\n",
+                    "data": "@import 'mixins';\r\n\r\n:host {\r\n  display: flex;\r\n  flex-direction: row;\r\n  flex-flow: wrap;\r\n  width: 100%;\r\n\r\n  .multi-select-item {\r\n    width: auto;\r\n    border: 1px solid var(--anu-primary-normal);\r\n    font-weight: normal;\r\n    text-align: left;\r\n    cursor: pointer;\r\n\r\n    input {\r\n      margin-right: 0;\r\n      margin-left: 0.5rem;\r\n    }\r\n\r\n    &.selected {\r\n      border: 1px solid var(--anu-primary-darkest);\r\n      font-weight: bold;\r\n      color: var(--anu-accent-darkest);\r\n    }\r\n\r\n    &:hover {\r\n      border-color: var(--anu-primary-darkest);\r\n      color: var(--anu-accent-darkest);\r\n    }\r\n  }\r\n}\r\n",
                     "styleUrl": "./multi-select-box.component.scss"
                 }
             ],
@@ -6688,6 +7037,7 @@
                 "args": [],
                 "line": 14
             },
+            "extends": [],
             "implements": [
                 "OnInit"
             ],
@@ -6822,7 +7172,7 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "modifierKind": [
-                        121
+                        123
                     ]
                 },
                 {
@@ -6842,7 +7192,7 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "modifierKind": [
-                        123
+                        125
                     ],
                     "jsdoctags": [
                         {
@@ -6899,7 +7249,7 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "modifierKind": [
-                        123
+                        125
                     ],
                     "jsdoctags": [
                         {
@@ -6939,7 +7289,7 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "modifierKind": [
-                        123
+                        125
                     ],
                     "jsdoctags": [
                         {
@@ -6970,7 +7320,7 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "modifierKind": [
-                        123
+                        125
                     ],
                     "jsdoctags": [
                         {
@@ -6994,7 +7344,7 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "modifierKind": [
-                        121
+                        123
                     ]
                 }
             ],
@@ -7024,6 +7374,7 @@
                 "args": [],
                 "line": 31
             },
+            "extends": [],
             "implements": [
                 "OnInit"
             ],
@@ -7131,7 +7482,7 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "modifierKind": [
-                        123
+                        125
                     ]
                 },
                 {
@@ -7144,7 +7495,7 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "modifierKind": [
-                        121
+                        123
                     ]
                 },
                 {
@@ -7164,7 +7515,7 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "modifierKind": [
-                        123
+                        125
                     ],
                     "jsdoctags": [
                         {
@@ -7253,12 +7604,170 @@
                 "args": [],
                 "line": 34
             },
+            "extends": [],
             "implements": [
                 "OnInit",
                 "OnDestroy",
                 "OnChanges"
             ],
             "templateData": "<div class=\"input-container row nowrap\">\r\n    <input type=\"text\" [placeholder]=\"placeholder\" [ngModel]=\"keywords\"\r\n        (ngModelChange)=\"keywordsModelChanged($event)\" />\r\n    <span *ngIf=\"!keywords.length\" class=\"btn primary\">⌕</span>\r\n    <span *ngIf=\"keywords.length\" class=\"btn primary\" (click)=\"clearSearch()\">x</span>\r\n</div>\r\n"
+        },
+        {
+            "name": "SingleSelectBoxComponent",
+            "id": "component-SingleSelectBoxComponent-380856a195ad7adfcd6b0b62326fc1749ff16493f00fca25fabb6acf66ebb74d704037afb175af1a7721e3aec0a69ad82681f76598cbb29b7f260d18d792bda5",
+            "file": "projects/ngx-common-ui/single-select-box/src/components/single-select-box/single-select-box.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "anu-single-select-box",
+            "styleUrls": [
+                "./single-select-box.component.scss"
+            ],
+            "styles": [],
+            "templateUrl": [
+                "./single-select-box.component.html"
+            ],
+            "viewProviders": [],
+            "hostDirectives": [],
+            "inputsClass": [
+                {
+                    "name": "items",
+                    "defaultValue": "[]",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 9,
+                    "type": "Array<any>",
+                    "decorators": []
+                },
+                {
+                    "name": "keyField",
+                    "defaultValue": "''",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 11,
+                    "type": "string",
+                    "decorators": []
+                },
+                {
+                    "name": "labelField",
+                    "defaultValue": "''",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 12,
+                    "type": "string",
+                    "decorators": []
+                },
+                {
+                    "name": "selectedItem",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 10,
+                    "type": "any",
+                    "decorators": []
+                }
+            ],
+            "outputsClass": [
+                {
+                    "name": "changed",
+                    "defaultValue": "new EventEmitter<Array<any>>()",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 14,
+                    "type": "EventEmitter<Array<any>>"
+                }
+            ],
+            "propertiesClass": [],
+            "methodsClass": [
+                {
+                    "name": "ngOnInit",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 18,
+                    "deprecated": false,
+                    "deprecationMessage": ""
+                },
+                {
+                    "name": "onChanged",
+                    "args": [
+                        {
+                            "name": "event",
+                            "type": "any",
+                            "deprecated": false,
+                            "deprecationMessage": ""
+                        },
+                        {
+                            "name": "item",
+                            "type": "any",
+                            "deprecated": false,
+                            "deprecationMessage": ""
+                        }
+                    ],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 20,
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "modifierKind": [
+                        125
+                    ],
+                    "jsdoctags": [
+                        {
+                            "name": "event",
+                            "type": "any",
+                            "deprecated": false,
+                            "deprecationMessage": "",
+                            "tagName": {
+                                "text": "param"
+                            }
+                        },
+                        {
+                            "name": "item",
+                            "type": "any",
+                            "deprecated": false,
+                            "deprecationMessage": "",
+                            "tagName": {
+                                "text": "param"
+                            }
+                        }
+                    ]
+                }
+            ],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [],
+            "standalone": false,
+            "imports": [],
+            "description": "",
+            "rawdescription": "\n",
+            "type": "component",
+            "sourceCode": "import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';\r\n\r\n@Component({\r\n  selector: 'anu-single-select-box',\r\n  templateUrl: './single-select-box.component.html',\r\n  styleUrls: ['./single-select-box.component.scss'],\r\n})\r\nexport class SingleSelectBoxComponent implements OnInit {\r\n  @Input() items: Array<any> = [];\r\n  @Input() selectedItem: any;\r\n  @Input() keyField: string = '';\r\n  @Input() labelField: string = '';\r\n\r\n  @Output() changed: EventEmitter<Array<any>> = new EventEmitter<Array<any>>();\r\n\r\n  constructor() {}\r\n\r\n  ngOnInit(): void {}\r\n\r\n  public onChanged(event: any, item: any): void {\r\n    event.preventDefault();\r\n    this.selectedItem = item;\r\n    this.changed.emit(this.selectedItem);\r\n  }\r\n}\r\n",
+            "assetsDirs": [],
+            "styleUrlsData": [
+                {
+                    "data": "@import 'mixins';\r\n\r\n:host {\r\n  display: flex;\r\n  flex-direction: row;\r\n  flex-flow: wrap;\r\n  width: 100%;\r\n\r\n  .single-select-item {\r\n    width: auto;\r\n    border: 1px solid var(--anu-primary-normal);\r\n    font-weight: normal;\r\n    text-align: left;\r\n    cursor: pointer;\r\n\r\n    input {\r\n      margin-right: 0;\r\n      margin-left: 0.5rem;\r\n    }\r\n\r\n    &.selected {\r\n      border: 1px solid var(--anu-primary-darkest);\r\n      font-weight: bold;\r\n      color: var(--anu-accent-darkest);\r\n    }\r\n\r\n    &:hover {\r\n      border-color: var(--anu-primary-darkest);\r\n      color: var(--anu-accent-darkest);\r\n    }\r\n  }\r\n}\r\n",
+                    "styleUrl": "./single-select-box.component.scss"
+                }
+            ],
+            "stylesData": "",
+            "constructorObj": {
+                "name": "constructor",
+                "description": "",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "args": [],
+                "line": 14
+            },
+            "extends": [],
+            "implements": [
+                "OnInit"
+            ],
+            "templateData": "<ng-container *ngFor=\"let item of items\">\r\n  <label\r\n    class=\"single-select-item row nowrap spacing-h spacing-around-half center\"\r\n    [ngClass]=\"{\r\n      'selected shadow-half': selectedItem[keyField] === item[keyField]\r\n    }\"\r\n  >\r\n    {{ item[labelField] }}\r\n    <input\r\n      class=\"no-border\"\r\n      [name]=\"item[keyField]\"\r\n      type=\"radio\"\r\n      [checked]=\"selectedItem[keyField] === item[keyField]\"\r\n      (change)=\"onChanged($event, item)\"\r\n  /></label>\r\n</ng-container>\r\n"
         },
         {
             "name": "SlideshowComponent",
@@ -7331,7 +7840,7 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "modifierKind": [
-                        123
+                        125
                     ],
                     "jsdoctags": [
                         {
@@ -7390,6 +7899,7 @@
                     }
                 ]
             },
+            "extends": [],
             "implements": [
                 "OnInit"
             ],
@@ -7454,7 +7964,7 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "modifierKind": [
-                        123
+                        125
                     ],
                     "jsdoctags": [
                         {
@@ -7487,6 +7997,7 @@
                 }
             ],
             "stylesData": "",
+            "extends": [],
             "templateData": "<ng-container *ngFor=\"let btn of buttons\">\r\n    <a class=\"spacing-half share-btn\" [href]=\"btn.url\" [title]=\"btn.label\" [ariaLabel]=\"btn.label\" target=\"_blank\"\r\n        (click)=\"btnClicked(btn)\"><img [src]=\"btn.icon\" /></a>\r\n</ng-container>"
         },
         {
@@ -7588,7 +8099,7 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "modifierKind": [
-                        123
+                        125
                     ],
                     "jsdoctags": [
                         {
@@ -7612,7 +8123,7 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "modifierKind": [
-                        121
+                        123
                     ]
                 },
                 {
@@ -7645,7 +8156,7 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "modifierKind": [
-                        123
+                        125
                     ]
                 }
             ],
@@ -7755,6 +8266,7 @@
                     }
                 ]
             },
+            "extends": [],
             "implements": [
                 "OnInit",
                 "OnChanges"
@@ -7898,7 +8410,7 @@
                         }
                     ],
                     "modifierKind": [
-                        167
+                        170
                     ]
                 },
                 {
@@ -7918,7 +8430,7 @@
                         }
                     ],
                     "modifierKind": [
-                        167
+                        170
                     ]
                 }
             ],
@@ -7997,6 +8509,7 @@
                 "args": [],
                 "line": 59
             },
+            "extends": [],
             "implements": [
                 "OnInit",
                 "OnChanges"
@@ -8154,7 +8667,7 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "modifierKind": [
-                        121
+                        123
                     ],
                     "jsdoctags": [
                         {
@@ -8191,7 +8704,7 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "modifierKind": [
-                        123
+                        125
                     ],
                     "jsdoctags": [
                         {
@@ -8241,6 +8754,7 @@
                 "args": [],
                 "line": 18
             },
+            "extends": [],
             "implements": [
                 "OnInit",
                 "OnChanges"
@@ -8299,7 +8813,7 @@
                     "description": "",
                     "line": 46,
                     "modifierKind": [
-                        123
+                        125
                     ]
                 },
                 {
@@ -8391,7 +8905,7 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "modifierKind": [
-                        123
+                        125
                     ],
                     "jsdoctags": [
                         {
@@ -8415,7 +8929,7 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "modifierKind": [
-                        123
+                        125
                     ]
                 },
                 {
@@ -8435,7 +8949,7 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "modifierKind": [
-                        123
+                        125
                     ],
                     "jsdoctags": [
                         {
@@ -8466,7 +8980,7 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "modifierKind": [
-                        123
+                        125
                     ],
                     "jsdoctags": [
                         {
@@ -8525,6 +9039,7 @@
                     }
                 ]
             },
+            "extends": [],
             "templateData": "<div class=\"annuTheme\">\r\n  <section class=\"annuTheme_navs\">\r\n    <anu-tabs\r\n      [spaced]=\"false\"\r\n      [rounded]=\"false\"\r\n      [vertical]=\"false\"\r\n      [activeTab]=\"selectedTab\"\r\n      [tabs]=\"tabs\"\r\n      (changed)=\"tabChanged($event)\"\r\n    ></anu-tabs>\r\n  </section>\r\n\r\n  <section class=\"annuTheme_overview\" *ngIf=\"selectedTab.name === 'overview'\">\r\n    <label\r\n      >You can load theme from an existing JSON, and then you can edit it here\r\n      or can continue creating a new theme with default values.\r\n\r\n      <a href=\"javascript:void(0)\" (click)=\"isThemeFromJson = !isThemeFromJson\"\r\n        >Load theme from Json</a\r\n      >\r\n    </label>\r\n\r\n    <section class=\"annuTheme_overview_fromJson\" *ngIf=\"isThemeFromJson\">\r\n      <span class=\"error\" *ngIf=\"isJsonError\"\r\n        >This Json has syntax errors or may be theme name, title, colorPalettes\r\n        or typography data is missing, please correct and try again.</span\r\n      >\r\n      <textarea\r\n        [(ngModel)]=\"themeFromJson\"\r\n        placeholder=\"Copy JSON here from your theme json file...\"\r\n      ></textarea>\r\n      <a\r\n        href=\"javascript:void(0)\"\r\n        class=\"btn secondary\"\r\n        (click)=\"loadThemeFromJson()\"\r\n        >Load</a\r\n      >\r\n    </section>\r\n\r\n    <label>Name</label>\r\n    <input type=\"text\" [(ngModel)]=\"theme.name\" />\r\n    <label>Title </label>\r\n    <input type=\"text\" [(ngModel)]=\"theme.title\" />\r\n    <label>Description </label>\r\n    <textarea [(ngModel)]=\"theme.description\"></textarea>\r\n  </section>\r\n\r\n  <section class=\"annuTheme_palettes\" *ngIf=\"selectedTab.name === 'palettes'\">\r\n    <div\r\n      class=\"annuTheme_palette\"\r\n      *ngFor=\"let colorPalette of theme.colorPalettes\"\r\n    >\r\n      <anu-color-palette\r\n        [colorPalette]=\"colorPalette\"\r\n        (valueChanges)=\"paletteChanged($event)\"\r\n        [accentColors]=\"colorPalette.name != 'accent' ? testAccentColors : []\"\r\n      >\r\n      </anu-color-palette>\r\n    </div>\r\n  </section>\r\n\r\n  <section\r\n    class=\"annuTheme_typography\"\r\n    *ngIf=\"selectedTab.name === 'typography'\"\r\n  >\r\n    <anu-typography\r\n      [typography]=\"typography\"\r\n      (changed)=\"typographyChanged($event)\"\r\n    ></anu-typography>\r\n  </section>\r\n\r\n  <section class=\"annuTheme_json\" *ngIf=\"selectedTab.name === 'json'\">\r\n    <div class=\"annuTheme_json_code\">\r\n      <h3>Theme Json</h3>\r\n      <anu-code-block\r\n        [source]=\"theme | json\"\r\n        language=\"javascript\"\r\n      ></anu-code-block>\r\n      <hr />\r\n      <h3>CSS Vars</h3>\r\n      <anu-code-block\r\n        [source]=\"getCssVars(theme) | json\"\r\n        language=\"javascript\"\r\n      ></anu-code-block>\r\n    </div>\r\n  </section>\r\n</div>\r\n"
         },
         {
@@ -8556,17 +9071,17 @@
                         {
                             "pos": 999,
                             "end": 1040,
-                            "flags": 8421376,
+                            "flags": 16842752,
                             "modifierFlagsCache": 0,
                             "transformFlags": 0,
-                            "kind": 330,
+                            "kind": 334,
                             "tagName": {
                                 "pos": 1000,
                                 "end": 1004,
-                                "flags": 8421376,
+                                "flags": 16842752,
                                 "modifierFlagsCache": 0,
                                 "transformFlags": 0,
-                                "kind": 79,
+                                "kind": 80,
                                 "escapedText": "date"
                             },
                             "comment": "<p>2/12/2023 - 9:18:21 PM</p>\n"
@@ -8574,51 +9089,51 @@
                         {
                             "pos": 1040,
                             "end": 1066,
-                            "flags": 8421376,
+                            "flags": 16842752,
                             "modifierFlagsCache": 0,
                             "transformFlags": 0,
-                            "kind": 347,
+                            "kind": 351,
                             "tagName": {
                                 "pos": 1041,
                                 "end": 1045,
-                                "flags": 8421376,
+                                "flags": 16842752,
                                 "modifierFlagsCache": 0,
                                 "transformFlags": 0,
-                                "kind": 79,
+                                "kind": 80,
                                 "escapedText": "type"
                             },
                             "comment": "",
                             "typeExpression": {
                                 "pos": 1046,
                                 "end": 1061,
-                                "flags": 8421376,
+                                "flags": 16842752,
                                 "modifierFlagsCache": 0,
                                 "transformFlags": 0,
-                                "kind": 312,
+                                "kind": 316,
                                 "type": {
                                     "pos": 1047,
                                     "end": 1060,
-                                    "flags": 8388608,
+                                    "flags": 16777216,
                                     "modifierFlagsCache": 0,
                                     "transformFlags": 1,
-                                    "kind": 180,
+                                    "kind": 183,
                                     "typeName": {
                                         "pos": 1047,
                                         "end": 1052,
-                                        "flags": 8388608,
+                                        "flags": 16777216,
                                         "modifierFlagsCache": 0,
                                         "transformFlags": 0,
-                                        "kind": 79,
+                                        "kind": 80,
                                         "escapedText": "Array"
                                     },
                                     "typeArguments": [
                                         {
                                             "pos": 1053,
                                             "end": 1059,
-                                            "flags": 8388608,
+                                            "flags": 16777216,
                                             "modifierFlagsCache": 0,
                                             "transformFlags": 1,
-                                            "kind": 152
+                                            "kind": 154
                                         }
                                     ]
                                 }
@@ -8640,17 +9155,17 @@
                         {
                             "pos": 1182,
                             "end": 1223,
-                            "flags": 8421376,
+                            "flags": 16842752,
                             "modifierFlagsCache": 0,
                             "transformFlags": 0,
-                            "kind": 330,
+                            "kind": 334,
                             "tagName": {
                                 "pos": 1183,
                                 "end": 1187,
-                                "flags": 8421376,
+                                "flags": 16842752,
                                 "modifierFlagsCache": 0,
                                 "transformFlags": 0,
-                                "kind": 79,
+                                "kind": 80,
                                 "escapedText": "date"
                             },
                             "comment": "<p>2/12/2023 - 9:19:08 PM</p>\n"
@@ -8658,34 +9173,34 @@
                         {
                             "pos": 1223,
                             "end": 1242,
-                            "flags": 8421376,
+                            "flags": 16842752,
                             "modifierFlagsCache": 0,
                             "transformFlags": 0,
-                            "kind": 347,
+                            "kind": 351,
                             "tagName": {
                                 "pos": 1224,
                                 "end": 1228,
-                                "flags": 8421376,
+                                "flags": 16842752,
                                 "modifierFlagsCache": 0,
                                 "transformFlags": 0,
-                                "kind": 79,
+                                "kind": 80,
                                 "escapedText": "type"
                             },
                             "comment": "",
                             "typeExpression": {
                                 "pos": 1229,
                                 "end": 1237,
-                                "flags": 8421376,
+                                "flags": 16842752,
                                 "modifierFlagsCache": 0,
                                 "transformFlags": 0,
-                                "kind": 312,
+                                "kind": 316,
                                 "type": {
                                     "pos": 1230,
                                     "end": 1236,
-                                    "flags": 8388608,
+                                    "flags": 16777216,
                                     "modifierFlagsCache": 0,
                                     "transformFlags": 1,
-                                    "kind": 152
+                                    "kind": 154
                                 }
                             }
                         }
@@ -8709,17 +9224,17 @@
                         {
                             "pos": 1385,
                             "end": 1426,
-                            "flags": 8421376,
+                            "flags": 16842752,
                             "modifierFlagsCache": 0,
                             "transformFlags": 0,
-                            "kind": 330,
+                            "kind": 334,
                             "tagName": {
                                 "pos": 1386,
                                 "end": 1390,
-                                "flags": 8421376,
+                                "flags": 16842752,
                                 "modifierFlagsCache": 0,
                                 "transformFlags": 0,
-                                "kind": 79,
+                                "kind": 80,
                                 "escapedText": "date"
                             },
                             "comment": "<p>2/12/2023 - 9:20:01 PM</p>\n"
@@ -8727,51 +9242,51 @@
                         {
                             "pos": 1426,
                             "end": 1459,
-                            "flags": 8421376,
+                            "flags": 16842752,
                             "modifierFlagsCache": 0,
                             "transformFlags": 0,
-                            "kind": 347,
+                            "kind": 351,
                             "tagName": {
                                 "pos": 1427,
                                 "end": 1431,
-                                "flags": 8421376,
+                                "flags": 16842752,
                                 "modifierFlagsCache": 0,
                                 "transformFlags": 0,
-                                "kind": 79,
+                                "kind": 80,
                                 "escapedText": "type"
                             },
                             "comment": "",
                             "typeExpression": {
                                 "pos": 1432,
                                 "end": 1454,
-                                "flags": 8421376,
+                                "flags": 16842752,
                                 "modifierFlagsCache": 0,
                                 "transformFlags": 0,
-                                "kind": 312,
+                                "kind": 316,
                                 "type": {
                                     "pos": 1433,
                                     "end": 1453,
-                                    "flags": 8388608,
+                                    "flags": 16777216,
                                     "modifierFlagsCache": 0,
                                     "transformFlags": 1,
-                                    "kind": 180,
+                                    "kind": 183,
                                     "typeName": {
                                         "pos": 1433,
                                         "end": 1445,
-                                        "flags": 8388608,
+                                        "flags": 16777216,
                                         "modifierFlagsCache": 0,
                                         "transformFlags": 0,
-                                        "kind": 79,
+                                        "kind": 80,
                                         "escapedText": "EventEmitter"
                                     },
                                     "typeArguments": [
                                         {
                                             "pos": 1446,
                                             "end": 1452,
-                                            "flags": 8388608,
+                                            "flags": 16777216,
                                             "modifierFlagsCache": 0,
                                             "transformFlags": 1,
-                                            "kind": 152
+                                            "kind": 154
                                         }
                                     ]
                                 }
@@ -8807,7 +9322,7 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "modifierKind": [
-                        123
+                        125
                     ],
                     "jsdoctags": [
                         {
@@ -8878,7 +9393,7 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "modifierKind": [
-                        121
+                        123
                     ]
                 }
             ],
@@ -8926,6 +9441,7 @@
                     }
                 ]
             },
+            "extends": [],
             "implements": [
                 "OnInit",
                 "OnChanges"
@@ -8974,7 +9490,7 @@
                     "description": "",
                     "line": 19,
                     "modifierKind": [
-                        123
+                        125
                     ]
                 },
                 {
@@ -8986,7 +9502,7 @@
                     "description": "",
                     "line": 13,
                     "modifierKind": [
-                        123
+                        125
                     ]
                 }
             ],
@@ -9008,7 +9524,7 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "modifierKind": [
-                        123
+                        125
                     ],
                     "jsdoctags": [
                         {
@@ -9032,7 +9548,7 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "modifierKind": [
-                        123
+                        125
                     ]
                 }
             ],
@@ -9080,6 +9596,7 @@
                     }
                 ]
             },
+            "extends": [],
             "implements": [
                 "OnInit"
             ],
@@ -9145,6 +9662,7 @@
                 "args": [],
                 "line": 8
             },
+            "extends": [],
             "implements": [
                 "OnInit"
             ],
@@ -9228,7 +9746,7 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "modifierKind": [
-                        123
+                        125
                     ],
                     "jsdoctags": [
                         {
@@ -9269,6 +9787,7 @@
                 "args": [],
                 "line": 12
             },
+            "extends": [],
             "implements": [
                 "OnInit"
             ],
@@ -9359,7 +9878,7 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "modifierKind": [
-                        123
+                        125
                     ],
                     "jsdoctags": [
                         {
@@ -9419,6 +9938,7 @@
                 "args": [],
                 "line": 19
             },
+            "extends": [],
             "implements": [
                 "OnInit"
             ],
@@ -9485,7 +10005,7 @@
                     "rawdescription": "\n\naddTypography()  Adds a new Typography variable.\n",
                     "description": "<p>addTypography()  Adds a new Typography variable.</p>\n",
                     "modifierKind": [
-                        123
+                        125
                     ],
                     "jsdoctags": [
                         {
@@ -9534,7 +10054,7 @@
                     "rawdescription": "\n\nremoveTypography() removes a Typography variable.\n",
                     "description": "<p>removeTypography() removes a Typography variable.</p>\n",
                     "modifierKind": [
-                        123
+                        125
                     ],
                     "jsdoctags": [
                         {
@@ -9569,7 +10089,7 @@
                     "rawdescription": "\n\ntypographyChanged() emits changed event when a variable's value is changed, or added/removed.\n",
                     "description": "<p>typographyChanged() emits changed event when a variable&#39;s value is changed, or added/removed.</p>\n",
                     "modifierKind": [
-                        123
+                        125
                     ]
                 }
             ],
@@ -9599,6 +10119,7 @@
                 "args": [],
                 "line": 11
             },
+            "extends": [],
             "implements": [
                 "OnInit"
             ],
@@ -10316,6 +10837,42 @@
             ]
         },
         {
+            "name": "ReactiveFormModule",
+            "id": "module-ReactiveFormModule-e30aec08a12018b8479bd1b039dc2ce259dfcebb86b988ccfcc827f41138e1377bd2f69235228264719eb920fc9d2a692a83d2b18efba7e60912761f0f6eeadc",
+            "description": "",
+            "deprecationMessage": "",
+            "deprecated": false,
+            "file": "projects/ngx-common-ui/reactive-form/src/reactive-form.module.ts",
+            "methods": [],
+            "sourceCode": "import { NgModule } from '@angular/core';\nimport { CommonModule } from '@angular/common';\nimport { FormErrorComponent } from './components/form-error/form-error.component';\nimport { ReactiveFormsModule } from '@angular/forms';\nimport { UtilsModule } from '@annuadvent/ngx-core/utils';\n\n@NgModule({\n  declarations: [FormErrorComponent],\n  imports: [CommonModule, ReactiveFormsModule, UtilsModule],\n  exports: [FormErrorComponent],\n})\nexport class ReactiveFormModule {}\n",
+            "children": [
+                {
+                    "type": "providers",
+                    "elements": []
+                },
+                {
+                    "type": "declarations",
+                    "elements": []
+                },
+                {
+                    "type": "imports",
+                    "elements": []
+                },
+                {
+                    "type": "exports",
+                    "elements": []
+                },
+                {
+                    "type": "bootstrap",
+                    "elements": []
+                },
+                {
+                    "type": "classes",
+                    "elements": []
+                }
+            ]
+        },
+        {
             "name": "ScssModule",
             "id": "module-ScssModule-1c31940e686058f7d89114e3fbdf46ad96cf1242e0ed02d9be52139a7dfa219b0c04cda7ccbd2b3f1e92e65cc8fdb1fef3dda891edab2fab23a8a242ce8ce2d8",
             "description": "",
@@ -10360,6 +10917,42 @@
             "file": "projects/ngx-common-ui/search-box/src/search-box.module.ts",
             "methods": [],
             "sourceCode": "import { NgModule } from '@angular/core';\r\nimport { CommonModule } from '@angular/common';\r\nimport { SearchBoxComponent } from './components/search-box/search-box.component';\r\nimport { FormsModule } from '@angular/forms';\r\n\r\n\r\n\r\n@NgModule({\r\n  declarations: [\r\n    SearchBoxComponent\r\n  ],\r\n  imports: [\r\n    CommonModule,\r\n    FormsModule\r\n  ],\r\n  exports: [\r\n    SearchBoxComponent\r\n  ]\r\n})\r\nexport class SearchBoxModule { }\r\n",
+            "children": [
+                {
+                    "type": "providers",
+                    "elements": []
+                },
+                {
+                    "type": "declarations",
+                    "elements": []
+                },
+                {
+                    "type": "imports",
+                    "elements": []
+                },
+                {
+                    "type": "exports",
+                    "elements": []
+                },
+                {
+                    "type": "bootstrap",
+                    "elements": []
+                },
+                {
+                    "type": "classes",
+                    "elements": []
+                }
+            ]
+        },
+        {
+            "name": "SingleSelectBoxModule",
+            "id": "module-SingleSelectBoxModule-14181662bde36a9534cac09e00a58410419e3e4a4ce5f2d54acd94d1cf81a943cdc29475f13e8cc39e3441e7b628e7f46a8dc8cd191f884e47219cd1a70b53e7",
+            "description": "",
+            "deprecationMessage": "",
+            "deprecated": false,
+            "file": "projects/ngx-common-ui/single-select-box/src/single-select-box.module.ts",
+            "methods": [],
+            "sourceCode": "import { NgModule } from '@angular/core';\r\nimport { CommonModule } from '@angular/common';\r\nimport { SingleSelectBoxComponent } from './components/single-select-box/single-select-box.component';\r\n\r\n@NgModule({\r\n  declarations: [SingleSelectBoxComponent],\r\n  imports: [CommonModule],\r\n  exports: [SingleSelectBoxComponent],\r\n})\r\nexport class SingleSelectBoxModule {}\r\n",
             "children": [
                 {
                     "type": "providers",
@@ -11138,6 +11731,16 @@
                 "defaultValue": "{\r\n    projectionContent: '',\r\n    inputPropsValues: {\r\n        copyrightText: 'copyright@Annu-business',\r\n        items: [...MENU_ITEMS]\r\n    }\r\n}"
             },
             {
+                "name": "FormErrorComponent",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/ngx-common-ui/reactive-form/src/components/form-error/form-error.docs.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "any",
+                "defaultValue": "{\r\n  projectionContent: '',\r\n  inputPropsValues: {\r\n    errors: {\r\n      required: true,\r\n      min: { min: 3, actual: 2 },\r\n    },\r\n  },\r\n}"
+            },
+            {
                 "name": "greenAlgae",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
@@ -11427,6 +12030,16 @@
                 "defaultValue": "[\r\n    {\r\n        id: '1',\r\n        title: 'Sample Item 1'\r\n    },\r\n    {\r\n        id: '2',\r\n        title: 'Sample Item 2'\r\n    },\r\n    {\r\n        id: '3',\r\n        title: 'Sample Item 3'\r\n    },\r\n    {\r\n        id: '4',\r\n        title: 'Sample Item 4'\r\n    },\r\n    {\r\n        id: '5',\r\n        title: 'Sample Item 5'\r\n    },\r\n]"
             },
             {
+                "name": "SAMPLE_SINGLE_SELECT_ITEMS",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/ngx-common-ui/single-select-box/src/components/single-select-box/single-select-box.docs.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "[]",
+                "defaultValue": "[\r\n  {\r\n    id: '1',\r\n    title: 'Sample Item 1',\r\n  },\r\n  {\r\n    id: '2',\r\n    title: 'Sample Item 2',\r\n  },\r\n  {\r\n    id: '3',\r\n    title: 'Sample Item 3',\r\n  },\r\n  {\r\n    id: '4',\r\n    title: 'Sample Item 4',\r\n  },\r\n  {\r\n    id: '5',\r\n    title: 'Sample Item 5',\r\n  },\r\n]"
+            },
+            {
                 "name": "SearchBoxComponent",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
@@ -11455,6 +12068,16 @@
                 "deprecationMessage": "",
                 "type": "Theme",
                 "defaultValue": "JSON.parse(jsonTheme)"
+            },
+            {
+                "name": "SingleSelectBoxComponent",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/ngx-common-ui/single-select-box/src/components/single-select-box/single-select-box.docs.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "any",
+                "defaultValue": "{\r\n  projectionContent: '',\r\n  inputPropsValues: {\r\n    items: [...SAMPLE_SINGLE_SELECT_ITEMS],\r\n    keyField: 'id',\r\n    labelField: 'title',\r\n  },\r\n}"
             },
             {
                 "name": "skyBlue",
@@ -12309,6 +12932,18 @@
                     "defaultValue": "{\r\n    projectionContent: '',\r\n    inputPropsValues: {\r\n        copyrightText: 'copyright@Annu-business',\r\n        items: [...MENU_ITEMS]\r\n    }\r\n}"
                 }
             ],
+            "projects/ngx-common-ui/reactive-form/src/components/form-error/form-error.docs.ts": [
+                {
+                    "name": "FormErrorComponent",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/ngx-common-ui/reactive-form/src/components/form-error/form-error.docs.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "any",
+                    "defaultValue": "{\r\n  projectionContent: '',\r\n  inputPropsValues: {\r\n    errors: {\r\n      required: true,\r\n      min: { min: 3, actual: 2 },\r\n    },\r\n  },\r\n}"
+                }
+            ],
             "projects/ngx-common-ui/theme/src/constants/themes/green-algae.ts": [
                 {
                     "name": "greenAlgae",
@@ -12578,6 +13213,28 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "any"
+                }
+            ],
+            "projects/ngx-common-ui/single-select-box/src/components/single-select-box/single-select-box.docs.ts": [
+                {
+                    "name": "SAMPLE_SINGLE_SELECT_ITEMS",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/ngx-common-ui/single-select-box/src/components/single-select-box/single-select-box.docs.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "[]",
+                    "defaultValue": "[\r\n  {\r\n    id: '1',\r\n    title: 'Sample Item 1',\r\n  },\r\n  {\r\n    id: '2',\r\n    title: 'Sample Item 2',\r\n  },\r\n  {\r\n    id: '3',\r\n    title: 'Sample Item 3',\r\n  },\r\n  {\r\n    id: '4',\r\n    title: 'Sample Item 4',\r\n  },\r\n  {\r\n    id: '5',\r\n    title: 'Sample Item 5',\r\n  },\r\n]"
+                },
+                {
+                    "name": "SingleSelectBoxComponent",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/ngx-common-ui/single-select-box/src/components/single-select-box/single-select-box.docs.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "any",
+                    "defaultValue": "{\r\n  projectionContent: '',\r\n  inputPropsValues: {\r\n    items: [...SAMPLE_SINGLE_SELECT_ITEMS],\r\n    keyField: 'id',\r\n    labelField: 'title',\r\n  },\r\n}"
                 }
             ],
             "projects/ngx-common-ui/search-box/src/components/search-box/search-box.docs.ts": [
@@ -12935,7 +13592,7 @@
     },
     "routes": [],
     "coverage": {
-        "count": 4,
+        "count": 3,
         "status": "low",
         "files": [
             {
@@ -13778,6 +14435,43 @@
                 "status": "low"
             },
             {
+                "filePath": "projects/ngx-common-ui/reactive-form/src/components/form-error/form-error.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "FormErrorComponent",
+                "coveragePercent": 12,
+                "coverageCount": "1/8",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/ngx-common-ui/reactive-form/src/components/form-error/form-error.docs.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "FormErrorComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/ngx-common-ui/reactive-form/src/interfaces/form-error.interface.ts",
+                "type": "interface",
+                "linktype": "interface",
+                "name": "FormError",
+                "coveragePercent": 0,
+                "coverageCount": "0/3",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/ngx-common-ui/reactive-form/src/interfaces/form-error.interface.ts",
+                "type": "interface",
+                "linktype": "interface",
+                "name": "FormErrorValue",
+                "coveragePercent": 0,
+                "coverageCount": "0/9",
+                "status": "low"
+            },
+            {
                 "filePath": "projects/ngx-common-ui/search-box/src/components/search-box/search-box.component.ts",
                 "type": "component",
                 "linktype": "component",
@@ -13812,6 +14506,35 @@
                 "linktype": "miscellaneous",
                 "linksubtype": "variable",
                 "name": "SearchBoxComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/ngx-common-ui/single-select-box/src/components/single-select-box/single-select-box.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "SingleSelectBoxComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/9",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/ngx-common-ui/single-select-box/src/components/single-select-box/single-select-box.docs.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "SAMPLE_SINGLE_SELECT_ITEMS",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/ngx-common-ui/single-select-box/src/components/single-select-box/single-select-box.docs.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "SingleSelectBoxComponent",
                 "coveragePercent": 0,
                 "coverageCount": "0/1",
                 "status": "low"

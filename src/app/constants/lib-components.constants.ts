@@ -19,6 +19,7 @@
         import { ErrorComponent } from '@annuadvent/ngx-common-ui/error';
         import { FiltersComponent } from '@annuadvent/ngx-common-ui/filters';
         import { FooterNavComponent } from '@annuadvent/ngx-common-ui/footer-nav';
+        import { FormErrorComponent } from '@annuadvent/ngx-common-ui/reactive-form';
         import { HamburgerComponent } from '@annuadvent/ngx-common-ui/hamburger';
         import { ImageFormComponent } from '@annuadvent/ngx-common-ui/image-form';
         import { LinkFormComponent } from '@annuadvent/ngx-common-ui/link-form';
@@ -28,6 +29,7 @@
         import { MultiSelectBoxComponent } from '@annuadvent/ngx-common-ui/multi-select-box';
         import { PaginationComponent } from '@annuadvent/ngx-common-ui/pagination';
         import { SearchBoxComponent } from '@annuadvent/ngx-common-ui/search-box';
+        import { SingleSelectBoxComponent } from '@annuadvent/ngx-common-ui/single-select-box';
         import { SlideshowComponent } from '@annuadvent/ngx-common-ui/slideshow';
         import { SocialMediaButtonsComponent } from '@annuadvent/ngx-common-ui/social-media';
         import { SocialMediaShareButtonsComponent } from '@annuadvent/ngx-common-ui/social-media';
@@ -74,6 +76,10 @@
         import { SitemapComponent } from '@annuadvent/ngx-tools/fire-storage';
         
         // ngx-ecommerce imports
+        import { AddressComponent } from '@annuadvent/ngx-ecommerce/address';
+        import { AddressFormComponent } from '@annuadvent/ngx-ecommerce/address';
+        import { AddressListComponent } from '@annuadvent/ngx-ecommerce/address';
+        import { DeliveryInstructionFormComponent } from '@annuadvent/ngx-ecommerce/address';
         import { ProductThumbComponent } from '@annuadvent/ngx-ecommerce/product-thumb';
         export const libComponentClasses = {
     'ngx-common-ui': {
@@ -96,6 +102,7 @@
     ErrorComponent,
     FiltersComponent,
     FooterNavComponent,
+    FormErrorComponent,
     HamburgerComponent,
     ImageFormComponent,
     LinkFormComponent,
@@ -105,6 +112,7 @@
     MultiSelectBoxComponent,
     PaginationComponent,
     SearchBoxComponent,
+    SingleSelectBoxComponent,
     SlideshowComponent,
     SocialMediaButtonsComponent,
     SocialMediaShareButtonsComponent,
@@ -151,6 +159,10 @@
     SitemapComponent
 },
     'ngx-ecommerce': {
-        ProductThumbComponent
+        AddressComponent,
+    AddressFormComponent,
+    AddressListComponent,
+    DeliveryInstructionFormComponent,
+    ProductThumbComponent
 },
 }

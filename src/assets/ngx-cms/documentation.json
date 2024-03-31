@@ -120,8 +120,9 @@
                 }
             ],
             "indexSignatures": [],
-            "kind": 168,
-            "methods": []
+            "kind": 171,
+            "methods": [],
+            "extends": []
         },
         {
             "name": "ArticlePrompt",
@@ -152,8 +153,9 @@
                 }
             ],
             "indexSignatures": [],
-            "kind": 168,
-            "methods": []
+            "kind": 171,
+            "methods": [],
+            "extends": []
         },
         {
             "name": "Category",
@@ -265,8 +267,9 @@
                 }
             ],
             "indexSignatures": [],
-            "kind": 168,
-            "methods": []
+            "kind": 171,
+            "methods": [],
+            "extends": []
         },
         {
             "name": "EditorElement",
@@ -342,8 +345,9 @@
                 }
             ],
             "indexSignatures": [],
-            "kind": 168,
-            "methods": []
+            "kind": 171,
+            "methods": [],
+            "extends": []
         },
         {
             "name": "EditorElementData",
@@ -419,8 +423,9 @@
                 }
             ],
             "indexSignatures": [],
-            "kind": 168,
-            "methods": []
+            "kind": 171,
+            "methods": [],
+            "extends": []
         },
         {
             "name": "ImageInfo",
@@ -460,8 +465,9 @@
                 }
             ],
             "indexSignatures": [],
-            "kind": 168,
-            "methods": []
+            "kind": 171,
+            "methods": [],
+            "extends": []
         },
         {
             "name": "OpenaiArticleQueueItem",
@@ -519,8 +525,9 @@
                 }
             ],
             "indexSignatures": [],
-            "kind": 168,
-            "methods": []
+            "kind": 171,
+            "methods": [],
+            "extends": []
         },
         {
             "name": "OpenaiPromptQueueBatch",
@@ -551,8 +558,9 @@
                 }
             ],
             "indexSignatures": [],
-            "kind": 168,
-            "methods": []
+            "kind": 171,
+            "methods": [],
+            "extends": []
         },
         {
             "name": "OpenaiPromptQueueItem",
@@ -610,8 +618,9 @@
                 }
             ],
             "indexSignatures": [],
-            "kind": 168,
-            "methods": []
+            "kind": 171,
+            "methods": [],
+            "extends": []
         },
         {
             "name": "Rectangle",
@@ -678,8 +687,9 @@
                 }
             ],
             "indexSignatures": [],
-            "kind": 168,
-            "methods": []
+            "kind": 171,
+            "methods": [],
+            "extends": []
         },
         {
             "name": "TableCell",
@@ -728,8 +738,9 @@
                 }
             ],
             "indexSignatures": [],
-            "kind": 168,
-            "methods": []
+            "kind": 171,
+            "methods": [],
+            "extends": []
         },
         {
             "name": "TableInfo",
@@ -805,8 +816,9 @@
                 }
             ],
             "indexSignatures": [],
-            "kind": 168,
-            "methods": []
+            "kind": 171,
+            "methods": [],
+            "extends": []
         },
         {
             "name": "TableRow",
@@ -837,8 +849,9 @@
                 }
             ],
             "indexSignatures": [],
-            "kind": 168,
-            "methods": []
+            "kind": 171,
+            "methods": [],
+            "extends": []
         }
     ],
     "injectables": [
@@ -872,6 +885,7 @@
                 "args": [],
                 "line": 8
             },
+            "extends": [],
             "type": "injectable"
         },
         {
@@ -918,7 +932,7 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "modifierKind": [
-                        123
+                        125
                     ],
                     "jsdoctags": [
                         {
@@ -951,17 +965,17 @@
                     "rawdescription": "\n\nCleans Open ai language keywords and tags with \\n only.\n\n",
                     "description": "<p>Cleans Open ai language keywords and tags with \\n only.</p>\n",
                     "modifierKind": [
-                        123
+                        125
                     ],
                     "jsdoctags": [
                         {
                             "name": {
                                 "pos": 10440,
                                 "end": 10446,
-                                "flags": 8421376,
+                                "flags": 16842752,
                                 "modifierFlagsCache": 0,
                                 "transformFlags": 0,
-                                "kind": 79,
+                                "kind": 80,
                                 "escapedText": "jsonEl"
                             },
                             "type": "EditorElement",
@@ -970,34 +984,34 @@
                             "tagName": {
                                 "pos": 10418,
                                 "end": 10423,
-                                "flags": 8421376,
+                                "flags": 16842752,
                                 "modifierFlagsCache": 0,
                                 "transformFlags": 0,
-                                "kind": 79,
+                                "kind": 80,
                                 "escapedText": "param"
                             },
                             "comment": "",
                             "typeExpression": {
                                 "pos": 10424,
                                 "end": 10439,
-                                "flags": 8421376,
+                                "flags": 16842752,
                                 "modifierFlagsCache": 0,
                                 "transformFlags": 0,
-                                "kind": 312,
+                                "kind": 316,
                                 "type": {
                                     "pos": 10425,
                                     "end": 10438,
-                                    "flags": 8388608,
+                                    "flags": 16777216,
                                     "modifierFlagsCache": 0,
                                     "transformFlags": 1,
-                                    "kind": 180,
+                                    "kind": 183,
                                     "typeName": {
                                         "pos": 10425,
                                         "end": 10438,
-                                        "flags": 8388608,
+                                        "flags": 16777216,
                                         "modifierFlagsCache": 0,
                                         "transformFlags": 0,
-                                        "kind": 79,
+                                        "kind": 80,
                                         "escapedText": "EditorElement"
                                     }
                                 }
@@ -1007,10 +1021,10 @@
                             "tagName": {
                                 "pos": 10454,
                                 "end": 10461,
-                                "flags": 8421376,
+                                "flags": 16842752,
                                 "modifierFlagsCache": 0,
                                 "transformFlags": 0,
-                                "kind": 79,
+                                "kind": 80,
                                 "escapedText": "returns"
                             },
                             "comment": "",
@@ -1035,7 +1049,7 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "modifierKind": [
-                        123
+                        125
                     ],
                     "jsdoctags": [
                         {
@@ -1068,17 +1082,17 @@
                     "rawdescription": "\n\nFormats LI items those having an heading within, as strong.\n\n",
                     "description": "<p>Formats LI items those having an heading within, as strong.</p>\n",
                     "modifierKind": [
-                        123
+                        125
                     ],
                     "jsdoctags": [
                         {
                             "name": {
                                 "pos": 11368,
                                 "end": 11370,
-                                "flags": 8421376,
+                                "flags": 16842752,
                                 "modifierFlagsCache": 0,
                                 "transformFlags": 0,
-                                "kind": 79,
+                                "kind": 80,
                                 "escapedText": "el"
                             },
                             "type": "EditorElement",
@@ -1087,34 +1101,34 @@
                             "tagName": {
                                 "pos": 11346,
                                 "end": 11351,
-                                "flags": 8421376,
+                                "flags": 16842752,
                                 "modifierFlagsCache": 0,
                                 "transformFlags": 0,
-                                "kind": 79,
+                                "kind": 80,
                                 "escapedText": "param"
                             },
                             "comment": "",
                             "typeExpression": {
                                 "pos": 11352,
                                 "end": 11367,
-                                "flags": 8421376,
+                                "flags": 16842752,
                                 "modifierFlagsCache": 0,
                                 "transformFlags": 0,
-                                "kind": 312,
+                                "kind": 316,
                                 "type": {
                                     "pos": 11353,
                                     "end": 11366,
-                                    "flags": 8388608,
+                                    "flags": 16777216,
                                     "modifierFlagsCache": 0,
                                     "transformFlags": 1,
-                                    "kind": 180,
+                                    "kind": 183,
                                     "typeName": {
                                         "pos": 11353,
                                         "end": 11366,
-                                        "flags": 8388608,
+                                        "flags": 16777216,
                                         "modifierFlagsCache": 0,
                                         "transformFlags": 0,
-                                        "kind": 79,
+                                        "kind": 80,
                                         "escapedText": "EditorElement"
                                     }
                                 }
@@ -1124,10 +1138,10 @@
                             "tagName": {
                                 "pos": 11378,
                                 "end": 11385,
-                                "flags": 8421376,
+                                "flags": 16842752,
                                 "modifierFlagsCache": 0,
                                 "transformFlags": 0,
-                                "kind": 79,
+                                "kind": 80,
                                 "escapedText": "returns"
                             },
                             "comment": "",
@@ -1158,8 +1172,8 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "modifierKind": [
-                        123,
-                        132
+                        125,
+                        134
                     ],
                     "jsdoctags": [
                         {
@@ -1205,8 +1219,8 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "modifierKind": [
-                        123,
-                        132
+                        125,
+                        134
                     ],
                     "jsdoctags": [
                         {
@@ -1252,8 +1266,8 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "modifierKind": [
-                        123,
-                        132
+                        125,
+                        134
                     ],
                     "jsdoctags": [
                         {
@@ -1311,8 +1325,8 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "modifierKind": [
-                        123,
-                        132
+                        125,
+                        134
                     ],
                     "jsdoctags": [
                         {
@@ -1370,7 +1384,7 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "modifierKind": [
-                        123
+                        125
                     ],
                     "jsdoctags": [
                         {
@@ -1407,8 +1421,8 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "modifierKind": [
-                        123,
-                        132
+                        125,
+                        134
                     ],
                     "jsdoctags": [
                         {
@@ -1448,7 +1462,7 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "modifierKind": [
-                        123
+                        125
                     ],
                     "jsdoctags": [
                         {
@@ -1485,7 +1499,7 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "modifierKind": [
-                        123
+                        125
                     ],
                     "jsdoctags": [
                         {
@@ -1525,7 +1539,7 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "modifierKind": [
-                        123
+                        125
                     ],
                     "jsdoctags": [
                         {
@@ -1556,7 +1570,7 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "modifierKind": [
-                        123
+                        125
                     ],
                     "jsdoctags": [
                         {
@@ -1688,6 +1702,7 @@
                     }
                 }
             },
+            "extends": [],
             "type": "injectable"
         },
         {
@@ -1721,17 +1736,17 @@
                     "rawdescription": "\n\nThis function creates a new element based on existing element, and appends it to the parent of existing element.\n",
                     "description": "<p>This function creates a new element based on existing element, and appends it to the parent of existing element.</p>\n",
                     "modifierKind": [
-                        123
+                        125
                     ],
                     "jsdoctags": [
                         {
                             "name": {
                                 "pos": 2190,
                                 "end": 2200,
-                                "flags": 8421376,
+                                "flags": 16842752,
                                 "modifierFlagsCache": 0,
                                 "transformFlags": 0,
-                                "kind": 79,
+                                "kind": 80,
                                 "escapedText": "existingEl"
                             },
                             "type": "EditorElement",
@@ -1740,10 +1755,10 @@
                             "tagName": {
                                 "pos": 2184,
                                 "end": 2189,
-                                "flags": 8421376,
+                                "flags": 16842752,
                                 "modifierFlagsCache": 0,
                                 "transformFlags": 0,
-                                "kind": 79,
+                                "kind": 80,
                                 "escapedText": "param"
                             },
                             "comment": "<p>existing element, whose empty copy will be created as a new element.</p>\n"
@@ -1752,10 +1767,10 @@
                             "name": {
                                 "pos": 2284,
                                 "end": 2292,
-                                "flags": 8421376,
+                                "flags": 16842752,
                                 "modifierFlagsCache": 0,
                                 "transformFlags": 0,
-                                "kind": 79,
+                                "kind": 80,
                                 "escapedText": "fullTree"
                             },
                             "type": "EditorElement",
@@ -1764,10 +1779,10 @@
                             "tagName": {
                                 "pos": 2278,
                                 "end": 2283,
-                                "flags": 8421376,
+                                "flags": 16842752,
                                 "modifierFlagsCache": 0,
                                 "transformFlags": 0,
-                                "kind": 79,
+                                "kind": 80,
                                 "escapedText": "param"
                             },
                             "comment": ""
@@ -1797,7 +1812,7 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "modifierKind": [
-                        123
+                        125
                     ],
                     "jsdoctags": [
                         {
@@ -1837,7 +1852,7 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "modifierKind": [
-                        121
+                        123
                     ],
                     "jsdoctags": [
                         {
@@ -1875,7 +1890,7 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "modifierKind": [
-                        123
+                        125
                     ],
                     "jsdoctags": [
                         {
@@ -1922,7 +1937,7 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "modifierKind": [
-                        123
+                        125
                     ],
                     "jsdoctags": [
                         {
@@ -1983,17 +1998,17 @@
                     "rawdescription": "\n\n\n",
                     "description": "",
                     "modifierKind": [
-                        123
+                        125
                     ],
                     "jsdoctags": [
                         {
                             "name": {
                                 "pos": 4603,
                                 "end": 4605,
-                                "flags": 8421376,
+                                "flags": 16842752,
                                 "modifierFlagsCache": 0,
                                 "transformFlags": 0,
-                                "kind": 79,
+                                "kind": 80,
                                 "escapedText": "el"
                             },
                             "type": "EditorElement",
@@ -2002,10 +2017,10 @@
                             "tagName": {
                                 "pos": 4597,
                                 "end": 4602,
-                                "flags": 8421376,
+                                "flags": 16842752,
                                 "modifierFlagsCache": 0,
                                 "transformFlags": 0,
-                                "kind": 79,
+                                "kind": 80,
                                 "escapedText": "param"
                             },
                             "comment": "<p>Existing Element that will be replaced with new element</p>\n"
@@ -2014,10 +2029,10 @@
                             "name": {
                                 "pos": 4675,
                                 "end": 4682,
-                                "flags": 8421376,
+                                "flags": 16842752,
                                 "modifierFlagsCache": 0,
                                 "transformFlags": 0,
-                                "kind": 79,
+                                "kind": 80,
                                 "escapedText": "tagName"
                             },
                             "type": "string",
@@ -2026,10 +2041,10 @@
                             "tagName": {
                                 "pos": 4669,
                                 "end": 4674,
-                                "flags": 8421376,
+                                "flags": 16842752,
                                 "modifierFlagsCache": 0,
                                 "transformFlags": 0,
-                                "kind": 79,
+                                "kind": 80,
                                 "escapedText": "param"
                             },
                             "comment": "<p>New Element Tag Name</p>\n"
@@ -2038,10 +2053,10 @@
                             "name": {
                                 "pos": 4717,
                                 "end": 4725,
-                                "flags": 8421376,
+                                "flags": 16842752,
                                 "modifierFlagsCache": 0,
                                 "transformFlags": 0,
-                                "kind": 79,
+                                "kind": 80,
                                 "escapedText": "fullTree"
                             },
                             "type": "EditorElement",
@@ -2050,10 +2065,10 @@
                             "tagName": {
                                 "pos": 4711,
                                 "end": 4716,
-                                "flags": 8421376,
+                                "flags": 16842752,
                                 "modifierFlagsCache": 0,
                                 "transformFlags": 0,
-                                "kind": 79,
+                                "kind": 80,
                                 "escapedText": "param"
                             },
                             "comment": "<p>Root most Editor Element, means Root element having compltete tree.</p>\n"
@@ -2062,10 +2077,10 @@
                             "name": {
                                 "pos": 4807,
                                 "end": 4811,
-                                "flags": 8421376,
+                                "flags": 16842752,
                                 "modifierFlagsCache": 0,
                                 "transformFlags": 0,
-                                "kind": 79,
+                                "kind": 80,
                                 "escapedText": "data"
                             },
                             "type": "EditorElementData",
@@ -2075,10 +2090,10 @@
                             "tagName": {
                                 "pos": 4801,
                                 "end": 4806,
-                                "flags": 8421376,
+                                "flags": 16842752,
                                 "modifierFlagsCache": 0,
                                 "transformFlags": 0,
-                                "kind": 79,
+                                "kind": 80,
                                 "escapedText": "param"
                             },
                             "comment": "<p>New item data</p>\n"
@@ -2102,7 +2117,7 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "modifierKind": [
-                        123
+                        125
                     ],
                     "jsdoctags": [
                         {
@@ -2148,6 +2163,7 @@
                     }
                 ]
             },
+            "extends": [],
             "type": "injectable"
         },
         {
@@ -2173,7 +2189,7 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "modifierKind": [
-                        121
+                        123
                     ],
                     "jsdoctags": [
                         {
@@ -2204,7 +2220,7 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "modifierKind": [
-                        123
+                        125
                     ],
                     "jsdoctags": [
                         {
@@ -2242,7 +2258,7 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "modifierKind": [
-                        123
+                        125
                     ],
                     "jsdoctags": [
                         {
@@ -2283,7 +2299,7 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "modifierKind": [
-                        123
+                        125
                     ],
                     "jsdoctags": [
                         {
@@ -2314,7 +2330,7 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "modifierKind": [
-                        123
+                        125
                     ],
                     "jsdoctags": [
                         {
@@ -2345,7 +2361,7 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "modifierKind": [
-                        121
+                        123
                     ],
                     "jsdoctags": [
                         {
@@ -2391,6 +2407,7 @@
                     }
                 ]
             },
+            "extends": [],
             "type": "injectable"
         },
         {
@@ -2408,7 +2425,7 @@
                     "description": "",
                     "line": 14,
                     "modifierKind": [
-                        121
+                        123
                     ]
                 },
                 {
@@ -2420,7 +2437,7 @@
                     "description": "",
                     "line": 13,
                     "modifierKind": [
-                        121
+                        123
                     ]
                 }
             ],
@@ -2442,7 +2459,7 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "modifierKind": [
-                        123
+                        125
                     ],
                     "jsdoctags": [
                         {
@@ -2473,7 +2490,7 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "modifierKind": [
-                        123
+                        125
                     ],
                     "jsdoctags": [
                         {
@@ -2504,7 +2521,7 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "modifierKind": [
-                        123
+                        125
                     ],
                     "jsdoctags": [
                         {
@@ -2535,7 +2552,7 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "modifierKind": [
-                        121
+                        123
                     ],
                     "jsdoctags": [
                         {
@@ -2559,7 +2576,7 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "modifierKind": [
-                        123
+                        125
                     ]
                 },
                 {
@@ -2579,7 +2596,7 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "modifierKind": [
-                        121
+                        123
                     ],
                     "jsdoctags": [
                         {
@@ -2610,7 +2627,7 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "modifierKind": [
-                        121
+                        123
                     ],
                     "jsdoctags": [
                         {
@@ -2641,7 +2658,7 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "modifierKind": [
-                        123
+                        125
                     ],
                     "jsdoctags": [
                         {
@@ -2707,6 +2724,7 @@
                     }
                 }
             },
+            "extends": [],
             "type": "injectable"
         },
         {
@@ -2734,17 +2752,17 @@
                     "rawdescription": "\n\n Creates specified number of Empty initialized Table cells\n",
                     "description": "<p> Creates specified number of Empty initialized Table cells</p>\n",
                     "modifierKind": [
-                        121
+                        123
                     ],
                     "jsdoctags": [
                         {
                             "name": {
                                 "pos": 656,
                                 "end": 661,
-                                "flags": 8421376,
+                                "flags": 16842752,
                                 "modifierFlagsCache": 0,
                                 "transformFlags": 0,
-                                "kind": 79,
+                                "kind": 80,
                                 "escapedText": "count"
                             },
                             "type": "",
@@ -2753,10 +2771,10 @@
                             "tagName": {
                                 "pos": 650,
                                 "end": 655,
-                                "flags": 8421376,
+                                "flags": 16842752,
                                 "modifierFlagsCache": 0,
                                 "transformFlags": 0,
-                                "kind": 79,
+                                "kind": 80,
                                 "escapedText": "param"
                             },
                             "comment": "<p>number of cells</p>\n"
@@ -2765,10 +2783,10 @@
                             "tagName": {
                                 "pos": 685,
                                 "end": 692,
-                                "flags": 8421376,
+                                "flags": 16842752,
                                 "modifierFlagsCache": 0,
                                 "transformFlags": 0,
-                                "kind": 79,
+                                "kind": 80,
                                 "escapedText": "returns"
                             },
                             "comment": "<p>Empty initialized Table Cells</p>\n"
@@ -2800,17 +2818,17 @@
                     "rawdescription": "\n\nGets a Table row with initialized cells\n1) Merges existing cells\n2) removes extra cells, if needed\n3) adds empty initialized additional cells, if needed\n",
                     "description": "<p>Gets a Table row with initialized cells</p>\n<ol>\n<li>Merges existing cells</li>\n<li>removes extra cells, if needed</li>\n<li>adds empty initialized additional cells, if needed</li>\n</ol>\n",
                     "modifierKind": [
-                        121
+                        123
                     ],
                     "jsdoctags": [
                         {
                             "name": {
                                 "pos": 1227,
                                 "end": 1230,
-                                "flags": 8421376,
+                                "flags": 16842752,
                                 "modifierFlagsCache": 0,
                                 "transformFlags": 0,
-                                "kind": 79,
+                                "kind": 80,
                                 "escapedText": "row"
                             },
                             "type": "TableRow",
@@ -2819,10 +2837,10 @@
                             "tagName": {
                                 "pos": 1221,
                                 "end": 1226,
-                                "flags": 8421376,
+                                "flags": 16842752,
                                 "modifierFlagsCache": 0,
                                 "transformFlags": 0,
-                                "kind": 79,
+                                "kind": 80,
                                 "escapedText": "param"
                             },
                             "comment": "<p>TableRow, if null, creates a new row self initialized cells</p>\n"
@@ -2831,10 +2849,10 @@
                             "name": {
                                 "pos": 1304,
                                 "end": 1313,
-                                "flags": 8421376,
+                                "flags": 16842752,
                                 "modifierFlagsCache": 0,
                                 "transformFlags": 0,
-                                "kind": 79,
+                                "kind": 80,
                                 "escapedText": "cellCount"
                             },
                             "type": "number",
@@ -2843,10 +2861,10 @@
                             "tagName": {
                                 "pos": 1298,
                                 "end": 1303,
-                                "flags": 8421376,
+                                "flags": 16842752,
                                 "modifierFlagsCache": 0,
                                 "transformFlags": 0,
-                                "kind": 79,
+                                "kind": 80,
                                 "escapedText": "param"
                             },
                             "comment": "<p>Number of cells in the row</p>\n"
@@ -2855,10 +2873,10 @@
                             "tagName": {
                                 "pos": 1348,
                                 "end": 1355,
-                                "flags": 8421376,
+                                "flags": 16842752,
                                 "modifierFlagsCache": 0,
                                 "transformFlags": 0,
-                                "kind": 79,
+                                "kind": 80,
                                 "escapedText": "returns"
                             },
                             "comment": "<p>TableRow</p>\n"
@@ -2899,17 +2917,17 @@
                     "rawdescription": "\n\nReturns a new Table having provided number of rows and columns, and with sample data in cells.\n",
                     "description": "<p>Returns a new Table having provided number of rows and columns, and with sample data in cells.</p>\n",
                     "modifierKind": [
-                        123
+                        125
                     ],
                     "jsdoctags": [
                         {
                             "name": {
                                 "pos": 2113,
                                 "end": 2121,
-                                "flags": 8421376,
+                                "flags": 16842752,
                                 "modifierFlagsCache": 0,
                                 "transformFlags": 0,
-                                "kind": 79,
+                                "kind": 80,
                                 "escapedText": "rowCount"
                             },
                             "type": "number",
@@ -2919,10 +2937,10 @@
                             "tagName": {
                                 "pos": 2107,
                                 "end": 2112,
-                                "flags": 8421376,
+                                "flags": 16842752,
                                 "modifierFlagsCache": 0,
                                 "transformFlags": 0,
-                                "kind": 79,
+                                "kind": 80,
                                 "escapedText": "param"
                             },
                             "comment": "<p>Number of rows for the table</p>\n"
@@ -2931,10 +2949,10 @@
                             "name": {
                                 "pos": 2164,
                                 "end": 2175,
-                                "flags": 8421376,
+                                "flags": 16842752,
                                 "modifierFlagsCache": 0,
                                 "transformFlags": 0,
-                                "kind": 79,
+                                "kind": 80,
                                 "escapedText": "columnCount"
                             },
                             "type": "number",
@@ -2944,10 +2962,10 @@
                             "tagName": {
                                 "pos": 2158,
                                 "end": 2163,
-                                "flags": 8421376,
+                                "flags": 16842752,
                                 "modifierFlagsCache": 0,
                                 "transformFlags": 0,
-                                "kind": 79,
+                                "kind": 80,
                                 "escapedText": "param"
                             },
                             "comment": "<p>Number of columns for the table</p>\n"
@@ -2956,10 +2974,10 @@
                             "name": {
                                 "pos": 2221,
                                 "end": 2230,
-                                "flags": 8421376,
+                                "flags": 16842752,
                                 "modifierFlagsCache": 0,
                                 "transformFlags": 0,
-                                "kind": 79,
+                                "kind": 80,
                                 "escapedText": "tableInfo"
                             },
                             "type": "TableInfo",
@@ -2969,10 +2987,10 @@
                             "tagName": {
                                 "pos": 2215,
                                 "end": 2220,
-                                "flags": 8421376,
+                                "flags": 16842752,
                                 "modifierFlagsCache": 0,
                                 "transformFlags": 0,
-                                "kind": 79,
+                                "kind": 80,
                                 "escapedText": "param"
                             },
                             "comment": "<p>TableInfo - existing table, if updates needed. Provide null if new table is needed.</p>\n"
@@ -2981,10 +2999,10 @@
                             "tagName": {
                                 "pos": 2322,
                                 "end": 2329,
-                                "flags": 8421376,
+                                "flags": 16842752,
                                 "modifierFlagsCache": 0,
                                 "transformFlags": 0,
-                                "kind": 79,
+                                "kind": 80,
                                 "escapedText": "returns"
                             },
                             "comment": "<p>Updated TableInfo (Table structure)</p>\n"
@@ -3008,7 +3026,7 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "modifierKind": [
-                        123
+                        125
                     ],
                     "jsdoctags": [
                         {
@@ -3054,6 +3072,7 @@
                     }
                 ]
             },
+            "extends": [],
             "type": "injectable"
         }
     ],
@@ -3115,7 +3134,7 @@
                     "description": "",
                     "line": 34,
                     "modifierKind": [
-                        121
+                        123
                     ]
                 },
                 {
@@ -3129,7 +3148,7 @@
                     "line": 44,
                     "rawdescription": "\n\nonChange callback that writes value to control and allows FormHooks use\n",
                     "modifierKind": [
-                        121
+                        123
                     ]
                 },
                 {
@@ -3143,7 +3162,7 @@
                     "line": 39,
                     "rawdescription": "\n\nonTouch callback that marks control as touched and allows FormHooks use\n",
                     "modifierKind": [
-                        121
+                        123
                     ]
                 }
             ],
@@ -3160,7 +3179,7 @@
                     "rawdescription": "\n\nTo support IE11 MutationObserver is used to monitor changes to the content\n",
                     "description": "<p>To support IE11 MutationObserver is used to monitor changes to the content</p>\n",
                     "modifierKind": [
-                        123
+                        125
                     ]
                 },
                 {
@@ -3175,7 +3194,7 @@
                     "rawdescription": "\n\nDisconnect MutationObserver IE11 fallback on destroy\n",
                     "description": "<p>Disconnect MutationObserver IE11 fallback on destroy</p>\n",
                     "modifierKind": [
-                        123
+                        125
                     ]
                 },
                 {
@@ -3196,7 +3215,7 @@
                         }
                     ],
                     "modifierKind": [
-                        167
+                        170
                     ]
                 },
                 {
@@ -3217,7 +3236,7 @@
                         }
                     ],
                     "modifierKind": [
-                        167
+                        170
                     ]
                 },
                 {
@@ -3239,8 +3258,8 @@
                     "rawdescription": "\n\nnull is treated as empty string to prevent IE11 outputting 'null',\nalso single <br> is replaced with empty string when passed to the control\n",
                     "description": "<p>null is treated as empty string to prevent IE11 outputting &#39;null&#39;,\nalso single <br> is replaced with empty string when passed to the control</p>\n",
                     "modifierKind": [
-                        121,
-                        124
+                        123,
+                        126
                     ],
                     "jsdoctags": [
                         {
@@ -3281,7 +3300,7 @@
                     "rawdescription": "\n\nRegisters onChange callback\n\nSee {@link ControlValueAccessor#registerOnChange}\n",
                     "description": "<p>Registers onChange callback</p>\n<p>See {@link ControlValueAccessor#registerOnChange}</p>\n",
                     "modifierKind": [
-                        123
+                        125
                     ],
                     "jsdoctags": [
                         {
@@ -3323,7 +3342,7 @@
                     "rawdescription": "\n\nRegisters onTouch callback\n\nSee {@link ControlValueAccessor#registerOnTouched}\n",
                     "description": "<p>Registers onTouch callback</p>\n<p>See {@link ControlValueAccessor#registerOnTouched}</p>\n",
                     "modifierKind": [
-                        123
+                        125
                     ],
                     "jsdoctags": [
                         {
@@ -3357,7 +3376,7 @@
                     "rawdescription": "\n\nSets disabled state by setting contenteditable attribute to true/false\n\nSee {@link ControlValueAccessor#setDisabledState}\n",
                     "description": "<p>Sets disabled state by setting contenteditable attribute to true/false</p>\n<p>See {@link ControlValueAccessor#setDisabledState}</p>\n",
                     "modifierKind": [
-                        123
+                        125
                     ],
                     "jsdoctags": [
                         {
@@ -3402,6 +3421,7 @@
                     ]
                 }
             ],
+            "extends": [],
             "implements": [
                 "ControlValueAccessor",
                 "AfterViewInit",
@@ -3497,10 +3517,11 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "modifierKind": [
-                        122
+                        124
                     ]
                 }
             ],
+            "extends": [],
             "constructorObj": {
                 "name": "constructor",
                 "description": "",
@@ -3594,7 +3615,7 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "modifierKind": [
-                        121
+                        123
                     ],
                     "jsdoctags": [
                         {
@@ -3618,7 +3639,7 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "modifierKind": [
-                        123
+                        125
                     ]
                 },
                 {
@@ -3631,7 +3652,7 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "modifierKind": [
-                        123
+                        125
                     ]
                 },
                 {
@@ -3657,8 +3678,8 @@
                         }
                     ],
                     "modifierKind": [
-                        167,
-                        123
+                        170,
+                        125
                     ],
                     "jsdoctags": [
                         {
@@ -3689,7 +3710,7 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "modifierKind": [
-                        123
+                        125
                     ],
                     "jsdoctags": [
                         {
@@ -3704,6 +3725,7 @@
                     ]
                 }
             ],
+            "extends": [],
             "implements": [
                 "OnInit",
                 "OnDestroy"
@@ -3798,7 +3820,7 @@
                     "description": "",
                     "line": 57,
                     "modifierKind": [
-                        123
+                        125
                     ]
                 },
                 {
@@ -3890,7 +3912,7 @@
                     "description": "",
                     "line": 64,
                     "modifierKind": [
-                        123
+                        125
                     ]
                 },
                 {
@@ -3962,7 +3984,7 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "modifierKind": [
-                        123
+                        125
                     ],
                     "jsdoctags": [
                         {
@@ -4000,7 +4022,7 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "modifierKind": [
-                        123
+                        125
                     ],
                     "jsdoctags": [
                         {
@@ -4049,17 +4071,17 @@
                     "rawdescription": "\n\nAdd Additional Prompts from subtopics and questions.\n\n",
                     "description": "<p>Add Additional Prompts from subtopics and questions.</p>\n",
                     "modifierKind": [
-                        123
+                        125
                     ],
                     "jsdoctags": [
                         {
                             "name": {
                                 "pos": 5723,
                                 "end": 5730,
-                                "flags": 8421376,
+                                "flags": 16842752,
                                 "modifierFlagsCache": 0,
                                 "transformFlags": 0,
-                                "kind": 79,
+                                "kind": 80,
                                 "escapedText": "promptQ"
                             },
                             "type": "Queue",
@@ -4068,10 +4090,10 @@
                             "tagName": {
                                 "pos": 5717,
                                 "end": 5722,
-                                "flags": 8421376,
+                                "flags": 16842752,
                                 "modifierFlagsCache": 0,
                                 "transformFlags": 0,
-                                "kind": 79,
+                                "kind": 80,
                                 "escapedText": "param"
                             },
                             "comment": ""
@@ -4080,10 +4102,10 @@
                             "name": {
                                 "pos": 5744,
                                 "end": 5755,
-                                "flags": 8421376,
+                                "flags": 16842752,
                                 "modifierFlagsCache": 0,
                                 "transformFlags": 0,
-                                "kind": 79,
+                                "kind": 80,
                                 "escapedText": "promptQItem"
                             },
                             "type": "QueueItem",
@@ -4092,10 +4114,10 @@
                             "tagName": {
                                 "pos": 5738,
                                 "end": 5743,
-                                "flags": 8421376,
+                                "flags": 16842752,
                                 "modifierFlagsCache": 0,
                                 "transformFlags": 0,
-                                "kind": 79,
+                                "kind": 80,
                                 "escapedText": "param"
                             },
                             "comment": ""
@@ -4104,10 +4126,10 @@
                             "tagName": {
                                 "pos": 5763,
                                 "end": 5770,
-                                "flags": 8421376,
+                                "flags": 16842752,
                                 "modifierFlagsCache": 0,
                                 "transformFlags": 0,
-                                "kind": 79,
+                                "kind": 80,
                                 "escapedText": "returns"
                             },
                             "comment": ""
@@ -4131,7 +4153,7 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "modifierKind": [
-                        123
+                        125
                     ],
                     "jsdoctags": [
                         {
@@ -4182,7 +4204,7 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "modifierKind": [
-                        121
+                        123
                     ],
                     "jsdoctags": [
                         {
@@ -4206,7 +4228,7 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "modifierKind": [
-                        123
+                        125
                     ]
                 },
                 {
@@ -4226,7 +4248,7 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "modifierKind": [
-                        123
+                        125
                     ],
                     "jsdoctags": [
                         {
@@ -4269,7 +4291,7 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "modifierKind": [
-                        123
+                        125
                     ],
                     "jsdoctags": [
                         {
@@ -4338,7 +4360,7 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "modifierKind": [
-                        123
+                        125
                     ],
                     "jsdoctags": [
                         {
@@ -4404,7 +4426,7 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "modifierKind": [
-                        123
+                        125
                     ],
                     "jsdoctags": [
                         {
@@ -4444,8 +4466,8 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "modifierKind": [
-                        123,
-                        132
+                        125,
+                        134
                     ],
                     "jsdoctags": [
                         {
@@ -4482,7 +4504,7 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "modifierKind": [
-                        123
+                        125
                     ],
                     "jsdoctags": [
                         {
@@ -4522,7 +4544,7 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "modifierKind": [
-                        123
+                        125
                     ],
                     "jsdoctags": [
                         {
@@ -4559,7 +4581,7 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "modifierKind": [
-                        123
+                        125
                     ],
                     "jsdoctags": [
                         {
@@ -4762,6 +4784,7 @@
                     }
                 ]
             },
+            "extends": [],
             "implements": [
                 "OnDestroy",
                 "OnInit"
@@ -4949,7 +4972,7 @@
                     "description": "",
                     "line": 68,
                     "modifierKind": [
-                        123
+                        125
                     ]
                 }
             ],
@@ -5002,7 +5025,7 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "modifierKind": [
-                        121
+                        123
                     ]
                 },
                 {
@@ -5015,7 +5038,7 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "modifierKind": [
-                        121
+                        123
                     ]
                 }
             ],
@@ -5063,6 +5086,7 @@
                     }
                 ]
             },
+            "extends": [],
             "implements": [
                 "OnInit",
                 "OnChanges"
@@ -5348,7 +5372,7 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "modifierKind": [
-                        123
+                        125
                     ],
                     "jsdoctags": [
                         {
@@ -5379,7 +5403,7 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "modifierKind": [
-                        123
+                        125
                     ],
                     "jsdoctags": [
                         {
@@ -5410,7 +5434,7 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "modifierKind": [
-                        123
+                        125
                     ],
                     "jsdoctags": [
                         {
@@ -5434,7 +5458,7 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "modifierKind": [
-                        123
+                        125
                     ]
                 },
                 {
@@ -5461,7 +5485,7 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "modifierKind": [
-                        123
+                        125
                     ],
                     "jsdoctags": [
                         {
@@ -5502,7 +5526,7 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "modifierKind": [
-                        123
+                        125
                     ],
                     "jsdoctags": [
                         {
@@ -5526,7 +5550,7 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "modifierKind": [
-                        121
+                        123
                     ]
                 },
                 {
@@ -5546,7 +5570,7 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "modifierKind": [
-                        123
+                        125
                     ],
                     "jsdoctags": [
                         {
@@ -5577,7 +5601,7 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "modifierKind": [
-                        123
+                        125
                     ],
                     "jsdoctags": [
                         {
@@ -5647,7 +5671,7 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "modifierKind": [
-                        123
+                        125
                     ],
                     "jsdoctags": [
                         {
@@ -5680,7 +5704,7 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "modifierKind": [
-                        123
+                        125
                     ],
                     "jsdoctags": [
                         {
@@ -5712,7 +5736,7 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "modifierKind": [
-                        123
+                        125
                     ],
                     "jsdoctags": [
                         {
@@ -5743,7 +5767,7 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "modifierKind": [
-                        123
+                        125
                     ],
                     "jsdoctags": [
                         {
@@ -5774,7 +5798,7 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "modifierKind": [
-                        123
+                        125
                     ],
                     "jsdoctags": [
                         {
@@ -5833,6 +5857,7 @@
                     }
                 ]
             },
+            "extends": [],
             "implements": [
                 "OnInit",
                 "OnChanges"
@@ -5908,6 +5933,7 @@
                 "args": [],
                 "line": 10
             },
+            "extends": [],
             "implements": [
                 "OnInit"
             ],
@@ -5991,6 +6017,7 @@
                 "args": [],
                 "line": 11
             },
+            "extends": [],
             "implements": [
                 "OnInit"
             ],
@@ -6145,7 +6172,7 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "modifierKind": [
-                        121
+                        123
                     ]
                 },
                 {
@@ -6165,7 +6192,7 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "modifierKind": [
-                        123
+                        125
                     ],
                     "jsdoctags": [
                         {
@@ -6224,6 +6251,7 @@
                     }
                 ]
             },
+            "extends": [],
             "implements": [
                 "OnInit",
                 "OnChanges"
@@ -6307,7 +6335,7 @@
                     "description": "",
                     "line": 21,
                     "modifierKind": [
-                        123
+                        125
                     ]
                 }
             ],
@@ -6367,6 +6395,7 @@
                     }
                 ]
             },
+            "extends": [],
             "implements": [
                 "OnInit"
             ],
@@ -6495,6 +6524,7 @@
                 "args": [],
                 "line": 19
             },
+            "extends": [],
             "templateData": "<h4 class=\"\" [ngClass]=\"headerClassNames\">\r\n  <a [routerLink]=\"[categoryHref, category?.id]\">{{\r\n    category?.metaInfo?.title\r\n  }}</a>\r\n</h4>\r\n<ul class=\"spacing-v\" [ngClass]=\"listClassNames\">\r\n  <li class=\"\" *ngFor=\"let art of articles\">\r\n    <a [routerLink]=\"[articleHref, art?.id]\">{{ art?.metaInfo?.title }}</a>\r\n  </li>\r\n</ul>\r\n<div class=\"row right\">\r\n  <a [routerLink]=\"[categoryHref, category?.id]\">{{ readMoreLabel }}</a>\r\n</div>\r\n"
         },
         {
@@ -6626,7 +6656,7 @@
                     "description": "",
                     "line": 47,
                     "modifierKind": [
-                        123
+                        125
                     ]
                 }
             ],
@@ -6679,7 +6709,7 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "modifierKind": [
-                        121
+                        123
                     ]
                 }
             ],
@@ -6727,6 +6757,7 @@
                     }
                 ]
             },
+            "extends": [],
             "implements": [
                 "OnInit",
                 "OnChanges"
@@ -6967,7 +6998,7 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "modifierKind": [
-                        123
+                        125
                     ]
                 },
                 {
@@ -6987,7 +7018,7 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "modifierKind": [
-                        123
+                        125
                     ],
                     "jsdoctags": [
                         {
@@ -7018,7 +7049,7 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "modifierKind": [
-                        123
+                        125
                     ],
                     "jsdoctags": [
                         {
@@ -7056,7 +7087,7 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "modifierKind": [
-                        123
+                        125
                     ],
                     "jsdoctags": [
                         {
@@ -7097,7 +7128,7 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "modifierKind": [
-                        123
+                        125
                     ],
                     "jsdoctags": [
                         {
@@ -7121,7 +7152,7 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "modifierKind": [
-                        121
+                        123
                     ]
                 },
                 {
@@ -7141,7 +7172,7 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "modifierKind": [
-                        123
+                        125
                     ],
                     "jsdoctags": [
                         {
@@ -7172,7 +7203,7 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "modifierKind": [
-                        123
+                        125
                     ],
                     "jsdoctags": [
                         {
@@ -7203,7 +7234,7 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "modifierKind": [
-                        123
+                        125
                     ],
                     "jsdoctags": [
                         {
@@ -7273,7 +7304,7 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "modifierKind": [
-                        123
+                        125
                     ],
                     "jsdoctags": [
                         {
@@ -7305,7 +7336,7 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "modifierKind": [
-                        123
+                        125
                     ],
                     "jsdoctags": [
                         {
@@ -7336,7 +7367,7 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "modifierKind": [
-                        123
+                        125
                     ],
                     "jsdoctags": [
                         {
@@ -7367,7 +7398,7 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "modifierKind": [
-                        123
+                        125
                     ],
                     "jsdoctags": [
                         {
@@ -7398,7 +7429,7 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "modifierKind": [
-                        123
+                        125
                     ],
                     "jsdoctags": [
                         {
@@ -7457,6 +7488,7 @@
                     }
                 ]
             },
+            "extends": [],
             "implements": [
                 "OnInit",
                 "OnChanges"
@@ -7557,7 +7589,7 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "modifierKind": [
-                        123
+                        125
                     ],
                     "jsdoctags": [
                         {
@@ -7598,7 +7630,7 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "modifierKind": [
-                        123
+                        125
                     ],
                     "jsdoctags": [
                         {
@@ -7629,7 +7661,7 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "modifierKind": [
-                        123
+                        125
                     ],
                     "jsdoctags": [
                         {
@@ -7718,6 +7750,7 @@
                     }
                 ]
             },
+            "extends": [],
             "implements": [
                 "OnInit"
             ],
@@ -7838,7 +7871,7 @@
                         }
                     ],
                     "modifierKind": [
-                        167
+                        170
                     ]
                 },
                 {
@@ -7882,7 +7915,7 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "modifierKind": [
-                        123
+                        125
                     ]
                 },
                 {
@@ -7895,7 +7928,7 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "modifierKind": [
-                        123
+                        125
                     ]
                 },
                 {
@@ -7915,7 +7948,7 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "modifierKind": [
-                        123
+                        125
                     ],
                     "jsdoctags": [
                         {
@@ -7946,7 +7979,7 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "modifierKind": [
-                        123
+                        125
                     ],
                     "jsdoctags": [
                         {
@@ -7987,7 +8020,7 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "modifierKind": [
-                        123
+                        125
                     ],
                     "jsdoctags": [
                         {
@@ -8018,7 +8051,7 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "modifierKind": [
-                        123
+                        125
                     ],
                     "jsdoctags": [
                         {
@@ -8077,6 +8110,7 @@
                     }
                 ]
             },
+            "extends": [],
             "implements": [
                 "OnInit"
             ],
@@ -8230,7 +8264,7 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "modifierKind": [
-                        123
+                        125
                     ],
                     "jsdoctags": [
                         {
@@ -8254,7 +8288,7 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "modifierKind": [
-                        123
+                        125
                     ]
                 },
                 {
@@ -8274,7 +8308,7 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "modifierKind": [
-                        123
+                        125
                     ],
                     "jsdoctags": [
                         {
@@ -8305,7 +8339,7 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "modifierKind": [
-                        123
+                        125
                     ],
                     "jsdoctags": [
                         {
@@ -8329,7 +8363,7 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "modifierKind": [
-                        123
+                        125
                     ]
                 },
                 {
@@ -8342,7 +8376,7 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "modifierKind": [
-                        123
+                        125
                     ]
                 },
                 {
@@ -8403,7 +8437,7 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "modifierKind": [
-                        123
+                        125
                     ]
                 },
                 {
@@ -8423,7 +8457,7 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "modifierKind": [
-                        123
+                        125
                     ],
                     "jsdoctags": [
                         {
@@ -8447,7 +8481,7 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "modifierKind": [
-                        121
+                        123
                     ]
                 },
                 {
@@ -8467,7 +8501,7 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "modifierKind": [
-                        123
+                        125
                     ],
                     "jsdoctags": [
                         {
@@ -8504,7 +8538,7 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "modifierKind": [
-                        123
+                        125
                     ],
                     "jsdoctags": [
                         {
@@ -8587,6 +8621,7 @@
                     }
                 ]
             },
+            "extends": [],
             "implements": [
                 "OnInit",
                 "AfterContentChecked",
@@ -8698,7 +8733,7 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "modifierKind": [
-                        123
+                        125
                     ],
                     "jsdoctags": [
                         {
@@ -8729,7 +8764,7 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "modifierKind": [
-                        123
+                        125
                     ],
                     "jsdoctags": [
                         {
@@ -8766,7 +8801,7 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "modifierKind": [
-                        123
+                        125
                     ],
                     "jsdoctags": [
                         {
@@ -8816,7 +8851,7 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "modifierKind": [
-                        123
+                        125
                     ],
                     "jsdoctags": [
                         {
@@ -8847,7 +8882,7 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "modifierKind": [
-                        123
+                        125
                     ],
                     "jsdoctags": [
                         {
@@ -8880,7 +8915,7 @@
                     "rawdescription": "\n\nchecks if CodeBlock modal is open, then prevent from reciving keydown.enter and keydown.backspace events.\n",
                     "description": "<p>checks if CodeBlock modal is open, then prevent from reciving keydown.enter and keydown.backspace events.</p>\n",
                     "modifierKind": [
-                        123
+                        125
                     ],
                     "jsdoctags": [
                         {
@@ -8911,7 +8946,7 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "modifierKind": [
-                        123
+                        125
                     ],
                     "jsdoctags": [
                         {
@@ -8935,7 +8970,7 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "modifierKind": [
-                        123
+                        125
                     ]
                 }
             ],
@@ -8965,6 +9000,7 @@
                 "args": [],
                 "line": 26
             },
+            "extends": [],
             "implements": [
                 "OnInit"
             ],
@@ -9109,7 +9145,7 @@
                     "description": "",
                     "line": 80,
                     "modifierKind": [
-                        123
+                        125
                     ]
                 },
                 {
@@ -9201,7 +9237,7 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "modifierKind": [
-                        123
+                        125
                     ],
                     "jsdoctags": [
                         {
@@ -9232,7 +9268,7 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "modifierKind": [
-                        123
+                        125
                     ],
                     "jsdoctags": [
                         {
@@ -9256,7 +9292,7 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "modifierKind": [
-                        123
+                        125
                     ]
                 },
                 {
@@ -9283,7 +9319,7 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "modifierKind": [
-                        123
+                        125
                     ],
                     "jsdoctags": [
                         {
@@ -9336,8 +9372,8 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "modifierKind": [
-                        123,
-                        132
+                        125,
+                        134
                     ],
                     "jsdoctags": [
                         {
@@ -9386,7 +9422,7 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "modifierKind": [
-                        123
+                        125
                     ],
                     "jsdoctags": [
                         {
@@ -9410,7 +9446,7 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "modifierKind": [
-                        123
+                        125
                     ]
                 },
                 {
@@ -9423,7 +9459,7 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "modifierKind": [
-                        123
+                        125
                     ]
                 },
                 {
@@ -9436,7 +9472,7 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "modifierKind": [
-                        123
+                        125
                     ]
                 },
                 {
@@ -9456,7 +9492,7 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "modifierKind": [
-                        123
+                        125
                     ],
                     "jsdoctags": [
                         {
@@ -9487,7 +9523,7 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "modifierKind": [
-                        123
+                        125
                     ],
                     "jsdoctags": [
                         {
@@ -9524,7 +9560,7 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "modifierKind": [
-                        123
+                        125
                     ],
                     "jsdoctags": [
                         {
@@ -9557,7 +9593,7 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "modifierKind": [
-                        123
+                        125
                     ]
                 },
                 {
@@ -9577,7 +9613,7 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "modifierKind": [
-                        123
+                        125
                     ],
                     "jsdoctags": [
                         {
@@ -9601,7 +9637,7 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "modifierKind": [
-                        123
+                        125
                     ]
                 },
                 {
@@ -9627,7 +9663,7 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "modifierKind": [
-                        123
+                        125
                     ],
                     "jsdoctags": [
                         {
@@ -9667,7 +9703,7 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "modifierKind": [
-                        123
+                        125
                     ],
                     "jsdoctags": [
                         {
@@ -9704,7 +9740,7 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "modifierKind": [
-                        123
+                        125
                     ],
                     "jsdoctags": [
                         {
@@ -9737,7 +9773,7 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "modifierKind": [
-                        123
+                        125
                     ]
                 },
                 {
@@ -9750,7 +9786,7 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "modifierKind": [
-                        123
+                        125
                     ]
                 },
                 {
@@ -9763,7 +9799,7 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "modifierKind": [
-                        123
+                        125
                     ]
                 },
                 {
@@ -9776,7 +9812,7 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "modifierKind": [
-                        123
+                        125
                     ]
                 },
                 {
@@ -9789,7 +9825,7 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "modifierKind": [
-                        123
+                        125
                     ]
                 },
                 {
@@ -9815,7 +9851,7 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "modifierKind": [
-                        123
+                        125
                     ],
                     "jsdoctags": [
                         {
@@ -9855,7 +9891,7 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "modifierKind": [
-                        123
+                        125
                     ],
                     "jsdoctags": [
                         {
@@ -9898,7 +9934,7 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "modifierKind": [
-                        123
+                        125
                     ],
                     "jsdoctags": [
                         {
@@ -10095,6 +10131,7 @@
                     }
                 ]
             },
+            "extends": [],
             "implements": [
                 "OnInit"
             ],
@@ -10246,7 +10283,7 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "modifierKind": [
-                        123
+                        125
                     ],
                     "jsdoctags": [
                         {
@@ -10277,7 +10314,7 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "modifierKind": [
-                        123
+                        125
                     ],
                     "jsdoctags": [
                         {
@@ -10308,7 +10345,7 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "modifierKind": [
-                        123
+                        125
                     ],
                     "jsdoctags": [
                         {
@@ -10339,7 +10376,7 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "modifierKind": [
-                        123
+                        125
                     ],
                     "jsdoctags": [
                         {
@@ -10370,7 +10407,7 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "modifierKind": [
-                        123
+                        125
                     ],
                     "jsdoctags": [
                         {
@@ -10411,7 +10448,7 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "modifierKind": [
-                        123
+                        125
                     ],
                     "jsdoctags": [
                         {
@@ -10442,7 +10479,7 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "modifierKind": [
-                        123
+                        125
                     ],
                     "jsdoctags": [
                         {
@@ -10473,7 +10510,7 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "modifierKind": [
-                        123
+                        125
                     ],
                     "jsdoctags": [
                         {
@@ -10497,7 +10534,7 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "modifierKind": [
-                        123
+                        125
                     ]
                 },
                 {
@@ -10517,7 +10554,7 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "modifierKind": [
-                        123
+                        125
                     ],
                     "jsdoctags": [
                         {
@@ -10591,6 +10628,7 @@
                     }
                 ]
             },
+            "extends": [],
             "implements": [
                 "OnInit"
             ],
@@ -10697,7 +10735,7 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "modifierKind": [
-                        121
+                        123
                     ]
                 },
                 {
@@ -10748,7 +10786,7 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "modifierKind": [
-                        123
+                        125
                     ]
                 },
                 {
@@ -10761,7 +10799,7 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "modifierKind": [
-                        123
+                        125
                     ]
                 }
             ],
@@ -10824,6 +10862,7 @@
                     }
                 ]
             },
+            "extends": [],
             "implements": [
                 "OnInit",
                 "OnChanges"

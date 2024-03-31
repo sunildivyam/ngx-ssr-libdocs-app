@@ -19,6 +19,7 @@
         import { ErrorComponent } from '@annuadvent/ngx-common-ui/error/src/components/error/error.docs';
         import { FiltersComponent } from '@annuadvent/ngx-common-ui/filters/src/components/filters/filters.docs';
         import { FooterNavComponent } from '@annuadvent/ngx-common-ui/footer-nav/src/components/footer-nav/footer-nav.docs';
+        import { FormErrorComponent } from '@annuadvent/ngx-common-ui/reactive-form/src/components/form-error/form-error.docs';
         import { HamburgerComponent } from '@annuadvent/ngx-common-ui/hamburger/src/components/hamburger/hamburger.docs';
         import { ImageFormComponent } from '@annuadvent/ngx-common-ui/image-form/src/components/image-form/image-form.docs';
         import { LinkFormComponent } from '@annuadvent/ngx-common-ui/link-form/src/components/link-form/link-form.docs';
@@ -28,6 +29,7 @@
         import { MultiSelectBoxComponent } from '@annuadvent/ngx-common-ui/multi-select-box/src/components/multi-select-box/multi-select-box.docs';
         import { PaginationComponent } from '@annuadvent/ngx-common-ui/pagination/src/components/pagination/pagination.docs';
         import { SearchBoxComponent } from '@annuadvent/ngx-common-ui/search-box/src/components/search-box/search-box.docs';
+        import { SingleSelectBoxComponent } from '@annuadvent/ngx-common-ui/single-select-box/src/components/single-select-box/single-select-box.docs';
         import { SlideshowComponent } from '@annuadvent/ngx-common-ui/slideshow/src/components/slideshow/slideshow.docs';
         import { SocialMediaButtonsComponent } from '@annuadvent/ngx-common-ui/social-media/src/components/social-media-buttons/social-media-buttons.docs';
         import { SocialMediaShareButtonsComponent } from '@annuadvent/ngx-common-ui/social-media/src/components/social-media-share-buttons/social-media-share-buttons.docs';
@@ -74,6 +76,10 @@
         import { SitemapComponent } from '@annuadvent/ngx-tools/fire-storage/src/components/sitemap/sitemap.docs';
         
         // ngx-ecommerce imports
+        import { AddressComponent } from '@annuadvent/ngx-ecommerce/address/src/components/address/address.docs';
+        import { AddressFormComponent } from '@annuadvent/ngx-ecommerce/address/src/components/address-form/address-form.docs';
+        import { AddressListComponent } from '@annuadvent/ngx-ecommerce/address/src/components/address-list/address-list.docs';
+        import { DeliveryInstructionFormComponent } from '@annuadvent/ngx-ecommerce/address/src/components/delivery-instruction-form/delivery-instruction-form.docs';
         import { ProductThumbComponent } from '@annuadvent/ngx-ecommerce/product-thumb/src/components/product-thumb/product-thumb.docs';
         export const libComponentData = {
     'ngx-common-ui': {
@@ -96,6 +102,7 @@
     ErrorComponent,
     FiltersComponent,
     FooterNavComponent,
+    FormErrorComponent,
     HamburgerComponent,
     ImageFormComponent,
     LinkFormComponent,
@@ -105,6 +112,7 @@
     MultiSelectBoxComponent,
     PaginationComponent,
     SearchBoxComponent,
+    SingleSelectBoxComponent,
     SlideshowComponent,
     SocialMediaButtonsComponent,
     SocialMediaShareButtonsComponent,
@@ -151,6 +159,10 @@
     SitemapComponent
 },
     'ngx-ecommerce': {
-        ProductThumbComponent
+        AddressComponent,
+    AddressFormComponent,
+    AddressListComponent,
+    DeliveryInstructionFormComponent,
+    ProductThumbComponent
 },
 }

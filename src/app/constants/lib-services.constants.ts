@@ -43,7 +43,8 @@
         import { SitemapService } from '@annuadvent/ngx-tools/fire-storage';
         
         // ngx-ecommerce imports
-        
+        import { AddressFormService } from '@annuadvent/ngx-ecommerce/address';
+        import { PincodeValidatorService } from '@annuadvent/ngx-ecommerce/address';
         export const libServiceClasses = {
     'ngx-common-ui': {
         HighlightService,
@@ -89,6 +90,7 @@
     SitemapService
 },
     'ngx-ecommerce': {
-        
+        AddressFormService,
+    PincodeValidatorService
 },
 }
