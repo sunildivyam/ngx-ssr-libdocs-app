@@ -3097,7 +3097,7 @@
         },
         {
             "name": "FireAuthService",
-            "id": "injectable-FireAuthService-49e206c62a49ef8592c3b7e3837db6d109743829968ed599658b03a180003fd7a5ef80d37c14ed9c1e5bc5e929c485a4089d2acaef3cf69364591a2d0a996992",
+            "id": "injectable-FireAuthService-312a20e7eb8d0e78bf101505ffd592152dad392a1f6e1261401194db44d04f88081492d69ecea3be073bb349544b7bebf7c66ce1764bb1c16bc5415c0ad20e16",
             "file": "projects/ngx-tools/fire-auth/src/services/fire-auth.service.ts",
             "properties": [
                 {
@@ -3107,7 +3107,7 @@
                     "type": "Auth",
                     "optional": false,
                     "description": "",
-                    "line": 18
+                    "line": 20
                 },
                 {
                     "name": "authState",
@@ -3117,7 +3117,7 @@
                     "type": "BehaviorSubject<User>",
                     "optional": false,
                     "description": "",
-                    "line": 19
+                    "line": 21
                 }
             ],
             "methods": [
@@ -3147,7 +3147,7 @@
                     "optional": false,
                     "returnType": "Promise<boolean>",
                     "typeParameters": [],
-                    "line": 130,
+                    "line": 125,
                     "deprecated": false,
                     "deprecationMessage": "",
                     "modifierKind": [
@@ -3172,7 +3172,7 @@
                     "optional": false,
                     "returnType": "Promise<string>",
                     "typeParameters": [],
-                    "line": 146,
+                    "line": 141,
                     "deprecated": false,
                     "deprecationMessage": "",
                     "modifierKind": [
@@ -3186,7 +3186,7 @@
                     "optional": false,
                     "returnType": "User",
                     "typeParameters": [],
-                    "line": 48,
+                    "line": 46,
                     "deprecated": false,
                     "deprecationMessage": "",
                     "modifierKind": [
@@ -3212,7 +3212,7 @@
                     "optional": false,
                     "returnType": "Promise<Array<string>>",
                     "typeParameters": [],
-                    "line": 110,
+                    "line": 105,
                     "deprecated": false,
                     "deprecationMessage": "",
                     "modifierKind": [
@@ -3226,11 +3226,37 @@
                     "optional": false,
                     "returnType": "Auth",
                     "typeParameters": [],
-                    "line": 37,
+                    "line": 35,
                     "deprecated": false,
                     "deprecationMessage": "",
                     "modifierKind": [
                         123
+                    ]
+                },
+                {
+                    "name": "getIdTokenFromLocalStorage",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "string",
+                    "typeParameters": [],
+                    "line": 85,
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "modifierKind": [
+                        125
+                    ]
+                },
+                {
+                    "name": "getUserFromLocalStorage",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "User",
+                    "typeParameters": [],
+                    "line": 76,
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "modifierKind": [
+                        125
                     ]
                 },
                 {
@@ -3240,19 +3266,6 @@
                     "returnType": "boolean",
                     "typeParameters": [],
                     "line": 60,
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "modifierKind": [
-                        125
-                    ]
-                },
-                {
-                    "name": "isLoggedInFromLocalStorage",
-                    "args": [],
-                    "optional": false,
-                    "returnType": "User",
-                    "typeParameters": [],
-                    "line": 76,
                     "deprecated": false,
                     "deprecationMessage": "",
                     "modifierKind": [
@@ -3274,11 +3287,17 @@
                     ]
                 },
                 {
-                    "name": "setLoggedInToLocalStorage",
+                    "name": "saveToLocalStorage",
                     "args": [
                         {
                             "name": "user",
                             "type": "User",
+                            "deprecated": false,
+                            "deprecationMessage": ""
+                        },
+                        {
+                            "name": "idToken",
+                            "type": "string",
                             "deprecated": false,
                             "deprecationMessage": ""
                         }
@@ -3286,7 +3305,7 @@
                     "optional": false,
                     "returnType": "void",
                     "typeParameters": [],
-                    "line": 86,
+                    "line": 93,
                     "deprecated": false,
                     "deprecationMessage": "",
                     "modifierKind": [
@@ -3301,6 +3320,15 @@
                             "tagName": {
                                 "text": "param"
                             }
+                        },
+                        {
+                            "name": "idToken",
+                            "type": "string",
+                            "deprecated": false,
+                            "deprecationMessage": "",
+                            "tagName": {
+                                "text": "param"
+                            }
                         }
                     ]
                 }
@@ -3309,7 +3337,7 @@
             "deprecationMessage": "",
             "description": "",
             "rawdescription": "\n",
-            "sourceCode": "import { isPlatformBrowser } from '@angular/common';\r\nimport { Inject, Injectable, PLATFORM_ID } from '@angular/core';\r\nimport {\r\n  getAuth,\r\n  User,\r\n  Auth,\r\n  onAuthStateChanged,\r\n  getIdTokenResult,\r\n} from 'firebase/auth';\r\nimport { Observable, BehaviorSubject } from 'rxjs';\r\nimport { FireCommonService } from '@annuadvent/ngx-tools/fire-common';\r\nimport { FIREBASE_AUTH_ROLES } from '../constants/fire-auth.constants';\r\n\r\n@Injectable({\r\n  providedIn: 'root',\r\n})\r\nexport class FireAuthService {\r\n  auth: Auth;\r\n  authState: BehaviorSubject<User> = new BehaviorSubject<User>(undefined);\r\n\r\n  constructor(\r\n    private fireCommonService: FireCommonService,\r\n    @Inject(PLATFORM_ID) private platformId\r\n  ) {\r\n    this.auth = this.getFirebaseAuth();\r\n    onAuthStateChanged(this.getFirebaseAuth(), (user: User) => {\r\n      this.authState.next(user);\r\n    });\r\n\r\n    this.authState.subscribe((user) => {\r\n      if (typeof user !== 'undefined') {\r\n        this.setLoggedInToLocalStorage(user);\r\n      }\r\n    });\r\n  }\r\n\r\n  private getFirebaseAuth(): Auth {\r\n    if (this.auth) {\r\n      return this.auth;\r\n    }\r\n\r\n    const app = this.fireCommonService.initOrGetFirebaseApp();\r\n    const auth = getAuth(app);\r\n\r\n    return auth;\r\n  }\r\n\r\n  public getCurrentUser(): User {\r\n    const auth = this.getFirebaseAuth();\r\n    const currentUser = auth.currentUser;\r\n    return currentUser;\r\n  }\r\n\r\n  public getCurrentUserId(): string {\r\n    const currentUser = this.getCurrentUser();\r\n\r\n    return (currentUser && currentUser.uid) || '';\r\n  }\r\n\r\n  public isLoggedIn(): boolean {\r\n    return !!this.getCurrentUser();\r\n  }\r\n\r\n  public authStateChanged(): Observable<User> {\r\n    return this.authState.asObservable();\r\n  }\r\n\r\n  public async logout(): Promise<boolean> {\r\n    const auth = this.getFirebaseAuth();\r\n    await auth.signOut();\r\n    this.authState.next(null);\r\n\r\n    return true;\r\n  }\r\n\r\n  public isLoggedInFromLocalStorage(): User {\r\n    if (isPlatformBrowser(this.platformId)) {\r\n      const currentUser = window.localStorage.getItem('currentUser');\r\n\r\n      return currentUser ? (JSON.parse(currentUser) as User) : null;\r\n    } else {\r\n      return null;\r\n    }\r\n  }\r\n\r\n  public setLoggedInToLocalStorage(user: User): void {\r\n    if (isPlatformBrowser(this.platformId)) {\r\n      window.localStorage.setItem(\r\n        'currentUser',\r\n        '' + user ? JSON.stringify(user) : ''\r\n      );\r\n      if (user) {\r\n        user.getIdToken().then(\r\n          (token) => {\r\n            // TODO: if cookie already exists\r\n            if (token) {\r\n              window.document.cookie = 'Authorization=Bearer ' + token;\r\n            }\r\n          },\r\n          (error) => {\r\n            console.log(error?.message);\r\n          }\r\n        );\r\n      } else {\r\n        window.document.cookie = '';\r\n      }\r\n    }\r\n  }\r\n\r\n  public async getCurrentUserRoles(): Promise<Array<string>> {\r\n    const currentUser = this.getCurrentUser();\r\n    if (!currentUser) {\r\n      throw new Error('User is not logged in.');\r\n    }\r\n\r\n    const idTokenResult = await getIdTokenResult(currentUser);\r\n    const claims = idTokenResult && idTokenResult.claims;\r\n    const claimsArray: Array<string> = [];\r\n    if (claims) {\r\n      Object.keys(FIREBASE_AUTH_ROLES).forEach((key) => {\r\n        if (claims[FIREBASE_AUTH_ROLES[key]]) {\r\n          claimsArray.push(FIREBASE_AUTH_ROLES[key]);\r\n        }\r\n      });\r\n    }\r\n\r\n    return claimsArray;\r\n  }\r\n\r\n  public async currentUserHasRole(role: string): Promise<boolean> {\r\n    const currentUser = this.getCurrentUser();\r\n    if (!currentUser) {\r\n      throw new Error('User is not logged in.');\r\n    }\r\n\r\n    const idTokenResult = await getIdTokenResult(currentUser);\r\n    const claims = idTokenResult && idTokenResult.claims;\r\n\r\n    if (typeof claims === 'object' && claims[role]) {\r\n      return true;\r\n    }\r\n\r\n    return false;\r\n  }\r\n\r\n  public async getAccessToken(): Promise<string> {\r\n    const currentUser = this.getCurrentUser();\r\n    if (currentUser) {\r\n      return await currentUser.getIdToken();\r\n    } else {\r\n      return '';\r\n    }\r\n  }\r\n}\r\n",
+            "sourceCode": "import { isPlatformBrowser } from '@angular/common';\r\nimport { Inject, Injectable, PLATFORM_ID } from '@angular/core';\r\nimport {\r\n  getAuth,\r\n  User,\r\n  Auth,\r\n  onAuthStateChanged,\r\n  getIdTokenResult,\r\n  UserInfo,\r\n  UserCredential\r\n} from 'firebase/auth';\r\nimport { Observable, BehaviorSubject } from 'rxjs';\r\nimport { FireCommonService } from '@annuadvent/ngx-tools/fire-common';\r\nimport { FIREBASE_AUTH_ROLES } from '../constants/fire-auth.constants';\r\n\r\n@Injectable({\r\n  providedIn: 'root'\r\n})\r\nexport class FireAuthService {\r\n  auth: Auth;\r\n  authState: BehaviorSubject<User> = new BehaviorSubject<User>(undefined);\r\n\r\n  constructor(\r\n    private fireCommonService: FireCommonService,\r\n    @Inject(PLATFORM_ID) private platformId\r\n  ) {\r\n    this.auth = this.getFirebaseAuth();\r\n\r\n    onAuthStateChanged(this.getFirebaseAuth(), (user: any) => {\r\n      this.saveToLocalStorage(user, user?.accessToken || '');\r\n      this.authState.next(user);\r\n    });\r\n  }\r\n\r\n  private getFirebaseAuth(): Auth {\r\n    if (this.auth) {\r\n      return this.auth;\r\n    }\r\n\r\n    const app = this.fireCommonService.initOrGetFirebaseApp();\r\n    const auth = getAuth(app);\r\n\r\n    return auth;\r\n  }\r\n\r\n  public getCurrentUser(): User {\r\n    const auth = this.getFirebaseAuth();\r\n    const currentUser = auth.currentUser;\r\n    const currentUserFromLocalStorage = this.getUserFromLocalStorage();\r\n\r\n    return currentUser || currentUserFromLocalStorage;\r\n  }\r\n\r\n  public getCurrentUserId(): string {\r\n    const currentUser = this.getCurrentUser();\r\n\r\n    return (currentUser && currentUser.uid) || '';\r\n  }\r\n\r\n  public isLoggedIn(): boolean {\r\n    return !!this.getCurrentUser();\r\n  }\r\n\r\n  public authStateChanged(): Observable<User> {\r\n    return this.authState.asObservable();\r\n  }\r\n\r\n  public async logout(): Promise<boolean> {\r\n    const auth = this.getFirebaseAuth();\r\n    await auth.signOut();\r\n    this.authState.next(null);\r\n\r\n    return true;\r\n  }\r\n\r\n  public getUserFromLocalStorage(): User {\r\n    if (isPlatformBrowser(this.platformId)) {\r\n      const user = window.localStorage.getItem('currentUser');\r\n      return user ? JSON.parse(user) : null;\r\n    } else {\r\n      return null;\r\n    }\r\n  }\r\n\r\n  public getIdTokenFromLocalStorage(): string {\r\n    if (isPlatformBrowser(this.platformId)) {\r\n      return window.localStorage.getItem('idToken') || '';\r\n    } else {\r\n      return '';\r\n    }\r\n  }\r\n\r\n  public saveToLocalStorage(user: User, idToken: string): void {\r\n    // Saves user to local storage\r\n    if (isPlatformBrowser(this.platformId)) {\r\n      window.localStorage.setItem(\r\n        'currentUser',\r\n        user ? JSON.stringify(user) : ''\r\n      );\r\n      // Saves idToken to local storage\r\n      window.localStorage.setItem('idToken', idToken || '');\r\n    }\r\n  }\r\n\r\n  public async getCurrentUserRoles(): Promise<Array<string>> {\r\n    const currentUser = this.getCurrentUser();\r\n    if (!currentUser) {\r\n      throw new Error('User is not logged in.');\r\n    }\r\n\r\n    const idTokenResult = await getIdTokenResult(currentUser);\r\n    const claims = idTokenResult && idTokenResult.claims;\r\n    const claimsArray: Array<string> = [];\r\n    if (claims) {\r\n      Object.keys(FIREBASE_AUTH_ROLES).forEach((key) => {\r\n        if (claims[FIREBASE_AUTH_ROLES[key]]) {\r\n          claimsArray.push(FIREBASE_AUTH_ROLES[key]);\r\n        }\r\n      });\r\n    }\r\n\r\n    return claimsArray;\r\n  }\r\n\r\n  public async currentUserHasRole(role: string): Promise<boolean> {\r\n    const currentUser = this.getCurrentUser();\r\n    if (!currentUser) {\r\n      throw new Error('User is not logged in.');\r\n    }\r\n\r\n    const idTokenResult = await getIdTokenResult(currentUser);\r\n    const claims = idTokenResult && idTokenResult.claims;\r\n\r\n    if (typeof claims === 'object' && claims[role]) {\r\n      return true;\r\n    }\r\n\r\n    return false;\r\n  }\r\n\r\n  public async getAccessToken(): Promise<string> {\r\n    const currentUser = this.getCurrentUser();\r\n    if (currentUser) {\r\n      try {\r\n        const idToken = await currentUser.getIdToken();\r\n        this.saveToLocalStorage(currentUser, idToken);\r\n        return idToken;\r\n      } catch (error) {\r\n        return this.getIdTokenFromLocalStorage();\r\n      }\r\n    } else {\r\n      return '';\r\n    }\r\n  }\r\n}\r\n",
             "constructorObj": {
                 "name": "constructor",
                 "description": "",
@@ -3329,7 +3357,7 @@
                         "deprecationMessage": ""
                     }
                 ],
-                "line": 19,
+                "line": 21,
                 "jsdoctags": [
                     {
                         "name": "fireCommonService",
@@ -9056,7 +9084,7 @@
     "interceptors": [
         {
             "name": "ApiInterceptor",
-            "id": "injectable-ApiInterceptor-853bbf51d0408d8783c773c4cd0d335aa75e64a22068be1f3b4bfe32ff05e8904fbb948f4ae854a343f2666fa68d7dec1c4b3cb7b419a38c0fa7e4f10d42b1a1",
+            "id": "injectable-ApiInterceptor-8263750790a716a6640490725c1d2b36c48c8415855e93605b35f2940d81d511f988317a931583fb88c7eb8ee6909e71e4ee56f3e1a97a92699d8056275187fd",
             "file": "projects/ngx-tools/fire-auth/src/interceptors/api.interceptor.ts",
             "properties": [],
             "methods": [
@@ -9079,7 +9107,7 @@
                     "optional": false,
                     "returnType": "Observable<HttpEvent<>>",
                     "typeParameters": [],
-                    "line": 20,
+                    "line": 22,
                     "deprecated": false,
                     "deprecationMessage": "",
                     "jsdoctags": [
@@ -9108,7 +9136,7 @@
             "deprecationMessage": "",
             "description": "",
             "rawdescription": "\n",
-            "sourceCode": "import { Injectable } from '@angular/core';\r\nimport {\r\n  HttpRequest,\r\n  HttpHandler,\r\n  HttpEvent,\r\n  HttpInterceptor,\r\n} from '@angular/common/http';\r\nimport { from, Observable, switchMap } from 'rxjs';\r\nimport { AppConfigService } from '@annuadvent/ngx-core/app-config';\r\nimport { FireAuthService } from '../services/fire-auth.service';\r\nimport { FirebaseConfig } from '@annuadvent/ngx-tools/fire-common';\r\n\r\n@Injectable({\r\n  providedIn: 'root',\r\n})\r\nexport class ApiInterceptor implements HttpInterceptor {\r\n\r\n  constructor(private appConfigService: AppConfigService, private fireAuthService: FireAuthService) { }\r\n\r\n  intercept(request: HttpRequest<unknown>, next: HttpHandler): Observable<HttpEvent<unknown>> {\r\n    if (request.url.includes(`/api/`)) {\r\n      const apiKey = (this.appConfigService.firebase as FirebaseConfig)?.app?.apiKey;\r\n      \r\n      let clonedRequest = request.clone({\r\n        setParams: { key: apiKey }\r\n      });\r\n\r\n      if (this.fireAuthService.getCurrentUserId()) {\r\n        return from(this.fireAuthService.getAccessToken()).pipe(\r\n          switchMap(token => {\r\n            if (token) {\r\n              clonedRequest = clonedRequest.clone({ setHeaders: { Authorization: `Bearer ${token}` } });\r\n            }\r\n\r\n            return next.handle(clonedRequest);\r\n          })\r\n        )\r\n      } else {\r\n        return next.handle(clonedRequest);\r\n      }\r\n\r\n    } else {\r\n      return next.handle(request);\r\n    }\r\n  }\r\n}\r\n",
+            "sourceCode": "import { Inject, Injectable, Optional } from '@angular/core';\r\nimport {\r\n  HttpRequest,\r\n  HttpHandler,\r\n  HttpEvent,\r\n  HttpInterceptor\r\n} from '@angular/common/http';\r\nimport { from, Observable, switchMap } from 'rxjs';\r\nimport { AppConfigService } from '@annuadvent/ngx-core/app-config';\r\nimport { FireAuthService } from '../services/fire-auth.service';\r\nimport { FirebaseConfig } from '@annuadvent/ngx-tools/fire-common';\r\n\r\n@Injectable({\r\n  providedIn: 'root'\r\n})\r\nexport class ApiInterceptor implements HttpInterceptor {\r\n  constructor(\r\n    private appConfigService: AppConfigService,\r\n    private fireAuthService: FireAuthService\r\n  ) {}\r\n\r\n  intercept(\r\n    request: HttpRequest<unknown>,\r\n    next: HttpHandler\r\n  ): Observable<HttpEvent<unknown>> {\r\n    if (request.url.startsWith(`/api/`)) {\r\n      const apiKey = (this.appConfigService.firebase as FirebaseConfig)?.app\r\n        ?.apiKey;\r\n\r\n      let clonedRequest = request.clone({\r\n        // Convert relative to absolute URLs, as SSR does not add hostname to the request URL automatically.\r\n        url: `${this.appConfigService.config.apiBaseUrl}${request.url}`,\r\n        setParams: { key: apiKey }\r\n      });\r\n\r\n      if (this.fireAuthService.getCurrentUserId()) {\r\n        return from(this.fireAuthService.getAccessToken()).pipe(\r\n          switchMap((token) => {\r\n            if (token) {\r\n              clonedRequest = clonedRequest.clone({\r\n                setHeaders: { Authorization: `Bearer ${token}` }\r\n              });\r\n            }\r\n\r\n            return next.handle(clonedRequest);\r\n          })\r\n        );\r\n      } else {\r\n        return next.handle(clonedRequest);\r\n      }\r\n    } else {\r\n      return next.handle(request);\r\n    }\r\n  }\r\n}\r\n",
             "constructorObj": {
                 "name": "constructor",
                 "description": "",
@@ -9155,7 +9183,7 @@
         },
         {
             "name": "FirebaseInterceptor",
-            "id": "injectable-FirebaseInterceptor-6fdf2a649759223b31ce71cb3747c43be98dcaac4bef1a98649e537e447e85a682ce1e288b6077eb7cc94d95f4abc99707908783be98976752b57af6ed88084d",
+            "id": "injectable-FirebaseInterceptor-853f3296e4fc1709ecb241cf9499e680cdac024be60ea0196059ffd18961254f90af79437f197edf7f4a1f59163ee297c5a338dc68a4a1f7b0a708e87beab130",
             "file": "projects/ngx-tools/fire-auth/src/interceptors/firebase.interceptor.ts",
             "properties": [],
             "methods": [
@@ -9178,7 +9206,7 @@
                     "optional": false,
                     "returnType": "Observable<HttpEvent<>>",
                     "typeParameters": [],
-                    "line": 21,
+                    "line": 22,
                     "deprecated": false,
                     "deprecationMessage": "",
                     "jsdoctags": [
@@ -9207,7 +9235,7 @@
             "deprecationMessage": "",
             "description": "",
             "rawdescription": "\n",
-            "sourceCode": "import { Injectable } from '@angular/core';\r\nimport {\r\n  HttpRequest,\r\n  HttpHandler,\r\n  HttpEvent,\r\n  HttpInterceptor,\r\n  HttpHeaders\r\n} from '@angular/common/http';\r\nimport { from, last, map, Observable, switchMap } from 'rxjs';\r\nimport { AppConfigService } from '@annuadvent/ngx-core/app-config';\r\nimport { FireAuthService } from '../services/fire-auth.service';\r\nimport { FirebaseConfig } from '@annuadvent/ngx-tools/fire-common';\r\n\r\n@Injectable({\r\n  providedIn: 'root',\r\n})\r\nexport class FirebaseInterceptor implements HttpInterceptor {\r\n\r\n  constructor(private appConfigService: AppConfigService, private fireAuthService: FireAuthService) { }\r\n\r\n  intercept(request: HttpRequest<unknown>, next: HttpHandler): Observable<HttpEvent<unknown>> {\r\n    // intercepts both firebase store and firebase storage http requests.\r\n    const fireStoreApiUrl = (this.appConfigService.firebase as FirebaseConfig)?.store?.firestoreBaseApiUrl;\r\n    const fireStorageApiUrl = (this.appConfigService.firebase as FirebaseConfig)?.storage?.fireStorageBaseApiUrl;\r\n\r\n    if (request.url.includes(fireStoreApiUrl) || request.url.includes(fireStorageApiUrl)) {\r\n      const apiKey = (this.appConfigService.firebase as FirebaseConfig)?.app.apiKey;\r\n\r\n      let clonedRequest = request.clone({\r\n        setParams: { key: apiKey }\r\n      });\r\n      if (this.fireAuthService.getCurrentUserId()) {\r\n        return from(this.fireAuthService.getAccessToken()).pipe(\r\n          switchMap(token => {\r\n            if (token) {\r\n              clonedRequest = clonedRequest.clone({ setHeaders: { Authorization: `Bearer ${token}` } });\r\n            }\r\n\r\n            return next.handle(clonedRequest);\r\n          })\r\n        )\r\n      } else {\r\n        return next.handle(clonedRequest);\r\n      }\r\n\r\n    } else {\r\n      return next.handle(request);\r\n    }\r\n  }\r\n}\r\n",
+            "sourceCode": "import { Injectable } from '@angular/core';\r\nimport {\r\n  HttpRequest,\r\n  HttpHandler,\r\n  HttpEvent,\r\n  HttpInterceptor\r\n} from '@angular/common/http';\r\nimport { from, Observable, switchMap } from 'rxjs';\r\nimport { AppConfigService } from '@annuadvent/ngx-core/app-config';\r\nimport { FireAuthService } from '../services/fire-auth.service';\r\nimport { FirebaseConfig } from '@annuadvent/ngx-tools/fire-common';\r\n\r\n@Injectable({\r\n  providedIn: 'root'\r\n})\r\nexport class FirebaseInterceptor implements HttpInterceptor {\r\n  constructor(\r\n    private appConfigService: AppConfigService,\r\n    private fireAuthService: FireAuthService\r\n  ) {}\r\n\r\n  intercept(\r\n    request: HttpRequest<unknown>,\r\n    next: HttpHandler\r\n  ): Observable<HttpEvent<unknown>> {\r\n    // intercepts both firebase store and firebase storage http requests.\r\n    const fireStoreApiUrl = (this.appConfigService.firebase as FirebaseConfig)\r\n      ?.store?.firestoreBaseApiUrl;\r\n    const fireStorageApiUrl = (this.appConfigService.firebase as FirebaseConfig)\r\n      ?.storage?.fireStorageBaseApiUrl;\r\n\r\n    if (\r\n      request.url.includes(fireStoreApiUrl) ||\r\n      request.url.includes(fireStorageApiUrl)\r\n    ) {\r\n      const apiKey = (this.appConfigService.firebase as FirebaseConfig)?.app\r\n        .apiKey;\r\n\r\n      let clonedRequest = request.clone({\r\n        setParams: { key: apiKey }\r\n      });\r\n      if (this.fireAuthService.getCurrentUserId()) {\r\n        return from(this.fireAuthService.getAccessToken()).pipe(\r\n          switchMap((token) => {\r\n            if (token) {\r\n              clonedRequest = clonedRequest.clone({\r\n                setHeaders: { Authorization: `Bearer ${token}` }\r\n              });\r\n            }\r\n\r\n            return next.handle(clonedRequest);\r\n          })\r\n        );\r\n      } else {\r\n        return next.handle(clonedRequest);\r\n      }\r\n    } else {\r\n      return next.handle(request);\r\n    }\r\n  }\r\n}\r\n",
             "constructorObj": {
                 "name": "constructor",
                 "description": "",
@@ -9227,7 +9255,7 @@
                         "deprecationMessage": ""
                     }
                 ],
-                "line": 17,
+                "line": 16,
                 "jsdoctags": [
                     {
                         "name": "appConfigService",
@@ -13490,7 +13518,7 @@
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "",
-                "defaultValue": "async (\r\n  req: Request,\r\n  res: Response,\r\n  next: NextFunction\r\n) => {\r\n  initFireApp();\r\n  // get logged in user\r\n  const uid = req['currentUser'].uid;\r\n\r\n  const addressToAdd = new Address(req.body);\r\n\r\n  if (!uid || uid !== addressToAdd.uid) {\r\n    res.status(403).send({\r\n      code: 'Unathourized',\r\n      message:\r\n        'You are not authorized to perform this operation. Please sign in with valid user credentials.',\r\n    });\r\n  }\r\n\r\n  try {\r\n    const db = firestore();\r\n    const snap = await db.collection('addresses').add(toDbFormat(addressToAdd));\r\n\r\n    res.status(200).send(fromDbFormat(snap));\r\n  } catch (error) {\r\n    res.status(500).send(error);\r\n  }\r\n}",
+                "defaultValue": "async (\r\n  req: Request,\r\n  res: Response,\r\n  next: NextFunction\r\n) => {\r\n  initFireApp();\r\n  // get logged in user\r\n  const uid = req['currentUser'].uid;\r\n\r\n  const addressToAdd = new Address(req.body);\r\n  addressToAdd.uid = uid;\r\n\r\n  if (!uid || uid !== addressToAdd.uid) {\r\n    res.status(403).send({\r\n      code: 'Unathourized',\r\n      message:\r\n        'You are not authorized to perform this operation. Please sign in with valid user credentials.'\r\n    });\r\n  }\r\n\r\n  try {\r\n    const db = firestore();\r\n    const snapn = await db\r\n      .collection('addresses')\r\n      .add(toDbFormat(addressToAdd));\r\n    const snap = await snapn.get();\r\n\r\n    res.status(200).send(fromDbFormat(snap));\r\n  } catch (error) {\r\n    res.status(500).send(error);\r\n  }\r\n}",
                 "rawdescription": "POST",
                 "description": "<p>POST</p>\n"
             },
@@ -13503,6 +13531,18 @@
                 "deprecationMessage": "",
                 "type": "",
                 "defaultValue": "async (\r\n  req: Request,\r\n  res: Response,\r\n  next: NextFunction\r\n) => {\r\n  if (!(req.body instanceof Array) && !req.body.length) {\r\n    res.status(403).send({\r\n      code: 'Bad request',\r\n      message: 'Provide an array of Pincode object.',\r\n    });\r\n    return;\r\n  }\r\n\r\n  if (req.body.length > 500) {\r\n    res.status(403).send({\r\n      code: 'MAXIMUM_LIMIT_EXCEDDED',\r\n      message: 'Bulk write allows a maximum of 500 pincodes per second only.',\r\n    });\r\n    return;\r\n  }\r\n\r\n  const failed = [];\r\n  initFireApp();\r\n  const db = firestore();\r\n  const bulkWriter = db.bulkWriter();\r\n  const collectionRef = db.collection('pincodes');\r\n  let successCount = 0;\r\n\r\n  req.body.forEach((p) => {\r\n    const pincode = new Pincode(p);\r\n    if (!isPincodeValid(pincode.id) || !pincode.city || !pincode.state) {\r\n      failed.push({\r\n        id: pincode.id,\r\n        error: { code: 'Bad request', message: 'Invalid Pincode.' },\r\n      });\r\n    } else {\r\n      bulkWriter\r\n        .set(collectionRef.doc(pincode.id), toDbFormat(pincode))\r\n        .then(() => {\r\n          successCount++;\r\n        })\r\n        .catch((error) => {\r\n          failed.push({ id: pincode.id, error });\r\n        });\r\n    }\r\n  });\r\n\r\n  try {\r\n    await bulkWriter.flush();\r\n\r\n    res.status(200).send({\r\n      successCount,\r\n      failed,\r\n    });\r\n  } catch (error) {\r\n    res.status(500).send(error);\r\n  }\r\n}",
+                "rawdescription": "POST",
+                "description": "<p>POST</p>\n"
+            },
+            {
+                "name": "addCategory",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/ngx-tools/fire-apis/src/categories/controllers/categories.controller.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "",
+                "defaultValue": "async (\r\n  req: Request,\r\n  res: Response,\r\n  next: NextFunction\r\n) => {\r\n  initFireApp();\r\n  // get logged in user\r\n  const uid = req['currentUser'].uid;\r\n\r\n  const categoryToAdd = new Category(req.body);\r\n  categoryToAdd.uid = uid;\r\n\r\n  try {\r\n    const db = firestore();\r\n    const result = await db\r\n      .collection('categories')\r\n      .doc(categoryToAdd.id)\r\n      .set(toDbFormat(categoryToAdd));\r\n\r\n    res.status(200).send({\r\n      ...categoryToAdd,\r\n      createTime: result.writeTime.toDate(),\r\n      updateTime: result.writeTime.toDate()\r\n    });\r\n  } catch (error) {\r\n    res.status(500).send(error);\r\n  }\r\n}",
                 "rawdescription": "POST",
                 "description": "<p>POST</p>\n"
             },
@@ -13526,7 +13566,7 @@
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "",
-                "defaultValue": "async (\r\n  req: Request,\r\n  res: Response,\r\n  next: NextFunction\r\n) => {\r\n  initFireApp();\r\n\r\n  const uid = req.params.uid;\r\n  const profileData = new Profile(req.body);\r\n  const fAuth = auth();\r\n  const db = firestore();\r\n\r\n  try {\r\n    // check if user exists\r\n    const user = await fAuth.getUser(uid);\r\n\r\n    // Add profile for the uid\r\n    const result = await db\r\n      .collection('user-profiles')\r\n      .doc(uid)\r\n      .set(toDbFormat(profileData));\r\n\r\n    res.status(200).send(result);\r\n  } catch (error) {\r\n    if (error.code === AuthErrorCodes.USER_DELETED) {\r\n      res.status(404).send(error);\r\n    } else {\r\n      res.status(500).send(error);\r\n    }\r\n  }\r\n}",
+                "defaultValue": "async (\r\n  req: Request,\r\n  res: Response,\r\n  next: NextFunction\r\n) => {\r\n  initFireApp();\r\n\r\n  // filter in only profile params, from remoteconfig\r\n  const profileData = await filterProfileForParams(req.body);\r\n  const fAuth = auth();\r\n  const db = firestore();\r\n\r\n  try {\r\n    // check if user exists\r\n    const user = await fAuth.getUser(profileData.id);\r\n\r\n    // TODO: Can Save to User Table (auth), all the params that belong to auth. Rest will go to user-profiles\r\n    // Check for changed params with user data, and save changed params only\r\n\r\n    // Add profile for the uid\r\n    const result = await db\r\n      .collection('user-profiles')\r\n      .doc(profileData.id)\r\n      .set(toDbFormat(profileData));\r\n\r\n    res\r\n      .status(200)\r\n      .send({\r\n        ...profileData,\r\n        createTime: result.writeTime.toDate(),\r\n        updateTime: result.writeTime.toDate()\r\n      });\r\n  } catch (error) {\r\n    if (error.code === AuthErrorCodes.USER_DELETED) {\r\n      res.status(404).send(error);\r\n    } else {\r\n      res.status(500).send(error);\r\n    }\r\n  }\r\n}",
                 "rawdescription": "POST",
                 "description": "<p>POST</p>\n"
             },
@@ -13602,7 +13642,7 @@
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "",
-                "defaultValue": "async (req, res, next) => {\r\n  const reqCookie = cookie.parse(req.headers.cookie || '');\r\n\r\n  if (\r\n    (!req.headers.authorization ||\r\n      !req.headers.authorization.startsWith('Bearer ')) &&\r\n    !(reqCookie && reqCookie.Authorization)\r\n  ) {\r\n    res.status(403).send({\r\n      code: 'unauthorized',\r\n      message: `No Firebase ID token was passed as a Bearer token in the Authorization header.\r\n      Make sure you authorize your request by providing the following HTTP header:\r\n      Authorization: Bearer <Firebase ID Token>\r\n      or by passing a \"Authorization\" cookie.`,\r\n    });\r\n\r\n    return;\r\n  }\r\n\r\n  let idToken;\r\n\r\n  if (\r\n    req.headers.authorization &&\r\n    req.headers.authorization.startsWith('Bearer ')\r\n  ) {\r\n    // Read the ID Token from the Authorization header.\r\n    idToken = req.headers.authorization.split('Bearer ')[1];\r\n  } else if (reqCookie) {\r\n    // Read the ID Token from cookie.\r\n    idToken = reqCookie.Authorization.split('Bearer ')[1];\r\n  } else {\r\n    // No cookie\r\n    res.status(403).send({\r\n      code: 'unauthorized',\r\n      message: `No Firebase ID token was passed as a Bearer token in the Authorization header.\r\n      Make sure you authorize your request by providing the following HTTP header:\r\n      Authorization: Bearer <Firebase ID Token>\r\n      or by passing a \"Authorization\" cookie.`,\r\n    });\r\n\r\n    return;\r\n  }\r\n\r\n  const app = initFireApp();\r\n\r\n  try {\r\n    const decodedIdToken = await auth().verifyIdToken(idToken);\r\n\r\n    req.currentUser = decodedIdToken;\r\n    next();\r\n  } catch (error) {\r\n    res.status(403).send({\r\n      code: 'unauthorized',\r\n      message: 'Error while verifying ID token',\r\n      error,\r\n    });\r\n\r\n    return;\r\n  }\r\n}"
+                "defaultValue": "async (req, res, next) => {\r\n  const reqCookie = cookie.parse(req.headers.cookie || '');\r\n\r\n  if (\r\n    (!req.headers.authorization ||\r\n      !req.headers.authorization.startsWith('Bearer ')) &&\r\n    !(reqCookie && reqCookie.Authorization)\r\n  ) {\r\n    res.status(403).send({\r\n      code: 'unauthorized',\r\n      message: `No Firebase ID token was passed as a Bearer token in the Authorization header.\r\n      Make sure you authorize your request by providing the following HTTP header:\r\n      Authorization: Bearer <Firebase ID Token>\r\n      or by passing a \"Authorization\" cookie.`\r\n    });\r\n\r\n    return;\r\n  }\r\n\r\n  let idToken;\r\n\r\n  if (\r\n    req.headers.authorization &&\r\n    req.headers.authorization.startsWith('Bearer ')\r\n  ) {\r\n    // Read the ID Token from the Authorization header.\r\n    idToken = req.headers.authorization.split('Bearer ')[1];\r\n  } else if (reqCookie) {\r\n    // Read the ID Token from cookie.\r\n    idToken = reqCookie.Authorization.split('Bearer ')[1];\r\n  } else {\r\n    // No cookie\r\n    res.status(403).send({\r\n      code: 'unauthorized',\r\n      message: `No Firebase ID token was passed as a Bearer token in the Authorization header.\r\n      Make sure you authorize your request by providing the following HTTP header:\r\n      Authorization: Bearer <Firebase ID Token>\r\n      or by passing a \"Authorization\" cookie.`\r\n    });\r\n\r\n    return;\r\n  }\r\n\r\n  const app = initFireApp();\r\n\r\n  try {\r\n    const decodedIdToken = await auth().verifyIdToken(idToken, true);\r\n\r\n    req.currentUser = decodedIdToken;\r\n    next();\r\n  } catch (error) {\r\n    res.status(403).send({\r\n      code: 'unauthorized',\r\n      message: 'Error while verifying ID token',\r\n      error: JSON.stringify(error)\r\n    });\r\n\r\n    return;\r\n  }\r\n}"
             },
             {
                 "name": "authorGuard",
@@ -13645,6 +13685,16 @@
                 "defaultValue": "'categories'"
             },
             {
+                "name": "categoriesRouter",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/ngx-tools/fire-apis/src/categories/routers/categories.router.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "",
+                "defaultValue": "express.Router()"
+            },
+            {
                 "name": "chatModel",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
@@ -13682,7 +13732,19 @@
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "",
-                "defaultValue": "async (\r\n  req: Request,\r\n  res: Response,\r\n  next: NextFunction\r\n) => {\r\n  initFireApp();\r\n  // get logged in user\r\n  const uid = req['currentUser'].uid;\r\n  const addressId = req.params.id;\r\n\r\n  if (!uid) {\r\n    res.status(403).send({\r\n      code: 'Unathourized',\r\n      message:\r\n        'You are not authorized to perform this operation. Please sign in with valid user credentials.',\r\n    });\r\n\r\n    return;\r\n  }\r\n\r\n  try {\r\n    const db = firestore();\r\n\r\n    const addressToDeleteSnap = await db\r\n      .collection('addresses')\r\n      .doc(addressId)\r\n      .get();\r\n\r\n    if (uid !== addressToDeleteSnap.data()?.uid) {\r\n      res.status(403).send({\r\n        code: 'Unathourized',\r\n        message:\r\n          'You are not authorized to perform this operation. Please sign in with valid user credentials.',\r\n      });\r\n      return;\r\n    }\r\n\r\n    const snap = await db.collection('addresses').doc(addressId).delete();\r\n\r\n    res.status(200).send({ success: true });\r\n  } catch (error) {\r\n    res.status(500).send(error);\r\n  }\r\n}",
+                "defaultValue": "async (\r\n  req: Request,\r\n  res: Response,\r\n  next: NextFunction\r\n) => {\r\n  initFireApp();\r\n  // get logged in user\r\n  const uid = req['currentUser'].uid;\r\n  const addressId = req.params.id;\r\n\r\n  if (!uid) {\r\n    res.status(403).send({\r\n      code: 'Unathourized',\r\n      message:\r\n        'You are not authorized to perform this operation. Please sign in with valid user credentials.'\r\n    });\r\n\r\n    return;\r\n  }\r\n\r\n  try {\r\n    const db = firestore();\r\n\r\n    const addressToDeleteSnap = await db\r\n      .collection('addresses')\r\n      .doc(addressId)\r\n      .get();\r\n\r\n    if (uid !== addressToDeleteSnap.data()?.uid) {\r\n      res.status(403).send({\r\n        code: 'Unathourized',\r\n        message:\r\n          'You are not authorized to perform this operation. Please sign in with valid user credentials.'\r\n      });\r\n      return;\r\n    }\r\n\r\n    const snap = await db.collection('addresses').doc(addressId).delete();\r\n\r\n    res.status(200).send({ success: true });\r\n  } catch (error) {\r\n    res.status(500).send(error);\r\n  }\r\n}",
+                "rawdescription": "POST",
+                "description": "<p>POST</p>\n"
+            },
+            {
+                "name": "deleteCategory",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/ngx-tools/fire-apis/src/categories/controllers/categories.controller.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "",
+                "defaultValue": "async (\r\n  req: Request,\r\n  res: Response,\r\n  next: NextFunction\r\n) => {\r\n  initFireApp();\r\n  // get logged in user\r\n  const uid = req['currentUser'].uid;\r\n  const categoryId = req.params.id;\r\n\r\n  try {\r\n    const db = firestore();\r\n\r\n    // TODO: Check if it is not referenced from any other category or product\r\n    const snapR = await db\r\n      .collection('categories')\r\n      .select('title', 'parents')\r\n      .where('parents', 'array-contains', categoryId)\r\n      .get();\r\n    const rCategories = snapR.docs.map(\r\n      (doc) => new Category(fromDbFormat(doc))\r\n    );\r\n    if (rCategories.length) {\r\n      res.status(500).send({\r\n        code: 'REFERENCE EXISTS',\r\n        message: 'Unable to delete as Category references exist.',\r\n        references: rCategories.map((cat) => cat.id)\r\n      });\r\n      return;\r\n    }\r\n\r\n    // Delete category\r\n    const snap = await db.collection('categories').doc(categoryId).delete();\r\n\r\n    res.status(200).send({ success: true });\r\n  } catch (error) {\r\n    res.status(500).send(error);\r\n  }\r\n}",
                 "rawdescription": "POST",
                 "description": "<p>POST</p>\n"
             },
@@ -13706,7 +13768,7 @@
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "",
-                "defaultValue": "async (\r\n  req: Request,\r\n  res: Response,\r\n  next: NextFunction\r\n) => {\r\n  initFireApp();\r\n\r\n  const uid = req.params.uid;\r\n  const fAuth = auth();\r\n  const db = firestore();\r\n\r\n  try {\r\n    // check if user exists\r\n    await fAuth.getUser(uid);\r\n\r\n    // update profile for the uid\r\n    const result = await db.collection('user-profiles').doc(uid).delete();\r\n\r\n    res.status(200).send(result);\r\n  } catch (error) {\r\n    if (error.code === AuthErrorCodes.USER_DELETED) {\r\n      res.status(404).send(error);\r\n    } else {\r\n      res.status(500).send(error);\r\n    }\r\n  }\r\n}",
+                "defaultValue": "async (\r\n  req: Request,\r\n  res: Response,\r\n  next: NextFunction\r\n) => {\r\n  initFireApp();\r\n\r\n  const id = req.params.id;\r\n  const fAuth = auth();\r\n  const db = firestore();\r\n\r\n  try {\r\n    // check if user exists\r\n    await fAuth.getUser(id);\r\n\r\n    // Delete profile for the id\r\n    const result = await db.collection('user-profiles').doc(id).delete();\r\n\r\n    res.status(200).send(result);\r\n  } catch (error) {\r\n    if (error.code === AuthErrorCodes.USER_DELETED) {\r\n      res.status(404).send(error);\r\n    } else {\r\n      res.status(500).send(error);\r\n    }\r\n  }\r\n}",
                 "rawdescription": "POST",
                 "description": "<p>POST</p>\n"
             },
@@ -13769,6 +13831,16 @@
                 "defaultValue": "{\r\n    type: OpenaiConfigurationTypeEnum.Object,\r\n    value: null,\r\n} as OpenaiConfigurationItem"
             },
             {
+                "name": "filterProfileForParams",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/ngx-tools/fire-apis/src/auth/controllers/profile.controller.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "",
+                "defaultValue": "async (profile: Profile): Promise<any> => {\r\n  if (!profile) return null;\r\n\r\n  const fConfig = remoteConfig();\r\n  const rConfig: RemoteConfigTemplate = await fConfig.getTemplate();\r\n\r\n  let pParams = rConfig.parameters['userProfileParams']?.defaultValue || null;\r\n  if (pParams) {\r\n    pParams = JSON.parse((pParams as any).value);\r\n  } else {\r\n    return null;\r\n  }\r\n\r\n  const pParamsArr = Object.keys(pParams);\r\n  const filteredProfile = {};\r\n  // Match profile params with remote profile params\r\n  Object.keys(profile).forEach((key) => {\r\n    if (pParamsArr.includes(key)) {\r\n      filteredProfile[key] = profile[key];\r\n    }\r\n  });\r\n\r\n  return filteredProfile;\r\n}"
+            },
+            {
                 "name": "FIREBASE_AUTH_PROVIDERS",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
@@ -13818,7 +13890,31 @@
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "",
-                "defaultValue": "async (\r\n  req: Request,\r\n  res: Response,\r\n  next: NextFunction\r\n) => {\r\n  initFireApp();\r\n  // get logged in user\r\n  const uid = req['currentUser'].uid;\r\n\r\n  if (!uid) {\r\n    res.status(403).send({\r\n      code: 'Unathourized',\r\n      message:\r\n        'You are not authorized to perform this operation. Please sign in with valid user credentials.',\r\n    });\r\n  }\r\n\r\n  try {\r\n    const db = firestore();\r\n    const snap = await db.collection('addresses').where('uid', '==', uid).get();\r\n    const addresses = snap.docs.map((doc) => new Address(fromDbFormat(doc)));\r\n\r\n    res.status(200).send(addresses);\r\n  } catch (error) {\r\n    res.status(500).send(error);\r\n  }\r\n}",
+                "defaultValue": "async (\r\n  req: Request,\r\n  res: Response,\r\n  next: NextFunction\r\n) => {\r\n  initFireApp();\r\n  // get logged in user\r\n  const uid = req['currentUser'].uid;\r\n\r\n  if (!uid) {\r\n    res.status(403).send({\r\n      code: 'Unathourized',\r\n      message:\r\n        'You are not authorized to perform this operation. Please sign in with valid user credentials.'\r\n    });\r\n  }\r\n\r\n  try {\r\n    const db = firestore();\r\n    const snap = await db.collection('addresses').where('uid', '==', uid).get();\r\n    const addresses = snap.docs.map((doc) => new Address(fromDbFormat(doc)));\r\n\r\n    res.status(200).send(addresses);\r\n  } catch (error) {\r\n    res.status(500).send(error);\r\n  }\r\n}",
+                "rawdescription": "GET",
+                "description": "<p>GET</p>\n"
+            },
+            {
+                "name": "getCategories",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/ngx-tools/fire-apis/src/categories/controllers/categories.controller.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "",
+                "defaultValue": "async (\r\n  req: Request,\r\n  res: Response,\r\n  next: NextFunction\r\n) => {\r\n  initFireApp();\r\n\r\n  try {\r\n    const db = firestore();\r\n    const snap = await db.collection('categories').get();\r\n    const categories = snap.docs.map((doc) => new Category(fromDbFormat(doc)));\r\n\r\n    res.status(200).send(categories);\r\n  } catch (error) {\r\n    res.status(500).send(error);\r\n  }\r\n}",
+                "rawdescription": "GET",
+                "description": "<p>GET</p>\n"
+            },
+            {
+                "name": "getCategory",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/ngx-tools/fire-apis/src/categories/controllers/categories-queries.controller.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "",
+                "defaultValue": "async (\r\n  req: Request,\r\n  res: Response,\r\n  next: NextFunction\r\n) => {\r\n  const id = req.params.id;\r\n\r\n  initFireApp();\r\n\r\n  try {\r\n    const db = firestore();\r\n    const snap = await db.collection('categories').doc(id).get();\r\n    const category = new Category(fromDbFormat(snap));\r\n\r\n    res.status(200).send(category);\r\n  } catch (error) {\r\n    res.status(500).send(error);\r\n  }\r\n}",
                 "rawdescription": "GET",
                 "description": "<p>GET</p>\n"
             },
@@ -13854,7 +13950,7 @@
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "",
-                "defaultValue": "async (\r\n  req: Request,\r\n  res: Response,\r\n  next: NextFunction\r\n) => {\r\n  initFireApp();\r\n\r\n  const uid = req.params.uid;\r\n  const db = firestore();\r\n\r\n  try {\r\n    const result = await db.collection('user-profiles').doc(uid).get();\r\n    const profile = new Profile(fromDbFormat(result));\r\n\r\n    res.status(200).send(profile);\r\n  } catch (error) {\r\n    if (error.code === AuthErrorCodes.USER_DELETED) {\r\n      res.status(404).send(error);\r\n    } else {\r\n      res.status(500).send(error);\r\n    }\r\n  }\r\n}",
+                "defaultValue": "async (\r\n  req: Request,\r\n  res: Response,\r\n  next: NextFunction\r\n) => {\r\n  initFireApp();\r\n\r\n  const uid = req.params.uid;\r\n  const db = firestore();\r\n\r\n  try {\r\n    const result = await db.collection('user-profiles').doc(uid).get();\r\n    const profile = fromDbFormat(result);\r\n    const filteredProfile = await filterProfileForParams(profile);\r\n    res.status(200).send(filteredProfile);\r\n  } catch (error) {\r\n    if (error.code === AuthErrorCodes.USER_DELETED) {\r\n      res.status(404).send(error);\r\n    } else {\r\n      res.status(500).send(error);\r\n    }\r\n  }\r\n}",
                 "rawdescription": "POST",
                 "description": "<p>POST</p>\n"
             },
@@ -13866,7 +13962,7 @@
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "",
-                "defaultValue": "async (\r\n  req: Request,\r\n  res: Response,\r\n  next: NextFunction\r\n) => {\r\n  initFireApp();\r\n\r\n  try {\r\n    const fConfig = remoteConfig();\r\n    const rConfig = await fConfig.getTemplate();\r\n\r\n    res.status(200).send(rConfig);\r\n  } catch (error) {\r\n    res.status(500).send(error);\r\n  }\r\n}",
+                "defaultValue": "async (\r\n  req: Request,\r\n  res: Response,\r\n  next: NextFunction\r\n) => {\r\n  initFireApp();\r\n\r\n  try {\r\n    const fConfig = remoteConfig();\r\n    const rConfig: RemoteConfigTemplate = await fConfig.getTemplate();\r\n\r\n    res.status(200).send(rConfig);\r\n  } catch (error) {\r\n    res.status(500).send(error);\r\n  }\r\n}",
                 "rawdescription": "GET",
                 "description": "<p>GET</p>\n"
             },
@@ -14023,6 +14119,18 @@
                 "defaultValue": "'ngx-tools'"
             },
             {
+                "name": "listLiveCategories",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/ngx-tools/fire-apis/src/categories/controllers/categories.controller.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "",
+                "defaultValue": "async (\r\n  req: Request,\r\n  res: Response,\r\n  next: NextFunction\r\n) => {\r\n  initFireApp();\r\n\r\n  try {\r\n    const db = firestore();\r\n    const snap = await db\r\n      .collection('categories')\r\n      .where('isLive', '==', true)\r\n      .get();\r\n    const categories = snap.docs.map((doc) => new Category(fromDbFormat(doc)));\r\n\r\n    res.status(200).send(categories);\r\n  } catch (error) {\r\n    res.status(500).send(error);\r\n  }\r\n}",
+                "rawdescription": "GET",
+                "description": "<p>GET</p>\n"
+            },
+            {
                 "name": "listUsers",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
@@ -14030,7 +14138,7 @@
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "",
-                "defaultValue": "async (\r\n  req: Request,\r\n  res: Response,\r\n  next: NextFunction\r\n) => {\r\n  let nextPageToken = req.params?.nextPageToken as string;\r\n  nextPageToken = nextPageToken === 'null' ? '' : nextPageToken;\r\n\r\n  const pageSize = parseInt(req.params?.pageSize as string);\r\n\r\n  if (isNaN(pageSize)) {\r\n    console.log('Invalid pageSize');\r\n    res.status(400).send(`Invalid pageSize: ${req.params?.pageSize}`);\r\n    return;\r\n  }\r\n\r\n  initFireApp();\r\n  const fAuth = auth();\r\n\r\n  try {\r\n    let users;\r\n\r\n    if (nextPageToken) {\r\n      users = await fAuth.listUsers(pageSize, nextPageToken);\r\n    } else {\r\n      users = await fAuth.listUsers(pageSize);\r\n    }\r\n\r\n    res.status(200).send(users);\r\n  } catch (error) {\r\n    res.status(500).send({ messgae: 'Something went wrong', error });\r\n  }\r\n\r\n  return;\r\n}",
+                "defaultValue": "async (\r\n  req: Request,\r\n  res: Response,\r\n  next: NextFunction\r\n) => {\r\n  let nextPageToken = req.params?.nextPageToken as string;\r\n  nextPageToken = nextPageToken === 'null' ? '' : nextPageToken;\r\n\r\n  const pageSize = parseInt(req.params?.pageSize as string);\r\n\r\n  if (isNaN(pageSize)) {\r\n    res.status(400).send(`Invalid pageSize: ${req.params?.pageSize}`);\r\n    return;\r\n  }\r\n\r\n  initFireApp();\r\n  const fAuth = auth();\r\n\r\n  try {\r\n    let users;\r\n\r\n    if (nextPageToken) {\r\n      users = await fAuth.listUsers(pageSize, nextPageToken);\r\n    } else {\r\n      users = await fAuth.listUsers(pageSize);\r\n    }\r\n\r\n    res.status(200).send(users);\r\n  } catch (error) {\r\n    res.status(500).send({ messgae: 'Something went wrong', error });\r\n  }\r\n\r\n  return;\r\n}",
                 "rawdescription": "GET",
                 "description": "<p>GET</p>\n"
             },
@@ -14364,7 +14472,19 @@
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "",
-                "defaultValue": "async (\r\n  req: Request,\r\n  res: Response,\r\n  next: NextFunction\r\n) => {\r\n  initFireApp();\r\n  // get logged in user\r\n  const uid = req['currentUser'].uid;\r\n  const id = req.params.id;\r\n\r\n  const addressToUpdate = new Address(req.body);\r\n\r\n  if (!uid || uid !== addressToUpdate.uid) {\r\n    res.status(403).send({\r\n      code: 'Unathourized',\r\n      message:\r\n        'You are not authorized to perform this operation. Please sign in with valid user credentials.',\r\n    });\r\n  }\r\n\r\n  try {\r\n    const db = firestore();\r\n    const snap = await db\r\n      .collection('addresses')\r\n      .doc(id)\r\n      .update(toDbFormat(addressToUpdate) as any);\r\n\r\n    res\r\n      .status(200)\r\n      .send({ ...addressToUpdate, id, updateTime: snap.writeTime });\r\n  } catch (error) {\r\n    res.status(500).send(error);\r\n  }\r\n}",
+                "defaultValue": "async (\r\n  req: Request,\r\n  res: Response,\r\n  next: NextFunction\r\n) => {\r\n  initFireApp();\r\n  // get logged in user\r\n  const uid = req['currentUser'].uid;\r\n  const id = req.params.id;\r\n\r\n  const addressToUpdate = new Address(req.body);\r\n\r\n  if (!uid || uid !== addressToUpdate.uid) {\r\n    res.status(403).send({\r\n      code: 'Unathourized',\r\n      message:\r\n        'You are not authorized to perform this operation. Please sign in with valid user credentials.'\r\n    });\r\n  }\r\n\r\n  try {\r\n    const db = firestore();\r\n    const snap = await db\r\n      .collection('addresses')\r\n      .doc(id)\r\n      .update(toDbFormat(addressToUpdate) as any);\r\n\r\n    res\r\n      .status(200)\r\n      .send(toDbFormat({ ...addressToUpdate, id, updateTime: snap.writeTime }));\r\n  } catch (error) {\r\n    res.status(500).send(error);\r\n  }\r\n}",
+                "rawdescription": "POST",
+                "description": "<p>POST</p>\n"
+            },
+            {
+                "name": "updateCategory",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/ngx-tools/fire-apis/src/categories/controllers/categories.controller.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "",
+                "defaultValue": "async (\r\n  req: Request,\r\n  res: Response,\r\n  next: NextFunction\r\n) => {\r\n  initFireApp();\r\n  // get logged in user\r\n  const uid = req['currentUser'].uid;\r\n  const id = req.params.id;\r\n\r\n  const categoryToUpdate = new Category(req.body);\r\n  categoryToUpdate.uid = uid;\r\n\r\n  try {\r\n    const db = firestore();\r\n    const snap = await db\r\n      .collection('categories')\r\n      .doc(id)\r\n      .update(toDbFormat(categoryToUpdate) as any);\r\n\r\n    res.status(200).send({\r\n      ...categoryToUpdate,\r\n      updateTime: snap.writeTime.toDate()\r\n    });\r\n  } catch (error) {\r\n    res.status(500).send(error);\r\n  }\r\n}",
                 "rawdescription": "POST",
                 "description": "<p>POST</p>\n"
             },
@@ -14424,7 +14544,7 @@
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "",
-                "defaultValue": "async (\r\n  req: Request,\r\n  res: Response,\r\n  next: NextFunction\r\n) => {\r\n  initFireApp();\r\n\r\n  const uid = req.params.uid;\r\n  const profileData = new Profile(req.body);\r\n  const fAuth = auth();\r\n  const db = firestore();\r\n\r\n  try {\r\n    // check if user exists\r\n    await fAuth.getUser(uid);\r\n\r\n    // update profile for the uid\r\n    const result = await db\r\n      .collection('user-profiles')\r\n      .doc(uid)\r\n      .update(toDbFormat(profileData));\r\n\r\n    res.status(200).send(result);\r\n  } catch (error) {\r\n    if (error.code === AuthErrorCodes.USER_DELETED) {\r\n      res.status(404).send(error);\r\n    } else {\r\n      res.status(500).send(error);\r\n    }\r\n  }\r\n}",
+                "defaultValue": "async (\r\n  req: Request,\r\n  res: Response,\r\n  next: NextFunction\r\n) => {\r\n  initFireApp();\r\n\r\n  const id = req.params.id;\r\n  const profileData = await filterProfileForParams(req.body);\r\n  const fAuth = auth();\r\n  const db = firestore();\r\n\r\n  try {\r\n    // check if user exists\r\n    const user = await fAuth.getUser(id);\r\n\r\n    // TODO: Can Save to User Table (auth), all the params that belong to auth. Rest will go to user-profiles\r\n    // Check for changed params with user data, and save changed params only\r\n\r\n    // update profile for the id\r\n    const result = await db\r\n      .collection('user-profiles')\r\n      .doc(id)\r\n      .update(toDbFormat(profileData));\r\n\r\n    res\r\n      .status(200)\r\n      .send({ ...profileData, updateTime: result.writeTime.toDate() });\r\n  } catch (error) {\r\n    if (error.code === AuthErrorCodes.USER_DELETED) {\r\n      res.status(404).send(error);\r\n    } else {\r\n      res.status(500).send(error);\r\n    }\r\n  }\r\n}",
                 "rawdescription": "POST",
                 "description": "<p>POST</p>\n"
             },
@@ -14871,7 +14991,7 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "",
-                    "defaultValue": "async (\r\n  req: Request,\r\n  res: Response,\r\n  next: NextFunction\r\n) => {\r\n  initFireApp();\r\n  // get logged in user\r\n  const uid = req['currentUser'].uid;\r\n\r\n  const addressToAdd = new Address(req.body);\r\n\r\n  if (!uid || uid !== addressToAdd.uid) {\r\n    res.status(403).send({\r\n      code: 'Unathourized',\r\n      message:\r\n        'You are not authorized to perform this operation. Please sign in with valid user credentials.',\r\n    });\r\n  }\r\n\r\n  try {\r\n    const db = firestore();\r\n    const snap = await db.collection('addresses').add(toDbFormat(addressToAdd));\r\n\r\n    res.status(200).send(fromDbFormat(snap));\r\n  } catch (error) {\r\n    res.status(500).send(error);\r\n  }\r\n}",
+                    "defaultValue": "async (\r\n  req: Request,\r\n  res: Response,\r\n  next: NextFunction\r\n) => {\r\n  initFireApp();\r\n  // get logged in user\r\n  const uid = req['currentUser'].uid;\r\n\r\n  const addressToAdd = new Address(req.body);\r\n  addressToAdd.uid = uid;\r\n\r\n  if (!uid || uid !== addressToAdd.uid) {\r\n    res.status(403).send({\r\n      code: 'Unathourized',\r\n      message:\r\n        'You are not authorized to perform this operation. Please sign in with valid user credentials.'\r\n    });\r\n  }\r\n\r\n  try {\r\n    const db = firestore();\r\n    const snapn = await db\r\n      .collection('addresses')\r\n      .add(toDbFormat(addressToAdd));\r\n    const snap = await snapn.get();\r\n\r\n    res.status(200).send(fromDbFormat(snap));\r\n  } catch (error) {\r\n    res.status(500).send(error);\r\n  }\r\n}",
                     "rawdescription": "POST",
                     "description": "<p>POST</p>\n"
                 },
@@ -14883,7 +15003,7 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "",
-                    "defaultValue": "async (\r\n  req: Request,\r\n  res: Response,\r\n  next: NextFunction\r\n) => {\r\n  initFireApp();\r\n  // get logged in user\r\n  const uid = req['currentUser'].uid;\r\n  const addressId = req.params.id;\r\n\r\n  if (!uid) {\r\n    res.status(403).send({\r\n      code: 'Unathourized',\r\n      message:\r\n        'You are not authorized to perform this operation. Please sign in with valid user credentials.',\r\n    });\r\n\r\n    return;\r\n  }\r\n\r\n  try {\r\n    const db = firestore();\r\n\r\n    const addressToDeleteSnap = await db\r\n      .collection('addresses')\r\n      .doc(addressId)\r\n      .get();\r\n\r\n    if (uid !== addressToDeleteSnap.data()?.uid) {\r\n      res.status(403).send({\r\n        code: 'Unathourized',\r\n        message:\r\n          'You are not authorized to perform this operation. Please sign in with valid user credentials.',\r\n      });\r\n      return;\r\n    }\r\n\r\n    const snap = await db.collection('addresses').doc(addressId).delete();\r\n\r\n    res.status(200).send({ success: true });\r\n  } catch (error) {\r\n    res.status(500).send(error);\r\n  }\r\n}",
+                    "defaultValue": "async (\r\n  req: Request,\r\n  res: Response,\r\n  next: NextFunction\r\n) => {\r\n  initFireApp();\r\n  // get logged in user\r\n  const uid = req['currentUser'].uid;\r\n  const addressId = req.params.id;\r\n\r\n  if (!uid) {\r\n    res.status(403).send({\r\n      code: 'Unathourized',\r\n      message:\r\n        'You are not authorized to perform this operation. Please sign in with valid user credentials.'\r\n    });\r\n\r\n    return;\r\n  }\r\n\r\n  try {\r\n    const db = firestore();\r\n\r\n    const addressToDeleteSnap = await db\r\n      .collection('addresses')\r\n      .doc(addressId)\r\n      .get();\r\n\r\n    if (uid !== addressToDeleteSnap.data()?.uid) {\r\n      res.status(403).send({\r\n        code: 'Unathourized',\r\n        message:\r\n          'You are not authorized to perform this operation. Please sign in with valid user credentials.'\r\n      });\r\n      return;\r\n    }\r\n\r\n    const snap = await db.collection('addresses').doc(addressId).delete();\r\n\r\n    res.status(200).send({ success: true });\r\n  } catch (error) {\r\n    res.status(500).send(error);\r\n  }\r\n}",
                     "rawdescription": "POST",
                     "description": "<p>POST</p>\n"
                 },
@@ -14895,7 +15015,7 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "",
-                    "defaultValue": "async (\r\n  req: Request,\r\n  res: Response,\r\n  next: NextFunction\r\n) => {\r\n  initFireApp();\r\n  // get logged in user\r\n  const uid = req['currentUser'].uid;\r\n\r\n  if (!uid) {\r\n    res.status(403).send({\r\n      code: 'Unathourized',\r\n      message:\r\n        'You are not authorized to perform this operation. Please sign in with valid user credentials.',\r\n    });\r\n  }\r\n\r\n  try {\r\n    const db = firestore();\r\n    const snap = await db.collection('addresses').where('uid', '==', uid).get();\r\n    const addresses = snap.docs.map((doc) => new Address(fromDbFormat(doc)));\r\n\r\n    res.status(200).send(addresses);\r\n  } catch (error) {\r\n    res.status(500).send(error);\r\n  }\r\n}",
+                    "defaultValue": "async (\r\n  req: Request,\r\n  res: Response,\r\n  next: NextFunction\r\n) => {\r\n  initFireApp();\r\n  // get logged in user\r\n  const uid = req['currentUser'].uid;\r\n\r\n  if (!uid) {\r\n    res.status(403).send({\r\n      code: 'Unathourized',\r\n      message:\r\n        'You are not authorized to perform this operation. Please sign in with valid user credentials.'\r\n    });\r\n  }\r\n\r\n  try {\r\n    const db = firestore();\r\n    const snap = await db.collection('addresses').where('uid', '==', uid).get();\r\n    const addresses = snap.docs.map((doc) => new Address(fromDbFormat(doc)));\r\n\r\n    res.status(200).send(addresses);\r\n  } catch (error) {\r\n    res.status(500).send(error);\r\n  }\r\n}",
                     "rawdescription": "GET",
                     "description": "<p>GET</p>\n"
                 },
@@ -14907,7 +15027,7 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "",
-                    "defaultValue": "async (\r\n  req: Request,\r\n  res: Response,\r\n  next: NextFunction\r\n) => {\r\n  initFireApp();\r\n  // get logged in user\r\n  const uid = req['currentUser'].uid;\r\n  const id = req.params.id;\r\n\r\n  const addressToUpdate = new Address(req.body);\r\n\r\n  if (!uid || uid !== addressToUpdate.uid) {\r\n    res.status(403).send({\r\n      code: 'Unathourized',\r\n      message:\r\n        'You are not authorized to perform this operation. Please sign in with valid user credentials.',\r\n    });\r\n  }\r\n\r\n  try {\r\n    const db = firestore();\r\n    const snap = await db\r\n      .collection('addresses')\r\n      .doc(id)\r\n      .update(toDbFormat(addressToUpdate) as any);\r\n\r\n    res\r\n      .status(200)\r\n      .send({ ...addressToUpdate, id, updateTime: snap.writeTime });\r\n  } catch (error) {\r\n    res.status(500).send(error);\r\n  }\r\n}",
+                    "defaultValue": "async (\r\n  req: Request,\r\n  res: Response,\r\n  next: NextFunction\r\n) => {\r\n  initFireApp();\r\n  // get logged in user\r\n  const uid = req['currentUser'].uid;\r\n  const id = req.params.id;\r\n\r\n  const addressToUpdate = new Address(req.body);\r\n\r\n  if (!uid || uid !== addressToUpdate.uid) {\r\n    res.status(403).send({\r\n      code: 'Unathourized',\r\n      message:\r\n        'You are not authorized to perform this operation. Please sign in with valid user credentials.'\r\n    });\r\n  }\r\n\r\n  try {\r\n    const db = firestore();\r\n    const snap = await db\r\n      .collection('addresses')\r\n      .doc(id)\r\n      .update(toDbFormat(addressToUpdate) as any);\r\n\r\n    res\r\n      .status(200)\r\n      .send(toDbFormat({ ...addressToUpdate, id, updateTime: snap.writeTime }));\r\n  } catch (error) {\r\n    res.status(500).send(error);\r\n  }\r\n}",
                     "rawdescription": "POST",
                     "description": "<p>POST</p>\n"
                 }
@@ -14974,6 +15094,68 @@
                     "description": "<p>POST</p>\n"
                 }
             ],
+            "projects/ngx-tools/fire-apis/src/categories/controllers/categories.controller.ts": [
+                {
+                    "name": "addCategory",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/ngx-tools/fire-apis/src/categories/controllers/categories.controller.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "async (\r\n  req: Request,\r\n  res: Response,\r\n  next: NextFunction\r\n) => {\r\n  initFireApp();\r\n  // get logged in user\r\n  const uid = req['currentUser'].uid;\r\n\r\n  const categoryToAdd = new Category(req.body);\r\n  categoryToAdd.uid = uid;\r\n\r\n  try {\r\n    const db = firestore();\r\n    const result = await db\r\n      .collection('categories')\r\n      .doc(categoryToAdd.id)\r\n      .set(toDbFormat(categoryToAdd));\r\n\r\n    res.status(200).send({\r\n      ...categoryToAdd,\r\n      createTime: result.writeTime.toDate(),\r\n      updateTime: result.writeTime.toDate()\r\n    });\r\n  } catch (error) {\r\n    res.status(500).send(error);\r\n  }\r\n}",
+                    "rawdescription": "POST",
+                    "description": "<p>POST</p>\n"
+                },
+                {
+                    "name": "deleteCategory",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/ngx-tools/fire-apis/src/categories/controllers/categories.controller.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "async (\r\n  req: Request,\r\n  res: Response,\r\n  next: NextFunction\r\n) => {\r\n  initFireApp();\r\n  // get logged in user\r\n  const uid = req['currentUser'].uid;\r\n  const categoryId = req.params.id;\r\n\r\n  try {\r\n    const db = firestore();\r\n\r\n    // TODO: Check if it is not referenced from any other category or product\r\n    const snapR = await db\r\n      .collection('categories')\r\n      .select('title', 'parents')\r\n      .where('parents', 'array-contains', categoryId)\r\n      .get();\r\n    const rCategories = snapR.docs.map(\r\n      (doc) => new Category(fromDbFormat(doc))\r\n    );\r\n    if (rCategories.length) {\r\n      res.status(500).send({\r\n        code: 'REFERENCE EXISTS',\r\n        message: 'Unable to delete as Category references exist.',\r\n        references: rCategories.map((cat) => cat.id)\r\n      });\r\n      return;\r\n    }\r\n\r\n    // Delete category\r\n    const snap = await db.collection('categories').doc(categoryId).delete();\r\n\r\n    res.status(200).send({ success: true });\r\n  } catch (error) {\r\n    res.status(500).send(error);\r\n  }\r\n}",
+                    "rawdescription": "POST",
+                    "description": "<p>POST</p>\n"
+                },
+                {
+                    "name": "getCategories",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/ngx-tools/fire-apis/src/categories/controllers/categories.controller.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "async (\r\n  req: Request,\r\n  res: Response,\r\n  next: NextFunction\r\n) => {\r\n  initFireApp();\r\n\r\n  try {\r\n    const db = firestore();\r\n    const snap = await db.collection('categories').get();\r\n    const categories = snap.docs.map((doc) => new Category(fromDbFormat(doc)));\r\n\r\n    res.status(200).send(categories);\r\n  } catch (error) {\r\n    res.status(500).send(error);\r\n  }\r\n}",
+                    "rawdescription": "GET",
+                    "description": "<p>GET</p>\n"
+                },
+                {
+                    "name": "listLiveCategories",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/ngx-tools/fire-apis/src/categories/controllers/categories.controller.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "async (\r\n  req: Request,\r\n  res: Response,\r\n  next: NextFunction\r\n) => {\r\n  initFireApp();\r\n\r\n  try {\r\n    const db = firestore();\r\n    const snap = await db\r\n      .collection('categories')\r\n      .where('isLive', '==', true)\r\n      .get();\r\n    const categories = snap.docs.map((doc) => new Category(fromDbFormat(doc)));\r\n\r\n    res.status(200).send(categories);\r\n  } catch (error) {\r\n    res.status(500).send(error);\r\n  }\r\n}",
+                    "rawdescription": "GET",
+                    "description": "<p>GET</p>\n"
+                },
+                {
+                    "name": "updateCategory",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/ngx-tools/fire-apis/src/categories/controllers/categories.controller.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "async (\r\n  req: Request,\r\n  res: Response,\r\n  next: NextFunction\r\n) => {\r\n  initFireApp();\r\n  // get logged in user\r\n  const uid = req['currentUser'].uid;\r\n  const id = req.params.id;\r\n\r\n  const categoryToUpdate = new Category(req.body);\r\n  categoryToUpdate.uid = uid;\r\n\r\n  try {\r\n    const db = firestore();\r\n    const snap = await db\r\n      .collection('categories')\r\n      .doc(id)\r\n      .update(toDbFormat(categoryToUpdate) as any);\r\n\r\n    res.status(200).send({\r\n      ...categoryToUpdate,\r\n      updateTime: snap.writeTime.toDate()\r\n    });\r\n  } catch (error) {\r\n    res.status(500).send(error);\r\n  }\r\n}",
+                    "rawdescription": "POST",
+                    "description": "<p>POST</p>\n"
+                }
+            ],
             "projects/ngx-tools/fire-apis/src/auth/controllers/profile.controller.ts": [
                 {
                     "name": "addProfile",
@@ -14983,7 +15165,7 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "",
-                    "defaultValue": "async (\r\n  req: Request,\r\n  res: Response,\r\n  next: NextFunction\r\n) => {\r\n  initFireApp();\r\n\r\n  const uid = req.params.uid;\r\n  const profileData = new Profile(req.body);\r\n  const fAuth = auth();\r\n  const db = firestore();\r\n\r\n  try {\r\n    // check if user exists\r\n    const user = await fAuth.getUser(uid);\r\n\r\n    // Add profile for the uid\r\n    const result = await db\r\n      .collection('user-profiles')\r\n      .doc(uid)\r\n      .set(toDbFormat(profileData));\r\n\r\n    res.status(200).send(result);\r\n  } catch (error) {\r\n    if (error.code === AuthErrorCodes.USER_DELETED) {\r\n      res.status(404).send(error);\r\n    } else {\r\n      res.status(500).send(error);\r\n    }\r\n  }\r\n}",
+                    "defaultValue": "async (\r\n  req: Request,\r\n  res: Response,\r\n  next: NextFunction\r\n) => {\r\n  initFireApp();\r\n\r\n  // filter in only profile params, from remoteconfig\r\n  const profileData = await filterProfileForParams(req.body);\r\n  const fAuth = auth();\r\n  const db = firestore();\r\n\r\n  try {\r\n    // check if user exists\r\n    const user = await fAuth.getUser(profileData.id);\r\n\r\n    // TODO: Can Save to User Table (auth), all the params that belong to auth. Rest will go to user-profiles\r\n    // Check for changed params with user data, and save changed params only\r\n\r\n    // Add profile for the uid\r\n    const result = await db\r\n      .collection('user-profiles')\r\n      .doc(profileData.id)\r\n      .set(toDbFormat(profileData));\r\n\r\n    res\r\n      .status(200)\r\n      .send({\r\n        ...profileData,\r\n        createTime: result.writeTime.toDate(),\r\n        updateTime: result.writeTime.toDate()\r\n      });\r\n  } catch (error) {\r\n    if (error.code === AuthErrorCodes.USER_DELETED) {\r\n      res.status(404).send(error);\r\n    } else {\r\n      res.status(500).send(error);\r\n    }\r\n  }\r\n}",
                     "rawdescription": "POST",
                     "description": "<p>POST</p>\n"
                 },
@@ -14995,9 +15177,19 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "",
-                    "defaultValue": "async (\r\n  req: Request,\r\n  res: Response,\r\n  next: NextFunction\r\n) => {\r\n  initFireApp();\r\n\r\n  const uid = req.params.uid;\r\n  const fAuth = auth();\r\n  const db = firestore();\r\n\r\n  try {\r\n    // check if user exists\r\n    await fAuth.getUser(uid);\r\n\r\n    // update profile for the uid\r\n    const result = await db.collection('user-profiles').doc(uid).delete();\r\n\r\n    res.status(200).send(result);\r\n  } catch (error) {\r\n    if (error.code === AuthErrorCodes.USER_DELETED) {\r\n      res.status(404).send(error);\r\n    } else {\r\n      res.status(500).send(error);\r\n    }\r\n  }\r\n}",
+                    "defaultValue": "async (\r\n  req: Request,\r\n  res: Response,\r\n  next: NextFunction\r\n) => {\r\n  initFireApp();\r\n\r\n  const id = req.params.id;\r\n  const fAuth = auth();\r\n  const db = firestore();\r\n\r\n  try {\r\n    // check if user exists\r\n    await fAuth.getUser(id);\r\n\r\n    // Delete profile for the id\r\n    const result = await db.collection('user-profiles').doc(id).delete();\r\n\r\n    res.status(200).send(result);\r\n  } catch (error) {\r\n    if (error.code === AuthErrorCodes.USER_DELETED) {\r\n      res.status(404).send(error);\r\n    } else {\r\n      res.status(500).send(error);\r\n    }\r\n  }\r\n}",
                     "rawdescription": "POST",
                     "description": "<p>POST</p>\n"
+                },
+                {
+                    "name": "filterProfileForParams",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/ngx-tools/fire-apis/src/auth/controllers/profile.controller.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "async (profile: Profile): Promise<any> => {\r\n  if (!profile) return null;\r\n\r\n  const fConfig = remoteConfig();\r\n  const rConfig: RemoteConfigTemplate = await fConfig.getTemplate();\r\n\r\n  let pParams = rConfig.parameters['userProfileParams']?.defaultValue || null;\r\n  if (pParams) {\r\n    pParams = JSON.parse((pParams as any).value);\r\n  } else {\r\n    return null;\r\n  }\r\n\r\n  const pParamsArr = Object.keys(pParams);\r\n  const filteredProfile = {};\r\n  // Match profile params with remote profile params\r\n  Object.keys(profile).forEach((key) => {\r\n    if (pParamsArr.includes(key)) {\r\n      filteredProfile[key] = profile[key];\r\n    }\r\n  });\r\n\r\n  return filteredProfile;\r\n}"
                 },
                 {
                     "name": "getProfile",
@@ -15007,7 +15199,7 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "",
-                    "defaultValue": "async (\r\n  req: Request,\r\n  res: Response,\r\n  next: NextFunction\r\n) => {\r\n  initFireApp();\r\n\r\n  const uid = req.params.uid;\r\n  const db = firestore();\r\n\r\n  try {\r\n    const result = await db.collection('user-profiles').doc(uid).get();\r\n    const profile = new Profile(fromDbFormat(result));\r\n\r\n    res.status(200).send(profile);\r\n  } catch (error) {\r\n    if (error.code === AuthErrorCodes.USER_DELETED) {\r\n      res.status(404).send(error);\r\n    } else {\r\n      res.status(500).send(error);\r\n    }\r\n  }\r\n}",
+                    "defaultValue": "async (\r\n  req: Request,\r\n  res: Response,\r\n  next: NextFunction\r\n) => {\r\n  initFireApp();\r\n\r\n  const uid = req.params.uid;\r\n  const db = firestore();\r\n\r\n  try {\r\n    const result = await db.collection('user-profiles').doc(uid).get();\r\n    const profile = fromDbFormat(result);\r\n    const filteredProfile = await filterProfileForParams(profile);\r\n    res.status(200).send(filteredProfile);\r\n  } catch (error) {\r\n    if (error.code === AuthErrorCodes.USER_DELETED) {\r\n      res.status(404).send(error);\r\n    } else {\r\n      res.status(500).send(error);\r\n    }\r\n  }\r\n}",
                     "rawdescription": "POST",
                     "description": "<p>POST</p>\n"
                 },
@@ -15019,7 +15211,7 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "",
-                    "defaultValue": "async (\r\n  req: Request,\r\n  res: Response,\r\n  next: NextFunction\r\n) => {\r\n  initFireApp();\r\n\r\n  const uid = req.params.uid;\r\n  const profileData = new Profile(req.body);\r\n  const fAuth = auth();\r\n  const db = firestore();\r\n\r\n  try {\r\n    // check if user exists\r\n    await fAuth.getUser(uid);\r\n\r\n    // update profile for the uid\r\n    const result = await db\r\n      .collection('user-profiles')\r\n      .doc(uid)\r\n      .update(toDbFormat(profileData));\r\n\r\n    res.status(200).send(result);\r\n  } catch (error) {\r\n    if (error.code === AuthErrorCodes.USER_DELETED) {\r\n      res.status(404).send(error);\r\n    } else {\r\n      res.status(500).send(error);\r\n    }\r\n  }\r\n}",
+                    "defaultValue": "async (\r\n  req: Request,\r\n  res: Response,\r\n  next: NextFunction\r\n) => {\r\n  initFireApp();\r\n\r\n  const id = req.params.id;\r\n  const profileData = await filterProfileForParams(req.body);\r\n  const fAuth = auth();\r\n  const db = firestore();\r\n\r\n  try {\r\n    // check if user exists\r\n    const user = await fAuth.getUser(id);\r\n\r\n    // TODO: Can Save to User Table (auth), all the params that belong to auth. Rest will go to user-profiles\r\n    // Check for changed params with user data, and save changed params only\r\n\r\n    // update profile for the id\r\n    const result = await db\r\n      .collection('user-profiles')\r\n      .doc(id)\r\n      .update(toDbFormat(profileData));\r\n\r\n    res\r\n      .status(200)\r\n      .send({ ...profileData, updateTime: result.writeTime.toDate() });\r\n  } catch (error) {\r\n    if (error.code === AuthErrorCodes.USER_DELETED) {\r\n      res.status(404).send(error);\r\n    } else {\r\n      res.status(500).send(error);\r\n    }\r\n  }\r\n}",
                     "rawdescription": "POST",
                     "description": "<p>POST</p>\n"
                 }
@@ -15411,7 +15603,7 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "",
-                    "defaultValue": "async (req, res, next) => {\r\n  const reqCookie = cookie.parse(req.headers.cookie || '');\r\n\r\n  if (\r\n    (!req.headers.authorization ||\r\n      !req.headers.authorization.startsWith('Bearer ')) &&\r\n    !(reqCookie && reqCookie.Authorization)\r\n  ) {\r\n    res.status(403).send({\r\n      code: 'unauthorized',\r\n      message: `No Firebase ID token was passed as a Bearer token in the Authorization header.\r\n      Make sure you authorize your request by providing the following HTTP header:\r\n      Authorization: Bearer <Firebase ID Token>\r\n      or by passing a \"Authorization\" cookie.`,\r\n    });\r\n\r\n    return;\r\n  }\r\n\r\n  let idToken;\r\n\r\n  if (\r\n    req.headers.authorization &&\r\n    req.headers.authorization.startsWith('Bearer ')\r\n  ) {\r\n    // Read the ID Token from the Authorization header.\r\n    idToken = req.headers.authorization.split('Bearer ')[1];\r\n  } else if (reqCookie) {\r\n    // Read the ID Token from cookie.\r\n    idToken = reqCookie.Authorization.split('Bearer ')[1];\r\n  } else {\r\n    // No cookie\r\n    res.status(403).send({\r\n      code: 'unauthorized',\r\n      message: `No Firebase ID token was passed as a Bearer token in the Authorization header.\r\n      Make sure you authorize your request by providing the following HTTP header:\r\n      Authorization: Bearer <Firebase ID Token>\r\n      or by passing a \"Authorization\" cookie.`,\r\n    });\r\n\r\n    return;\r\n  }\r\n\r\n  const app = initFireApp();\r\n\r\n  try {\r\n    const decodedIdToken = await auth().verifyIdToken(idToken);\r\n\r\n    req.currentUser = decodedIdToken;\r\n    next();\r\n  } catch (error) {\r\n    res.status(403).send({\r\n      code: 'unauthorized',\r\n      message: 'Error while verifying ID token',\r\n      error,\r\n    });\r\n\r\n    return;\r\n  }\r\n}"
+                    "defaultValue": "async (req, res, next) => {\r\n  const reqCookie = cookie.parse(req.headers.cookie || '');\r\n\r\n  if (\r\n    (!req.headers.authorization ||\r\n      !req.headers.authorization.startsWith('Bearer ')) &&\r\n    !(reqCookie && reqCookie.Authorization)\r\n  ) {\r\n    res.status(403).send({\r\n      code: 'unauthorized',\r\n      message: `No Firebase ID token was passed as a Bearer token in the Authorization header.\r\n      Make sure you authorize your request by providing the following HTTP header:\r\n      Authorization: Bearer <Firebase ID Token>\r\n      or by passing a \"Authorization\" cookie.`\r\n    });\r\n\r\n    return;\r\n  }\r\n\r\n  let idToken;\r\n\r\n  if (\r\n    req.headers.authorization &&\r\n    req.headers.authorization.startsWith('Bearer ')\r\n  ) {\r\n    // Read the ID Token from the Authorization header.\r\n    idToken = req.headers.authorization.split('Bearer ')[1];\r\n  } else if (reqCookie) {\r\n    // Read the ID Token from cookie.\r\n    idToken = reqCookie.Authorization.split('Bearer ')[1];\r\n  } else {\r\n    // No cookie\r\n    res.status(403).send({\r\n      code: 'unauthorized',\r\n      message: `No Firebase ID token was passed as a Bearer token in the Authorization header.\r\n      Make sure you authorize your request by providing the following HTTP header:\r\n      Authorization: Bearer <Firebase ID Token>\r\n      or by passing a \"Authorization\" cookie.`\r\n    });\r\n\r\n    return;\r\n  }\r\n\r\n  const app = initFireApp();\r\n\r\n  try {\r\n    const decodedIdToken = await auth().verifyIdToken(idToken, true);\r\n\r\n    req.currentUser = decodedIdToken;\r\n    next();\r\n  } catch (error) {\r\n    res.status(403).send({\r\n      code: 'unauthorized',\r\n      message: 'Error while verifying ID token',\r\n      error: JSON.stringify(error)\r\n    });\r\n\r\n    return;\r\n  }\r\n}"
                 }
             ],
             "projects/ngx-tools/fire-apis/src/auth/middleware/author-guard.ts": [
@@ -15522,6 +15714,18 @@
                     "defaultValue": "[\r\n    \"shortTitle\",\r\n    \"isFeatured\",\r\n    \"metaInfo\",\r\n    \"image\",\r\n    'created',\r\n    \"updated\",\r\n    \"userId\",\r\n    \"inReview\",\r\n    \"features\",\r\n]"
                 }
             ],
+            "projects/ngx-tools/fire-apis/src/categories/routers/categories.router.ts": [
+                {
+                    "name": "categoriesRouter",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/ngx-tools/fire-apis/src/categories/routers/categories.router.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "express.Router()"
+                }
+            ],
             "projects/ngx-tools/fire-apis/src/auth/middleware/current-user-guard.ts": [
                 {
                     "name": "currentUserGuard",
@@ -15602,6 +15806,20 @@
                     "description": "<p>Removes id, createTime, and updateTime from the data object. As these props available outside of firebase doc.data()</p>\n"
                 }
             ],
+            "projects/ngx-tools/fire-apis/src/categories/controllers/categories-queries.controller.ts": [
+                {
+                    "name": "getCategory",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/ngx-tools/fire-apis/src/categories/controllers/categories-queries.controller.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "async (\r\n  req: Request,\r\n  res: Response,\r\n  next: NextFunction\r\n) => {\r\n  const id = req.params.id;\r\n\r\n  initFireApp();\r\n\r\n  try {\r\n    const db = firestore();\r\n    const snap = await db.collection('categories').doc(id).get();\r\n    const category = new Category(fromDbFormat(snap));\r\n\r\n    res.status(200).send(category);\r\n  } catch (error) {\r\n    res.status(500).send(error);\r\n  }\r\n}",
+                    "rawdescription": "GET",
+                    "description": "<p>GET</p>\n"
+                }
+            ],
             "projects/ngx-tools/fire-apis/src/images/controllers/images.controller.ts": [
                 {
                     "name": "getImage",
@@ -15625,7 +15843,7 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "",
-                    "defaultValue": "async (\r\n  req: Request,\r\n  res: Response,\r\n  next: NextFunction\r\n) => {\r\n  initFireApp();\r\n\r\n  try {\r\n    const fConfig = remoteConfig();\r\n    const rConfig = await fConfig.getTemplate();\r\n\r\n    res.status(200).send(rConfig);\r\n  } catch (error) {\r\n    res.status(500).send(error);\r\n  }\r\n}",
+                    "defaultValue": "async (\r\n  req: Request,\r\n  res: Response,\r\n  next: NextFunction\r\n) => {\r\n  initFireApp();\r\n\r\n  try {\r\n    const fConfig = remoteConfig();\r\n    const rConfig: RemoteConfigTemplate = await fConfig.getTemplate();\r\n\r\n    res.status(200).send(rConfig);\r\n  } catch (error) {\r\n    res.status(500).send(error);\r\n  }\r\n}",
                     "rawdescription": "GET",
                     "description": "<p>GET</p>\n"
                 }
@@ -15665,7 +15883,7 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "",
-                    "defaultValue": "async (\r\n  req: Request,\r\n  res: Response,\r\n  next: NextFunction\r\n) => {\r\n  let nextPageToken = req.params?.nextPageToken as string;\r\n  nextPageToken = nextPageToken === 'null' ? '' : nextPageToken;\r\n\r\n  const pageSize = parseInt(req.params?.pageSize as string);\r\n\r\n  if (isNaN(pageSize)) {\r\n    console.log('Invalid pageSize');\r\n    res.status(400).send(`Invalid pageSize: ${req.params?.pageSize}`);\r\n    return;\r\n  }\r\n\r\n  initFireApp();\r\n  const fAuth = auth();\r\n\r\n  try {\r\n    let users;\r\n\r\n    if (nextPageToken) {\r\n      users = await fAuth.listUsers(pageSize, nextPageToken);\r\n    } else {\r\n      users = await fAuth.listUsers(pageSize);\r\n    }\r\n\r\n    res.status(200).send(users);\r\n  } catch (error) {\r\n    res.status(500).send({ messgae: 'Something went wrong', error });\r\n  }\r\n\r\n  return;\r\n}",
+                    "defaultValue": "async (\r\n  req: Request,\r\n  res: Response,\r\n  next: NextFunction\r\n) => {\r\n  let nextPageToken = req.params?.nextPageToken as string;\r\n  nextPageToken = nextPageToken === 'null' ? '' : nextPageToken;\r\n\r\n  const pageSize = parseInt(req.params?.pageSize as string);\r\n\r\n  if (isNaN(pageSize)) {\r\n    res.status(400).send(`Invalid pageSize: ${req.params?.pageSize}`);\r\n    return;\r\n  }\r\n\r\n  initFireApp();\r\n  const fAuth = auth();\r\n\r\n  try {\r\n    let users;\r\n\r\n    if (nextPageToken) {\r\n      users = await fAuth.listUsers(pageSize, nextPageToken);\r\n    } else {\r\n      users = await fAuth.listUsers(pageSize);\r\n    }\r\n\r\n    res.status(200).send(users);\r\n  } catch (error) {\r\n    res.status(500).send({ messgae: 'Something went wrong', error });\r\n  }\r\n\r\n  return;\r\n}",
                     "rawdescription": "GET",
                     "description": "<p>GET</p>\n"
                 }
@@ -16330,7 +16548,7 @@
     },
     "routes": [],
     "coverage": {
-        "count": 20,
+        "count": 23,
         "status": "low",
         "files": [
             {
@@ -16462,6 +16680,16 @@
                 "coveragePercent": 100,
                 "coverageCount": "1/1",
                 "status": "very-good"
+            },
+            {
+                "filePath": "projects/ngx-tools/fire-apis/src/auth/controllers/profile.controller.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "filterProfileForParams",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
             },
             {
                 "filePath": "projects/ngx-tools/fire-apis/src/auth/controllers/profile.controller.ts",
@@ -16689,6 +16917,76 @@
                 "linktype": "miscellaneous",
                 "linksubtype": "variable",
                 "name": "usersRouter",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/ngx-tools/fire-apis/src/categories/controllers/categories-queries.controller.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "getCategory",
+                "coveragePercent": 100,
+                "coverageCount": "1/1",
+                "status": "very-good"
+            },
+            {
+                "filePath": "projects/ngx-tools/fire-apis/src/categories/controllers/categories.controller.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "addCategory",
+                "coveragePercent": 100,
+                "coverageCount": "1/1",
+                "status": "very-good"
+            },
+            {
+                "filePath": "projects/ngx-tools/fire-apis/src/categories/controllers/categories.controller.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "deleteCategory",
+                "coveragePercent": 100,
+                "coverageCount": "1/1",
+                "status": "very-good"
+            },
+            {
+                "filePath": "projects/ngx-tools/fire-apis/src/categories/controllers/categories.controller.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "getCategories",
+                "coveragePercent": 100,
+                "coverageCount": "1/1",
+                "status": "very-good"
+            },
+            {
+                "filePath": "projects/ngx-tools/fire-apis/src/categories/controllers/categories.controller.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "listLiveCategories",
+                "coveragePercent": 100,
+                "coverageCount": "1/1",
+                "status": "very-good"
+            },
+            {
+                "filePath": "projects/ngx-tools/fire-apis/src/categories/controllers/categories.controller.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "updateCategory",
+                "coveragePercent": 100,
+                "coverageCount": "1/1",
+                "status": "very-good"
+            },
+            {
+                "filePath": "projects/ngx-tools/fire-apis/src/categories/routers/categories.router.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "categoriesRouter",
                 "coveragePercent": 0,
                 "coverageCount": "0/1",
                 "status": "low"
@@ -16995,7 +17293,7 @@
                 "linktype": "injectable",
                 "name": "FireAuthService",
                 "coveragePercent": 0,
-                "coverageCount": "0/15",
+                "coverageCount": "0/16",
                 "status": "low"
             },
             {

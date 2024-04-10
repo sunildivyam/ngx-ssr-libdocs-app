@@ -3,14 +3,14 @@ import { appConfig } from '../app/constants/app.config.development';
 import { firebaseConfig } from '../app/constants/firebase.config.development';
 import { openaiConfig } from '../app/constants/openai.config.development';
 
-firebaseConfig.app.apiKey = 'AIzaSyDlzVES09CQFxt8oJI0u2srZFpH12wOAKk';
+firebaseConfig.app.apiKey = '';
 openaiConfig.apiKey = '';
 openaiConfig.organization = 'org-Cdw4eLOkxkrRo6ZOQFayrg4q';
 
 const config: AppConfig = {
   ...appConfig,
   firebase: firebaseConfig,
-  openai: openaiConfig,
+  openai: openaiConfig
 };
 
 export const environment = {
@@ -18,7 +18,7 @@ export const environment = {
   staging: false,
   production: false,
   envConfiguration: 'development Configuration',
-  appConfig: config,
+  appConfig: config
 };
 
 /*

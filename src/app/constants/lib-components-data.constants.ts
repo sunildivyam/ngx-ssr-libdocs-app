@@ -9,12 +9,14 @@
         import { CardFooterComponent } from '@annuadvent/ngx-common-ui/card/src/components/card-footer/card-footer.docs';
         import { CardImageComponent } from '@annuadvent/ngx-common-ui/card/src/components/card-image/card-image.docs';
         import { CardTitleComponent } from '@annuadvent/ngx-common-ui/card/src/components/card-title/card-title.docs';
+        import { CategoriesTreeComponent } from '@annuadvent/ngx-common-ui/categories/src/components/categories-tree/categories-tree.docs';
         import { CodeBlockComponent } from '@annuadvent/ngx-common-ui/code-block/src/components/code-block/code-block.docs';
         import { CollapsibleComponent } from '@annuadvent/ngx-common-ui/collapsible/src/components/collapsible/collapsible.docs';
         import { CollapsibleContentComponent } from '@annuadvent/ngx-common-ui/collapsible/src/components/collapsible-content/collapsible-content.docs';
         import { CollapsibleHeaderComponent } from '@annuadvent/ngx-common-ui/collapsible/src/components/collapsible-header/collapsible-header.docs';
         import { ColorPaletteComponent } from '@annuadvent/ngx-common-ui/theme/src/components/color-palette/color-palette.docs';
         import { DrawerComponent } from '@annuadvent/ngx-common-ui/drawer/src/components/drawer/drawer.docs';
+        import { DynamicFormComponent } from '@annuadvent/ngx-common-ui/reactive-form/src/components/dynamic-form/dynamic-form.docs';
         import { ElementStylesComponent } from '@annuadvent/ngx-common-ui/element-styles/src/components/element-styles/element-styles.docs';
         import { ErrorComponent } from '@annuadvent/ngx-common-ui/error/src/components/error/error.docs';
         import { FiltersComponent } from '@annuadvent/ngx-common-ui/filters/src/components/filters/filters.docs';
@@ -23,11 +25,14 @@
         import { HamburgerComponent } from '@annuadvent/ngx-common-ui/hamburger/src/components/hamburger/hamburger.docs';
         import { ImageFormComponent } from '@annuadvent/ngx-common-ui/image-form/src/components/image-form/image-form.docs';
         import { LinkFormComponent } from '@annuadvent/ngx-common-ui/link-form/src/components/link-form/link-form.docs';
+        import { ManageCategoriesComponent } from '@annuadvent/ngx-common-ui/categories/src/components/manage-categories/manage-categories.docs';
         import { MenuComponent } from '@annuadvent/ngx-common-ui/menu/src/components/menu/menu.docs';
         import { MetaFormComponent } from '@annuadvent/ngx-common-ui/meta/src/components/meta-form/meta-form.docs';
         import { ModalComponent } from '@annuadvent/ngx-common-ui/modal/src/components/modal/modal.docs';
         import { MultiSelectBoxComponent } from '@annuadvent/ngx-common-ui/multi-select-box/src/components/multi-select-box/multi-select-box.docs';
+        import { NestedNavComponent } from '@annuadvent/ngx-common-ui/nested-nav/src/components/nested-nav/nested-nav.docs';
         import { PaginationComponent } from '@annuadvent/ngx-common-ui/pagination/src/components/pagination/pagination.docs';
+        import { PictureComponent } from '@annuadvent/ngx-common-ui/picture/src/components/picture/picture.docs';
         import { SearchBoxComponent } from '@annuadvent/ngx-common-ui/search-box/src/components/search-box/search-box.docs';
         import { SingleSelectBoxComponent } from '@annuadvent/ngx-common-ui/single-select-box/src/components/single-select-box/single-select-box.docs';
         import { SlideshowComponent } from '@annuadvent/ngx-common-ui/slideshow/src/components/slideshow/slideshow.docs';
@@ -92,12 +97,14 @@
     CardFooterComponent,
     CardImageComponent,
     CardTitleComponent,
+    CategoriesTreeComponent,
     CodeBlockComponent,
     CollapsibleComponent,
     CollapsibleContentComponent,
     CollapsibleHeaderComponent,
     ColorPaletteComponent,
     DrawerComponent,
+    DynamicFormComponent,
     ElementStylesComponent,
     ErrorComponent,
     FiltersComponent,
@@ -106,11 +113,14 @@
     HamburgerComponent,
     ImageFormComponent,
     LinkFormComponent,
+    ManageCategoriesComponent,
     MenuComponent,
     MetaFormComponent,
     ModalComponent,
     MultiSelectBoxComponent,
+    NestedNavComponent,
     PaginationComponent,
+    PictureComponent,
     SearchBoxComponent,
     SingleSelectBoxComponent,
     SlideshowComponent,

@@ -1,7 +1,9 @@
 
         // ngx-common-ui imports
+        import { CategoriesService } from '@annuadvent/ngx-common-ui/categories';
         import { HighlightService } from '@annuadvent/ngx-common-ui/code-block';
         import { MetaService } from '@annuadvent/ngx-common-ui/meta';
+        import { NestedNavService } from '@annuadvent/ngx-common-ui/nested-nav';
         import { ThemeService } from '@annuadvent/ngx-common-ui/theme';
         
         // ngx-cms imports
@@ -14,6 +16,9 @@
         
         // ngx-core imports
         import { AppConfigService } from '@annuadvent/ngx-core/app-config';
+        import { FormConfigService } from '@annuadvent/ngx-core/helpers-forms';
+        import { GlobalConfigService } from '@annuadvent/ngx-core/global-config';
+        import { PincodeValidatorService } from '@annuadvent/ngx-core/helpers-forms';
         import { UtilsService } from '@annuadvent/ngx-core/utils';
         
         // ngx-tools imports
@@ -44,11 +49,12 @@
         
         // ngx-ecommerce imports
         import { AddressFormService } from '@annuadvent/ngx-ecommerce/address';
-        import { PincodeValidatorService } from '@annuadvent/ngx-ecommerce/address';
         export const libServiceClasses = {
     'ngx-common-ui': {
-        HighlightService,
+        CategoriesService,
+    HighlightService,
     MetaService,
+    NestedNavService,
     ThemeService
 },
     'ngx-cms': {
@@ -61,6 +67,9 @@
 },
     'ngx-core': {
         AppConfigService,
+    FormConfigService,
+    GlobalConfigService,
+    PincodeValidatorService,
     UtilsService
 },
     'ngx-tools': {
@@ -90,7 +99,6 @@
     SitemapService
 },
     'ngx-ecommerce': {
-        AddressFormService,
-    PincodeValidatorService
+        AddressFormService
 },
 }

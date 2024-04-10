@@ -23,75 +23,6 @@
             },
             "extends": [],
             "type": "injectable"
-        },
-        {
-            "name": "PincodeValidatorService",
-            "id": "injectable-PincodeValidatorService-abf35c98c9f2afc3eed83fd000e4c3f8ba42af0ec9151e2027842fc4b4b8fd923993582702613cd064cfabea361a37c02948cd82320ace68ef68d5238323a550",
-            "file": "projects/ngx-ecommerce/address/src/services/pincode-validator.service.ts",
-            "properties": [],
-            "methods": [
-                {
-                    "name": "validate",
-                    "args": [
-                        {
-                            "name": "control",
-                            "type": "AbstractControl",
-                            "deprecated": false,
-                            "deprecationMessage": ""
-                        }
-                    ],
-                    "optional": false,
-                    "returnType": "Observable<ValidationErrors | null>",
-                    "typeParameters": [],
-                    "line": 17,
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "jsdoctags": [
-                        {
-                            "name": "control",
-                            "type": "AbstractControl",
-                            "deprecated": false,
-                            "deprecationMessage": "",
-                            "tagName": {
-                                "text": "param"
-                            }
-                        }
-                    ]
-                }
-            ],
-            "deprecated": false,
-            "deprecationMessage": "",
-            "description": "",
-            "rawdescription": "\n",
-            "sourceCode": "import { HttpClient } from '@angular/common/http';\nimport { Injectable } from '@angular/core';\nimport {\n  AbstractControl,\n  AsyncValidator,\n  ValidationErrors,\n} from '@angular/forms';\nimport { Pincode } from '@annuadvent/ngx-core/helpers-ecommerce';\nimport { Observable, catchError, map, of } from 'rxjs';\n\n@Injectable({\n  providedIn: 'root',\n})\nexport class PincodeValidatorService implements AsyncValidator {\n  constructor(private http: HttpClient) {}\n\n  validate(control: AbstractControl): Observable<ValidationErrors | null> {\n    const id = control.value;\n\n    return this.http.get(`/api/addresses/pincode/${id}`).pipe(\n      map((pincode) => {\n        const city = control.parent.get('city');\n        const state = control.parent.get('state');\n        city.setValue((pincode as Pincode).city);\n        state.setValue((pincode as Pincode).state);\n        return null;\n      }),\n      catchError((error) => {\n        const formError: ValidationErrors = {\n          pincode: {\n            message: 'Pincode does not exist',\n          },\n        };\n\n        return of(formError);\n      })\n    );\n  }\n}\n",
-            "constructorObj": {
-                "name": "constructor",
-                "description": "",
-                "deprecated": false,
-                "deprecationMessage": "",
-                "args": [
-                    {
-                        "name": "http",
-                        "type": "HttpClient",
-                        "deprecated": false,
-                        "deprecationMessage": ""
-                    }
-                ],
-                "line": 14,
-                "jsdoctags": [
-                    {
-                        "name": "http",
-                        "type": "HttpClient",
-                        "deprecated": false,
-                        "deprecationMessage": "",
-                        "tagName": {
-                            "text": "param"
-                        }
-                    }
-                ]
-            },
-            "extends": [],
-            "type": "injectable"
         }
     ],
     "guards": [],
@@ -101,7 +32,7 @@
     "components": [
         {
             "name": "AddressComponent",
-            "id": "component-AddressComponent-3cc2e28df8b5d441b7738065036fa9e541f0dc7ecd844858d528a89f78460b746ddef696c3df1e3deeaf25a3763755779cea4e0486b2f82292c1f227f8f5f234",
+            "id": "component-AddressComponent-dcb42a30998be3daabe4226f86c1ace6d4602f0188fc122af54efdab57813d79d3103b52550a891670aae5784c614916cf24acbf424188ab45ad135c8a40ec8d",
             "file": "projects/ngx-ecommerce/address/src/components/address/address.component.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -119,6 +50,17 @@
             "viewProviders": [],
             "hostDirectives": [],
             "inputsClass": [
+                {
+                    "name": "isSingleLiner",
+                    "defaultValue": "false",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "rawdescription": "\n\nValue of type Address, that can be displayed in label kind of format.\n",
+                    "description": "<p>Value of type Address, that can be displayed in label kind of format.</p>\n",
+                    "line": 20,
+                    "type": "boolean",
+                    "decorators": []
+                },
                 {
                     "name": "value",
                     "deprecated": false,
@@ -140,7 +82,7 @@
                     "type": "",
                     "optional": false,
                     "description": "",
-                    "line": 17
+                    "line": 22
                 }
             ],
             "methodsClass": [],
@@ -153,21 +95,21 @@
             "description": "<p>Address component shows the address in label kind of format.</p>\n",
             "rawdescription": "\n\nAddress component shows the address in label kind of format.\n",
             "type": "component",
-            "sourceCode": "import { Component, Input } from '@angular/core';\nimport { Address, CountriesEnum } from '@annuadvent/ngx-core/helpers-ecommerce';\n/**\n * Address component shows the address in label kind of format.\n */\n@Component({\n  selector: 'anu-address',\n  templateUrl: './address.component.html',\n  styleUrls: ['./address.component.scss'],\n})\nexport class AddressComponent {\n  /**\n   * Value of type Address, that can be displayed in label kind of format.\n   */\n  @Input() value: Address;\n\n  countriesEnum = CountriesEnum;\n}\n",
+            "sourceCode": "import { Component, Input } from '@angular/core';\nimport { Address, CountriesEnum } from '@annuadvent/ngx-core/helpers-ecommerce';\n/**\n * Address component shows the address in label kind of format.\n */\n@Component({\n  selector: 'anu-address',\n  templateUrl: './address.component.html',\n  styleUrls: ['./address.component.scss']\n})\nexport class AddressComponent {\n  /**\n   * Value of type Address, that can be displayed in label kind of format.\n   */\n  @Input() value: Address;\n\n  /**\n   * Value of type Address, that can be displayed in label kind of format.\n   */\n  @Input() isSingleLiner: boolean = false;\n\n  countriesEnum = CountriesEnum;\n}\n",
             "assetsDirs": [],
             "styleUrlsData": [
                 {
-                    "data": ":host {\r\n  p {\r\n    margin: 0;\r\n    line-height: 1.1rem;\r\n  }\r\n}\r\n",
+                    "data": ":host {\r\n  p {\r\n    margin: 0;\r\n    line-height: 1.1rem;\r\n    word-wrap: break-word;\r\n  }\r\n\r\n  span {\r\n    display: inline;\r\n  }\r\n}\r\n",
                     "styleUrl": "./address.component.scss"
                 }
             ],
             "stylesData": "",
             "extends": [],
-            "templateData": "<label *ngIf=\"value?.firstName\"\n  >{{ value?.firstName }} {{ value?.lastName }}</label\n>\n<p *ngIf=\"value?.addressLine1\">{{ value?.addressLine1 }}</p>\n<p *ngIf=\"value?.addressLine2\">{{ value?.addressLine2 }}</p>\n<p *ngIf=\"value?.landmark\">{{ value?.landmark }}</p>\n<p *ngIf=\"value?.city\">\n  {{ value?.city }}, {{ value?.state }} - {{ value?.pincode }}\n</p>\n<p *ngIf=\"value?.countryCode\">{{ countriesEnum[value?.countryCode] }}</p>\n"
+            "templateData": "<ng-container *ngIf=\"!isSingleLiner\">\n  <label *ngIf=\"value?.firstName\"\n    >{{ value?.firstName }} {{ value?.lastName }}</label\n  >\n  <p *ngIf=\"value?.addressLine1\">{{ value?.addressLine1 }}</p>\n  <p *ngIf=\"value?.addressLine2\">{{ value?.addressLine2 }}</p>\n  <p *ngIf=\"value?.landmark\">{{ value?.landmark }}</p>\n  <p *ngIf=\"value?.city\">\n    {{ value?.city }}, {{ value?.state }} - {{ value?.pincode }}\n  </p>\n  <p *ngIf=\"value?.countryCode\">{{ countriesEnum[value?.countryCode] }}</p>\n</ng-container>\n\n<ng-container *ngIf=\"isSingleLiner\">\n  <span *ngIf=\"value?.firstName\"\n    >{{ value?.firstName }} {{ value?.lastName }}</span\n  >\n  <span *ngIf=\"value?.addressLine1\">{{ value?.addressLine1 }},</span>\n  <span *ngIf=\"value?.addressLine2\">{{ value?.addressLine2 }},</span>\n  <span *ngIf=\"value?.landmark\">{{ value?.landmark }},</span>\n  <span *ngIf=\"value?.city\">\n    {{ value?.city }}, {{ value?.state }} - {{ value?.pincode }}\n  </span>\n  <span *ngIf=\"value?.countryCode\"\n    >, {{ countriesEnum[value?.countryCode] }}</span\n  >\n</ng-container>\n"
         },
         {
             "name": "AddressFormComponent",
-            "id": "component-AddressFormComponent-598e6ca93032b04d778351aa8b4aea11438bc58eeae2d1880dec4688bb5b77386d7337f0db5fb57d7ad7cc1c629f54c30c03912ef733206047eaa939b172bc0a",
+            "id": "component-AddressFormComponent-d80b0d56b3ba929f09eadfff4042174d2fa8910b5bb83542c20fb23f67a636819f356cf458200cf876319bde88eb2ef4c8b0a7a99f10f9fec13ec53feed17456",
             "file": "projects/ngx-ecommerce/address/src/components/address-form/address-form.component.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -192,7 +134,7 @@
                     "deprecationMessage": "",
                     "rawdescription": "\n\nCancel Button Label\n",
                     "description": "<p>Cancel Button Label</p>\n",
-                    "line": 70,
+                    "line": 55,
                     "type": "string",
                     "decorators": []
                 },
@@ -203,7 +145,7 @@
                     "deprecationMessage": "",
                     "rawdescription": "\n\nShows readonly address, and editable delivery instructions\n",
                     "description": "<p>Shows readonly address, and editable delivery instructions</p>\n",
-                    "line": 55,
+                    "line": 40,
                     "type": "boolean",
                     "decorators": []
                 },
@@ -214,8 +156,30 @@
                     "deprecationMessage": "",
                     "rawdescription": "\n\nTrue if it is the default address\n",
                     "description": "<p>True if it is the default address</p>\n",
-                    "line": 60,
+                    "line": 45,
                     "type": "boolean",
+                    "decorators": []
+                },
+                {
+                    "name": "loading",
+                    "defaultValue": "false",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "rawdescription": "\n\nShows Loader\n",
+                    "description": "<p>Shows Loader</p>\n",
+                    "line": 35,
+                    "type": "boolean",
+                    "decorators": []
+                },
+                {
+                    "name": "pincodeUrl",
+                    "defaultValue": "''",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "rawdescription": "\n\nUrl to validate pincode and fetch City and its state.\nUsually an API url.\n",
+                    "description": "<p>Url to validate pincode and fetch City and its state.\nUsually an API url.</p>\n",
+                    "line": 61,
+                    "type": "string",
                     "decorators": []
                 },
                 {
@@ -225,7 +189,7 @@
                     "deprecationMessage": "",
                     "rawdescription": "\n\nSave Button Label\n",
                     "description": "<p>Save Button Label</p>\n",
-                    "line": 65,
+                    "line": 50,
                     "type": "string",
                     "decorators": []
                 },
@@ -235,7 +199,7 @@
                     "deprecationMessage": "",
                     "rawdescription": "\n\nAddress Value for Address form\n",
                     "description": "<p>Address Value for Address form</p>\n",
-                    "line": 50,
+                    "line": 30,
                     "type": "Address",
                     "decorators": []
                 }
@@ -248,7 +212,7 @@
                     "deprecationMessage": "",
                     "rawdescription": "\n\nEmit, when cancel button is clicked.\n",
                     "description": "<p>Emit, when cancel button is clicked.</p>\n",
-                    "line": 91,
+                    "line": 82,
                     "type": "EventEmitter"
                 },
                 {
@@ -258,7 +222,7 @@
                     "deprecationMessage": "",
                     "rawdescription": "\n\nEmit address value from form, when blur happens from any of the form fields.\n",
                     "description": "<p>Emit address value from form, when blur happens from any of the form fields.</p>\n",
-                    "line": 75,
+                    "line": 66,
                     "type": "EventEmitter"
                 },
                 {
@@ -268,7 +232,7 @@
                     "deprecationMessage": "",
                     "rawdescription": "\n\nEmit if address is changed to default or otherwise.\n",
                     "description": "<p>Emit if address is changed to default or otherwise.</p>\n",
-                    "line": 81,
+                    "line": 72,
                     "type": "EventEmitter"
                 },
                 {
@@ -278,139 +242,23 @@
                     "deprecationMessage": "",
                     "rawdescription": "\n\nEmit address value from form, when submit button is clicked.\n",
                     "description": "<p>Emit address value from form, when submit button is clicked.</p>\n",
-                    "line": 86,
+                    "line": 77,
                     "type": "EventEmitter"
                 }
             ],
             "propertiesClass": [
                 {
-                    "name": "addressTypeItems",
-                    "defaultValue": "[]",
+                    "name": "addressParams",
+                    "defaultValue": "addressParams",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "type": "[]",
+                    "type": "FormConfigGroup",
                     "optional": false,
                     "description": "",
-                    "line": 101
-                },
-                {
-                    "name": "addressTypeSelected",
-                    "defaultValue": "null",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "null",
-                    "optional": false,
-                    "description": "",
-                    "line": 102
-                },
-                {
-                    "name": "addressTypesEnum",
-                    "defaultValue": "AddressTypesEnum",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "",
-                    "optional": false,
-                    "description": "",
-                    "line": 100
-                },
-                {
-                    "name": "countriesEnum",
-                    "defaultValue": "CountriesEnum",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "",
-                    "optional": false,
-                    "description": "",
-                    "line": 99
-                },
-                {
-                    "name": "fm",
-                    "defaultValue": "null",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "FormGroup",
-                    "optional": false,
-                    "description": "",
-                    "line": 93
-                },
-                {
-                    "name": "indianStatesEnum",
-                    "defaultValue": "IndianStatesEnum",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "",
-                    "optional": false,
-                    "description": "",
-                    "line": 98
-                },
-                {
-                    "name": "spinnerMode",
-                    "defaultValue": "SpinnerMode",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "",
-                    "optional": false,
-                    "description": "",
-                    "line": 94
-                },
-                {
-                    "name": "submitTried",
-                    "defaultValue": "false",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "",
-                    "optional": false,
-                    "description": "",
-                    "line": 95
+                    "line": 84
                 }
             ],
             "methodsClass": [
-                {
-                    "name": "initAddressType",
-                    "args": [],
-                    "optional": false,
-                    "returnType": "void",
-                    "typeParameters": [],
-                    "line": 166,
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "modifierKind": [
-                        123
-                    ]
-                },
-                {
-                    "name": "initForm",
-                    "args": [
-                        {
-                            "name": "value",
-                            "type": "Address",
-                            "deprecated": false,
-                            "deprecationMessage": "",
-                            "defaultValue": "null"
-                        }
-                    ],
-                    "optional": false,
-                    "returnType": "void",
-                    "typeParameters": [],
-                    "line": 181,
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "modifierKind": [
-                        123
-                    ],
-                    "jsdoctags": [
-                        {
-                            "name": "value",
-                            "type": "Address",
-                            "deprecated": false,
-                            "deprecationMessage": "",
-                            "defaultValue": "null",
-                            "tagName": {
-                                "text": "param"
-                            }
-                        }
-                    ]
-                },
                 {
                     "name": "ngOnChanges",
                     "args": [
@@ -424,7 +272,7 @@
                     "optional": false,
                     "returnType": "void",
                     "typeParameters": [],
-                    "line": 121,
+                    "line": 92,
                     "deprecated": false,
                     "deprecationMessage": "",
                     "jsdoctags": [
@@ -445,40 +293,9 @@
                     "optional": false,
                     "returnType": "void",
                     "typeParameters": [],
-                    "line": 117,
+                    "line": 88,
                     "deprecated": false,
                     "deprecationMessage": ""
-                },
-                {
-                    "name": "onAddressTypeChange",
-                    "args": [
-                        {
-                            "name": "item",
-                            "type": "any",
-                            "deprecated": false,
-                            "deprecationMessage": ""
-                        }
-                    ],
-                    "optional": false,
-                    "returnType": "void",
-                    "typeParameters": [],
-                    "line": 321,
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "modifierKind": [
-                        125
-                    ],
-                    "jsdoctags": [
-                        {
-                            "name": "item",
-                            "type": "any",
-                            "deprecated": false,
-                            "deprecationMessage": "",
-                            "tagName": {
-                                "text": "param"
-                            }
-                        }
-                    ]
                 },
                 {
                     "name": "onCancel",
@@ -493,7 +310,7 @@
                     "optional": false,
                     "returnType": "void",
                     "typeParameters": [],
-                    "line": 317,
+                    "line": 116,
                     "deprecated": false,
                     "deprecationMessage": "",
                     "modifierKind": [
@@ -512,42 +329,11 @@
                     ]
                 },
                 {
-                    "name": "onDefaultClick",
-                    "args": [
-                        {
-                            "name": "event",
-                            "type": "any",
-                            "deprecated": false,
-                            "deprecationMessage": ""
-                        }
-                    ],
-                    "optional": false,
-                    "returnType": "void",
-                    "typeParameters": [],
-                    "line": 337,
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "modifierKind": [
-                        125
-                    ],
-                    "jsdoctags": [
-                        {
-                            "name": "event",
-                            "type": "any",
-                            "deprecated": false,
-                            "deprecationMessage": "",
-                            "tagName": {
-                                "text": "param"
-                            }
-                        }
-                    ]
-                },
-                {
-                    "name": "onDeliveryInstructionChange",
+                    "name": "onChange",
                     "args": [
                         {
                             "name": "value",
-                            "type": "DeliveryInstruction",
+                            "type": "Address",
                             "deprecated": false,
                             "deprecationMessage": ""
                         }
@@ -555,7 +341,7 @@
                     "optional": false,
                     "returnType": "void",
                     "typeParameters": [],
-                    "line": 329,
+                    "line": 106,
                     "deprecated": false,
                     "deprecationMessage": "",
                     "modifierKind": [
@@ -564,7 +350,7 @@
                     "jsdoctags": [
                         {
                             "name": "value",
-                            "type": "DeliveryInstruction",
+                            "type": "Address",
                             "deprecated": false,
                             "deprecationMessage": "",
                             "tagName": {
@@ -574,11 +360,11 @@
                     ]
                 },
                 {
-                    "name": "onDeliveryInstructionStatusChange",
+                    "name": "onControlValueChange",
                     "args": [
                         {
-                            "name": "error",
-                            "type": "ValidationErrors",
+                            "name": "value",
+                            "type": "FormControlValue",
                             "deprecated": false,
                             "deprecationMessage": ""
                         }
@@ -586,7 +372,7 @@
                     "optional": false,
                     "returnType": "void",
                     "typeParameters": [],
-                    "line": 333,
+                    "line": 110,
                     "deprecated": false,
                     "deprecationMessage": "",
                     "modifierKind": [
@@ -594,8 +380,8 @@
                     ],
                     "jsdoctags": [
                         {
-                            "name": "error",
-                            "type": "ValidationErrors",
+                            "name": "value",
+                            "type": "FormControlValue",
                             "deprecated": false,
                             "deprecationMessage": "",
                             "tagName": {
@@ -608,8 +394,8 @@
                     "name": "onSubmit",
                     "args": [
                         {
-                            "name": "event",
-                            "type": "any",
+                            "name": "value",
+                            "type": "Address",
                             "deprecated": false,
                             "deprecationMessage": ""
                         }
@@ -617,7 +403,7 @@
                     "optional": false,
                     "returnType": "void",
                     "typeParameters": [],
-                    "line": 298,
+                    "line": 102,
                     "deprecated": false,
                     "deprecationMessage": "",
                     "modifierKind": [
@@ -625,8 +411,8 @@
                     ],
                     "jsdoctags": [
                         {
-                            "name": "event",
-                            "type": "any",
+                            "name": "value",
+                            "type": "Address",
                             "deprecated": false,
                             "deprecationMessage": "",
                             "tagName": {
@@ -636,34 +422,16 @@
                     ]
                 },
                 {
-                    "name": "setDeliveryInstructionForAddressType",
-                    "args": [
-                        {
-                            "name": "addressType",
-                            "type": "AddressTypesEnum",
-                            "deprecated": false,
-                            "deprecationMessage": ""
-                        }
-                    ],
+                    "name": "setPincodeUrl",
+                    "args": [],
                     "optional": false,
                     "returnType": "void",
                     "typeParameters": [],
-                    "line": 273,
+                    "line": 96,
                     "deprecated": false,
                     "deprecationMessage": "",
                     "modifierKind": [
                         123
-                    ],
-                    "jsdoctags": [
-                        {
-                            "name": "addressType",
-                            "type": "AddressTypesEnum",
-                            "deprecated": false,
-                            "deprecationMessage": "",
-                            "tagName": {
-                                "text": "param"
-                            }
-                        }
                     ]
                 }
             ],
@@ -676,7 +444,7 @@
             "description": "<p>Address Form component. Add/edit/delete an Address</p>\n",
             "rawdescription": "\n\nAddress Form component. Add/edit/delete an Address\n",
             "type": "component",
-            "sourceCode": "import {\n  Component,\n  ElementRef,\n  EventEmitter,\n  Input,\n  OnChanges,\n  OnInit,\n  Output,\n  SimpleChanges,\n} from '@angular/core';\nimport {\n  AbstractControl,\n  FormBuilder,\n  FormGroup,\n  ValidationErrors,\n  Validators,\n} from '@angular/forms';\nimport {\n  ADDRESS_FIELD_LENGTH,\n  Address,\n  AddressTypesEnum,\n  CountriesEnum,\n  DeliveryInstruction,\n} from '@annuadvent/ngx-core/helpers-ecommerce';\nimport {\n  IndianStatesEnum,\n  WeekDaysEnum,\n} from '@annuadvent/ngx-core/helpers-ecommerce';\nimport { PincodeValidatorService } from '../../services/pincode-validator.service';\nimport { SpinnerMode } from '@annuadvent/ngx-common-ui/spinner';\nimport {\n  companyValidator,\n  mobilePhoneValidator,\n  trimSpacesValidator,\n} from '../../constants/address.validators';\nimport { EnumToArrayPipe } from '@annuadvent/ngx-core/utils';\n\n/**\n * Address Form component. Add/edit/delete an Address\n */\n@Component({\n  selector: 'anu-address-form',\n  templateUrl: './address-form.component.html',\n  styleUrls: ['./address-form.component.scss'],\n})\nexport class AddressFormComponent implements OnInit, OnChanges {\n  /**\n   * Address Value for Address form\n   */\n  @Input() value: Address;\n\n  /**\n   * Shows readonly address, and editable delivery instructions\n   */\n  @Input() instructionsOnly: boolean = false;\n\n  /**\n   * True if it is the default address\n   */\n  @Input() isDefault: boolean = false;\n\n  /**\n   * Save Button Label\n   */\n  @Input() saveBtnLabel: string = 'Save';\n\n  /**\n   * Cancel Button Label\n   */\n  @Input() cancelBtnLabel: string = 'Cancel';\n\n  /**\n   * Emit address value from form, when blur happens from any of the form fields.\n   */\n  @Output() changed = new EventEmitter<Address>();\n\n  /**\n   * Emit if address is changed to default or otherwise.\n   */\n\n  @Output() defaultChanged = new EventEmitter<boolean>();\n\n  /**\n   * Emit address value from form, when submit button is clicked.\n   */\n  @Output() submitClicked = new EventEmitter<Address>();\n\n  /**\n   * Emit, when cancel button is clicked.\n   */\n  @Output() cancelClicked = new EventEmitter<void>();\n\n  fm: FormGroup = null;\n  spinnerMode = SpinnerMode;\n  submitTried = false;\n\n  // List Varibales\n  indianStatesEnum = IndianStatesEnum;\n  countriesEnum = CountriesEnum;\n  addressTypesEnum = AddressTypesEnum;\n  addressTypeItems = [];\n  addressTypeSelected = null;\n\n  constructor(\n    private fb: FormBuilder,\n    private el: ElementRef,\n    private enumToArrayPipe: EnumToArrayPipe,\n    private pincodeValidatorService: PincodeValidatorService\n  ) {\n    this.initForm();\n    this.fm.valueChanges.subscribe((value) => {\n      const address: Address = { ...this.value, ...this.fm.getRawValue() };\n      this.changed.emit(address);\n    });\n  }\n\n  ngOnInit(): void {\n    this.initForm(this.value);\n  }\n\n  ngOnChanges(changes: SimpleChanges): void {\n    this.initForm(this.value);\n  }\n\n  // Getters\n  public get firstName(): AbstractControl {\n    return this.fm.get('firstName');\n  }\n\n  public get lastName(): AbstractControl {\n    return this.fm.get('lastName');\n  }\n\n  public get addressLine1(): AbstractControl {\n    return this.fm.get('addressLine1');\n  }\n\n  public get addressLine2(): AbstractControl {\n    return this.fm.get('addressLine2');\n  }\n\n  public get landmark(): AbstractControl {\n    return this.fm.get('landmark');\n  }\n\n  public get pincode(): AbstractControl {\n    return this.fm.get('pincode');\n  }\n\n  public get phoneNumber(): AbstractControl {\n    return this.fm.get('phoneNumber');\n  }\n\n  public get addressType(): AbstractControl {\n    return this.fm.get('addressType');\n  }\n\n  public get company(): AbstractControl {\n    return this.fm.get('company');\n  }\n\n  public get deliveryInstruction(): AbstractControl {\n    return this.fm.get('deliveryInstruction');\n  }\n\n  private initAddressType(): void {\n    // Fill AddressType Items\n    this.addressTypeItems = this.enumToArrayPipe\n      .transform(AddressTypesEnum)\n      .map((it) => ({\n        key: it,\n        value: it,\n      }));\n    // Set addressType selected Item\n    this.addressTypeSelected = {\n      key: this.addressType.value,\n      value: this.addressType.value,\n    };\n  }\n\n  private initForm(value: Address = null): void {\n    value = value || new Address();\n    if (this.fm) {\n      this.fm.patchValue(value, { emitEvent: false });\n      return;\n    }\n\n    this.fm = this.fb.group(\n      {\n        addressType: [\n          value.addressType,\n          [trimSpacesValidator, Validators.required],\n        ],\n        firstName: [\n          value.firstName,\n          [\n            Validators.required,\n            Validators.maxLength(ADDRESS_FIELD_LENGTH),\n            trimSpacesValidator,\n          ],\n        ],\n        lastName: [\n          value.lastName,\n          [trimSpacesValidator, Validators.maxLength(ADDRESS_FIELD_LENGTH)],\n        ],\n        company: [\n          value.company,\n          [trimSpacesValidator, Validators.maxLength(ADDRESS_FIELD_LENGTH)],\n        ],\n        addressLine1: [\n          value.addressLine1,\n          [\n            Validators.required,\n            Validators.maxLength(ADDRESS_FIELD_LENGTH),\n            trimSpacesValidator,\n          ],\n        ],\n        addressLine2: [\n          value.addressLine2,\n          [trimSpacesValidator, Validators.maxLength(ADDRESS_FIELD_LENGTH)],\n        ],\n        landmark: [\n          value.landmark,\n          [trimSpacesValidator, Validators.maxLength(ADDRESS_FIELD_LENGTH)],\n        ],\n        city: [\n          { value: value.city, disabled: true },\n          [Validators.required],\n          [],\n        ],\n        state: [\n          { value: value.state, disabled: true },\n          [Validators.required],\n          [],\n        ],\n        pincode: [\n          value.pincode,\n          [\n            trimSpacesValidator,\n            Validators.required,\n            Validators.minLength(6),\n            Validators.maxLength(6),\n          ],\n          [\n            this.pincodeValidatorService.validate.bind(\n              this.pincodeValidatorService\n            ),\n          ],\n          {\n            updateOn: 'blur',\n          },\n        ],\n        countryCode: [\n          { value: value.countryCode, disabled: true },\n          [Validators.required],\n          [],\n        ],\n        phoneNumber: [\n          value.phoneNumber,\n          [trimSpacesValidator, Validators.required, mobilePhoneValidator],\n        ],\n        deliveryInstruction: [value.deliveryInstruction, [Validators.required]],\n      },\n      {\n        validators: [companyValidator],\n        updateOn: 'blur',\n      }\n    );\n\n    this.initAddressType();\n  }\n\n  private setDeliveryInstructionForAddressType(\n    addressType: AddressTypesEnum\n  ): void {\n    let offDays = [];\n\n    switch (addressType) {\n      case AddressTypesEnum.Business:\n        offDays = [WeekDaysEnum.Saturday, WeekDaysEnum.Sunday];\n        break;\n      case AddressTypesEnum.Apartment:\n        offDays = [WeekDaysEnum.Sunday];\n        break;\n      case AddressTypesEnum.Other:\n        offDays = [WeekDaysEnum.Saturday, WeekDaysEnum.Sunday];\n        break;\n      default:\n        offDays = [];\n    }\n\n    this.deliveryInstruction.patchValue({\n      ...this.deliveryInstruction.value,\n      offDays,\n    });\n  }\n\n  public onSubmit(event: any): void {\n    // Show all invalid fields' errors.\n    this.fm.markAllAsTouched();\n    this.submitTried = true;\n\n    if (this.fm.valid) {\n      // Emit Submit\n      const address: Address = { ...this.value, ...this.fm.getRawValue() };\n      this.submitClicked.emit(address);\n    } else {\n      // Focus to the first errored field\n      const erroredElements =\n        this.el.nativeElement.querySelectorAll('form .ng-invalid');\n      erroredElements &&\n        erroredElements.length &&\n        (erroredElements[0] as HTMLElement).focus();\n    }\n  }\n\n  public onCancel(event: any): void {\n    this.cancelClicked.emit();\n  }\n\n  public onAddressTypeChange(item: any): void {\n    this.addressTypeSelected = item;\n    this.addressType.setValue(item.value);\n\n    // Chnage Off days for delivery accordingly\n    this.setDeliveryInstructionForAddressType(item.value);\n  }\n\n  public onDeliveryInstructionChange(value: DeliveryInstruction): void {\n    this.deliveryInstruction.setValue(value);\n  }\n\n  public onDeliveryInstructionStatusChange(error: ValidationErrors): void {\n    this.deliveryInstruction.setErrors(error);\n  }\n\n  public onDefaultClick(event: any): void {\n    const checked = event.target.checked;\n    this.defaultChanged.emit(checked);\n  }\n}\n",
+            "sourceCode": "import {\n  Component,\n  EventEmitter,\n  Input,\n  OnChanges,\n  OnInit,\n  Output,\n  SimpleChanges\n} from '@angular/core';\n\nimport { Address } from '@annuadvent/ngx-core/helpers-ecommerce';\nimport {\n  FormConfigGroup,\n  FormControlValue\n} from '@annuadvent/ngx-core/helpers-forms';\nimport { addressParams } from '../../constants/address-params.constant';\n\n/**\n * Address Form component. Add/edit/delete an Address\n */\n@Component({\n  selector: 'anu-address-form',\n  templateUrl: './address-form.component.html',\n  styleUrls: ['./address-form.component.scss']\n})\nexport class AddressFormComponent implements OnInit, OnChanges {\n  /**\n   * Address Value for Address form\n   */\n  @Input() value: Address;\n\n  /**\n   * Shows Loader\n   */\n  @Input() loading: boolean = false;\n\n  /**\n   * Shows readonly address, and editable delivery instructions\n   */\n  @Input() instructionsOnly: boolean = false;\n\n  /**\n   * True if it is the default address\n   */\n  @Input() isDefault: boolean = false;\n\n  /**\n   * Save Button Label\n   */\n  @Input() saveBtnLabel: string = 'Save';\n\n  /**\n   * Cancel Button Label\n   */\n  @Input() cancelBtnLabel: string = 'Cancel';\n\n  /**\n   * Url to validate pincode and fetch City and its state.\n   * Usually an API url.\n   */\n  @Input() pincodeUrl: string = '';\n\n  /**\n   * Emit address value from form, when blur happens from any of the form fields.\n   */\n  @Output() changed = new EventEmitter<Address>();\n\n  /**\n   * Emit if address is changed to default or otherwise.\n   */\n\n  @Output() defaultChanged = new EventEmitter<boolean>();\n\n  /**\n   * Emit address value from form, when submit button is clicked.\n   */\n  @Output() submitClicked = new EventEmitter<Address>();\n\n  /**\n   * Emit, when cancel button is clicked.\n   */\n  @Output() cancelClicked = new EventEmitter<void>();\n\n  addressParams: FormConfigGroup = addressParams;\n\n  constructor() {}\n\n  ngOnInit(): void {\n    this.setPincodeUrl();\n  }\n\n  ngOnChanges(changes: SimpleChanges): void {\n    (changes.pincodeUrl || changes.value) && this.setPincodeUrl();\n  }\n\n  private setPincodeUrl(): void {\n    this.addressParams['pincode'].asyncValidators.find(\n      (avd) => avd.name === 'PincodeValidatorService'\n    ).url = this.pincodeUrl;\n  }\n\n  public onSubmit(value: Address): void {\n    this.submitClicked.emit(value);\n  }\n\n  public onChange(value: Address): void {\n    this.changed.emit(value);\n  }\n\n  public onControlValueChange(value: FormControlValue): void {\n    if (value.key === 'isDefault') {\n      this.defaultChanged.emit(value?.value);\n    }\n  }\n\n  public onCancel(event: any): void {\n    this.cancelClicked.emit();\n  }\n}\n",
             "assetsDirs": [],
             "styleUrlsData": [
                 {
@@ -690,174 +458,19 @@
                 "description": "",
                 "deprecated": false,
                 "deprecationMessage": "",
-                "args": [
-                    {
-                        "name": "fb",
-                        "type": "FormBuilder",
-                        "deprecated": false,
-                        "deprecationMessage": ""
-                    },
-                    {
-                        "name": "el",
-                        "type": "ElementRef",
-                        "deprecated": false,
-                        "deprecationMessage": ""
-                    },
-                    {
-                        "name": "enumToArrayPipe",
-                        "type": "EnumToArrayPipe",
-                        "deprecated": false,
-                        "deprecationMessage": ""
-                    },
-                    {
-                        "name": "pincodeValidatorService",
-                        "type": "PincodeValidatorService",
-                        "deprecated": false,
-                        "deprecationMessage": ""
-                    }
-                ],
-                "line": 102,
-                "jsdoctags": [
-                    {
-                        "name": "fb",
-                        "type": "FormBuilder",
-                        "deprecated": false,
-                        "deprecationMessage": "",
-                        "tagName": {
-                            "text": "param"
-                        }
-                    },
-                    {
-                        "name": "el",
-                        "type": "ElementRef",
-                        "deprecated": false,
-                        "deprecationMessage": "",
-                        "tagName": {
-                            "text": "param"
-                        }
-                    },
-                    {
-                        "name": "enumToArrayPipe",
-                        "type": "EnumToArrayPipe",
-                        "deprecated": false,
-                        "deprecationMessage": "",
-                        "tagName": {
-                            "text": "param"
-                        }
-                    },
-                    {
-                        "name": "pincodeValidatorService",
-                        "type": "PincodeValidatorService",
-                        "deprecated": false,
-                        "deprecationMessage": "",
-                        "tagName": {
-                            "text": "param"
-                        }
-                    }
-                ]
+                "args": [],
+                "line": 84
             },
             "extends": [],
             "implements": [
                 "OnInit",
                 "OnChanges"
             ],
-            "accessors": {
-                "firstName": {
-                    "name": "firstName",
-                    "getSignature": {
-                        "name": "firstName",
-                        "type": "",
-                        "returnType": "AbstractControl",
-                        "line": 126
-                    }
-                },
-                "lastName": {
-                    "name": "lastName",
-                    "getSignature": {
-                        "name": "lastName",
-                        "type": "",
-                        "returnType": "AbstractControl",
-                        "line": 130
-                    }
-                },
-                "addressLine1": {
-                    "name": "addressLine1",
-                    "getSignature": {
-                        "name": "addressLine1",
-                        "type": "",
-                        "returnType": "AbstractControl",
-                        "line": 134
-                    }
-                },
-                "addressLine2": {
-                    "name": "addressLine2",
-                    "getSignature": {
-                        "name": "addressLine2",
-                        "type": "",
-                        "returnType": "AbstractControl",
-                        "line": 138
-                    }
-                },
-                "landmark": {
-                    "name": "landmark",
-                    "getSignature": {
-                        "name": "landmark",
-                        "type": "",
-                        "returnType": "AbstractControl",
-                        "line": 142
-                    }
-                },
-                "pincode": {
-                    "name": "pincode",
-                    "getSignature": {
-                        "name": "pincode",
-                        "type": "",
-                        "returnType": "AbstractControl",
-                        "line": 146
-                    }
-                },
-                "phoneNumber": {
-                    "name": "phoneNumber",
-                    "getSignature": {
-                        "name": "phoneNumber",
-                        "type": "",
-                        "returnType": "AbstractControl",
-                        "line": 150
-                    }
-                },
-                "addressType": {
-                    "name": "addressType",
-                    "getSignature": {
-                        "name": "addressType",
-                        "type": "",
-                        "returnType": "AbstractControl",
-                        "line": 154
-                    }
-                },
-                "company": {
-                    "name": "company",
-                    "getSignature": {
-                        "name": "company",
-                        "type": "",
-                        "returnType": "AbstractControl",
-                        "line": 158
-                    }
-                },
-                "deliveryInstruction": {
-                    "name": "deliveryInstruction",
-                    "getSignature": {
-                        "name": "deliveryInstruction",
-                        "type": "",
-                        "returnType": "AbstractControl",
-                        "line": 162
-                    }
-                }
-            },
-            "templateData": "<form class=\"form-group container\" [formGroup]=\"fm\">\r\n  <!-- Readonly Address -->\r\n  <div *ngIf=\"instructionsOnly\" class=\"row\">\r\n    <anu-address [value]=\"value\"></anu-address>\r\n  </div>\r\n\r\n  <ng-container *ngIf=\"!instructionsOnly\">\r\n    <div class=\"row\">\r\n      <div class=\"spacing-around-v col-6\">\r\n        <label for=\"countryCode\">Country</label>\r\n\r\n        <select id=\"countryCode\" formControlName=\"countryCode\">\r\n          <option\r\n            *ngFor=\"let ct of countriesEnum | objectToArray\"\r\n            [value]=\"ct.key\"\r\n          >\r\n            {{ ct?.value }}\r\n          </option>\r\n        </select>\r\n      </div>\r\n\r\n      <div class=\"spacing-around-v col-6 relative\">\r\n        <label for=\"pincode\">Pincode</label>\r\n        <input\r\n          id=\"pincode\"\r\n          type=\"text\"\r\n          formControlName=\"pincode\"\r\n          placeholder=\"6 digits [0-9] PIN code\"\r\n        />\r\n        <anu-form-error\r\n          *ngIf=\"pincode.invalid && (pincode.touched || pincode.dirty)\"\r\n          [errors]=\"pincode.errors\"\r\n        ></anu-form-error>\r\n        <anu-spinner\r\n          [show]=\"pincode.pending\"\r\n          speed=\"fast\"\r\n          [mode]=\"spinnerMode.Progress\"\r\n        ></anu-spinner>\r\n      </div>\r\n    </div>\r\n\r\n    <div class=\"row\">\r\n      <div class=\"spacing-around-v col-6\">\r\n        <label for=\"state\">State</label>\r\n        <select id=\"state\" formControlName=\"state\">\r\n          <option\r\n            *ngFor=\"let st of indianStatesEnum | enumToArray\"\r\n            [value]=\"st\"\r\n          >\r\n            {{ st }}\r\n          </option>\r\n        </select>\r\n      </div>\r\n\r\n      <div class=\"spacing-around-v col-6\">\r\n        <label for=\"city\">City</label>\r\n        <input id=\"city\" type=\"text\" formControlName=\"city\" />\r\n      </div>\r\n    </div>\r\n\r\n    <div class=\"row\">\r\n      <div class=\"spacing-around-v col-6\">\r\n        <label for=\"firstName\">First Name</label>\r\n        <input\r\n          id=\"firstName\"\r\n          type=\"text\"\r\n          formControlName=\"firstName\"\r\n          placeholder=\"First Name\"\r\n        />\r\n        <anu-form-error\r\n          *ngIf=\"firstName.invalid && (firstName.touched || firstName.dirty)\"\r\n          [errors]=\"firstName.errors\"\r\n          class=\"container\"\r\n        >\r\n        </anu-form-error>\r\n      </div>\r\n\r\n      <div class=\"spacing-around-v col-6\">\r\n        <label for=\"lastName\">Last Name</label>\r\n        <input\r\n          id=\"lastName\"\r\n          type=\"text\"\r\n          formControlName=\"lastName\"\r\n          placeholder=\"Last Name (optional)\"\r\n        />\r\n        <anu-form-error\r\n          *ngIf=\"lastName.invalid && (lastName.touched || lastName.dirty)\"\r\n          [errors]=\"lastName.errors\"\r\n        ></anu-form-error>\r\n      </div>\r\n    </div>\r\n\r\n    <div class=\"spacing-around-v\">\r\n      <label for=\"addressLine1\">Street / locality / village</label>\r\n      <input\r\n        id=\"addressLine1\"\r\n        type=\"text\"\r\n        formControlName=\"addressLine1\"\r\n        placeholder=\"Street address, P.O. box, company name, c/o\"\r\n      />\r\n      <anu-form-error\r\n        *ngIf=\"\r\n          addressLine1.invalid && (addressLine1.touched || addressLine1.dirty)\r\n        \"\r\n        [errors]=\"addressLine1.errors\"\r\n      ></anu-form-error>\r\n    </div>\r\n\r\n    <div class=\"spacing-around-v\">\r\n      <label for=\"addressLine2\" class=\"hidden\">Address Line 2</label>\r\n      <input\r\n        id=\"addressLine2\"\r\n        type=\"text\"\r\n        formControlName=\"addressLine2\"\r\n        placeholder=\"Apartment, suite, unit, building, floor, etc. (optional)\"\r\n      />\r\n      <anu-form-error\r\n        *ngIf=\"\r\n          addressLine2.invalid && (addressLine2.touched || addressLine2.dirty)\r\n        \"\r\n        [errors]=\"addressLine2.errors\"\r\n      ></anu-form-error>\r\n    </div>\r\n    <div class=\"spacing-around-v\">\r\n      <label for=\"landmark\">Landmark</label>\r\n      <input\r\n        id=\"landmark\"\r\n        type=\"text\"\r\n        formControlName=\"landmark\"\r\n        placeholder=\"Nearest landmark (optional)\"\r\n      />\r\n      <anu-form-error\r\n        *ngIf=\"landmark.invalid && (landmark.touched || landmark.dirty)\"\r\n        [errors]=\"landmark.errors\"\r\n      ></anu-form-error>\r\n    </div>\r\n\r\n    <div class=\"spacing-around-v\">\r\n      <label for=\"phoneNumber\"\r\n        >Mobile Phone <small> (May be used to assist delivery) </small></label\r\n      >\r\n      <input id=\"phoneNumber\" type=\"text\" formControlName=\"phoneNumber\" />\r\n      <anu-form-error\r\n        *ngIf=\"\r\n          phoneNumber.invalid && (phoneNumber.touched || phoneNumber.dirty)\r\n        \"\r\n        [errors]=\"phoneNumber.errors\"\r\n      ></anu-form-error>\r\n    </div>\r\n\r\n    <!-- Make Default Address -->\r\n    <div class=\"spacing-around-v row\">\r\n      <label class=\"form-control\">\r\n        <input\r\n          type=\"checkbox\"\r\n          class=\"form-check-input\"\r\n          [checked]=\"isDefault\"\r\n          [value]=\"isDefault\"\r\n          (change)=\"onDefaultClick($event)\"\r\n        />\r\n        <span>Make this my default address</span>\r\n      </label>\r\n    </div>\r\n  </ng-container>\r\n\r\n  <!-- Deliver Instructions -->\r\n  <div class=\"spacing-around-v\">\r\n    <label for=\"addressType\">Please select an address type</label>\r\n\r\n    <anu-single-select-box\r\n      id=\"addressType\"\r\n      keyField=\"key\"\r\n      labelField=\"value\"\r\n      [items]=\"addressTypeItems\"\r\n      [selectedItem]=\"addressTypeSelected\"\r\n      (changed)=\"onAddressTypeChange($event)\"\r\n    >\r\n    </anu-single-select-box>\r\n\r\n    <anu-form-error\r\n      *ngIf=\"addressType.invalid && (addressType.touched || addressType.dirty)\"\r\n      [errors]=\"addressType.errors\"\r\n    ></anu-form-error>\r\n  </div>\r\n\r\n  <div class=\"spacing-around-v\">\r\n    <anu-collapsible\r\n      [collapsed]=\"true\"\r\n      [hamBurgerClassNames]=\"[\r\n        'size-sm',\r\n        'secondary-light-grad-h',\r\n        ' spacing-half'\r\n      ]\"\r\n      [isDropdownStyle]=\"true\"\r\n    >\r\n      <anu-collapsible-header>\r\n        <strong>Add delivery instructions.</strong>\r\n      </anu-collapsible-header>\r\n      <anu-collapsible-content>\r\n        <div\r\n          class=\"spacing-around-v\"\r\n          *ngIf=\"addressType.value === addressTypesEnum.Business\"\r\n        >\r\n          <label for=\"company\">Company Name</label>\r\n          <input\r\n            id=\"company\"\r\n            type=\"text\"\r\n            formControlName=\"company\"\r\n            placeholder=\"Office, retail store, hotel, hospital, malls, etc.\"\r\n          />\r\n          <anu-form-error\r\n            *ngIf=\"company.invalid && (company.touched || company.dirty)\"\r\n            [errors]=\"company.errors\"\r\n          ></anu-form-error>\r\n        </div>\r\n\r\n        <div class=\"spacing-around-v\">\r\n          <anu-delivery-instruction-form\r\n            [value]=\"deliveryInstruction.value\"\r\n            (changed)=\"onDeliveryInstructionChange($event)\"\r\n            (statusChanged)=\"onDeliveryInstructionStatusChange($event)\"\r\n          >\r\n          </anu-delivery-instruction-form>\r\n        </div>\r\n      </anu-collapsible-content>\r\n    </anu-collapsible>\r\n  </div>\r\n\r\n  <div *ngIf=\"fm.invalid && submitTried\" class=\"row center\">\r\n    <label class=\"error\"\r\n      >Address has errors, please recheck your address above.</label\r\n    >\r\n  </div>\r\n\r\n  <div class=\"row center\">\r\n    <input\r\n      type=\"submit\"\r\n      class=\"btn primary\"\r\n      (click)=\"onSubmit($event)\"\r\n      [value]=\"saveBtnLabel\"\r\n    />\r\n    <input\r\n      type=\"button\"\r\n      class=\"btn primary\"\r\n      (click)=\"onCancel($event)\"\r\n      [value]=\"cancelBtnLabel\"\r\n    />\r\n  </div>\r\n</form>\r\n"
+            "templateData": "<!-- Readonly Address -->\r\n<div *ngIf=\"instructionsOnly\" class=\"row\">\r\n  <anu-address [value]=\"value\"></anu-address>\r\n</div>\r\n\r\n<ng-container *ngIf=\"!instructionsOnly\">\r\n  <anu-dynamic-form\r\n    [params]=\"addressParams\"\r\n    [loading]=\"loading\"\r\n    [value]=\"value\"\r\n    [cancelBtnLabel]=\"cancelBtnLabel\"\r\n    [saveBtnLabel]=\"saveBtnLabel\"\r\n    (cancelClicked)=\"onCancel($event)\"\r\n    (submitClicked)=\"onSubmit($event)\"\r\n    (changed)=\"onChange($event)\"\r\n    (controlValueChanged)=\"onControlValueChange($event)\"\r\n  ></anu-dynamic-form>\r\n</ng-container>\r\n"
         },
         {
             "name": "AddressListComponent",
-            "id": "component-AddressListComponent-8810a3f318df5a99007f409187ba777d52b7c0093ad1294f6622dab719e1579665a8baec7f67a0af2d485b24710b68fa69917b9c6a14e62c011e235ba5897bcc",
+            "id": "component-AddressListComponent-eca6196f8ec5b22e0c573d236e8a3ba4315985a464dcec2352a59f18dce7adeb86231104e0cbdb2669e021fa6f43da4a22d67c3be59bd2498627e985a610159a",
             "file": "projects/ngx-ecommerce/address/src/components/address-list/address-list.component.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -932,7 +545,7 @@
                 },
                 {
                     "name": "enableSelect",
-                    "defaultValue": "true",
+                    "defaultValue": "false",
                     "deprecated": false,
                     "deprecationMessage": "",
                     "rawdescription": "\n\nenables to select an address from the list.\nShows the the address in plain list view.\nAlso emits selected event.\n",
@@ -1078,7 +691,7 @@
                     "optional": false,
                     "returnType": "void",
                     "typeParameters": [],
-                    "line": 115,
+                    "line": 116,
                     "deprecated": false,
                     "deprecationMessage": "",
                     "modifierKind": [
@@ -1299,7 +912,7 @@
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import { Component, EventEmitter, Input, Output } from '@angular/core';\nimport { Address } from '@annuadvent/ngx-core/helpers-ecommerce';\n\n@Component({\n  selector: 'anu-address-list',\n  templateUrl: './address-list.component.html',\n  styleUrls: ['./address-list.component.scss']\n})\nexport class AddressListComponent {\n  /**\n   * List of addresses\n   */\n  @Input() value: Array<Address> = [];\n\n  /**\n   * Default address\n   */\n  @Input() defaultAddress: Address = null;\n\n  /**\n   * Selected address, works only if enableSelected is true.\n   */\n\n  @Input() selectedAddress: Address = null;\n\n  /**\n   * enables editing of individual addresses\n   */\n  @Input() enableEdit: boolean = true;\n\n  /**\n   * enables addition of new individual addresses\n   */\n  @Input() enableAdd: boolean = true;\n\n  /**\n   * enables to select an address from the list.\n   * Shows the the address in plain list view.\n   * Also emits selected event.\n   */\n  @Input() enableSelect: boolean = true;\n\n  /**\n   * enables deleting of individual addresses\n   */\n  @Input() enableDelete: boolean = true;\n\n  /**\n   * CSS class names, that will apply on individual address cards of the list\n   */\n  @Input() cardClassNames: Array<string> = [\n    'col-sm-12',\n    'col-md-6',\n    'col-lg-4',\n    'border'\n  ];\n\n  /**\n   * Emits on Add address button click.\n   */\n  @Output() addClicked = new EventEmitter<void>();\n\n  /**\n   * Emits on Edit address button click of individual address.\n   */\n  @Output() editClicked = new EventEmitter<Address>();\n\n  /**\n   * Emits on Delete address button click of individual address.\n   */\n  @Output() deleteClicked = new EventEmitter<Address>();\n\n  /**\n   * Emits on Set Default address button click of individual address.\n   */\n  @Output() defaultClicked = new EventEmitter<Address>();\n\n  /**\n   * Emits when an individual address is selected. Works when enableSelect is true.\n   */\n  @Output() selected = new EventEmitter<Address>();\n\n  /**\n   * Emits when add delivery instructions is clicked.\n   */\n  @Output() addDeliveryInstructions = new EventEmitter<Address>();\n\n  constructor() {}\n\n  public onAddClicked(event: any): void {\n    event.preventDefault();\n    this.addClicked.emit();\n  }\n\n  public onEditClicked(event: any, address: Address): void {\n    event.preventDefault();\n    this.editClicked.emit(address);\n  }\n\n  public onDeleteClicked(event: any, address: Address): void {\n    event.preventDefault();\n    this.deleteClicked.emit(address);\n  }\n\n  public onDefaultClicked(event: any, address: Address): void {\n    event.preventDefault();\n    this.defaultClicked.emit(address);\n  }\n\n  public onSelected(event: any, address: Address): void {\n    event.preventDefault();\n    this.selected.emit(address);\n  }\n\n  public onAddDeliveryInstructionsClicked(event: any, address: Address): void {\n    event.preventDefault();\n    this.addDeliveryInstructions.emit(address);\n  }\n}\n",
+            "sourceCode": "import { Component, EventEmitter, Input, Output } from '@angular/core';\nimport { Address } from '@annuadvent/ngx-core/helpers-ecommerce';\n\n@Component({\n  selector: 'anu-address-list',\n  templateUrl: './address-list.component.html',\n  styleUrls: ['./address-list.component.scss']\n})\nexport class AddressListComponent {\n  /**\n   * List of addresses\n   */\n  @Input() value: Array<Address> = [];\n\n  /**\n   * Default address\n   */\n  @Input() defaultAddress: Address = null;\n\n  /**\n   * Selected address, works only if enableSelected is true.\n   */\n\n  @Input() selectedAddress: Address = null;\n\n  /**\n   * enables editing of individual addresses\n   */\n  @Input() enableEdit: boolean = true;\n\n  /**\n   * enables addition of new individual addresses\n   */\n  @Input() enableAdd: boolean = true;\n\n  /**\n   * enables to select an address from the list.\n   * Shows the the address in plain list view.\n   * Also emits selected event.\n   */\n  @Input() enableSelect: boolean = false;\n\n  /**\n   * enables deleting of individual addresses\n   */\n  @Input() enableDelete: boolean = true;\n\n  /**\n   * CSS class names, that will apply on individual address cards of the list\n   */\n  @Input() cardClassNames: Array<string> = [\n    'col-sm-12',\n    'col-md-6',\n    'col-lg-4',\n    'border'\n  ];\n\n  /**\n   * Emits on Add address button click.\n   */\n  @Output() addClicked = new EventEmitter<void>();\n\n  /**\n   * Emits on Edit address button click of individual address.\n   */\n  @Output() editClicked = new EventEmitter<Address>();\n\n  /**\n   * Emits on Delete address button click of individual address.\n   */\n  @Output() deleteClicked = new EventEmitter<Address>();\n\n  /**\n   * Emits on Set Default address button click of individual address.\n   */\n  @Output() defaultClicked = new EventEmitter<Address>();\n\n  /**\n   * Emits when an individual address is selected. Works when enableSelect is true.\n   */\n  @Output() selected = new EventEmitter<Address>();\n\n  /**\n   * Emits when add delivery instructions is clicked.\n   */\n  @Output() addDeliveryInstructions = new EventEmitter<Address>();\n\n  constructor() {}\n\n  public onAddClicked(event: any): void {\n    event.preventDefault();\n    this.addClicked.emit();\n  }\n\n  public onEditClicked(event: any, address: Address): void {\n    event.preventDefault();\n    this.editClicked.emit(address);\n  }\n\n  public onDeleteClicked(event: any, address: Address): void {\n    event.preventDefault();\n    this.deleteClicked.emit(address);\n  }\n\n  public onDefaultClicked(event: any, address: Address): void {\n    event.preventDefault();\n    this.defaultClicked.emit(address);\n  }\n\n  public onSelected(event: any, address: Address): void {\n    event.preventDefault();\n    this.selectedAddress = address;\n    this.selected.emit(address);\n  }\n\n  public onAddDeliveryInstructionsClicked(event: any, address: Address): void {\n    event.preventDefault();\n    this.addDeliveryInstructions.emit(address);\n  }\n}\n",
             "assetsDirs": [],
             "styleUrlsData": [
                 {
@@ -1317,7 +930,7 @@
                 "line": 86
             },
             "extends": [],
-            "templateData": "<div\n  *ngIf=\"enableAdd\"\n  class=\"center relative border border-thickest add-card\"\n  [ngClass]=\"cardClassNames\"\n>\n  <a\n    class=\"primary container add-link accent-light middle\"\n    href=\"#\"\n    (click)=\"onAddClicked($event)\"\n  >\n    <div class=\"col-12 center\">\n      <span class=\"add-link-plus\">+</span>\n      <span class=\"add-link-text\">Add address</span>\n    </div>\n  </a>\n</div>\n\n<anu-card [ngClass]=\"cardClassNames\" *ngFor=\"let address of value\">\n  <anu-card-title class=\"border-bottom border-primary\">\n    <!-- Default Address -->\n    <div class=\"row stretch\">\n      <small\n        *ngIf=\"defaultAddress?.id == address.id\"\n        class=\"border spacing-around-half border-round spacing-h-half\"\n      >\n        Default\n      </small>\n\n      <!-- Set Default Address -->\n      <a\n        *ngIf=\"defaultAddress?.id !== address.id\"\n        class=\"primary-deep-dark spacing-h-half\"\n        href=\"#\"\n        (click)=\"onDefaultClicked($event, address)\"\n        >Set as Default</a\n      >\n\n      <!-- Address Type -->\n      <small class=\"border spacing-around-half border-round spacing-h-half\">{{\n        address.addressType\n      }}</small>\n    </div>\n  </anu-card-title>\n\n  <anu-card-body class=\"spacing-h\">\n    <anu-address [value]=\"address\"></anu-address>\n\n    <!-- Add delivery Instructions Link -->\n    <div class=\"row spacing-around-v\">\n      <a\n        class=\"primary-darkest\"\n        href=\"#\"\n        (click)=\"onAddDeliveryInstructionsClicked($event, address)\"\n        >Add delivery instructions</a\n      >\n    </div>\n  </anu-card-body>\n  <anu-card-footer class=\"border-bottom border-primary\">\n    <div *ngIf=\"enableEdit || enableDelete\" class=\"row center\">\n      <a\n        *ngIf=\"enableEdit\"\n        class=\"btn primary\"\n        href=\"#\"\n        (click)=\"onEditClicked($event, address)\"\n        >Edit</a\n      >\n      <a\n        *ngIf=\"enableDelete\"\n        class=\"btn primary\"\n        href=\"#\"\n        (click)=\"onDeleteClicked($event, address)\"\n        >Remove</a\n      >\n    </div>\n  </anu-card-footer>\n</anu-card>\n"
+            "templateData": "<!-- Card List view -->\n\n<ng-container *ngIf=\"!enableSelect\">\n  <div\n    *ngIf=\"enableAdd\"\n    class=\"center relative border border-thickest add-card\"\n    [ngClass]=\"cardClassNames\"\n  >\n    <a\n      class=\"primary container add-link accent-light middle\"\n      href=\"#\"\n      (click)=\"onAddClicked($event)\"\n    >\n      <div class=\"col-12 center\">\n        <span class=\"add-link-plus\">+</span>\n        <span class=\"add-link-text\">Add address</span>\n      </div>\n    </a>\n  </div>\n\n  <anu-card [ngClass]=\"cardClassNames\" *ngFor=\"let address of value\">\n    <anu-card-title class=\"border-bottom border-primary\">\n      <!-- Default Address -->\n      <div class=\"row stretch\">\n        <small\n          *ngIf=\"defaultAddress?.id == address.id\"\n          class=\"border spacing-around-half border-round spacing-h-half\"\n        >\n          Default\n        </small>\n\n        <!-- Set Default Address -->\n        <a\n          *ngIf=\"defaultAddress?.id !== address.id\"\n          class=\"primary-deep-dark spacing-h-half\"\n          href=\"#\"\n          (click)=\"onDefaultClicked($event, address)\"\n          >Set as Default</a\n        >\n\n        <!-- Address Type -->\n        <small class=\"border spacing-around-half border-round spacing-h-half\">{{\n          address.addressType\n        }}</small>\n      </div>\n    </anu-card-title>\n\n    <anu-card-body class=\"spacing-h\">\n      <anu-address [value]=\"address\"></anu-address>\n\n      <!-- Add delivery Instructions Link -->\n      <div class=\"row spacing-around-v\">\n        <a\n          class=\"primary-darkest\"\n          href=\"#\"\n          (click)=\"onAddDeliveryInstructionsClicked($event, address)\"\n          >Add delivery instructions</a\n        >\n      </div>\n    </anu-card-body>\n    <anu-card-footer class=\"\">\n      <div *ngIf=\"enableEdit || enableDelete\" class=\"row center\">\n        <a\n          *ngIf=\"enableEdit\"\n          class=\"btn primary\"\n          href=\"#\"\n          (click)=\"onEditClicked($event, address)\"\n          >Edit</a\n        >\n        <a\n          *ngIf=\"enableDelete\"\n          class=\"btn primary\"\n          href=\"#\"\n          (click)=\"onDeleteClicked($event, address)\"\n          >Remove</a\n        >\n      </div>\n    </anu-card-footer>\n  </anu-card>\n</ng-container>\n\n<!-- Plain LIST View -->\n\n<ng-container *ngIf=\"enableSelect\">\n  <label\n    [for]=\"address?.id\"\n    class=\"spacing-half\"\n    [ngClass]=\"{\n      'secondary-lightest-grad-h': selectedAddress?.id === address.id\n    }\"\n    *ngFor=\"let address of value\"\n  >\n    <input\n      [id]=\"address?.id\"\n      type=\"checkbox\"\n      [checked]=\"selectedAddress?.id === address.id\"\n      [value]=\"address.id\"\n      (change)=\"onSelected($event, address)\"\n    />\n    <anu-address\n      class=\"\"\n      [value]=\"address\"\n      [isSingleLiner]=\"true\"\n    ></anu-address>\n    <span *ngIf=\"enableEdit\" class=\"spacing-around-h\">|</span>\n    <a\n      *ngIf=\"enableEdit\"\n      class=\"primary-darkest\"\n      href=\"#\"\n      (click)=\"onEditClicked($event, address)\"\n      >Edit</a\n    >\n    <span class=\"spacing-around-h\">|</span>\n    <a\n      class=\"primary-darkest\"\n      href=\"#\"\n      (click)=\"onAddDeliveryInstructionsClicked($event, address)\"\n      >Add delivery instructions</a\n    >\n  </label>\n  <a\n    *ngIf=\"enableAdd\"\n    class=\"primary-darkest row\"\n    href=\"#\"\n    (click)=\"onAddClicked($event)\"\n  >\n    <strong>+ Add a new address</strong>\n  </a>\n</ng-container>\n"
         },
         {
             "name": "DeliveryInstructionFormComponent",
@@ -1625,22 +1238,19 @@
     "modules": [
         {
             "name": "AddressModule",
-            "id": "module-AddressModule-be0973ba06be2fd2008fa5dbef0b65eea4fdfebee847758fa0ed5acc74f601cdad6ebf5790dfa5786b6f739810e62219413babc66a2635aa8a986653c7c8da24",
+            "id": "module-AddressModule-983aaa0d54e502a7098b5c9e5c8463b67d28a3b6c67e97c7ddf8e7379ddb9ba4b53d6a322dd0352b2864a0fe3198951bec8300b057f10759307fcfb9feb79b48",
             "description": "",
             "deprecationMessage": "",
             "deprecated": false,
             "file": "projects/ngx-ecommerce/address/src/address.module.ts",
             "methods": [],
-            "sourceCode": "import { NgModule } from '@angular/core';\nimport { CommonModule } from '@angular/common';\nimport { DeliveryInstructionFormComponent } from './components/delivery-instruction-form/delivery-instruction-form.component';\nimport { ReactiveFormsModule } from '@angular/forms';\nimport { UtilsModule } from '@annuadvent/ngx-core/utils';\nimport { AddressFormComponent } from './components/address-form/address-form.component';\nimport { HttpClientModule } from '@angular/common/http';\nimport { AddressFormService } from './services/address-form.service';\nimport { ReactiveFormModule } from '@annuadvent/ngx-common-ui/reactive-form';\nimport { PincodeValidatorService } from './services/pincode-validator.service';\nimport { SpinnerModule } from '@annuadvent/ngx-common-ui/spinner';\nimport { SingleSelectBoxModule } from '@annuadvent/ngx-common-ui/single-select-box';\nimport { CollapsibleModule } from '@annuadvent/ngx-common-ui/collapsible';\nimport { AddressComponent } from './components/address/address.component';\nimport { AddressListComponent } from './components/address-list/address-list.component';\nimport { CardModule } from '@annuadvent/ngx-common-ui/card';\n\n@NgModule({\n  declarations: [\n    DeliveryInstructionFormComponent,\n    AddressFormComponent,\n    AddressComponent,\n    AddressListComponent,\n  ],\n  providers: [AddressFormService, PincodeValidatorService],\n  imports: [\n    CommonModule,\n    HttpClientModule,\n    ReactiveFormsModule,\n    UtilsModule,\n    ReactiveFormModule,\n    SpinnerModule,\n    SingleSelectBoxModule,\n    CollapsibleModule,\n    CardModule,\n  ],\n  exports: [\n    DeliveryInstructionFormComponent,\n    AddressFormComponent,\n    AddressComponent,\n    AddressListComponent,\n  ],\n})\nexport class AddressModule {}\n",
+            "sourceCode": "import { NgModule } from '@angular/core';\nimport { CommonModule } from '@angular/common';\nimport { DeliveryInstructionFormComponent } from './components/delivery-instruction-form/delivery-instruction-form.component';\nimport { ReactiveFormsModule } from '@angular/forms';\nimport { UtilsModule } from '@annuadvent/ngx-core/utils';\nimport { AddressFormComponent } from './components/address-form/address-form.component';\nimport { HttpClientModule } from '@angular/common/http';\nimport { AddressFormService } from './services/address-form.service';\nimport { ReactiveFormModule } from '@annuadvent/ngx-common-ui/reactive-form';\nimport { SpinnerModule } from '@annuadvent/ngx-common-ui/spinner';\nimport { SingleSelectBoxModule } from '@annuadvent/ngx-common-ui/single-select-box';\nimport { CollapsibleModule } from '@annuadvent/ngx-common-ui/collapsible';\nimport { AddressComponent } from './components/address/address.component';\nimport { AddressListComponent } from './components/address-list/address-list.component';\nimport { CardModule } from '@annuadvent/ngx-common-ui/card';\nimport { PincodeValidatorService } from '@annuadvent/ngx-core/helpers-forms';\n\n@NgModule({\n  declarations: [\n    DeliveryInstructionFormComponent,\n    AddressFormComponent,\n    AddressComponent,\n    AddressListComponent\n  ],\n  providers: [AddressFormService, PincodeValidatorService],\n  imports: [\n    CommonModule,\n    HttpClientModule,\n    ReactiveFormsModule,\n    UtilsModule,\n    ReactiveFormModule,\n    SpinnerModule,\n    SingleSelectBoxModule,\n    CollapsibleModule,\n    CardModule\n  ],\n  exports: [\n    DeliveryInstructionFormComponent,\n    AddressFormComponent,\n    AddressComponent,\n    AddressListComponent\n  ]\n})\nexport class AddressModule {}\n",
             "children": [
                 {
                     "type": "providers",
                     "elements": [
                         {
                             "name": "AddressFormService"
-                        },
-                        {
-                            "name": "PincodeValidatorService"
                         }
                     ]
                 },
@@ -1713,7 +1323,7 @@
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "any",
-                "defaultValue": "{\r\n  projectionContent: '',\r\n  inputPropsValues: {\r\n    value: SAMPLE_ADDRESS,\r\n  },\r\n}"
+                "defaultValue": "{\r\n  projectionContent: '',\r\n  inputPropsValues: {\r\n    value: SAMPLE_ADDRESS\r\n  }\r\n}"
             },
             {
                 "name": "AddressFormComponent",
@@ -1734,6 +1344,16 @@
                 "deprecationMessage": "",
                 "type": "any",
                 "defaultValue": "{\r\n  projectionContent: '',\r\n  inputPropsValues: {\r\n    value: [\r\n      { ...SAMPLE_ADDRESS },\r\n      {\r\n        ...SAMPLE_ADDRESS,\r\n        id: '98765432',\r\n        addressType: 'Home',\r\n        firstName: 'Divyam',\r\n        lastName: 'Yadav',\r\n      },\r\n    ],\r\n  },\r\n}"
+            },
+            {
+                "name": "addressParams",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/ngx-ecommerce/address/src/constants/address-params.constant.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "object",
+                "defaultValue": "{\r\n  id: {\r\n    type: 'string',\r\n    controlType: 'text',\r\n    disabled: true,\r\n    hidden: true\r\n  },\r\n  uid: {\r\n    type: 'string',\r\n    controlType: 'text',\r\n    disabled: true,\r\n    hidden: true\r\n  },\r\n  firstName: {\r\n    type: 'string',\r\n    controlType: 'text',\r\n    value: '',\r\n    label: 'First Name',\r\n    placeholder: 'First Name',\r\n    helpText: '',\r\n    syncValidators: [\r\n      { name: 'required' },\r\n      { name: 'trimSpacesValidator' },\r\n      { name: 'maxLength', params: [100] }\r\n    ],\r\n    asyncValidators: [],\r\n    list: [],\r\n    disabled: false\r\n  },\r\n  lastName: {\r\n    type: 'string',\r\n    controlType: 'text',\r\n    value: '',\r\n    label: 'Last Name',\r\n    placeholder: 'Last Name',\r\n    helpText: '(Optional)',\r\n    syncValidators: [\r\n      { name: 'trimSpacesValidator' },\r\n      { name: 'maxLength', params: [100] }\r\n    ],\r\n    asyncValidators: [],\r\n    list: [],\r\n    disabled: false\r\n  },\r\n  addressLine1: {\r\n    type: 'string',\r\n    controlType: 'text',\r\n    value: '',\r\n    label: 'Street / locality / village',\r\n    placeholder: 'Street address, P.O. box, company name, c/o',\r\n    helpText: '',\r\n    syncValidators: [\r\n      { name: 'required' },\r\n      { name: 'trimSpacesValidator' },\r\n      { name: 'maxLength', params: [100] }\r\n    ],\r\n    asyncValidators: [],\r\n    list: [],\r\n    disabled: false\r\n  },\r\n  addressLine2: {\r\n    type: 'string',\r\n    controlType: 'text',\r\n    value: '',\r\n    label: 'Address Line 2',\r\n    placeholder: 'Apartment, suite, unit, building, floor, etc.',\r\n    helpText: '(optional)',\r\n    syncValidators: [\r\n      { name: 'trimSpacesValidator' },\r\n      { name: 'maxLength', params: [100] }\r\n    ],\r\n    asyncValidators: [],\r\n    list: [],\r\n    disabled: false\r\n  },\r\n  landmark: {\r\n    type: 'string',\r\n    controlType: 'text',\r\n    value: '',\r\n    label: 'Landmark',\r\n    placeholder: 'Nearest landmark',\r\n    helpText: '(optional)',\r\n    syncValidators: [\r\n      { name: 'trimSpacesValidator' },\r\n      { name: 'maxLength', params: [100] }\r\n    ],\r\n    asyncValidators: [],\r\n    list: [],\r\n    disabled: false\r\n  },\r\n  pincode: {\r\n    type: 'string',\r\n    controlType: 'text',\r\n    value: '',\r\n    label: 'Pincode',\r\n    placeholder: 'Pincode',\r\n    helpText: '(City & state will autofill, when you enter pincode)',\r\n    syncValidators: [\r\n      { name: 'required' },\r\n      { name: 'trimSpacesValidator' },\r\n      { name: 'minLength', params: [6] },\r\n      { name: 'maxLength', params: [6] }\r\n    ],\r\n    asyncValidators: [{ name: 'PincodeValidatorService', url: '' }],\r\n    list: [],\r\n    disabled: false\r\n  },\r\n  city: {\r\n    type: 'string',\r\n    controlType: 'text',\r\n    value: '',\r\n    label: 'City',\r\n    placeholder: 'City',\r\n    helpText: '',\r\n    syncValidators: [\r\n      { name: 'required' },\r\n      { name: 'trimSpacesValidator' },\r\n      { name: 'maxLength', params: [100] }\r\n    ],\r\n    asyncValidators: [],\r\n    list: [],\r\n    disabled: true\r\n  },\r\n  state: {\r\n    type: 'string',\r\n    controlType: 'select',\r\n    value: '',\r\n    label: 'State',\r\n    placeholder: 'State',\r\n    helpText: '',\r\n    syncValidators: [\r\n      { name: 'required' },\r\n      { name: 'trimSpacesValidator' },\r\n      { name: 'maxLength', params: [100] }\r\n    ],\r\n    asyncValidators: [],\r\n    list: Object.keys(IndianStatesEnum).map((key) => ({\r\n      key,\r\n      value: IndianStatesEnum[key]\r\n    })),\r\n    disabled: true\r\n  },\r\n  countryCode: {\r\n    type: 'string',\r\n    controlType: 'select',\r\n    value: CountriesEnum.IN,\r\n    label: 'Country',\r\n    placeholder: 'Country',\r\n    helpText: '',\r\n    syncValidators: [\r\n      { name: 'required' },\r\n      { name: 'trimSpacesValidator' },\r\n      { name: 'maxLength', params: [100] }\r\n    ],\r\n    asyncValidators: [],\r\n    list: Object.keys(CountriesEnum).map((key) => ({\r\n      key,\r\n      value: CountriesEnum[key]\r\n    })),\r\n    disabled: true\r\n  },\r\n  phoneNumber: {\r\n    type: 'string',\r\n    controlType: 'text',\r\n    value: '',\r\n    label: 'Mobile phone',\r\n    placeholder: 'Mobile number',\r\n    helpText: '(do not prefix country code)',\r\n    syncValidators: [\r\n      { name: 'required' },\r\n      { name: 'trimSpacesValidator' },\r\n      { name: 'indiaMobileValidator' }\r\n    ],\r\n    asyncValidators: [],\r\n    list: [],\r\n    disabled: false\r\n  },\r\n  createTime: {\r\n    type: 'string',\r\n    controlType: 'text',\r\n    disabled: true,\r\n    hidden: true\r\n  },\r\n  updateTime: {\r\n    type: 'string',\r\n    controlType: 'text',\r\n    disabled: true,\r\n    hidden: true\r\n  },\r\n\r\n  company: {\r\n    type: 'string',\r\n    controlType: 'text',\r\n    value: '',\r\n    label: 'Company',\r\n    placeholder: 'Company Name',\r\n    helpText: \"(Provide if it's a company address)\",\r\n    syncValidators: [\r\n      { name: 'trimSpacesValidator' },\r\n      { name: 'maxLength', params: [100] }\r\n    ],\r\n    asyncValidators: [],\r\n    list: [],\r\n    disabled: false\r\n  },\r\n\r\n  isDefault: {\r\n    type: 'boolean',\r\n    controlType: 'checkbox',\r\n    value: true,\r\n    label: 'Make addreess default',\r\n    placeholder: '',\r\n    helpText: '',\r\n    syncValidators: [],\r\n    asyncValidators: [],\r\n    list: [],\r\n    disabled: false\r\n  },\r\n  addressType: {\r\n    type: 'string',\r\n    controlType: 'radio',\r\n    value: AddressTypesEnum.Home,\r\n    label: 'Please select an address type',\r\n    placeholder: '',\r\n    helpText: '',\r\n    syncValidators: [{ name: 'required' }],\r\n    asyncValidators: [],\r\n    list: Object.keys(AddressTypesEnum).map((key) => ({\r\n      key,\r\n      value: AddressTypesEnum[key]\r\n    })),\r\n    disabled: false\r\n  },\r\n  deliveryInstruction: {\r\n    controlType: 'group',\r\n    label: 'Add delivery instructions',\r\n    params: {\r\n      offDays: {\r\n        type: 'Array',\r\n        controlType: 'checkbox',\r\n        value: [WeekDaysEnum.Tuesday, WeekDaysEnum.Friday],\r\n        label: 'Please select delivery days',\r\n        placeholder: '',\r\n        helpText: '',\r\n        syncValidators: [],\r\n        asyncValidators: [],\r\n        list: Object.keys(WeekDaysEnum).map((key) => ({\r\n          key,\r\n          value: WeekDaysEnum[key]\r\n        })),\r\n        disabled: false\r\n      },\r\n      instructions: {\r\n        type: 'string',\r\n        controlType: 'textarea',\r\n        value: '',\r\n        label: 'Instructions',\r\n        placeholder: 'Instructions',\r\n        helpText: '(optional)',\r\n        syncValidators: [\r\n          { name: 'trimSpacesValidator' },\r\n          { name: 'maxLength', params: [300] }\r\n        ],\r\n        asyncValidators: [],\r\n        list: [],\r\n        disabled: false\r\n      }\r\n    }\r\n  }\r\n}"
             },
             {
                 "name": "AMAZON_CATEGORIES",
@@ -1786,16 +1406,6 @@
                 "defaultValue": "'ngx-ecommerce'"
             },
             {
-                "name": "mobilePhoneValidator",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
-                "file": "projects/ngx-ecommerce/address/src/constants/address.validators.ts",
-                "deprecated": false,
-                "deprecationMessage": "",
-                "type": "",
-                "defaultValue": "(\r\n  control: AbstractControl\r\n): ValidationErrors | null => {\r\n  // Regular expression for Indian mobile numbers (10 digits starting with 6, 7, 8 or 9)\r\n  const regex = /^\\d{10}$/;\r\n  const phoneNumber = control.value || '';\r\n\r\n  if (!phoneNumber.trim()) {\r\n    return {\r\n      required: true,\r\n    };\r\n  }\r\n\r\n  // Remove any non-numeric characters\r\n  const sanitizedNumber = phoneNumber.replace(/\\D/g, '');\r\n\r\n  // Check if the sanitized number matches the regex pattern\r\n  if (regex.test(sanitizedNumber)) {\r\n    return null;\r\n  } else {\r\n    return {\r\n      phoneNumber: {\r\n        message:\r\n          'Invalid Mobile phone number format. A 10 digit number with no spaces and special characters is alowed.',\r\n      },\r\n    };\r\n  }\r\n}"
-            },
-            {
                 "name": "MYNTRA_CATEGORIES",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
@@ -1823,17 +1433,7 @@
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "object",
-                "defaultValue": "{\r\n  id: '123456789',\r\n  uid: 'sunil-user12345677',\r\n  addressType: 'Business',\r\n  firstName: 'Sunil',\r\n  lastName: 'Kumar',\r\n  company: 'Morgan Stanley',\r\n  addressLine1: '1002, Tower 2, Unitech Horizon',\r\n  addressLine2: 'Sec PI 2, Greater Noida',\r\n  landmark: 'Pari Chowk',\r\n  city: 'CENTRAL DELHI',\r\n  state: 'DELHI',\r\n  pincode: '110002',\r\n  countryCode: 'IN',\r\n  phoneNumber: '9910129602',\r\n  deliveryInstruction: {\r\n    offDays: ['Saturday', 'Sunday'],\r\n    instructions:\r\n      \"Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took.\",\r\n  },\r\n  createdTime: '',\r\n  updatedTime: '',\r\n}"
-            },
-            {
-                "name": "trimSpacesValidator",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
-                "file": "projects/ngx-ecommerce/address/src/constants/address.validators.ts",
-                "deprecated": false,
-                "deprecationMessage": "",
-                "type": "",
-                "defaultValue": "(\r\n  control: AbstractControl\r\n): ValidationErrors | null => {\r\n  if (\r\n    control.value &&\r\n    ((control.value as string).startsWith(' ') ||\r\n      (control.value as string).endsWith(' '))\r\n  ) {\r\n    control.setValue((control.value as string).trim());\r\n    if (!control.value && control.hasValidator(Validators.required)) {\r\n      return {\r\n        required: true,\r\n      };\r\n    }\r\n    return null;\r\n  }\r\n\r\n  return null;\r\n}"
+                "defaultValue": "{\r\n  id: '123456789',\r\n  uid: 'sunil-user12345677',\r\n  addressType: 'Business',\r\n  firstName: 'Sunil',\r\n  lastName: 'Kumar',\r\n  company: 'Morgan Stanley',\r\n  addressLine1: '1002, Tower 2, Unitech Horizon',\r\n  addressLine2: 'Sec PI 2, Greater Noida',\r\n  landmark: 'Pari Chowk',\r\n  city: 'CENTRAL DELHI',\r\n  state: 'DELHI',\r\n  pincode: '110002',\r\n  countryCode: 'IN',\r\n  phoneNumber: '9910129602',\r\n  deliveryInstruction: {\r\n    offDays: ['Saturday', 'Sunday'],\r\n    instructions:\r\n      'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry standard dummy text ever since the 1500s, when an unknown printer took.'\r\n  },\r\n  createdTime: '',\r\n  updatedTime: ''\r\n}"
             }
         ],
         "functions": [],
@@ -1849,7 +1449,7 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "any",
-                    "defaultValue": "{\r\n  projectionContent: '',\r\n  inputPropsValues: {\r\n    value: SAMPLE_ADDRESS,\r\n  },\r\n}"
+                    "defaultValue": "{\r\n  projectionContent: '',\r\n  inputPropsValues: {\r\n    value: SAMPLE_ADDRESS\r\n  }\r\n}"
                 },
                 {
                     "name": "SAMPLE_ADDRESS",
@@ -1859,7 +1459,7 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "object",
-                    "defaultValue": "{\r\n  id: '123456789',\r\n  uid: 'sunil-user12345677',\r\n  addressType: 'Business',\r\n  firstName: 'Sunil',\r\n  lastName: 'Kumar',\r\n  company: 'Morgan Stanley',\r\n  addressLine1: '1002, Tower 2, Unitech Horizon',\r\n  addressLine2: 'Sec PI 2, Greater Noida',\r\n  landmark: 'Pari Chowk',\r\n  city: 'CENTRAL DELHI',\r\n  state: 'DELHI',\r\n  pincode: '110002',\r\n  countryCode: 'IN',\r\n  phoneNumber: '9910129602',\r\n  deliveryInstruction: {\r\n    offDays: ['Saturday', 'Sunday'],\r\n    instructions:\r\n      \"Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took.\",\r\n  },\r\n  createdTime: '',\r\n  updatedTime: '',\r\n}"
+                    "defaultValue": "{\r\n  id: '123456789',\r\n  uid: 'sunil-user12345677',\r\n  addressType: 'Business',\r\n  firstName: 'Sunil',\r\n  lastName: 'Kumar',\r\n  company: 'Morgan Stanley',\r\n  addressLine1: '1002, Tower 2, Unitech Horizon',\r\n  addressLine2: 'Sec PI 2, Greater Noida',\r\n  landmark: 'Pari Chowk',\r\n  city: 'CENTRAL DELHI',\r\n  state: 'DELHI',\r\n  pincode: '110002',\r\n  countryCode: 'IN',\r\n  phoneNumber: '9910129602',\r\n  deliveryInstruction: {\r\n    offDays: ['Saturday', 'Sunday'],\r\n    instructions:\r\n      'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry standard dummy text ever since the 1500s, when an unknown printer took.'\r\n  },\r\n  createdTime: '',\r\n  updatedTime: ''\r\n}"
                 }
             ],
             "projects/ngx-ecommerce/address/src/components/address-form/address-form.docs.ts": [
@@ -1886,6 +1486,18 @@
                     "defaultValue": "{\r\n  projectionContent: '',\r\n  inputPropsValues: {\r\n    value: [\r\n      { ...SAMPLE_ADDRESS },\r\n      {\r\n        ...SAMPLE_ADDRESS,\r\n        id: '98765432',\r\n        addressType: 'Home',\r\n        firstName: 'Divyam',\r\n        lastName: 'Yadav',\r\n      },\r\n    ],\r\n  },\r\n}"
                 }
             ],
+            "projects/ngx-ecommerce/address/src/constants/address-params.constant.ts": [
+                {
+                    "name": "addressParams",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/ngx-ecommerce/address/src/constants/address-params.constant.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "object",
+                    "defaultValue": "{\r\n  id: {\r\n    type: 'string',\r\n    controlType: 'text',\r\n    disabled: true,\r\n    hidden: true\r\n  },\r\n  uid: {\r\n    type: 'string',\r\n    controlType: 'text',\r\n    disabled: true,\r\n    hidden: true\r\n  },\r\n  firstName: {\r\n    type: 'string',\r\n    controlType: 'text',\r\n    value: '',\r\n    label: 'First Name',\r\n    placeholder: 'First Name',\r\n    helpText: '',\r\n    syncValidators: [\r\n      { name: 'required' },\r\n      { name: 'trimSpacesValidator' },\r\n      { name: 'maxLength', params: [100] }\r\n    ],\r\n    asyncValidators: [],\r\n    list: [],\r\n    disabled: false\r\n  },\r\n  lastName: {\r\n    type: 'string',\r\n    controlType: 'text',\r\n    value: '',\r\n    label: 'Last Name',\r\n    placeholder: 'Last Name',\r\n    helpText: '(Optional)',\r\n    syncValidators: [\r\n      { name: 'trimSpacesValidator' },\r\n      { name: 'maxLength', params: [100] }\r\n    ],\r\n    asyncValidators: [],\r\n    list: [],\r\n    disabled: false\r\n  },\r\n  addressLine1: {\r\n    type: 'string',\r\n    controlType: 'text',\r\n    value: '',\r\n    label: 'Street / locality / village',\r\n    placeholder: 'Street address, P.O. box, company name, c/o',\r\n    helpText: '',\r\n    syncValidators: [\r\n      { name: 'required' },\r\n      { name: 'trimSpacesValidator' },\r\n      { name: 'maxLength', params: [100] }\r\n    ],\r\n    asyncValidators: [],\r\n    list: [],\r\n    disabled: false\r\n  },\r\n  addressLine2: {\r\n    type: 'string',\r\n    controlType: 'text',\r\n    value: '',\r\n    label: 'Address Line 2',\r\n    placeholder: 'Apartment, suite, unit, building, floor, etc.',\r\n    helpText: '(optional)',\r\n    syncValidators: [\r\n      { name: 'trimSpacesValidator' },\r\n      { name: 'maxLength', params: [100] }\r\n    ],\r\n    asyncValidators: [],\r\n    list: [],\r\n    disabled: false\r\n  },\r\n  landmark: {\r\n    type: 'string',\r\n    controlType: 'text',\r\n    value: '',\r\n    label: 'Landmark',\r\n    placeholder: 'Nearest landmark',\r\n    helpText: '(optional)',\r\n    syncValidators: [\r\n      { name: 'trimSpacesValidator' },\r\n      { name: 'maxLength', params: [100] }\r\n    ],\r\n    asyncValidators: [],\r\n    list: [],\r\n    disabled: false\r\n  },\r\n  pincode: {\r\n    type: 'string',\r\n    controlType: 'text',\r\n    value: '',\r\n    label: 'Pincode',\r\n    placeholder: 'Pincode',\r\n    helpText: '(City & state will autofill, when you enter pincode)',\r\n    syncValidators: [\r\n      { name: 'required' },\r\n      { name: 'trimSpacesValidator' },\r\n      { name: 'minLength', params: [6] },\r\n      { name: 'maxLength', params: [6] }\r\n    ],\r\n    asyncValidators: [{ name: 'PincodeValidatorService', url: '' }],\r\n    list: [],\r\n    disabled: false\r\n  },\r\n  city: {\r\n    type: 'string',\r\n    controlType: 'text',\r\n    value: '',\r\n    label: 'City',\r\n    placeholder: 'City',\r\n    helpText: '',\r\n    syncValidators: [\r\n      { name: 'required' },\r\n      { name: 'trimSpacesValidator' },\r\n      { name: 'maxLength', params: [100] }\r\n    ],\r\n    asyncValidators: [],\r\n    list: [],\r\n    disabled: true\r\n  },\r\n  state: {\r\n    type: 'string',\r\n    controlType: 'select',\r\n    value: '',\r\n    label: 'State',\r\n    placeholder: 'State',\r\n    helpText: '',\r\n    syncValidators: [\r\n      { name: 'required' },\r\n      { name: 'trimSpacesValidator' },\r\n      { name: 'maxLength', params: [100] }\r\n    ],\r\n    asyncValidators: [],\r\n    list: Object.keys(IndianStatesEnum).map((key) => ({\r\n      key,\r\n      value: IndianStatesEnum[key]\r\n    })),\r\n    disabled: true\r\n  },\r\n  countryCode: {\r\n    type: 'string',\r\n    controlType: 'select',\r\n    value: CountriesEnum.IN,\r\n    label: 'Country',\r\n    placeholder: 'Country',\r\n    helpText: '',\r\n    syncValidators: [\r\n      { name: 'required' },\r\n      { name: 'trimSpacesValidator' },\r\n      { name: 'maxLength', params: [100] }\r\n    ],\r\n    asyncValidators: [],\r\n    list: Object.keys(CountriesEnum).map((key) => ({\r\n      key,\r\n      value: CountriesEnum[key]\r\n    })),\r\n    disabled: true\r\n  },\r\n  phoneNumber: {\r\n    type: 'string',\r\n    controlType: 'text',\r\n    value: '',\r\n    label: 'Mobile phone',\r\n    placeholder: 'Mobile number',\r\n    helpText: '(do not prefix country code)',\r\n    syncValidators: [\r\n      { name: 'required' },\r\n      { name: 'trimSpacesValidator' },\r\n      { name: 'indiaMobileValidator' }\r\n    ],\r\n    asyncValidators: [],\r\n    list: [],\r\n    disabled: false\r\n  },\r\n  createTime: {\r\n    type: 'string',\r\n    controlType: 'text',\r\n    disabled: true,\r\n    hidden: true\r\n  },\r\n  updateTime: {\r\n    type: 'string',\r\n    controlType: 'text',\r\n    disabled: true,\r\n    hidden: true\r\n  },\r\n\r\n  company: {\r\n    type: 'string',\r\n    controlType: 'text',\r\n    value: '',\r\n    label: 'Company',\r\n    placeholder: 'Company Name',\r\n    helpText: \"(Provide if it's a company address)\",\r\n    syncValidators: [\r\n      { name: 'trimSpacesValidator' },\r\n      { name: 'maxLength', params: [100] }\r\n    ],\r\n    asyncValidators: [],\r\n    list: [],\r\n    disabled: false\r\n  },\r\n\r\n  isDefault: {\r\n    type: 'boolean',\r\n    controlType: 'checkbox',\r\n    value: true,\r\n    label: 'Make addreess default',\r\n    placeholder: '',\r\n    helpText: '',\r\n    syncValidators: [],\r\n    asyncValidators: [],\r\n    list: [],\r\n    disabled: false\r\n  },\r\n  addressType: {\r\n    type: 'string',\r\n    controlType: 'radio',\r\n    value: AddressTypesEnum.Home,\r\n    label: 'Please select an address type',\r\n    placeholder: '',\r\n    helpText: '',\r\n    syncValidators: [{ name: 'required' }],\r\n    asyncValidators: [],\r\n    list: Object.keys(AddressTypesEnum).map((key) => ({\r\n      key,\r\n      value: AddressTypesEnum[key]\r\n    })),\r\n    disabled: false\r\n  },\r\n  deliveryInstruction: {\r\n    controlType: 'group',\r\n    label: 'Add delivery instructions',\r\n    params: {\r\n      offDays: {\r\n        type: 'Array',\r\n        controlType: 'checkbox',\r\n        value: [WeekDaysEnum.Tuesday, WeekDaysEnum.Friday],\r\n        label: 'Please select delivery days',\r\n        placeholder: '',\r\n        helpText: '',\r\n        syncValidators: [],\r\n        asyncValidators: [],\r\n        list: Object.keys(WeekDaysEnum).map((key) => ({\r\n          key,\r\n          value: WeekDaysEnum[key]\r\n        })),\r\n        disabled: false\r\n      },\r\n      instructions: {\r\n        type: 'string',\r\n        controlType: 'textarea',\r\n        value: '',\r\n        label: 'Instructions',\r\n        placeholder: 'Instructions',\r\n        helpText: '(optional)',\r\n        syncValidators: [\r\n          { name: 'trimSpacesValidator' },\r\n          { name: 'maxLength', params: [300] }\r\n        ],\r\n        asyncValidators: [],\r\n        list: [],\r\n        disabled: false\r\n      }\r\n    }\r\n  }\r\n}"
+                }
+            ],
             "projects/ngx-ecommerce/help-data-jsons/amazon-categories.constants.ts": [
                 {
                     "name": "AMAZON_CATEGORIES",
@@ -1908,26 +1520,6 @@
                     "deprecationMessage": "",
                     "type": "",
                     "defaultValue": "(\r\n  control: AbstractControl\r\n): ValidationErrors | null => {\r\n  const addressType = control.get('addressType');\r\n  const company = control.get('company');\r\n\r\n  if (addressType.value === AddressTypesEnum.Business && !company.value) {\r\n    company.setErrors({ required: true });\r\n    company.markAsDirty();\r\n    company.markAllAsTouched();\r\n  }\r\n\r\n  return null;\r\n}"
-                },
-                {
-                    "name": "mobilePhoneValidator",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "projects/ngx-ecommerce/address/src/constants/address.validators.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "",
-                    "defaultValue": "(\r\n  control: AbstractControl\r\n): ValidationErrors | null => {\r\n  // Regular expression for Indian mobile numbers (10 digits starting with 6, 7, 8 or 9)\r\n  const regex = /^\\d{10}$/;\r\n  const phoneNumber = control.value || '';\r\n\r\n  if (!phoneNumber.trim()) {\r\n    return {\r\n      required: true,\r\n    };\r\n  }\r\n\r\n  // Remove any non-numeric characters\r\n  const sanitizedNumber = phoneNumber.replace(/\\D/g, '');\r\n\r\n  // Check if the sanitized number matches the regex pattern\r\n  if (regex.test(sanitizedNumber)) {\r\n    return null;\r\n  } else {\r\n    return {\r\n      phoneNumber: {\r\n        message:\r\n          'Invalid Mobile phone number format. A 10 digit number with no spaces and special characters is alowed.',\r\n      },\r\n    };\r\n  }\r\n}"
-                },
-                {
-                    "name": "trimSpacesValidator",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "projects/ngx-ecommerce/address/src/constants/address.validators.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "",
-                    "defaultValue": "(\r\n  control: AbstractControl\r\n): ValidationErrors | null => {\r\n  if (\r\n    control.value &&\r\n    ((control.value as string).startsWith(' ') ||\r\n      (control.value as string).endsWith(' '))\r\n  ) {\r\n    control.setValue((control.value as string).trim());\r\n    if (!control.value && control.hasValidator(Validators.required)) {\r\n      return {\r\n        required: true,\r\n      };\r\n    }\r\n    return null;\r\n  }\r\n\r\n  return null;\r\n}"
                 }
             ],
             "projects/ngx-ecommerce/help-data-jsons/countries.constants.ts": [
@@ -1997,7 +1589,7 @@
     },
     "routes": [],
     "coverage": {
-        "count": 13,
+        "count": 16,
         "status": "low",
         "files": [
             {
@@ -2005,9 +1597,9 @@
                 "type": "component",
                 "linktype": "component",
                 "name": "AddressFormComponent",
-                "coveragePercent": 33,
-                "coverageCount": "10/30",
-                "status": "medium"
+                "coveragePercent": 57,
+                "coverageCount": "12/21",
+                "status": "good"
             },
             {
                 "filePath": "projects/ngx-ecommerce/address/src/components/address-form/address-form.docs.ts",
@@ -2043,8 +1635,8 @@
                 "type": "component",
                 "linktype": "component",
                 "name": "AddressComponent",
-                "coveragePercent": 66,
-                "coverageCount": "2/3",
+                "coveragePercent": 75,
+                "coverageCount": "3/4",
                 "status": "good"
             },
             {
@@ -2087,31 +1679,21 @@
                 "status": "low"
             },
             {
+                "filePath": "projects/ngx-ecommerce/address/src/constants/address-params.constant.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "addressParams",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
                 "filePath": "projects/ngx-ecommerce/address/src/constants/address.validators.ts",
                 "type": "variable",
                 "linktype": "miscellaneous",
                 "linksubtype": "variable",
                 "name": "companyValidator",
-                "coveragePercent": 0,
-                "coverageCount": "0/1",
-                "status": "low"
-            },
-            {
-                "filePath": "projects/ngx-ecommerce/address/src/constants/address.validators.ts",
-                "type": "variable",
-                "linktype": "miscellaneous",
-                "linksubtype": "variable",
-                "name": "mobilePhoneValidator",
-                "coveragePercent": 0,
-                "coverageCount": "0/1",
-                "status": "low"
-            },
-            {
-                "filePath": "projects/ngx-ecommerce/address/src/constants/address.validators.ts",
-                "type": "variable",
-                "linktype": "miscellaneous",
-                "linksubtype": "variable",
-                "name": "trimSpacesValidator",
                 "coveragePercent": 0,
                 "coverageCount": "0/1",
                 "status": "low"
@@ -2123,15 +1705,6 @@
                 "name": "AddressFormService",
                 "coveragePercent": 0,
                 "coverageCount": "0/2",
-                "status": "low"
-            },
-            {
-                "filePath": "projects/ngx-ecommerce/address/src/services/pincode-validator.service.ts",
-                "type": "injectable",
-                "linktype": "injectable",
-                "name": "PincodeValidatorService",
-                "coveragePercent": 0,
-                "coverageCount": "0/3",
                 "status": "low"
             },
             {
