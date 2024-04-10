@@ -9238,7 +9238,7 @@
         },
         {
             "name": "PictureComponent",
-            "id": "component-PictureComponent-842aed6f0effa8d5244fffec59f83f9ee1cc7ccbc7be4636c9b33b188eb749bc42237314ed5cf15ecdaf2ae2d346ea906ad7f939a19569ceda498056e05d723d",
+            "id": "component-PictureComponent-b73d4451d8bac94d9b668a46b720af6ef5ae1b11655e67905403cb5a09587261bbeb50efa37a2a3ee9c8aa4920a971380ff6e111764f7d63687dcf9f8369fe50",
             "file": "projects/ngx-common-ui/picture/src/components/picture/picture.component.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -9261,7 +9261,7 @@
                     "defaultValue": "''",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "line": 10,
+                    "line": 18,
                     "type": "string",
                     "decorators": []
                 },
@@ -9270,8 +9270,17 @@
                     "defaultValue": "''",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "line": 11,
+                    "line": 20,
                     "type": "string",
+                    "decorators": []
+                },
+                {
+                    "name": "isLazy",
+                    "defaultValue": "true",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 19,
+                    "type": "boolean",
                     "decorators": []
                 },
                 {
@@ -9279,7 +9288,7 @@
                     "defaultValue": "''",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "line": 9,
+                    "line": 17,
                     "type": "string",
                     "decorators": []
                 }
@@ -9290,11 +9299,31 @@
                     "defaultValue": "new EventEmitter<string>()",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "line": 13,
+                    "line": 22,
                     "type": "EventEmitter"
                 }
             ],
             "propertiesClass": [
+                {
+                    "name": "defaultSrcUrl",
+                    "defaultValue": "''",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "string",
+                    "optional": false,
+                    "description": "",
+                    "line": 28
+                },
+                {
+                    "name": "defFailed",
+                    "defaultValue": "false",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "boolean",
+                    "optional": false,
+                    "description": "",
+                    "line": 25
+                },
                 {
                     "name": "failed",
                     "defaultValue": "false",
@@ -9303,20 +9332,143 @@
                     "type": "boolean",
                     "optional": false,
                     "description": "",
-                    "line": 15
+                    "line": 24
                 },
                 {
-                    "name": "urls",
-                    "defaultValue": "[\n    'https://annuadvent.com/getImage?imageId=annuadvent-prod/articles/wL6NJSYXnBXxNfvfYNilAAMvVTB3/padma-the-treasure-of-lotus-flowers--nav-nidhis-lic7fsp984gcikop.jpg',\n    'https://annuadvent.com/getImage?imageId=annuadvent-prod/articles/wL6NJSYXnBXxNfvfYNilAAMvVTB3/shankha-the-treasure-of-conch-shells--nav-nidhis-lic7trnnyanbabtq.jpg',\n    'https://annuadvent.com/getImage?imageId=annuadvent-prod/articles/wL6NJSYXnBXxNfvfYNilAAMvVTB3/kachchhap-the-treasure-of-tortoiseshaped-gems--nav-nidhis-lic87scf5aykrusp.jpg',\n    'https://annuadvent.com/getImage?imageId=annuadvent-prod/articles/wL6NJSYXnBXxNfvfYNilAAMvVTB3/nila-the-treasure-of-sapphire-gems--nav-nidhis-lic8sjvpqg0jvuv8.jpg'\n  ]",
+                    "name": "loading",
+                    "defaultValue": "true",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "type": "[]",
+                    "type": "boolean",
                     "optional": false,
                     "description": "",
-                    "line": 16
+                    "line": 26
+                },
+                {
+                    "name": "srcUrl",
+                    "defaultValue": "''",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "string",
+                    "optional": false,
+                    "description": "",
+                    "line": 27
                 }
             ],
             "methodsClass": [
+                {
+                    "name": "loadImage",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 38,
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "modifierKind": [
+                        123
+                    ]
+                },
+                {
+                    "name": "ngOnChanges",
+                    "args": [
+                        {
+                            "name": "changes",
+                            "type": "SimpleChanges",
+                            "deprecated": false,
+                            "deprecationMessage": ""
+                        }
+                    ],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 34,
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "jsdoctags": [
+                        {
+                            "name": "changes",
+                            "type": "SimpleChanges",
+                            "deprecated": false,
+                            "deprecationMessage": "",
+                            "tagName": {
+                                "text": "param"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "ngOnInit",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 30,
+                    "deprecated": false,
+                    "deprecationMessage": ""
+                },
+                {
+                    "name": "onDefImgError",
+                    "args": [
+                        {
+                            "name": "event",
+                            "type": "any",
+                            "deprecated": false,
+                            "deprecationMessage": ""
+                        }
+                    ],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 82,
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "modifierKind": [
+                        125
+                    ],
+                    "jsdoctags": [
+                        {
+                            "name": "event",
+                            "type": "any",
+                            "deprecated": false,
+                            "deprecationMessage": "",
+                            "tagName": {
+                                "text": "param"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "onDefImgLoad",
+                    "args": [
+                        {
+                            "name": "event",
+                            "type": "any",
+                            "deprecated": false,
+                            "deprecationMessage": ""
+                        }
+                    ],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 77,
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "modifierKind": [
+                        125
+                    ],
+                    "jsdoctags": [
+                        {
+                            "name": "event",
+                            "type": "any",
+                            "deprecated": false,
+                            "deprecationMessage": "",
+                            "tagName": {
+                                "text": "param"
+                            }
+                        }
+                    ]
+                },
                 {
                     "name": "onImgError",
                     "args": [
@@ -9330,7 +9482,7 @@
                     "optional": false,
                     "returnType": "void",
                     "typeParameters": [],
-                    "line": 27,
+                    "line": 68,
                     "deprecated": false,
                     "deprecationMessage": "",
                     "modifierKind": [
@@ -9361,38 +9513,7 @@
                     "optional": false,
                     "returnType": "void",
                     "typeParameters": [],
-                    "line": 23,
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "modifierKind": [
-                        125
-                    ],
-                    "jsdoctags": [
-                        {
-                            "name": "event",
-                            "type": "any",
-                            "deprecated": false,
-                            "deprecationMessage": "",
-                            "tagName": {
-                                "text": "param"
-                            }
-                        }
-                    ]
-                },
-                {
-                    "name": "onImgLoadStart",
-                    "args": [
-                        {
-                            "name": "event",
-                            "type": "any",
-                            "deprecated": false,
-                            "deprecationMessage": ""
-                        }
-                    ],
-                    "optional": false,
-                    "returnType": "void",
-                    "typeParameters": [],
-                    "line": 31,
+                    "line": 63,
                     "deprecated": false,
                     "deprecationMessage": "",
                     "modifierKind": [
@@ -9420,17 +9541,21 @@
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import { Component, EventEmitter, Input, Output } from '@angular/core';\n\n@Component({\n  selector: 'anu-picture',\n  templateUrl: './picture.component.html',\n  styleUrls: ['./picture.component.scss']\n})\nexport class PictureComponent {\n  @Input() src: string = '';\n  @Input() alt: string = '';\n  @Input() defaultSrc: string = '';\n\n  @Output() loaded = new EventEmitter<string>();\n\n  failed: boolean = false;\n  urls = [\n    'https://annuadvent.com/getImage?imageId=annuadvent-prod/articles/wL6NJSYXnBXxNfvfYNilAAMvVTB3/padma-the-treasure-of-lotus-flowers--nav-nidhis-lic7fsp984gcikop.jpg',\n    'https://annuadvent.com/getImage?imageId=annuadvent-prod/articles/wL6NJSYXnBXxNfvfYNilAAMvVTB3/shankha-the-treasure-of-conch-shells--nav-nidhis-lic7trnnyanbabtq.jpg',\n    'https://annuadvent.com/getImage?imageId=annuadvent-prod/articles/wL6NJSYXnBXxNfvfYNilAAMvVTB3/kachchhap-the-treasure-of-tortoiseshaped-gems--nav-nidhis-lic87scf5aykrusp.jpg',\n    'https://annuadvent.com/getImage?imageId=annuadvent-prod/articles/wL6NJSYXnBXxNfvfYNilAAMvVTB3/nila-the-treasure-of-sapphire-gems--nav-nidhis-lic8sjvpqg0jvuv8.jpg'\n  ];\n\n  public onImgLoad(event: any) {\n    console.log('LOAD', event);\n  }\n\n  public onImgError(event: any) {\n    console.log('Error', event);\n  }\n\n  public onImgLoadStart(event: any) {\n    console.log('START LOAD', event);\n  }\n}\n",
+            "sourceCode": "import {\n  Component,\n  EventEmitter,\n  Input,\n  OnChanges,\n  OnInit,\n  Output,\n  SimpleChanges\n} from '@angular/core';\n\n@Component({\n  selector: 'anu-picture',\n  templateUrl: './picture.component.html',\n  styleUrls: ['./picture.component.scss']\n})\nexport class PictureComponent implements OnInit, OnChanges {\n  @Input() src: string = '';\n  @Input() alt: string = '';\n  @Input() isLazy: boolean = true;\n  @Input() defaultSrc: string = '';\n\n  @Output() loaded = new EventEmitter<string>();\n\n  failed: boolean = false;\n  defFailed: boolean = false;\n  loading: boolean = true;\n  srcUrl: string = '';\n  defaultSrcUrl: string = '';\n\n  ngOnInit(): void {\n    this.loadImage();\n  }\n\n  ngOnChanges(changes: SimpleChanges): void {\n    this.loadImage();\n  }\n\n  private loadImage(): void {\n    const isSrcChanged = this.srcUrl !== this.src;\n    const isDefaultSrcChanged = this.defaultSrc !== this.defaultSrcUrl;\n\n    if (isSrcChanged) {\n      this.failed = false;\n      this.srcUrl = this.src;\n      if (this.defFailed === false) {\n        const ds = this.defaultSrcUrl;\n        this.defaultSrcUrl = '';\n        this.defaultSrcUrl = ds;\n      } else {\n        this.defFailed = false;\n      }\n\n      this.loading = true;\n    }\n\n    if (isDefaultSrcChanged) {\n      this.defFailed = false;\n      this.defaultSrcUrl = this.defaultSrc;\n      if (this.failed) this.loading = true;\n    }\n  }\n\n  public onImgLoad(event: any) {\n    this.failed = false;\n    this.loading = false;\n  }\n\n  public onImgError(event: any) {\n    this.failed = true;\n    if (this.defaultSrcUrl) {\n      this.loading = true;\n    } else {\n      this.loading = false;\n    }\n  }\n\n  public onDefImgLoad(event: any) {\n    this.defFailed = false;\n    this.loading = false;\n  }\n\n  public onDefImgError(event: any) {\n    this.defFailed = true;\n    this.loading = false;\n  }\n}\n",
             "assetsDirs": [],
             "styleUrlsData": [
                 {
-                    "data": ":host {\r\n  display: flex;\r\n  flex-direction: column;\r\n  position: relative;\r\n\r\n  & > img {\r\n    width: 100%;\r\n  }\r\n\r\n  &.stretch > img {\r\n    height: 100%;\r\n    position: absolute;\r\n    z-index: 0;\r\n  }\r\n}\r\n",
+                    "data": ":host {\r\n  display: flex;\r\n  flex-direction: column;\r\n  position: relative;\r\n\r\n  & > img {\r\n    width: 100%;\r\n  }\r\n\r\n  &.stretch > img {\r\n    height: 100%;\r\n    position: absolute;\r\n    z-index: -1;\r\n  }\r\n\r\n  anu-spinner {\r\n    z-index: 999;\r\n  }\r\n}\r\n",
                     "styleUrl": "./picture.component.scss"
                 }
             ],
             "stylesData": "",
             "extends": [],
-            "templateData": "<input type=\"text\" [(ngModel)]=\"src\" [ngModelOptions]=\"{updateOn: 'blur'}\" />\nss\n<ng-content></ng-content>\n<ng-container *ngFor=\"let url of urls\">\n    <img [style.marginBottom]=\"'100rem'\" loading=\"lazy\" [src]=\"url\" [alt]=\"alt\" (load)=\"onImgLoad($event)\"\n        (loadeddata)=\"onImgLoadStart($event)\" (error)=\"onImgError($event)\" />\n\n\n    <img *ngIf=\"(defaultSrc && !src) || failed\" [ngSrc]=\"src\" [alt]=\"alt\" />\n\n</ng-container>\n"
+            "implements": [
+                "OnInit",
+                "OnChanges"
+            ],
+            "templateData": "<!-- Spinner loading -->\n<anu-spinner [show]=\"loading\" [size]=\"'sm'\"></anu-spinner>\n\n<!-- Main Image -->\n<img *ngIf=\"!failed && !defFailed\" [loading]=\"isLazy ? 'lazy': 'eager'\" [src]=\"srcUrl\" [alt]=\"alt\"\n    (load)=\"onImgLoad($event)\" (error)=\"onImgError($event)\" />\n\n<!-- Default Image -->\n<img *ngIf=\"defaultSrc && !defFailed && failed\" [src]=\"defaultSrcUrl\" [alt]=\"alt\" (load)=\"onDefImgLoad($event)\"\n    (error)=\"onDefImgError($event)\" />\n\n<!-- Error Message -->\n<span *ngIf=\"defFailed || (failed && !defFailed && !defaultSrcUrl) || (failed && !defaultSrcUrl)\" class=\"error\">Error\n</span>\n<!-- Content Projection -->\n<ng-content></ng-content>\n"
         },
         {
             "name": "SearchBoxComponent",
@@ -9823,7 +9948,7 @@
         },
         {
             "name": "SlideshowComponent",
-            "id": "component-SlideshowComponent-27acab57b4f02c4335efc02b2e83508a4e6be16082a6a1b9abe2aeb743629ab8dd0fa5d218c095e8db2ccf52e5b2f1387522fe23478ccc569b0518aa17ccae07",
+            "id": "component-SlideshowComponent-b60e5bd5c52a8fc20d54739d28199523a141cecb5aab4cc7d2bd55d03ac0aeb9326eb0b0bc8cddcf8c3cf58b23d490e1a6502b0a45c4d8525fdab05745cab439",
             "file": "projects/ngx-common-ui/slideshow/src/components/slideshow/slideshow.component.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -9840,9 +9965,53 @@
             ],
             "viewProviders": [],
             "hostDirectives": [],
-            "inputsClass": [],
+            "inputsClass": [
+                {
+                    "name": "autoSlide",
+                    "defaultValue": "false",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "rawdescription": "\n\nenables auto scrolling based on duration.\n",
+                    "description": "<p>enables auto scrolling based on duration.</p>\n",
+                    "line": 51,
+                    "type": "boolean",
+                    "decorators": []
+                },
+                {
+                    "name": "duration",
+                    "defaultValue": "5000",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "rawdescription": "\n\nslide duration in miliseconds. Next slide wil show up after this duration.\n",
+                    "description": "<p>slide duration in miliseconds. Next slide wil show up after this duration.</p>\n",
+                    "line": 46,
+                    "type": "number",
+                    "decorators": []
+                },
+                {
+                    "name": "relativeItemWidth",
+                    "defaultValue": "100",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "rawdescription": "\n\nItem width in percentage of Slidhow width.\nShould be a number between 1-100\nDefault is 100, which means 1 item at a time is visible in view.\n",
+                    "description": "<p>Item width in percentage of Slidhow width.\nShould be a number between 1-100\nDefault is 100, which means 1 item at a time is visible in view.</p>\n",
+                    "line": 41,
+                    "type": "number",
+                    "decorators": []
+                }
+            ],
             "outputsClass": [],
             "propertiesClass": [
+                {
+                    "name": "activeSlide",
+                    "defaultValue": "0",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "number",
+                    "optional": false,
+                    "description": "",
+                    "line": 59
+                },
                 {
                     "name": "contentEl",
                     "defaultValue": "null",
@@ -9851,7 +10020,7 @@
                     "type": "Element | null",
                     "optional": false,
                     "description": "",
-                    "line": 19
+                    "line": 53
                 },
                 {
                     "name": "el",
@@ -9861,19 +10030,280 @@
                     "type": "Element | null",
                     "optional": false,
                     "description": "",
-                    "line": 20
+                    "line": 54
+                },
+                {
+                    "name": "interval$",
+                    "defaultValue": "null",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "null",
+                    "optional": false,
+                    "description": "",
+                    "line": 58
+                },
+                {
+                    "name": "items",
+                    "defaultValue": "[]",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Array<any>",
+                    "optional": false,
+                    "description": "",
+                    "line": 55
+                },
+                {
+                    "name": "setTimeout$",
+                    "defaultValue": "null",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "null",
+                    "optional": false,
+                    "description": "",
+                    "line": 57
                 }
             ],
             "methodsClass": [
+                {
+                    "name": "nextSlide",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 197,
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "modifierKind": [
+                        123
+                    ]
+                },
+                {
+                    "name": "ngAfterContentInit",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 91,
+                    "deprecated": false,
+                    "deprecationMessage": ""
+                },
+                {
+                    "name": "ngOnChanges",
+                    "args": [
+                        {
+                            "name": "changes",
+                            "type": "SimpleChanges",
+                            "deprecated": false,
+                            "deprecationMessage": ""
+                        }
+                    ],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 97,
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "jsdoctags": [
+                        {
+                            "name": "changes",
+                            "type": "SimpleChanges",
+                            "deprecated": false,
+                            "deprecationMessage": "",
+                            "tagName": {
+                                "text": "param"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "ngOnDestroy",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 102,
+                    "deprecated": false,
+                    "deprecationMessage": ""
+                },
                 {
                     "name": "ngOnInit",
                     "args": [],
                     "optional": false,
                     "returnType": "void",
                     "typeParameters": [],
-                    "line": 24,
+                    "line": 89,
                     "deprecated": false,
                     "deprecationMessage": ""
+                },
+                {
+                    "name": "onMouseenter",
+                    "args": [
+                        {
+                            "name": "event",
+                            "type": "",
+                            "deprecated": false,
+                            "deprecationMessage": ""
+                        }
+                    ],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 78,
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "decorators": [
+                        {
+                            "name": "HostListener",
+                            "stringifiedArguments": "'mouseenter', ['$event']"
+                        }
+                    ],
+                    "modifierKind": [
+                        170
+                    ],
+                    "jsdoctags": [
+                        {
+                            "name": "event",
+                            "type": "",
+                            "deprecated": false,
+                            "deprecationMessage": "",
+                            "tagName": {
+                                "text": "param"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "onMouseleave",
+                    "args": [
+                        {
+                            "name": "event",
+                            "type": "",
+                            "deprecated": false,
+                            "deprecationMessage": ""
+                        }
+                    ],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 84,
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "decorators": [
+                        {
+                            "name": "HostListener",
+                            "stringifiedArguments": "'mouseleave', ['$event']"
+                        }
+                    ],
+                    "modifierKind": [
+                        170
+                    ],
+                    "jsdoctags": [
+                        {
+                            "name": "event",
+                            "type": "",
+                            "deprecated": false,
+                            "deprecationMessage": "",
+                            "tagName": {
+                                "text": "param"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "onResize",
+                    "args": [
+                        {
+                            "name": "event",
+                            "type": "",
+                            "deprecated": false,
+                            "deprecationMessage": ""
+                        }
+                    ],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 67,
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "decorators": [
+                        {
+                            "name": "HostListener",
+                            "stringifiedArguments": "'window:resize', ['$event']"
+                        }
+                    ],
+                    "modifierKind": [
+                        170
+                    ],
+                    "jsdoctags": [
+                        {
+                            "name": "event",
+                            "type": "",
+                            "deprecated": false,
+                            "deprecationMessage": "",
+                            "tagName": {
+                                "text": "param"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "onSlideControlClick",
+                    "args": [
+                        {
+                            "name": "event",
+                            "type": "any",
+                            "deprecated": false,
+                            "deprecationMessage": ""
+                        },
+                        {
+                            "name": "activeSlide",
+                            "type": "number",
+                            "deprecated": false,
+                            "deprecationMessage": ""
+                        }
+                    ],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 205,
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "modifierKind": [
+                        125
+                    ],
+                    "jsdoctags": [
+                        {
+                            "name": "event",
+                            "type": "any",
+                            "deprecated": false,
+                            "deprecationMessage": "",
+                            "tagName": {
+                                "text": "param"
+                            }
+                        },
+                        {
+                            "name": "activeSlide",
+                            "type": "number",
+                            "deprecated": false,
+                            "deprecationMessage": "",
+                            "tagName": {
+                                "text": "param"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "previousSlide",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 189,
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "modifierKind": [
+                        123
+                    ]
                 },
                 {
                     "name": "scrollSlide",
@@ -9888,7 +10318,7 @@
                     "optional": false,
                     "returnType": "void",
                     "typeParameters": [],
-                    "line": 29,
+                    "line": 172,
                     "deprecated": false,
                     "deprecationMessage": "",
                     "modifierKind": [
@@ -9905,22 +10335,113 @@
                             }
                         }
                     ]
+                },
+                {
+                    "name": "setSlideShowWidth",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 128,
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "modifierKind": [
+                        123
+                    ]
+                },
+                {
+                    "name": "startAutoSlide",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 115,
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "modifierKind": [
+                        123
+                    ]
+                },
+                {
+                    "name": "stopAutoSlide",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 108,
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "modifierKind": [
+                        123
+                    ]
                 }
             ],
             "deprecated": false,
             "deprecationMessage": "",
             "hostBindings": [],
-            "hostListeners": [],
+            "hostListeners": [
+                {
+                    "name": "mouseenter",
+                    "args": [
+                        {
+                            "name": "event",
+                            "type": "",
+                            "deprecated": false,
+                            "deprecationMessage": ""
+                        }
+                    ],
+                    "argsDecorator": [
+                        "$event"
+                    ],
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 78
+                },
+                {
+                    "name": "mouseleave",
+                    "args": [
+                        {
+                            "name": "event",
+                            "type": "",
+                            "deprecated": false,
+                            "deprecationMessage": ""
+                        }
+                    ],
+                    "argsDecorator": [
+                        "$event"
+                    ],
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 84
+                },
+                {
+                    "name": "window:resize",
+                    "args": [
+                        {
+                            "name": "event",
+                            "type": "",
+                            "deprecated": false,
+                            "deprecationMessage": ""
+                        }
+                    ],
+                    "argsDecorator": [
+                        "$event"
+                    ],
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 67
+                }
+            ],
             "standalone": false,
             "imports": [],
-            "description": "<p>Slide Show Component, scrolls horizontally any projected content, by the specified scrollsize.\nAllows to click next and prev buttons too.</p>\n",
-            "rawdescription": "\n\nSlide Show Component, scrolls horizontally any projected content, by the specified scrollsize.\nAllows to click next and prev buttons too.\n\n",
+            "description": "<p>Slide Show Component, scrolls horizontally any projected content, by the specified scrollsize.\nAllows to click next and prev buttons too.\nProjected content should have added <code>.slideshow_item</code> class to the projected content.</p>\n",
+            "rawdescription": "\n\nSlide Show Component, scrolls horizontally any projected content, by the specified scrollsize.\nAllows to click next and prev buttons too.\nProjected content should have added <code>.slideshow_item</code> class to the projected content.\n\n",
             "type": "component",
-            "sourceCode": "import { Component, ElementRef, Input, OnInit } from '@angular/core';\r\n\r\n/**\r\n * Slide Show Component, scrolls horizontally any projected content, by the specified scrollsize.\r\n * Allows to click next and prev buttons too.\r\n * @date 6/11/2023 - 8:40:31 PM\r\n *\r\n * @export\r\n * @class SlideshowComponent\r\n * @typedef {SlideshowComponent}\r\n * @implements {OnInit}\r\n */\r\n@Component({\r\n  selector: 'anu-slideshow',\r\n  templateUrl: './slideshow.component.html',\r\n  styleUrls: ['./slideshow.component.scss'],\r\n})\r\nexport class SlideshowComponent implements OnInit {\r\n  contentEl: Element | null = null;\r\n  el: Element | null = null;\r\n\r\n  constructor(private elRef: ElementRef) { }\r\n\r\n  ngOnInit(): void {\r\n    this.el = this.elRef.nativeElement;\r\n    this.contentEl = this.el?.querySelector('.slideshow_content') || null;\r\n  }\r\n\r\n  public scrollSlide(scrollDir: number): void {\r\n    if (!this.contentEl) return;\r\n    const scrollWidth = (this.el?.clientWidth || 0) * scrollDir;\r\n    this.contentEl.scrollLeft += scrollWidth;\r\n  }\r\n}\r\n",
+            "sourceCode": "import {\r\n  AfterContentInit,\r\n  Component,\r\n  ElementRef,\r\n  HostListener,\r\n  Inject,\r\n  Input,\r\n  OnChanges,\r\n  OnDestroy,\r\n  OnInit,\r\n  PLATFORM_ID,\r\n  SimpleChanges\r\n} from '@angular/core';\r\nimport { SLIDESHOW_ITEM_CLASS } from '../../constants/slideshow.constant';\r\nimport { isPlatformBrowser } from '@angular/common';\r\n\r\n/**\r\n * Slide Show Component, scrolls horizontally any projected content, by the specified scrollsize.\r\n * Allows to click next and prev buttons too.\r\n * Projected content should have added <code>.slideshow_item</code> class to the projected content.\r\n * @date 6/11/2023 - 8:40:31 PM\r\n *\r\n * @export\r\n * @class SlideshowComponent\r\n * @typedef {SlideshowComponent}\r\n * @implements {OnInit}\r\n */\r\n@Component({\r\n  selector: 'anu-slideshow',\r\n  templateUrl: './slideshow.component.html',\r\n  styleUrls: ['./slideshow.component.scss']\r\n})\r\nexport class SlideshowComponent\r\n  implements OnInit, AfterContentInit, OnChanges, OnDestroy\r\n{\r\n  /**\r\n   * Item width in percentage of Slidhow width.\r\n   * Should be a number between 1-100\r\n   * Default is 100, which means 1 item at a time is visible in view.\r\n   */\r\n  @Input() relativeItemWidth: number = 100;\r\n\r\n  /**\r\n   * slide duration in miliseconds. Next slide wil show up after this duration.\r\n   */\r\n  @Input() duration: number = 5000;\r\n\r\n  /**\r\n   * enables auto scrolling based on duration.\r\n   */\r\n  @Input() autoSlide: boolean = false;\r\n\r\n  contentEl: Element | null = null;\r\n  el: Element | null = null;\r\n  items: Array<any> = [];\r\n\r\n  setTimeout$ = null;\r\n  interval$ = null;\r\n  activeSlide = 0;\r\n\r\n  constructor(\r\n    private elRef: ElementRef,\r\n    @Inject(PLATFORM_ID) private platformId: Object\r\n  ) {}\r\n\r\n  @HostListener('window:resize', ['$event'])\r\n  onResize(event) {\r\n    if (!this.setTimeout$) {\r\n      this.setTimeout$ = setTimeout(() => {\r\n        this.setSlideShowWidth();\r\n        clearTimeout(this.setTimeout$);\r\n        this.setTimeout$ = null;\r\n      }, 500);\r\n    }\r\n  }\r\n\r\n  @HostListener('mouseenter', ['$event'])\r\n  onMouseenter(event) {\r\n    console.log('Enter');\r\n    this.stopAutoSlide();\r\n  }\r\n\r\n  @HostListener('mouseleave', ['$event'])\r\n  onMouseleave(event) {\r\n    console.log('Out');\r\n    this.startAutoSlide();\r\n  }\r\n\r\n  ngOnInit(): void {}\r\n\r\n  ngAfterContentInit(): void {\r\n    this.setSlideShowWidth();\r\n\r\n    this.startAutoSlide();\r\n  }\r\n\r\n  ngOnChanges(changes: SimpleChanges): void {\r\n    this.setSlideShowWidth();\r\n    this.startAutoSlide();\r\n  }\r\n\r\n  ngOnDestroy(): void {\r\n    this.stopAutoSlide();\r\n    this.setTimeout$ && clearTimeout(this.setTimeout$);\r\n    this.setTimeout$ = null;\r\n  }\r\n\r\n  private stopAutoSlide(): void {\r\n    if (isPlatformBrowser(this.platformId)) {\r\n      this.interval$ && clearInterval(this.interval$);\r\n      this.interval$ = null;\r\n    }\r\n  }\r\n\r\n  private startAutoSlide(): void {\r\n    this.stopAutoSlide();\r\n\r\n    if (isPlatformBrowser(this.platformId)) {\r\n      if (!this.duration || !this.autoSlide) return;\r\n\r\n      this.interval$ = setInterval(() => {\r\n        // Slide\r\n        this.scrollSlide(1);\r\n      }, this.duration);\r\n    }\r\n  }\r\n\r\n  private setSlideShowWidth(): void {\r\n    this.el = this.elRef.nativeElement;\r\n    this.contentEl = this.el?.querySelector('.slideshow_content') || null;\r\n    const nodes = this.el?.querySelectorAll(`.${SLIDESHOW_ITEM_CLASS}`) || null;\r\n\r\n    if (!this.contentEl || !nodes || !nodes.length || !nodes.forEach) return;\r\n\r\n    const slideshowVieportWidth = this.contentEl.clientWidth;\r\n    console.log(slideshowVieportWidth);\r\n\r\n    nodes?.forEach((item) => {\r\n      if (\r\n        !this.relativeItemWidth ||\r\n        typeof this.relativeItemWidth !== 'number'\r\n      ) {\r\n        this.relativeItemWidth = 100;\r\n      }\r\n\r\n      let marginTotal = 0;\r\n      let marginLeft = 0;\r\n      let marginRight = 0;\r\n\r\n      if (typeof window !== 'undefined' && window.getComputedStyle) {\r\n        const cs = window.getComputedStyle(item);\r\n        marginLeft = parseFloat(cs.marginLeft?.replace('px', '') || '0');\r\n        marginRight = parseFloat(cs.marginRight?.replace('px', '') || '0');\r\n        marginTotal = marginLeft + marginRight;\r\n      }\r\n\r\n      this.items.push({\r\n        el: item,\r\n        marginLeft,\r\n        marginRight\r\n      });\r\n\r\n      item.setAttribute(\r\n        'style',\r\n        `width: ${\r\n          slideshowVieportWidth * (this.relativeItemWidth / 100) - marginTotal\r\n        }px`\r\n      );\r\n    });\r\n  }\r\n\r\n  public scrollSlide(scrollDir: number): void {\r\n    if (!this.contentEl || !this.items?.length) return;\r\n\r\n    if (!this.relativeItemWidth || typeof this.relativeItemWidth !== 'number') {\r\n      this.relativeItemWidth = 100;\r\n    }\r\n\r\n    if (scrollDir === -1) {\r\n      this.previousSlide();\r\n    } else {\r\n      this.nextSlide();\r\n    }\r\n\r\n    const activeEl = this.items[this.activeSlide].el;\r\n    this.contentEl.scrollLeft = activeEl.offsetLeft;\r\n  }\r\n\r\n  private previousSlide(): void {\r\n    if (this.activeSlide <= 0) {\r\n      this.activeSlide = this.items.length - 1;\r\n    } else {\r\n      this.activeSlide--;\r\n    }\r\n  }\r\n\r\n  private nextSlide(): void {\r\n    if (this.activeSlide >= this.items.length - 1) {\r\n      this.activeSlide = 0;\r\n    } else {\r\n      this.activeSlide++;\r\n    }\r\n  }\r\n\r\n  public onSlideControlClick(event: any, activeSlide: number): void {\r\n    event.preventDefault();\r\n    this.activeSlide = activeSlide - 1;\r\n    this.scrollSlide(1);\r\n  }\r\n}\r\n",
             "assetsDirs": [],
             "styleUrlsData": [
                 {
-                    "data": ":host {\r\n  display: flex;\r\n  position: relative;\r\n  flex-direction: row;\r\n\r\n  .slideshow {\r\n    &_content {\r\n      display: flex;\r\n      flex-direction: row;\r\n      width: 100%;\r\n      flex-flow: nowrap;\r\n      white-space: nowrap;\r\n      overflow-x: auto;\r\n      scroll-behavior: smooth;\r\n\r\n      scrollbar-width: none;\r\n      /* Firefox */\r\n      -ms-overflow-style: none;\r\n      /* Internet Explorer 10+ */\r\n\r\n      &::-webkit-scrollbar {\r\n        /* WebKit */\r\n        width: 0;\r\n        height: 0;\r\n      }\r\n\r\n      &_overlay {\r\n        white-space: nowrap;\r\n        width: auto;\r\n      }\r\n    }\r\n  }\r\n\r\n  /* Next & previous buttons */\r\n  .prev,\r\n  .next {\r\n    cursor: pointer;\r\n    position: absolute;\r\n    display: flex;\r\n    flex-direction: column;\r\n    justify-content: center;\r\n    padding: 0.5rem;\r\n    top: 0;\r\n    width: auto;\r\n    height: 100%;\r\n    color: var(--anu-accent-normal);\r\n    font-weight: bold;\r\n    font-size: 2rem;\r\n    border-radius: 0 3px 3px 0;\r\n    user-select: none;\r\n    -webkit-user-select: none;\r\n  }\r\n\r\n  /* Position the \"next button\" to the right */\r\n  .next {\r\n    right: 0;\r\n    border-radius: 3px 0 0 3px;\r\n  }\r\n\r\n  &:hover {\r\n    .prev,\r\n    .next {\r\n      background-color: var(--anu-primary-lightest);\r\n      opacity: 0.8;\r\n\r\n      &:hover {\r\n        background-color: var(--anu-primary-normal);\r\n        opacity: 0.8;\r\n      }\r\n    }\r\n  }\r\n}\r\n",
+                    "data": "@import 'mixins';\r\n\r\n:host {\r\n  display: flex;\r\n  position: relative;\r\n  flex-direction: row;\r\n\r\n  .slideshow {\r\n    &_content {\r\n      display: flex;\r\n      flex-direction: row;\r\n      width: 100%;\r\n      flex-flow: nowrap;\r\n      white-space: nowrap;\r\n      overflow-x: auto;\r\n      scroll-behavior: smooth;\r\n\r\n      scrollbar-width: none;\r\n      /* Firefox */\r\n      -ms-overflow-style: none;\r\n      /* Internet Explorer 10+ */\r\n\r\n      &::-webkit-scrollbar {\r\n        /* WebKit */\r\n        width: 0;\r\n        height: 0;\r\n      }\r\n\r\n      &_overlay {\r\n        white-space: nowrap;\r\n        width: auto;\r\n      }\r\n    }\r\n  }\r\n\r\n  // Slide Controls\r\n\r\n  .slide-controls {\r\n    cursor: pointer;\r\n    position: absolute;\r\n    bottom: 0;\r\n    margin-left: auto;\r\n    margin-right: auto;\r\n    color: var(--anu-accent-normal);\r\n    font-weight: bold;\r\n    font-size: 0px;\r\n    border-radius: 0 3px 3px 0;\r\n    user-select: none;\r\n    -webkit-user-select: none;\r\n    a {\r\n      &:hover,\r\n      &.active {\r\n        &:after {\r\n          background-color: var(--anu-accent-normal);\r\n        }\r\n      }\r\n\r\n      &:after {\r\n        display: block;\r\n        content: '';\r\n        width: 1rem;\r\n        height: 1rem;\r\n        border-radius: 50%;\r\n        border: 1px solid var(--anu-accent-normal);\r\n        transition: all 0.3s;\r\n\r\n        @include small {\r\n          width: 0.7rem;\r\n          height: 0.7rem;\r\n        }\r\n\r\n        @include medium {\r\n          width: 0.9rem;\r\n          height: 0.9rem;\r\n        }\r\n      }\r\n    }\r\n  }\r\n\r\n  /* Next & previous buttons */\r\n  .prev,\r\n  .next {\r\n    cursor: pointer;\r\n    position: absolute;\r\n    display: flex;\r\n    flex-direction: column;\r\n    justify-content: center;\r\n    padding: 0.5rem;\r\n    top: 0;\r\n    width: auto;\r\n    height: 100%;\r\n    color: var(--anu-accent-normal);\r\n    font-weight: bold;\r\n    font-size: 2rem;\r\n    border-radius: 0 3px 3px 0;\r\n    user-select: none;\r\n    -webkit-user-select: none;\r\n  }\r\n\r\n  /* Position the \"next button\" to the right */\r\n  .next {\r\n    right: 0;\r\n    border-radius: 3px 0 0 3px;\r\n  }\r\n\r\n  &:hover {\r\n    .prev,\r\n    .next {\r\n      background-color: var(--anu-primary-lightest);\r\n      opacity: 0.8;\r\n\r\n      &:hover {\r\n        background-color: var(--anu-primary-normal);\r\n        opacity: 0.8;\r\n      }\r\n    }\r\n  }\r\n}\r\n",
                     "styleUrl": "./slideshow.component.scss"
                 }
             ],
@@ -9936,13 +10457,28 @@
                         "type": "ElementRef",
                         "deprecated": false,
                         "deprecationMessage": ""
+                    },
+                    {
+                        "name": "platformId",
+                        "type": "Object",
+                        "deprecated": false,
+                        "deprecationMessage": ""
                     }
                 ],
-                "line": 20,
+                "line": 59,
                 "jsdoctags": [
                     {
                         "name": "elRef",
                         "type": "ElementRef",
+                        "deprecated": false,
+                        "deprecationMessage": "",
+                        "tagName": {
+                            "text": "param"
+                        }
+                    },
+                    {
+                        "name": "platformId",
+                        "type": "Object",
                         "deprecated": false,
                         "deprecationMessage": "",
                         "tagName": {
@@ -9953,9 +10489,143 @@
             },
             "extends": [],
             "implements": [
-                "OnInit"
+                "OnInit",
+                "AfterContentInit",
+                "OnChanges",
+                "OnDestroy"
             ],
-            "templateData": "<div class=\"slideshow_content\">\r\n    <div class=\"slideshow_content_overlay row nowrap\">\r\n        <ng-content></ng-content>\r\n    </div>\r\n</div>\r\n<!-- Next and previous buttons -->\r\n<a class=\"prev\" href=\"javascript:void(0)\" (click)=\"scrollSlide(-1)\">&#10094;</a>\r\n<a class=\"next\" href=\"javascript:void(0)\" (click)=\"scrollSlide(1)\">&#10095;</a>\r\n"
+            "templateData": "<div class=\"slideshow_content\">\r\n    <div class=\"slideshow_content_overlay row nowrap\">\r\n        <ng-content></ng-content>\r\n    </div>\r\n</div>\r\n<!-- Next and previous buttons -->\r\n<a class=\"prev\" href=\"javascript:void(0)\" (click)=\"scrollSlide(-1)\">&#10094;</a>\r\n<a class=\"next\" href=\"javascript:void(0)\" (click)=\"scrollSlide(1)\">&#10095;</a>\r\n<div *ngIf=\"items?.length > 1\" class=\"row nowrap slide-controls center\">\r\n    <a [ngClass]=\"{'active': index === activeSlide}\" class=\"spacing-around-h-half\"\r\n        *ngFor=\"let item of items; let index = index\" href=\"#\" (click)=\"onSlideControlClick($event, index)\">O</a>\r\n</div>\r\n"
+        },
+        {
+            "name": "SmartButtonComponent",
+            "id": "component-SmartButtonComponent-9680ca4afb33eae171782ed2f61703b3b2a0fe39729cc3732d83a62f248592df74e7ded5120af18f70eceaaafcc53e5b4c6c48e1cd76bd287aecaad5bd40a817",
+            "file": "projects/ngx-common-ui/smart-button/src/components/smart-button/smart-button.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "anu-smart-button",
+            "styleUrls": [
+                "./smart-button.component.scss"
+            ],
+            "styles": [],
+            "templateUrl": [
+                "./smart-button.component.html"
+            ],
+            "viewProviders": [],
+            "hostDirectives": [],
+            "inputsClass": [
+                {
+                    "name": "disabled",
+                    "defaultValue": "false",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 13,
+                    "type": "boolean",
+                    "decorators": []
+                },
+                {
+                    "name": "href",
+                    "defaultValue": "''",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 10,
+                    "type": "string",
+                    "decorators": []
+                },
+                {
+                    "name": "iconUrl",
+                    "defaultValue": "''",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 11,
+                    "type": "string",
+                    "decorators": []
+                },
+                {
+                    "name": "label",
+                    "defaultValue": "''",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 9,
+                    "type": "string",
+                    "decorators": []
+                },
+                {
+                    "name": "loading",
+                    "defaultValue": "false",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 12,
+                    "type": "boolean",
+                    "decorators": []
+                }
+            ],
+            "outputsClass": [
+                {
+                    "name": "click",
+                    "defaultValue": "new EventEmitter<any>()",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 15,
+                    "type": "EventEmitter"
+                }
+            ],
+            "propertiesClass": [],
+            "methodsClass": [
+                {
+                    "name": "onClick",
+                    "args": [
+                        {
+                            "name": "event",
+                            "type": "any",
+                            "deprecated": false,
+                            "deprecationMessage": ""
+                        }
+                    ],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 17,
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "modifierKind": [
+                        125
+                    ],
+                    "jsdoctags": [
+                        {
+                            "name": "event",
+                            "type": "any",
+                            "deprecated": false,
+                            "deprecationMessage": "",
+                            "tagName": {
+                                "text": "param"
+                            }
+                        }
+                    ]
+                }
+            ],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [],
+            "standalone": false,
+            "imports": [],
+            "description": "",
+            "rawdescription": "\n",
+            "type": "component",
+            "sourceCode": "import { Component, EventEmitter, Input, Output } from '@angular/core';\n\n@Component({\n  selector: 'anu-smart-button',\n  templateUrl: './smart-button.component.html',\n  styleUrls: ['./smart-button.component.scss']\n})\nexport class SmartButtonComponent {\n  @Input() label: string = '';\n  @Input() href: string = '';\n  @Input() iconUrl: string = '';\n  @Input() loading: boolean = false;\n  @Input() disabled: boolean = false;\n\n  @Output() click = new EventEmitter<any>();\n\n  public onClick(event: any): void {\n    if (\n      !this.href ||\n      (this.href && !this.href?.length) ||\n      this.loading ||\n      this.disabled\n    ) {\n      event.preventDefault();\n    }\n\n    !this.loading && !this.disabled && this.click.emit();\n  }\n}\n",
+            "assetsDirs": [],
+            "styleUrlsData": [
+                {
+                    "data": ":host {\r\n  display: flex;\r\n  border: 1px solid var(--anu-primary-normal);\r\n\r\n  a {\r\n    color: inherit;\r\n  }\r\n\r\n  &:hover {\r\n    box-shadow: 0.1rem 0.05rem 0.4rem 0.1rem var(--anu-primary-normal);\r\n  }\r\n}\r\n",
+                    "styleUrl": "./smart-button.component.scss"
+                }
+            ],
+            "stylesData": "",
+            "extends": [],
+            "templateData": "<a [ngClass]=\"{'disabled': disabled}\" class=\"row nowrap center middle spacing-half-v spacing--h relative\"\n    [href]=\"href || '#'\" (click)=\"onClick($event)\">\n    <span *ngIf=\"iconUrl\" class=\"smart-btn-icon\">\n        <img [src]=\"iconUrl\" />\n    </span>\n    <span *ngIf=\"label\" class=\"smart-btn-label\">\n        {{label}}\n    </span>\n    <ng-container *ngIf=\"!label\">\n        <ng-content></ng-content>\n    </ng-container>\n    <anu-spinner [show]=\"loading\" [size]=\"'sm'\"></anu-spinner>\n</a>\n"
         },
         {
             "name": "SocialMediaButtonsComponent",
@@ -12979,13 +13649,13 @@
         },
         {
             "name": "PictureModule",
-            "id": "module-PictureModule-26cbfde8cf420ac167e685e14f58e7385fd1d6ec85b392a6261acbc231fd12da04bf9d9f4ea01dde43c9f0bbcb5598519a1ccdb6f3d7603023b42ae390deefdc",
+            "id": "module-PictureModule-4389a5ecddc2614f497bca6e47d97551ac00df8e52d97403a39efb000a39cc3e84c10b891b1dd8e4c648fe270aaf6254d694d6e079b266821dcc47a842833018",
             "description": "",
             "deprecationMessage": "",
             "deprecated": false,
             "file": "projects/ngx-common-ui/picture/src/picture.module.ts",
             "methods": [],
-            "sourceCode": "import { NgModule } from '@angular/core';\nimport { CommonModule, NgOptimizedImage } from '@angular/common';\nimport { PictureComponent } from './components/picture/picture.component';\nimport { FormsModule } from '@angular/forms';\nimport { SpinnerModule } from '@annuadvent/ngx-common-ui/spinner';\n\n@NgModule({\n  declarations: [PictureComponent],\n  imports: [CommonModule, NgOptimizedImage, FormsModule, SpinnerModule],\n  exports: [PictureComponent]\n})\nexport class PictureModule {}\n",
+            "sourceCode": "import { NgModule } from '@angular/core';\nimport { CommonModule } from '@angular/common';\nimport { PictureComponent } from './components/picture/picture.component';\nimport { FormsModule } from '@angular/forms';\nimport { SpinnerModule } from '@annuadvent/ngx-common-ui/spinner';\n\n@NgModule({\n  declarations: [PictureComponent],\n  imports: [CommonModule, FormsModule, SpinnerModule],\n  exports: [PictureComponent]\n})\nexport class PictureModule {}\n",
             "children": [
                 {
                     "type": "providers",
@@ -12998,9 +13668,6 @@
                 {
                     "type": "imports",
                     "elements": [
-                        {
-                            "name": "NgOptimizedImage"
-                        },
                         {
                             "name": "SpinnerModule"
                         }
@@ -13192,6 +13859,46 @@
                 {
                     "type": "imports",
                     "elements": []
+                },
+                {
+                    "type": "exports",
+                    "elements": []
+                },
+                {
+                    "type": "bootstrap",
+                    "elements": []
+                },
+                {
+                    "type": "classes",
+                    "elements": []
+                }
+            ]
+        },
+        {
+            "name": "SmartButtonModule",
+            "id": "module-SmartButtonModule-aba822fcadac9418cc29c9eb2e375deeaad9065e18b2fdd0bedf3deec8038c1695a5d5a91ff24ed8e660cc7a2306f241c58038d376465aeb2357195f21dab41d",
+            "description": "",
+            "deprecationMessage": "",
+            "deprecated": false,
+            "file": "projects/ngx-common-ui/smart-button/src/smart-button.module.ts",
+            "methods": [],
+            "sourceCode": "import { NgModule } from '@angular/core';\nimport { CommonModule } from '@angular/common';\nimport { SmartButtonComponent } from './components/smart-button/smart-button.component';\nimport { RouterModule } from '@angular/router';\nimport { SpinnerModule } from '@annuadvent/ngx-common-ui/spinner';\n\n@NgModule({\n  declarations: [SmartButtonComponent],\n  imports: [CommonModule, SpinnerModule],\n  exports: [SmartButtonComponent]\n})\nexport class SmartButtonModule {}\n",
+            "children": [
+                {
+                    "type": "providers",
+                    "elements": []
+                },
+                {
+                    "type": "declarations",
+                    "elements": []
+                },
+                {
+                    "type": "imports",
+                    "elements": [
+                        {
+                            "name": "SpinnerModule"
+                        }
+                    ]
                 },
                 {
                     "type": "exports",
@@ -14279,7 +14986,7 @@
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "any",
-                "defaultValue": "{\r\n  projectionContent: `\r\n  <h2>Hello world</h2>\r\n  <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum</p>\r\n  `,\r\n  inputPropsValues: {\r\n    src: '/assets/local-image.jpg',\r\n    alt: 'Sample Image',\r\n    defaultImage: '/assets/start-your-business.jpg'\r\n  }\r\n}"
+                "defaultValue": "{\r\n  projectionContent: `<h2>Hello world</h2>\r\n  <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum</p>`,\r\n  inputPropsValues: {\r\n    src: '/assets/local-image.jpg',\r\n    alt: 'Sample Image',\r\n    defaultImage: '/assets/start-your-business.jpg'\r\n  }\r\n}"
             },
             {
                 "name": "pink",
@@ -14381,6 +15088,16 @@
                 "defaultValue": "JSON.parse(jsonTheme)"
             },
             {
+                "name": "SLIDESHOW_ITEM_CLASS",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/ngx-common-ui/slideshow/src/constants/slideshow.constant.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "string",
+                "defaultValue": "'slideshow_item'"
+            },
+            {
                 "name": "SlideshowComponent",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
@@ -14388,7 +15105,17 @@
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "any",
-                "defaultValue": "{\r\n  projectionContent:\r\n    '<div class=\"row nowrap\">' +\r\n    '<img src=\"assets/start-your-business.jpg\" width=\"200\"/>' +\r\n    '<span>A) Lorem Ipsum is simply dummy text of the printing and typesetting industry.</span>' +\r\n    '<img src=\"assets/start-your-business.jpg\" width=\"200\"/>' +\r\n    '<span>B) Lorem Ipsum is simply dummy text of the printing and typesetting industry.</span>' +\r\n    '<img src=\"assets/start-your-business.jpg\" width=\"200\"/>' +\r\n    '<span>C) Lorem Ipsum is simply dummy text of the printing and typesetting industry.</span>' +\r\n    '<img src=\"assets/start-your-business.jpg\" width=\"200\"/>' +\r\n    '<span>D) Lorem Ipsum is simply dummy text of the printing and typesetting industry.</span>' +\r\n    '<img src=\"assets/start-your-business.jpg\" width=\"200\"/>' +\r\n    '</div>',\r\n  inputPropsValues: {},\r\n}"
+                "defaultValue": "{\r\n  projectionContent:\r\n    '<div class=\"row nowrap\">' +\r\n    '<div class=\"slideshow_item\">' +\r\n    '<img src=\"assets/start-your-business.jpg\" width=\"200\"/>' +\r\n    '<span>A) Lorem Ipsum is simply dummy text of the printing and typesetting industry.</span>' +\r\n    '</div>' +\r\n    '<div class=\"slideshow_item\">' +\r\n    '<img src=\"assets/start-your-business.jpg\" width=\"200\"/>' +\r\n    '<span>B) Lorem Ipsum is simply dummy text of the printing and typesetting industry.</span>' +\r\n    '</div>' +\r\n    '<div class=\"slideshow_item\">' +\r\n    '<img src=\"assets/start-your-business.jpg\" width=\"200\"/>' +\r\n    '<span>C) Lorem Ipsum is simply dummy text of the printing and typesetting industry.</span>' +\r\n    '</div>' +\r\n    '<div class=\"slideshow_item\">' +\r\n    '<img src=\"assets/start-your-business.jpg\" width=\"200\"/>' +\r\n    '<span>D) Lorem Ipsum is simply dummy text of the printing and typesetting industry.</span>' +\r\n    '</div>' +\r\n    '</div>',\r\n  inputPropsValues: {\r\n    relativeItemWidth: 80,\r\n    duration: 1000\r\n  }\r\n}"
+            },
+            {
+                "name": "SmartButtonComponent",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/ngx-common-ui/smart-button/src/components/smart-button/smart-button.docs.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "any",
+                "defaultValue": "{\r\n  projectionContent: '',\r\n  inputPropsValues: {\r\n    href: '',\r\n    iconUrl:\r\n      'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAAAXNSR0IArs4c6QAABFZJREFUaEPtmHnoZmMUxz+jsW+DTNnJmr2GyBIRkS1GIiRqUBNiCGWL4g9rsiQKZUlD9hFDSZMsf6BhBtmyZons2fXhPHrcuet7f83br+755+2993nOc77P+Z7tTmGSy5RJbj8DgHF7cPDA4IGeNzBQqOcF9t4+bg9MBbYB1gd+Bz4C3gL+aItsXAA2Bc4FjgJWLxj7JXAvcCXwcROQcQA4E7gCWL7BuO+B04A769ZNNIA1gWWBL4C/Sg6+CpiTPXfNa8AHAWgGML2w72zg6ioQfQEsEzQ4DtgHWDEOks/PA/cDtwE/A9cA3n6Su4ELgfezZ+o7KNZuFs8FeQDwVBmIPgC2Bu4Bdmiggjx+CTgiM+gs4LqafWsATwC7xJp3ga0i0P+3bVQA+8XtrpZpkzZvxP8tgPVKDPQ25fWNTcEJrAssBtIZRwIPFPeNAmB/4GFghVCm0fJUF/+ZHbBHZBNTZJLrgTNaGJ+WXA6cH3/uAo7vC0DjH8q4rptNhT+UGFXkvEveCyr81hKEFHoh1i4Etu8DoGj848BM4JcSY8zhekWRNsbBBvH/JOD2lgDWjozm8k+i4I0UA12MPxW4OTNezr8JPB3PHgMOaQlgo0ixLrdCG8idAXQx3hwuTVaOU8w210Zt+CaeW2mLub4Kj4E7N14+AhzWFYC53RtL+b2ONuo24Aw8xRR7bHbgq5FypZRVuE0czAMODB168oYuAEyF5u/UqzQZr+63gc0jG/mrN5Kkd79GBiur1Ll9Jof74sF3wCbA110APAvsFRtMkYdWBGzSqZd+hH8+FAg8FSHf22J8BiwHWJRSla2izt6AF7ZSLDgHsA1ZQqrqwJ7Ac7HaPmVH4Nuq0+K5lTkVsiJ9ZmfuvwUw0OuMl7YpjuT+4YUa89/eKgByzUOVWdHPNNjPtoC5Wnkwax02Bl4BpsW73aNPKtPnzefGz4/AtZcqlSoALwM7BWpz8RLcK9G2SnjJhuxFYFdgLeCZrF8qzSShq7Px7qsC8CmwDvAVIIC24iByNHARcFPkfumnfAjsnBWmXOdIxtcBcLSzh5H3yfVtQawawWrhSsab+03Jr5coGdn4OgAGsIGsmL4M5LYibYrG75vFR67nGODWLGAbOV80oopClwEXxOKLgUtbWl9lvM2excuL0KNOXqcUWorOxtd5YEtgEWBAWkTkroWoTqqMt4l7NHRV7bdgnRiTW8u7+ndZ3TxwB3BCaLP4HBxNWdkB0swMYypV5Hyijf1/1fT1OXAJYG1oqsylwOoA6GrTaaqaP8UkZZHSOx6op8w6pwMGbzI+D1gHHwf57YAN45al0pNRba3eI0vTRGY760EaWhQBFPe/Ey2Ho+BSkSYAGuFM6neckwG/pJWJXyEcUs5rWfQmDFwbAOkw64JpbzdAz/j5zylpQQzb+eeRCTOwSVEXAE26xvJ+ADCWa88OHTwweKDnDQwU6nmBvbcPHuh9hT0VTHoP/A0LTuMxcvfaggAAAABJRU5ErkJggg==',\r\n    label: 'Sample Smart Button',\r\n    loading: false\r\n  }\r\n}"
             },
             {
                 "name": "SOCIAL_MEDIA_BUTTONS",
@@ -15606,7 +16333,7 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "any",
-                    "defaultValue": "{\r\n  projectionContent: `\r\n  <h2>Hello world</h2>\r\n  <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum</p>\r\n  `,\r\n  inputPropsValues: {\r\n    src: '/assets/local-image.jpg',\r\n    alt: 'Sample Image',\r\n    defaultImage: '/assets/start-your-business.jpg'\r\n  }\r\n}"
+                    "defaultValue": "{\r\n  projectionContent: `<h2>Hello world</h2>\r\n  <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum</p>`,\r\n  inputPropsValues: {\r\n    src: '/assets/local-image.jpg',\r\n    alt: 'Sample Image',\r\n    defaultImage: '/assets/start-your-business.jpg'\r\n  }\r\n}"
                 }
             ],
             "projects/ngx-common-ui/code-block/src/services/highlight.service.ts": [
@@ -15654,6 +16381,18 @@
                     "defaultValue": "{\r\n    projectionContent: '',\r\n    inputPropsValues: {\r\n        items: [\r\n            { title: 'title 1', description: 'Item 1 description text' },\r\n            { title: 'title 2', description: 'Item 2 description text' },\r\n            { title: 'title 3', description: 'Item 3 description text' },\r\n        ],\r\n        keys: ['title', 'description']\r\n    }\r\n}"
                 }
             ],
+            "projects/ngx-common-ui/slideshow/src/constants/slideshow.constant.ts": [
+                {
+                    "name": "SLIDESHOW_ITEM_CLASS",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/ngx-common-ui/slideshow/src/constants/slideshow.constant.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "string",
+                    "defaultValue": "'slideshow_item'"
+                }
+            ],
             "projects/ngx-common-ui/slideshow/src/components/slideshow/slideshow.docs.ts": [
                 {
                     "name": "SlideshowComponent",
@@ -15663,7 +16402,19 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "any",
-                    "defaultValue": "{\r\n  projectionContent:\r\n    '<div class=\"row nowrap\">' +\r\n    '<img src=\"assets/start-your-business.jpg\" width=\"200\"/>' +\r\n    '<span>A) Lorem Ipsum is simply dummy text of the printing and typesetting industry.</span>' +\r\n    '<img src=\"assets/start-your-business.jpg\" width=\"200\"/>' +\r\n    '<span>B) Lorem Ipsum is simply dummy text of the printing and typesetting industry.</span>' +\r\n    '<img src=\"assets/start-your-business.jpg\" width=\"200\"/>' +\r\n    '<span>C) Lorem Ipsum is simply dummy text of the printing and typesetting industry.</span>' +\r\n    '<img src=\"assets/start-your-business.jpg\" width=\"200\"/>' +\r\n    '<span>D) Lorem Ipsum is simply dummy text of the printing and typesetting industry.</span>' +\r\n    '<img src=\"assets/start-your-business.jpg\" width=\"200\"/>' +\r\n    '</div>',\r\n  inputPropsValues: {},\r\n}"
+                    "defaultValue": "{\r\n  projectionContent:\r\n    '<div class=\"row nowrap\">' +\r\n    '<div class=\"slideshow_item\">' +\r\n    '<img src=\"assets/start-your-business.jpg\" width=\"200\"/>' +\r\n    '<span>A) Lorem Ipsum is simply dummy text of the printing and typesetting industry.</span>' +\r\n    '</div>' +\r\n    '<div class=\"slideshow_item\">' +\r\n    '<img src=\"assets/start-your-business.jpg\" width=\"200\"/>' +\r\n    '<span>B) Lorem Ipsum is simply dummy text of the printing and typesetting industry.</span>' +\r\n    '</div>' +\r\n    '<div class=\"slideshow_item\">' +\r\n    '<img src=\"assets/start-your-business.jpg\" width=\"200\"/>' +\r\n    '<span>C) Lorem Ipsum is simply dummy text of the printing and typesetting industry.</span>' +\r\n    '</div>' +\r\n    '<div class=\"slideshow_item\">' +\r\n    '<img src=\"assets/start-your-business.jpg\" width=\"200\"/>' +\r\n    '<span>D) Lorem Ipsum is simply dummy text of the printing and typesetting industry.</span>' +\r\n    '</div>' +\r\n    '</div>',\r\n  inputPropsValues: {\r\n    relativeItemWidth: 80,\r\n    duration: 1000\r\n  }\r\n}"
+                }
+            ],
+            "projects/ngx-common-ui/smart-button/src/components/smart-button/smart-button.docs.ts": [
+                {
+                    "name": "SmartButtonComponent",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/ngx-common-ui/smart-button/src/components/smart-button/smart-button.docs.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "any",
+                    "defaultValue": "{\r\n  projectionContent: '',\r\n  inputPropsValues: {\r\n    href: '',\r\n    iconUrl:\r\n      'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAAAXNSR0IArs4c6QAABFZJREFUaEPtmHnoZmMUxz+jsW+DTNnJmr2GyBIRkS1GIiRqUBNiCGWL4g9rsiQKZUlD9hFDSZMsf6BhBtmyZons2fXhPHrcuet7f83br+755+2993nOc77P+Z7tTmGSy5RJbj8DgHF7cPDA4IGeNzBQqOcF9t4+bg9MBbYB1gd+Bz4C3gL+aItsXAA2Bc4FjgJWLxj7JXAvcCXwcROQcQA4E7gCWL7BuO+B04A769ZNNIA1gWWBL4C/Sg6+CpiTPXfNa8AHAWgGML2w72zg6ioQfQEsEzQ4DtgHWDEOks/PA/cDtwE/A9cA3n6Su4ELgfezZ+o7KNZuFs8FeQDwVBmIPgC2Bu4Bdmiggjx+CTgiM+gs4LqafWsATwC7xJp3ga0i0P+3bVQA+8XtrpZpkzZvxP8tgPVKDPQ25fWNTcEJrAssBtIZRwIPFPeNAmB/4GFghVCm0fJUF/+ZHbBHZBNTZJLrgTNaGJ+WXA6cH3/uAo7vC0DjH8q4rptNhT+UGFXkvEveCyr81hKEFHoh1i4Etu8DoGj848BM4JcSY8zhekWRNsbBBvH/JOD2lgDWjozm8k+i4I0UA12MPxW4OTNezr8JPB3PHgMOaQlgo0ixLrdCG8idAXQx3hwuTVaOU8w210Zt+CaeW2mLub4Kj4E7N14+AhzWFYC53RtL+b2ONuo24Aw8xRR7bHbgq5FypZRVuE0czAMODB168oYuAEyF5u/UqzQZr+63gc0jG/mrN5Kkd79GBiur1Ll9Jof74sF3wCbA110APAvsFRtMkYdWBGzSqZd+hH8+FAg8FSHf22J8BiwHWJRSla2izt6AF7ZSLDgHsA1ZQqrqwJ7Ac7HaPmVH4Nuq0+K5lTkVsiJ9ZmfuvwUw0OuMl7YpjuT+4YUa89/eKgByzUOVWdHPNNjPtoC5Wnkwax02Bl4BpsW73aNPKtPnzefGz4/AtZcqlSoALwM7BWpz8RLcK9G2SnjJhuxFYFdgLeCZrF8qzSShq7Px7qsC8CmwDvAVIIC24iByNHARcFPkfumnfAjsnBWmXOdIxtcBcLSzh5H3yfVtQawawWrhSsab+03Jr5coGdn4OgAGsIGsmL4M5LYibYrG75vFR67nGODWLGAbOV80oopClwEXxOKLgUtbWl9lvM2excuL0KNOXqcUWorOxtd5YEtgEWBAWkTkroWoTqqMt4l7NHRV7bdgnRiTW8u7+ndZ3TxwB3BCaLP4HBxNWdkB0swMYypV5Hyijf1/1fT1OXAJYG1oqsylwOoA6GrTaaqaP8UkZZHSOx6op8w6pwMGbzI+D1gHHwf57YAN45al0pNRba3eI0vTRGY760EaWhQBFPe/Ey2Ho+BSkSYAGuFM6neckwG/pJWJXyEcUs5rWfQmDFwbAOkw64JpbzdAz/j5zylpQQzb+eeRCTOwSVEXAE26xvJ+ADCWa88OHTwweKDnDQwU6nmBvbcPHuh9hT0VTHoP/A0LTuMxcvfaggAAAABJRU5ErkJggg==',\r\n    label: 'Sample Smart Button',\r\n    loading: false\r\n  }\r\n}"
                 }
             ],
             "projects/ngx-common-ui/social-media/src/constants/social-media.constants.ts": [
@@ -16948,7 +17699,7 @@
                 "linktype": "component",
                 "name": "PictureComponent",
                 "coveragePercent": 0,
-                "coverageCount": "0/10",
+                "coverageCount": "0/18",
                 "status": "low"
             },
             {
@@ -17110,8 +17861,8 @@
                 "type": "component",
                 "linktype": "component",
                 "name": "SlideshowComponent",
-                "coveragePercent": 16,
-                "coverageCount": "1/6",
+                "coveragePercent": 14,
+                "coverageCount": "4/28",
                 "status": "low"
             },
             {
@@ -17120,6 +17871,35 @@
                 "linktype": "miscellaneous",
                 "linksubtype": "variable",
                 "name": "SlideshowComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/ngx-common-ui/slideshow/src/constants/slideshow.constant.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "SLIDESHOW_ITEM_CLASS",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/ngx-common-ui/smart-button/src/components/smart-button/smart-button.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "SmartButtonComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/8",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/ngx-common-ui/smart-button/src/components/smart-button/smart-button.docs.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "SmartButtonComponent",
                 "coveragePercent": 0,
                 "coverageCount": "0/1",
                 "status": "low"

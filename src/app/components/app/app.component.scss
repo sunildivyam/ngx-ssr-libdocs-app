@@ -1,52 +1,52 @@
 @import 'mixins';
 
 :host {
-    #app-spinner {
-        bottom: auto;
+  #app-spinner {
+    bottom: auto;
+  }
+
+  anu-theme-font-resizer {
+    transition: all 0.5s;
+    transform: scale(0.6);
+    position: absolute;
+    right: 0;
+    top: -0.5rem;
+
+    &:hover {
+      transform: scale(1);
+    }
+  }
+
+  .slideshow_item {
+    white-space: normal;
+
+    @include small {
+      width: 25rem;
     }
 
-    anu-theme-font-resizer {
-        transition: all 0.5s;
-        transform: scale(0.6);
-        position: absolute;
-        right: 0;
-        top: -0.5rem;
-
-        &:hover {
-            transform: scale(1);
-        }
+    @include medium {
+      width: 50rem;
     }
 
-    .slidehow_item {
-        white-space: normal;
-
-        @include small {
-            width: 25rem;
-        }
-
-        @include medium {
-            width: 50rem;
-        }
-
-        @include large {
-            width: 50rem;
-        }
-
-        h3,
-        span,
-        p,
-        a {
-            @include small {
-                font-size: 0.7rem;
-            }
-
-            @include medium {
-                font-size: 0.9rem;
-            }
-
-            @include large {
-                font-size: 1rem;
-            }
-        }
+    @include large {
+      width: 50rem;
     }
+
+    h3,
+    span,
+    p,
+    a {
+      @include small {
+        font-size: 0.7rem;
+      }
+
+      @include medium {
+        font-size: 0.9rem;
+      }
+
+      @include large {
+        font-size: 1rem;
+      }
+    }
+  }
 }

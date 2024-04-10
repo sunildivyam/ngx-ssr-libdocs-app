@@ -1,8 +1,5 @@
 <div *ngIf="!libsInfoArr?.length" class="flex-container">
-  <anu-error
-    [code]="'404'"
-    [message]="'No angular libraries found.'"
-  ></anu-error>
+  <anu-error [code]="'404'" [message]="'No angular libraries found.'"></anu-error>
 </div>
 
 <div class="flex-container primary-light-grad spacing-half">
@@ -24,19 +21,13 @@
         <anu-card class="" [isRowLayout]="false" [imageCssClasses]="['col-12']">
           <anu-card-image class="image-container">
             <a [routerLink]="['libs', libInfo?.name]">
-              <img
-                class="border-round container"
-                [src]="'assets/' + libInfo?.name + '.jpeg'"
-                [alt]="libInfo?.name"
-              />
+              <img class="border-round container" [src]="'assets/' + libInfo?.name + '.jpeg'" [alt]="libInfo?.name" />
             </a>
           </anu-card-image>
           <anu-card-body class="spacing">
-            <span
-              ><a [routerLink]="['libs', libInfo?.name]">{{
+            <span><a [routerLink]="['libs', libInfo?.name]">{{
                 libInfo?.fullName
-              }}</a></span
-            >
+                }}</a></span>
             <span>Version: {{ libInfo?.version }}</span>
             <p [innerHTML]="libInfo?.description"></p>
           </anu-card-body>
@@ -45,12 +36,8 @@
               <a [routerLink]="['libs']">More Angular Libraries ►</a>.
             </div>
             <div class="row right">
-              <span
-                >Full
-                <a [routerLink]="['libs', libInfo?.name]"
-                  >{{ libInfo?.name }} Documentation ►</a
-                >.</span
-              >
+              <span>Full
+                <a [routerLink]="['libs', libInfo?.name]">{{ libInfo?.name }} Documentation ►</a>.</span>
             </div>
           </anu-card-footer>
         </anu-card>
@@ -61,20 +48,12 @@
 
 <div class="flex-container spacing-around-v primary-light-grad">
   <anu-slideshow class="container">
-    <anu-card
-      class="slidehow_item border border-round spacing-around"
-      [isRowLayout]="true"
+    <anu-card class="slideshow_item border border-round spacing-around" [isRowLayout]="true"
       [imageCssClasses]="['col-sm-4', 'col-md-4', 'col-lg-4']"
-      [contentCssClasses]="['col-sm-8', 'col-md-8', 'col-lg-8']"
-      *ngFor="let libInfo of libsInfoArr"
-    >
+      [contentCssClasses]="['col-sm-8', 'col-md-8', 'col-lg-8']" *ngFor="let libInfo of libsInfoArr">
       <anu-card-image>
         <a [routerLink]="['libs', libInfo?.name]">
-          <img
-            class="border-round"
-            [src]="'assets/' + libInfo?.name + '.jpeg'"
-            [alt]="libInfo?.name"
-          />
+          <img class="border-round" [src]="'assets/' + libInfo?.name + '.jpeg'" [alt]="libInfo?.name" />
         </a>
       </anu-card-image>
       <anu-card-title class="">
@@ -87,9 +66,7 @@
       </anu-card-body>
       <anu-card-footer class="">
         <div class="row right">
-          <a [routerLink]="['libs', libInfo?.name]"
-            >{{ libInfo?.name }} Full documentation</a
-          >.
+          <a [routerLink]="['libs', libInfo?.name]">{{ libInfo?.name }} Full documentation</a>.
         </div>
       </anu-card-footer>
     </anu-card>

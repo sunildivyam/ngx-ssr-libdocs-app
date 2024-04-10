@@ -36,6 +36,7 @@
         import { SearchBoxComponent } from '@annuadvent/ngx-common-ui/search-box';
         import { SingleSelectBoxComponent } from '@annuadvent/ngx-common-ui/single-select-box';
         import { SlideshowComponent } from '@annuadvent/ngx-common-ui/slideshow';
+        import { SmartButtonComponent } from '@annuadvent/ngx-common-ui/smart-button';
         import { SocialMediaButtonsComponent } from '@annuadvent/ngx-common-ui/social-media';
         import { SocialMediaShareButtonsComponent } from '@annuadvent/ngx-common-ui/social-media';
         import { SpinnerComponent } from '@annuadvent/ngx-common-ui/spinner';
@@ -124,6 +125,7 @@
     SearchBoxComponent,
     SingleSelectBoxComponent,
     SlideshowComponent,
+    SmartButtonComponent,
     SocialMediaButtonsComponent,
     SocialMediaShareButtonsComponent,
     SpinnerComponent,
