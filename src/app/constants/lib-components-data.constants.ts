@@ -3,6 +3,7 @@
         import { AsideNavComponent } from '@annuadvent/ngx-common-ui/aside-nav/src/components/aside-nav/aside-nav.docs';
         import { AsideNavHeaderComponent } from '@annuadvent/ngx-common-ui/aside-nav/src/components/aside-nav-header/aside-nav-header.docs';
         import { AsideNavItemComponent } from '@annuadvent/ngx-common-ui/aside-nav/src/components/aside-nav-item/aside-nav-item.docs';
+        import { BannersComponent } from '@annuadvent/ngx-common-ui/banners/src/components/banners/banners.docs';
         import { BreadcrumbComponent } from '@annuadvent/ngx-common-ui/breadcrumb/src/components/breadcrumb/breadcrumb.docs';
         import { CardBodyComponent } from '@annuadvent/ngx-common-ui/card/src/components/card-body/card-body.docs';
         import { CardComponent } from '@annuadvent/ngx-common-ui/card/src/components/card/card.docs';
@@ -24,6 +25,7 @@
         import { FormErrorComponent } from '@annuadvent/ngx-common-ui/reactive-form/src/components/form-error/form-error.docs';
         import { HamburgerComponent } from '@annuadvent/ngx-common-ui/hamburger/src/components/hamburger/hamburger.docs';
         import { ImageFormComponent } from '@annuadvent/ngx-common-ui/image-form/src/components/image-form/image-form.docs';
+        import { ImageUploadComponent } from '@annuadvent/ngx-common-ui/image-upload/src/components/image-upload/image-upload.docs';
         import { LinkFormComponent } from '@annuadvent/ngx-common-ui/link-form/src/components/link-form/link-form.docs';
         import { ManageCategoriesComponent } from '@annuadvent/ngx-common-ui/categories/src/components/manage-categories/manage-categories.docs';
         import { MenuComponent } from '@annuadvent/ngx-common-ui/menu/src/components/menu/menu.docs';
@@ -85,13 +87,16 @@
         import { AddressComponent } from '@annuadvent/ngx-ecommerce/address/src/components/address/address.docs';
         import { AddressFormComponent } from '@annuadvent/ngx-ecommerce/address/src/components/address-form/address-form.docs';
         import { AddressListComponent } from '@annuadvent/ngx-ecommerce/address/src/components/address-list/address-list.docs';
-        import { DeliveryInstructionFormComponent } from '@annuadvent/ngx-ecommerce/address/src/components/delivery-instruction-form/delivery-instruction-form.docs';
+        import { CategoryThumbComponent } from '@annuadvent/ngx-ecommerce/category-thumb/src/components/category-thumb/category-thumb.docs';
+        import { CategoryThumbListComponent } from '@annuadvent/ngx-ecommerce/category-thumb-list/src/components/category-thumb-list/category-thumb-list.docs';
         import { ProductThumbComponent } from '@annuadvent/ngx-ecommerce/product-thumb/src/components/product-thumb/product-thumb.docs';
+        import { ProductThumbListComponent } from '@annuadvent/ngx-ecommerce/product-thumb-list/src/components/product-thumb-list/product-thumb-list.docs';
         export const libComponentData = {
     'ngx-common-ui': {
         AsideNavComponent,
     AsideNavHeaderComponent,
     AsideNavItemComponent,
+    BannersComponent,
     BreadcrumbComponent,
     CardBodyComponent,
     CardComponent,
@@ -113,6 +118,7 @@
     FormErrorComponent,
     HamburgerComponent,
     ImageFormComponent,
+    ImageUploadComponent,
     LinkFormComponent,
     ManageCategoriesComponent,
     MenuComponent,
@@ -174,7 +180,9 @@
         AddressComponent,
     AddressFormComponent,
     AddressListComponent,
-    DeliveryInstructionFormComponent,
-    ProductThumbComponent
+    CategoryThumbComponent,
+    CategoryThumbListComponent,
+    ProductThumbComponent,
+    ProductThumbListComponent
 },
 }

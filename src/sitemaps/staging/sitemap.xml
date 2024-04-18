@@ -3,1322 +3,1367 @@
     xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
     <url>
         <loc>https://docs-annu-business.web.app</loc>
-        <lastmod>2024-04-10T07:32:53.844Z</lastmod>
+        <lastmod>2024-04-13T09:28:12.336Z</lastmod>
         <priority>1.00</priority>
     </url>
     <url>
         <loc>https://docs-annu-business.web.app/tnc/terms-and-conditions</loc>
-        <lastmod>2024-04-10T07:32:53.844Z</lastmod>
+        <lastmod>2024-04-13T09:28:12.336Z</lastmod>
         <priority>0.80</priority>
     </url>
     <url>
         <loc>https://docs-annu-business.web.app/tnc/privacy-policy</loc>
-        <lastmod>2024-04-10T07:32:53.844Z</lastmod>
+        <lastmod>2024-04-13T09:28:12.336Z</lastmod>
         <priority>0.80</priority>
     </url>
     <url>
         <loc>https://docs-annu-business.web.app/contact-us</loc>
-        <lastmod>2024-04-10T07:32:53.844Z</lastmod>
+        <lastmod>2024-04-13T09:28:12.336Z</lastmod>
         <priority>0.80</priority>
     </url>
     <url>
         <loc>https://docs-annu-business.web.app/about-us</loc>
-        <lastmod>2024-04-10T07:32:53.844Z</lastmod>
+        <lastmod>2024-04-13T09:28:12.336Z</lastmod>
         <priority>0.80</priority>
     </url>
     <url>
         <loc>https://docs-annu-business.web.app/libs</loc>
-        <lastmod>2024-04-10T07:32:53.844Z</lastmod>
+        <lastmod>2024-04-13T09:28:12.336Z</lastmod>
         <priority>0.80</priority>
     </url>
     <url>
         <loc>https://docs-annu-business.web.app/libs/ngx-common-ui</loc>
-        <lastmod>2024-04-10T07:32:53.844Z</lastmod>
+        <lastmod>2024-04-13T09:28:12.336Z</lastmod>
         <priority>0.80</priority>
     </url>
     <url>
         <loc>https://docs-annu-business.web.app/libs/ngx-common-ui/components</loc>
-        <lastmod>2024-04-10T07:32:53.844Z</lastmod>
+        <lastmod>2024-04-13T09:28:12.336Z</lastmod>
         <priority>0.80</priority>
     </url>
     <url>
         <loc>https://docs-annu-business.web.app/libs/ngx-common-ui/components/AsideNavComponent</loc>
-        <lastmod>2024-04-10T07:32:53.844Z</lastmod>
+        <lastmod>2024-04-13T09:28:12.336Z</lastmod>
         <priority>0.80</priority>
     </url>
     <url>
         <loc>https://docs-annu-business.web.app/libs/ngx-common-ui/components/AsideNavHeaderComponent</loc>
-        <lastmod>2024-04-10T07:32:53.844Z</lastmod>
+        <lastmod>2024-04-13T09:28:12.336Z</lastmod>
         <priority>0.80</priority>
     </url>
     <url>
         <loc>https://docs-annu-business.web.app/libs/ngx-common-ui/components/AsideNavItemComponent</loc>
-        <lastmod>2024-04-10T07:32:53.844Z</lastmod>
+        <lastmod>2024-04-13T09:28:12.336Z</lastmod>
+        <priority>0.80</priority>
+    </url>
+    <url>
+        <loc>https://docs-annu-business.web.app/libs/ngx-common-ui/components/BannersComponent</loc>
+        <lastmod>2024-04-13T09:28:12.336Z</lastmod>
         <priority>0.80</priority>
     </url>
     <url>
         <loc>https://docs-annu-business.web.app/libs/ngx-common-ui/components/BreadcrumbComponent</loc>
-        <lastmod>2024-04-10T07:32:53.844Z</lastmod>
+        <lastmod>2024-04-13T09:28:12.336Z</lastmod>
         <priority>0.80</priority>
     </url>
     <url>
         <loc>https://docs-annu-business.web.app/libs/ngx-common-ui/components/CardBodyComponent</loc>
-        <lastmod>2024-04-10T07:32:53.844Z</lastmod>
+        <lastmod>2024-04-13T09:28:12.336Z</lastmod>
         <priority>0.80</priority>
     </url>
     <url>
         <loc>https://docs-annu-business.web.app/libs/ngx-common-ui/components/CardComponent</loc>
-        <lastmod>2024-04-10T07:32:53.844Z</lastmod>
+        <lastmod>2024-04-13T09:28:12.336Z</lastmod>
         <priority>0.80</priority>
     </url>
     <url>
         <loc>https://docs-annu-business.web.app/libs/ngx-common-ui/components/CardFooterComponent</loc>
-        <lastmod>2024-04-10T07:32:53.844Z</lastmod>
+        <lastmod>2024-04-13T09:28:12.336Z</lastmod>
         <priority>0.80</priority>
     </url>
     <url>
         <loc>https://docs-annu-business.web.app/libs/ngx-common-ui/components/CardImageComponent</loc>
-        <lastmod>2024-04-10T07:32:53.844Z</lastmod>
+        <lastmod>2024-04-13T09:28:12.336Z</lastmod>
         <priority>0.80</priority>
     </url>
     <url>
         <loc>https://docs-annu-business.web.app/libs/ngx-common-ui/components/CardTitleComponent</loc>
-        <lastmod>2024-04-10T07:32:53.844Z</lastmod>
+        <lastmod>2024-04-13T09:28:12.336Z</lastmod>
         <priority>0.80</priority>
     </url>
     <url>
         <loc>https://docs-annu-business.web.app/libs/ngx-common-ui/components/CategoriesTreeComponent</loc>
-        <lastmod>2024-04-10T07:32:53.844Z</lastmod>
+        <lastmod>2024-04-13T09:28:12.336Z</lastmod>
         <priority>0.80</priority>
     </url>
     <url>
         <loc>https://docs-annu-business.web.app/libs/ngx-common-ui/components/CodeBlockComponent</loc>
-        <lastmod>2024-04-10T07:32:53.844Z</lastmod>
+        <lastmod>2024-04-13T09:28:12.336Z</lastmod>
         <priority>0.80</priority>
     </url>
     <url>
         <loc>https://docs-annu-business.web.app/libs/ngx-common-ui/components/CollapsibleComponent</loc>
-        <lastmod>2024-04-10T07:32:53.844Z</lastmod>
+        <lastmod>2024-04-13T09:28:12.336Z</lastmod>
         <priority>0.80</priority>
     </url>
     <url>
         <loc>https://docs-annu-business.web.app/libs/ngx-common-ui/components/CollapsibleContentComponent</loc>
-        <lastmod>2024-04-10T07:32:53.844Z</lastmod>
+        <lastmod>2024-04-13T09:28:12.336Z</lastmod>
         <priority>0.80</priority>
     </url>
     <url>
         <loc>https://docs-annu-business.web.app/libs/ngx-common-ui/components/CollapsibleHeaderComponent</loc>
-        <lastmod>2024-04-10T07:32:53.844Z</lastmod>
+        <lastmod>2024-04-13T09:28:12.336Z</lastmod>
         <priority>0.80</priority>
     </url>
     <url>
         <loc>https://docs-annu-business.web.app/libs/ngx-common-ui/components/ColorPaletteComponent</loc>
-        <lastmod>2024-04-10T07:32:53.844Z</lastmod>
+        <lastmod>2024-04-13T09:28:12.336Z</lastmod>
         <priority>0.80</priority>
     </url>
     <url>
         <loc>https://docs-annu-business.web.app/libs/ngx-common-ui/components/DrawerComponent</loc>
-        <lastmod>2024-04-10T07:32:53.844Z</lastmod>
+        <lastmod>2024-04-13T09:28:12.336Z</lastmod>
         <priority>0.80</priority>
     </url>
     <url>
         <loc>https://docs-annu-business.web.app/libs/ngx-common-ui/components/DynamicFormComponent</loc>
-        <lastmod>2024-04-10T07:32:53.844Z</lastmod>
+        <lastmod>2024-04-13T09:28:12.336Z</lastmod>
         <priority>0.80</priority>
     </url>
     <url>
         <loc>https://docs-annu-business.web.app/libs/ngx-common-ui/components/ElementStylesComponent</loc>
-        <lastmod>2024-04-10T07:32:53.844Z</lastmod>
+        <lastmod>2024-04-13T09:28:12.336Z</lastmod>
         <priority>0.80</priority>
     </url>
     <url>
         <loc>https://docs-annu-business.web.app/libs/ngx-common-ui/components/ErrorComponent</loc>
-        <lastmod>2024-04-10T07:32:53.844Z</lastmod>
+        <lastmod>2024-04-13T09:28:12.336Z</lastmod>
         <priority>0.80</priority>
     </url>
     <url>
         <loc>https://docs-annu-business.web.app/libs/ngx-common-ui/components/FiltersComponent</loc>
-        <lastmod>2024-04-10T07:32:53.844Z</lastmod>
+        <lastmod>2024-04-13T09:28:12.336Z</lastmod>
         <priority>0.80</priority>
     </url>
     <url>
         <loc>https://docs-annu-business.web.app/libs/ngx-common-ui/components/FooterNavComponent</loc>
-        <lastmod>2024-04-10T07:32:53.844Z</lastmod>
+        <lastmod>2024-04-13T09:28:12.336Z</lastmod>
         <priority>0.80</priority>
     </url>
     <url>
         <loc>https://docs-annu-business.web.app/libs/ngx-common-ui/components/FormErrorComponent</loc>
-        <lastmod>2024-04-10T07:32:53.844Z</lastmod>
+        <lastmod>2024-04-13T09:28:12.336Z</lastmod>
         <priority>0.80</priority>
     </url>
     <url>
         <loc>https://docs-annu-business.web.app/libs/ngx-common-ui/components/HamburgerComponent</loc>
-        <lastmod>2024-04-10T07:32:53.844Z</lastmod>
+        <lastmod>2024-04-13T09:28:12.336Z</lastmod>
         <priority>0.80</priority>
     </url>
     <url>
         <loc>https://docs-annu-business.web.app/libs/ngx-common-ui/components/ImageFormComponent</loc>
-        <lastmod>2024-04-10T07:32:53.844Z</lastmod>
+        <lastmod>2024-04-13T09:28:12.336Z</lastmod>
+        <priority>0.80</priority>
+    </url>
+    <url>
+        <loc>https://docs-annu-business.web.app/libs/ngx-common-ui/components/ImageUploadComponent</loc>
+        <lastmod>2024-04-13T09:28:12.336Z</lastmod>
         <priority>0.80</priority>
     </url>
     <url>
         <loc>https://docs-annu-business.web.app/libs/ngx-common-ui/components/LinkFormComponent</loc>
-        <lastmod>2024-04-10T07:32:53.844Z</lastmod>
+        <lastmod>2024-04-13T09:28:12.336Z</lastmod>
         <priority>0.80</priority>
     </url>
     <url>
         <loc>https://docs-annu-business.web.app/libs/ngx-common-ui/components/ManageCategoriesComponent</loc>
-        <lastmod>2024-04-10T07:32:53.844Z</lastmod>
+        <lastmod>2024-04-13T09:28:12.336Z</lastmod>
         <priority>0.80</priority>
     </url>
     <url>
         <loc>https://docs-annu-business.web.app/libs/ngx-common-ui/components/MenuComponent</loc>
-        <lastmod>2024-04-10T07:32:53.844Z</lastmod>
+        <lastmod>2024-04-13T09:28:12.336Z</lastmod>
         <priority>0.80</priority>
     </url>
     <url>
         <loc>https://docs-annu-business.web.app/libs/ngx-common-ui/components/MetaFormComponent</loc>
-        <lastmod>2024-04-10T07:32:53.844Z</lastmod>
+        <lastmod>2024-04-13T09:28:12.336Z</lastmod>
         <priority>0.80</priority>
     </url>
     <url>
         <loc>https://docs-annu-business.web.app/libs/ngx-common-ui/components/ModalComponent</loc>
-        <lastmod>2024-04-10T07:32:53.844Z</lastmod>
+        <lastmod>2024-04-13T09:28:12.336Z</lastmod>
         <priority>0.80</priority>
     </url>
     <url>
         <loc>https://docs-annu-business.web.app/libs/ngx-common-ui/components/MultiSelectBoxComponent</loc>
-        <lastmod>2024-04-10T07:32:53.844Z</lastmod>
+        <lastmod>2024-04-13T09:28:12.336Z</lastmod>
         <priority>0.80</priority>
     </url>
     <url>
         <loc>https://docs-annu-business.web.app/libs/ngx-common-ui/components/NestedNavComponent</loc>
-        <lastmod>2024-04-10T07:32:53.844Z</lastmod>
+        <lastmod>2024-04-13T09:28:12.336Z</lastmod>
         <priority>0.80</priority>
     </url>
     <url>
         <loc>https://docs-annu-business.web.app/libs/ngx-common-ui/components/PaginationComponent</loc>
-        <lastmod>2024-04-10T07:32:53.844Z</lastmod>
+        <lastmod>2024-04-13T09:28:12.336Z</lastmod>
         <priority>0.80</priority>
     </url>
     <url>
         <loc>https://docs-annu-business.web.app/libs/ngx-common-ui/components/PictureComponent</loc>
-        <lastmod>2024-04-10T07:32:53.844Z</lastmod>
+        <lastmod>2024-04-13T09:28:12.336Z</lastmod>
         <priority>0.80</priority>
     </url>
     <url>
         <loc>https://docs-annu-business.web.app/libs/ngx-common-ui/components/SearchBoxComponent</loc>
-        <lastmod>2024-04-10T07:32:53.844Z</lastmod>
+        <lastmod>2024-04-13T09:28:12.336Z</lastmod>
         <priority>0.80</priority>
     </url>
     <url>
         <loc>https://docs-annu-business.web.app/libs/ngx-common-ui/components/SingleSelectBoxComponent</loc>
-        <lastmod>2024-04-10T07:32:53.844Z</lastmod>
+        <lastmod>2024-04-13T09:28:12.336Z</lastmod>
         <priority>0.80</priority>
     </url>
     <url>
         <loc>https://docs-annu-business.web.app/libs/ngx-common-ui/components/SlideshowComponent</loc>
-        <lastmod>2024-04-10T07:32:53.844Z</lastmod>
+        <lastmod>2024-04-13T09:28:12.336Z</lastmod>
+        <priority>0.80</priority>
+    </url>
+    <url>
+        <loc>https://docs-annu-business.web.app/libs/ngx-common-ui/components/SmartButtonComponent</loc>
+        <lastmod>2024-04-13T09:28:12.336Z</lastmod>
         <priority>0.80</priority>
     </url>
     <url>
         <loc>https://docs-annu-business.web.app/libs/ngx-common-ui/components/SocialMediaButtonsComponent</loc>
-        <lastmod>2024-04-10T07:32:53.844Z</lastmod>
+        <lastmod>2024-04-13T09:28:12.336Z</lastmod>
         <priority>0.80</priority>
     </url>
     <url>
         <loc>https://docs-annu-business.web.app/libs/ngx-common-ui/components/SocialMediaShareButtonsComponent</loc>
-        <lastmod>2024-04-10T07:32:53.844Z</lastmod>
+        <lastmod>2024-04-13T09:28:12.336Z</lastmod>
         <priority>0.80</priority>
     </url>
     <url>
         <loc>https://docs-annu-business.web.app/libs/ngx-common-ui/components/SpinnerComponent</loc>
-        <lastmod>2024-04-10T07:32:53.844Z</lastmod>
+        <lastmod>2024-04-13T09:28:12.336Z</lastmod>
         <priority>0.80</priority>
     </url>
     <url>
         <loc>https://docs-annu-business.web.app/libs/ngx-common-ui/components/TabsComponent</loc>
-        <lastmod>2024-04-10T07:32:53.844Z</lastmod>
+        <lastmod>2024-04-13T09:28:12.336Z</lastmod>
         <priority>0.80</priority>
     </url>
     <url>
         <loc>https://docs-annu-business.web.app/libs/ngx-common-ui/components/ThemeComponent</loc>
-        <lastmod>2024-04-10T07:32:53.844Z</lastmod>
+        <lastmod>2024-04-13T09:28:12.336Z</lastmod>
         <priority>0.80</priority>
     </url>
     <url>
         <loc>https://docs-annu-business.web.app/libs/ngx-common-ui/components/ThemeFontResizerComponent</loc>
-        <lastmod>2024-04-10T07:32:53.844Z</lastmod>
+        <lastmod>2024-04-13T09:28:12.336Z</lastmod>
         <priority>0.80</priority>
     </url>
     <url>
         <loc>https://docs-annu-business.web.app/libs/ngx-common-ui/components/ThemePickerComponent</loc>
-        <lastmod>2024-04-10T07:32:53.844Z</lastmod>
+        <lastmod>2024-04-13T09:28:12.336Z</lastmod>
         <priority>0.80</priority>
     </url>
     <url>
         <loc>https://docs-annu-business.web.app/libs/ngx-common-ui/components/ThemePreviewComponent</loc>
-        <lastmod>2024-04-10T07:32:53.844Z</lastmod>
+        <lastmod>2024-04-13T09:28:12.336Z</lastmod>
         <priority>0.80</priority>
     </url>
     <url>
         <loc>https://docs-annu-business.web.app/libs/ngx-common-ui/components/ToggleComponent</loc>
-        <lastmod>2024-04-10T07:32:53.844Z</lastmod>
+        <lastmod>2024-04-13T09:28:12.336Z</lastmod>
         <priority>0.80</priority>
     </url>
     <url>
         <loc>https://docs-annu-business.web.app/libs/ngx-common-ui/components/ToolbarComponent</loc>
-        <lastmod>2024-04-10T07:32:53.844Z</lastmod>
+        <lastmod>2024-04-13T09:28:12.336Z</lastmod>
         <priority>0.80</priority>
     </url>
     <url>
         <loc>https://docs-annu-business.web.app/libs/ngx-common-ui/components/TypographyComponent</loc>
-        <lastmod>2024-04-10T07:32:53.844Z</lastmod>
+        <lastmod>2024-04-13T09:28:12.336Z</lastmod>
         <priority>0.80</priority>
     </url>
     <url>
         <loc>https://docs-annu-business.web.app/libs/ngx-common-ui/classes</loc>
-        <lastmod>2024-04-10T07:32:53.844Z</lastmod>
+        <lastmod>2024-04-13T09:28:12.336Z</lastmod>
+        <priority>0.80</priority>
+    </url>
+    <url>
+        <loc>https://docs-annu-business.web.app/libs/ngx-common-ui/classes/ImageUpload</loc>
+        <lastmod>2024-04-13T09:28:12.336Z</lastmod>
         <priority>0.80</priority>
     </url>
     <url>
         <loc>https://docs-annu-business.web.app/libs/ngx-common-ui/interfaces</loc>
-        <lastmod>2024-04-10T07:32:53.844Z</lastmod>
+        <lastmod>2024-04-13T09:28:12.336Z</lastmod>
         <priority>0.80</priority>
     </url>
     <url>
         <loc>https://docs-annu-business.web.app/libs/ngx-common-ui/interfaces/AppError</loc>
-        <lastmod>2024-04-10T07:32:53.844Z</lastmod>
+        <lastmod>2024-04-13T09:28:12.336Z</lastmod>
+        <priority>0.80</priority>
+    </url>
+    <url>
+        <loc>https://docs-annu-business.web.app/libs/ngx-common-ui/interfaces/BannerItem</loc>
+        <lastmod>2024-04-13T09:28:12.336Z</lastmod>
         <priority>0.80</priority>
     </url>
     <url>
         <loc>https://docs-annu-business.web.app/libs/ngx-common-ui/interfaces/CodeBlockInfo</loc>
-        <lastmod>2024-04-10T07:32:53.844Z</lastmod>
+        <lastmod>2024-04-13T09:28:12.336Z</lastmod>
         <priority>0.80</priority>
     </url>
     <url>
         <loc>https://docs-annu-business.web.app/libs/ngx-common-ui/interfaces/ColorPalette</loc>
-        <lastmod>2024-04-10T07:32:53.844Z</lastmod>
+        <lastmod>2024-04-13T09:28:12.336Z</lastmod>
         <priority>0.80</priority>
     </url>
     <url>
         <loc>https://docs-annu-business.web.app/libs/ngx-common-ui/interfaces/CssVar</loc>
-        <lastmod>2024-04-10T07:32:53.844Z</lastmod>
+        <lastmod>2024-04-13T09:28:12.336Z</lastmod>
         <priority>0.80</priority>
     </url>
     <url>
         <loc>https://docs-annu-business.web.app/libs/ngx-common-ui/interfaces/Filter</loc>
-        <lastmod>2024-04-10T07:32:53.844Z</lastmod>
+        <lastmod>2024-04-13T09:28:12.336Z</lastmod>
         <priority>0.80</priority>
     </url>
     <url>
         <loc>https://docs-annu-business.web.app/libs/ngx-common-ui/interfaces/FormError</loc>
-        <lastmod>2024-04-10T07:32:53.844Z</lastmod>
+        <lastmod>2024-04-13T09:28:12.336Z</lastmod>
         <priority>0.80</priority>
     </url>
     <url>
         <loc>https://docs-annu-business.web.app/libs/ngx-common-ui/interfaces/FormErrorValue</loc>
-        <lastmod>2024-04-10T07:32:53.844Z</lastmod>
+        <lastmod>2024-04-13T09:28:12.336Z</lastmod>
         <priority>0.80</priority>
     </url>
     <url>
         <loc>https://docs-annu-business.web.app/libs/ngx-common-ui/interfaces/ImageInfo</loc>
-        <lastmod>2024-04-10T07:32:53.844Z</lastmod>
+        <lastmod>2024-04-13T09:28:12.336Z</lastmod>
         <priority>0.80</priority>
     </url>
     <url>
         <loc>https://docs-annu-business.web.app/libs/ngx-common-ui/interfaces/Link</loc>
-        <lastmod>2024-04-10T07:32:53.844Z</lastmod>
+        <lastmod>2024-04-13T09:28:12.336Z</lastmod>
         <priority>0.80</priority>
     </url>
     <url>
         <loc>https://docs-annu-business.web.app/libs/ngx-common-ui/interfaces/LinkTarget</loc>
-        <lastmod>2024-04-10T07:32:53.844Z</lastmod>
+        <lastmod>2024-04-13T09:28:12.336Z</lastmod>
         <priority>0.80</priority>
     </url>
     <url>
         <loc>https://docs-annu-business.web.app/libs/ngx-common-ui/interfaces/MenuItem</loc>
-        <lastmod>2024-04-10T07:32:53.844Z</lastmod>
+        <lastmod>2024-04-13T09:28:12.336Z</lastmod>
         <priority>0.80</priority>
     </url>
     <url>
         <loc>https://docs-annu-business.web.app/libs/ngx-common-ui/interfaces/MetaInfo</loc>
-        <lastmod>2024-04-10T07:32:53.844Z</lastmod>
+        <lastmod>2024-04-13T09:28:12.336Z</lastmod>
         <priority>0.80</priority>
     </url>
     <url>
         <loc>https://docs-annu-business.web.app/libs/ngx-common-ui/interfaces/MetaProp</loc>
-        <lastmod>2024-04-10T07:32:53.844Z</lastmod>
+        <lastmod>2024-04-13T09:28:12.336Z</lastmod>
         <priority>0.80</priority>
     </url>
     <url>
         <loc>https://docs-annu-business.web.app/libs/ngx-common-ui/interfaces/MetaPropertyType</loc>
-        <lastmod>2024-04-10T07:32:53.844Z</lastmod>
+        <lastmod>2024-04-13T09:28:12.336Z</lastmod>
         <priority>0.80</priority>
     </url>
     <url>
         <loc>https://docs-annu-business.web.app/libs/ngx-common-ui/interfaces/MetaPropValue</loc>
-        <lastmod>2024-04-10T07:32:53.844Z</lastmod>
+        <lastmod>2024-04-13T09:28:12.336Z</lastmod>
         <priority>0.80</priority>
     </url>
     <url>
         <loc>https://docs-annu-business.web.app/libs/ngx-common-ui/interfaces/NavItem</loc>
-        <lastmod>2024-04-10T07:32:53.844Z</lastmod>
+        <lastmod>2024-04-13T09:28:12.336Z</lastmod>
         <priority>0.80</priority>
     </url>
     <url>
         <loc>https://docs-annu-business.web.app/libs/ngx-common-ui/interfaces/NestedNavItem</loc>
-        <lastmod>2024-04-10T07:32:53.844Z</lastmod>
+        <lastmod>2024-04-13T09:28:12.336Z</lastmod>
         <priority>0.80</priority>
     </url>
     <url>
         <loc>https://docs-annu-business.web.app/libs/ngx-common-ui/interfaces/Page</loc>
-        <lastmod>2024-04-10T07:32:53.844Z</lastmod>
+        <lastmod>2024-04-13T09:28:12.336Z</lastmod>
         <priority>0.80</priority>
     </url>
     <url>
         <loc>https://docs-annu-business.web.app/libs/ngx-common-ui/interfaces/PaletteColor</loc>
-        <lastmod>2024-04-10T07:32:53.844Z</lastmod>
+        <lastmod>2024-04-13T09:28:12.336Z</lastmod>
         <priority>0.80</priority>
     </url>
     <url>
         <loc>https://docs-annu-business.web.app/libs/ngx-common-ui/interfaces/SocialMediaButton</loc>
-        <lastmod>2024-04-10T07:32:53.844Z</lastmod>
+        <lastmod>2024-04-13T09:28:12.336Z</lastmod>
         <priority>0.80</priority>
     </url>
     <url>
         <loc>https://docs-annu-business.web.app/libs/ngx-common-ui/interfaces/SocialMediaShareButton</loc>
-        <lastmod>2024-04-10T07:32:53.844Z</lastmod>
+        <lastmod>2024-04-13T09:28:12.336Z</lastmod>
         <priority>0.80</priority>
     </url>
     <url>
         <loc>https://docs-annu-business.web.app/libs/ngx-common-ui/interfaces/SocialMediaShareButtonParams</loc>
-        <lastmod>2024-04-10T07:32:53.844Z</lastmod>
+        <lastmod>2024-04-13T09:28:12.336Z</lastmod>
         <priority>0.80</priority>
     </url>
     <url>
         <loc>https://docs-annu-business.web.app/libs/ngx-common-ui/interfaces/SourceLanguage</loc>
-        <lastmod>2024-04-10T07:32:53.844Z</lastmod>
+        <lastmod>2024-04-13T09:28:12.336Z</lastmod>
         <priority>0.80</priority>
     </url>
     <url>
         <loc>https://docs-annu-business.web.app/libs/ngx-common-ui/interfaces/Tab</loc>
-        <lastmod>2024-04-10T07:32:53.844Z</lastmod>
+        <lastmod>2024-04-13T09:28:12.336Z</lastmod>
         <priority>0.80</priority>
     </url>
     <url>
         <loc>https://docs-annu-business.web.app/libs/ngx-common-ui/interfaces/Theme</loc>
-        <lastmod>2024-04-10T07:32:53.844Z</lastmod>
+        <lastmod>2024-04-13T09:28:12.336Z</lastmod>
         <priority>0.80</priority>
     </url>
     <url>
         <loc>https://docs-annu-business.web.app/libs/ngx-common-ui/interfaces/ToolbarItem</loc>
-        <lastmod>2024-04-10T07:32:53.844Z</lastmod>
+        <lastmod>2024-04-13T09:28:12.336Z</lastmod>
         <priority>0.80</priority>
     </url>
     <url>
         <loc>https://docs-annu-business.web.app/libs/ngx-common-ui/interfaces/Typography</loc>
-        <lastmod>2024-04-10T07:32:53.844Z</lastmod>
+        <lastmod>2024-04-13T09:28:12.336Z</lastmod>
         <priority>0.80</priority>
     </url>
     <url>
         <loc>https://docs-annu-business.web.app/libs/ngx-common-ui/directives</loc>
-        <lastmod>2024-04-10T07:32:53.844Z</lastmod>
+        <lastmod>2024-04-13T09:28:12.336Z</lastmod>
         <priority>0.80</priority>
     </url>
     <url>
         <loc>https://docs-annu-business.web.app/libs/ngx-common-ui/guards</loc>
-        <lastmod>2024-04-10T07:32:53.844Z</lastmod>
+        <lastmod>2024-04-13T09:28:12.336Z</lastmod>
         <priority>0.80</priority>
     </url>
     <url>
         <loc>https://docs-annu-business.web.app/libs/ngx-common-ui/interceptors</loc>
-        <lastmod>2024-04-10T07:32:53.844Z</lastmod>
+        <lastmod>2024-04-13T09:28:12.336Z</lastmod>
         <priority>0.80</priority>
     </url>
     <url>
         <loc>https://docs-annu-business.web.app/libs/ngx-common-ui/services</loc>
-        <lastmod>2024-04-10T07:32:53.844Z</lastmod>
+        <lastmod>2024-04-13T09:28:12.336Z</lastmod>
         <priority>0.80</priority>
     </url>
     <url>
         <loc>https://docs-annu-business.web.app/libs/ngx-common-ui/services/CategoriesService</loc>
-        <lastmod>2024-04-10T07:32:53.844Z</lastmod>
+        <lastmod>2024-04-13T09:28:12.336Z</lastmod>
         <priority>0.80</priority>
     </url>
     <url>
         <loc>https://docs-annu-business.web.app/libs/ngx-common-ui/services/HighlightService</loc>
-        <lastmod>2024-04-10T07:32:53.844Z</lastmod>
+        <lastmod>2024-04-13T09:28:12.336Z</lastmod>
         <priority>0.80</priority>
     </url>
     <url>
         <loc>https://docs-annu-business.web.app/libs/ngx-common-ui/services/MetaService</loc>
-        <lastmod>2024-04-10T07:32:53.844Z</lastmod>
+        <lastmod>2024-04-13T09:28:12.336Z</lastmod>
         <priority>0.80</priority>
     </url>
     <url>
         <loc>https://docs-annu-business.web.app/libs/ngx-common-ui/services/NestedNavService</loc>
-        <lastmod>2024-04-10T07:32:53.844Z</lastmod>
+        <lastmod>2024-04-13T09:28:12.336Z</lastmod>
         <priority>0.80</priority>
     </url>
     <url>
         <loc>https://docs-annu-business.web.app/libs/ngx-common-ui/services/ThemeService</loc>
-        <lastmod>2024-04-10T07:32:53.844Z</lastmod>
+        <lastmod>2024-04-13T09:28:12.336Z</lastmod>
         <priority>0.80</priority>
     </url>
     <url>
         <loc>https://docs-annu-business.web.app/libs/ngx-cms</loc>
-        <lastmod>2024-04-10T07:32:53.844Z</lastmod>
+        <lastmod>2024-04-13T09:28:12.336Z</lastmod>
         <priority>0.80</priority>
     </url>
     <url>
         <loc>https://docs-annu-business.web.app/libs/ngx-cms/components</loc>
-        <lastmod>2024-04-10T07:32:53.844Z</lastmod>
+        <lastmod>2024-04-13T09:28:12.336Z</lastmod>
         <priority>0.80</priority>
     </url>
     <url>
         <loc>https://docs-annu-business.web.app/libs/ngx-cms/components/AiArticlesComponent</loc>
-        <lastmod>2024-04-10T07:32:53.844Z</lastmod>
+        <lastmod>2024-04-13T09:28:12.336Z</lastmod>
         <priority>0.80</priority>
     </url>
     <url>
         <loc>https://docs-annu-business.web.app/libs/ngx-cms/components/ArticleComponent</loc>
-        <lastmod>2024-04-10T07:32:53.844Z</lastmod>
+        <lastmod>2024-04-13T09:28:12.336Z</lastmod>
         <priority>0.80</priority>
     </url>
     <url>
         <loc>https://docs-annu-business.web.app/libs/ngx-cms/components/ArticleEditorComponent</loc>
-        <lastmod>2024-04-10T07:32:53.844Z</lastmod>
+        <lastmod>2024-04-13T09:28:12.336Z</lastmod>
         <priority>0.80</priority>
     </url>
     <url>
         <loc>https://docs-annu-business.web.app/libs/ngx-cms/components/ArticleElementComponent</loc>
-        <lastmod>2024-04-10T07:32:53.844Z</lastmod>
+        <lastmod>2024-04-13T09:28:12.336Z</lastmod>
         <priority>0.80</priority>
     </url>
     <url>
         <loc>https://docs-annu-business.web.app/libs/ngx-cms/components/ArticleListComponent</loc>
-        <lastmod>2024-04-10T07:32:53.844Z</lastmod>
+        <lastmod>2024-04-13T09:28:12.336Z</lastmod>
         <priority>0.80</priority>
     </url>
     <url>
         <loc>https://docs-annu-business.web.app/libs/ngx-cms/components/ArticlesSlideshowComponent</loc>
-        <lastmod>2024-04-10T07:32:53.844Z</lastmod>
+        <lastmod>2024-04-13T09:28:12.336Z</lastmod>
         <priority>0.80</priority>
     </url>
     <url>
         <loc>https://docs-annu-business.web.app/libs/ngx-cms/components/ArticleViewComponent</loc>
-        <lastmod>2024-04-10T07:32:53.844Z</lastmod>
+        <lastmod>2024-04-13T09:28:12.336Z</lastmod>
         <priority>0.80</priority>
     </url>
     <url>
         <loc>https://docs-annu-business.web.app/libs/ngx-cms/components/CategoryArticlesListComponent</loc>
-        <lastmod>2024-04-10T07:32:53.844Z</lastmod>
+        <lastmod>2024-04-13T09:28:12.336Z</lastmod>
         <priority>0.80</priority>
     </url>
     <url>
         <loc>https://docs-annu-business.web.app/libs/ngx-cms/components/CategoryComponent</loc>
-        <lastmod>2024-04-10T07:32:53.844Z</lastmod>
+        <lastmod>2024-04-13T09:28:12.336Z</lastmod>
         <priority>0.80</priority>
     </url>
     <url>
         <loc>https://docs-annu-business.web.app/libs/ngx-cms/components/CategoryEditorComponent</loc>
-        <lastmod>2024-04-10T07:32:53.844Z</lastmod>
+        <lastmod>2024-04-13T09:28:12.336Z</lastmod>
         <priority>0.80</priority>
     </url>
     <url>
         <loc>https://docs-annu-business.web.app/libs/ngx-cms/components/CmsImageFormComponent</loc>
-        <lastmod>2024-04-10T07:32:53.844Z</lastmod>
+        <lastmod>2024-04-13T09:28:12.336Z</lastmod>
         <priority>0.80</priority>
     </url>
     <url>
         <loc>https://docs-annu-business.web.app/libs/ngx-cms/components/ContentEditorComponent</loc>
-        <lastmod>2024-04-10T07:32:53.844Z</lastmod>
+        <lastmod>2024-04-13T09:28:12.336Z</lastmod>
         <priority>0.80</priority>
     </url>
     <url>
         <loc>https://docs-annu-business.web.app/libs/ngx-cms/components/ContentElementComponent</loc>
-        <lastmod>2024-04-10T07:32:53.844Z</lastmod>
+        <lastmod>2024-04-13T09:28:12.336Z</lastmod>
         <priority>0.80</priority>
     </url>
     <url>
         <loc>https://docs-annu-business.web.app/libs/ngx-cms/components/LeafElementComponent</loc>
-        <lastmod>2024-04-10T07:32:53.844Z</lastmod>
+        <lastmod>2024-04-13T09:28:12.336Z</lastmod>
         <priority>0.80</priority>
     </url>
     <url>
         <loc>https://docs-annu-business.web.app/libs/ngx-cms/components/OpenaiAutoArticlesComponent</loc>
-        <lastmod>2024-04-10T07:32:53.844Z</lastmod>
+        <lastmod>2024-04-13T09:28:12.336Z</lastmod>
         <priority>0.80</priority>
     </url>
     <url>
         <loc>https://docs-annu-business.web.app/libs/ngx-cms/components/TableComponent</loc>
-        <lastmod>2024-04-10T07:32:53.844Z</lastmod>
+        <lastmod>2024-04-13T09:28:12.336Z</lastmod>
         <priority>0.80</priority>
     </url>
     <url>
         <loc>https://docs-annu-business.web.app/libs/ngx-cms/components/TableFormComponent</loc>
-        <lastmod>2024-04-10T07:32:53.844Z</lastmod>
+        <lastmod>2024-04-13T09:28:12.336Z</lastmod>
         <priority>0.80</priority>
     </url>
     <url>
         <loc>https://docs-annu-business.web.app/libs/ngx-cms/classes</loc>
-        <lastmod>2024-04-10T07:32:53.844Z</lastmod>
+        <lastmod>2024-04-13T09:28:12.336Z</lastmod>
         <priority>0.80</priority>
     </url>
     <url>
         <loc>https://docs-annu-business.web.app/libs/ngx-cms/interfaces</loc>
-        <lastmod>2024-04-10T07:32:53.844Z</lastmod>
+        <lastmod>2024-04-13T09:28:12.336Z</lastmod>
         <priority>0.80</priority>
     </url>
     <url>
         <loc>https://docs-annu-business.web.app/libs/ngx-cms/interfaces/Article</loc>
-        <lastmod>2024-04-10T07:32:53.844Z</lastmod>
+        <lastmod>2024-04-13T09:28:12.336Z</lastmod>
         <priority>0.80</priority>
     </url>
     <url>
         <loc>https://docs-annu-business.web.app/libs/ngx-cms/interfaces/ArticlePrompt</loc>
-        <lastmod>2024-04-10T07:32:53.844Z</lastmod>
+        <lastmod>2024-04-13T09:28:12.336Z</lastmod>
         <priority>0.80</priority>
     </url>
     <url>
         <loc>https://docs-annu-business.web.app/libs/ngx-cms/interfaces/Category</loc>
-        <lastmod>2024-04-10T07:32:53.844Z</lastmod>
+        <lastmod>2024-04-13T09:28:12.336Z</lastmod>
         <priority>0.80</priority>
     </url>
     <url>
         <loc>https://docs-annu-business.web.app/libs/ngx-cms/interfaces/EditorElement</loc>
-        <lastmod>2024-04-10T07:32:53.844Z</lastmod>
+        <lastmod>2024-04-13T09:28:12.336Z</lastmod>
         <priority>0.80</priority>
     </url>
     <url>
         <loc>https://docs-annu-business.web.app/libs/ngx-cms/interfaces/EditorElementData</loc>
-        <lastmod>2024-04-10T07:32:53.844Z</lastmod>
+        <lastmod>2024-04-13T09:28:12.336Z</lastmod>
         <priority>0.80</priority>
     </url>
     <url>
         <loc>https://docs-annu-business.web.app/libs/ngx-cms/interfaces/ImageInfo</loc>
-        <lastmod>2024-04-10T07:32:53.844Z</lastmod>
+        <lastmod>2024-04-13T09:28:12.336Z</lastmod>
         <priority>0.80</priority>
     </url>
     <url>
         <loc>https://docs-annu-business.web.app/libs/ngx-cms/interfaces/OpenaiArticleQueueItem</loc>
-        <lastmod>2024-04-10T07:32:53.844Z</lastmod>
+        <lastmod>2024-04-13T09:28:12.336Z</lastmod>
         <priority>0.80</priority>
     </url>
     <url>
         <loc>https://docs-annu-business.web.app/libs/ngx-cms/interfaces/OpenaiPromptQueueBatch</loc>
-        <lastmod>2024-04-10T07:32:53.844Z</lastmod>
+        <lastmod>2024-04-13T09:28:12.336Z</lastmod>
         <priority>0.80</priority>
     </url>
     <url>
         <loc>https://docs-annu-business.web.app/libs/ngx-cms/interfaces/OpenaiPromptQueueItem</loc>
-        <lastmod>2024-04-10T07:32:53.844Z</lastmod>
+        <lastmod>2024-04-13T09:28:12.336Z</lastmod>
         <priority>0.80</priority>
     </url>
     <url>
         <loc>https://docs-annu-business.web.app/libs/ngx-cms/interfaces/Rectangle</loc>
-        <lastmod>2024-04-10T07:32:53.844Z</lastmod>
+        <lastmod>2024-04-13T09:28:12.336Z</lastmod>
         <priority>0.80</priority>
     </url>
     <url>
         <loc>https://docs-annu-business.web.app/libs/ngx-cms/interfaces/TableCell</loc>
-        <lastmod>2024-04-10T07:32:53.844Z</lastmod>
+        <lastmod>2024-04-13T09:28:12.336Z</lastmod>
         <priority>0.80</priority>
     </url>
     <url>
         <loc>https://docs-annu-business.web.app/libs/ngx-cms/interfaces/TableInfo</loc>
-        <lastmod>2024-04-10T07:32:53.844Z</lastmod>
+        <lastmod>2024-04-13T09:28:12.336Z</lastmod>
         <priority>0.80</priority>
     </url>
     <url>
         <loc>https://docs-annu-business.web.app/libs/ngx-cms/interfaces/TableRow</loc>
-        <lastmod>2024-04-10T07:32:53.844Z</lastmod>
+        <lastmod>2024-04-13T09:28:12.336Z</lastmod>
         <priority>0.80</priority>
     </url>
     <url>
         <loc>https://docs-annu-business.web.app/libs/ngx-cms/directives</loc>
-        <lastmod>2024-04-10T07:32:53.844Z</lastmod>
+        <lastmod>2024-04-13T09:28:12.336Z</lastmod>
         <priority>0.80</priority>
     </url>
     <url>
         <loc>https://docs-annu-business.web.app/libs/ngx-cms/directives/ContenteditableValueAccessorDirective</loc>
-        <lastmod>2024-04-10T07:32:53.844Z</lastmod>
+        <lastmod>2024-04-13T09:28:12.336Z</lastmod>
         <priority>0.80</priority>
     </url>
     <url>
         <loc>https://docs-annu-business.web.app/libs/ngx-cms/directives/FocusDirective</loc>
-        <lastmod>2024-04-10T07:32:53.844Z</lastmod>
+        <lastmod>2024-04-13T09:28:12.336Z</lastmod>
         <priority>0.80</priority>
     </url>
     <url>
         <loc>https://docs-annu-business.web.app/libs/ngx-cms/directives/FormatInlineDirective</loc>
-        <lastmod>2024-04-10T07:32:53.844Z</lastmod>
+        <lastmod>2024-04-13T09:28:12.336Z</lastmod>
         <priority>0.80</priority>
     </url>
     <url>
         <loc>https://docs-annu-business.web.app/libs/ngx-cms/guards</loc>
-        <lastmod>2024-04-10T07:32:53.844Z</lastmod>
+        <lastmod>2024-04-13T09:28:12.336Z</lastmod>
         <priority>0.80</priority>
     </url>
     <url>
         <loc>https://docs-annu-business.web.app/libs/ngx-cms/interceptors</loc>
-        <lastmod>2024-04-10T07:32:53.844Z</lastmod>
+        <lastmod>2024-04-13T09:28:12.336Z</lastmod>
         <priority>0.80</priority>
     </url>
     <url>
         <loc>https://docs-annu-business.web.app/libs/ngx-cms/services</loc>
-        <lastmod>2024-04-10T07:32:53.844Z</lastmod>
+        <lastmod>2024-04-13T09:28:12.336Z</lastmod>
         <priority>0.80</priority>
     </url>
     <url>
         <loc>https://docs-annu-business.web.app/libs/ngx-cms/services/AiArticlesService</loc>
-        <lastmod>2024-04-10T07:32:53.844Z</lastmod>
+        <lastmod>2024-04-13T09:28:12.336Z</lastmod>
         <priority>0.80</priority>
     </url>
     <url>
         <loc>https://docs-annu-business.web.app/libs/ngx-cms/services/ArticleEditorService</loc>
-        <lastmod>2024-04-10T07:32:53.844Z</lastmod>
+        <lastmod>2024-04-13T09:28:12.336Z</lastmod>
         <priority>0.80</priority>
     </url>
     <url>
         <loc>https://docs-annu-business.web.app/libs/ngx-cms/services/ContentEditorService</loc>
-        <lastmod>2024-04-10T07:32:53.844Z</lastmod>
+        <lastmod>2024-04-13T09:28:12.336Z</lastmod>
         <priority>0.80</priority>
     </url>
     <url>
         <loc>https://docs-annu-business.web.app/libs/ngx-cms/services/Html2JsonService</loc>
-        <lastmod>2024-04-10T07:32:53.844Z</lastmod>
+        <lastmod>2024-04-13T09:28:12.336Z</lastmod>
         <priority>0.80</priority>
     </url>
     <url>
         <loc>https://docs-annu-business.web.app/libs/ngx-cms/services/SelectionService</loc>
-        <lastmod>2024-04-10T07:32:53.844Z</lastmod>
+        <lastmod>2024-04-13T09:28:12.336Z</lastmod>
         <priority>0.80</priority>
     </url>
     <url>
         <loc>https://docs-annu-business.web.app/libs/ngx-cms/services/TableService</loc>
-        <lastmod>2024-04-10T07:32:53.844Z</lastmod>
+        <lastmod>2024-04-13T09:28:12.336Z</lastmod>
         <priority>0.80</priority>
     </url>
     <url>
         <loc>https://docs-annu-business.web.app/libs/ngx-core</loc>
-        <lastmod>2024-04-10T07:32:53.844Z</lastmod>
+        <lastmod>2024-04-13T09:28:12.336Z</lastmod>
         <priority>0.80</priority>
     </url>
     <url>
         <loc>https://docs-annu-business.web.app/libs/ngx-core/components</loc>
-        <lastmod>2024-04-10T07:32:53.844Z</lastmod>
+        <lastmod>2024-04-13T09:28:12.336Z</lastmod>
         <priority>0.80</priority>
     </url>
     <url>
         <loc>https://docs-annu-business.web.app/libs/ngx-core/classes</loc>
-        <lastmod>2024-04-10T07:32:53.844Z</lastmod>
+        <lastmod>2024-04-13T09:28:12.336Z</lastmod>
         <priority>0.80</priority>
     </url>
     <url>
         <loc>https://docs-annu-business.web.app/libs/ngx-core/classes/Address</loc>
-        <lastmod>2024-04-10T07:32:53.844Z</lastmod>
+        <lastmod>2024-04-13T09:28:12.336Z</lastmod>
         <priority>0.80</priority>
     </url>
     <url>
         <loc>https://docs-annu-business.web.app/libs/ngx-core/classes/AsyncConfigValidator</loc>
-        <lastmod>2024-04-10T07:32:53.844Z</lastmod>
+        <lastmod>2024-04-13T09:28:12.336Z</lastmod>
         <priority>0.80</priority>
     </url>
     <url>
         <loc>https://docs-annu-business.web.app/libs/ngx-core/classes/Category</loc>
-        <lastmod>2024-04-10T07:32:53.844Z</lastmod>
+        <lastmod>2024-04-13T09:28:12.336Z</lastmod>
         <priority>0.80</priority>
     </url>
     <url>
         <loc>https://docs-annu-business.web.app/libs/ngx-core/classes/DeliveryInstruction</loc>
-        <lastmod>2024-04-10T07:32:53.844Z</lastmod>
+        <lastmod>2024-04-13T09:28:12.336Z</lastmod>
         <priority>0.80</priority>
     </url>
     <url>
         <loc>https://docs-annu-business.web.app/libs/ngx-core/classes/FormConfigGroup</loc>
-        <lastmod>2024-04-10T07:32:53.844Z</lastmod>
+        <lastmod>2024-04-13T09:28:12.336Z</lastmod>
         <priority>0.80</priority>
     </url>
     <url>
         <loc>https://docs-annu-business.web.app/libs/ngx-core/classes/FormConfigParameter</loc>
-        <lastmod>2024-04-10T07:32:53.844Z</lastmod>
+        <lastmod>2024-04-13T09:28:12.336Z</lastmod>
         <priority>0.80</priority>
     </url>
     <url>
         <loc>https://docs-annu-business.web.app/libs/ngx-core/classes/Pincode</loc>
-        <lastmod>2024-04-10T07:32:53.844Z</lastmod>
+        <lastmod>2024-04-13T09:28:12.336Z</lastmod>
+        <priority>0.80</priority>
+    </url>
+    <url>
+        <loc>https://docs-annu-business.web.app/libs/ngx-core/classes/Product</loc>
+        <lastmod>2024-04-13T09:28:12.336Z</lastmod>
         <priority>0.80</priority>
     </url>
     <url>
         <loc>https://docs-annu-business.web.app/libs/ngx-core/classes/Profile</loc>
-        <lastmod>2024-04-10T07:32:53.844Z</lastmod>
+        <lastmod>2024-04-13T09:28:12.336Z</lastmod>
         <priority>0.80</priority>
     </url>
     <url>
         <loc>https://docs-annu-business.web.app/libs/ngx-core/classes/SyncConfigValidator</loc>
-        <lastmod>2024-04-10T07:32:53.844Z</lastmod>
+        <lastmod>2024-04-13T09:28:12.336Z</lastmod>
         <priority>0.80</priority>
     </url>
     <url>
         <loc>https://docs-annu-business.web.app/libs/ngx-core/interfaces</loc>
-        <lastmod>2024-04-10T07:32:53.844Z</lastmod>
+        <lastmod>2024-04-13T09:28:12.336Z</lastmod>
         <priority>0.80</priority>
     </url>
     <url>
         <loc>https://docs-annu-business.web.app/libs/ngx-core/interfaces/AppConfig</loc>
-        <lastmod>2024-04-10T07:32:53.844Z</lastmod>
+        <lastmod>2024-04-13T09:28:12.336Z</lastmod>
         <priority>0.80</priority>
     </url>
     <url>
         <loc>https://docs-annu-business.web.app/libs/ngx-core/interfaces/FormControlValue</loc>
-        <lastmod>2024-04-10T07:32:53.844Z</lastmod>
+        <lastmod>2024-04-13T09:28:12.336Z</lastmod>
         <priority>0.80</priority>
     </url>
     <url>
         <loc>https://docs-annu-business.web.app/libs/ngx-core/directives</loc>
-        <lastmod>2024-04-10T07:32:53.844Z</lastmod>
+        <lastmod>2024-04-13T09:28:12.336Z</lastmod>
         <priority>0.80</priority>
     </url>
     <url>
         <loc>https://docs-annu-business.web.app/libs/ngx-core/guards</loc>
-        <lastmod>2024-04-10T07:32:53.844Z</lastmod>
+        <lastmod>2024-04-13T09:28:12.336Z</lastmod>
         <priority>0.80</priority>
     </url>
     <url>
         <loc>https://docs-annu-business.web.app/libs/ngx-core/interceptors</loc>
-        <lastmod>2024-04-10T07:32:53.844Z</lastmod>
+        <lastmod>2024-04-13T09:28:12.336Z</lastmod>
         <priority>0.80</priority>
     </url>
     <url>
         <loc>https://docs-annu-business.web.app/libs/ngx-core/services</loc>
-        <lastmod>2024-04-10T07:32:53.844Z</lastmod>
+        <lastmod>2024-04-13T09:28:12.336Z</lastmod>
         <priority>0.80</priority>
     </url>
     <url>
         <loc>https://docs-annu-business.web.app/libs/ngx-core/services/AppConfigService</loc>
-        <lastmod>2024-04-10T07:32:53.844Z</lastmod>
+        <lastmod>2024-04-13T09:28:12.336Z</lastmod>
+        <priority>0.80</priority>
+    </url>
+    <url>
+        <loc>https://docs-annu-business.web.app/libs/ngx-core/services/CategoriesUtilsService</loc>
+        <lastmod>2024-04-13T09:28:12.336Z</lastmod>
         <priority>0.80</priority>
     </url>
     <url>
         <loc>https://docs-annu-business.web.app/libs/ngx-core/services/FormConfigService</loc>
-        <lastmod>2024-04-10T07:32:53.844Z</lastmod>
+        <lastmod>2024-04-13T09:28:12.336Z</lastmod>
         <priority>0.80</priority>
     </url>
     <url>
         <loc>https://docs-annu-business.web.app/libs/ngx-core/services/GlobalConfigService</loc>
-        <lastmod>2024-04-10T07:32:53.844Z</lastmod>
+        <lastmod>2024-04-13T09:28:12.336Z</lastmod>
         <priority>0.80</priority>
     </url>
     <url>
         <loc>https://docs-annu-business.web.app/libs/ngx-core/services/PincodeValidatorService</loc>
-        <lastmod>2024-04-10T07:32:53.844Z</lastmod>
+        <lastmod>2024-04-13T09:28:12.336Z</lastmod>
         <priority>0.80</priority>
     </url>
     <url>
         <loc>https://docs-annu-business.web.app/libs/ngx-core/services/UtilsService</loc>
-        <lastmod>2024-04-10T07:32:53.844Z</lastmod>
+        <lastmod>2024-04-13T09:28:12.336Z</lastmod>
         <priority>0.80</priority>
     </url>
     <url>
         <loc>https://docs-annu-business.web.app/libs/ngx-tools</loc>
-        <lastmod>2024-04-10T07:32:53.844Z</lastmod>
+        <lastmod>2024-04-13T09:28:12.336Z</lastmod>
         <priority>0.80</priority>
     </url>
     <url>
         <loc>https://docs-annu-business.web.app/libs/ngx-tools/components</loc>
-        <lastmod>2024-04-10T07:32:53.844Z</lastmod>
+        <lastmod>2024-04-13T09:28:12.336Z</lastmod>
         <priority>0.80</priority>
     </url>
     <url>
         <loc>https://docs-annu-business.web.app/libs/ngx-tools/components/ImageBrowserComponent</loc>
-        <lastmod>2024-04-10T07:32:53.844Z</lastmod>
+        <lastmod>2024-04-13T09:28:12.336Z</lastmod>
         <priority>0.80</priority>
     </url>
     <url>
         <loc>https://docs-annu-business.web.app/libs/ngx-tools/components/LoginComponent</loc>
-        <lastmod>2024-04-10T07:32:53.844Z</lastmod>
+        <lastmod>2024-04-13T09:28:12.336Z</lastmod>
         <priority>0.80</priority>
     </url>
     <url>
         <loc>https://docs-annu-business.web.app/libs/ngx-tools/components/LoginStatusComponent</loc>
-        <lastmod>2024-04-10T07:32:53.844Z</lastmod>
+        <lastmod>2024-04-13T09:28:12.336Z</lastmod>
         <priority>0.80</priority>
     </url>
     <url>
         <loc>https://docs-annu-business.web.app/libs/ngx-tools/components/OpenaiConfigurationComponent</loc>
-        <lastmod>2024-04-10T07:32:53.844Z</lastmod>
+        <lastmod>2024-04-13T09:28:12.336Z</lastmod>
         <priority>0.80</priority>
     </url>
     <url>
         <loc>https://docs-annu-business.web.app/libs/ngx-tools/components/OpenaiFormComponent</loc>
-        <lastmod>2024-04-10T07:32:53.844Z</lastmod>
+        <lastmod>2024-04-13T09:28:12.336Z</lastmod>
         <priority>0.80</priority>
     </url>
     <url>
         <loc>https://docs-annu-business.web.app/libs/ngx-tools/components/OpenaiImageFormComponent</loc>
-        <lastmod>2024-04-10T07:32:53.844Z</lastmod>
+        <lastmod>2024-04-13T09:28:12.336Z</lastmod>
         <priority>0.80</priority>
     </url>
     <url>
         <loc>https://docs-annu-business.web.app/libs/ngx-tools/components/QueueStatusComponent</loc>
-        <lastmod>2024-04-10T07:32:53.844Z</lastmod>
+        <lastmod>2024-04-13T09:28:12.336Z</lastmod>
         <priority>0.80</priority>
     </url>
     <url>
         <loc>https://docs-annu-business.web.app/libs/ngx-tools/components/SitemapComponent</loc>
-        <lastmod>2024-04-10T07:32:53.844Z</lastmod>
+        <lastmod>2024-04-13T09:28:12.336Z</lastmod>
         <priority>0.80</priority>
     </url>
     <url>
         <loc>https://docs-annu-business.web.app/libs/ngx-tools/classes</loc>
-        <lastmod>2024-04-10T07:32:53.844Z</lastmod>
+        <lastmod>2024-04-13T09:28:12.336Z</lastmod>
         <priority>0.80</priority>
     </url>
     <url>
         <loc>https://docs-annu-business.web.app/libs/ngx-tools/classes/FirebaseConfig</loc>
-        <lastmod>2024-04-10T07:32:53.844Z</lastmod>
+        <lastmod>2024-04-13T09:28:12.336Z</lastmod>
         <priority>0.80</priority>
     </url>
     <url>
         <loc>https://docs-annu-business.web.app/libs/ngx-tools/classes/ImageFileInfo</loc>
-        <lastmod>2024-04-10T07:32:53.844Z</lastmod>
+        <lastmod>2024-04-13T09:28:12.336Z</lastmod>
         <priority>0.80</priority>
     </url>
     <url>
         <loc>https://docs-annu-business.web.app/libs/ngx-tools/classes/Queue</loc>
-        <lastmod>2024-04-10T07:32:53.844Z</lastmod>
+        <lastmod>2024-04-13T09:28:12.336Z</lastmod>
         <priority>0.80</priority>
     </url>
     <url>
         <loc>https://docs-annu-business.web.app/libs/ngx-tools/classes/QueueItem</loc>
-        <lastmod>2024-04-10T07:32:53.844Z</lastmod>
+        <lastmod>2024-04-13T09:28:12.336Z</lastmod>
         <priority>0.80</priority>
     </url>
     <url>
         <loc>https://docs-annu-business.web.app/libs/ngx-tools/interfaces</loc>
-        <lastmod>2024-04-10T07:32:53.844Z</lastmod>
+        <lastmod>2024-04-13T09:28:12.336Z</lastmod>
         <priority>0.80</priority>
     </url>
     <url>
         <loc>https://docs-annu-business.web.app/libs/ngx-tools/interfaces/Article</loc>
-        <lastmod>2024-04-10T07:32:53.844Z</lastmod>
+        <lastmod>2024-04-13T09:28:12.336Z</lastmod>
         <priority>0.80</priority>
     </url>
     <url>
         <loc>https://docs-annu-business.web.app/libs/ngx-tools/interfaces/Category</loc>
-        <lastmod>2024-04-10T07:32:53.844Z</lastmod>
+        <lastmod>2024-04-13T09:28:12.336Z</lastmod>
         <priority>0.80</priority>
     </url>
     <url>
         <loc>https://docs-annu-business.web.app/libs/ngx-tools/interfaces/FireAppConfig</loc>
-        <lastmod>2024-04-10T07:32:53.844Z</lastmod>
+        <lastmod>2024-04-13T09:28:12.336Z</lastmod>
         <priority>0.80</priority>
     </url>
     <url>
         <loc>https://docs-annu-business.web.app/libs/ngx-tools/interfaces/FirebaseDocument</loc>
-        <lastmod>2024-04-10T07:32:53.844Z</lastmod>
+        <lastmod>2024-04-13T09:28:12.336Z</lastmod>
         <priority>0.80</priority>
     </url>
     <url>
         <loc>https://docs-annu-business.web.app/libs/ngx-tools/interfaces/FireOrderField</loc>
-        <lastmod>2024-04-10T07:32:53.844Z</lastmod>
+        <lastmod>2024-04-13T09:28:12.336Z</lastmod>
         <priority>0.80</priority>
     </url>
     <url>
         <loc>https://docs-annu-business.web.app/libs/ngx-tools/interfaces/FireQuery</loc>
-        <lastmod>2024-04-10T07:32:53.844Z</lastmod>
+        <lastmod>2024-04-13T09:28:12.336Z</lastmod>
         <priority>0.80</priority>
     </url>
     <url>
         <loc>https://docs-annu-business.web.app/libs/ngx-tools/interfaces/FireQueryFilter</loc>
-        <lastmod>2024-04-10T07:32:53.844Z</lastmod>
+        <lastmod>2024-04-13T09:28:12.336Z</lastmod>
         <priority>0.80</priority>
     </url>
     <url>
         <loc>https://docs-annu-business.web.app/libs/ngx-tools/interfaces/FireStorageConfig</loc>
-        <lastmod>2024-04-10T07:32:53.844Z</lastmod>
+        <lastmod>2024-04-13T09:28:12.336Z</lastmod>
         <priority>0.80</priority>
     </url>
     <url>
         <loc>https://docs-annu-business.web.app/libs/ngx-tools/interfaces/FireStorageImageSpecs</loc>
-        <lastmod>2024-04-10T07:32:53.844Z</lastmod>
+        <lastmod>2024-04-13T09:28:12.336Z</lastmod>
         <priority>0.80</priority>
     </url>
     <url>
         <loc>https://docs-annu-business.web.app/libs/ngx-tools/interfaces/FireStoreConfig</loc>
-        <lastmod>2024-04-10T07:32:53.844Z</lastmod>
+        <lastmod>2024-04-13T09:28:12.336Z</lastmod>
         <priority>0.80</priority>
     </url>
     <url>
         <loc>https://docs-annu-business.web.app/libs/ngx-tools/interfaces/ImageBrowserLoadings</loc>
-        <lastmod>2024-04-10T07:32:53.844Z</lastmod>
+        <lastmod>2024-04-13T09:28:12.336Z</lastmod>
         <priority>0.80</priority>
     </url>
     <url>
         <loc>https://docs-annu-business.web.app/libs/ngx-tools/interfaces/ImageFileInfoList</loc>
-        <lastmod>2024-04-10T07:32:53.844Z</lastmod>
+        <lastmod>2024-04-13T09:28:12.336Z</lastmod>
         <priority>0.80</priority>
     </url>
     <url>
         <loc>https://docs-annu-business.web.app/libs/ngx-tools/interfaces/ImageInfo</loc>
-        <lastmod>2024-04-10T07:32:53.844Z</lastmod>
+        <lastmod>2024-04-13T09:28:12.336Z</lastmod>
         <priority>0.80</priority>
     </url>
     <url>
         <loc>https://docs-annu-business.web.app/libs/ngx-tools/interfaces/MetaInfo</loc>
-        <lastmod>2024-04-10T07:32:53.844Z</lastmod>
+        <lastmod>2024-04-13T09:28:12.336Z</lastmod>
         <priority>0.80</priority>
     </url>
     <url>
         <loc>https://docs-annu-business.web.app/libs/ngx-tools/interfaces/OpenaiConfig</loc>
-        <lastmod>2024-04-10T07:32:53.844Z</lastmod>
+        <lastmod>2024-04-13T09:28:12.336Z</lastmod>
         <priority>0.80</priority>
     </url>
     <url>
         <loc>https://docs-annu-business.web.app/libs/ngx-tools/interfaces/OpenaiConfiguration</loc>
-        <lastmod>2024-04-10T07:32:53.844Z</lastmod>
+        <lastmod>2024-04-13T09:28:12.336Z</lastmod>
         <priority>0.80</priority>
     </url>
     <url>
         <loc>https://docs-annu-business.web.app/libs/ngx-tools/interfaces/OpenaiConfigurationItem</loc>
-        <lastmod>2024-04-10T07:32:53.844Z</lastmod>
+        <lastmod>2024-04-13T09:28:12.336Z</lastmod>
         <priority>0.80</priority>
     </url>
     <url>
         <loc>https://docs-annu-business.web.app/libs/ngx-tools/interfaces/OpenaiMessage</loc>
-        <lastmod>2024-04-10T07:32:53.844Z</lastmod>
+        <lastmod>2024-04-13T09:28:12.336Z</lastmod>
         <priority>0.80</priority>
     </url>
     <url>
         <loc>https://docs-annu-business.web.app/libs/ngx-tools/interfaces/OpenaiPrompt</loc>
-        <lastmod>2024-04-10T07:32:53.844Z</lastmod>
+        <lastmod>2024-04-13T09:28:12.336Z</lastmod>
         <priority>0.80</priority>
     </url>
     <url>
         <loc>https://docs-annu-business.web.app/libs/ngx-tools/interfaces/PageArticles</loc>
-        <lastmod>2024-04-10T07:32:53.844Z</lastmod>
+        <lastmod>2024-04-13T09:28:12.336Z</lastmod>
         <priority>0.80</priority>
     </url>
     <url>
         <loc>https://docs-annu-business.web.app/libs/ngx-tools/interfaces/PageCategories</loc>
-        <lastmod>2024-04-10T07:32:53.844Z</lastmod>
+        <lastmod>2024-04-13T09:28:12.336Z</lastmod>
         <priority>0.80</priority>
     </url>
     <url>
         <loc>https://docs-annu-business.web.app/libs/ngx-tools/interfaces/PageCategoryGroup</loc>
-        <lastmod>2024-04-10T07:32:53.844Z</lastmod>
+        <lastmod>2024-04-13T09:28:12.336Z</lastmod>
         <priority>0.80</priority>
     </url>
     <url>
         <loc>https://docs-annu-business.web.app/libs/ngx-tools/interfaces/PreviewOnImages</loc>
-        <lastmod>2024-04-10T07:32:53.844Z</lastmod>
+        <lastmod>2024-04-13T09:28:12.336Z</lastmod>
         <priority>0.80</priority>
     </url>
     <url>
         <loc>https://docs-annu-business.web.app/libs/ngx-tools/interfaces/Sitemap</loc>
-        <lastmod>2024-04-10T07:32:53.844Z</lastmod>
+        <lastmod>2024-04-13T09:28:12.336Z</lastmod>
         <priority>0.80</priority>
     </url>
     <url>
         <loc>https://docs-annu-business.web.app/libs/ngx-tools/interfaces/SitemapInfo</loc>
-        <lastmod>2024-04-10T07:32:53.844Z</lastmod>
+        <lastmod>2024-04-13T09:28:12.336Z</lastmod>
         <priority>0.80</priority>
     </url>
     <url>
         <loc>https://docs-annu-business.web.app/libs/ngx-tools/interfaces/SitemapItem</loc>
-        <lastmod>2024-04-10T07:32:53.844Z</lastmod>
+        <lastmod>2024-04-13T09:28:12.336Z</lastmod>
         <priority>0.80</priority>
     </url>
     <url>
         <loc>https://docs-annu-business.web.app/libs/ngx-tools/interfaces/SitemapResponse</loc>
-        <lastmod>2024-04-10T07:32:53.844Z</lastmod>
+        <lastmod>2024-04-13T09:28:12.336Z</lastmod>
         <priority>0.80</priority>
     </url>
     <url>
         <loc>https://docs-annu-business.web.app/libs/ngx-tools/interfaces/StructuredQuery</loc>
-        <lastmod>2024-04-10T07:32:53.844Z</lastmod>
+        <lastmod>2024-04-13T09:28:12.336Z</lastmod>
         <priority>0.80</priority>
     </url>
     <url>
         <loc>https://docs-annu-business.web.app/libs/ngx-tools/interfaces/StructuredQueryArrayValue</loc>
-        <lastmod>2024-04-10T07:32:53.844Z</lastmod>
+        <lastmod>2024-04-13T09:28:12.336Z</lastmod>
         <priority>0.80</priority>
     </url>
     <url>
         <loc>https://docs-annu-business.web.app/libs/ngx-tools/interfaces/StructuredQueryCollectionSelector</loc>
-        <lastmod>2024-04-10T07:32:53.844Z</lastmod>
+        <lastmod>2024-04-13T09:28:12.336Z</lastmod>
         <priority>0.80</priority>
     </url>
     <url>
         <loc>https://docs-annu-business.web.app/libs/ngx-tools/interfaces/StructuredQueryCompositeFilter</loc>
-        <lastmod>2024-04-10T07:32:53.844Z</lastmod>
+        <lastmod>2024-04-13T09:28:12.336Z</lastmod>
         <priority>0.80</priority>
     </url>
     <url>
         <loc>https://docs-annu-business.web.app/libs/ngx-tools/interfaces/StructuredQueryCursor</loc>
-        <lastmod>2024-04-10T07:32:53.844Z</lastmod>
+        <lastmod>2024-04-13T09:28:12.336Z</lastmod>
         <priority>0.80</priority>
     </url>
     <url>
         <loc>https://docs-annu-business.web.app/libs/ngx-tools/interfaces/StructuredQueryFieldFilter</loc>
-        <lastmod>2024-04-10T07:32:53.844Z</lastmod>
+        <lastmod>2024-04-13T09:28:12.336Z</lastmod>
         <priority>0.80</priority>
     </url>
     <url>
         <loc>https://docs-annu-business.web.app/libs/ngx-tools/interfaces/StructuredQueryFieldReference</loc>
-        <lastmod>2024-04-10T07:32:53.844Z</lastmod>
+        <lastmod>2024-04-13T09:28:12.336Z</lastmod>
         <priority>0.80</priority>
     </url>
     <url>
         <loc>https://docs-annu-business.web.app/libs/ngx-tools/interfaces/StructuredQueryFilter</loc>
-        <lastmod>2024-04-10T07:32:53.844Z</lastmod>
+        <lastmod>2024-04-13T09:28:12.336Z</lastmod>
         <priority>0.80</priority>
     </url>
     <url>
         <loc>https://docs-annu-business.web.app/libs/ngx-tools/interfaces/StructuredQueryLatLng</loc>
-        <lastmod>2024-04-10T07:32:53.844Z</lastmod>
+        <lastmod>2024-04-13T09:28:12.336Z</lastmod>
         <priority>0.80</priority>
     </url>
     <url>
         <loc>https://docs-annu-business.web.app/libs/ngx-tools/interfaces/StructuredQueryMapValue</loc>
-        <lastmod>2024-04-10T07:32:53.844Z</lastmod>
+        <lastmod>2024-04-13T09:28:12.336Z</lastmod>
         <priority>0.80</priority>
     </url>
     <url>
         <loc>https://docs-annu-business.web.app/libs/ngx-tools/interfaces/StructuredQueryOrder</loc>
-        <lastmod>2024-04-10T07:32:53.844Z</lastmod>
+        <lastmod>2024-04-13T09:28:12.336Z</lastmod>
         <priority>0.80</priority>
     </url>
     <url>
         <loc>https://docs-annu-business.web.app/libs/ngx-tools/interfaces/StructuredQuerySelectProjection</loc>
-        <lastmod>2024-04-10T07:32:53.844Z</lastmod>
+        <lastmod>2024-04-13T09:28:12.336Z</lastmod>
         <priority>0.80</priority>
     </url>
     <url>
         <loc>https://docs-annu-business.web.app/libs/ngx-tools/interfaces/StructuredQueryType</loc>
-        <lastmod>2024-04-10T07:32:53.844Z</lastmod>
+        <lastmod>2024-04-13T09:28:12.336Z</lastmod>
         <priority>0.80</priority>
     </url>
     <url>
         <loc>https://docs-annu-business.web.app/libs/ngx-tools/interfaces/StructuredQueryUnaryFilter</loc>
-        <lastmod>2024-04-10T07:32:53.844Z</lastmod>
+        <lastmod>2024-04-13T09:28:12.336Z</lastmod>
         <priority>0.80</priority>
     </url>
     <url>
         <loc>https://docs-annu-business.web.app/libs/ngx-tools/interfaces/StructuredQueryValue</loc>
-        <lastmod>2024-04-10T07:32:53.844Z</lastmod>
+        <lastmod>2024-04-13T09:28:12.336Z</lastmod>
         <priority>0.80</priority>
     </url>
     <url>
         <loc>https://docs-annu-business.web.app/libs/ngx-tools/directives</loc>
-        <lastmod>2024-04-10T07:32:53.844Z</lastmod>
+        <lastmod>2024-04-13T09:28:12.336Z</lastmod>
         <priority>0.80</priority>
     </url>
     <url>
         <loc>https://docs-annu-business.web.app/libs/ngx-tools/guards</loc>
-        <lastmod>2024-04-10T07:32:53.844Z</lastmod>
+        <lastmod>2024-04-13T09:28:12.336Z</lastmod>
         <priority>0.80</priority>
     </url>
     <url>
         <loc>https://docs-annu-business.web.app/libs/ngx-tools/guards/IsLoggedInGuard</loc>
-        <lastmod>2024-04-10T07:32:53.844Z</lastmod>
+        <lastmod>2024-04-13T09:28:12.336Z</lastmod>
         <priority>0.80</priority>
     </url>
     <url>
         <loc>https://docs-annu-business.web.app/libs/ngx-tools/guards/RoleAdminGuard</loc>
-        <lastmod>2024-04-10T07:32:53.844Z</lastmod>
+        <lastmod>2024-04-13T09:28:12.336Z</lastmod>
         <priority>0.80</priority>
     </url>
     <url>
         <loc>https://docs-annu-business.web.app/libs/ngx-tools/guards/RoleAuthorGuard</loc>
-        <lastmod>2024-04-10T07:32:53.844Z</lastmod>
+        <lastmod>2024-04-13T09:28:12.336Z</lastmod>
         <priority>0.80</priority>
     </url>
     <url>
         <loc>https://docs-annu-business.web.app/libs/ngx-tools/guards/RoleEditorGuard</loc>
-        <lastmod>2024-04-10T07:32:53.844Z</lastmod>
+        <lastmod>2024-04-13T09:28:12.336Z</lastmod>
         <priority>0.80</priority>
     </url>
     <url>
         <loc>https://docs-annu-business.web.app/libs/ngx-tools/guards/RoleManagerGuard</loc>
-        <lastmod>2024-04-10T07:32:53.844Z</lastmod>
+        <lastmod>2024-04-13T09:28:12.336Z</lastmod>
         <priority>0.80</priority>
     </url>
     <url>
         <loc>https://docs-annu-business.web.app/libs/ngx-tools/guards/RolePaidMemberGuard</loc>
-        <lastmod>2024-04-10T07:32:53.844Z</lastmod>
+        <lastmod>2024-04-13T09:28:12.336Z</lastmod>
         <priority>0.80</priority>
     </url>
     <url>
         <loc>https://docs-annu-business.web.app/libs/ngx-tools/guards/RoleReaderGuard</loc>
-        <lastmod>2024-04-10T07:32:53.844Z</lastmod>
+        <lastmod>2024-04-13T09:28:12.336Z</lastmod>
         <priority>0.80</priority>
     </url>
     <url>
         <loc>https://docs-annu-business.web.app/libs/ngx-tools/guards/RoleStudentGuard</loc>
-        <lastmod>2024-04-10T07:32:53.844Z</lastmod>
+        <lastmod>2024-04-13T09:28:12.336Z</lastmod>
         <priority>0.80</priority>
     </url>
     <url>
         <loc>https://docs-annu-business.web.app/libs/ngx-tools/guards/RoleTeacherGuard</loc>
-        <lastmod>2024-04-10T07:32:53.844Z</lastmod>
+        <lastmod>2024-04-13T09:28:12.336Z</lastmod>
         <priority>0.80</priority>
     </url>
     <url>
         <loc>https://docs-annu-business.web.app/libs/ngx-tools/interceptors</loc>
-        <lastmod>2024-04-10T07:32:53.844Z</lastmod>
+        <lastmod>2024-04-13T09:28:12.336Z</lastmod>
         <priority>0.80</priority>
     </url>
     <url>
         <loc>https://docs-annu-business.web.app/libs/ngx-tools/services</loc>
-        <lastmod>2024-04-10T07:32:53.844Z</lastmod>
+        <lastmod>2024-04-13T09:28:12.336Z</lastmod>
         <priority>0.80</priority>
     </url>
     <url>
         <loc>https://docs-annu-business.web.app/libs/ngx-tools/services/FireArticlesHttpService</loc>
-        <lastmod>2024-04-10T07:32:53.844Z</lastmod>
+        <lastmod>2024-04-13T09:28:12.336Z</lastmod>
         <priority>0.80</priority>
     </url>
     <url>
         <loc>https://docs-annu-business.web.app/libs/ngx-tools/services/FireAuthService</loc>
-        <lastmod>2024-04-10T07:32:53.844Z</lastmod>
+        <lastmod>2024-04-13T09:28:12.336Z</lastmod>
         <priority>0.80</priority>
     </url>
     <url>
         <loc>https://docs-annu-business.web.app/libs/ngx-tools/services/FireAuthUiService</loc>
-        <lastmod>2024-04-10T07:32:53.844Z</lastmod>
+        <lastmod>2024-04-13T09:28:12.336Z</lastmod>
         <priority>0.80</priority>
     </url>
     <url>
         <loc>https://docs-annu-business.web.app/libs/ngx-tools/services/FireCategoriesHttpService</loc>
-        <lastmod>2024-04-10T07:32:53.844Z</lastmod>
+        <lastmod>2024-04-13T09:28:12.336Z</lastmod>
         <priority>0.80</priority>
     </url>
     <url>
         <loc>https://docs-annu-business.web.app/libs/ngx-tools/services/FireCommonService</loc>
-        <lastmod>2024-04-10T07:32:53.844Z</lastmod>
+        <lastmod>2024-04-13T09:28:12.336Z</lastmod>
         <priority>0.80</priority>
     </url>
     <url>
         <loc>https://docs-annu-business.web.app/libs/ngx-tools/services/FireStorageImageService</loc>
-        <lastmod>2024-04-10T07:32:53.844Z</lastmod>
+        <lastmod>2024-04-13T09:28:12.336Z</lastmod>
         <priority>0.80</priority>
     </url>
     <url>
         <loc>https://docs-annu-business.web.app/libs/ngx-tools/services/FireStorageSitemapService</loc>
-        <lastmod>2024-04-10T07:32:53.844Z</lastmod>
+        <lastmod>2024-04-13T09:28:12.336Z</lastmod>
         <priority>0.80</priority>
     </url>
     <url>
         <loc>https://docs-annu-business.web.app/libs/ngx-tools/services/FirestoreHttpService</loc>
-        <lastmod>2024-04-10T07:32:53.844Z</lastmod>
+        <lastmod>2024-04-13T09:28:12.336Z</lastmod>
         <priority>0.80</priority>
     </url>
     <url>
         <loc>https://docs-annu-business.web.app/libs/ngx-tools/services/FirestoreParserService</loc>
-        <lastmod>2024-04-10T07:32:53.844Z</lastmod>
+        <lastmod>2024-04-13T09:28:12.336Z</lastmod>
         <priority>0.80</priority>
     </url>
     <url>
         <loc>https://docs-annu-business.web.app/libs/ngx-tools/services/FirestoreQueryService</loc>
-        <lastmod>2024-04-10T07:32:53.844Z</lastmod>
+        <lastmod>2024-04-13T09:28:12.336Z</lastmod>
         <priority>0.80</priority>
     </url>
     <url>
         <loc>https://docs-annu-business.web.app/libs/ngx-tools/services/ImageBrowserService</loc>
-        <lastmod>2024-04-10T07:32:53.844Z</lastmod>
+        <lastmod>2024-04-13T09:28:12.336Z</lastmod>
         <priority>0.80</priority>
     </url>
     <url>
         <loc>https://docs-annu-business.web.app/libs/ngx-tools/services/OpenaiConfigService</loc>
-        <lastmod>2024-04-10T07:32:53.844Z</lastmod>
+        <lastmod>2024-04-13T09:28:12.336Z</lastmod>
         <priority>0.80</priority>
     </url>
     <url>
         <loc>https://docs-annu-business.web.app/libs/ngx-tools/services/OpenaiHttpService</loc>
-        <lastmod>2024-04-10T07:32:53.844Z</lastmod>
+        <lastmod>2024-04-13T09:28:12.336Z</lastmod>
         <priority>0.80</priority>
     </url>
     <url>
         <loc>https://docs-annu-business.web.app/libs/ngx-tools/services/OpenaiService</loc>
-        <lastmod>2024-04-10T07:32:53.844Z</lastmod>
+        <lastmod>2024-04-13T09:28:12.336Z</lastmod>
         <priority>0.80</priority>
     </url>
     <url>
         <loc>https://docs-annu-business.web.app/libs/ngx-tools/services/SitemapService</loc>
-        <lastmod>2024-04-10T07:32:53.844Z</lastmod>
+        <lastmod>2024-04-13T09:28:12.336Z</lastmod>
         <priority>0.80</priority>
     </url>
     <url>
         <loc>https://docs-annu-business.web.app/libs/ngx-ecommerce</loc>
-        <lastmod>2024-04-10T07:32:53.844Z</lastmod>
+        <lastmod>2024-04-13T09:28:12.336Z</lastmod>
         <priority>0.80</priority>
     </url>
     <url>
         <loc>https://docs-annu-business.web.app/libs/ngx-ecommerce/components</loc>
-        <lastmod>2024-04-10T07:32:53.844Z</lastmod>
+        <lastmod>2024-04-13T09:28:12.336Z</lastmod>
         <priority>0.80</priority>
     </url>
     <url>
         <loc>https://docs-annu-business.web.app/libs/ngx-ecommerce/components/AddressComponent</loc>
-        <lastmod>2024-04-10T07:32:53.844Z</lastmod>
+        <lastmod>2024-04-13T09:28:12.336Z</lastmod>
         <priority>0.80</priority>
     </url>
     <url>
         <loc>https://docs-annu-business.web.app/libs/ngx-ecommerce/components/AddressFormComponent</loc>
-        <lastmod>2024-04-10T07:32:53.844Z</lastmod>
+        <lastmod>2024-04-13T09:28:12.336Z</lastmod>
         <priority>0.80</priority>
     </url>
     <url>
         <loc>https://docs-annu-business.web.app/libs/ngx-ecommerce/components/AddressListComponent</loc>
-        <lastmod>2024-04-10T07:32:53.844Z</lastmod>
+        <lastmod>2024-04-13T09:28:12.336Z</lastmod>
         <priority>0.80</priority>
     </url>
     <url>
-        <loc>https://docs-annu-business.web.app/libs/ngx-ecommerce/components/DeliveryInstructionFormComponent</loc>
-        <lastmod>2024-04-10T07:32:53.844Z</lastmod>
+        <loc>https://docs-annu-business.web.app/libs/ngx-ecommerce/components/CategoryThumbComponent</loc>
+        <lastmod>2024-04-13T09:28:12.336Z</lastmod>
+        <priority>0.80</priority>
+    </url>
+    <url>
+        <loc>https://docs-annu-business.web.app/libs/ngx-ecommerce/components/CategoryThumbListComponent</loc>
+        <lastmod>2024-04-13T09:28:12.336Z</lastmod>
         <priority>0.80</priority>
     </url>
     <url>
         <loc>https://docs-annu-business.web.app/libs/ngx-ecommerce/components/ProductThumbComponent</loc>
-        <lastmod>2024-04-10T07:32:53.844Z</lastmod>
+        <lastmod>2024-04-13T09:28:12.336Z</lastmod>
+        <priority>0.80</priority>
+    </url>
+    <url>
+        <loc>https://docs-annu-business.web.app/libs/ngx-ecommerce/components/ProductThumbListComponent</loc>
+        <lastmod>2024-04-13T09:28:12.336Z</lastmod>
         <priority>0.80</priority>
     </url>
     <url>
         <loc>https://docs-annu-business.web.app/libs/ngx-ecommerce/classes</loc>
-        <lastmod>2024-04-10T07:32:53.844Z</lastmod>
+        <lastmod>2024-04-13T09:28:12.336Z</lastmod>
         <priority>0.80</priority>
     </url>
     <url>
         <loc>https://docs-annu-business.web.app/libs/ngx-ecommerce/interfaces</loc>
-        <lastmod>2024-04-10T07:32:53.844Z</lastmod>
+        <lastmod>2024-04-13T09:28:12.336Z</lastmod>
         <priority>0.80</priority>
     </url>
     <url>
         <loc>https://docs-annu-business.web.app/libs/ngx-ecommerce/directives</loc>
-        <lastmod>2024-04-10T07:32:53.844Z</lastmod>
+        <lastmod>2024-04-13T09:28:12.336Z</lastmod>
         <priority>0.80</priority>
     </url>
     <url>
         <loc>https://docs-annu-business.web.app/libs/ngx-ecommerce/guards</loc>
-        <lastmod>2024-04-10T07:32:53.844Z</lastmod>
+        <lastmod>2024-04-13T09:28:12.336Z</lastmod>
         <priority>0.80</priority>
     </url>
     <url>
         <loc>https://docs-annu-business.web.app/libs/ngx-ecommerce/interceptors</loc>
-        <lastmod>2024-04-10T07:32:53.844Z</lastmod>
+        <lastmod>2024-04-13T09:28:12.336Z</lastmod>
         <priority>0.80</priority>
     </url>
     <url>
         <loc>https://docs-annu-business.web.app/libs/ngx-ecommerce/services</loc>
-        <lastmod>2024-04-10T07:32:53.844Z</lastmod>
+        <lastmod>2024-04-13T09:28:12.336Z</lastmod>
         <priority>0.80</priority>
     </url>
     <url>
         <loc>https://docs-annu-business.web.app/libs/ngx-ecommerce/services/AddressFormService</loc>
-        <lastmod>2024-04-10T07:32:53.844Z</lastmod>
+        <lastmod>2024-04-13T09:28:12.336Z</lastmod>
         <priority>0.80</priority>
     </url>
     

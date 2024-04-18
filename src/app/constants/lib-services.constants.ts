@@ -16,6 +16,7 @@
         
         // ngx-core imports
         import { AppConfigService } from '@annuadvent/ngx-core/app-config';
+        import { CategoriesUtilsService } from '@annuadvent/ngx-core/helpers-categories';
         import { FormConfigService } from '@annuadvent/ngx-core/helpers-forms';
         import { GlobalConfigService } from '@annuadvent/ngx-core/global-config';
         import { PincodeValidatorService } from '@annuadvent/ngx-core/helpers-forms';
@@ -67,6 +68,7 @@
 },
     'ngx-core': {
         AppConfigService,
+    CategoriesUtilsService,
     FormConfigService,
     GlobalConfigService,
     PincodeValidatorService,

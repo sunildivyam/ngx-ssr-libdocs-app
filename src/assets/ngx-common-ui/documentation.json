@@ -35,6 +35,39 @@
             "extends": []
         },
         {
+            "name": "BannerItem",
+            "id": "interface-BannerItem-e694563c2fcc0291218fa2a420ad094ac3e784b3cb95e99eeab098ce9ed8a47aec1273574260d7d0b9af927b8bb169ee548145b9d72a9305ce85e8ec46d1b214",
+            "file": "projects/ngx-common-ui/banners/src/interfaces/banner-item.interface.ts",
+            "deprecated": false,
+            "deprecationMessage": "",
+            "type": "interface",
+            "sourceCode": "export interface BannerItem {\n  src?: string;\n  href?: string;\n}\n",
+            "properties": [
+                {
+                    "name": "href",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "string",
+                    "optional": true,
+                    "description": "",
+                    "line": 3
+                },
+                {
+                    "name": "src",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "string",
+                    "optional": true,
+                    "description": "",
+                    "line": 2
+                }
+            ],
+            "indexSignatures": [],
+            "kind": 171,
+            "methods": [],
+            "extends": []
+        },
+        {
             "name": "CodeBlockInfo",
             "id": "interface-CodeBlockInfo-87b408592116bd85c8be652292377fa65459e4c3dfd499ffc8ae8063ef9d84d9e159c1764b51bf3ffc6ec0c084e256d7f6595c7c7b9cbd5d020b9ae866b5d58f",
             "file": "projects/ngx-common-ui/code-block/src/interfaces/code-block.interface.ts",
@@ -2529,7 +2562,119 @@
     ],
     "guards": [],
     "interceptors": [],
-    "classes": [],
+    "classes": [
+        {
+            "name": "ImageUpload",
+            "id": "class-ImageUpload-ee94e0e7fc6e90e5f9deab39f3aaa9f7d426da34f218938dae89364e96627bb1236a9edb3f042d0ffb9144b858edfb287dcda32cde0a91e70512f32406aff73b",
+            "file": "projects/ngx-common-ui/image-upload/src/classes/image-upload.class.ts",
+            "deprecated": false,
+            "deprecationMessage": "",
+            "type": "class",
+            "sourceCode": "export class ImageUpload {\r\n  fileName: string;\r\n  size: number; // Size in bytes\r\n  mimeType: string; // Mime type image/png\r\n  previewUrl: string;\r\n  data: File;\r\n\r\n  constructor(data: any = null) {\r\n    this.fileName = data?.fileName || '';\r\n    this.size = data?.size || 0;\r\n    this.mimeType = data?.mimeType || '';\r\n    this.previewUrl = data?.previewUrl || '';\r\n    this.data = data?.file || null;\r\n  }\r\n\r\n  public get kbs(): number {\r\n    return this.size / 1024;\r\n  }\r\n\r\n  public get mbs(): number {\r\n    return this.size / 1024 / 1024;\r\n  }\r\n}\r\n",
+            "constructorObj": {
+                "name": "constructor",
+                "description": "",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "args": [
+                    {
+                        "name": "data",
+                        "type": "any",
+                        "deprecated": false,
+                        "deprecationMessage": "",
+                        "defaultValue": "null"
+                    }
+                ],
+                "line": 6,
+                "jsdoctags": [
+                    {
+                        "name": "data",
+                        "type": "any",
+                        "deprecated": false,
+                        "deprecationMessage": "",
+                        "defaultValue": "null",
+                        "tagName": {
+                            "text": "param"
+                        }
+                    }
+                ]
+            },
+            "properties": [
+                {
+                    "name": "data",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "File",
+                    "optional": false,
+                    "description": "",
+                    "line": 6
+                },
+                {
+                    "name": "fileName",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "string",
+                    "optional": false,
+                    "description": "",
+                    "line": 2
+                },
+                {
+                    "name": "mimeType",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "string",
+                    "optional": false,
+                    "description": "",
+                    "line": 4
+                },
+                {
+                    "name": "previewUrl",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "string",
+                    "optional": false,
+                    "description": "",
+                    "line": 5
+                },
+                {
+                    "name": "size",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "number",
+                    "optional": false,
+                    "description": "",
+                    "line": 3
+                }
+            ],
+            "methods": [],
+            "indexSignatures": [],
+            "extends": [],
+            "accessors": {
+                "kbs": {
+                    "name": "kbs",
+                    "getSignature": {
+                        "name": "kbs",
+                        "type": "number",
+                        "returnType": "number",
+                        "line": 16
+                    }
+                },
+                "mbs": {
+                    "name": "mbs",
+                    "getSignature": {
+                        "name": "mbs",
+                        "type": "number",
+                        "returnType": "number",
+                        "line": 20
+                    }
+                }
+            },
+            "inputsClass": [],
+            "outputsClass": [],
+            "hostBindings": [],
+            "hostListeners": []
+        }
+    ],
     "directives": [],
     "components": [
         {
@@ -2929,6 +3074,152 @@
                 "OnInit"
             ],
             "templateData": "<ng-content></ng-content>\r\n"
+        },
+        {
+            "name": "BannersComponent",
+            "id": "component-BannersComponent-0da44c9a201dc699cc05254d94ab38fe37b6a62b79367d43e844521ea34662511d36900fbad47f96018bbf6d62552cd3023d979d7485dc9427b52fab5192189e",
+            "file": "projects/ngx-common-ui/banners/src/components/banners/banners.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "anu-banners",
+            "styleUrls": [
+                "./banners.component.scss"
+            ],
+            "styles": [],
+            "templateUrl": [
+                "./banners.component.html"
+            ],
+            "viewProviders": [],
+            "hostDirectives": [],
+            "inputsClass": [
+                {
+                    "name": "autoSlide",
+                    "defaultValue": "true",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 11,
+                    "type": "boolean",
+                    "decorators": []
+                },
+                {
+                    "name": "contentSectionClassNames",
+                    "defaultValue": "['container']",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 14,
+                    "type": "Array<string>",
+                    "decorators": []
+                },
+                {
+                    "name": "duration",
+                    "defaultValue": "5000",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 12,
+                    "type": "number",
+                    "decorators": []
+                },
+                {
+                    "name": "items",
+                    "defaultValue": "[]",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 10,
+                    "type": "Array<BannerItem>",
+                    "decorators": []
+                },
+                {
+                    "name": "slideSectionClassNames",
+                    "defaultValue": "['container']",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 13,
+                    "type": "Array<string>",
+                    "decorators": []
+                }
+            ],
+            "outputsClass": [
+                {
+                    "name": "bannerClicked",
+                    "defaultValue": "new EventEmitter<BannerItem>()",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 16,
+                    "type": "EventEmitter"
+                }
+            ],
+            "propertiesClass": [],
+            "methodsClass": [
+                {
+                    "name": "onBannerClick",
+                    "args": [
+                        {
+                            "name": "event",
+                            "type": "any",
+                            "deprecated": false,
+                            "deprecationMessage": ""
+                        },
+                        {
+                            "name": "item",
+                            "type": "BannerItem",
+                            "deprecated": false,
+                            "deprecationMessage": ""
+                        }
+                    ],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 18,
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "modifierKind": [
+                        125
+                    ],
+                    "jsdoctags": [
+                        {
+                            "name": "event",
+                            "type": "any",
+                            "deprecated": false,
+                            "deprecationMessage": "",
+                            "tagName": {
+                                "text": "param"
+                            }
+                        },
+                        {
+                            "name": "item",
+                            "type": "BannerItem",
+                            "deprecated": false,
+                            "deprecationMessage": "",
+                            "tagName": {
+                                "text": "param"
+                            }
+                        }
+                    ]
+                }
+            ],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [],
+            "standalone": false,
+            "imports": [],
+            "description": "",
+            "rawdescription": "\n",
+            "type": "component",
+            "sourceCode": "import { Component, EventEmitter, Input, Output } from '@angular/core';\nimport { BannerItem } from '../../interfaces/banner-item.interface';\n\n@Component({\n  selector: 'anu-banners',\n  templateUrl: './banners.component.html',\n  styleUrls: ['./banners.component.scss']\n})\nexport class BannersComponent {\n  @Input() items: Array<BannerItem> = [];\n  @Input() autoSlide: boolean = true;\n  @Input() duration: number = 5000;\n  @Input() slideSectionClassNames: Array<string> = ['container'];\n  @Input() contentSectionClassNames: Array<string> = ['container'];\n\n  @Output() bannerClicked = new EventEmitter<BannerItem>();\n\n  public onBannerClick(event: any, item: BannerItem): void {\n    if (!item.href) {\n      event.preventDefault();\n      this.bannerClicked.emit(item);\n    }\n  }\n}\n",
+            "assetsDirs": [],
+            "styleUrlsData": [
+                {
+                    "data": ":host {\r\n  display: flex;\r\n  flex-direction: column;\r\n  width: 100%;\r\n}\r\n",
+                    "styleUrl": "./banners.component.scss"
+                }
+            ],
+            "stylesData": "",
+            "extends": [],
+            "templateData": "<anu-slideshow [ngClass]=\"slideSectionClassNames\" [autoSlide]=\"autoSlide\" [duration]=\"duration\">\n    <div class=\"row nowrap\">\n        <div class=\"slideshow_item container\" *ngFor=\"let item of items\">\n            <a *ngIf=\"item.href\" [href]=\"item.href\" (click)=\"onBannerClick($event, item)\">\n                <anu-picture class=\"container\" [src]=\"item.src\"></anu-picture>\n            </a>\n            <anu-picture class=\"container\" *ngIf=\"!item.href\" [src]=\"item.src\"\n                (click)=\"onBannerClick($event, item)\"></anu-picture>\n        </div>\n    </div>\n</anu-slideshow>\n<div [ngClass]=\"contentSectionClassNames\">\n    <ng-content>\n\n    </ng-content>\n</div>\n"
         },
         {
             "name": "BreadcrumbComponent",
@@ -4647,7 +4938,7 @@
         },
         {
             "name": "DynamicFormComponent",
-            "id": "component-DynamicFormComponent-e105801fac891fa1556ee0f98a2c30f559c416ca6550105f9933a0f8e73311cf522975663171690c8b4ba635d4f5ffc156e59e12ed6a8a87f3390ae109dd6129",
+            "id": "component-DynamicFormComponent-72e0b6a7afe5a2662e06ee736bc92eb8f133ab864cc07f48ccdb3a11bc4042c97463353c94675a1a006dc2148d7a7593283b4f7e59a6fc5e77dba6470e2f00c2",
             "file": "projects/ngx-common-ui/reactive-form/src/components/dynamic-form/dynamic-form.component.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -5097,7 +5388,7 @@
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import {\n  Component,\n  ElementRef,\n  EventEmitter,\n  Input,\n  OnChanges,\n  OnInit,\n  Output,\n  SimpleChanges\n} from '@angular/core';\nimport { AbstractControl, FormGroup, ValidationErrors } from '@angular/forms';\nimport {\n  FormConfigGroup,\n  FormConfigService,\n  FormControlValue\n} from '@annuadvent/ngx-core/helpers-forms';\n\n@Component({\n  selector: 'anu-dynamic-form',\n  templateUrl: './dynamic-form.component.html',\n  styleUrls: ['./dynamic-form.component.scss'],\n  providers: [FormConfigService]\n})\nexport class DynamicFormComponent implements OnInit, OnChanges {\n  @Input() value: any;\n  @Input() params: FormConfigGroup;\n\n  @Input() loading: boolean = false;\n\n  /**\n   * Save Button Label\n   */\n  @Input() saveBtnLabel: string = 'Save';\n\n  /**\n   * Cancel Button Label\n   */\n  @Input() cancelBtnLabel: string = 'Cancel';\n\n  /**\n   * Enable Save Button, if false, then a form can act as form group.\n   */\n  @Input() enableSaveBtn: boolean = true;\n\n  /**\n   * Enable Cancel Button, if false, then a form can act as form group.\n   */\n  @Input() enableCancelBtn: boolean = true;\n\n  /**\n   * Emit form value, when submit button is clicked.\n   */\n  @Output() actionBtnClicked = new EventEmitter<FormControlValue>();\n\n  /**\n   * Emit form value, when submit button is clicked.\n   */\n  @Output() submitClicked = new EventEmitter<any>();\n\n  /**\n   * Emit, when cancel button is clicked.\n   */\n  @Output() cancelClicked = new EventEmitter<void>();\n\n  /**\n   * Emit, when Value is changed.\n   */\n  @Output() changed = new EventEmitter<any>();\n\n  /**\n   * Emit, when Form Status is changed.\n   */\n  @Output() statusChanged = new EventEmitter<ValidationErrors>();\n\n  /**\n   * Emit, when Control Value is changed.\n   */\n  @Output() controlValueChanged = new EventEmitter<FormControlValue>();\n\n  fg: FormGroup; // reactive form group (form)\n  fcs = {}; // reactive form controls\n  submitTried: boolean = false;\n\n  constructor(\n    private formConfigService: FormConfigService,\n    private el: ElementRef\n  ) {\n    // Subscribe form\n    this.formConfigService.form.subscribe((fg) => (this.fg = fg));\n\n    // Subscribe controls\n    this.formConfigService.controls.subscribe(\n      (controls) => (this.fcs = controls)\n    );\n\n    // Subscribe form value change\n    this.formConfigService.valueChanges.subscribe((value) =>\n      this.changed.emit(value)\n    );\n\n    // Subscribe form status change\n    this.formConfigService.statusChanges.subscribe((errors) =>\n      this.statusChanged.emit(errors)\n    );\n\n    // Subscribe control value changes\n    this.formConfigService.controlValueChanges.subscribe((value) =>\n      this.controlValueChanged.emit(value)\n    );\n  }\n\n  ngOnInit(): void {\n    this.formConfigService.initForm(this.params, this.value);\n  }\n\n  ngOnChanges(changes: SimpleChanges): void {\n    (changes.params && changes.value) ||\n      (changes.params &&\n        this.formConfigService.initForm(this.params, this.value));\n\n    changes.value &&\n      !changes.params &&\n      this.formConfigService.patchValue(this.value);\n  }\n\n  public onSubmit(event: any): void {\n    event.preventDefault();\n    // Show all invalid fields' errors.\n    this.fg.markAllAsTouched();\n    this.submitTried = true;\n\n    if (this.fg.valid) {\n      this.submitClicked.emit(this.fg.getRawValue());\n    } else {\n      // Focus to the first errored field\n      const erroredElements =\n        this.el.nativeElement.querySelectorAll('form .ng-invalid');\n      erroredElements &&\n        erroredElements.length &&\n        (erroredElements[0] as HTMLElement).focus();\n    }\n  }\n\n  public onCancel(event: any): void {\n    event.preventDefault();\n    this.cancelClicked.emit();\n  }\n\n  public checkBoxChange(event, control) {\n    event.preventDefault();\n    const checked = event.target.checked;\n    setTimeout(() => control.setValue(checked, { emitEvent: true }));\n  }\n\n  public checkBoxesChange(event, control) {\n    // event.preventDefault();\n    const checked = event.target.checked;\n    const value = event.target.value;\n    const controlValue = control.value || [];\n\n    // Add value\n    if (checked) {\n      if (!controlValue.includes(value)) {\n        controlValue.push(value);\n      }\n      setTimeout(() => control.setValue(controlValue, { emitEvent: true }));\n    } else {\n      // remove value\n      setTimeout(() =>\n        control.setValue(\n          controlValue.filter((val) => val !== value),\n          { emitEvent: true }\n        )\n      );\n    }\n  }\n\n  public onActionBtn(event: any, key: string, control: AbstractControl): void {\n    event.preventDefault();\n    this.actionBtnClicked.emit({\n      key,\n      value: control?.value,\n      control\n    } as FormControlValue);\n  }\n}\n",
+            "sourceCode": "import {\n  Component,\n  ElementRef,\n  EventEmitter,\n  Input,\n  OnChanges,\n  OnInit,\n  Output,\n  SimpleChanges\n} from '@angular/core';\nimport { AbstractControl, FormGroup, ValidationErrors } from '@angular/forms';\nimport {\n  FormConfigGroup,\n  FormConfigService,\n  FormControlValue\n} from '@annuadvent/ngx-core/helpers-forms';\n\n@Component({\n  selector: 'anu-dynamic-form',\n  templateUrl: './dynamic-form.component.html',\n  styleUrls: ['./dynamic-form.component.scss'],\n  providers: [FormConfigService]\n})\nexport class DynamicFormComponent implements OnInit, OnChanges {\n  @Input() value: any;\n  @Input() params: FormConfigGroup;\n\n  @Input() loading: boolean = false;\n\n  /**\n   * Save Button Label\n   */\n  @Input() saveBtnLabel: string = 'Save';\n\n  /**\n   * Cancel Button Label\n   */\n  @Input() cancelBtnLabel: string = 'Cancel';\n\n  /**\n   * Enable Save Button, if false, then a form can act as form group.\n   */\n  @Input() enableSaveBtn: boolean = true;\n\n  /**\n   * Enable Cancel Button, if false, then a form can act as form group.\n   */\n  @Input() enableCancelBtn: boolean = true;\n\n  /**\n   * Emit form value, when submit button is clicked.\n   */\n  @Output() actionBtnClicked = new EventEmitter<FormControlValue>();\n\n  /**\n   * Emit form value, when submit button is clicked.\n   */\n  @Output() submitClicked = new EventEmitter<any>();\n\n  /**\n   * Emit, when cancel button is clicked.\n   */\n  @Output() cancelClicked = new EventEmitter<void>();\n\n  /**\n   * Emit, when Value is changed.\n   */\n  @Output() changed = new EventEmitter<any>();\n\n  /**\n   * Emit, when Form Status is changed.\n   */\n  @Output() statusChanged = new EventEmitter<ValidationErrors>();\n\n  /**\n   * Emit, when Control Value is changed.\n   */\n  @Output() controlValueChanged = new EventEmitter<FormControlValue>();\n\n  fg: FormGroup; // reactive form group (form)\n  fcs = {}; // reactive form controls\n  submitTried: boolean = false;\n\n  constructor(\n    private formConfigService: FormConfigService,\n    private el: ElementRef\n  ) {\n    // Subscribe form\n    this.formConfigService.form.subscribe((fg) => (this.fg = fg));\n\n    // Subscribe controls\n    this.formConfigService.controls.subscribe(\n      (controls) => (this.fcs = controls)\n    );\n\n    // Subscribe form value change\n    this.formConfigService.valueChanges.subscribe((value) =>\n      this.changed.emit(value)\n    );\n\n    // Subscribe form status change\n    this.formConfigService.statusChanges.subscribe((errors) =>\n      this.statusChanged.emit(errors)\n    );\n\n    // Subscribe control value changes\n    this.formConfigService.controlValueChanges.subscribe((value) =>\n      this.controlValueChanged.emit(value)\n    );\n  }\n\n  ngOnInit(): void {\n    this.formConfigService.initForm(this.params, this.value);\n  }\n\n  ngOnChanges(changes: SimpleChanges): void {\n    (changes?.params && changes?.value) ||\n      (changes?.params &&\n        this.formConfigService.initForm(this.params, this.value));\n\n    changes?.value &&\n      !changes?.params &&\n      this.formConfigService.patchValue(this.value);\n  }\n\n  public onSubmit(event: any): void {\n    event.preventDefault();\n    // Show all invalid fields' errors.\n    this.fg.markAllAsTouched();\n    this.submitTried = true;\n\n    if (this.fg.valid) {\n      this.submitClicked.emit(this.fg.getRawValue());\n    } else {\n      // Focus to the first errored field\n      const erroredElements =\n        this.el.nativeElement.querySelectorAll('form .ng-invalid');\n      erroredElements &&\n        erroredElements.length &&\n        (erroredElements[0] as HTMLElement).focus();\n    }\n  }\n\n  public onCancel(event: any): void {\n    event.preventDefault();\n    this.cancelClicked.emit();\n  }\n\n  public checkBoxChange(event, control) {\n    event.preventDefault();\n    const checked = event.target.checked;\n    setTimeout(() => control.setValue(checked, { emitEvent: true }));\n  }\n\n  public checkBoxesChange(event, control) {\n    // event.preventDefault();\n    const checked = event.target.checked;\n    const value = event.target.value;\n    const controlValue = control.value || [];\n\n    // Add value\n    if (checked) {\n      if (!controlValue.includes(value)) {\n        controlValue.push(value);\n      }\n      setTimeout(() => control.setValue(controlValue, { emitEvent: true }));\n    } else {\n      // remove value\n      setTimeout(() =>\n        control.setValue(\n          controlValue.filter((val) => val !== value),\n          { emitEvent: true }\n        )\n      );\n    }\n  }\n\n  public onActionBtn(event: any, key: string, control: AbstractControl): void {\n    event.preventDefault();\n    this.actionBtnClicked.emit({\n      key,\n      value: control?.value,\n      control\n    } as FormControlValue);\n  }\n}\n",
             "assetsDirs": [],
             "styleUrlsData": [
                 {
@@ -5152,7 +5443,7 @@
                 "OnInit",
                 "OnChanges"
             ],
-            "templateData": "<form *ngIf=\"fg\" (ngSubmit)=\"onSubmit($event)\">\n  <!-- Control tree Start -->\n  <ng-container *ngTemplateOutlet=\"\n      controlTree;\n      context: { params: params, fcs: fcs, formgrp: fg }\n    \"></ng-container>\n  <!--  Control tree End  -->\n\n  <div *ngIf=\"fg.invalid && submitTried\" class=\"row center\">\n    <label class=\"error\">Form has errors, please recheck your form above.</label>\n  </div>\n\n  <div *ngIf=\"enableSaveBtn || enableCancelBtn\" class=\"row center spacing-around-v\">\n    <input *ngIf=\"enableSaveBtn\" type=\"submit\" class=\"btn primary\" (click)=\"onSubmit($event)\" [value]=\"saveBtnLabel\" />\n    <input *ngIf=\"enableCancelBtn\" type=\"button\" class=\"btn primary\" (click)=\"onCancel($event)\"\n      [value]=\"cancelBtnLabel\" />\n  </div>\n</form>\n<anu-spinner [show]=\"loading\"></anu-spinner>\n\n<!-- Template for Parameters (controls) -->\n<ng-template #controlTree let-params=\"params\" let-fcs=\"fcs\" let-formgrp=\"formgrp\">\n  <ng-container [formGroup]=\"formgrp\">\n    <ng-container *ngFor=\"let ctrCfg of params | objectToArray\">\n      <div *ngIf=\"!ctrCfg.value.hidden\" class=\"row spacing-around-v relative\">\n        <label *ngIf=\"\n            !(\n              ctrCfg.value.controlType === 'checkbox' &&\n              !ctrCfg.value.list?.length\n            )\n          \" [for]=\"ctrCfg.key\">{{ ctrCfg.value.label || '' }}\n          <small *ngIf=\"ctrCfg.value.helpText\">{{\n            ctrCfg.value.helpText\n            }}</small></label>\n\n        <!-- controltype = select -->\n        <ng-container *ngIf=\"ctrCfg.value.controlType === 'select'\">\n          <div class=\"row nowrap\">\n            <select [id]=\"ctrCfg.key\" [formControlName]=\"ctrCfg.key\" [value]=\"fcs[ctrCfg.key].value\">\n              <option *ngFor=\"let lItem of ctrCfg.value.list\" [value]=\"lItem.key\">\n                {{ lItem.value }}\n              </option>\n            </select>\n            <a class=\"primary-darkest spacing-around-h\" *ngIf=\"ctrCfg.value.actionBtn\" href=\"#\"\n              (click)=\"onActionBtn($event, ctrCfg.key, fcs[ctrCfg.key])\">{{ ctrCfg.value.actionBtn }}</a>\n          </div>\n        </ng-container>\n\n        <!-- Checkboxes -->\n        <ng-container *ngIf=\"\n            ctrCfg.value.controlType === 'checkbox' && ctrCfg.value.list?.length\n          \">\n          <div class=\"row nowrap\">\n            <div class=\"row\">\n              <label [for]=\"chBox.key\" *ngFor=\"let chBox of ctrCfg.value.list\">\n                <input [id]=\"chBox.key\" [name]=\"chBox.key\" [type]=\"ctrCfg.value.controlType\"\n                  [formArrayName]=\"ctrCfg.key\" [checked]=\"fcs[ctrCfg.key]?.value?.includes(chBox.key)\"\n                  [value]=\"chBox.key\" (click)=\"checkBoxesChange($event, fcs[ctrCfg.key])\" />\n                {{ chBox.value }}</label>\n            </div>\n            <a class=\"primary-darkest spacing-around-h\" *ngIf=\"ctrCfg.value.actionBtn\" href=\"#\"\n              (click)=\"onActionBtn($event, ctrCfg.key, fcs[ctrCfg.key])\">{{ ctrCfg.value.actionBtn }}</a>\n          </div>\n        </ng-container>\n\n        <!-- Single Checkbox -->\n        <ng-container *ngIf=\"\n            ctrCfg.value.controlType === 'checkbox' &&\n            !ctrCfg.value.list?.length\n          \">\n          <div class=\"row nowrap\">\n            <label [for]=\"ctrCfg.key\">\n              <input [id]=\"ctrCfg.key\" [type]=\"ctrCfg.value.controlType\" [formControlName]=\"ctrCfg.key\"\n                [checked]=\"fcs[ctrCfg.key].value\" [value]=\"ctrCfg.value.value\"\n                (click)=\"checkBoxChange($event, fcs[ctrCfg.key])\" />\n              {{ ctrCfg.value.label || '' }}</label>\n            <a class=\"primary-darkest spacing-around-h\" *ngIf=\"ctrCfg.value.actionBtn\" href=\"#\"\n              (click)=\"onActionBtn($event, ctrCfg.key, fcs[ctrCfg.key])\">{{ ctrCfg.value.actionBtn }}</a>\n          </div>\n        </ng-container>\n\n        <!-- Radio Buttons -->\n        <ng-container *ngIf=\"\n            ctrCfg.value.controlType === 'radio' && ctrCfg.value.list?.length\n          \">\n          <div class=\"row nowrap\">\n            <div class=\"row\">\n              <label [for]=\"rdBox.key\" *ngFor=\"let rdBox of ctrCfg.value.list\">\n                <input [id]=\"rdBox.key\" [name]=\"ctrCfg.key\" [type]=\"ctrCfg.value.controlType\"\n                  [formControlName]=\"ctrCfg.key\" [checked]=\"fcs[ctrCfg.key].value === rdBox.key\" [value]=\"rdBox.key\"\n                  (click)=\"\n                    fcs[ctrCfg.key].setValue(rdBox.key, { emitEvent: false })\n                  \" />\n                {{ rdBox.value }}</label>\n            </div>\n            <a class=\"primary-darkest spacing-around-h\" *ngIf=\"ctrCfg.value.actionBtn\" href=\"#\"\n              (click)=\"onActionBtn($event, ctrCfg.key, fcs[ctrCfg.key])\">{{ ctrCfg.value.actionBtn }}</a>\n          </div>\n        </ng-container>\n\n        <ng-container *ngIf=\"ctrCfg.value.controlType === 'textarea'\">\n          <div class=\"row nowrap\">\n            <textarea rows=\"3\" [id]=\"ctrCfg.key\" [formControlName]=\"ctrCfg.key\"\n              [placeholder]=\"ctrCfg.value.placeholder || ''\"></textarea>\n            <a class=\"primary-darkest spacing-around-h\" *ngIf=\"ctrCfg.value.actionBtn\" href=\"#\"\n              (click)=\"onActionBtn($event, ctrCfg.key, fcs[ctrCfg.key])\">{{ ctrCfg.value.actionBtn }}</a>\n          </div>\n        </ng-container>\n\n        <!-- Group -->\n        <ng-container *ngIf=\"ctrCfg.value.controlType === 'group'\">\n          <!-- Group Control tree Start -->\n\n          <!-- Collapsible group -->\n          <div class=\"spacing-around-v\">\n            <anu-collapsible [collapsed]=\"false\" [hamBurgerClassNames]=\"[\n                'size-sm',\n                'secondary-light-grad-h',\n                ' spacing-half'\n              ]\" [isDropdownStyle]=\"true\">\n              <anu-collapsible-header>\n                <strong>{{ ctrCfg.value.label }}</strong>\n              </anu-collapsible-header>\n              <anu-collapsible-content>\n                <!-- COLAP -->\n                <div class=\"row\">\n                  <ng-container *ngTemplateOutlet=\"\n                      controlTree;\n                      context: {\n                        params: ctrCfg.value.params,\n                        fcs: fcs[ctrCfg.key].controls,\n                        formgrp: fcs[ctrCfg.key].groupControl\n                      }\n                    \"></ng-container>\n                </div>\n              </anu-collapsible-content>\n            </anu-collapsible>\n          </div>\n\n          <!-- Group Control tree Start -->\n        </ng-container>\n\n        <!-- All Others -->\n        <ng-container *ngIf=\"\n            ['text', 'date', 'number', 'range', 'email', 'password'].includes(\n              ctrCfg.value.controlType\n            )\n          \">\n          <div class=\"row nowrap\">\n            <input [id]=\"ctrCfg.key\" [type]=\"ctrCfg.value.controlType\" [formControlName]=\"ctrCfg.key\"\n              [placeholder]=\"ctrCfg.value.placeholder || ''\" />\n            <a class=\"primary-darkest spacing-around-h\" *ngIf=\"ctrCfg.value.actionBtn\" href=\"#\"\n              (click)=\"onActionBtn($event, ctrCfg.key, fcs[ctrCfg.key])\">{{ ctrCfg.value.actionBtn }}</a>\n          </div>\n        </ng-container>\n\n        <anu-form-error *ngIf=\"\n            fcs[ctrCfg.key].invalid &&\n            (fcs[ctrCfg.key].touched || fcs[ctrCfg.key].dirty)\n          \" [errors]=\"fcs[ctrCfg.key].errors\" class=\"container\">\n        </anu-form-error>\n        <anu-spinner [show]=\"fcs[ctrCfg.key].pending\" speed=\"fast\"></anu-spinner>\n      </div>\n    </ng-container>\n  </ng-container>\n</ng-template>\n"
+            "templateData": "<form *ngIf=\"fg\" (ngSubmit)=\"onSubmit($event)\">\n  <!-- Control tree Start -->\n  <ng-container *ngTemplateOutlet=\"\n      controlTree;\n      context: { params: params, fcs: fcs, formgrp: fg }\n    \"></ng-container>\n  <!--  Control tree End  -->\n\n  <div *ngIf=\"fg.invalid && submitTried\" class=\"row center\">\n    <label class=\"error\">Form has errors, please recheck your form above.</label>\n  </div>\n\n  <div *ngIf=\"enableSaveBtn || enableCancelBtn\" class=\"row center spacing-around-v\">\n    <input *ngIf=\"enableSaveBtn\" type=\"submit\" class=\"btn primary\" (click)=\"onSubmit($event)\" [value]=\"saveBtnLabel\" />\n    <input *ngIf=\"enableCancelBtn\" type=\"button\" class=\"btn primary\" (click)=\"onCancel($event)\"\n      [value]=\"cancelBtnLabel\" />\n  </div>\n</form>\n<anu-spinner [show]=\"loading\"></anu-spinner>\n\n<!-- Template for Parameters (controls) -->\n<ng-template #controlTree let-params=\"params\" let-fcs=\"fcs\" let-formgrp=\"formgrp\">\n  <ng-container [formGroup]=\"formgrp\">\n    <ng-container *ngFor=\"let ctrCfg of params | objectToArray\">\n      <div *ngIf=\"!ctrCfg.value.hidden\" class=\"row spacing-around-v relative\">\n        <label *ngIf=\"\n            !(\n              ctrCfg.value.controlType === 'checkbox' &&\n              !ctrCfg.value.list?.length\n            )\n          \" [for]=\"ctrCfg.key\">{{ ctrCfg.value.label || '' }}\n          <small *ngIf=\"ctrCfg.value.helpText\">{{\n            ctrCfg.value.helpText\n            }}</small></label>\n\n        <!-- controltype = select -->\n        <ng-container *ngIf=\"ctrCfg.value.controlType === 'select'\">\n          <div class=\"row nowrap\">\n            <select [id]=\"ctrCfg.key\" [formControlName]=\"ctrCfg.key\" [value]=\"fcs[ctrCfg.key].value\">\n              <option *ngFor=\"let lItem of ctrCfg.value.list\" [value]=\"lItem.key\">\n                {{ lItem.value }}\n              </option>\n            </select>\n            <a class=\"primary-darkest spacing-around-h\" *ngIf=\"ctrCfg.value.actionBtn\" href=\"#\"\n              (click)=\"onActionBtn($event, ctrCfg.key, fcs[ctrCfg.key])\">{{ ctrCfg.value.actionBtn }}</a>\n          </div>\n        </ng-container>\n\n        <!-- Checkboxes -->\n        <ng-container *ngIf=\"\n            ctrCfg.value.controlType === 'checkbox' && ctrCfg.value.list?.length\n          \">\n          <div class=\"row nowrap\">\n            <div class=\"row\">\n              <label [for]=\"chBox.key\" *ngFor=\"let chBox of ctrCfg.value.list\">\n                <input [id]=\"chBox.key\" [name]=\"chBox.key\" [type]=\"ctrCfg.value.controlType\"\n                  [formArrayName]=\"ctrCfg.key\" [checked]=\"fcs[ctrCfg.key]?.value?.includes(chBox.key)\"\n                  [value]=\"chBox.key\" (click)=\"checkBoxesChange($event, fcs[ctrCfg.key])\" />\n                {{ chBox.value }}</label>\n            </div>\n            <a class=\"primary-darkest spacing-around-h\" *ngIf=\"ctrCfg.value.actionBtn\" href=\"#\"\n              (click)=\"onActionBtn($event, ctrCfg.key, fcs[ctrCfg.key])\">{{ ctrCfg.value.actionBtn }}</a>\n          </div>\n        </ng-container>\n\n        <!-- Single Checkbox -->\n        <ng-container *ngIf=\"\n            ctrCfg.value.controlType === 'checkbox' &&\n            !ctrCfg.value.list?.length\n          \">\n          <div class=\"row nowrap\">\n            <label [for]=\"ctrCfg.key\">\n              <input [id]=\"ctrCfg.key\" [type]=\"ctrCfg.value.controlType\" [formControlName]=\"ctrCfg.key\"\n                [checked]=\"fcs[ctrCfg.key].value\" [value]=\"ctrCfg.value.value\"\n                (click)=\"checkBoxChange($event, fcs[ctrCfg.key])\" />\n              {{ ctrCfg.value.label || '' }}</label>\n            <a class=\"primary-darkest spacing-around-h\" *ngIf=\"ctrCfg.value.actionBtn\" href=\"#\"\n              (click)=\"onActionBtn($event, ctrCfg.key, fcs[ctrCfg.key])\">{{ ctrCfg.value.actionBtn }}</a>\n          </div>\n        </ng-container>\n\n        <!-- Radio Buttons -->\n        <ng-container *ngIf=\"\n            ctrCfg.value.controlType === 'radio' && ctrCfg.value.list?.length\n          \">\n          <div class=\"row nowrap\">\n            <div class=\"row\">\n              <label [for]=\"rdBox.key\" *ngFor=\"let rdBox of ctrCfg.value.list\">\n                <input [id]=\"rdBox.key\" [name]=\"ctrCfg.key\" [type]=\"ctrCfg.value.controlType\"\n                  [formControlName]=\"ctrCfg.key\" [checked]=\"fcs[ctrCfg.key].value === rdBox.key\" [value]=\"rdBox.key\"\n                  (click)=\"\n                    fcs[ctrCfg.key].setValue(rdBox.key, { emitEvent: false })\n                  \" />\n                {{ rdBox.value }}</label>\n            </div>\n            <a class=\"primary-darkest spacing-around-h\" *ngIf=\"ctrCfg.value.actionBtn\" href=\"#\"\n              (click)=\"onActionBtn($event, ctrCfg.key, fcs[ctrCfg.key])\">{{ ctrCfg.value.actionBtn }}</a>\n          </div>\n        </ng-container>\n\n        <ng-container *ngIf=\"ctrCfg.value.controlType === 'textarea'\">\n          <div class=\"row nowrap\">\n            <textarea rows=\"3\" [id]=\"ctrCfg.key\" [formControlName]=\"ctrCfg.key\"\n              [placeholder]=\"ctrCfg.value.placeholder || ''\"></textarea>\n            <a class=\"primary-darkest spacing-around-h\" *ngIf=\"ctrCfg.value.actionBtn\" href=\"#\"\n              (click)=\"onActionBtn($event, ctrCfg.key, fcs[ctrCfg.key])\">{{ ctrCfg.value.actionBtn }}</a>\n          </div>\n        </ng-container>\n\n        <!-- Group -->\n        <ng-container *ngIf=\"ctrCfg.value.controlType === 'group'\">\n          <!-- Group Control tree Start -->\n\n          <!-- Collapsible group -->\n          <div class=\"spacing-around-v\">\n            <anu-collapsible [collapsed]=\"false\" [hamBurgerClassNames]=\"[\n                'size-sm',\n                'secondary-light-grad-h',\n                ' spacing-half'\n              ]\" [isDropdownStyle]=\"true\">\n              <anu-collapsible-header>\n                <strong>{{ ctrCfg.value.label }}</strong>\n              </anu-collapsible-header>\n              <anu-collapsible-content>\n                <!-- COLAP -->\n                <div class=\"row\">\n                  <ng-container *ngTemplateOutlet=\"\n                      controlTree;\n                      context: {\n                        params: ctrCfg.value.params,\n                        fcs: fcs[ctrCfg.key].controls,\n                        formgrp: fcs[ctrCfg.key].groupControl\n                      }\n                    \"></ng-container>\n                </div>\n              </anu-collapsible-content>\n            </anu-collapsible>\n          </div>\n\n          <!-- Group Control tree Start -->\n        </ng-container>\n\n        <!-- All Others -->\n        <ng-container *ngIf=\"\n            ['text', 'date', 'number', 'range', 'email', 'password', 'file'].includes(\n              ctrCfg.value.controlType\n            )\n          \">\n          <div class=\"row nowrap\">\n            <input [id]=\"ctrCfg.key\" [type]=\"ctrCfg.value.controlType\" [formControlName]=\"ctrCfg.key\"\n              [placeholder]=\"ctrCfg.value.placeholder || ''\" />\n            <a class=\"primary-darkest spacing-around-h\" *ngIf=\"ctrCfg.value.actionBtn\" href=\"#\"\n              (click)=\"onActionBtn($event, ctrCfg.key, fcs[ctrCfg.key])\">{{ ctrCfg.value.actionBtn }}</a>\n          </div>\n        </ng-container>\n\n        <anu-form-error *ngIf=\"\n            fcs[ctrCfg.key].invalid &&\n            (fcs[ctrCfg.key].touched || fcs[ctrCfg.key].dirty)\n          \" [errors]=\"fcs[ctrCfg.key].errors\" class=\"container\">\n        </anu-form-error>\n        <anu-spinner [show]=\"fcs[ctrCfg.key].pending\" speed=\"fast\"></anu-spinner>\n      </div>\n    </ng-container>\n  </ng-container>\n</ng-template>\n"
         },
         {
             "name": "ElementStylesComponent",
@@ -6475,6 +6766,258 @@
                 "OnInit"
             ],
             "templateData": "<form class=\"container disable-select\">\r\n    <label>Image source</label>\r\n    <input type=\"text\" [(ngModel)]=\"src\" name=\"image-src\" />\r\n    <label>Image alt text</label>\r\n    <input type=\"text\" [(ngModel)]=\"alt\" name=\"image-alt\" />\r\n\r\n    <div class=\"row spacing\">\r\n        <div class=\"col-6 center\"><a href=\"#\" (click)=\"cancelClicked($event)\">Cancel</a></div>\r\n        <div class=\"col-6 center\"><a href=\"#\" (click)=\"saveClicked($event)\">Save</a></div>\r\n    </div>\r\n</form>\r\n"
+        },
+        {
+            "name": "ImageUploadComponent",
+            "id": "component-ImageUploadComponent-7b581662e1c66e0b35a04ae17156975211ec3dc2b2c1c5d6a59fa0a1a36104d31408e5edeb95a52d0a280593c9515ecd55cefa4e9c20812b2c6db286389f05b2",
+            "file": "projects/ngx-common-ui/image-upload/src/components/image-upload/image-upload.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "anu-image-upload",
+            "styleUrls": [
+                "./image-upload.component.scss"
+            ],
+            "styles": [],
+            "templateUrl": [
+                "./image-upload.component.html"
+            ],
+            "viewProviders": [],
+            "hostDirectives": [],
+            "inputsClass": [
+                {
+                    "name": "accept",
+                    "defaultValue": "'images/*'",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "rawdescription": "\n\nAccepts provided comma separated mime types only. exampel - image/png, image/jpg, image/x-icon\n",
+                    "description": "<p>Accepts provided comma separated mime types only. exampel - image/png, image/jpg, image/x-icon</p>\n",
+                    "line": 52,
+                    "type": "string",
+                    "decorators": []
+                },
+                {
+                    "name": "enableUploadButton",
+                    "defaultValue": "true",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "rawdescription": "\n\nShow/hide upload button.\n",
+                    "description": "<p>Show/hide upload button.</p>\n",
+                    "line": 42,
+                    "type": "boolean",
+                    "decorators": []
+                },
+                {
+                    "name": "helpText",
+                    "defaultValue": "''",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "rawdescription": "\n\nhelpText- instructions to upload image\n",
+                    "description": "<p>helpText- instructions to upload image</p>\n",
+                    "line": 28,
+                    "type": "string",
+                    "decorators": []
+                },
+                {
+                    "name": "id",
+                    "defaultValue": "''",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "rawdescription": "\n\nImage element id\n",
+                    "description": "<p>Image element id</p>\n",
+                    "line": 32,
+                    "type": "string | string",
+                    "decorators": []
+                },
+                {
+                    "name": "imageUploadFiles",
+                    "defaultValue": "[]",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "rawdescription": "\n\nImages to upload\n",
+                    "description": "<p>Images to upload</p>\n",
+                    "line": 22,
+                    "type": "Array<ImageUpload>",
+                    "decorators": []
+                },
+                {
+                    "name": "multiple",
+                    "defaultValue": "false",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "rawdescription": "\n\nShow/hide upload button.\n",
+                    "description": "<p>Show/hide upload button.</p>\n",
+                    "line": 47,
+                    "type": "boolean",
+                    "decorators": []
+                },
+                {
+                    "name": "placeholder",
+                    "defaultValue": "''",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "rawdescription": "\n\nplaceholder text\n",
+                    "description": "<p>placeholder text</p>\n",
+                    "line": 37,
+                    "type": "string",
+                    "decorators": []
+                }
+            ],
+            "outputsClass": [
+                {
+                    "name": "changed",
+                    "defaultValue": "new EventEmitter<Array<ImageUpload> | ImageUpload>()",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "rawdescription": "\n\nEmits when image is choosed for upload\n",
+                    "description": "<p>Emits when image is choosed for upload</p>\n",
+                    "line": 57,
+                    "type": "EventEmitter"
+                },
+                {
+                    "name": "uploadClicked",
+                    "defaultValue": "new EventEmitter<\n    Array<ImageUpload> | ImageUpload\n  >()",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "rawdescription": "\n\nEmits when Upload button is clicked\n",
+                    "description": "<p>Emits when Upload button is clicked</p>\n",
+                    "line": 62,
+                    "type": "EventEmitter"
+                }
+            ],
+            "propertiesClass": [
+                {
+                    "name": "fileEl",
+                    "defaultValue": "null",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "ElementRef",
+                    "optional": false,
+                    "description": "",
+                    "line": 17,
+                    "decorators": [
+                        {
+                            "name": "ViewChild",
+                            "stringifiedArguments": "'#fileInput'"
+                        }
+                    ],
+                    "modifierKind": [
+                        170
+                    ]
+                }
+            ],
+            "methodsClass": [
+                {
+                    "name": "chooseFileClick",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 94,
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "modifierKind": [
+                        125
+                    ]
+                },
+                {
+                    "name": "onFileChange",
+                    "args": [
+                        {
+                            "name": "event",
+                            "type": "any",
+                            "deprecated": false,
+                            "deprecationMessage": ""
+                        }
+                    ],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 71,
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "modifierKind": [
+                        125
+                    ],
+                    "jsdoctags": [
+                        {
+                            "name": "event",
+                            "type": "any",
+                            "deprecated": false,
+                            "deprecationMessage": "",
+                            "tagName": {
+                                "text": "param"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "reset",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 66,
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "modifierKind": [
+                        123
+                    ]
+                },
+                {
+                    "name": "uploadFileClick",
+                    "args": [
+                        {
+                            "name": "event",
+                            "type": "any",
+                            "deprecated": false,
+                            "deprecationMessage": ""
+                        }
+                    ],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 99,
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "modifierKind": [
+                        125
+                    ],
+                    "jsdoctags": [
+                        {
+                            "name": "event",
+                            "type": "any",
+                            "deprecated": false,
+                            "deprecationMessage": "",
+                            "tagName": {
+                                "text": "param"
+                            }
+                        }
+                    ]
+                }
+            ],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [],
+            "standalone": false,
+            "imports": [],
+            "description": "",
+            "rawdescription": "\n",
+            "type": "component",
+            "sourceCode": "import {\n  Component,\n  ElementRef,\n  EventEmitter,\n  Input,\n  Output,\n  ViewChild\n} from '@angular/core';\nimport { ImageUpload } from '../../classes/image-upload.class';\n\n@Component({\n  selector: 'anu-image-upload',\n  templateUrl: './image-upload.component.html',\n  styleUrls: ['./image-upload.component.scss']\n})\nexport class ImageUploadComponent {\n  @ViewChild('#fileInput') fileEl: ElementRef = null;\n\n  /**\n   * Images to upload\n   */\n  @Input() imageUploadFiles: Array<ImageUpload> = [];\n\n  /**\n   * helpText- instructions to upload image\n   */\n\n  @Input() helpText: string = '';\n  /**\n   * Image element id\n   */\n  @Input() id: string | string = '';\n\n  /**\n   * placeholder text\n   */\n  @Input() placeholder: string = '';\n\n  /**\n   * Show/hide upload button.\n   */\n  @Input() enableUploadButton: boolean = true;\n\n  /**\n   * Show/hide upload button.\n   */\n  @Input() multiple: boolean = false;\n\n  /**\n   * Accepts provided comma separated mime types only. exampel - image/png, image/jpg, image/x-icon\n   */\n  @Input() accept: string = 'images/*';\n\n  /**\n   * Emits when image is choosed for upload\n   */\n  @Output() changed = new EventEmitter<Array<ImageUpload> | ImageUpload>();\n\n  /**\n   * Emits when Upload button is clicked\n   */\n  @Output() uploadClicked = new EventEmitter<\n    Array<ImageUpload> | ImageUpload\n  >();\n\n  private reset(): void {\n    this.imageUploadFiles.forEach((file) => (file = null));\n    this.imageUploadFiles = [];\n  }\n\n  public onFileChange(event: any) {\n    // Generate preview Urls, then emit changed event with all files\n    event.target.files?.forEach((file: File) => {\n      this.imageUploadFiles.push(\n        new ImageUpload({\n          fileName: file.name,\n          data: file,\n          size: file.size,\n          mimeType: file.type,\n          previewUrl: URL.createObjectURL(file)\n        } as ImageUpload)\n      );\n    });\n\n    this.changed.emit(\n      this.multiple\n        ? this.imageUploadFiles\n        : this.imageUploadFiles.length\n        ? this.imageUploadFiles[0]\n        : null\n    );\n  }\n\n  public chooseFileClick(): void {\n    this.reset();\n    this.fileEl.nativeElement.click();\n  }\n\n  public uploadFileClick(event: any): void {\n    event.preventDefault();\n\n    this.uploadClicked.emit(\n      this.multiple\n        ? this.imageUploadFiles\n        : this.imageUploadFiles.length\n        ? this.imageUploadFiles[0]\n        : null\n    );\n  }\n}\n",
+            "assetsDirs": [],
+            "styleUrlsData": [
+                {
+                    "data": "",
+                    "styleUrl": "./image-upload.component.scss"
+                }
+            ],
+            "stylesData": "",
+            "extends": [],
+            "templateData": "<div class=\"col-sm-12 col-md-6 col-lg-6\">\n    <anu-card class=\"border-round shadow spacing-half relative\">\n        <anu-card-title>\n            <h3>Upload Image</h3>\n        </anu-card-title>\n        <anu-card-body>\n            <span *ngIf=\"helpText\"><small>{{ helpText }}</small></span>\n            <div class=\"form-group container center\">\n                <input [id]=\"id\" #fileInput id=\"file\" type=\"file\" [accept]=\"accept\" [multiple]=\"multiple\" class=\"\"\n                    (change)=\"onFileChange($event)\" />\n                <input type=\"button\" class=\"btn\" (click)=\"chooseFileClick()\" value=\"Choose file to upload...\" />\n                <input type=\"text\" class=\"spacing-around-v-half\" [(ngModel)]=\"fileInput.value\"\n                    [placeholder]=\"placeholder\" />\n                <a class=\"btn primary spacing-around-v-half\" [attr.disabled]=\"!imageUploadFiles?.length\" href=\"#\"\n                    (click)=\"uploadFileClick($event)\" title=\"Upload\">Upload</a>\n            </div>\n        </anu-card-body>\n    </anu-card>\n</div>\n<div class=\"col-sm-12 col-md-6 col-lg-6\">\n    <anu-picture *ngFor=\"let imgFile of imageUploadFiles\" [src]=\"imgFile.previewUrl\"></anu-picture>\n</div>\n"
         },
         {
             "name": "LinkFormComponent",
@@ -9948,7 +10491,7 @@
         },
         {
             "name": "SlideshowComponent",
-            "id": "component-SlideshowComponent-b60e5bd5c52a8fc20d54739d28199523a141cecb5aab4cc7d2bd55d03ac0aeb9326eb0b0bc8cddcf8c3cf58b23d490e1a6502b0a45c4d8525fdab05745cab439",
+            "id": "component-SlideshowComponent-c5e25cdef1da492d5ad3f8532cf55b594cab69a39839515e1409942d61b0f785b1c1597bb497deb207f8b9470f26b770de370ec99fef0c3b686fcbaebe7c53c9",
             "file": "projects/ngx-common-ui/slideshow/src/components/slideshow/slideshow.component.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -10070,7 +10613,7 @@
                     "optional": false,
                     "returnType": "void",
                     "typeParameters": [],
-                    "line": 197,
+                    "line": 205,
                     "deprecated": false,
                     "deprecationMessage": "",
                     "modifierKind": [
@@ -10083,7 +10626,7 @@
                     "optional": false,
                     "returnType": "void",
                     "typeParameters": [],
-                    "line": 91,
+                    "line": 97,
                     "deprecated": false,
                     "deprecationMessage": ""
                 },
@@ -10100,7 +10643,7 @@
                     "optional": false,
                     "returnType": "void",
                     "typeParameters": [],
-                    "line": 97,
+                    "line": 103,
                     "deprecated": false,
                     "deprecationMessage": "",
                     "jsdoctags": [
@@ -10121,7 +10664,7 @@
                     "optional": false,
                     "returnType": "void",
                     "typeParameters": [],
-                    "line": 102,
+                    "line": 110,
                     "deprecated": false,
                     "deprecationMessage": ""
                 },
@@ -10131,7 +10674,7 @@
                     "optional": false,
                     "returnType": "void",
                     "typeParameters": [],
-                    "line": 89,
+                    "line": 95,
                     "deprecated": false,
                     "deprecationMessage": ""
                 },
@@ -10185,7 +10728,7 @@
                     "optional": false,
                     "returnType": "void",
                     "typeParameters": [],
-                    "line": 84,
+                    "line": 87,
                     "deprecated": false,
                     "deprecationMessage": "",
                     "decorators": [
@@ -10265,7 +10808,7 @@
                     "optional": false,
                     "returnType": "void",
                     "typeParameters": [],
-                    "line": 205,
+                    "line": 213,
                     "deprecated": false,
                     "deprecationMessage": "",
                     "modifierKind": [
@@ -10298,7 +10841,7 @@
                     "optional": false,
                     "returnType": "void",
                     "typeParameters": [],
-                    "line": 189,
+                    "line": 197,
                     "deprecated": false,
                     "deprecationMessage": "",
                     "modifierKind": [
@@ -10318,7 +10861,7 @@
                     "optional": false,
                     "returnType": "void",
                     "typeParameters": [],
-                    "line": 172,
+                    "line": 180,
                     "deprecated": false,
                     "deprecationMessage": "",
                     "modifierKind": [
@@ -10342,7 +10885,7 @@
                     "optional": false,
                     "returnType": "void",
                     "typeParameters": [],
-                    "line": 128,
+                    "line": 136,
                     "deprecated": false,
                     "deprecationMessage": "",
                     "modifierKind": [
@@ -10355,7 +10898,7 @@
                     "optional": false,
                     "returnType": "void",
                     "typeParameters": [],
-                    "line": 115,
+                    "line": 123,
                     "deprecated": false,
                     "deprecationMessage": "",
                     "modifierKind": [
@@ -10368,7 +10911,7 @@
                     "optional": false,
                     "returnType": "void",
                     "typeParameters": [],
-                    "line": 108,
+                    "line": 116,
                     "deprecated": false,
                     "deprecationMessage": "",
                     "modifierKind": [
@@ -10412,7 +10955,7 @@
                     ],
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "line": 84
+                    "line": 87
                 },
                 {
                     "name": "window:resize",
@@ -10437,11 +10980,11 @@
             "description": "<p>Slide Show Component, scrolls horizontally any projected content, by the specified scrollsize.\nAllows to click next and prev buttons too.\nProjected content should have added <code>.slideshow_item</code> class to the projected content.</p>\n",
             "rawdescription": "\n\nSlide Show Component, scrolls horizontally any projected content, by the specified scrollsize.\nAllows to click next and prev buttons too.\nProjected content should have added <code>.slideshow_item</code> class to the projected content.\n\n",
             "type": "component",
-            "sourceCode": "import {\r\n  AfterContentInit,\r\n  Component,\r\n  ElementRef,\r\n  HostListener,\r\n  Inject,\r\n  Input,\r\n  OnChanges,\r\n  OnDestroy,\r\n  OnInit,\r\n  PLATFORM_ID,\r\n  SimpleChanges\r\n} from '@angular/core';\r\nimport { SLIDESHOW_ITEM_CLASS } from '../../constants/slideshow.constant';\r\nimport { isPlatformBrowser } from '@angular/common';\r\n\r\n/**\r\n * Slide Show Component, scrolls horizontally any projected content, by the specified scrollsize.\r\n * Allows to click next and prev buttons too.\r\n * Projected content should have added <code>.slideshow_item</code> class to the projected content.\r\n * @date 6/11/2023 - 8:40:31 PM\r\n *\r\n * @export\r\n * @class SlideshowComponent\r\n * @typedef {SlideshowComponent}\r\n * @implements {OnInit}\r\n */\r\n@Component({\r\n  selector: 'anu-slideshow',\r\n  templateUrl: './slideshow.component.html',\r\n  styleUrls: ['./slideshow.component.scss']\r\n})\r\nexport class SlideshowComponent\r\n  implements OnInit, AfterContentInit, OnChanges, OnDestroy\r\n{\r\n  /**\r\n   * Item width in percentage of Slidhow width.\r\n   * Should be a number between 1-100\r\n   * Default is 100, which means 1 item at a time is visible in view.\r\n   */\r\n  @Input() relativeItemWidth: number = 100;\r\n\r\n  /**\r\n   * slide duration in miliseconds. Next slide wil show up after this duration.\r\n   */\r\n  @Input() duration: number = 5000;\r\n\r\n  /**\r\n   * enables auto scrolling based on duration.\r\n   */\r\n  @Input() autoSlide: boolean = false;\r\n\r\n  contentEl: Element | null = null;\r\n  el: Element | null = null;\r\n  items: Array<any> = [];\r\n\r\n  setTimeout$ = null;\r\n  interval$ = null;\r\n  activeSlide = 0;\r\n\r\n  constructor(\r\n    private elRef: ElementRef,\r\n    @Inject(PLATFORM_ID) private platformId: Object\r\n  ) {}\r\n\r\n  @HostListener('window:resize', ['$event'])\r\n  onResize(event) {\r\n    if (!this.setTimeout$) {\r\n      this.setTimeout$ = setTimeout(() => {\r\n        this.setSlideShowWidth();\r\n        clearTimeout(this.setTimeout$);\r\n        this.setTimeout$ = null;\r\n      }, 500);\r\n    }\r\n  }\r\n\r\n  @HostListener('mouseenter', ['$event'])\r\n  onMouseenter(event) {\r\n    console.log('Enter');\r\n    this.stopAutoSlide();\r\n  }\r\n\r\n  @HostListener('mouseleave', ['$event'])\r\n  onMouseleave(event) {\r\n    console.log('Out');\r\n    this.startAutoSlide();\r\n  }\r\n\r\n  ngOnInit(): void {}\r\n\r\n  ngAfterContentInit(): void {\r\n    this.setSlideShowWidth();\r\n\r\n    this.startAutoSlide();\r\n  }\r\n\r\n  ngOnChanges(changes: SimpleChanges): void {\r\n    this.setSlideShowWidth();\r\n    this.startAutoSlide();\r\n  }\r\n\r\n  ngOnDestroy(): void {\r\n    this.stopAutoSlide();\r\n    this.setTimeout$ && clearTimeout(this.setTimeout$);\r\n    this.setTimeout$ = null;\r\n  }\r\n\r\n  private stopAutoSlide(): void {\r\n    if (isPlatformBrowser(this.platformId)) {\r\n      this.interval$ && clearInterval(this.interval$);\r\n      this.interval$ = null;\r\n    }\r\n  }\r\n\r\n  private startAutoSlide(): void {\r\n    this.stopAutoSlide();\r\n\r\n    if (isPlatformBrowser(this.platformId)) {\r\n      if (!this.duration || !this.autoSlide) return;\r\n\r\n      this.interval$ = setInterval(() => {\r\n        // Slide\r\n        this.scrollSlide(1);\r\n      }, this.duration);\r\n    }\r\n  }\r\n\r\n  private setSlideShowWidth(): void {\r\n    this.el = this.elRef.nativeElement;\r\n    this.contentEl = this.el?.querySelector('.slideshow_content') || null;\r\n    const nodes = this.el?.querySelectorAll(`.${SLIDESHOW_ITEM_CLASS}`) || null;\r\n\r\n    if (!this.contentEl || !nodes || !nodes.length || !nodes.forEach) return;\r\n\r\n    const slideshowVieportWidth = this.contentEl.clientWidth;\r\n    console.log(slideshowVieportWidth);\r\n\r\n    nodes?.forEach((item) => {\r\n      if (\r\n        !this.relativeItemWidth ||\r\n        typeof this.relativeItemWidth !== 'number'\r\n      ) {\r\n        this.relativeItemWidth = 100;\r\n      }\r\n\r\n      let marginTotal = 0;\r\n      let marginLeft = 0;\r\n      let marginRight = 0;\r\n\r\n      if (typeof window !== 'undefined' && window.getComputedStyle) {\r\n        const cs = window.getComputedStyle(item);\r\n        marginLeft = parseFloat(cs.marginLeft?.replace('px', '') || '0');\r\n        marginRight = parseFloat(cs.marginRight?.replace('px', '') || '0');\r\n        marginTotal = marginLeft + marginRight;\r\n      }\r\n\r\n      this.items.push({\r\n        el: item,\r\n        marginLeft,\r\n        marginRight\r\n      });\r\n\r\n      item.setAttribute(\r\n        'style',\r\n        `width: ${\r\n          slideshowVieportWidth * (this.relativeItemWidth / 100) - marginTotal\r\n        }px`\r\n      );\r\n    });\r\n  }\r\n\r\n  public scrollSlide(scrollDir: number): void {\r\n    if (!this.contentEl || !this.items?.length) return;\r\n\r\n    if (!this.relativeItemWidth || typeof this.relativeItemWidth !== 'number') {\r\n      this.relativeItemWidth = 100;\r\n    }\r\n\r\n    if (scrollDir === -1) {\r\n      this.previousSlide();\r\n    } else {\r\n      this.nextSlide();\r\n    }\r\n\r\n    const activeEl = this.items[this.activeSlide].el;\r\n    this.contentEl.scrollLeft = activeEl.offsetLeft;\r\n  }\r\n\r\n  private previousSlide(): void {\r\n    if (this.activeSlide <= 0) {\r\n      this.activeSlide = this.items.length - 1;\r\n    } else {\r\n      this.activeSlide--;\r\n    }\r\n  }\r\n\r\n  private nextSlide(): void {\r\n    if (this.activeSlide >= this.items.length - 1) {\r\n      this.activeSlide = 0;\r\n    } else {\r\n      this.activeSlide++;\r\n    }\r\n  }\r\n\r\n  public onSlideControlClick(event: any, activeSlide: number): void {\r\n    event.preventDefault();\r\n    this.activeSlide = activeSlide - 1;\r\n    this.scrollSlide(1);\r\n  }\r\n}\r\n",
+            "sourceCode": "import {\r\n  AfterContentInit,\r\n  Component,\r\n  ElementRef,\r\n  HostListener,\r\n  Inject,\r\n  Input,\r\n  OnChanges,\r\n  OnDestroy,\r\n  OnInit,\r\n  PLATFORM_ID,\r\n  SimpleChanges\r\n} from '@angular/core';\r\nimport { SLIDESHOW_ITEM_CLASS } from '../../constants/slideshow.constant';\r\nimport { isPlatformBrowser } from '@angular/common';\r\n\r\n/**\r\n * Slide Show Component, scrolls horizontally any projected content, by the specified scrollsize.\r\n * Allows to click next and prev buttons too.\r\n * Projected content should have added <code>.slideshow_item</code> class to the projected content.\r\n * @date 6/11/2023 - 8:40:31 PM\r\n *\r\n * @export\r\n * @class SlideshowComponent\r\n * @typedef {SlideshowComponent}\r\n * @implements {OnInit}\r\n */\r\n@Component({\r\n  selector: 'anu-slideshow',\r\n  templateUrl: './slideshow.component.html',\r\n  styleUrls: ['./slideshow.component.scss']\r\n})\r\nexport class SlideshowComponent\r\n  implements OnInit, AfterContentInit, OnChanges, OnDestroy\r\n{\r\n  /**\r\n   * Item width in percentage of Slidhow width.\r\n   * Should be a number between 1-100\r\n   * Default is 100, which means 1 item at a time is visible in view.\r\n   */\r\n  @Input() relativeItemWidth: number = 100;\r\n\r\n  /**\r\n   * slide duration in miliseconds. Next slide wil show up after this duration.\r\n   */\r\n  @Input() duration: number = 5000;\r\n\r\n  /**\r\n   * enables auto scrolling based on duration.\r\n   */\r\n  @Input() autoSlide: boolean = false;\r\n\r\n  contentEl: Element | null = null;\r\n  el: Element | null = null;\r\n  items: Array<any> = [];\r\n\r\n  setTimeout$ = null;\r\n  interval$ = null;\r\n  activeSlide = 0;\r\n\r\n  constructor(\r\n    private elRef: ElementRef,\r\n    @Inject(PLATFORM_ID) private platformId: Object\r\n  ) {}\r\n\r\n  @HostListener('window:resize', ['$event'])\r\n  onResize(event) {\r\n    if (!this.setTimeout$) {\r\n      this.setTimeout$ = setTimeout(() => {\r\n        this.setSlideShowWidth();\r\n        clearTimeout(this.setTimeout$);\r\n        this.setTimeout$ = null;\r\n      }, 500);\r\n    }\r\n  }\r\n\r\n  @HostListener('mouseenter', ['$event'])\r\n  onMouseenter(event) {\r\n    if (!this.autoSlide && this.duration) {\r\n      this.startAutoSlide();\r\n    } else {\r\n      this.stopAutoSlide();\r\n    }\r\n  }\r\n\r\n  @HostListener('mouseleave', ['$event'])\r\n  onMouseleave(event) {\r\n    if (!this.autoSlide && this.duration) {\r\n      this.stopAutoSlide();\r\n    } else {\r\n      this.startAutoSlide();\r\n    }\r\n  }\r\n\r\n  ngOnInit(): void {}\r\n\r\n  ngAfterContentInit(): void {\r\n    this.setSlideShowWidth();\r\n\r\n    this.autoSlide ? this.startAutoSlide() : this.stopAutoSlide();\r\n  }\r\n\r\n  ngOnChanges(changes: SimpleChanges): void {\r\n    setTimeout(() => {\r\n      this.setSlideShowWidth();\r\n      this.autoSlide ? this.startAutoSlide() : this.stopAutoSlide();\r\n    }, 100);\r\n  }\r\n\r\n  ngOnDestroy(): void {\r\n    this.stopAutoSlide();\r\n    this.setTimeout$ && clearTimeout(this.setTimeout$);\r\n    this.setTimeout$ = null;\r\n  }\r\n\r\n  private stopAutoSlide(): void {\r\n    if (isPlatformBrowser(this.platformId)) {\r\n      this.interval$ && clearInterval(this.interval$);\r\n      this.interval$ = null;\r\n    }\r\n  }\r\n\r\n  private startAutoSlide(): void {\r\n    this.stopAutoSlide();\r\n\r\n    if (isPlatformBrowser(this.platformId)) {\r\n      if (!this.duration) return;\r\n\r\n      this.interval$ = setInterval(() => {\r\n        // Slide\r\n        this.scrollSlide(1);\r\n      }, this.duration);\r\n    }\r\n  }\r\n\r\n  private setSlideShowWidth(): void {\r\n    this.el = this.elRef.nativeElement;\r\n    this.contentEl = this.el?.querySelector('.slideshow_content') || null;\r\n    const nodes = this.el?.querySelectorAll(`.${SLIDESHOW_ITEM_CLASS}`) || null;\r\n\r\n    if (!this.contentEl || !nodes || !nodes.length || !nodes.forEach) return;\r\n\r\n    const slideshowVieportWidth = this.contentEl.clientWidth;\r\n    this.items = [];\r\n\r\n    nodes?.forEach((item) => {\r\n      if (\r\n        !this.relativeItemWidth ||\r\n        typeof this.relativeItemWidth !== 'number'\r\n      ) {\r\n        this.relativeItemWidth = 100;\r\n      }\r\n\r\n      let marginTotal = 0;\r\n      let marginLeft = 0;\r\n      let marginRight = 0;\r\n\r\n      if (typeof window !== 'undefined' && window.getComputedStyle) {\r\n        const cs = window.getComputedStyle(item);\r\n        marginLeft = parseFloat(cs.marginLeft?.replace('px', '') || '0');\r\n        marginRight = parseFloat(cs.marginRight?.replace('px', '') || '0');\r\n        marginTotal = marginLeft + marginRight;\r\n      }\r\n\r\n      this.items.push({\r\n        el: item,\r\n        marginLeft,\r\n        marginRight\r\n      });\r\n\r\n      item.setAttribute(\r\n        'style',\r\n        `width: ${\r\n          slideshowVieportWidth * (this.relativeItemWidth / 100) - marginTotal\r\n        }px`\r\n      );\r\n    });\r\n  }\r\n\r\n  public scrollSlide(scrollDir: number): void {\r\n    if (!this.contentEl || !this.items?.length) return;\r\n\r\n    if (!this.relativeItemWidth || typeof this.relativeItemWidth !== 'number') {\r\n      this.relativeItemWidth = 100;\r\n    }\r\n\r\n    if (scrollDir === -1) {\r\n      this.previousSlide();\r\n    } else {\r\n      this.nextSlide();\r\n    }\r\n\r\n    const activeEl = this.items[this.activeSlide].el;\r\n    this.contentEl.scrollLeft = activeEl.offsetLeft;\r\n  }\r\n\r\n  private previousSlide(): void {\r\n    if (this.activeSlide <= 0) {\r\n      this.activeSlide = this.items.length - 1;\r\n    } else {\r\n      this.activeSlide--;\r\n    }\r\n  }\r\n\r\n  private nextSlide(): void {\r\n    if (this.activeSlide >= this.items.length - 1) {\r\n      this.activeSlide = 0;\r\n    } else {\r\n      this.activeSlide++;\r\n    }\r\n  }\r\n\r\n  public onSlideControlClick(event: any, activeSlide: number): void {\r\n    event.preventDefault();\r\n    this.activeSlide = activeSlide - 1;\r\n    this.scrollSlide(1);\r\n  }\r\n}\r\n",
             "assetsDirs": [],
             "styleUrlsData": [
                 {
-                    "data": "@import 'mixins';\r\n\r\n:host {\r\n  display: flex;\r\n  position: relative;\r\n  flex-direction: row;\r\n\r\n  .slideshow {\r\n    &_content {\r\n      display: flex;\r\n      flex-direction: row;\r\n      width: 100%;\r\n      flex-flow: nowrap;\r\n      white-space: nowrap;\r\n      overflow-x: auto;\r\n      scroll-behavior: smooth;\r\n\r\n      scrollbar-width: none;\r\n      /* Firefox */\r\n      -ms-overflow-style: none;\r\n      /* Internet Explorer 10+ */\r\n\r\n      &::-webkit-scrollbar {\r\n        /* WebKit */\r\n        width: 0;\r\n        height: 0;\r\n      }\r\n\r\n      &_overlay {\r\n        white-space: nowrap;\r\n        width: auto;\r\n      }\r\n    }\r\n  }\r\n\r\n  // Slide Controls\r\n\r\n  .slide-controls {\r\n    cursor: pointer;\r\n    position: absolute;\r\n    bottom: 0;\r\n    margin-left: auto;\r\n    margin-right: auto;\r\n    color: var(--anu-accent-normal);\r\n    font-weight: bold;\r\n    font-size: 0px;\r\n    border-radius: 0 3px 3px 0;\r\n    user-select: none;\r\n    -webkit-user-select: none;\r\n    a {\r\n      &:hover,\r\n      &.active {\r\n        &:after {\r\n          background-color: var(--anu-accent-normal);\r\n        }\r\n      }\r\n\r\n      &:after {\r\n        display: block;\r\n        content: '';\r\n        width: 1rem;\r\n        height: 1rem;\r\n        border-radius: 50%;\r\n        border: 1px solid var(--anu-accent-normal);\r\n        transition: all 0.3s;\r\n\r\n        @include small {\r\n          width: 0.7rem;\r\n          height: 0.7rem;\r\n        }\r\n\r\n        @include medium {\r\n          width: 0.9rem;\r\n          height: 0.9rem;\r\n        }\r\n      }\r\n    }\r\n  }\r\n\r\n  /* Next & previous buttons */\r\n  .prev,\r\n  .next {\r\n    cursor: pointer;\r\n    position: absolute;\r\n    display: flex;\r\n    flex-direction: column;\r\n    justify-content: center;\r\n    padding: 0.5rem;\r\n    top: 0;\r\n    width: auto;\r\n    height: 100%;\r\n    color: var(--anu-accent-normal);\r\n    font-weight: bold;\r\n    font-size: 2rem;\r\n    border-radius: 0 3px 3px 0;\r\n    user-select: none;\r\n    -webkit-user-select: none;\r\n  }\r\n\r\n  /* Position the \"next button\" to the right */\r\n  .next {\r\n    right: 0;\r\n    border-radius: 3px 0 0 3px;\r\n  }\r\n\r\n  &:hover {\r\n    .prev,\r\n    .next {\r\n      background-color: var(--anu-primary-lightest);\r\n      opacity: 0.8;\r\n\r\n      &:hover {\r\n        background-color: var(--anu-primary-normal);\r\n        opacity: 0.8;\r\n      }\r\n    }\r\n  }\r\n}\r\n",
+                    "data": "@import 'mixins';\r\n\r\n:host {\r\n  display: flex;\r\n  position: relative;\r\n  flex-direction: row;\r\n\r\n  &:hover {\r\n    .slide-controls,\r\n    .next,\r\n    .prev {\r\n      display: flex;\r\n    }\r\n  }\r\n\r\n  .slideshow {\r\n    &_content {\r\n      display: flex;\r\n      flex-direction: row;\r\n      width: 100%;\r\n      flex-flow: nowrap;\r\n      white-space: nowrap;\r\n      overflow-x: auto;\r\n      scroll-behavior: smooth;\r\n\r\n      scrollbar-width: none;\r\n      /* Firefox */\r\n      -ms-overflow-style: none;\r\n      /* Internet Explorer 10+ */\r\n\r\n      &::-webkit-scrollbar {\r\n        /* WebKit */\r\n        width: 0;\r\n        height: 0;\r\n      }\r\n\r\n      &_overlay {\r\n        white-space: nowrap;\r\n        width: auto;\r\n      }\r\n    }\r\n  }\r\n\r\n  // Slide Controls\r\n\r\n  .slide-controls {\r\n    display: none;\r\n    cursor: pointer;\r\n    position: absolute;\r\n    bottom: 0;\r\n    margin-left: auto;\r\n    margin-right: auto;\r\n    color: var(--anu-accent-normal);\r\n    font-weight: bold;\r\n    font-size: 0px;\r\n    border-radius: 0 3px 3px 0;\r\n    user-select: none;\r\n    -webkit-user-select: none;\r\n    opacity: 0.6;\r\n\r\n    a {\r\n      &:hover,\r\n      &.active {\r\n        &:after {\r\n          background-color: var(--anu-accent-normal);\r\n        }\r\n      }\r\n\r\n      &:after {\r\n        display: block;\r\n        content: '';\r\n        width: 1rem;\r\n        height: 1rem;\r\n        border-radius: 50%;\r\n        border: 1px solid var(--anu-accent-normal);\r\n        transition: all 0.3s;\r\n\r\n        @include small {\r\n          width: 0.7rem;\r\n          height: 0.7rem;\r\n        }\r\n\r\n        @include medium {\r\n          width: 0.9rem;\r\n          height: 0.9rem;\r\n        }\r\n      }\r\n    }\r\n  }\r\n\r\n  /* Next & previous buttons */\r\n  .prev,\r\n  .next {\r\n    cursor: pointer;\r\n    position: absolute;\r\n    display: none;\r\n    flex-direction: column;\r\n    justify-content: center;\r\n    padding: 0.5rem;\r\n    top: 0;\r\n    width: auto;\r\n    height: 100%;\r\n    color: var(--anu-accent-normal);\r\n    font-weight: bold;\r\n    font-size: 2rem;\r\n    border-radius: 0 3px 3px 0;\r\n    user-select: none;\r\n    -webkit-user-select: none;\r\n  }\r\n\r\n  /* Position the \"next button\" to the right */\r\n  .next {\r\n    right: 0;\r\n    border-radius: 3px 0 0 3px;\r\n  }\r\n\r\n  &:hover {\r\n    .prev,\r\n    .next {\r\n      background-color: var(--anu-primary-lightest);\r\n      opacity: 0.6;\r\n\r\n      &:hover {\r\n        background-color: var(--anu-primary-normal);\r\n        opacity: 0.6;\r\n      }\r\n    }\r\n  }\r\n}\r\n",
                     "styleUrl": "./slideshow.component.scss"
                 }
             ],
@@ -10494,7 +11037,7 @@
                 "OnChanges",
                 "OnDestroy"
             ],
-            "templateData": "<div class=\"slideshow_content\">\r\n    <div class=\"slideshow_content_overlay row nowrap\">\r\n        <ng-content></ng-content>\r\n    </div>\r\n</div>\r\n<!-- Next and previous buttons -->\r\n<a class=\"prev\" href=\"javascript:void(0)\" (click)=\"scrollSlide(-1)\">&#10094;</a>\r\n<a class=\"next\" href=\"javascript:void(0)\" (click)=\"scrollSlide(1)\">&#10095;</a>\r\n<div *ngIf=\"items?.length > 1\" class=\"row nowrap slide-controls center\">\r\n    <a [ngClass]=\"{'active': index === activeSlide}\" class=\"spacing-around-h-half\"\r\n        *ngFor=\"let item of items; let index = index\" href=\"#\" (click)=\"onSlideControlClick($event, index)\">O</a>\r\n</div>\r\n"
+            "templateData": "<div class=\"slideshow_content\">\r\n    <div class=\"slideshow_content_overlay row nowrap\">\r\n        <ng-content></ng-content>\r\n    </div>\r\n</div>\r\n<!-- Next and previous buttons -->\r\n<a *ngIf=\"items?.length > 1\" class=\"prev\" href=\"javascript:void(0)\" (click)=\"scrollSlide(-1)\">&#10094;</a>\r\n<a *ngIf=\"items?.length > 1\" class=\"next\" href=\"javascript:void(0)\" (click)=\"scrollSlide(1)\">&#10095;</a>\r\n<div *ngIf=\"items?.length > 1\" class=\"row nowrap slide-controls center\">\r\n    <a [ngClass]=\"{'active': index === activeSlide}\" class=\"spacing-around-h-half\"\r\n        *ngFor=\"let item of items; let index = index\" href=\"#\" (click)=\"onSlideControlClick($event, index)\">O</a>\r\n</div>\r\n"
         },
         {
             "name": "SmartButtonComponent",
@@ -10619,7 +11162,7 @@
             "assetsDirs": [],
             "styleUrlsData": [
                 {
-                    "data": ":host {\r\n  display: flex;\r\n  border: 1px solid var(--anu-primary-normal);\r\n\r\n  a {\r\n    color: inherit;\r\n  }\r\n\r\n  &:hover {\r\n    box-shadow: 0.1rem 0.05rem 0.4rem 0.1rem var(--anu-primary-normal);\r\n  }\r\n}\r\n",
+                    "data": ":host {\r\n  display: flex;\r\n  border: 1px solid var(--anu-primary-normal);\r\n\r\n  a,\r\n  a span {\r\n    color: inherit;\r\n    font-size: 1em;\r\n  }\r\n\r\n  &:hover {\r\n    box-shadow: 0.1rem 0.05rem 0.4rem 0.1rem var(--anu-primary-normal);\r\n  }\r\n}\r\n",
                     "styleUrl": "./smart-button.component.scss"
                 }
             ],
@@ -12893,6 +13436,49 @@
             ]
         },
         {
+            "name": "BannersModule",
+            "id": "module-BannersModule-e3b045fab7ce6963505e22cdda7fbad80834c89149dba7a7ab88f273c617d04d1c5e2e8f70d82cd6027f387098fad20fceb2f3f0c8b2b6b2735799a3f702d733",
+            "description": "",
+            "deprecationMessage": "",
+            "deprecated": false,
+            "file": "projects/ngx-common-ui/banners/src/banners.module.ts",
+            "methods": [],
+            "sourceCode": "import { NgModule } from '@angular/core';\nimport { CommonModule } from '@angular/common';\nimport { BannersComponent } from './components/banners/banners.component';\nimport { SlideshowModule } from '@annuadvent/ngx-common-ui/slideshow';\nimport { PictureModule } from '@annuadvent/ngx-common-ui/picture';\n\n@NgModule({\n  declarations: [BannersComponent],\n  imports: [CommonModule, SlideshowModule, PictureModule],\n  exports: [BannersComponent]\n})\nexport class BannersModule {}\n",
+            "children": [
+                {
+                    "type": "providers",
+                    "elements": []
+                },
+                {
+                    "type": "declarations",
+                    "elements": []
+                },
+                {
+                    "type": "imports",
+                    "elements": [
+                        {
+                            "name": "PictureModule"
+                        },
+                        {
+                            "name": "SlideshowModule"
+                        }
+                    ]
+                },
+                {
+                    "type": "exports",
+                    "elements": []
+                },
+                {
+                    "type": "bootstrap",
+                    "elements": []
+                },
+                {
+                    "type": "classes",
+                    "elements": []
+                }
+            ]
+        },
+        {
             "name": "BreadcrumbModule",
             "id": "module-BreadcrumbModule-178fda7964f74e62a12d83d0041bbfb52d3fa13f545091ab32c474802062f63e5a8d01030f23e3173f0a99f3edcf1fd6106569128d3f98af780d802f44e09a77",
             "description": "",
@@ -13359,6 +13945,52 @@
                         },
                         {
                             "name": "ErrorModule"
+                        }
+                    ]
+                },
+                {
+                    "type": "exports",
+                    "elements": []
+                },
+                {
+                    "type": "bootstrap",
+                    "elements": []
+                },
+                {
+                    "type": "classes",
+                    "elements": []
+                }
+            ]
+        },
+        {
+            "name": "ImageUploadModule",
+            "id": "module-ImageUploadModule-21f964d70067964939987463bbbf1f7c6824bbde5b8969cbde181028ff1639df59ac7bcc8965fc7cc915e1830dd1780371179b7bebd263eef2b766e419bd076f",
+            "description": "",
+            "deprecationMessage": "",
+            "deprecated": false,
+            "file": "projects/ngx-common-ui/image-upload/src/image-upload.module.ts",
+            "methods": [],
+            "sourceCode": "import { NgModule } from '@angular/core';\nimport { CommonModule } from '@angular/common';\nimport { ImageUploadComponent } from './components/image-upload/image-upload.component';\nimport { CardModule } from '@annuadvent/ngx-common-ui/card';\nimport { SpinnerModule } from '@annuadvent/ngx-common-ui/spinner';\nimport { FormsModule } from '@angular/forms';\nimport { PictureModule } from '@annuadvent/ngx-common-ui/picture';\n\n@NgModule({\n  declarations: [ImageUploadComponent],\n  imports: [\n    CommonModule,\n    FormsModule,\n    CardModule,\n    SpinnerModule,\n    PictureModule\n  ],\n  exports: [ImageUploadComponent]\n})\nexport class ImageUploadModule {}\n",
+            "children": [
+                {
+                    "type": "providers",
+                    "elements": []
+                },
+                {
+                    "type": "declarations",
+                    "elements": []
+                },
+                {
+                    "type": "imports",
+                    "elements": [
+                        {
+                            "name": "CardModule"
+                        },
+                        {
+                            "name": "PictureModule"
+                        },
+                        {
+                            "name": "SpinnerModule"
                         }
                     ]
                 },
@@ -14349,6 +14981,16 @@
                 "defaultValue": "{\r\n    projectionContent: 'Sample Aside Nav Item',\r\n    inputPropsValues: {}\r\n}"
             },
             {
+                "name": "BannersComponent",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/ngx-common-ui/banners/src/components/banners/banners.docs.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "any",
+                "defaultValue": "{\r\n  projectionContent:\r\n    '<p>Lorem ipsum is placeholder text commonly used in the graphic, print, and publishing industries for previewing layouts and visual mockups.</p>',\r\n  inputPropsValues: {\r\n    autoSlide: true,\r\n    duration: 3000,\r\n    slideSectionClassNames: ['container'],\r\n    contentSectionClassNames: ['container'],\r\n    items: [\r\n      {\r\n        src: 'https://annuadvent.com/getImage?imageId=annuadvent-prod/articles/wL6NJSYXnBXxNfvfYNilAAMvVTB3/mahapadma-the-treasure-of-large-lotus-flowers--nav-nidhis-lic7mybq43fct3qn.jpg',\r\n        href: '/libs/ngx-common-ui'\r\n      },\r\n      {\r\n        src: 'https://annuadvent.com/getImage?imageId=annuadvent-prod/articles/wL6NJSYXnBXxNfvfYNilAAMvVTB3/Aquarius%20Sun%20sign%20along%20with%20Pluto%20planet-900x450.jpg',\r\n        href: '/libs/ngx-tools'\r\n      },\r\n      {\r\n        src: 'https://annuadvent.com/getImage?imageId=annuadvent-prod/articles/wL6NJSYXnBXxNfvfYNilAAMvVTB3/what-flora-and-fauna-found-in-himalayan-mountains-libaueaksrc7iri.jpg',\r\n        href: '/libs/ngx-ecommerce'\r\n      }\r\n    ]\r\n  }\r\n}"
+            },
+            {
                 "name": "BreadcrumbComponent",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
@@ -14616,7 +15258,7 @@
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "any",
-                "defaultValue": "{\r\n  projectionContent: '',\r\n  inputPropsValues: {\r\n    value: formParams\r\n  }\r\n}"
+                "defaultValue": "{\r\n  projectionContent: '',\r\n  inputPropsValues: {\r\n    params: formParams\r\n  }\r\n}"
             },
             {
                 "name": "ElementStylesComponent",
@@ -14676,7 +15318,7 @@
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "object",
-                "defaultValue": "{\r\n  \"firstName\": {\r\n    \"value\": \"\",\r\n    \"type\": \"string\",\r\n    \"controlType\": \"text\",\r\n    \"label\": \"First Name\",\r\n    \"placeholder\": \"First Name...\",\r\n    \"syncValidators\": [\r\n      { \"name\": \"required\" },\r\n      { \"name\": \"trimSpacesValidator\" },\r\n      { \"name\": \"maxLength\", \"params\": [70] }\r\n    ],\r\n    \"asyncValidators\": []\r\n  },\r\n  \"bio\": {\r\n    \"value\": \"\",\r\n    \"type\": \"string\",\r\n    \"controlType\": \"textarea\",\r\n    \"label\": \"Bio\",\r\n    \"placeholder\": \"provide your profile overview or description...\",\r\n    \"syncValidators\": [\r\n      { \"name\": \"required\" },\r\n      { \"name\": \"trimSpacesValidator\" },\r\n      { \"name\": \"maxLength\", \"params\": [300] }\r\n    ],\r\n    \"asyncValidators\": []\r\n  },\r\n  \"pincode\": {\r\n    \"value\": \"\",\r\n    \"type\": \"string\",\r\n    \"controlType\": \"text\",\r\n    \"label\": \"Pincode\",\r\n    \"placeholder\": \"Pincode...\",\r\n    \"syncValidators\": [\r\n      { \"name\": \"required\" },\r\n      { \"name\": \"trimSpacesValidator\" },\r\n      { \"name\": \"maxLength\", \"params\": [6] },\r\n      { \"name\": \"minLength\", \"params\": [6] }\r\n    ],\r\n    \"asyncValidators\": [\r\n      { \"name\": \"PincodeValidatorService\", \"url\": \"/api/addresses/pincode\" }\r\n    ]\r\n  }\r\n}"
+                "defaultValue": "{\r\n  imageUrl: {\r\n    value: '',\r\n    type: 'string',\r\n    controlType: 'file',\r\n    label: 'Profile Image',\r\n    placeholder: 'Profile Image...',\r\n    syncValidators: [\r\n      { name: 'required' },\r\n      { name: 'trimSpacesValidator' },\r\n      { name: 'maxLength', params: [70] }\r\n    ],\r\n    asyncValidators: []\r\n  },\r\n  firstName: {\r\n    value: '',\r\n    type: 'string',\r\n    controlType: 'text',\r\n    label: 'First Name',\r\n    placeholder: 'First Name...',\r\n    syncValidators: [\r\n      { name: 'required' },\r\n      { name: 'trimSpacesValidator' },\r\n      { name: 'maxLength', params: [70] }\r\n    ],\r\n    asyncValidators: []\r\n  },\r\n  bio: {\r\n    value: '',\r\n    type: 'string',\r\n    controlType: 'textarea',\r\n    label: 'Bio',\r\n    placeholder: 'provide your profile overview or description...',\r\n    syncValidators: [\r\n      { name: 'required' },\r\n      { name: 'trimSpacesValidator' },\r\n      { name: 'maxLength', params: [300] }\r\n    ],\r\n    asyncValidators: []\r\n  },\r\n  pincode: {\r\n    value: '',\r\n    type: 'string',\r\n    controlType: 'text',\r\n    label: 'Pincode',\r\n    placeholder: 'Pincode...',\r\n    syncValidators: [\r\n      { name: 'required' },\r\n      { name: 'trimSpacesValidator' },\r\n      { name: 'maxLength', params: [6] },\r\n      { name: 'minLength', params: [6] }\r\n    ],\r\n    asyncValidators: [\r\n      // { name: 'PincodeValidatorService', url: '/api/addresses/pincode' }\r\n    ]\r\n  }\r\n}"
             },
             {
                 "name": "greenAlgae",
@@ -14707,6 +15349,16 @@
                 "deprecationMessage": "",
                 "type": "any",
                 "defaultValue": "{\r\n    projectionContent: '',\r\n    inputPropsValues: {\r\n        src: '',\r\n        alt: 'sample alt text'\r\n\r\n    }\r\n}"
+            },
+            {
+                "name": "ImageUploadComponent",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/ngx-common-ui/image-upload/src/components/image-upload/image-upload.docs.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "any",
+                "defaultValue": "{\r\n  projectionContent: '',\r\n  inputPropsValues: {\r\n    imageUploadFiles: []\r\n  }\r\n}"
             },
             {
                 "name": "jsonTheme",
@@ -15560,6 +16212,18 @@
                     "defaultValue": "{\r\n    projectionContent: 'Sample Aside Nav Item',\r\n    inputPropsValues: {}\r\n}"
                 }
             ],
+            "projects/ngx-common-ui/banners/src/components/banners/banners.docs.ts": [
+                {
+                    "name": "BannersComponent",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/ngx-common-ui/banners/src/components/banners/banners.docs.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "any",
+                    "defaultValue": "{\r\n  projectionContent:\r\n    '<p>Lorem ipsum is placeholder text commonly used in the graphic, print, and publishing industries for previewing layouts and visual mockups.</p>',\r\n  inputPropsValues: {\r\n    autoSlide: true,\r\n    duration: 3000,\r\n    slideSectionClassNames: ['container'],\r\n    contentSectionClassNames: ['container'],\r\n    items: [\r\n      {\r\n        src: 'https://annuadvent.com/getImage?imageId=annuadvent-prod/articles/wL6NJSYXnBXxNfvfYNilAAMvVTB3/mahapadma-the-treasure-of-large-lotus-flowers--nav-nidhis-lic7mybq43fct3qn.jpg',\r\n        href: '/libs/ngx-common-ui'\r\n      },\r\n      {\r\n        src: 'https://annuadvent.com/getImage?imageId=annuadvent-prod/articles/wL6NJSYXnBXxNfvfYNilAAMvVTB3/Aquarius%20Sun%20sign%20along%20with%20Pluto%20planet-900x450.jpg',\r\n        href: '/libs/ngx-tools'\r\n      },\r\n      {\r\n        src: 'https://annuadvent.com/getImage?imageId=annuadvent-prod/articles/wL6NJSYXnBXxNfvfYNilAAMvVTB3/what-flora-and-fauna-found-in-himalayan-mountains-libaueaksrc7iri.jpg',\r\n        href: '/libs/ngx-ecommerce'\r\n      }\r\n    ]\r\n  }\r\n}"
+                }
+            ],
             "projects/ngx-common-ui/breadcrumb/src/components/breadcrumb/breadcrumb.docs.ts": [
                 {
                     "name": "BreadcrumbComponent",
@@ -15935,7 +16599,7 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "any",
-                    "defaultValue": "{\r\n  projectionContent: '',\r\n  inputPropsValues: {\r\n    value: formParams\r\n  }\r\n}"
+                    "defaultValue": "{\r\n  projectionContent: '',\r\n  inputPropsValues: {\r\n    params: formParams\r\n  }\r\n}"
                 },
                 {
                     "name": "formParams",
@@ -15945,7 +16609,7 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "object",
-                    "defaultValue": "{\r\n  \"firstName\": {\r\n    \"value\": \"\",\r\n    \"type\": \"string\",\r\n    \"controlType\": \"text\",\r\n    \"label\": \"First Name\",\r\n    \"placeholder\": \"First Name...\",\r\n    \"syncValidators\": [\r\n      { \"name\": \"required\" },\r\n      { \"name\": \"trimSpacesValidator\" },\r\n      { \"name\": \"maxLength\", \"params\": [70] }\r\n    ],\r\n    \"asyncValidators\": []\r\n  },\r\n  \"bio\": {\r\n    \"value\": \"\",\r\n    \"type\": \"string\",\r\n    \"controlType\": \"textarea\",\r\n    \"label\": \"Bio\",\r\n    \"placeholder\": \"provide your profile overview or description...\",\r\n    \"syncValidators\": [\r\n      { \"name\": \"required\" },\r\n      { \"name\": \"trimSpacesValidator\" },\r\n      { \"name\": \"maxLength\", \"params\": [300] }\r\n    ],\r\n    \"asyncValidators\": []\r\n  },\r\n  \"pincode\": {\r\n    \"value\": \"\",\r\n    \"type\": \"string\",\r\n    \"controlType\": \"text\",\r\n    \"label\": \"Pincode\",\r\n    \"placeholder\": \"Pincode...\",\r\n    \"syncValidators\": [\r\n      { \"name\": \"required\" },\r\n      { \"name\": \"trimSpacesValidator\" },\r\n      { \"name\": \"maxLength\", \"params\": [6] },\r\n      { \"name\": \"minLength\", \"params\": [6] }\r\n    ],\r\n    \"asyncValidators\": [\r\n      { \"name\": \"PincodeValidatorService\", \"url\": \"/api/addresses/pincode\" }\r\n    ]\r\n  }\r\n}"
+                    "defaultValue": "{\r\n  imageUrl: {\r\n    value: '',\r\n    type: 'string',\r\n    controlType: 'file',\r\n    label: 'Profile Image',\r\n    placeholder: 'Profile Image...',\r\n    syncValidators: [\r\n      { name: 'required' },\r\n      { name: 'trimSpacesValidator' },\r\n      { name: 'maxLength', params: [70] }\r\n    ],\r\n    asyncValidators: []\r\n  },\r\n  firstName: {\r\n    value: '',\r\n    type: 'string',\r\n    controlType: 'text',\r\n    label: 'First Name',\r\n    placeholder: 'First Name...',\r\n    syncValidators: [\r\n      { name: 'required' },\r\n      { name: 'trimSpacesValidator' },\r\n      { name: 'maxLength', params: [70] }\r\n    ],\r\n    asyncValidators: []\r\n  },\r\n  bio: {\r\n    value: '',\r\n    type: 'string',\r\n    controlType: 'textarea',\r\n    label: 'Bio',\r\n    placeholder: 'provide your profile overview or description...',\r\n    syncValidators: [\r\n      { name: 'required' },\r\n      { name: 'trimSpacesValidator' },\r\n      { name: 'maxLength', params: [300] }\r\n    ],\r\n    asyncValidators: []\r\n  },\r\n  pincode: {\r\n    value: '',\r\n    type: 'string',\r\n    controlType: 'text',\r\n    label: 'Pincode',\r\n    placeholder: 'Pincode...',\r\n    syncValidators: [\r\n      { name: 'required' },\r\n      { name: 'trimSpacesValidator' },\r\n      { name: 'maxLength', params: [6] },\r\n      { name: 'minLength', params: [6] }\r\n    ],\r\n    asyncValidators: [\r\n      // { name: 'PincodeValidatorService', url: '/api/addresses/pincode' }\r\n    ]\r\n  }\r\n}"
                 }
             ],
             "projects/ngx-common-ui/element-styles/src/components/element-styles/element-styles.docs.ts": [
@@ -16052,6 +16716,18 @@
                     "deprecationMessage": "",
                     "type": "any",
                     "defaultValue": "{\r\n    projectionContent: '',\r\n    inputPropsValues: {\r\n        src: '',\r\n        alt: 'sample alt text'\r\n\r\n    }\r\n}"
+                }
+            ],
+            "projects/ngx-common-ui/image-upload/src/components/image-upload/image-upload.docs.ts": [
+                {
+                    "name": "ImageUploadComponent",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/ngx-common-ui/image-upload/src/components/image-upload/image-upload.docs.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "any",
+                    "defaultValue": "{\r\n  projectionContent: '',\r\n  inputPropsValues: {\r\n    imageUploadFiles: []\r\n  }\r\n}"
                 }
             ],
             "projects/ngx-common-ui/theme/src/constants/themes/pink.ts": [
@@ -16828,6 +17504,34 @@
                 "status": "low"
             },
             {
+                "filePath": "projects/ngx-common-ui/banners/src/components/banners/banners.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "BannersComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/8",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/ngx-common-ui/banners/src/components/banners/banners.docs.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "BannersComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/ngx-common-ui/banners/src/interfaces/banner-item.interface.ts",
+                "type": "interface",
+                "linktype": "interface",
+                "name": "BannerItem",
+                "coveragePercent": 0,
+                "coverageCount": "0/3",
+                "status": "low"
+            },
+            {
                 "filePath": "projects/ngx-common-ui/breadcrumb/src/components/breadcrumb/breadcrumb.component.ts",
                 "type": "component",
                 "linktype": "component",
@@ -17389,6 +18093,34 @@
                 "name": "ImageInfo",
                 "coveragePercent": 0,
                 "coverageCount": "0/4",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/ngx-common-ui/image-upload/src/classes/image-upload.class.ts",
+                "type": "class",
+                "linktype": "classe",
+                "name": "ImageUpload",
+                "coveragePercent": 0,
+                "coverageCount": "0/7",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/ngx-common-ui/image-upload/src/components/image-upload/image-upload.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "ImageUploadComponent",
+                "coveragePercent": 60,
+                "coverageCount": "9/15",
+                "status": "good"
+            },
+            {
+                "filePath": "projects/ngx-common-ui/image-upload/src/components/image-upload/image-upload.docs.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "ImageUploadComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
                 "status": "low"
             },
             {

@@ -10449,7 +10449,7 @@
     "components": [
         {
             "name": "ImageBrowserComponent",
-            "id": "component-ImageBrowserComponent-976f5cfd467ef3c164ab9e84421ccaf8c81e06168dc3800f80226f7700998298ad63126d6947c5ee3eb4b4887ae81a4a86d1d7780dcf239f961accfacea087ff",
+            "id": "component-ImageBrowserComponent-bf88f47915c5df82fe941df9db92b0391ad18c9a4f4fe237eca26ffe1fef00dc3619334992e941716c310944dc3798b334044516e33caf4ac68c424a6b1ba127",
             "file": "projects/ngx-tools/fire-storage/src/components/image-browser/image-browser.component.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -10472,7 +10472,7 @@
                     "defaultValue": "[]",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "line": 32,
+                    "line": 35,
                     "type": "Array<ImageFileInfo>",
                     "decorators": []
                 }
@@ -10487,7 +10487,7 @@
                     "type": "any",
                     "optional": false,
                     "description": "",
-                    "line": 42
+                    "line": 45
                 },
                 {
                     "name": "choosenFileName",
@@ -10497,7 +10497,7 @@
                     "type": "string",
                     "optional": false,
                     "description": "",
-                    "line": 41
+                    "line": 44
                 },
                 {
                     "name": "deleteConfirmModalOpened",
@@ -10507,7 +10507,7 @@
                     "type": "boolean",
                     "optional": false,
                     "description": "",
-                    "line": 47
+                    "line": 50
                 },
                 {
                     "name": "error",
@@ -10516,7 +10516,7 @@
                     "type": "any",
                     "optional": false,
                     "description": "",
-                    "line": 45
+                    "line": 48
                 },
                 {
                     "name": "fileEl",
@@ -10525,7 +10525,7 @@
                     "type": "ElementRef",
                     "optional": false,
                     "description": "",
-                    "line": 31,
+                    "line": 34,
                     "decorators": [
                         {
                             "name": "ViewChild",
@@ -10544,7 +10544,7 @@
                     "type": "Array<ImageFileInfo>",
                     "optional": false,
                     "description": "",
-                    "line": 37
+                    "line": 40
                 },
                 {
                     "name": "imagesFilesFilteredCount",
@@ -10554,7 +10554,7 @@
                     "type": "number",
                     "optional": false,
                     "description": "",
-                    "line": 38
+                    "line": 41
                 },
                 {
                     "name": "loading",
@@ -10564,7 +10564,7 @@
                     "type": "ImageBrowserLoadings",
                     "optional": false,
                     "description": "",
-                    "line": 46
+                    "line": 49
                 },
                 {
                     "name": "nextPageToken",
@@ -10574,7 +10574,7 @@
                     "type": "any",
                     "optional": false,
                     "description": "",
-                    "line": 43
+                    "line": 46
                 },
                 {
                     "name": "previewOnImages",
@@ -10584,7 +10584,7 @@
                     "type": "PreviewOnImages",
                     "optional": false,
                     "description": "",
-                    "line": 35
+                    "line": 38
                 },
                 {
                     "name": "selectedImageFile",
@@ -10594,7 +10594,7 @@
                     "type": "ImageFileInfo",
                     "optional": false,
                     "description": "",
-                    "line": 34
+                    "line": 37
                 },
                 {
                     "name": "toDeleteImageFile",
@@ -10604,7 +10604,7 @@
                     "type": "ImageFileInfo",
                     "optional": false,
                     "description": "",
-                    "line": 48
+                    "line": 51
                 },
                 {
                     "name": "uploadHelpText",
@@ -10614,7 +10614,7 @@
                     "type": "string",
                     "optional": false,
                     "description": "",
-                    "line": 40
+                    "line": 43
                 }
             ],
             "methodsClass": [
@@ -10637,7 +10637,7 @@
                     "optional": false,
                     "returnType": "void",
                     "typeParameters": [],
-                    "line": 154,
+                    "line": 181,
                     "deprecated": false,
                     "deprecationMessage": "",
                     "modifierKind": [
@@ -10670,7 +10670,7 @@
                     "optional": false,
                     "returnType": "void",
                     "typeParameters": [],
-                    "line": 149,
+                    "line": 176,
                     "deprecated": false,
                     "deprecationMessage": "",
                     "modifierKind": [
@@ -10683,7 +10683,7 @@
                     "optional": false,
                     "returnType": "void",
                     "typeParameters": [],
-                    "line": 134,
+                    "line": 145,
                     "deprecated": false,
                     "deprecationMessage": "",
                     "modifierKind": [
@@ -10703,7 +10703,7 @@
                     "optional": false,
                     "returnType": "void",
                     "typeParameters": [],
-                    "line": 122,
+                    "line": 132,
                     "deprecated": false,
                     "deprecationMessage": "",
                     "modifierKind": [
@@ -10727,7 +10727,7 @@
                     "optional": false,
                     "returnType": "void",
                     "typeParameters": [],
-                    "line": 70,
+                    "line": 72,
                     "deprecated": false,
                     "deprecationMessage": ""
                 },
@@ -10744,7 +10744,7 @@
                     "optional": false,
                     "returnType": "void",
                     "typeParameters": [],
-                    "line": 165,
+                    "line": 192,
                     "deprecated": false,
                     "deprecationMessage": "",
                     "modifierKind": [
@@ -10775,7 +10775,7 @@
                     "optional": false,
                     "returnType": "void",
                     "typeParameters": [],
-                    "line": 97,
+                    "line": 106,
                     "deprecated": false,
                     "deprecationMessage": "",
                     "modifierKind": [
@@ -10812,7 +10812,7 @@
                     "optional": false,
                     "returnType": "void",
                     "typeParameters": [],
-                    "line": 160,
+                    "line": 187,
                     "deprecated": false,
                     "deprecationMessage": "",
                     "modifierKind": [
@@ -10852,7 +10852,7 @@
                     "optional": false,
                     "returnType": "void",
                     "typeParameters": [],
-                    "line": 105,
+                    "line": 114,
                     "deprecated": false,
                     "deprecationMessage": "",
                     "modifierKind": [
@@ -10889,7 +10889,7 @@
                     "optional": false,
                     "returnType": "void",
                     "typeParameters": [],
-                    "line": 117,
+                    "line": 127,
                     "deprecated": false,
                     "deprecationMessage": "",
                     "modifierKind": [
@@ -10950,7 +10950,7 @@
                     "optional": false,
                     "returnType": "void",
                     "typeParameters": [],
-                    "line": 73,
+                    "line": 74,
                     "deprecated": false,
                     "deprecationMessage": "",
                     "modifierKind": [
@@ -11004,7 +11004,7 @@
                     "optional": false,
                     "returnType": "void",
                     "typeParameters": [],
-                    "line": 173,
+                    "line": 200,
                     "deprecated": false,
                     "deprecationMessage": "",
                     "modifierKind": [
@@ -11024,7 +11024,7 @@
                     "optional": false,
                     "returnType": "void",
                     "typeParameters": [],
-                    "line": 180,
+                    "line": 207,
                     "deprecated": false,
                     "deprecationMessage": "",
                     "modifierKind": [
@@ -11052,7 +11052,7 @@
             "description": "<p>Image Browser component allows logged in user to browse, select and upload images to fire store.\nImage Browser is implemented upon Image Browser service (ImageBrowserService), that exposes observables\nto listen to any changes to the components data.</p>\n<p>So It is recommended to use ImageBrowserService and its exposed observables to work with this component.</p>\n",
             "rawdescription": "\n\nImage Browser component allows logged in user to browse, select and upload images to fire store.\nImage Browser is implemented upon Image Browser service (ImageBrowserService), that exposes observables\nto listen to any changes to the components data.\n\nSo It is recommended to use ImageBrowserService and its exposed observables to work with this component.\n",
             "type": "component",
-            "sourceCode": "import {\r\n  Component,\r\n  ElementRef,\r\n  EventEmitter,\r\n  Input,\r\n  OnInit,\r\n  Output,\r\n  ViewChild,\r\n} from '@angular/core';\r\nimport { ImageBrowserService } from '../../services/image-browser.service';\r\nimport { ImageFileInfo } from '../../interfaces/fire-storage-image.interface';\r\nimport { ImageBrowserLoaderEnum } from '../../enums/image-browser.enums';\r\nimport { ImageBrowserLoadings, PreviewOnImages } from '../../interfaces/image-browser.interface';\r\n\r\nconst PAGE_SIZE = 30;\r\n\r\n/**\r\n * Image Browser component allows logged in user to browse, select and upload images to fire store.\r\n * Image Browser is implemented upon Image Browser service (ImageBrowserService), that exposes observables \r\n * to listen to any changes to the components data.\r\n * \r\n * So It is recommended to use ImageBrowserService and its exposed observables to work with this component.\r\n */\r\n\r\n@Component({\r\n  selector: 'anu-image-browser',\r\n  templateUrl: './image-browser.component.html',\r\n  styleUrls: ['./image-browser.component.scss'],\r\n})\r\nexport class ImageBrowserComponent implements OnInit {\r\n  @ViewChild('fileInput') fileEl: ElementRef;\r\n  @Input() imageFiles: Array<ImageFileInfo> = [];\r\n\r\n  selectedImageFile: ImageFileInfo = null;\r\n  previewOnImages: PreviewOnImages = {};\r\n\r\n  imagesFilesFiltered: Array<ImageFileInfo> = [];  \r\n  imagesFilesFilteredCount: number = 0;\r\n\r\n  uploadHelpText: string = '';\r\n  choosenFileName: string = '';\r\n  choosenFile: any = null;\r\n  nextPageToken: any = null;\r\n\r\n  error: any;\r\n  loading: ImageBrowserLoadings = {};\r\n  deleteConfirmModalOpened: boolean = false;\r\n  toDeleteImageFile: ImageFileInfo = null;\r\n\r\n\r\n  constructor(private imageBrowserService: ImageBrowserService) { \r\n    this.imageBrowserService.pageSize = PAGE_SIZE;\r\n\r\n    // Subscriptions\r\n    this.imageBrowserService.imageFiles.subscribe((imageFiles => {\r\n      this.imageFiles = imageFiles;\r\n      this.nextPageToken = this.imageBrowserService.nextPageToken;\r\n      this.uploadHelpText = this.imageBrowserService.uploadValidationText;\r\n    }));\r\n\r\n    this.imageBrowserService.selected.subscribe((imageFile => {\r\n      this.selectedImageFile = imageFile;\r\n    }));\r\n\r\n    this.imageBrowserService.previewOnImages.subscribe((previewOnImages => {\r\n      this.previewOnImages = previewOnImages;\r\n    }));\r\n  }\r\n\r\n  ngOnInit(): void {    \r\n  }\r\n\r\n  private setErrorAndLoading(loaderName: ImageBrowserLoaderEnum, err: any = null, loading: boolean = true, subLoaderName: string = ''): void {\r\n    if(err) {\r\n      this.error = {code: err.code || err.status || 'UNKNOWN', message: err.message || err.text || err.toString()};\r\n    } else {\r\n      this.error = null;\r\n    }\r\n    if(subLoaderName) {\r\n      this.loading.imageFile = this.loading.imageFile || {};\r\n      this.loading.imageFile[subLoaderName] = loading;\r\n    } else {\r\n      switch(loaderName) {\r\n        case ImageBrowserLoaderEnum.imageFiles:\r\n          this.loading.imageFiles = loading;\r\n          break;\r\n        case ImageBrowserLoaderEnum.loadMore:\r\n          this.loading.loadMore = loading;\r\n          break;\r\n        case ImageBrowserLoaderEnum.uploadImageFile:\r\n          this.loading.uploadImageFile = loading;\r\n          break; \r\n      }      \r\n    }    \r\n  }\r\n  \r\n  public onImageListFilter(imageFilesFiltered: Array<object>): void {\r\n    this.imagesFilesFiltered = imageFilesFiltered as Array<ImageFileInfo>;\r\n    \r\n    setTimeout(() => {\r\n      this.imagesFilesFilteredCount = this.imagesFilesFiltered?.length || 0;\r\n    })\r\n  }\r\n\r\n  public refreshClick(event: any) {\r\n    event.preventDefault();\r\n    this.setErrorAndLoading(ImageBrowserLoaderEnum.imageFiles);\r\n    this.imageBrowserService.refreshList()\r\n    .then(() => {\r\n      this.setErrorAndLoading(ImageBrowserLoaderEnum.imageFiles, null, false);\r\n    },\r\n    (err) => {\r\n      this.setErrorAndLoading(ImageBrowserLoaderEnum.imageFiles, err, false);\r\n    });    \r\n  }\r\n\r\n  public selectClick(event: any, imageFile: ImageFileInfo): void {\r\n    event.preventDefault();\r\n    this.imageBrowserService.selectImageFile(imageFile);\r\n  }\r\n\r\n  public loadMoreClick(event: any) {\r\n    event.preventDefault();\r\n    this.setErrorAndLoading(ImageBrowserLoaderEnum.loadMore);\r\n    this.imageBrowserService.loadMore()\r\n    .then(() => {\r\n      this.setErrorAndLoading(ImageBrowserLoaderEnum.loadMore, null, false);\r\n    },\r\n    (err) => {\r\n      this.setErrorAndLoading(ImageBrowserLoaderEnum.loadMore, err, false);\r\n    }); \r\n  }\r\n\r\n  public deleteImageOkClick(): void {\r\n    this.deleteConfirmModalOpened = false;\r\n\r\n    this.setErrorAndLoading(ImageBrowserLoaderEnum.imageFile, null, true, this.toDeleteImageFile.fullPath);\r\n    this.imageBrowserService.delete(this.toDeleteImageFile)\r\n    .then(() => {\r\n      this.setErrorAndLoading(ImageBrowserLoaderEnum.imageFile, null, false, this.toDeleteImageFile.fullPath);\r\n      this.toDeleteImageFile = null;\r\n    },\r\n    (err) => {\r\n      this.setErrorAndLoading(ImageBrowserLoaderEnum.imageFile, err, false, this.toDeleteImageFile.fullPath);\r\n      this.toDeleteImageFile = null;\r\n    }); \r\n  }\r\n\r\n  public deleteImageCancelClick(): void {\r\n    this.deleteConfirmModalOpened = false;\r\n    this.toDeleteImageFile = null;\r\n  }\r\n\r\n  public deleteClick(event: any, imageFile: ImageFileInfo): void {\r\n    event.preventDefault();\r\n    this.deleteConfirmModalOpened = true;\r\n    this.toDeleteImageFile = imageFile;\r\n  }\r\n\r\n  public previewClick(event: any, imageFile: ImageFileInfo): void {\r\n    event.preventDefault();\r\n    this.imageBrowserService.previewImageFile(imageFile.fullPath)\r\n  }\r\n\r\n  public onFileChange(event: any) {\r\n    this.choosenFileName = '';\r\n    if (event.target.files.length > 0) {\r\n      this.choosenFile = event.target.files[0];\r\n      this.choosenFileName = this.choosenFile.name;            \r\n    }\r\n  }\r\n\r\n  public uploadClick(): void {\r\n    const fileInputEl = this.fileEl.nativeElement;\r\n    fileInputEl.value = '';\r\n    this.choosenFileName = '';\r\n    fileInputEl.click();\r\n  }\r\n\r\n  public uploadFileClick(event: any): void {\r\n    event.preventDefault();\r\n    if(!this.choosenFileName || !this.choosenFile) return;\r\n\r\n    this.setErrorAndLoading(ImageBrowserLoaderEnum.uploadImageFile);    \r\n      this.imageBrowserService.upload( this.choosenFileName || this.choosenFile.name, this.choosenFile)\r\n      .then((imageFile: ImageFileInfo) => {\r\n        this.imageBrowserService.selectImageFile(imageFile);\r\n        this.setErrorAndLoading(ImageBrowserLoaderEnum.uploadImageFile, null, false);\r\n      },\r\n      (err) => {\r\n        this.setErrorAndLoading(ImageBrowserLoaderEnum.uploadImageFile, err, false);\r\n      }); \r\n  }\r\n}\r\n",
+            "sourceCode": "import {\r\n  Component,\r\n  ElementRef,\r\n  EventEmitter,\r\n  Input,\r\n  OnInit,\r\n  Output,\r\n  ViewChild\r\n} from '@angular/core';\r\nimport { ImageBrowserService } from '../../services/image-browser.service';\r\nimport { ImageFileInfo } from '../../interfaces/fire-storage-image.interface';\r\nimport { ImageBrowserLoaderEnum } from '../../enums/image-browser.enums';\r\nimport {\r\n  ImageBrowserLoadings,\r\n  PreviewOnImages\r\n} from '../../interfaces/image-browser.interface';\r\n\r\nconst PAGE_SIZE = 30;\r\n\r\n/**\r\n * Image Browser component allows logged in user to browse, select and upload images to fire store.\r\n * Image Browser is implemented upon Image Browser service (ImageBrowserService), that exposes observables\r\n * to listen to any changes to the components data.\r\n *\r\n * So It is recommended to use ImageBrowserService and its exposed observables to work with this component.\r\n */\r\n\r\n@Component({\r\n  selector: 'anu-image-browser',\r\n  templateUrl: './image-browser.component.html',\r\n  styleUrls: ['./image-browser.component.scss']\r\n})\r\nexport class ImageBrowserComponent implements OnInit {\r\n  @ViewChild('fileInput') fileEl: ElementRef;\r\n  @Input() imageFiles: Array<ImageFileInfo> = [];\r\n\r\n  selectedImageFile: ImageFileInfo = null;\r\n  previewOnImages: PreviewOnImages = {};\r\n\r\n  imagesFilesFiltered: Array<ImageFileInfo> = [];\r\n  imagesFilesFilteredCount: number = 0;\r\n\r\n  uploadHelpText: string = '';\r\n  choosenFileName: string = '';\r\n  choosenFile: any = null;\r\n  nextPageToken: any = null;\r\n\r\n  error: any;\r\n  loading: ImageBrowserLoadings = {};\r\n  deleteConfirmModalOpened: boolean = false;\r\n  toDeleteImageFile: ImageFileInfo = null;\r\n\r\n  constructor(private imageBrowserService: ImageBrowserService) {\r\n    this.imageBrowserService.pageSize = PAGE_SIZE;\r\n\r\n    // Subscriptions\r\n    this.imageBrowserService.imageFiles.subscribe((imageFiles) => {\r\n      this.imageFiles = imageFiles;\r\n      this.nextPageToken = this.imageBrowserService.nextPageToken;\r\n      this.uploadHelpText = this.imageBrowserService.uploadValidationText;\r\n    });\r\n\r\n    this.imageBrowserService.selected.subscribe((imageFile) => {\r\n      this.selectedImageFile = imageFile;\r\n    });\r\n\r\n    this.imageBrowserService.previewOnImages.subscribe((previewOnImages) => {\r\n      this.previewOnImages = previewOnImages;\r\n    });\r\n  }\r\n\r\n  ngOnInit(): void {}\r\n\r\n  private setErrorAndLoading(\r\n    loaderName: ImageBrowserLoaderEnum,\r\n    err: any = null,\r\n    loading: boolean = true,\r\n    subLoaderName: string = ''\r\n  ): void {\r\n    if (err) {\r\n      this.error = {\r\n        code: err.code || err.status || 'UNKNOWN',\r\n        message: err.message || err.text || err.toString()\r\n      };\r\n    } else {\r\n      this.error = null;\r\n    }\r\n    if (subLoaderName) {\r\n      this.loading.imageFile = this.loading.imageFile || {};\r\n      this.loading.imageFile[subLoaderName] = loading;\r\n    } else {\r\n      switch (loaderName) {\r\n        case ImageBrowserLoaderEnum.imageFiles:\r\n          this.loading.imageFiles = loading;\r\n          break;\r\n        case ImageBrowserLoaderEnum.loadMore:\r\n          this.loading.loadMore = loading;\r\n          break;\r\n        case ImageBrowserLoaderEnum.uploadImageFile:\r\n          this.loading.uploadImageFile = loading;\r\n          break;\r\n      }\r\n    }\r\n  }\r\n\r\n  public onImageListFilter(imageFilesFiltered: Array<object>): void {\r\n    this.imagesFilesFiltered = imageFilesFiltered as Array<ImageFileInfo>;\r\n\r\n    setTimeout(() => {\r\n      this.imagesFilesFilteredCount = this.imagesFilesFiltered?.length || 0;\r\n    });\r\n  }\r\n\r\n  public refreshClick(event: any) {\r\n    event.preventDefault();\r\n    this.setErrorAndLoading(ImageBrowserLoaderEnum.imageFiles);\r\n    this.imageBrowserService.refreshList().then(\r\n      () => {\r\n        this.setErrorAndLoading(ImageBrowserLoaderEnum.imageFiles, null, false);\r\n      },\r\n      (err) => {\r\n        this.setErrorAndLoading(ImageBrowserLoaderEnum.imageFiles, err, false);\r\n      }\r\n    );\r\n  }\r\n\r\n  public selectClick(event: any, imageFile: ImageFileInfo): void {\r\n    event.preventDefault();\r\n    this.imageBrowserService.selectImageFile(imageFile);\r\n  }\r\n\r\n  public loadMoreClick(event: any) {\r\n    event.preventDefault();\r\n    this.setErrorAndLoading(ImageBrowserLoaderEnum.loadMore);\r\n    this.imageBrowserService.loadMore().then(\r\n      () => {\r\n        this.setErrorAndLoading(ImageBrowserLoaderEnum.loadMore, null, false);\r\n      },\r\n      (err) => {\r\n        this.setErrorAndLoading(ImageBrowserLoaderEnum.loadMore, err, false);\r\n      }\r\n    );\r\n  }\r\n\r\n  public deleteImageOkClick(): void {\r\n    this.deleteConfirmModalOpened = false;\r\n\r\n    this.setErrorAndLoading(\r\n      ImageBrowserLoaderEnum.imageFile,\r\n      null,\r\n      true,\r\n      this.toDeleteImageFile.fullPath\r\n    );\r\n    this.imageBrowserService.delete(this.toDeleteImageFile).then(\r\n      () => {\r\n        this.setErrorAndLoading(\r\n          ImageBrowserLoaderEnum.imageFile,\r\n          null,\r\n          false,\r\n          this.toDeleteImageFile.fullPath\r\n        );\r\n        this.toDeleteImageFile = null;\r\n      },\r\n      (err) => {\r\n        this.setErrorAndLoading(\r\n          ImageBrowserLoaderEnum.imageFile,\r\n          err,\r\n          false,\r\n          this.toDeleteImageFile.fullPath\r\n        );\r\n        this.toDeleteImageFile = null;\r\n      }\r\n    );\r\n  }\r\n\r\n  public deleteImageCancelClick(): void {\r\n    this.deleteConfirmModalOpened = false;\r\n    this.toDeleteImageFile = null;\r\n  }\r\n\r\n  public deleteClick(event: any, imageFile: ImageFileInfo): void {\r\n    event.preventDefault();\r\n    this.deleteConfirmModalOpened = true;\r\n    this.toDeleteImageFile = imageFile;\r\n  }\r\n\r\n  public previewClick(event: any, imageFile: ImageFileInfo): void {\r\n    event.preventDefault();\r\n    this.imageBrowserService.previewImageFile(imageFile.fullPath);\r\n  }\r\n\r\n  public onFileChange(event: any) {\r\n    this.choosenFileName = '';\r\n    if (event.target.files.length > 0) {\r\n      this.choosenFile = event.target.files[0];\r\n      this.choosenFileName = this.choosenFile.name;\r\n    }\r\n  }\r\n\r\n  public uploadClick(): void {\r\n    const fileInputEl = this.fileEl.nativeElement;\r\n    fileInputEl.value = '';\r\n    this.choosenFileName = '';\r\n    fileInputEl.click();\r\n  }\r\n\r\n  public uploadFileClick(event: any): void {\r\n    event.preventDefault();\r\n    if (!this.choosenFileName || !this.choosenFile) return;\r\n\r\n    this.setErrorAndLoading(ImageBrowserLoaderEnum.uploadImageFile);\r\n    this.imageBrowserService\r\n      .upload(this.choosenFileName || this.choosenFile.name, this.choosenFile)\r\n      .then(\r\n        (imageFile: ImageFileInfo) => {\r\n          this.imageBrowserService.selectImageFile(imageFile);\r\n          this.setErrorAndLoading(\r\n            ImageBrowserLoaderEnum.uploadImageFile,\r\n            null,\r\n            false\r\n          );\r\n        },\r\n        (err) => {\r\n          this.setErrorAndLoading(\r\n            ImageBrowserLoaderEnum.uploadImageFile,\r\n            err,\r\n            false\r\n          );\r\n        }\r\n      );\r\n  }\r\n}\r\n",
             "assetsDirs": [],
             "styleUrlsData": [
                 {
@@ -11074,7 +11074,7 @@
                         "deprecationMessage": ""
                     }
                 ],
-                "line": 48,
+                "line": 51,
                 "jsdoctags": [
                     {
                         "name": "imageBrowserService",
@@ -11091,7 +11091,7 @@
             "implements": [
                 "OnInit"
             ],
-            "templateData": "<anu-error\r\n  class=\"container\"\r\n  *ngIf=\"error\"\r\n  [code]=\"error?.code\"\r\n  [message]=\"error?.message\"\r\n></anu-error>\r\n\r\n<div class=\"row\">\r\n  <div class=\"col-sm-12 col-md-6 col-lg-6\">\r\n    <anu-card class=\"border-round shadow spacing-half relative\">\r\n      <anu-card-title>\r\n        <h3>Upload Image</h3>\r\n      </anu-card-title>\r\n      <anu-card-body>\r\n        <span *ngIf=\"uploadHelpText\"\r\n          ><small>{{ uploadHelpText }}</small></span\r\n        >\r\n        <div class=\"form-group container center\">\r\n          <input\r\n            #fileInput\r\n            id=\"file\"\r\n            type=\"file\"\r\n            class=\"\"\r\n            (change)=\"onFileChange($event)\"\r\n          />\r\n          <input\r\n            type=\"button\"\r\n            class=\"btn\"\r\n            (click)=\"uploadClick()\"\r\n            value=\"Choose file to upload...\"\r\n          />\r\n          <input\r\n            type=\"text\"\r\n            class=\"spacing-around-v-half\"\r\n            [(ngModel)]=\"choosenFileName\"\r\n            placeholder=\"No image to upload\"\r\n          />\r\n          <a\r\n            class=\"btn primary spacing-around-v-half\"\r\n            href=\"#\"\r\n            (click)=\"uploadFileClick($event)\"\r\n            title=\"Upload\"\r\n            >Upload</a\r\n          >\r\n        </div>\r\n        <anu-spinner\r\n          class=\"col-12\"\r\n          [show]=\"loading.uploadImageFile\"\r\n        ></anu-spinner>\r\n      </anu-card-body>\r\n    </anu-card>\r\n  </div>\r\n  <div class=\"col-sm-12 col-md-6 col-lg-6\">\r\n    <img\r\n      *ngIf=\"selectedImageFile\"\r\n      class=\"selected-image shadow\"\r\n      [src]=\"'getImage?imageId=' + selectedImageFile?.fullPath\"\r\n      [alt]=\"selectedImageFile?.name\"\r\n    />\r\n  </div>\r\n</div>\r\n\r\n<div class=\"row border center\">\r\n  <!-- Count -->\r\n  <strong\r\n    >{{ imagesFilesFilteredCount }} / {{ imageFiles?.length || 0 }}</strong\r\n  >\r\n  <!-- Image Files filter -->\r\n  <anu-search-box\r\n    classs=\"col-12\"\r\n    [items]=\"imageFiles\"\r\n    [keys]=\"['name']\"\r\n    (changed)=\"onImageListFilter($event)\"\r\n  ></anu-search-box>\r\n  <!-- Reload list  -->\r\n  <a class=\"spacing\" href=\"#\" (click)=\"refreshClick($event)\" title=\"Reload List\"\r\n    >⟳ Reload</a\r\n  >\r\n</div>\r\n<div class=\"row border\">\r\n  <ng-container *ngFor=\"let imgFile of imagesFilesFiltered\">\r\n    <anu-card\r\n      class=\"image-list-item border-round border col-sm-12 col-md-4 col-lg-4 relative\"\r\n      [style.background-image]=\"\r\n        previewOnImages[imgFile.fullPath]\r\n          ? 'url(\\'getImage?imageId=' + imgFile.fullPath + '\\')'\r\n          : 'none'\r\n      \"\r\n      [class.shadow]=\"imgFile.fullPath === selectedImageFile?.fullPath\"\r\n    >\r\n      <anu-card-title\r\n        class=\"spacing-half image-list-item_title accent-deep-light\"\r\n      >\r\n        {{ imgFile.name }}\r\n        <anu-spinner\r\n          class=\"col-12\"\r\n          [show]=\"\r\n            loading?.imageFile ? loading.imageFile[imgFile?.fullPath] : false\r\n          \"\r\n        ></anu-spinner>\r\n      </anu-card-title>\r\n      <anu-card-footer>\r\n        <div\r\n          class=\"row right nowrap image-list-item_controls spacing-v-half spacing-h\"\r\n        >\r\n          <a\r\n            class=\"image-list-item_control btn primary accent-deep-light\"\r\n            href=\"#\"\r\n            (click)=\"previewClick($event, imgFile)\"\r\n            *ngIf=\"!previewOnImages[imgFile.fullPath]\"\r\n            title=\"Preview\"\r\n            >👁</a\r\n          >\r\n          <a\r\n            class=\"image-list-item_control btn primary accent-deep-light\"\r\n            href=\"#\"\r\n            (click)=\"selectClick($event, imgFile)\"\r\n            *ngIf=\"imgFile.fullPath !== selectedImageFile?.fullPath\"\r\n            title=\"select\"\r\n            >✔</a\r\n          >\r\n          <a\r\n            class=\"image-list-item_control btn error accent-deep-light\"\r\n            href=\"#\"\r\n            (click)=\"deleteClick($event, imgFile)\"\r\n            title=\"delete\"\r\n            >X</a\r\n          >\r\n        </div>\r\n      </anu-card-footer>\r\n    </anu-card>\r\n  </ng-container>\r\n\r\n  <anu-card\r\n    *ngIf=\"nextPageToken\"\r\n    class=\"image-list-item border-round border spacing-half col-sm-12 col-md-4 col-lg-4 relative\"\r\n  >\r\n    <anu-card-body class=\"center center-text col-12\">\r\n      <a href=\"#\" (click)=\"loadMoreClick($event)\">Load more...</a>\r\n      <anu-spinner class=\"col-12\" [show]=\"loading.loadMore\"></anu-spinner>\r\n    </anu-card-body>\r\n  </anu-card>\r\n  <anu-spinner class=\"col-12\" [show]=\"loading.imageFiles\"></anu-spinner>\r\n</div>\r\n\r\n<anu-modal\r\n  (okClick)=\"deleteImageOkClick()\"\r\n  (cancelClick)=\"deleteImageCancelClick()\"\r\n  [cancelLabel]=\"'No'\"\r\n  [enableCancel]=\"true\"\r\n  [enableClose]=\"true\"\r\n  [enableOk]=\"true\"\r\n  [okLabel]=\"'Yes'\"\r\n  [opened]=\"deleteConfirmModalOpened\"\r\n  [modalTitle]=\"'Confirm Image Deletion'\"\r\n>\r\n  <p>This will delete the image file permanently and can not be restored.</p>\r\n  <strong>Do you want to continue?</strong>\r\n</anu-modal>\r\n"
+            "templateData": "<anu-error class=\"container\" *ngIf=\"error\" [code]=\"error?.code\" [message]=\"error?.message\"></anu-error>\r\n\r\n<div class=\"row\">\r\n  <div class=\"col-sm-12 col-md-6 col-lg-6\">\r\n    <anu-card class=\"border-round shadow spacing-half relative\">\r\n      <anu-card-title>\r\n        <h3>Upload Image</h3>\r\n      </anu-card-title>\r\n      <anu-card-body>\r\n        <span *ngIf=\"uploadHelpText\"><small>{{ uploadHelpText }}</small></span>\r\n        <div class=\"form-group container center\">\r\n          <input #fileInput id=\"file\" type=\"file\" class=\"\" (change)=\"onFileChange($event)\" />\r\n          <input type=\"button\" class=\"btn\" (click)=\"uploadClick()\" value=\"Choose file to upload...\" />\r\n          <input type=\"text\" class=\"spacing-around-v-half\" [(ngModel)]=\"choosenFileName\"\r\n            placeholder=\"No image to upload\" />\r\n          <a class=\"btn primary spacing-around-v-half\" href=\"#\" (click)=\"uploadFileClick($event)\"\r\n            title=\"Upload\">Upload</a>\r\n        </div>\r\n        <anu-spinner class=\"col-12\" [show]=\"loading.uploadImageFile\"></anu-spinner>\r\n      </anu-card-body>\r\n    </anu-card>\r\n  </div>\r\n  <div class=\"col-sm-12 col-md-6 col-lg-6\">\r\n    <img *ngIf=\"selectedImageFile\" class=\"selected-image shadow\"\r\n      [src]=\"'getImage?imageId=' + selectedImageFile?.fullPath\" [alt]=\"selectedImageFile?.name\" />\r\n  </div>\r\n</div>\r\n\r\n<div class=\"row border center\">\r\n  <!-- Count -->\r\n  <strong>{{ imagesFilesFilteredCount }} / {{ imageFiles?.length || 0 }}</strong>\r\n  <!-- Image Files filter -->\r\n  <anu-search-box classs=\"col-12\" [items]=\"imageFiles\" [keys]=\"['name']\"\r\n    (changed)=\"onImageListFilter($event)\"></anu-search-box>\r\n  <!-- Reload list  -->\r\n  <a class=\"spacing\" href=\"#\" (click)=\"refreshClick($event)\" title=\"Reload List\">⟳ Reload</a>\r\n</div>\r\n<div class=\"row border\">\r\n  <ng-container *ngFor=\"let imgFile of imagesFilesFiltered\">\r\n    <anu-card class=\"image-list-item border-round border col-sm-12 col-md-4 col-lg-4 relative\" [style.background-image]=\"\r\n        previewOnImages[imgFile.fullPath]\r\n          ? 'url(\\'getImage?imageId=' + imgFile.fullPath + '\\')'\r\n          : 'none'\r\n      \" [class.shadow]=\"imgFile.fullPath === selectedImageFile?.fullPath\">\r\n      <anu-card-title class=\"spacing-half image-list-item_title accent-deep-light\">\r\n        {{ imgFile.name }}\r\n        <anu-spinner class=\"col-12\" [show]=\"\r\n            loading?.imageFile ? loading.imageFile[imgFile?.fullPath] : false\r\n          \"></anu-spinner>\r\n      </anu-card-title>\r\n      <anu-card-footer>\r\n        <div class=\"row right nowrap image-list-item_controls spacing-v-half spacing-h\">\r\n          <a class=\"image-list-item_control btn primary accent-deep-light\" href=\"#\"\r\n            (click)=\"previewClick($event, imgFile)\" *ngIf=\"!previewOnImages[imgFile.fullPath]\" title=\"Preview\">👁</a>\r\n          <a class=\"image-list-item_control btn primary accent-deep-light\" href=\"#\"\r\n            (click)=\"selectClick($event, imgFile)\" *ngIf=\"imgFile.fullPath !== selectedImageFile?.fullPath\"\r\n            title=\"select\">✔</a>\r\n          <a class=\"image-list-item_control btn error accent-deep-light\" href=\"#\" (click)=\"deleteClick($event, imgFile)\"\r\n            title=\"delete\">X</a>\r\n        </div>\r\n      </anu-card-footer>\r\n    </anu-card>\r\n  </ng-container>\r\n\r\n  <anu-card *ngIf=\"nextPageToken\"\r\n    class=\"image-list-item border-round border spacing-half col-sm-12 col-md-4 col-lg-4 relative\">\r\n    <anu-card-body class=\"center center-text col-12\">\r\n      <a href=\"#\" (click)=\"loadMoreClick($event)\">Load more...</a>\r\n      <anu-spinner class=\"col-12\" [show]=\"loading.loadMore\"></anu-spinner>\r\n    </anu-card-body>\r\n  </anu-card>\r\n  <anu-spinner class=\"col-12\" [show]=\"loading.imageFiles\"></anu-spinner>\r\n</div>\r\n\r\n<anu-modal (okClick)=\"deleteImageOkClick()\" (cancelClick)=\"deleteImageCancelClick()\" [cancelLabel]=\"'No'\"\r\n  [enableCancel]=\"true\" [enableClose]=\"true\" [enableOk]=\"true\" [okLabel]=\"'Yes'\" [opened]=\"deleteConfirmModalOpened\"\r\n  [modalTitle]=\"'Confirm Image Deletion'\">\r\n  <p>This will delete the image file permanently and can not be restored.</p>\r\n  <strong>Do you want to continue?</strong>\r\n</anu-modal>\r\n"
         },
         {
             "name": "LoginComponent",

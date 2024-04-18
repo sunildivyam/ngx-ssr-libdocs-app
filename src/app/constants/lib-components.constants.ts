@@ -3,6 +3,7 @@
         import { AsideNavComponent } from '@annuadvent/ngx-common-ui/aside-nav';
         import { AsideNavHeaderComponent } from '@annuadvent/ngx-common-ui/aside-nav';
         import { AsideNavItemComponent } from '@annuadvent/ngx-common-ui/aside-nav';
+        import { BannersComponent } from '@annuadvent/ngx-common-ui/banners';
         import { BreadcrumbComponent } from '@annuadvent/ngx-common-ui/breadcrumb';
         import { CardBodyComponent } from '@annuadvent/ngx-common-ui/card';
         import { CardComponent } from '@annuadvent/ngx-common-ui/card';
@@ -24,6 +25,7 @@
         import { FormErrorComponent } from '@annuadvent/ngx-common-ui/reactive-form';
         import { HamburgerComponent } from '@annuadvent/ngx-common-ui/hamburger';
         import { ImageFormComponent } from '@annuadvent/ngx-common-ui/image-form';
+        import { ImageUploadComponent } from '@annuadvent/ngx-common-ui/image-upload';
         import { LinkFormComponent } from '@annuadvent/ngx-common-ui/link-form';
         import { ManageCategoriesComponent } from '@annuadvent/ngx-common-ui/categories';
         import { MenuComponent } from '@annuadvent/ngx-common-ui/menu';
@@ -85,13 +87,16 @@
         import { AddressComponent } from '@annuadvent/ngx-ecommerce/address';
         import { AddressFormComponent } from '@annuadvent/ngx-ecommerce/address';
         import { AddressListComponent } from '@annuadvent/ngx-ecommerce/address';
-        import { DeliveryInstructionFormComponent } from '@annuadvent/ngx-ecommerce/address';
+        import { CategoryThumbComponent } from '@annuadvent/ngx-ecommerce/category-thumb';
+        import { CategoryThumbListComponent } from '@annuadvent/ngx-ecommerce/category-thumb-list';
         import { ProductThumbComponent } from '@annuadvent/ngx-ecommerce/product-thumb';
+        import { ProductThumbListComponent } from '@annuadvent/ngx-ecommerce/product-thumb-list';
         export const libComponentClasses = {
     'ngx-common-ui': {
         AsideNavComponent,
     AsideNavHeaderComponent,
     AsideNavItemComponent,
+    BannersComponent,
     BreadcrumbComponent,
     CardBodyComponent,
     CardComponent,
@@ -113,6 +118,7 @@
     FormErrorComponent,
     HamburgerComponent,
     ImageFormComponent,
+    ImageUploadComponent,
     LinkFormComponent,
     ManageCategoriesComponent,
     MenuComponent,
@@ -174,7 +180,9 @@
         AddressComponent,
     AddressFormComponent,
     AddressListComponent,
-    DeliveryInstructionFormComponent,
-    ProductThumbComponent
+    CategoryThumbComponent,
+    CategoryThumbListComponent,
+    ProductThumbComponent,
+    ProductThumbListComponent
 },
 }
