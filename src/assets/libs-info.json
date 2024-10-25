@@ -117,7 +117,9 @@
 			"firebase",
 			"firebaseui",
 			"firebase-admin",
-			"firebase-functions"
+			"firebase-functions",
+			"googleapis",
+			"crypto"
 		],
 		"node": "18.17.0",
 		"npm": "9.6.7"

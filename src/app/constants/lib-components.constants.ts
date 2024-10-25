@@ -25,6 +25,7 @@
         import { FormErrorComponent } from '@annuadvent/ngx-common-ui/reactive-form';
         import { HamburgerComponent } from '@annuadvent/ngx-common-ui/hamburger';
         import { ImageFormComponent } from '@annuadvent/ngx-common-ui/image-form';
+        import { ImageSlideshowComponent } from '@annuadvent/ngx-common-ui/image-slideshow';
         import { ImageUploadComponent } from '@annuadvent/ngx-common-ui/image-upload';
         import { LinkFormComponent } from '@annuadvent/ngx-common-ui/link-form';
         import { ManageCategoriesComponent } from '@annuadvent/ngx-common-ui/categories';
@@ -87,10 +88,25 @@
         import { AddressComponent } from '@annuadvent/ngx-ecommerce/address';
         import { AddressFormComponent } from '@annuadvent/ngx-ecommerce/address';
         import { AddressListComponent } from '@annuadvent/ngx-ecommerce/address';
+        import { AppImagesComponent } from '@annuadvent/ngx-ecommerce/app-images';
+        import { CartComponent } from '@annuadvent/ngx-ecommerce/cart';
         import { CategoryThumbComponent } from '@annuadvent/ngx-ecommerce/category-thumb';
         import { CategoryThumbListComponent } from '@annuadvent/ngx-ecommerce/category-thumb-list';
+        import { ChooseProductDetailComponent } from '@annuadvent/ngx-ecommerce/product-detail';
+        import { ManageProductComponent } from '@annuadvent/ngx-ecommerce/manage-product';
+        import { ProductBasicsComponent } from '@annuadvent/ngx-ecommerce/manage-product';
+        import { ProductCategoriesComponent } from '@annuadvent/ngx-ecommerce/manage-product';
+        import { ProductDetailComponent } from '@annuadvent/ngx-ecommerce/product-detail';
+        import { ProductDispatchComponent } from '@annuadvent/ngx-ecommerce/manage-product';
+        import { ProductImagesComponent } from '@annuadvent/ngx-ecommerce/manage-product';
+        import { ProductOffersComponent } from '@annuadvent/ngx-ecommerce/manage-product';
+        import { ProductPricesComponent } from '@annuadvent/ngx-ecommerce/manage-product';
+        import { ProductPublishComponent } from '@annuadvent/ngx-ecommerce/manage-product';
+        import { ProductQuantitiesComponent } from '@annuadvent/ngx-ecommerce/manage-product';
+        import { ProductSizesComponent } from '@annuadvent/ngx-ecommerce/manage-product';
         import { ProductThumbComponent } from '@annuadvent/ngx-ecommerce/product-thumb';
         import { ProductThumbListComponent } from '@annuadvent/ngx-ecommerce/product-thumb-list';
+        import { WishlistComponent } from '@annuadvent/ngx-ecommerce/wishlist';
         export const libComponentClasses = {
     'ngx-common-ui': {
         AsideNavComponent,
@@ -118,6 +134,7 @@
     FormErrorComponent,
     HamburgerComponent,
     ImageFormComponent,
+    ImageSlideshowComponent,
     ImageUploadComponent,
     LinkFormComponent,
     ManageCategoriesComponent,
@@ -180,9 +197,24 @@
         AddressComponent,
     AddressFormComponent,
     AddressListComponent,
+    AppImagesComponent,
+    CartComponent,
     CategoryThumbComponent,
     CategoryThumbListComponent,
+    ChooseProductDetailComponent,
+    ManageProductComponent,
+    ProductBasicsComponent,
+    ProductCategoriesComponent,
+    ProductDetailComponent,
+    ProductDispatchComponent,
+    ProductImagesComponent,
+    ProductOffersComponent,
+    ProductPricesComponent,
+    ProductPublishComponent,
+    ProductQuantitiesComponent,
+    ProductSizesComponent,
     ProductThumbComponent,
-    ProductThumbListComponent
+    ProductThumbListComponent,
+    WishlistComponent
 },
 }

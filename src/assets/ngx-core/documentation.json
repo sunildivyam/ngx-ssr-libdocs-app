@@ -1,6 +1,168 @@
 {
     "pipes": [
         {
+            "name": "AppImageUrlPipe",
+            "id": "pipe-AppImageUrlPipe-80c898ed4a42272b0ff1dc89305afbbed62a5fd8c8c9f61c03239055df77fcf237a36a909beddd0321768cdd93867a43dffd568c2fe2edc6504527242ccd5b17",
+            "file": "projects/ngx-core/helpers-ecommerce/src/pipes/app-image-url.pipe.ts",
+            "type": "pipe",
+            "deprecated": false,
+            "deprecationMessage": "",
+            "description": "",
+            "rawdescription": "\n",
+            "properties": [],
+            "methods": [
+                {
+                    "name": "transform",
+                    "args": [
+                        {
+                            "name": "url",
+                            "type": "string",
+                            "deprecated": false,
+                            "deprecationMessage": ""
+                        }
+                    ],
+                    "optional": false,
+                    "returnType": "string",
+                    "typeParameters": [],
+                    "line": 7,
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "jsdoctags": [
+                        {
+                            "name": "url",
+                            "type": "string",
+                            "deprecated": false,
+                            "deprecationMessage": "",
+                            "tagName": {
+                                "text": "param"
+                            }
+                        }
+                    ]
+                }
+            ],
+            "standalone": false,
+            "ngname": "AppImageUrl",
+            "sourceCode": "import { Pipe, PipeTransform } from '@angular/core';\n\n@Pipe({\n  name: 'AppImageUrl'\n})\nexport class AppImageUrlPipe implements PipeTransform {\n  transform(url: string): string {\n    if (!url) return '';\n\n    return `/api/images/app?fileName=${url}`;\n  }\n}\n"
+        },
+        {
+            "name": "CategoryChildrenPipe",
+            "id": "pipe-CategoryChildrenPipe-631053e2d0cfbb2a4c37e77d59be24588f338fc9ab57d3c1f742d465faa5ead315ee814dbed2dade10c4c125a6ff31a9e5279c8fffca45885e562757459e9c2d",
+            "file": "projects/ngx-core/helpers-categories/src/pipes/category-children.pipe.ts",
+            "type": "pipe",
+            "deprecated": false,
+            "deprecationMessage": "",
+            "description": "",
+            "rawdescription": "\n",
+            "properties": [],
+            "methods": [
+                {
+                    "name": "transform",
+                    "args": [
+                        {
+                            "name": "category",
+                            "type": "Category",
+                            "deprecated": false,
+                            "deprecationMessage": ""
+                        },
+                        {
+                            "name": "list",
+                            "type": "Array<Category>",
+                            "deprecated": false,
+                            "deprecationMessage": ""
+                        }
+                    ],
+                    "optional": false,
+                    "returnType": "Array<Category>",
+                    "typeParameters": [],
+                    "line": 9,
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "jsdoctags": [
+                        {
+                            "name": "category",
+                            "type": "Category",
+                            "deprecated": false,
+                            "deprecationMessage": "",
+                            "tagName": {
+                                "text": "param"
+                            }
+                        },
+                        {
+                            "name": "list",
+                            "type": "Array<Category>",
+                            "deprecated": false,
+                            "deprecationMessage": "",
+                            "tagName": {
+                                "text": "param"
+                            }
+                        }
+                    ]
+                }
+            ],
+            "standalone": false,
+            "ngname": "categorychildren",
+            "sourceCode": "import { Pipe, PipeTransform } from '@angular/core';\nimport { Category } from '../classes/category.class';\nimport { filter } from 'rxjs';\n\n@Pipe({\n  name: 'categorychildren'\n})\nexport class CategoryChildrenPipe implements PipeTransform {\n  transform(category: Category, list: Array<Category>): Array<Category> {\n    if (!category || !list?.length) return [];\n\n    return list.filter((cat) => cat.parents?.includes(category.id)) || [];\n  }\n}\n"
+        },
+        {
+            "name": "CategoryImageUrlPipe",
+            "id": "pipe-CategoryImageUrlPipe-cfc4477acdd26d3f46cceadf5b535a1ce2ff0831d6ed5dcd0a811548680c4ee7c2f282661192c9a7704f1db9123e8c694450998fdffb39e87d69b61a8e5f8361",
+            "file": "projects/ngx-core/helpers-categories/src/pipes/category-image-url.pipe.ts",
+            "type": "pipe",
+            "deprecated": false,
+            "deprecationMessage": "",
+            "description": "",
+            "rawdescription": "\n",
+            "properties": [],
+            "methods": [
+                {
+                    "name": "transform",
+                    "args": [
+                        {
+                            "name": "url",
+                            "type": "string",
+                            "deprecated": false,
+                            "deprecationMessage": ""
+                        },
+                        {
+                            "name": "category",
+                            "type": "Category",
+                            "deprecated": false,
+                            "deprecationMessage": ""
+                        }
+                    ],
+                    "optional": false,
+                    "returnType": "string",
+                    "typeParameters": [],
+                    "line": 9,
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "jsdoctags": [
+                        {
+                            "name": "url",
+                            "type": "string",
+                            "deprecated": false,
+                            "deprecationMessage": "",
+                            "tagName": {
+                                "text": "param"
+                            }
+                        },
+                        {
+                            "name": "category",
+                            "type": "Category",
+                            "deprecated": false,
+                            "deprecationMessage": "",
+                            "tagName": {
+                                "text": "param"
+                            }
+                        }
+                    ]
+                }
+            ],
+            "standalone": false,
+            "ngname": "CategoryImageUrl",
+            "sourceCode": "import { Pipe, PipeTransform } from '@angular/core';\nimport { GlobalConfigService } from '@annuadvent/ngx-core/global-config';\nimport { Category } from '../classes/category.class';\n\n@Pipe({\n  name: 'CategoryImageUrl'\n})\nexport class CategoryImageUrlPipe implements PipeTransform {\n  transform(url: string, category: Category): string {\n    if (!url || !category) return '';\n\n    return `/api/images/category/${category.id}?fileName=${url}`;\n  }\n}\n"
+        },
+        {
             "name": "EnumToArrayPipe",
             "id": "pipe-EnumToArrayPipe-e35e618b06a596fd10a96c6c2b40f97d2e7094f1dc7f1e0f847e7737fa90895246e73bb19438102bf2667b22ab8fd0d182358ce047ee06fe92807e611aaca4f9",
             "file": "projects/ngx-core/utils/src/pipes/enum-to-array.pipe.ts",
@@ -45,67 +207,6 @@
             "sourceCode": "import { Pipe, PipeTransform } from '@angular/core';\n\n@Pipe({\n  name: 'enumToArray',\n})\nexport class EnumToArrayPipe implements PipeTransform {\n  transform(enumValue: any): string[] | undefined {\n    if (!enumValue) {\n      return undefined; // Handle case when input is undefined or null\n    }\n\n    // Handle both string and numeric enums (assuming enum values are unique)\n    const enumKeys =\n      typeof enumValue[0] === 'string'\n        ? Object.keys(enumValue)\n        : Object.values(enumValue);\n\n    return enumKeys.map((key) => {\n      // Cast key to string to prevent potential arithmetic operations on numeric keys\n      return enumValue[String(key)]; // Extract key-value pairs\n    });\n  }\n}\n"
         },
         {
-            "name": "FlatchildrenPipe",
-            "id": "pipe-FlatchildrenPipe-bd7cdc1d6d78eadd1d2cf0bd0d774bff9b899b3cf031d628f8653f036dddc94f133d8a15e57c72daeaa8c185f6d3b1dbad9460b219c0cc96c31a395caa845623",
-            "file": "projects/ngx-core/helpers-categories/src/pipes/flatchildren.pipe.ts",
-            "type": "pipe",
-            "deprecated": false,
-            "deprecationMessage": "",
-            "description": "",
-            "rawdescription": "\n",
-            "properties": [],
-            "methods": [
-                {
-                    "name": "transform",
-                    "args": [
-                        {
-                            "name": "value",
-                            "type": "",
-                            "deprecated": false,
-                            "deprecationMessage": ""
-                        },
-                        {
-                            "name": "args",
-                            "type": "[]",
-                            "deprecated": false,
-                            "deprecationMessage": "",
-                            "dotDotDotToken": true
-                        }
-                    ],
-                    "optional": false,
-                    "returnType": "",
-                    "typeParameters": [],
-                    "line": 8,
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "jsdoctags": [
-                        {
-                            "name": "value",
-                            "type": "",
-                            "deprecated": false,
-                            "deprecationMessage": "",
-                            "tagName": {
-                                "text": "param"
-                            }
-                        },
-                        {
-                            "name": "args",
-                            "type": "[]",
-                            "deprecated": false,
-                            "deprecationMessage": "",
-                            "dotDotDotToken": true,
-                            "tagName": {
-                                "text": "param"
-                            }
-                        }
-                    ]
-                }
-            ],
-            "standalone": false,
-            "ngname": "flatchildren",
-            "sourceCode": "import { Pipe, PipeTransform } from '@angular/core';\n\n@Pipe({\n  name: 'flatchildren'\n})\nexport class FlatchildrenPipe implements PipeTransform {\n\n  transform(value: unknown, ...args: unknown[]): unknown {\n    return null;\n  }\n\n}\n"
-        },
-        {
             "name": "ObjectToArrayPipe",
             "id": "pipe-ObjectToArrayPipe-caa7f75873bc0177b1a2405b8783fbe182b4f7bea2e17af632ecb3e03aff9ec30ed66f6d84ee34fa6d44d6cd59fe3d4adac6ee4ac1a0042db8711bb05aefe60b",
             "file": "projects/ngx-core/utils/src/pipes/object-to-array.pipe.ts",
@@ -148,6 +249,139 @@
             "standalone": false,
             "ngname": "objectToArray",
             "sourceCode": "import { Pipe, PipeTransform } from '@angular/core';\n\n@Pipe({\n  name: 'objectToArray',\n})\nexport class ObjectToArrayPipe implements PipeTransform {\n  transform(objectValue: any): Array<any> | undefined {\n    if (!objectValue) {\n      return undefined; // Handle case when input is undefined or null\n    }\n\n    if (!(objectValue instanceof Object)) {\n      throw new Error('Can not convert non object value to array.');\n    }\n\n    return Object.keys(objectValue).map((key) => ({\n      key,\n      value: objectValue[key],\n    }));\n  }\n}\n"
+        },
+        {
+            "name": "ProductImageUrlPipe",
+            "id": "pipe-ProductImageUrlPipe-3f88ea174b0f7cf0483bea765c7d6a6a7f669806f9c7626ddb6e3ff5904c8607fbab2208e26e39cde3d95909c9ba09cdedf4495d176b2232dca9565df94d3e43",
+            "file": "projects/ngx-core/helpers-ecommerce/src/pipes/product-image-url.pipe.ts",
+            "type": "pipe",
+            "deprecated": false,
+            "deprecationMessage": "",
+            "description": "",
+            "rawdescription": "\n",
+            "properties": [],
+            "methods": [
+                {
+                    "name": "transform",
+                    "args": [
+                        {
+                            "name": "url",
+                            "type": "string",
+                            "deprecated": false,
+                            "deprecationMessage": ""
+                        },
+                        {
+                            "name": "product",
+                            "type": "Product",
+                            "deprecated": false,
+                            "deprecationMessage": ""
+                        },
+                        {
+                            "name": "size",
+                            "type": "string",
+                            "deprecated": false,
+                            "deprecationMessage": ""
+                        }
+                    ],
+                    "optional": false,
+                    "returnType": "string",
+                    "typeParameters": [],
+                    "line": 8,
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "jsdoctags": [
+                        {
+                            "name": "url",
+                            "type": "string",
+                            "deprecated": false,
+                            "deprecationMessage": "",
+                            "tagName": {
+                                "text": "param"
+                            }
+                        },
+                        {
+                            "name": "product",
+                            "type": "Product",
+                            "deprecated": false,
+                            "deprecationMessage": "",
+                            "tagName": {
+                                "text": "param"
+                            }
+                        },
+                        {
+                            "name": "size",
+                            "type": "string",
+                            "deprecated": false,
+                            "deprecationMessage": "",
+                            "tagName": {
+                                "text": "param"
+                            }
+                        }
+                    ]
+                }
+            ],
+            "standalone": false,
+            "ngname": "ProductImageUrl",
+            "sourceCode": "import { Pipe, PipeTransform } from '@angular/core';\nimport { Product } from '../classes/product.class';\n\n@Pipe({\n  name: 'ProductImageUrl'\n})\nexport class ProductImageUrlPipe implements PipeTransform {\n  transform(url: string, product: Product, size: string): string {\n    if (!url || !product) return '';\n\n    return `/api/images/product/${product.id}?fileName=${url}${\n      size ? '&size=' + size : ''\n    }`;\n  }\n}\n"
+        },
+        {
+            "name": "SellingPricePipe",
+            "id": "pipe-SellingPricePipe-c0b4b999d5f7d3f662b595f860b9bfe219d68e47d67a362df87401f438c95e7c56c2354e3e3b01cfb2955c4fbde78c1a868e77b57fcb8c161e6cfc18b18061f2",
+            "file": "projects/ngx-core/helpers-ecommerce/src/pipes/selling-price.pipe.ts",
+            "type": "pipe",
+            "deprecated": false,
+            "deprecationMessage": "",
+            "description": "",
+            "rawdescription": "\n",
+            "properties": [],
+            "methods": [
+                {
+                    "name": "transform",
+                    "args": [
+                        {
+                            "name": "mrp",
+                            "type": "number",
+                            "deprecated": false,
+                            "deprecationMessage": ""
+                        },
+                        {
+                            "name": "discount",
+                            "type": "number",
+                            "deprecated": false,
+                            "deprecationMessage": ""
+                        }
+                    ],
+                    "optional": false,
+                    "returnType": "number",
+                    "typeParameters": [],
+                    "line": 7,
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "jsdoctags": [
+                        {
+                            "name": "mrp",
+                            "type": "number",
+                            "deprecated": false,
+                            "deprecationMessage": "",
+                            "tagName": {
+                                "text": "param"
+                            }
+                        },
+                        {
+                            "name": "discount",
+                            "type": "number",
+                            "deprecated": false,
+                            "deprecationMessage": "",
+                            "tagName": {
+                                "text": "param"
+                            }
+                        }
+                    ]
+                }
+            ],
+            "standalone": false,
+            "ngname": "sellingprice",
+            "sourceCode": "import { Pipe, PipeTransform } from '@angular/core';\n\n@Pipe({\n  name: 'sellingprice'\n})\nexport class SellingPricePipe implements PipeTransform {\n  transform(mrp: number, discount: number): number {\n    if (!mrp) return 0;\n    if (discount <= 0) return mrp;\n\n    return Math.round(mrp - (discount * mrp) / 100);\n  }\n}\n"
         }
     ],
     "interfaces": [
@@ -363,6 +597,66 @@
             "extends": []
         },
         {
+            "name": "CartProducts",
+            "id": "interface-CartProducts-653997374f24976aab4f886e8bd544822e1bf35a17165bcd4dbafe5ba66f45e18c2b98f6819ce33bff781c4a27b0ad28be77618496f5923422bb854ec5e744d0",
+            "file": "projects/ngx-core/helpers-ecommerce/src/interfaces/cart-products.interface.ts",
+            "deprecated": false,
+            "deprecationMessage": "",
+            "type": "interface",
+            "sourceCode": "import { Product } from '../classes/product.class';\r\n\r\nexport interface CartProducts {\r\n  [key: string]: Product;\r\n}\r\n",
+            "properties": [],
+            "indexSignatures": [
+                {
+                    "id": "index-declaration-653997374f24976aab4f886e8bd544822e1bf35a17165bcd4dbafe5ba66f45e18c2b98f6819ce33bff781c4a27b0ad28be77618496f5923422bb854ec5e744d0",
+                    "args": [
+                        {
+                            "name": "key",
+                            "type": "string",
+                            "deprecated": false,
+                            "deprecationMessage": ""
+                        }
+                    ],
+                    "returnType": "Product",
+                    "line": 3,
+                    "deprecated": false,
+                    "deprecationMessage": ""
+                }
+            ],
+            "kind": 181,
+            "methods": [],
+            "extends": []
+        },
+        {
+            "name": "CatsProducts",
+            "id": "interface-CatsProducts-26844594cfaf3b7b81235517335f5fdcfc431a94d46dd922948399b625075dde251c37c123faccf8c44d1563cb219a2c51d0194bd91022d55928642c8d5294fc",
+            "file": "projects/ngx-core/helpers-ecommerce/src/services/product-query.service.ts",
+            "deprecated": false,
+            "deprecationMessage": "",
+            "type": "interface",
+            "sourceCode": "import { HttpClient } from '@angular/common/http';\nimport { Inject, Injectable } from '@angular/core';\nimport { Product } from '@annuadvent/ngx-core/helpers-ecommerce';\nimport { BehaviorSubject, lastValueFrom } from 'rxjs';\n\ninterface CatsProducts {\n  [key: string]: Array<Product>;\n}\n\n@Injectable({\n  providedIn: 'root'\n})\nexport class ProductQueryService {\n  // All products cache\n  private $liveProducts = new BehaviorSubject<Array<Product>>([]);\n  // Categories products cache\n  private $liveCatsProducts = new BehaviorSubject<CatsProducts>(null);\n\n  constructor(\n    private http: HttpClient,\n    @Inject('API_URLS') private API_URLS: any\n  ) {}\n\n  private addToCache(products: Array<Product>): void {\n    const pIds = this.$liveProducts.value.map((p) => p.id);\n    const toAddPs = products.filter((p) => !pIds.includes(p.id));\n\n    this.$liveProducts.next([...this.$liveProducts.value, ...toAddPs]);\n  }\n\n  public async getProductsByCategories(\n    categoryIds: Array<string>,\n    force: boolean = false\n  ): Promise<Array<Product>> {\n    // get from cache\n    const liveCatsPs =\n      this.$liveCatsProducts.value &&\n      this.$liveCatsProducts.value[categoryIds.join('-')];\n\n    if (!force && liveCatsPs) {\n      return liveCatsPs;\n    }\n\n    try {\n      const productR: any = await lastValueFrom(\n        this.http.get(\n          `${this.API_URLS.PRODUCTS.LIST}?categoryIds=${categoryIds}`\n        )\n      );\n\n      const products = productR.map((p) => new Product(p));\n\n      if (products?.length) {\n        this.addToCache(products);\n        this.$liveCatsProducts.next({\n          ...(this.$liveCatsProducts.value || {}),\n          [categoryIds.join('-')]: [...products]\n        });\n        return products;\n      } else {\n        return null;\n      }\n    } catch (error: any) {\n      throw error;\n    }\n  }\n\n  public async getProduct(\n    id: string,\n    force: boolean = false\n  ): Promise<Product> {\n    // get from cache\n    const p = this.$liveProducts.value.find((p) => p.id === id);\n\n    if (!force && p) {\n      return p;\n    }\n\n    try {\n      const productR: any = await lastValueFrom(\n        this.http.get(`${this.API_URLS.PRODUCTS.LIST}/${id}`)\n      );\n\n      const product = new Product(productR);\n\n      this.addToCache([product]);\n\n      return product;\n    } catch (error: any) {\n      throw error;\n    }\n  }\n\n  public async getProductsByIds(\n    ids: Array<string>,\n    force: boolean = false\n  ): Promise<Array<Product>> {\n    // get from cache\n    let pCache = [];\n    let notFoundIds = [];\n\n    if (!force && this.$liveProducts.value?.length) {\n      this.$liveProducts.value.forEach((p) => {\n        if (ids.includes(p.id)) {\n          pCache.push(p);\n        } else {\n          notFoundIds.push(p.id);\n        }\n      });\n\n      if (!notFoundIds.length) {\n        return pCache;\n      }\n    }\n\n    try {\n      const productR: any = await lastValueFrom(\n        this.http.get(`${this.API_URLS.PRODUCTS.LIST}?ids=${notFoundIds}`)\n      );\n\n      const products = productR.map((p) => new Product(p));\n\n      this.addToCache(products);\n      return [...products, ...pCache];\n    } catch (error: any) {\n      throw error;\n    }\n  }\n}\n",
+            "properties": [],
+            "indexSignatures": [
+                {
+                    "id": "index-declaration-26844594cfaf3b7b81235517335f5fdcfc431a94d46dd922948399b625075dde251c37c123faccf8c44d1563cb219a2c51d0194bd91022d55928642c8d5294fc",
+                    "args": [
+                        {
+                            "name": "key",
+                            "type": "string",
+                            "deprecated": false,
+                            "deprecationMessage": ""
+                        }
+                    ],
+                    "returnType": "Array<Product>",
+                    "line": 6,
+                    "deprecated": false,
+                    "deprecationMessage": ""
+                }
+            ],
+            "kind": 181,
+            "methods": [],
+            "extends": []
+        },
+        {
             "name": "FormControlValue",
             "id": "interface-FormControlValue-ac1e03d2562b7841f78160b0589cc56ea15a448ce40ad4d5a43c79cc9da65f320295c23d1b6eb92e8779905d257cfa9b2adec0abb39d2e4ef5585d13a9878908",
             "file": "projects/ngx-core/helpers-forms/src/interfaces/control-value.interface.ts",
@@ -401,6 +695,138 @@
             ],
             "indexSignatures": [],
             "kind": 171,
+            "methods": [],
+            "extends": []
+        },
+        {
+            "name": "ImageDims",
+            "id": "interface-ImageDims-2ab8c3ae396152e3da0d3a27b80c08e5f843ebbc4707ac3fc44fba6da5fe747cd31263abeea2d7e9e3cf311c5f35f4df00b533763780cd75df3f0bc7443d7be8",
+            "file": "projects/ngx-core/helpers-forms/src/interfaces/image-dims.interface.ts",
+            "deprecated": false,
+            "deprecationMessage": "",
+            "type": "interface",
+            "sourceCode": "export interface ImageDims {\r\n  width: number;\r\n  height: number;\r\n  size: number; // size in Kbs\r\n}\r\n",
+            "properties": [
+                {
+                    "name": "height",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "number",
+                    "optional": false,
+                    "description": "",
+                    "line": 3
+                },
+                {
+                    "name": "size",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "number",
+                    "optional": false,
+                    "description": "",
+                    "line": 4
+                },
+                {
+                    "name": "width",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "number",
+                    "optional": false,
+                    "description": "",
+                    "line": 2
+                }
+            ],
+            "indexSignatures": [],
+            "kind": 171,
+            "methods": [],
+            "extends": []
+        },
+        {
+            "name": "Offer",
+            "id": "interface-Offer-23dff230f4569acd7181b3506ad940bdd6b1379499320ccd01dc814c8ae4e9ec0ce4235b2579185eac3be4293cbeb67fe7731cdea96d1950564691be650ab029",
+            "file": "projects/ngx-core/helpers-ecommerce/src/interfaces/offer.interface.ts",
+            "deprecated": false,
+            "deprecationMessage": "",
+            "type": "interface",
+            "sourceCode": "export interface Offer {\r\n  [key: string]: number;\r\n}\r\n",
+            "properties": [],
+            "indexSignatures": [
+                {
+                    "id": "index-declaration-23dff230f4569acd7181b3506ad940bdd6b1379499320ccd01dc814c8ae4e9ec0ce4235b2579185eac3be4293cbeb67fe7731cdea96d1950564691be650ab029",
+                    "args": [
+                        {
+                            "name": "key",
+                            "type": "string",
+                            "deprecated": false,
+                            "deprecationMessage": ""
+                        }
+                    ],
+                    "returnType": "number",
+                    "line": 1,
+                    "deprecated": false,
+                    "deprecationMessage": ""
+                }
+            ],
+            "kind": 181,
+            "methods": [],
+            "extends": []
+        },
+        {
+            "name": "Price",
+            "id": "interface-Price-a4977b7a024a94f1bb07265f2117ea683de0c89e9cac19e94be9ae5d6d46517418e41cbe01b2967eb778daf6f28b7c1bfcaf743b55299df7e68873e9b460ef38",
+            "file": "projects/ngx-core/helpers-ecommerce/src/interfaces/price.interface.ts",
+            "deprecated": false,
+            "deprecationMessage": "",
+            "type": "interface",
+            "sourceCode": "export interface Price {\r\n  [key: string]: number;\r\n}\r\n",
+            "properties": [],
+            "indexSignatures": [
+                {
+                    "id": "index-declaration-a4977b7a024a94f1bb07265f2117ea683de0c89e9cac19e94be9ae5d6d46517418e41cbe01b2967eb778daf6f28b7c1bfcaf743b55299df7e68873e9b460ef38",
+                    "args": [
+                        {
+                            "name": "key",
+                            "type": "string",
+                            "deprecated": false,
+                            "deprecationMessage": ""
+                        }
+                    ],
+                    "returnType": "number",
+                    "line": 1,
+                    "deprecated": false,
+                    "deprecationMessage": ""
+                }
+            ],
+            "kind": 181,
+            "methods": [],
+            "extends": []
+        },
+        {
+            "name": "Qty",
+            "id": "interface-Qty-ed2c387f9a98ef7841ec0ff87e9980aee46840d78983afaad96106f968b484a0b9c394b02634d74e78534e0ada30556406b68649196a976a13be0e6e922a3981",
+            "file": "projects/ngx-core/helpers-ecommerce/src/interfaces/qty.interface.ts",
+            "deprecated": false,
+            "deprecationMessage": "",
+            "type": "interface",
+            "sourceCode": "export interface Qty {\r\n  [key: string]: number;\r\n}\r\n",
+            "properties": [],
+            "indexSignatures": [
+                {
+                    "id": "index-declaration-ed2c387f9a98ef7841ec0ff87e9980aee46840d78983afaad96106f968b484a0b9c394b02634d74e78534e0ada30556406b68649196a976a13be0e6e922a3981",
+                    "args": [
+                        {
+                            "name": "key",
+                            "type": "string",
+                            "deprecated": false,
+                            "deprecationMessage": ""
+                        }
+                    ],
+                    "returnType": "number",
+                    "line": 1,
+                    "deprecated": false,
+                    "deprecationMessage": ""
+                }
+            ],
+            "kind": 181,
             "methods": [],
             "extends": []
         }
@@ -603,6 +1029,121 @@
             "type": "injectable"
         },
         {
+            "name": "CategoriesQueryService",
+            "id": "injectable-CategoriesQueryService-6cfce6446a5f2dc2418fa0b61eec14367a3b19e871fd28ef2579ad6bdcf73570343cacbd3e1549bdad18999cd2f5fcc4c2da21f94da4128cd38f06c2b4d8b010",
+            "file": "projects/ngx-core/helpers-categories/src/services/categories-query.service.ts",
+            "properties": [
+                {
+                    "name": "$liveCategories",
+                    "defaultValue": "new BehaviorSubject<Array<Category>>([])",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 10,
+                    "modifierKind": [
+                        123
+                    ]
+                }
+            ],
+            "methods": [
+                {
+                    "name": "getCategories",
+                    "args": [
+                        {
+                            "name": "force",
+                            "type": "boolean",
+                            "deprecated": false,
+                            "deprecationMessage": "",
+                            "defaultValue": "false"
+                        }
+                    ],
+                    "optional": false,
+                    "returnType": "Promise<Array<Category>>",
+                    "typeParameters": [],
+                    "line": 21,
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "modifierKind": [
+                        125,
+                        134
+                    ],
+                    "jsdoctags": [
+                        {
+                            "name": "force",
+                            "type": "boolean",
+                            "deprecated": false,
+                            "deprecationMessage": "",
+                            "defaultValue": "false",
+                            "tagName": {
+                                "text": "param"
+                            }
+                        }
+                    ]
+                }
+            ],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "description": "",
+            "rawdescription": "\n",
+            "sourceCode": "import { HttpClient } from '@angular/common/http';\nimport { Inject, Injectable } from '@angular/core';\nimport { Category } from '@annuadvent/ngx-core/helpers-categories';\nimport { BehaviorSubject, Observable, lastValueFrom } from 'rxjs';\n\n@Injectable({\n  providedIn: 'root'\n})\nexport class CategoriesQueryService {\n  private $liveCategories = new BehaviorSubject<Array<Category>>([]);\n\n  constructor(\n    private http: HttpClient,\n    @Inject('API_URLS') private API_URLS: any\n  ) {}\n\n  public get liveCategories(): Observable<Array<Category>> {\n    return this.$liveCategories.asObservable();\n  }\n\n  public async getCategories(force: boolean = false): Promise<Array<Category>> {\n    // get from database\n    if (!force && this.$liveCategories.value?.length) {\n      return this.$liveCategories.value;\n    }\n\n    try {\n      const categoryR: any = await lastValueFrom(\n        this.http.get(`${this.API_URLS.CATEGORIES.LIST}`)\n      );\n\n      const categories = categoryR.map((cat) => new Category(cat));\n\n      this.$liveCategories.next(categories);\n      return categories;\n    } catch (error: any) {\n      this.$liveCategories.next([]);\n      throw error;\n    }\n  }\n}\n",
+            "constructorObj": {
+                "name": "constructor",
+                "description": "",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "args": [
+                    {
+                        "name": "http",
+                        "type": "HttpClient",
+                        "deprecated": false,
+                        "deprecationMessage": ""
+                    },
+                    {
+                        "name": "API_URLS",
+                        "type": "any",
+                        "deprecated": false,
+                        "deprecationMessage": ""
+                    }
+                ],
+                "line": 10,
+                "jsdoctags": [
+                    {
+                        "name": "http",
+                        "type": "HttpClient",
+                        "deprecated": false,
+                        "deprecationMessage": "",
+                        "tagName": {
+                            "text": "param"
+                        }
+                    },
+                    {
+                        "name": "API_URLS",
+                        "type": "any",
+                        "deprecated": false,
+                        "deprecationMessage": "",
+                        "tagName": {
+                            "text": "param"
+                        }
+                    }
+                ]
+            },
+            "accessors": {
+                "liveCategories": {
+                    "name": "liveCategories",
+                    "getSignature": {
+                        "name": "liveCategories",
+                        "type": "",
+                        "returnType": "Observable<Array<Category>>",
+                        "line": 17
+                    }
+                }
+            },
+            "extends": [],
+            "type": "injectable"
+        },
+        {
             "name": "CategoriesUtilsService",
             "id": "injectable-CategoriesUtilsService-93a9c15d910b76101aac501bd0d712fa95f698223a3b6810b219d24f70b9b25e118f0c902d01ba44b22fee9c949e6c9bae827125cf19361e9e1d0cc8170f1bdc",
             "file": "projects/ngx-core/helpers-categories/src/services/categories-utils.service.ts",
@@ -626,7 +1167,7 @@
         },
         {
             "name": "FormConfigService",
-            "id": "injectable-FormConfigService-226c32fb753e1d18555f812d1da48fb4f72f9b3cdecf96ce0ba89417cc61bb0251bf46a65181894f7ebbc1aea2f5055a5b09d435426aa7b931d307a923332af9",
+            "id": "injectable-FormConfigService-34dfc06be220462fe5510cc06719fab7eca2fe23331a529a5486e2ffacb10c0d3ed9ef5521460fb1fb1366ae9348ee21136ac92c2f6aada2a78fbe2984ffe76e",
             "file": "projects/ngx-core/helpers-forms/src/services/form-config.service.ts",
             "properties": [
                 {
@@ -780,7 +1321,7 @@
                     "optional": false,
                     "returnType": "void",
                     "typeParameters": [],
-                    "line": 214,
+                    "line": 218,
                     "deprecated": false,
                     "deprecationMessage": "",
                     "modifierKind": [
@@ -820,7 +1361,7 @@
                     "optional": false,
                     "returnType": "any",
                     "typeParameters": [],
-                    "line": 123,
+                    "line": 127,
                     "deprecated": false,
                     "deprecationMessage": "",
                     "modifierKind": [
@@ -882,7 +1423,7 @@
                     "optional": false,
                     "returnType": "ValidationErrors",
                     "typeParameters": [],
-                    "line": 181,
+                    "line": 185,
                     "deprecated": false,
                     "deprecationMessage": "",
                     "modifierKind": [
@@ -913,7 +1454,7 @@
                     "optional": false,
                     "returnType": "any",
                     "typeParameters": [],
-                    "line": 156,
+                    "line": 160,
                     "deprecated": false,
                     "deprecationMessage": "",
                     "modifierKind": [
@@ -950,7 +1491,7 @@
                     "optional": false,
                     "returnType": "FormGroup",
                     "typeParameters": [],
-                    "line": 226,
+                    "line": 230,
                     "deprecated": false,
                     "deprecationMessage": "",
                     "modifierKind": [
@@ -990,7 +1531,7 @@
                     "optional": false,
                     "returnType": "Array<AsyncValidatorFn>",
                     "typeParameters": [],
-                    "line": 175,
+                    "line": 179,
                     "deprecated": false,
                     "deprecationMessage": "",
                     "modifierKind": [
@@ -1058,7 +1599,7 @@
                     "optional": false,
                     "returnType": "void",
                     "typeParameters": [],
-                    "line": 282,
+                    "line": 286,
                     "deprecated": false,
                     "deprecationMessage": "",
                     "modifierKind": [
@@ -1098,7 +1639,7 @@
                     "optional": false,
                     "returnType": "void",
                     "typeParameters": [],
-                    "line": 319,
+                    "line": 323,
                     "deprecated": false,
                     "deprecationMessage": "",
                     "modifierKind": [
@@ -1129,7 +1670,7 @@
                     "optional": false,
                     "returnType": "void",
                     "typeParameters": [],
-                    "line": 202,
+                    "line": 206,
                     "deprecated": false,
                     "deprecationMessage": "",
                     "modifierKind": [
@@ -1160,7 +1701,7 @@
                     "optional": false,
                     "returnType": "any",
                     "typeParameters": [],
-                    "line": 107,
+                    "line": 111,
                     "deprecated": false,
                     "deprecationMessage": "",
                     "modifierKind": [
@@ -1183,7 +1724,7 @@
             "deprecationMessage": "",
             "description": "",
             "rawdescription": "\n",
-            "sourceCode": "import { Injectable, Injector, inject } from '@angular/core';\nimport {\n  AsyncValidatorFn,\n  FormBuilder,\n  FormGroup,\n  ValidationErrors,\n  ValidatorFn,\n  Validators\n} from '@angular/forms';\nimport { FormConfigGroup } from '../classes/config-group.class';\nimport { FormConfigParameter } from '../classes/config-parameter.class';\nimport * as syncValidators from '../sync-validators';\nimport * as asyncValidators from '../async-validators';\nimport { SyncConfigValidator } from '../classes/sync-config-validator.class';\nimport { AsyncConfigValidator } from '../classes/async-config-validator.class';\nimport { UpdateOnEnum } from '../enums/updateon.enum';\nimport { BehaviorSubject, Observable, Subscription } from 'rxjs';\nimport { FormControlValue } from '../interfaces/control-value.interface';\n\n@Injectable()\nexport class FormConfigService {\n  private injectedAsyncValidators = {};\n  private params: FormConfigGroup = null;\n  private $form = new BehaviorSubject<FormGroup>(null);\n  private $controls = new BehaviorSubject<any>(null);\n  private $valueChanges = new BehaviorSubject<any>(null);\n  private $controlValueChanges = new BehaviorSubject<FormControlValue>(null);\n  private $statusChanges = new BehaviorSubject<ValidationErrors>(null);\n\n  private valueChangesSubscription: Subscription = null;\n  private statusChangesSubscription: Subscription = null;\n  private controlValuesSubscriptions = {};\n\n  constructor(private fb: FormBuilder) {\n    asyncValidators &&\n      Object.keys(asyncValidators).forEach((key) => {\n        this.injectedAsyncValidators[key] = inject(asyncValidators[key]);\n      });\n  }\n\n  public get form(): Observable<FormGroup> {\n    return this.$form.asObservable();\n  }\n\n  public get controls(): Observable<any> {\n    return this.$controls.asObservable();\n  }\n\n  public get valueChanges(): Observable<any> {\n    return this.$valueChanges.asObservable();\n  }\n\n  public get controlValueChanges(): Observable<FormControlValue> {\n    return this.$controlValueChanges.asObservable();\n  }\n\n  public get statusChanges(): Observable<ValidationErrors> {\n    return this.$statusChanges.asObservable();\n  }\n\n  private getSyncValidators(\n    sVlds: Array<SyncConfigValidator>\n  ): Array<ValidatorFn> {\n    return (\n      sVlds?.map((vd) => {\n        let vld;\n        switch (vd.name) {\n          case 'required':\n          case 'email':\n            vld = Validators[vd.name];\n            break;\n          case 'min':\n          case 'max':\n          case 'minLength':\n          case 'maxLength':\n            vld = Validators[vd.name](vd.params[0]);\n            break;\n          default:\n            vld = syncValidators[vd.name];\n            break;\n        }\n\n        if (!vld) {\n          throw new Error(`${vd.name} validator does not exist.`);\n        }\n\n        return vld;\n      }) || []\n    );\n  }\n\n  private getAsyncValidators(\n    sVlds: Array<AsyncConfigValidator>\n  ): Array<AsyncValidatorFn> {\n    return (\n      sVlds?.map((vd) => {\n        const asyncValidator = this.injectedAsyncValidators[vd.name];\n        if (!asyncValidator) {\n          throw new Error(`${vd.name} validator does not exist.`);\n        }\n        asyncValidator['url'] = vd.url;\n        return asyncValidator.validate.bind(asyncValidator);\n      }) || []\n    );\n  }\n\n  private removeControlValueChangeSubscriptions(controls): any {\n    if (!controls) return null;\n\n    Object.keys(controls).forEach((key) => {\n      const control = controls[key];\n      // group\n      if (control.controls) {\n        control.groupControl?.unsubscribe();\n        this.removeControlValueChangeSubscriptions(control.controls);\n      } else {\n        // single control\n        control?.unsubscribe();\n      }\n    });\n  }\n\n  private addControlValueChangeSubscriptions(controls: any): any {\n    if (!controls) return null;\n    const subscriptions = {};\n\n    Object.keys(controls).forEach((key) => {\n      const control = controls[key];\n      // group\n      if (control.controls) {\n        subscriptions[key] = {\n          groupControl: control.groupControl.valueChanges.subscribe((value) =>\n            this.$controlValueChanges.next({\n              key,\n              value,\n              control: control.groupControl\n            })\n          ),\n          controls: this.addControlValueChangeSubscriptions(control.controls)\n        };\n      } else {\n        // single control\n        subscriptions[key] = control.valueChanges.subscribe((value) =>\n          this.$controlValueChanges.next({\n            key,\n            value,\n            control\n          })\n        );\n      }\n    });\n\n    return subscriptions;\n  }\n\n  private getControls(form: FormGroup): any {\n    if (!form?.controls) return null;\n    const controls = {};\n\n    Object.keys(form.controls).forEach((key) => {\n      const control = form.controls[key];\n      if (control['controls']) {\n        controls[key] = {\n          groupControl: form.get(key),\n          controls: this.getControls(control as FormGroup)\n        };\n      } else {\n        controls[key] = form.get(key);\n      }\n    });\n\n    return controls;\n  }\n\n  private getParamAsyncValidators(\n    cParam: FormConfigParameter\n  ): Array<AsyncValidatorFn> {\n    return this.getAsyncValidators(cParam.asyncValidators);\n  }\n\n  private getControlErrors(controls): ValidationErrors {\n    let errors = null;\n\n    Object.keys(controls).forEach((key) => {\n      const control = controls[key];\n      if (control.controls) {\n        errors = {\n          ...(errors || {}),\n          ...(this.getControlErrors(control.controls) || {})\n        };\n      } else {\n        const controlErrors = controls[key].errors;\n        if (controlErrors) {\n          errors = { ...(errors || {}), controlErrors };\n        }\n      }\n    });\n\n    return errors;\n  }\n\n  private removeAsyncValidators(controls): void {\n    Object.keys(controls).forEach((key) => {\n      const control = controls[key];\n      if (control.controls) {\n        control.clearAsyncValidators();\n        this.removeAsyncValidators(control.controls);\n      } else {\n        control.clearAsyncValidators();\n      }\n    });\n  }\n\n  private addAsyncValidators(controls, params: FormConfigGroup): void {\n    Object.keys(controls).forEach((key) => {\n      const param = params[key];\n      const control = controls[key];\n      if (control.controls) {\n        this.addAsyncValidators(control.controls, param.params);\n      } else {\n        control.setAsyncValidators(this.getParamAsyncValidators(params[key]));\n      }\n    });\n  }\n\n  public getFormGroup(\n    configGroup: FormConfigGroup,\n    formParamValues: any\n  ): FormGroup {\n    if (!configGroup) {\n      return null;\n    }\n\n    const params = {};\n\n    Object.keys(configGroup).forEach((key) => {\n      const cParam: FormConfigParameter = configGroup[key];\n      let updateOn = cParam.asyncValidators?.length\n        ? { updateOn: UpdateOnEnum.blur }\n        : cParam.updateOn\n        ? { updateOn: cParam.updateOn }\n        : {};\n\n      if (\n        ['checkbox', 'radio', 'select', 'date'].includes(cParam.controlType)\n      ) {\n        updateOn = { updateOn: UpdateOnEnum.change };\n      }\n\n      // Param is a groupParam, then create a form group\n      if (cParam.controlType === 'group') {\n        params[key] = this.getFormGroup(\n          cParam.params,\n          formParamValues ? formParamValues[key] : null\n        );\n      } else {\n        // Param is Control\n        params[key] = [\n          cParam.disabled\n            ? {\n                value:\n                  (formParamValues ? formParamValues[key] : null) ||\n                  cParam.value,\n                disabled: true\n              }\n            : (formParamValues ? formParamValues[key] : null) || cParam.value,\n          this.getSyncValidators(cParam.syncValidators),\n          this.getAsyncValidators(cParam.asyncValidators),\n          updateOn\n        ];\n      }\n    });\n\n    return this.fb.record(\n      { ...params },\n      {\n        updateOn: UpdateOnEnum.blur\n      }\n    );\n  }\n\n  public initForm(configGroup: FormConfigGroup, formParamValues: any): void {\n    this.params = configGroup;\n\n    // Unsubscribe form subscriptions if any\n    this.valueChangesSubscription &&\n      this.valueChangesSubscription.unsubscribe();\n    this.statusChangesSubscription &&\n      this.statusChangesSubscription.unsubscribe();\n    this.removeControlValueChangeSubscriptions(this.controlValuesSubscriptions);\n\n    const newForm = this.getFormGroup(this.params, formParamValues);\n    const controls = this.getControls(newForm);\n\n    this.$form.next(newForm);\n    this.$controls.next(controls);\n\n    // Subscribe again the subscriptions\n    if (this.$form.value) {\n      // Value change subscription\n      this.valueChangesSubscription = this.$form.value.valueChanges.subscribe(\n        () => {\n          this.$valueChanges.next(this.$form.value.getRawValue());\n        }\n      );\n      // Status change subscription\n      this.statusChangesSubscription = this.$form.value.statusChanges.subscribe(\n        () => {\n          this.$statusChanges.next(this.getControlErrors(this.$controls.value));\n        }\n      );\n\n      // Controls value change subscriptions\n      this.controlValuesSubscriptions =\n        this.addControlValueChangeSubscriptions(this.$controls.value) || {};\n    }\n  }\n\n  public patchValue(value: any): void {\n    if (!this.$form.value || !value) return;\n\n    // Remove and re-add async validator to skip validation on patchValue\n    this.removeAsyncValidators(this.$controls.value);\n\n    // Update values\n    this.$form.value.patchValue(value, { emitEvent: false });\n\n    // Add back all async validators\n    setTimeout(() =>\n      this.addAsyncValidators(this.$controls.value, this.params)\n    );\n  }\n}\n",
+            "sourceCode": "import { Injectable, Injector, inject } from '@angular/core';\nimport {\n  AsyncValidatorFn,\n  FormBuilder,\n  FormGroup,\n  ValidationErrors,\n  ValidatorFn,\n  Validators\n} from '@angular/forms';\nimport { FormConfigGroup } from '../classes/config-group.class';\nimport { FormConfigParameter } from '../classes/config-parameter.class';\nimport * as syncValidators from '../sync-validators';\nimport * as asyncValidators from '../async-validators';\nimport { SyncConfigValidator } from '../classes/sync-config-validator.class';\nimport { AsyncConfigValidator } from '../classes/async-config-validator.class';\nimport { UpdateOnEnum } from '../enums/updateon.enum';\nimport { BehaviorSubject, Observable, Subscription } from 'rxjs';\nimport { FormControlValue } from '../interfaces/control-value.interface';\n\n@Injectable()\nexport class FormConfigService {\n  private injectedAsyncValidators = {};\n  private params: FormConfigGroup = null;\n  private $form = new BehaviorSubject<FormGroup>(null);\n  private $controls = new BehaviorSubject<any>(null);\n  private $valueChanges = new BehaviorSubject<any>(null);\n  private $controlValueChanges = new BehaviorSubject<FormControlValue>(null);\n  private $statusChanges = new BehaviorSubject<ValidationErrors>(null);\n\n  private valueChangesSubscription: Subscription = null;\n  private statusChangesSubscription: Subscription = null;\n  private controlValuesSubscriptions = {};\n\n  constructor(private fb: FormBuilder) {\n    asyncValidators &&\n      Object.keys(asyncValidators).forEach((key) => {\n        this.injectedAsyncValidators[key] = inject(asyncValidators[key]);\n      });\n  }\n\n  public get form(): Observable<FormGroup> {\n    return this.$form.asObservable();\n  }\n\n  public get controls(): Observable<any> {\n    return this.$controls.asObservable();\n  }\n\n  public get valueChanges(): Observable<any> {\n    return this.$valueChanges.asObservable();\n  }\n\n  public get controlValueChanges(): Observable<FormControlValue> {\n    return this.$controlValueChanges.asObservable();\n  }\n\n  public get statusChanges(): Observable<ValidationErrors> {\n    return this.$statusChanges.asObservable();\n  }\n\n  private getSyncValidators(\n    sVlds: Array<SyncConfigValidator>\n  ): Array<ValidatorFn> {\n    return (\n      sVlds?.map((vd) => {\n        let vld;\n        switch (vd.name) {\n          case 'required':\n          case 'email':\n            vld = Validators[vd.name];\n            break;\n          case 'min':\n          case 'max':\n          case 'minLength':\n          case 'maxLength':\n            vld = Validators[vd.name](vd.params[0]);\n            break;\n          default:\n            vld = syncValidators[vd.name];\n            break;\n        }\n\n        if (!vld) {\n          throw new Error(`${vd.name} validator does not exist.`);\n        }\n\n        return vld;\n      }) || []\n    );\n  }\n\n  private getAsyncValidators(\n    sVlds: Array<AsyncConfigValidator>\n  ): Array<AsyncValidatorFn> {\n    return (\n      sVlds?.map((vd) => {\n        const asyncValidator = this.injectedAsyncValidators[vd.name];\n        if (!asyncValidator) {\n          throw new Error(`${vd.name} validator does not exist.`);\n        }\n\n        if (vd.url) asyncValidator['url'] = vd.url;\n        if (vd.imageDimsName)\n          asyncValidator['imageDimsName'] = vd.imageDimsName;\n\n        return asyncValidator.validate.bind(asyncValidator);\n      }) || []\n    );\n  }\n\n  private removeControlValueChangeSubscriptions(controls): any {\n    if (!controls) return null;\n\n    Object.keys(controls).forEach((key) => {\n      const control = controls[key];\n      // group\n      if (control.controls) {\n        control.groupControl?.unsubscribe();\n        this.removeControlValueChangeSubscriptions(control.controls);\n      } else {\n        // single control\n        control?.unsubscribe();\n      }\n    });\n  }\n\n  private addControlValueChangeSubscriptions(controls: any): any {\n    if (!controls) return null;\n    const subscriptions = {};\n\n    Object.keys(controls).forEach((key) => {\n      const control = controls[key];\n      // group\n      if (control.controls) {\n        subscriptions[key] = {\n          groupControl: control.groupControl.valueChanges.subscribe((value) =>\n            this.$controlValueChanges.next({\n              key,\n              value,\n              control: control.groupControl\n            })\n          ),\n          controls: this.addControlValueChangeSubscriptions(control.controls)\n        };\n      } else {\n        // single control\n        subscriptions[key] = control.valueChanges.subscribe((value) =>\n          this.$controlValueChanges.next({\n            key,\n            value,\n            control\n          })\n        );\n      }\n    });\n\n    return subscriptions;\n  }\n\n  private getControls(form: FormGroup): any {\n    if (!form?.controls) return null;\n    const controls = {};\n\n    Object.keys(form.controls).forEach((key) => {\n      const control = form.controls[key];\n      if (control['controls']) {\n        controls[key] = {\n          groupControl: form.get(key),\n          controls: this.getControls(control as FormGroup)\n        };\n      } else {\n        controls[key] = form.get(key);\n      }\n    });\n\n    return controls;\n  }\n\n  private getParamAsyncValidators(\n    cParam: FormConfigParameter\n  ): Array<AsyncValidatorFn> {\n    return this.getAsyncValidators(cParam.asyncValidators);\n  }\n\n  private getControlErrors(controls): ValidationErrors {\n    let errors = null;\n\n    Object.keys(controls).forEach((key) => {\n      const control = controls[key];\n      if (control.controls) {\n        errors = {\n          ...(errors || {}),\n          ...(this.getControlErrors(control.controls) || {})\n        };\n      } else {\n        const controlErrors = controls[key].errors;\n        if (controlErrors) {\n          errors = { ...(errors || {}), controlErrors };\n        }\n      }\n    });\n\n    return errors;\n  }\n\n  private removeAsyncValidators(controls): void {\n    Object.keys(controls).forEach((key) => {\n      const control = controls[key];\n      if (control.controls) {\n        control.clearAsyncValidators();\n        this.removeAsyncValidators(control.controls);\n      } else {\n        control.clearAsyncValidators();\n      }\n    });\n  }\n\n  private addAsyncValidators(controls, params: FormConfigGroup): void {\n    Object.keys(controls).forEach((key) => {\n      const param = params[key];\n      const control = controls[key];\n      if (control.controls) {\n        this.addAsyncValidators(control.controls, param.params);\n      } else {\n        control.setAsyncValidators(this.getParamAsyncValidators(params[key]));\n      }\n    });\n  }\n\n  public getFormGroup(\n    configGroup: FormConfigGroup,\n    formParamValues: any\n  ): FormGroup {\n    if (!configGroup) {\n      return null;\n    }\n\n    const params = {};\n\n    Object.keys(configGroup).forEach((key) => {\n      const cParam: FormConfigParameter = configGroup[key];\n      let updateOn = cParam.asyncValidators?.length\n        ? { updateOn: UpdateOnEnum.blur }\n        : cParam.updateOn\n        ? { updateOn: cParam.updateOn }\n        : {};\n\n      if (\n        ['checkbox', 'radio', 'select', 'date'].includes(cParam.controlType)\n      ) {\n        updateOn = { updateOn: UpdateOnEnum.change };\n      }\n\n      // Param is a groupParam, then create a form group\n      if (cParam.controlType === 'group') {\n        params[key] = this.getFormGroup(\n          cParam.params,\n          formParamValues ? formParamValues[key] : null\n        );\n      } else {\n        // Param is Control\n        params[key] = [\n          cParam.disabled\n            ? {\n                value:\n                  (formParamValues ? formParamValues[key] : null) ||\n                  cParam.value,\n                disabled: true\n              }\n            : (formParamValues ? formParamValues[key] : null) || cParam.value,\n          this.getSyncValidators(cParam.syncValidators),\n          this.getAsyncValidators(cParam.asyncValidators),\n          updateOn\n        ];\n      }\n    });\n\n    return this.fb.record(\n      { ...params },\n      {\n        updateOn: UpdateOnEnum.blur\n      }\n    );\n  }\n\n  public initForm(configGroup: FormConfigGroup, formParamValues: any): void {\n    this.params = configGroup;\n\n    // Unsubscribe form subscriptions if any\n    this.valueChangesSubscription &&\n      this.valueChangesSubscription.unsubscribe();\n    this.statusChangesSubscription &&\n      this.statusChangesSubscription.unsubscribe();\n    this.removeControlValueChangeSubscriptions(this.controlValuesSubscriptions);\n\n    const newForm = this.getFormGroup(this.params, formParamValues);\n    const controls = this.getControls(newForm);\n\n    this.$form.next(newForm);\n    this.$controls.next(controls);\n\n    // Subscribe again the subscriptions\n    if (this.$form.value) {\n      // Value change subscription\n      this.valueChangesSubscription = this.$form.value.valueChanges.subscribe(\n        () => {\n          this.$valueChanges.next(this.$form.value.getRawValue());\n        }\n      );\n      // Status change subscription\n      this.statusChangesSubscription = this.$form.value.statusChanges.subscribe(\n        () => {\n          this.$statusChanges.next(this.getControlErrors(this.$controls.value));\n        }\n      );\n\n      // Controls value change subscriptions\n      this.controlValuesSubscriptions =\n        this.addControlValueChangeSubscriptions(this.$controls.value) || {};\n    }\n  }\n\n  public patchValue(value: any): void {\n    if (!this.$form.value || !value) return;\n\n    // Remove and re-add async validator to skip validation on patchValue\n    this.removeAsyncValidators(this.$controls.value);\n\n    // Update values\n    this.$form.value.patchValue(value, { emitEvent: false });\n\n    // Add back all async validators\n    setTimeout(() =>\n      this.addAsyncValidators(this.$controls.value, this.params)\n    );\n  }\n}\n",
             "constructorObj": {
                 "name": "constructor",
                 "description": "",
@@ -1470,8 +2011,200 @@
             "type": "injectable"
         },
         {
+            "name": "ImageValidatorService",
+            "id": "injectable-ImageValidatorService-00e0412f33a92d462293f0cf9c9e9e42c3c5cce53cc5cd1a1c7f5e03f1fc97296bdc0a22c55a0204463af91c97b259e0d75556f0c110c90d3b275c23b66436ec",
+            "file": "projects/ngx-core/helpers-forms/src/async-validators/image-validator.service.ts",
+            "properties": [
+                {
+                    "name": "$dims",
+                    "defaultValue": "null",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "ImageDims",
+                    "optional": false,
+                    "description": "",
+                    "line": 20,
+                    "modifierKind": [
+                        123
+                    ]
+                },
+                {
+                    "name": "$imageDimsName",
+                    "defaultValue": "null",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "string | GlobalConfigParamsEnum",
+                    "optional": false,
+                    "description": "",
+                    "line": 21,
+                    "modifierKind": [
+                        123
+                    ]
+                }
+            ],
+            "methods": [
+                {
+                    "name": "validate",
+                    "args": [
+                        {
+                            "name": "control",
+                            "type": "AbstractControl",
+                            "deprecated": false,
+                            "deprecationMessage": ""
+                        }
+                    ],
+                    "optional": false,
+                    "returnType": "Observable<ValidationErrors | null>",
+                    "typeParameters": [],
+                    "line": 25,
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "jsdoctags": [
+                        {
+                            "name": "control",
+                            "type": "AbstractControl",
+                            "deprecated": false,
+                            "deprecationMessage": "",
+                            "tagName": {
+                                "text": "param"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "validateAllImages",
+                    "args": [
+                        {
+                            "name": "imageInfos",
+                            "type": "Array<ImageUpload>",
+                            "deprecated": false,
+                            "deprecationMessage": ""
+                        }
+                    ],
+                    "optional": false,
+                    "returnType": "Promise<Array<ValidationErrors>>",
+                    "typeParameters": [],
+                    "line": 149,
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "modifierKind": [
+                        123,
+                        134
+                    ],
+                    "jsdoctags": [
+                        {
+                            "name": "imageInfos",
+                            "type": "Array<ImageUpload>",
+                            "deprecated": false,
+                            "deprecationMessage": "",
+                            "tagName": {
+                                "text": "param"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "validateImage",
+                    "args": [
+                        {
+                            "name": "imageInfo",
+                            "type": "ImageUpload",
+                            "deprecated": false,
+                            "deprecationMessage": ""
+                        }
+                    ],
+                    "optional": false,
+                    "returnType": "Promise<ValidationErrors>",
+                    "typeParameters": [],
+                    "line": 95,
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "modifierKind": [
+                        123,
+                        134
+                    ],
+                    "jsdoctags": [
+                        {
+                            "name": "imageInfo",
+                            "type": "ImageUpload",
+                            "deprecated": false,
+                            "deprecationMessage": "",
+                            "tagName": {
+                                "text": "param"
+                            }
+                        }
+                    ]
+                }
+            ],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "description": "",
+            "rawdescription": "\n",
+            "sourceCode": "import { Injectable } from '@angular/core';\nimport {\n  AbstractControl,\n  AsyncValidator,\n  ValidationErrors\n} from '@angular/forms';\nimport {\n  GlobalConfigParamsEnum,\n  GlobalConfigService\n} from '@annuadvent/ngx-core/global-config';\n\nimport { Observable, catchError, map, of } from 'rxjs';\nimport { ImageDims } from '../interfaces/image-dims.interface';\nimport { ImageUpload } from '@annuadvent/ngx-common-ui/image-upload';\n\n@Injectable({\n  providedIn: 'root'\n})\nexport class ImageValidatorService implements AsyncValidator {\n  private $dims: ImageDims = null;\n  private $imageDimsName: string | GlobalConfigParamsEnum = null;\n\n  constructor(private gcService: GlobalConfigService) {}\n\n  validate(control: AbstractControl): Observable<ValidationErrors | null> {\n    if (\n      !control.value ||\n      (control.value instanceof Array && !control.value?.length)\n    )\n      return of(null);\n\n    let imageInfos: Array<ImageUpload> = [];\n\n    if (control.value instanceof Array) {\n      imageInfos = control.value;\n    } else {\n      imageInfos = [control.value];\n    }\n\n    const obs = new Observable<ValidationErrors | null>((observer) => {\n      this.validateAllImages(imageInfos)\n        .then((results) => {\n          let message = '';\n          if (results instanceof Array) {\n            message = results\n              .filter((result) => result.status === 'rejected')\n              .map((result) => result.reason.imageupload.message)\n              .join('</br>');\n          }\n\n          if (message) {\n            const formError: ValidationErrors = {\n              imageupload: {\n                message\n              }\n            };\n            observer.error(formError);\n          } else {\n            observer.error(null);\n          }\n        })\n        .catch((errors: Array<ValidationErrors>) => {\n          const formError: ValidationErrors = {\n            imageupload: {\n              message:\n                errors instanceof Array\n                  ? errors.map((er) => er?.imageupload?.message).join('\\n')\n                  : (errors as any)?.imageupload?.message\n            }\n          };\n          observer.error(formError);\n        });\n    });\n\n    return obs.pipe(\n      map((val) => {\n        return val;\n      }),\n      catchError((error) => {\n        control.markAsDirty();\n        if (error) {\n          return of(error);\n        } else {\n          return of(null);\n        }\n      })\n    );\n  }\n\n  public set imageDimsName(v: string | GlobalConfigParamsEnum) {\n    this.$imageDimsName = v;\n    this.$dims = this.gcService.getValue(this.$imageDimsName);\n  }\n\n  private async validateImage(\n    imageInfo: ImageUpload\n  ): Promise<ValidationErrors> {\n    const blb = await imageInfo.getBlobImage();\n    return new Promise((resolve, reject) => {\n      var reader = new FileReader();\n      reader.readAsDataURL(blb);\n\n      reader.onload = (e) => {\n        //Initiate the JavaScript Image object.\n        const image = new Image();\n\n        //Set the Base64 string return from FileReader as source.\n        image.src = e.target.result as string;\n        image.onload = () => {\n          // Natural size is the actual image size regardless of rendering.\n          // The 'normal' `width`/`height` are for the **rendered** size.\n          const width = image.naturalWidth;\n          const height = image.naturalHeight;\n\n          if (\n            this.$dims.width === width &&\n            this.$dims.height === height &&\n            imageInfo.size <= this.$dims.size * 1024\n          ) {\n            resolve(null);\n          } else {\n            const formError: ValidationErrors = {\n              imageupload: {\n                message: `<strong>${imageInfo.fileName}:</strong> Allowed Image dimensions are width: ${this.$dims.width}, height: ${this.$dims.height} and a maximum file size of ${this.$dims.size}kbs. While current image is having dimensions of width: ${width}, height: ${height} and a file size of ${imageInfo.kbs}kbs`\n              }\n            };\n            reject(formError);\n          }\n\n          reader.onload = null;\n        };\n\n        image.onerror = (error: any) => {\n          const formError: ValidationErrors = {\n            imageupload: {\n              message:\n                imageInfo.fileName + ': ' + error?.message ||\n                error?.error?.message ||\n                error\n            }\n          };\n          reject(formError);\n          reader.onerror = null;\n        };\n      };\n    });\n  }\n\n  private async validateAllImages(\n    imageInfos: Array<ImageUpload>\n  ): Promise<Array<ValidationErrors>> {\n    return Promise.allSettled(\n      imageInfos.map((imageInfo) => this.validateImage(imageInfo))\n    );\n  }\n}\n",
+            "constructorObj": {
+                "name": "constructor",
+                "description": "",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "args": [
+                    {
+                        "name": "gcService",
+                        "type": "GlobalConfigService",
+                        "deprecated": false,
+                        "deprecationMessage": ""
+                    }
+                ],
+                "line": 21,
+                "jsdoctags": [
+                    {
+                        "name": "gcService",
+                        "type": "GlobalConfigService",
+                        "deprecated": false,
+                        "deprecationMessage": "",
+                        "tagName": {
+                            "text": "param"
+                        }
+                    }
+                ]
+            },
+            "accessors": {
+                "imageDimsName": {
+                    "name": "imageDimsName",
+                    "setSignature": {
+                        "name": "imageDimsName",
+                        "type": "void",
+                        "deprecated": false,
+                        "deprecationMessage": "",
+                        "args": [
+                            {
+                                "name": "v",
+                                "type": "string | GlobalConfigParamsEnum",
+                                "deprecated": false,
+                                "deprecationMessage": ""
+                            }
+                        ],
+                        "returnType": "void",
+                        "line": 90,
+                        "jsdoctags": [
+                            {
+                                "name": "v",
+                                "type": "string | GlobalConfigParamsEnum",
+                                "deprecated": false,
+                                "deprecationMessage": "",
+                                "tagName": {
+                                    "text": "param"
+                                }
+                            }
+                        ]
+                    }
+                }
+            },
+            "extends": [],
+            "type": "injectable"
+        },
+        {
             "name": "PincodeValidatorService",
-            "id": "injectable-PincodeValidatorService-08ec665461453d6b6c3a2d708b416ac06d22f2073378e1f22d5a5b5e8483d8b085a4128d1c27223282df7ce10706afd5bc2ebdbd10b0f38b3faaee5803765e4c",
+            "id": "injectable-PincodeValidatorService-cd6c774c49d4a31e7c11485d279cc6fbb18cbd2eb7361b895a3d36710c33cefb859e498bd8788019ae0e4d859e9e175c7c0d9ea442ef88801afb44c86f4ed135",
             "file": "projects/ngx-core/helpers-forms/src/async-validators/pincode-validator.service.ts",
             "properties": [
                 {
@@ -1522,7 +2255,7 @@
             "deprecationMessage": "",
             "description": "",
             "rawdescription": "\n",
-            "sourceCode": "import { HttpClient } from '@angular/common/http';\nimport { Injectable } from '@angular/core';\nimport {\n  AbstractControl,\n  AsyncValidator,\n  ValidationErrors\n} from '@angular/forms';\nimport { Pincode } from '@annuadvent/ngx-core/helpers-ecommerce';\nimport { Observable, catchError, map, of } from 'rxjs';\n\n@Injectable({\n  providedIn: 'root'\n})\nexport class PincodeValidatorService implements AsyncValidator {\n  private $url = '';\n  constructor(private http: HttpClient) {}\n\n  public set url(v: string) {\n    this.$url = v;\n  }\n\n  validate(control: AbstractControl): Observable<ValidationErrors | null> {\n    const id = control.value;\n\n    return this.http.get(`${this.$url}/${id}`).pipe(\n      map((pincode) => {\n        const city = control.parent.get('city');\n        const state = control.parent.get('state');\n        city?.setValue((pincode as Pincode).city);\n        state?.setValue((pincode as Pincode).state);\n        return null;\n      }),\n      catchError((error) => {\n        const formError: ValidationErrors = {\n          pincode: {\n            message: 'Pincode does not exist.'\n          }\n        };\n\n        return of(formError);\n      })\n    );\n  }\n}\n",
+            "sourceCode": "import { HttpClient } from '@angular/common/http';\nimport { Injectable } from '@angular/core';\nimport {\n  AbstractControl,\n  AsyncValidator,\n  ValidationErrors\n} from '@angular/forms';\nimport { Pincode } from '@annuadvent/ngx-core/helpers-ecommerce';\nimport { Observable, catchError, map, of } from 'rxjs';\n\n@Injectable({\n  providedIn: 'root'\n})\nexport class PincodeValidatorService implements AsyncValidator {\n  private $url = '';\n  constructor(private http: HttpClient) {}\n\n  public set url(v: string) {\n    this.$url = v;\n  }\n\n  validate(control: AbstractControl): Observable<ValidationErrors | null> {\n    const id = control.value;\n    return this.http.get(`${this.$url}/${id}`).pipe(\n      map((pincode) => {\n        const city = control.parent.get('city');\n        const state = control.parent.get('state');\n        city?.setValue((pincode as Pincode).city);\n        state?.setValue((pincode as Pincode).state);\n        return null;\n      }),\n      catchError((error) => {\n        const formError: ValidationErrors = {\n          pincode: {\n            message: 'Pincode does not exist.'\n          }\n        };\n\n        return of(formError);\n      })\n    );\n  }\n}\n",
             "constructorObj": {
                 "name": "constructor",
                 "description": "",
@@ -1585,8 +2318,419 @@
             "type": "injectable"
         },
         {
+            "name": "ProductImageResizeService",
+            "id": "injectable-ProductImageResizeService-cc2c2e6c289c2257355b974ee483162c6fce192d8e83db8cc0fc9feae9e2205487e36e8f1505ce5eb899191dcbd1786d4afd33e24be57f77fae04d484fa02fb7",
+            "file": "projects/ngx-core/helpers-ecommerce/src/services/product-image-resize.service.ts",
+            "properties": [],
+            "methods": [
+                {
+                    "name": "resize",
+                    "args": [
+                        {
+                            "name": "imageUpload",
+                            "type": "ImageUpload",
+                            "deprecated": false,
+                            "deprecationMessage": ""
+                        }
+                    ],
+                    "optional": false,
+                    "returnType": "Promise<Array<Blob>>",
+                    "typeParameters": [],
+                    "line": 14,
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "modifierKind": [
+                        125,
+                        134
+                    ],
+                    "jsdoctags": [
+                        {
+                            "name": "imageUpload",
+                            "type": "ImageUpload",
+                            "deprecated": false,
+                            "deprecationMessage": "",
+                            "tagName": {
+                                "text": "param"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "resizeCanvas",
+                    "args": [
+                        {
+                            "name": "image",
+                            "type": "HTMLImageElement",
+                            "deprecated": false,
+                            "deprecationMessage": ""
+                        },
+                        {
+                            "name": "width",
+                            "type": "number",
+                            "deprecated": false,
+                            "deprecationMessage": ""
+                        },
+                        {
+                            "name": "height",
+                            "type": "number",
+                            "deprecated": false,
+                            "deprecationMessage": ""
+                        },
+                        {
+                            "name": "mimeType",
+                            "type": "string",
+                            "deprecated": false,
+                            "deprecationMessage": ""
+                        }
+                    ],
+                    "optional": false,
+                    "returnType": "Promise<Blob>",
+                    "typeParameters": [],
+                    "line": 60,
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "modifierKind": [
+                        123,
+                        134
+                    ],
+                    "jsdoctags": [
+                        {
+                            "name": "image",
+                            "type": "HTMLImageElement",
+                            "deprecated": false,
+                            "deprecationMessage": "",
+                            "tagName": {
+                                "text": "param"
+                            }
+                        },
+                        {
+                            "name": "width",
+                            "type": "number",
+                            "deprecated": false,
+                            "deprecationMessage": "",
+                            "tagName": {
+                                "text": "param"
+                            }
+                        },
+                        {
+                            "name": "height",
+                            "type": "number",
+                            "deprecated": false,
+                            "deprecationMessage": "",
+                            "tagName": {
+                                "text": "param"
+                            }
+                        },
+                        {
+                            "name": "mimeType",
+                            "type": "string",
+                            "deprecated": false,
+                            "deprecationMessage": "",
+                            "tagName": {
+                                "text": "param"
+                            }
+                        }
+                    ]
+                }
+            ],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "description": "",
+            "rawdescription": "\n",
+            "sourceCode": "import { Injectable, inject } from '@angular/core';\nimport { ImageUpload } from '@annuadvent/ngx-common-ui/image-upload';\nimport {\n  GlobalConfigParamsEnum,\n  GlobalConfigService\n} from '@annuadvent/ngx-core/global-config';\n\n@Injectable({\n  providedIn: 'root'\n})\nexport class ProductImageResizeService {\n  constructor(private gcService: GlobalConfigService) {}\n\n  public async resize(imageUpload: ImageUpload): Promise<Array<Blob>> {\n    const { width, height } = this.gcService.getValue(\n      GlobalConfigParamsEnum.productImageDimensions\n    );\n\n    var reader = new FileReader();\n\n    //Read the contents of Image File.\n    reader.readAsDataURL(imageUpload.data);\n\n    const promise = new Promise<Array<Blob>>((resolve, reject) => {\n      reader.onload = (e) => {\n        //Initiate the JavaScript Image object.\n        const image = new Image();\n\n        //Set the Base64 string return from FileReader as source.\n        image.src = e.target.result as string;\n        image.onload = () => {\n          Promise.all([\n            this.resizeCanvas(\n              image,\n              width / 8,\n              height / 8,\n              imageUpload.mimeType\n            ),\n            this.resizeCanvas(\n              image,\n              width / 2,\n              height / 2,\n              imageUpload.mimeType\n            )\n          ])\n            .then((blbs) => resolve(blbs))\n            .catch((error) => reject(error));\n        };\n\n        // Reject promise on error\n        image.onerror = (error: any) => {\n          reject('Error loading Image');\n        };\n      };\n    });\n\n    return promise;\n  }\n\n  private async resizeCanvas(\n    image: HTMLImageElement,\n    width: number,\n    height: number,\n    mimeType: string\n  ): Promise<Blob> {\n    return new Promise<Blob>((resolve, reject) => {\n      const canvas = document.createElement('canvas');\n      canvas.width = width;\n      canvas.height = height;\n      canvas.getContext('2d').drawImage(image, 0, 0, width, height);\n      canvas.toBlob((blb) => {\n        if (blb) {\n          resolve(blb);\n        } else {\n          reject(`Failed to resize to ${width}x${height}`);\n        }\n      }, mimeType);\n    });\n  }\n}\n",
+            "constructorObj": {
+                "name": "constructor",
+                "description": "",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "args": [
+                    {
+                        "name": "gcService",
+                        "type": "GlobalConfigService",
+                        "deprecated": false,
+                        "deprecationMessage": ""
+                    }
+                ],
+                "line": 11,
+                "jsdoctags": [
+                    {
+                        "name": "gcService",
+                        "type": "GlobalConfigService",
+                        "deprecated": false,
+                        "deprecationMessage": "",
+                        "tagName": {
+                            "text": "param"
+                        }
+                    }
+                ]
+            },
+            "extends": [],
+            "type": "injectable"
+        },
+        {
+            "name": "ProductQueryService",
+            "id": "injectable-ProductQueryService-26844594cfaf3b7b81235517335f5fdcfc431a94d46dd922948399b625075dde251c37c123faccf8c44d1563cb219a2c51d0194bd91022d55928642c8d5294fc",
+            "file": "projects/ngx-core/helpers-ecommerce/src/services/product-query.service.ts",
+            "properties": [
+                {
+                    "name": "$liveCatsProducts",
+                    "defaultValue": "new BehaviorSubject<CatsProducts>(null)",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 17,
+                    "modifierKind": [
+                        123
+                    ]
+                },
+                {
+                    "name": "$liveProducts",
+                    "defaultValue": "new BehaviorSubject<Array<Product>>([])",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 15,
+                    "modifierKind": [
+                        123
+                    ]
+                }
+            ],
+            "methods": [
+                {
+                    "name": "addToCache",
+                    "args": [
+                        {
+                            "name": "products",
+                            "type": "Array<Product>",
+                            "deprecated": false,
+                            "deprecationMessage": ""
+                        }
+                    ],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 24,
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "modifierKind": [
+                        123
+                    ],
+                    "jsdoctags": [
+                        {
+                            "name": "products",
+                            "type": "Array<Product>",
+                            "deprecated": false,
+                            "deprecationMessage": "",
+                            "tagName": {
+                                "text": "param"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "getProduct",
+                    "args": [
+                        {
+                            "name": "id",
+                            "type": "string",
+                            "deprecated": false,
+                            "deprecationMessage": ""
+                        },
+                        {
+                            "name": "force",
+                            "type": "boolean",
+                            "deprecated": false,
+                            "deprecationMessage": "",
+                            "defaultValue": "false"
+                        }
+                    ],
+                    "optional": false,
+                    "returnType": "Promise<Product>",
+                    "typeParameters": [],
+                    "line": 68,
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "modifierKind": [
+                        125,
+                        134
+                    ],
+                    "jsdoctags": [
+                        {
+                            "name": "id",
+                            "type": "string",
+                            "deprecated": false,
+                            "deprecationMessage": "",
+                            "tagName": {
+                                "text": "param"
+                            }
+                        },
+                        {
+                            "name": "force",
+                            "type": "boolean",
+                            "deprecated": false,
+                            "deprecationMessage": "",
+                            "defaultValue": "false",
+                            "tagName": {
+                                "text": "param"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "getProductsByCategories",
+                    "args": [
+                        {
+                            "name": "categoryIds",
+                            "type": "Array<string>",
+                            "deprecated": false,
+                            "deprecationMessage": ""
+                        },
+                        {
+                            "name": "force",
+                            "type": "boolean",
+                            "deprecated": false,
+                            "deprecationMessage": "",
+                            "defaultValue": "false"
+                        }
+                    ],
+                    "optional": false,
+                    "returnType": "Promise<Array<Product>>",
+                    "typeParameters": [],
+                    "line": 31,
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "modifierKind": [
+                        125,
+                        134
+                    ],
+                    "jsdoctags": [
+                        {
+                            "name": "categoryIds",
+                            "type": "Array<string>",
+                            "deprecated": false,
+                            "deprecationMessage": "",
+                            "tagName": {
+                                "text": "param"
+                            }
+                        },
+                        {
+                            "name": "force",
+                            "type": "boolean",
+                            "deprecated": false,
+                            "deprecationMessage": "",
+                            "defaultValue": "false",
+                            "tagName": {
+                                "text": "param"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "getProductsByIds",
+                    "args": [
+                        {
+                            "name": "ids",
+                            "type": "Array<string>",
+                            "deprecated": false,
+                            "deprecationMessage": ""
+                        },
+                        {
+                            "name": "force",
+                            "type": "boolean",
+                            "deprecated": false,
+                            "deprecationMessage": "",
+                            "defaultValue": "false"
+                        }
+                    ],
+                    "optional": false,
+                    "returnType": "Promise<Array<Product>>",
+                    "typeParameters": [],
+                    "line": 94,
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "modifierKind": [
+                        125,
+                        134
+                    ],
+                    "jsdoctags": [
+                        {
+                            "name": "ids",
+                            "type": "Array<string>",
+                            "deprecated": false,
+                            "deprecationMessage": "",
+                            "tagName": {
+                                "text": "param"
+                            }
+                        },
+                        {
+                            "name": "force",
+                            "type": "boolean",
+                            "deprecated": false,
+                            "deprecationMessage": "",
+                            "defaultValue": "false",
+                            "tagName": {
+                                "text": "param"
+                            }
+                        }
+                    ]
+                }
+            ],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "description": "",
+            "rawdescription": "\n",
+            "sourceCode": "import { HttpClient } from '@angular/common/http';\nimport { Inject, Injectable } from '@angular/core';\nimport { Product } from '@annuadvent/ngx-core/helpers-ecommerce';\nimport { BehaviorSubject, lastValueFrom } from 'rxjs';\n\ninterface CatsProducts {\n  [key: string]: Array<Product>;\n}\n\n@Injectable({\n  providedIn: 'root'\n})\nexport class ProductQueryService {\n  // All products cache\n  private $liveProducts = new BehaviorSubject<Array<Product>>([]);\n  // Categories products cache\n  private $liveCatsProducts = new BehaviorSubject<CatsProducts>(null);\n\n  constructor(\n    private http: HttpClient,\n    @Inject('API_URLS') private API_URLS: any\n  ) {}\n\n  private addToCache(products: Array<Product>): void {\n    const pIds = this.$liveProducts.value.map((p) => p.id);\n    const toAddPs = products.filter((p) => !pIds.includes(p.id));\n\n    this.$liveProducts.next([...this.$liveProducts.value, ...toAddPs]);\n  }\n\n  public async getProductsByCategories(\n    categoryIds: Array<string>,\n    force: boolean = false\n  ): Promise<Array<Product>> {\n    // get from cache\n    const liveCatsPs =\n      this.$liveCatsProducts.value &&\n      this.$liveCatsProducts.value[categoryIds.join('-')];\n\n    if (!force && liveCatsPs) {\n      return liveCatsPs;\n    }\n\n    try {\n      const productR: any = await lastValueFrom(\n        this.http.get(\n          `${this.API_URLS.PRODUCTS.LIST}?categoryIds=${categoryIds}`\n        )\n      );\n\n      const products = productR.map((p) => new Product(p));\n\n      if (products?.length) {\n        this.addToCache(products);\n        this.$liveCatsProducts.next({\n          ...(this.$liveCatsProducts.value || {}),\n          [categoryIds.join('-')]: [...products]\n        });\n        return products;\n      } else {\n        return null;\n      }\n    } catch (error: any) {\n      throw error;\n    }\n  }\n\n  public async getProduct(\n    id: string,\n    force: boolean = false\n  ): Promise<Product> {\n    // get from cache\n    const p = this.$liveProducts.value.find((p) => p.id === id);\n\n    if (!force && p) {\n      return p;\n    }\n\n    try {\n      const productR: any = await lastValueFrom(\n        this.http.get(`${this.API_URLS.PRODUCTS.LIST}/${id}`)\n      );\n\n      const product = new Product(productR);\n\n      this.addToCache([product]);\n\n      return product;\n    } catch (error: any) {\n      throw error;\n    }\n  }\n\n  public async getProductsByIds(\n    ids: Array<string>,\n    force: boolean = false\n  ): Promise<Array<Product>> {\n    // get from cache\n    let pCache = [];\n    let notFoundIds = [];\n\n    if (!force && this.$liveProducts.value?.length) {\n      this.$liveProducts.value.forEach((p) => {\n        if (ids.includes(p.id)) {\n          pCache.push(p);\n        } else {\n          notFoundIds.push(p.id);\n        }\n      });\n\n      if (!notFoundIds.length) {\n        return pCache;\n      }\n    }\n\n    try {\n      const productR: any = await lastValueFrom(\n        this.http.get(`${this.API_URLS.PRODUCTS.LIST}?ids=${notFoundIds}`)\n      );\n\n      const products = productR.map((p) => new Product(p));\n\n      this.addToCache(products);\n      return [...products, ...pCache];\n    } catch (error: any) {\n      throw error;\n    }\n  }\n}\n",
+            "constructorObj": {
+                "name": "constructor",
+                "description": "",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "args": [
+                    {
+                        "name": "http",
+                        "type": "HttpClient",
+                        "deprecated": false,
+                        "deprecationMessage": ""
+                    },
+                    {
+                        "name": "API_URLS",
+                        "type": "any",
+                        "deprecated": false,
+                        "deprecationMessage": ""
+                    }
+                ],
+                "line": 17,
+                "jsdoctags": [
+                    {
+                        "name": "http",
+                        "type": "HttpClient",
+                        "deprecated": false,
+                        "deprecationMessage": "",
+                        "tagName": {
+                            "text": "param"
+                        }
+                    },
+                    {
+                        "name": "API_URLS",
+                        "type": "any",
+                        "deprecated": false,
+                        "deprecationMessage": "",
+                        "tagName": {
+                            "text": "param"
+                        }
+                    }
+                ]
+            },
+            "extends": [],
+            "type": "injectable"
+        },
+        {
             "name": "UtilsService",
-            "id": "injectable-UtilsService-c76e820faa5c556fe76d3739155ffab0e75087d39306ecda6e458666a02d2bad62ff7e4acf3458a815a8d57a03d1719fed453ebf9efbe1131e6d575a32836565",
+            "id": "injectable-UtilsService-b50059a44bca312b8733ef8246fd1183555050910171be4672fa452214a502a5cd4efa45f4cf2a656821898dcb3ff3e5962a357654c2826819acd73718c981de",
             "file": "projects/ngx-core/utils/src/services/utils.service.ts",
             "properties": [],
             "methods": [
@@ -2579,6 +3723,21 @@
                     ]
                 },
                 {
+                    "name": "JsonCircularStringifyReplacerFn",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "any",
+                    "typeParameters": [],
+                    "line": 388,
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "rawdescription": "\n\nConverts Circular JSON strcuture to normal. To be used in JSON.stringify(object, JsonCircularStringifyReplacerFn, '\\t')\n",
+                    "description": "<p>Converts Circular JSON strcuture to normal. To be used in JSON.stringify(object, JsonCircularStringifyReplacerFn, &#39;\\t&#39;)</p>\n",
+                    "modifierKind": [
+                        125
+                    ]
+                },
+                {
                     "name": "nauturalJoinArray",
                     "args": [
                         {
@@ -3105,7 +4264,7 @@
             "deprecationMessage": "",
             "description": "<p>UtilsService exports all the methods that provides some common utility.</p>\n",
             "rawdescription": "\n\nUtilsService exports all the methods that provides some common utility.\n\n",
-            "sourceCode": "import { Injectable } from '@angular/core';\r\n\r\n/**\r\n * UtilsService exports all the methods that provides some common utility.\r\n *\r\n * @export\r\n * @class UtilsService\r\n * @typedef {UtilsService}\r\n */\r\n@Injectable({\r\n  providedIn: 'root'\r\n})\r\nexport class UtilsService {\r\n  constructor() {}\r\n\r\n  //\r\n\r\n  /**\r\n   * Replaces all upperCase letters to lowercase precided with '-' dash\r\n   * @param str\r\n   * @returns dashed string\r\n   */\r\n  public camelCaseToDashCase(str: string): string {\r\n    if (!str) return '';\r\n    return str\r\n      .split('')\r\n      .map((c) => (c === c.toUpperCase() ? `-${c.toLowerCase()}` : c))\r\n      .join('');\r\n  }\r\n\r\n  /**\r\n   * Joins the Url segments and forms a url, stripes out any trailing extra slashes from the segments before joing them.\r\n   * @param urlSegments\r\n   * @returns joined Urls\r\n   */\r\n  public joinUrl(urlSegments: Array<string>): string {\r\n    const cleanedSegmenmts = urlSegments.map((str, index) => {\r\n      let cleanSegment = str;\r\n\r\n      switch (index) {\r\n        case 0:\r\n          if (str.endsWith('/')) {\r\n            cleanSegment = str.substring(0, str.length - 2);\r\n          }\r\n          break;\r\n        case urlSegments.length - 1:\r\n          if (str.startsWith('/')) {\r\n            cleanSegment = str.substring(1, str.length);\r\n          }\r\n          break;\r\n        default:\r\n          if (cleanSegment.endsWith('/')) {\r\n            cleanSegment = cleanSegment.substring(0, cleanSegment.length - 2);\r\n          }\r\n\r\n          if (cleanSegment.startsWith('/')) {\r\n            cleanSegment = cleanSegment.substring(1, cleanSegment.length);\r\n          }\r\n      }\r\n\r\n      return cleanSegment;\r\n    });\r\n\r\n    return cleanedSegmenmts.join('/');\r\n  }\r\n\r\n  /**\r\n   * Returns the current Date from browser in the ISO format.\r\n   *\r\n   * @public\r\n   * @readonly\r\n   * @type {string}\r\n   */\r\n  public get currentDate(): string {\r\n    return new Date().toISOString();\r\n  }\r\n\r\n  /**\r\n   * Returns a local date string\r\n   * @date 26/2/2022 - 9:48:21 am\r\n   *\r\n   * @public\r\n   * @param {string} date\r\n   * @returns {string}\r\n   */\r\n  public dateToLocalString(date: string = ''): string {\r\n    if (!date) return '';\r\n    const options: any = { year: 'numeric', month: 'short', day: 'numeric' };\r\n    const dt = new Date(date);\r\n    return dt.toLocaleDateString('en-US', options);\r\n  }\r\n\r\n  /**\r\n   * Converts ISOString date string to its equivalent time in milliseconds since 1970, returns numeric value as a string.\r\n   * @date 12/28/2022 - 6:04:39 PM\r\n   *\r\n   * @public\r\n   * @param {string} dateStr\r\n   * @returns {string}\r\n   */\r\n  public dateStringToTotalTimeString(dateStr: string): string {\r\n    let timeStr = '';\r\n\r\n    try {\r\n      if (dateStr) {\r\n        const dt = new Date(dateStr);\r\n        timeStr = dt.getTime().toString();\r\n      }\r\n    } catch (err) {}\r\n\r\n    return timeStr;\r\n  }\r\n\r\n  /**\r\n   * Converts total time in milliseconds since 1970 (numbered string) to its equivalent ISOString date string.\r\n   * @date 12/28/2022 - 6:04:39 PM\r\n   *\r\n   * @public\r\n   * @param {string} timeStr\r\n   * @returns {string}\r\n   */\r\n  public totalTimeStringToUTCdateString(timeStr: string): string {\r\n    let dateStr = '';\r\n\r\n    try {\r\n      if (timeStr) {\r\n        dateStr = new Date(Number(timeStr)).toISOString();\r\n      }\r\n    } catch (err) {}\r\n\r\n    return dateStr;\r\n  }\r\n\r\n  /**\r\n   * Stripe out all special characters from the string too except A-Z, a-z, 0-9.\r\n   * @date 2/12/2023 - 2:01:20 PM\r\n   *\r\n   * @public\r\n   * @param {string} str\r\n   * @returns {string}\r\n   */\r\n  public getStringWithNoSpecialChars(str: string): string {\r\n    if (!str) return '';\r\n    const strArr = str.split('');\r\n    const filteredStr = strArr.filter((char) => {\r\n      if (\r\n        (char >= 'A' && char <= 'Z') ||\r\n        (char >= 'a' && char <= 'z') ||\r\n        (char >= '0' && char <= '9') ||\r\n        char === ' '\r\n      ) {\r\n        return true;\r\n      } else {\r\n        return false;\r\n      }\r\n    });\r\n\r\n    return filteredStr.join('');\r\n  }\r\n\r\n  /**\r\n   * Trims out additional consecutive spaces from a string, also trims spaces from end of the string.\r\n   * @date 2/12/2023 - 9:54:48 PM\r\n   *\r\n   * @public\r\n   * @param {string} str\r\n   * @returns {string}\r\n   */\r\n  public trimConsecutiveSpaces(str: string): string {\r\n    if (!str) return '';\r\n\r\n    return str\r\n      .split('')\r\n      .filter((char, index) => {\r\n        if (char === ' ') {\r\n          if (index === str.length - 1) {\r\n            return false;\r\n          } else if (str[index + 1] === ' ') {\r\n            return false;\r\n          } else {\r\n            return true;\r\n          }\r\n        } else {\r\n          return true;\r\n        }\r\n      })\r\n      .join('');\r\n  }\r\n\r\n  /**\r\n   * Converts a string into dashed string. All spaces are replaced with dashes.\r\n   * This converted string can be used for getting a unique name for a title of any content like, article etc.\r\n   *\r\n   * @param title\r\n   * @returns\r\n   */\r\n  public toDashedString(title: string = ''): string {\r\n    // trims additional spaces from a string.\r\n    const spacesTrimmedStr = this.trimConsecutiveSpaces(title);\r\n    // Stripe out all special characters from the string too except A-Z, a-z, 0-9.\r\n    const titleWithNoSpecialChars =\r\n      this.getStringWithNoSpecialChars(spacesTrimmedStr);\r\n    return titleWithNoSpecialChars.split(' ').join('-').toLocaleLowerCase();\r\n  }\r\n\r\n  /**\r\n   * Scrolls the page to the desired top position.\r\n   * @date 25/2/2022 - 5:28:11 pm\r\n   *\r\n   * @public\r\n   * @param {number} top\r\n   */\r\n  public scrollTo(top: number = 0) {\r\n    if (typeof window !== 'undefined') {\r\n      window.scrollTo({ top: top });\r\n    }\r\n  }\r\n\r\n  public getTrimmedStringByChars(str: string, count: number = 0): string {\r\n    if (!str || typeof str !== 'string' || !count || count <= 0) {\r\n      return str;\r\n    }\r\n\r\n    return str.substring(0, count) + '...';\r\n  }\r\n\r\n  /**\r\n   * Generates a unique ID from a string by adding dashes for spaces and adding a unique string.\r\n   * @date 14/4/2022 - 2:39:05 pm\r\n   *\r\n   * @public\r\n   * @param {string} [str='']\r\n   * @returns {string}\r\n   */\r\n  public getUniqueFromString(str: string = ''): string {\r\n    const dashed = this.toDashedString(str);\r\n    const rndStr = Math.random().toString(36).substring(2);\r\n    const uniqueId =\r\n      Date.now().toString(36) + rndStr.substring(rndStr.length / 3);\r\n\r\n    return `${dashed}-${uniqueId}`;\r\n  }\r\n\r\n  /**\r\n   * Deep copy an object or an array\r\n   * @date 2/28/2023 - 3:22:38 AM\r\n   *\r\n   * @public\r\n   * @param {(any)} value\r\n   * @returns {(any)}\r\n   */\r\n  public deepCopy(value: any): any {\r\n    try {\r\n      return JSON.parse(JSON.stringify(value));\r\n    } catch (err) {\r\n      return null;\r\n    }\r\n  }\r\n\r\n  public delay(miliseconds: number): Promise<unknown> {\r\n    return new Promise((resolve) => setTimeout(resolve, miliseconds));\r\n  }\r\n\r\n  /**\r\n   * Generates Image source urls to be displayed from API.\r\n   * Note: Do not provide base url, while saving urls to db, but while displaying only.\r\n   * @date 6/4/2023 - 12:27:34 AM\r\n   *\r\n   * @public\r\n   * @param {string} imageFullPath\r\n   * @param {string} imageApiEndpoint\r\n   * @param {string} [baseUrl='']\r\n   * @returns {string}\r\n   */\r\n  public getImageUrl(\r\n    imageFullPath: string,\r\n    imageApiEndpoint: string,\r\n    baseUrl: string = ''\r\n  ): string {\r\n    const imageApiUrl = `${imageApiEndpoint}${imageFullPath}`;\r\n    return baseUrl ? this.joinUrl([baseUrl, imageApiUrl]) : imageApiUrl;\r\n  }\r\n\r\n  /**\r\n   * Generates the canonical categiry or article url.\r\n   * Note: Do not provide base url, while saving urls to db, but while displaying only.\r\n   * @date 6/4/2023 - 12:17:52 AM\r\n   *\r\n   * @public\r\n   * @param {string} categoryid\r\n   * @param {string} [articleId='']\r\n   * Provide only when displaying the url, and not while saving to db.\r\n   * @param {string} [baseUrl='']\r\n   * @returns {string}\r\n   */\r\n  public getCanonicalUrl(\r\n    categoryid: string,\r\n    articleId: string = '',\r\n    baseUrl: string = ''\r\n  ): string {\r\n    const articleSegment = articleId ? `/${articleId}` : '';\r\n    const catId = categoryid.indexOf('/') === 0 ? categoryid : `/${categoryid}`;\r\n    return baseUrl\r\n      ? this.joinUrl([baseUrl, catId, articleSegment])\r\n      : `${catId}${articleSegment}`;\r\n  }\r\n\r\n  /**\r\n   * Replaces single quotes in a string with double quotes.\r\n   * @param str\r\n   * @returns\r\n   */\r\n  public replaceSingleWithDoubleQuotes(str: string): string {\r\n    if (!str) return str;\r\n    str = str.replace(/'/g, '\"');\r\n\r\n    return str;\r\n  }\r\n\r\n  /**\r\n   * Removes double \\\\n chars from string.\r\n   * @param str\r\n   * @returns\r\n   */\r\n  public removeDoubleLineBreakChar(str: string): string {\r\n    if (!str) return str;\r\n    str = str.replace(/\\\\n/g, '\\n');\r\n\r\n    return str;\r\n  }\r\n\r\n  /**\r\n   * Strips out starting and ending single/double quotes from a string.\r\n   * @param str\r\n   * @returns\r\n   */\r\n  public stripsOutQuotesFromStartAndEnd(str: string): string {\r\n    if (!str) return str;\r\n\r\n    if (\r\n      (str.startsWith(\"'\") && str.endsWith(\"'\")) ||\r\n      (str.startsWith('\"') && str.endsWith('\"'))\r\n    ) {\r\n      str = str.substring(1);\r\n      str = str.substring(0, str.length - 1);\r\n    }\r\n\r\n    return str;\r\n  }\r\n\r\n  /**\r\n   * Gives a natural comma separetd string from an array of strings.\r\n   * Last comma in the string is replaced with 'and', being a natural language string.\r\n   * @param stringArray\r\n   * @returns string\r\n   */\r\n  public nauturalJoinArray(stringArray: Array<string>): string {\r\n    return `${stringArray.slice(0, stringArray.length - 1).join(', ')} and ${\r\n      stringArray[stringArray.length - 1]\r\n    }`;\r\n  }\r\n\r\n  /**\r\n   * Parses a remoteConfig (firebase) to a valid value. Removes intermediate nested vars\r\n   */\r\n\r\n  public getRemoteConfigValue(remoteConfig: any, key: string) {\r\n    if (!remoteConfig || !key) return null;\r\n\r\n    const param = remoteConfig.parameters[key];\r\n\r\n    if (param) {\r\n      const value = (param.defaultValue as any)?.value;\r\n\r\n      if (param.valueType === 'JSON' && value) {\r\n        return JSON.parse(value);\r\n      }\r\n\r\n      return value;\r\n    }\r\n\r\n    throw new Error(`Param - ${key} does not exist in global config.`);\r\n  }\r\n}\r\n",
+            "sourceCode": "import { Injectable } from '@angular/core';\r\n\r\n/**\r\n * UtilsService exports all the methods that provides some common utility.\r\n *\r\n * @export\r\n * @class UtilsService\r\n * @typedef {UtilsService}\r\n */\r\n@Injectable({\r\n  providedIn: 'root'\r\n})\r\nexport class UtilsService {\r\n  constructor() {}\r\n\r\n  //\r\n\r\n  /**\r\n   * Replaces all upperCase letters to lowercase precided with '-' dash\r\n   * @param str\r\n   * @returns dashed string\r\n   */\r\n  public camelCaseToDashCase(str: string): string {\r\n    if (!str) return '';\r\n    return str\r\n      .split('')\r\n      .map((c) => (c === c.toUpperCase() ? `-${c.toLowerCase()}` : c))\r\n      .join('');\r\n  }\r\n\r\n  /**\r\n   * Joins the Url segments and forms a url, stripes out any trailing extra slashes from the segments before joing them.\r\n   * @param urlSegments\r\n   * @returns joined Urls\r\n   */\r\n  public joinUrl(urlSegments: Array<string>): string {\r\n    const cleanedSegmenmts = urlSegments.map((str, index) => {\r\n      let cleanSegment = str;\r\n\r\n      switch (index) {\r\n        case 0:\r\n          if (str.endsWith('/')) {\r\n            cleanSegment = str.substring(0, str.length - 2);\r\n          }\r\n          break;\r\n        case urlSegments.length - 1:\r\n          if (str.startsWith('/')) {\r\n            cleanSegment = str.substring(1, str.length);\r\n          }\r\n          break;\r\n        default:\r\n          if (cleanSegment.endsWith('/')) {\r\n            cleanSegment = cleanSegment.substring(0, cleanSegment.length - 2);\r\n          }\r\n\r\n          if (cleanSegment.startsWith('/')) {\r\n            cleanSegment = cleanSegment.substring(1, cleanSegment.length);\r\n          }\r\n      }\r\n\r\n      return cleanSegment;\r\n    });\r\n\r\n    return cleanedSegmenmts.join('/');\r\n  }\r\n\r\n  /**\r\n   * Returns the current Date from browser in the ISO format.\r\n   *\r\n   * @public\r\n   * @readonly\r\n   * @type {string}\r\n   */\r\n  public get currentDate(): string {\r\n    return new Date().toISOString();\r\n  }\r\n\r\n  /**\r\n   * Returns a local date string\r\n   * @date 26/2/2022 - 9:48:21 am\r\n   *\r\n   * @public\r\n   * @param {string} date\r\n   * @returns {string}\r\n   */\r\n  public dateToLocalString(date: string = ''): string {\r\n    if (!date) return '';\r\n    const options: any = { year: 'numeric', month: 'short', day: 'numeric' };\r\n    const dt = new Date(date);\r\n    return dt.toLocaleDateString('en-US', options);\r\n  }\r\n\r\n  /**\r\n   * Converts ISOString date string to its equivalent time in milliseconds since 1970, returns numeric value as a string.\r\n   * @date 12/28/2022 - 6:04:39 PM\r\n   *\r\n   * @public\r\n   * @param {string} dateStr\r\n   * @returns {string}\r\n   */\r\n  public dateStringToTotalTimeString(dateStr: string): string {\r\n    let timeStr = '';\r\n\r\n    try {\r\n      if (dateStr) {\r\n        const dt = new Date(dateStr);\r\n        timeStr = dt.getTime().toString();\r\n      }\r\n    } catch (err) {}\r\n\r\n    return timeStr;\r\n  }\r\n\r\n  /**\r\n   * Converts total time in milliseconds since 1970 (numbered string) to its equivalent ISOString date string.\r\n   * @date 12/28/2022 - 6:04:39 PM\r\n   *\r\n   * @public\r\n   * @param {string} timeStr\r\n   * @returns {string}\r\n   */\r\n  public totalTimeStringToUTCdateString(timeStr: string): string {\r\n    let dateStr = '';\r\n\r\n    try {\r\n      if (timeStr) {\r\n        dateStr = new Date(Number(timeStr)).toISOString();\r\n      }\r\n    } catch (err) {}\r\n\r\n    return dateStr;\r\n  }\r\n\r\n  /**\r\n   * Stripe out all special characters from the string too except A-Z, a-z, 0-9.\r\n   * @date 2/12/2023 - 2:01:20 PM\r\n   *\r\n   * @public\r\n   * @param {string} str\r\n   * @returns {string}\r\n   */\r\n  public getStringWithNoSpecialChars(str: string): string {\r\n    if (!str) return '';\r\n    const strArr = str.split('');\r\n    const filteredStr = strArr.filter((char) => {\r\n      if (\r\n        (char >= 'A' && char <= 'Z') ||\r\n        (char >= 'a' && char <= 'z') ||\r\n        (char >= '0' && char <= '9') ||\r\n        char === ' '\r\n      ) {\r\n        return true;\r\n      } else {\r\n        return false;\r\n      }\r\n    });\r\n\r\n    return filteredStr.join('');\r\n  }\r\n\r\n  /**\r\n   * Trims out additional consecutive spaces from a string, also trims spaces from end of the string.\r\n   * @date 2/12/2023 - 9:54:48 PM\r\n   *\r\n   * @public\r\n   * @param {string} str\r\n   * @returns {string}\r\n   */\r\n  public trimConsecutiveSpaces(str: string): string {\r\n    if (!str) return '';\r\n\r\n    return str\r\n      .split('')\r\n      .filter((char, index) => {\r\n        if (char === ' ') {\r\n          if (index === str.length - 1) {\r\n            return false;\r\n          } else if (str[index + 1] === ' ') {\r\n            return false;\r\n          } else {\r\n            return true;\r\n          }\r\n        } else {\r\n          return true;\r\n        }\r\n      })\r\n      .join('');\r\n  }\r\n\r\n  /**\r\n   * Converts a string into dashed string. All spaces are replaced with dashes.\r\n   * This converted string can be used for getting a unique name for a title of any content like, article etc.\r\n   *\r\n   * @param title\r\n   * @returns\r\n   */\r\n  public toDashedString(title: string = ''): string {\r\n    // trims additional spaces from a string.\r\n    const spacesTrimmedStr = this.trimConsecutiveSpaces(title);\r\n    // Stripe out all special characters from the string too except A-Z, a-z, 0-9.\r\n    const titleWithNoSpecialChars =\r\n      this.getStringWithNoSpecialChars(spacesTrimmedStr);\r\n    return titleWithNoSpecialChars.split(' ').join('-').toLocaleLowerCase();\r\n  }\r\n\r\n  /**\r\n   * Scrolls the page to the desired top position.\r\n   * @date 25/2/2022 - 5:28:11 pm\r\n   *\r\n   * @public\r\n   * @param {number} top\r\n   */\r\n  public scrollTo(top: number = 0) {\r\n    if (typeof window !== 'undefined') {\r\n      window.scrollTo({ top: top });\r\n    }\r\n  }\r\n\r\n  public getTrimmedStringByChars(str: string, count: number = 0): string {\r\n    if (!str || typeof str !== 'string' || !count || count <= 0) {\r\n      return str;\r\n    }\r\n\r\n    return str.substring(0, count) + '...';\r\n  }\r\n\r\n  /**\r\n   * Generates a unique ID from a string by adding dashes for spaces and adding a unique string.\r\n   * @date 14/4/2022 - 2:39:05 pm\r\n   *\r\n   * @public\r\n   * @param {string} [str='']\r\n   * @returns {string}\r\n   */\r\n  public getUniqueFromString(str: string = ''): string {\r\n    const dashed = this.toDashedString(str);\r\n    const rndStr = Math.random().toString(36).substring(2);\r\n    const uniqueId =\r\n      Date.now().toString(36) + rndStr.substring(rndStr.length / 3);\r\n\r\n    return `${dashed}-${uniqueId}`;\r\n  }\r\n\r\n  /**\r\n   * Deep copy an object or an array\r\n   * @date 2/28/2023 - 3:22:38 AM\r\n   *\r\n   * @public\r\n   * @param {(any)} value\r\n   * @returns {(any)}\r\n   */\r\n  public deepCopy(value: any): any {\r\n    try {\r\n      return JSON.parse(JSON.stringify(value));\r\n    } catch (err) {\r\n      return null;\r\n    }\r\n  }\r\n\r\n  public delay(miliseconds: number): Promise<unknown> {\r\n    return new Promise((resolve) => setTimeout(resolve, miliseconds));\r\n  }\r\n\r\n  /**\r\n   * Generates Image source urls to be displayed from API.\r\n   * Note: Do not provide base url, while saving urls to db, but while displaying only.\r\n   * @date 6/4/2023 - 12:27:34 AM\r\n   *\r\n   * @public\r\n   * @param {string} imageFullPath\r\n   * @param {string} imageApiEndpoint\r\n   * @param {string} [baseUrl='']\r\n   * @returns {string}\r\n   */\r\n  public getImageUrl(\r\n    imageFullPath: string,\r\n    imageApiEndpoint: string,\r\n    baseUrl: string = ''\r\n  ): string {\r\n    const imageApiUrl = `${imageApiEndpoint}${imageFullPath}`;\r\n    return baseUrl ? this.joinUrl([baseUrl, imageApiUrl]) : imageApiUrl;\r\n  }\r\n\r\n  /**\r\n   * Generates the canonical categiry or article url.\r\n   * Note: Do not provide base url, while saving urls to db, but while displaying only.\r\n   * @date 6/4/2023 - 12:17:52 AM\r\n   *\r\n   * @public\r\n   * @param {string} categoryid\r\n   * @param {string} [articleId='']\r\n   * Provide only when displaying the url, and not while saving to db.\r\n   * @param {string} [baseUrl='']\r\n   * @returns {string}\r\n   */\r\n  public getCanonicalUrl(\r\n    categoryid: string,\r\n    articleId: string = '',\r\n    baseUrl: string = ''\r\n  ): string {\r\n    const articleSegment = articleId ? `/${articleId}` : '';\r\n    const catId = categoryid.indexOf('/') === 0 ? categoryid : `/${categoryid}`;\r\n    return baseUrl\r\n      ? this.joinUrl([baseUrl, catId, articleSegment])\r\n      : `${catId}${articleSegment}`;\r\n  }\r\n\r\n  /**\r\n   * Replaces single quotes in a string with double quotes.\r\n   * @param str\r\n   * @returns\r\n   */\r\n  public replaceSingleWithDoubleQuotes(str: string): string {\r\n    if (!str) return str;\r\n    str = str.replace(/'/g, '\"');\r\n\r\n    return str;\r\n  }\r\n\r\n  /**\r\n   * Removes double \\\\n chars from string.\r\n   * @param str\r\n   * @returns\r\n   */\r\n  public removeDoubleLineBreakChar(str: string): string {\r\n    if (!str) return str;\r\n    str = str.replace(/\\\\n/g, '\\n');\r\n\r\n    return str;\r\n  }\r\n\r\n  /**\r\n   * Strips out starting and ending single/double quotes from a string.\r\n   * @param str\r\n   * @returns\r\n   */\r\n  public stripsOutQuotesFromStartAndEnd(str: string): string {\r\n    if (!str) return str;\r\n\r\n    if (\r\n      (str.startsWith(\"'\") && str.endsWith(\"'\")) ||\r\n      (str.startsWith('\"') && str.endsWith('\"'))\r\n    ) {\r\n      str = str.substring(1);\r\n      str = str.substring(0, str.length - 1);\r\n    }\r\n\r\n    return str;\r\n  }\r\n\r\n  /**\r\n   * Gives a natural comma separetd string from an array of strings.\r\n   * Last comma in the string is replaced with 'and', being a natural language string.\r\n   * @param stringArray\r\n   * @returns string\r\n   */\r\n  public nauturalJoinArray(stringArray: Array<string>): string {\r\n    return `${stringArray.slice(0, stringArray.length - 1).join(', ')} and ${\r\n      stringArray[stringArray.length - 1]\r\n    }`;\r\n  }\r\n\r\n  /**\r\n   * Parses a remoteConfig (firebase) to a valid value. Removes intermediate nested vars\r\n   */\r\n\r\n  public getRemoteConfigValue(remoteConfig: any, key: string) {\r\n    if (!remoteConfig || !key) return null;\r\n\r\n    const param = remoteConfig.parameters[key];\r\n\r\n    if (param) {\r\n      const value = (param.defaultValue as any)?.value;\r\n\r\n      if (param.valueType === 'JSON' && value) {\r\n        return JSON.parse(value);\r\n      }\r\n\r\n      return value;\r\n    }\r\n\r\n    throw new Error(`Param - ${key} does not exist in global config.`);\r\n  }\r\n\r\n  /**\r\n   * Converts Circular JSON strcuture to normal. To be used in JSON.stringify(object, JsonCircularStringifyReplacerFn, '\\t')\r\n   */\r\n  public JsonCircularStringifyReplacerFn(): any {\r\n    const visited = new WeakSet();\r\n    return (key, value) => {\r\n      if (typeof value === 'object' && value !== null) {\r\n        if (visited.has(value)) {\r\n          return;\r\n        }\r\n        visited.add(value);\r\n      }\r\n      return value;\r\n    };\r\n  }\r\n}\r\n",
             "constructorObj": {
                 "name": "constructor",
                 "description": "",
@@ -3242,6 +4401,8 @@
                     }
                 ]
             },
+            "inputsClass": [],
+            "outputsClass": [],
             "properties": [
                 {
                     "name": "addressLine1",
@@ -3400,19 +4561,79 @@
             "methods": [],
             "indexSignatures": [],
             "extends": [],
+            "hostBindings": [],
+            "hostListeners": []
+        },
+        {
+            "name": "AppError",
+            "id": "class-AppError-983336abb585cf26a946b5a4374243fb444208fb02e63bac3fa2f8280c41168ec6e78c01bc5ee40e5075cac57e8a29c8b34e393f3ab0bc97f501a8bde3ee47e5",
+            "file": "projects/ngx-core/app-error/src/classes/app-error.class.ts",
+            "deprecated": false,
+            "deprecationMessage": "",
+            "type": "class",
+            "sourceCode": "export class AppError {\r\n  code: string;\r\n  message: string;\r\n\r\n  constructor(error: any) {\r\n    this.code = error?.code || error?.error?.code || error?.status || '';\r\n    this.message =\r\n      (typeof error === 'string' ? error : '') ||\r\n      (typeof error?.error === 'string' ? error?.error : '') +\r\n        ' ' +\r\n        error?.message ||\r\n      error?.error?.message ||\r\n      error?.stack?.toString() ||\r\n      '';\r\n  }\r\n}\r\n",
+            "constructorObj": {
+                "name": "constructor",
+                "description": "",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "args": [
+                    {
+                        "name": "error",
+                        "type": "any",
+                        "deprecated": false,
+                        "deprecationMessage": ""
+                    }
+                ],
+                "line": 3,
+                "jsdoctags": [
+                    {
+                        "name": "error",
+                        "type": "any",
+                        "deprecated": false,
+                        "deprecationMessage": "",
+                        "tagName": {
+                            "text": "param"
+                        }
+                    }
+                ]
+            },
             "inputsClass": [],
             "outputsClass": [],
+            "properties": [
+                {
+                    "name": "code",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "string",
+                    "optional": false,
+                    "description": "",
+                    "line": 2
+                },
+                {
+                    "name": "message",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "string",
+                    "optional": false,
+                    "description": "",
+                    "line": 3
+                }
+            ],
+            "methods": [],
+            "indexSignatures": [],
+            "extends": [],
             "hostBindings": [],
             "hostListeners": []
         },
         {
             "name": "AsyncConfigValidator",
-            "id": "class-AsyncConfigValidator-70794131f9537c47c18b1139c2ac3feba836d729b7c5bcd9e59302346dbddec5cdf844c5af576affc3b0d38f3555f37f80bd4b3c5edfde53756b335aaabdb6e6",
+            "id": "class-AsyncConfigValidator-064d7ac06e30059deaa68f3dbfefb5170682c2c1530378a12aa8b06c80475bdb1e98017539049c2ba79fb4cf3325926715a1329459608e132bda4fd8694cb865",
             "file": "projects/ngx-core/helpers-forms/src/classes/async-config-validator.class.ts",
             "deprecated": false,
             "deprecationMessage": "",
             "type": "class",
-            "sourceCode": "export class AsyncConfigValidator {\r\n  name?: string;\r\n  url?: string;\r\n  params?: Array<any>;\r\n\r\n  constructor(data: any = null) {\r\n    this.name = data?.name || '';\r\n    this.url = data?.url || '';\r\n    this.params = data?.params || [];\r\n  }\r\n}\r\n",
+            "sourceCode": "import { GlobalConfigParamsEnum } from '@annuadvent/ngx-core/global-config';\r\n\r\nexport class AsyncConfigValidator {\r\n  name?: string;\r\n  url?: string;\r\n  imageDimsName?: string | GlobalConfigParamsEnum;\r\n\r\n  constructor(data: any = null) {\r\n    this.name = data?.name || '';\r\n    this.url = data?.url || '';\r\n    this.imageDimsName = data?.imageDimsName || '';\r\n  }\r\n}\r\n",
             "constructorObj": {
                 "name": "constructor",
                 "description": "",
@@ -3427,7 +4648,7 @@
                         "defaultValue": "null"
                     }
                 ],
-                "line": 4,
+                "line": 6,
                 "jsdoctags": [
                     {
                         "name": "data",
@@ -3441,21 +4662,23 @@
                     }
                 ]
             },
+            "inputsClass": [],
+            "outputsClass": [],
             "properties": [
+                {
+                    "name": "imageDimsName",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "string | GlobalConfigParamsEnum",
+                    "optional": true,
+                    "description": "",
+                    "line": 6
+                },
                 {
                     "name": "name",
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "string",
-                    "optional": true,
-                    "description": "",
-                    "line": 2
-                },
-                {
-                    "name": "params",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "Array<any>",
                     "optional": true,
                     "description": "",
                     "line": 4
@@ -3467,25 +4690,23 @@
                     "type": "string",
                     "optional": true,
                     "description": "",
-                    "line": 3
+                    "line": 5
                 }
             ],
             "methods": [],
             "indexSignatures": [],
             "extends": [],
-            "inputsClass": [],
-            "outputsClass": [],
             "hostBindings": [],
             "hostListeners": []
         },
         {
-            "name": "Category",
-            "id": "class-Category-3b9d5ffcf02e5662a4cb2e1b57cb82be76f9f3e85f1e206b6a13ea781a2569d3bb12fba7401d965b914821832fd7fb7341d9119e18ece364ca434a44dc35e424",
-            "file": "projects/ngx-core/helpers-categories/src/classes/category.class.ts",
+            "name": "Cart",
+            "id": "class-Cart-e09f5128a2f1f2e1b5c52d01b9f852908e71c68893f602023d71aca796b969aa7379907555308b0fe90e07e90036ace2c016684e1af0c59bc2cb5e04636d5627",
+            "file": "projects/ngx-core/helpers-ecommerce/src/classes/cart.class.ts",
             "deprecated": false,
             "deprecationMessage": "",
             "type": "class",
-            "sourceCode": "export class Category {\r\n  id?: string;\r\n  uid?: string;\r\n  title?: string;\r\n  description?: string;\r\n  imageUrl?: string;\r\n  level?: number;\r\n  isLive?: boolean;\r\n  parents?: Array<string>;\r\n  createTime?: string | Date;\r\n  updateTime?: string | Date;\r\n\r\n  constructor(data: any = null) {\r\n    this.id = data?.id || '';\r\n    this.uid = data?.uid || '';\r\n    this.title = data?.title || '';\r\n    this.description = data?.description || '';\r\n    this.imageUrl = data?.imageUrl || '';\r\n    this.level = data?.level || 1;\r\n    this.isLive = data?.isLive || false;\r\n    this.parents = data?.parents || [];\r\n    this.createTime = data?.createTime || '';\r\n    this.updateTime = data?.updateTime || '';\r\n  }\r\n}\r\n",
+            "sourceCode": "import { InCartProduct } from './in-cart-product.class';\r\n\r\nexport class Cart {\r\n  id: string; // id is UID\r\n  products: Array<InCartProduct>;\r\n  createTime: Date | string;\r\n  updateTime: Date | string;\r\n\r\n  constructor(data: any = null) {\r\n    this.id = data?.id || '';\r\n    this.products = data?.products || [];\r\n    this.createTime = data?.createTime || '';\r\n    this.updateTime = data?.updateTime || '';\r\n  }\r\n}\r\n",
             "constructorObj": {
                 "name": "constructor",
                 "description": "",
@@ -3500,7 +4721,7 @@
                         "defaultValue": "null"
                     }
                 ],
-                "line": 11,
+                "line": 7,
                 "jsdoctags": [
                     {
                         "name": "data",
@@ -3514,7 +4735,100 @@
                     }
                 ]
             },
+            "inputsClass": [],
+            "outputsClass": [],
             "properties": [
+                {
+                    "name": "createTime",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Date | string",
+                    "optional": false,
+                    "description": "",
+                    "line": 6
+                },
+                {
+                    "name": "id",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "string",
+                    "optional": false,
+                    "description": "",
+                    "line": 4
+                },
+                {
+                    "name": "products",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Array<InCartProduct>",
+                    "optional": false,
+                    "description": "",
+                    "line": 5
+                },
+                {
+                    "name": "updateTime",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Date | string",
+                    "optional": false,
+                    "description": "",
+                    "line": 7
+                }
+            ],
+            "methods": [],
+            "indexSignatures": [],
+            "extends": [],
+            "hostBindings": [],
+            "hostListeners": []
+        },
+        {
+            "name": "Category",
+            "id": "class-Category-364b18d667b2a78fafc677e1885c25d5e2d2f0cadede09c850a1335517cfcf29f28c460d2a3642f9cc66cb947ab594c1f7892d7088a7f94041c5c6fb1b0d4abf",
+            "file": "projects/ngx-core/helpers-categories/src/classes/category.class.ts",
+            "deprecated": false,
+            "deprecationMessage": "",
+            "type": "class",
+            "sourceCode": "export class Category {\r\n  id?: string;\r\n  uid?: string;\r\n  title?: string;\r\n  description?: string;\r\n  imageUrl?: string;\r\n  bannerUrl?: string;\r\n  level?: number;\r\n  isLive?: boolean;\r\n  parents?: Array<string>;\r\n  createTime?: string | Date;\r\n  updateTime?: string | Date;\r\n\r\n  constructor(data: any = null) {\r\n    this.id = data?.id || '';\r\n    this.uid = data?.uid || '';\r\n    this.title = data?.title || '';\r\n    this.description = data?.description || '';\r\n    this.imageUrl = data?.imageUrl || '';\r\n    this.bannerUrl = data?.bannerUrl || '';\r\n    this.level = data?.level || 1;\r\n    this.isLive = data?.isLive || false;\r\n    this.parents = data?.parents || [];\r\n    this.createTime = data?.createTime || '';\r\n    this.updateTime = data?.updateTime || '';\r\n  }\r\n}\r\n",
+            "constructorObj": {
+                "name": "constructor",
+                "description": "",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "args": [
+                    {
+                        "name": "data",
+                        "type": "any",
+                        "deprecated": false,
+                        "deprecationMessage": "",
+                        "defaultValue": "null"
+                    }
+                ],
+                "line": 12,
+                "jsdoctags": [
+                    {
+                        "name": "data",
+                        "type": "any",
+                        "deprecated": false,
+                        "deprecationMessage": "",
+                        "defaultValue": "null",
+                        "tagName": {
+                            "text": "param"
+                        }
+                    }
+                ]
+            },
+            "inputsClass": [],
+            "outputsClass": [],
+            "properties": [
+                {
+                    "name": "bannerUrl",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "string",
+                    "optional": true,
+                    "description": "",
+                    "line": 7
+                },
                 {
                     "name": "createTime",
                     "deprecated": false,
@@ -3522,7 +4836,7 @@
                     "type": "string | Date",
                     "optional": true,
                     "description": "",
-                    "line": 10
+                    "line": 11
                 },
                 {
                     "name": "description",
@@ -3558,7 +4872,7 @@
                     "type": "boolean",
                     "optional": true,
                     "description": "",
-                    "line": 8
+                    "line": 9
                 },
                 {
                     "name": "level",
@@ -3567,7 +4881,7 @@
                     "type": "number",
                     "optional": true,
                     "description": "",
-                    "line": 7
+                    "line": 8
                 },
                 {
                     "name": "parents",
@@ -3576,7 +4890,7 @@
                     "type": "Array<string>",
                     "optional": true,
                     "description": "",
-                    "line": 9
+                    "line": 10
                 },
                 {
                     "name": "title",
@@ -3603,14 +4917,12 @@
                     "type": "string | Date",
                     "optional": true,
                     "description": "",
-                    "line": 11
+                    "line": 12
                 }
             ],
             "methods": [],
             "indexSignatures": [],
             "extends": [],
-            "inputsClass": [],
-            "outputsClass": [],
             "hostBindings": [],
             "hostListeners": []
         },
@@ -3650,6 +4962,8 @@
                     }
                 ]
             },
+            "inputsClass": [],
+            "outputsClass": [],
             "properties": [
                 {
                     "name": "instructions",
@@ -3673,8 +4987,6 @@
             "methods": [],
             "indexSignatures": [],
             "extends": [],
-            "inputsClass": [],
-            "outputsClass": [],
             "hostBindings": [],
             "hostListeners": []
         },
@@ -3694,6 +5006,8 @@
                 "args": [],
                 "line": 4
             },
+            "inputsClass": [],
+            "outputsClass": [],
             "properties": [],
             "methods": [],
             "indexSignatures": [
@@ -3714,8 +5028,6 @@
                 }
             ],
             "extends": [],
-            "inputsClass": [],
-            "outputsClass": [],
             "hostBindings": [],
             "hostListeners": []
         },
@@ -3755,6 +5067,8 @@
                     }
                 ]
             },
+            "inputsClass": [],
+            "outputsClass": [],
             "properties": [
                 {
                     "name": "actionBtn",
@@ -3904,8 +5218,79 @@
             "methods": [],
             "indexSignatures": [],
             "extends": [],
+            "hostBindings": [],
+            "hostListeners": []
+        },
+        {
+            "name": "InCartProduct",
+            "id": "class-InCartProduct-53b4e0b8ddfbf72d85aa1ca53107b9375ce2420653ccb5d7eba11d556ba0d40ff8ac5d26ac65eab5f4fc8a70d3f4bf6cfb8519ce4e83c001adcd937abe05fdab",
+            "file": "projects/ngx-core/helpers-ecommerce/src/classes/in-cart-product.class.ts",
+            "deprecated": false,
+            "deprecationMessage": "",
+            "type": "class",
+            "sourceCode": "export class InCartProduct {\r\n  id: string;\r\n  size: string;\r\n  qty: number;\r\n\r\n  constructor(data: any = null) {\r\n    this.id = data?.id || '';\r\n    this.size = data?.size || '';\r\n    this.qty = data?.qty || 0;\r\n  }\r\n}\r\n",
+            "constructorObj": {
+                "name": "constructor",
+                "description": "",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "args": [
+                    {
+                        "name": "data",
+                        "type": "any",
+                        "deprecated": false,
+                        "deprecationMessage": "",
+                        "defaultValue": "null"
+                    }
+                ],
+                "line": 4,
+                "jsdoctags": [
+                    {
+                        "name": "data",
+                        "type": "any",
+                        "deprecated": false,
+                        "deprecationMessage": "",
+                        "defaultValue": "null",
+                        "tagName": {
+                            "text": "param"
+                        }
+                    }
+                ]
+            },
             "inputsClass": [],
             "outputsClass": [],
+            "properties": [
+                {
+                    "name": "id",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "string",
+                    "optional": false,
+                    "description": "",
+                    "line": 2
+                },
+                {
+                    "name": "qty",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "number",
+                    "optional": false,
+                    "description": "",
+                    "line": 4
+                },
+                {
+                    "name": "size",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "string",
+                    "optional": false,
+                    "description": "",
+                    "line": 3
+                }
+            ],
+            "methods": [],
+            "indexSignatures": [],
+            "extends": [],
             "hostBindings": [],
             "hostListeners": []
         },
@@ -3945,6 +5330,8 @@
                     }
                 ]
             },
+            "inputsClass": [],
+            "outputsClass": [],
             "properties": [
                 {
                     "name": "city",
@@ -3995,19 +5382,17 @@
             "methods": [],
             "indexSignatures": [],
             "extends": [],
-            "inputsClass": [],
-            "outputsClass": [],
             "hostBindings": [],
             "hostListeners": []
         },
         {
             "name": "Product",
-            "id": "class-Product-1e6274cfa8e1ba429c6229821c369a30127e96560d86d9d065bc3693916cbea145eb7d551084fee1490de81bee9673188e47a1cb093217b476bab0e798eb958a",
+            "id": "class-Product-d1d8197e973935e06dc73437a3268c763baa10ea76acd0caffd160e968cb50d6010aa24057bbb5b8b8123045e18789deac5166b01d6f141214a6e0e3dd8f3b97",
             "file": "projects/ngx-core/helpers-ecommerce/src/classes/product.class.ts",
             "deprecated": false,
             "deprecationMessage": "",
             "type": "class",
-            "sourceCode": "export class Product {\r\n  id: string;\r\n  uid: string;\r\n  title: string;\r\n  brand: string;\r\n  description: string;\r\n  images: Array<string>;\r\n  sizes: Array<string>;\r\n  offerId: string;\r\n  qty: { [key: string]: number };\r\n  price: { [key: string]: number };\r\n  isLive: boolean;\r\n  createTime: Date | string;\r\n  updateTime: Date | string;\r\n\r\n  constructor(data: any = null) {\r\n    this.id = data?.id || '';\r\n    this.uid = data?.uid || '';\r\n    this.title = data?.title || '';\r\n    this.brand = data?.brand || '';\r\n    this.description = data?.description || '';\r\n    this.images = data?.images || [];\r\n    this.sizes = data?.sizes || [];\r\n    this.offerId = data?.offerId || '';\r\n    this.qty = data?.qty || null;\r\n    this.price = data?.price || null;\r\n    this.isLive = data?.isLive || false;\r\n    this.createTime = data?.createTime || '';\r\n    this.updateTime = data?.updateTime || '';\r\n  }\r\n}\r\n",
+            "sourceCode": "import { Offer } from '../interfaces/offer.interface';\r\nimport { Price } from '../interfaces/price.interface';\r\nimport { Qty } from '../interfaces/qty.interface';\r\n\r\nexport class Product {\r\n  id: string;\r\n  uid: string;\r\n  title: string;\r\n  brand: string;\r\n  description: string;\r\n  categories: Array<string>;\r\n  images: Array<string>;\r\n  sizes: Array<string>;\r\n  offer: Offer;\r\n  qty: Qty;\r\n  price: Price;\r\n  minDispatchTime: number;\r\n  maxDispatchTime: number;\r\n  isLive: boolean;\r\n  createTime: Date | string;\r\n  updateTime: Date | string;\r\n\r\n  constructor(data: any = null) {\r\n    this.id = data?.id || '';\r\n    this.uid = data?.uid || '';\r\n    this.title = data?.title || '';\r\n    this.brand = data?.brand || '';\r\n    this.description = data?.description || '';\r\n    this.images = data?.images || [];\r\n    this.categories = data?.categories || [];\r\n    this.sizes = data?.sizes || [];\r\n    this.offer = this.toNumeric(data?.offer);\r\n    this.qty = this.toNumeric(data?.qty);\r\n    this.price = this.toNumeric(data?.price);\r\n    this.minDispatchTime = parseInt(data?.minDispatchTime || '0');\r\n    this.maxDispatchTime = parseInt(data?.maxDispatchTime || '0');\r\n    this.isLive = data?.isLive || false;\r\n    this.createTime = data?.createTime || '';\r\n    this.updateTime = data?.updateTime || '';\r\n  }\r\n\r\n  private toNumeric(value: Price | Qty | Offer): Price | Qty | Offer {\r\n    if (!value) return null;\r\n\r\n    const parsedValue = {};\r\n    Object.keys(value).forEach((key) => {\r\n      const keyValue = value[key].toString();\r\n      parsedValue[key] = keyValue ? parseInt(keyValue) : keyValue;\r\n    });\r\n\r\n    return parsedValue;\r\n  }\r\n\r\n  public setSizes(v: Array<string>) {\r\n    this.sizes = v || [];\r\n\r\n    // Update Prices\r\n    const newPrices = {};\r\n    this.sizes.forEach((s) => {\r\n      newPrices[s] = this.price[s] || 0;\r\n    });\r\n    this.price = newPrices;\r\n\r\n    // Update Quantities\r\n    const newQtys = {};\r\n    this.sizes.forEach((s) => {\r\n      newQtys[s] = this.qty[s] || 0;\r\n    });\r\n    this.qty = newQtys;\r\n  }\r\n}\r\n",
             "constructorObj": {
                 "name": "constructor",
                 "description": "",
@@ -4022,7 +5407,7 @@
                         "defaultValue": "null"
                     }
                 ],
-                "line": 14,
+                "line": 21,
                 "jsdoctags": [
                     {
                         "name": "data",
@@ -4036,6 +5421,8 @@
                     }
                 ]
             },
+            "inputsClass": [],
+            "outputsClass": [],
             "properties": [
                 {
                     "name": "brand",
@@ -4044,7 +5431,16 @@
                     "type": "string",
                     "optional": false,
                     "description": "",
-                    "line": 5
+                    "line": 9
+                },
+                {
+                    "name": "categories",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Array<string>",
+                    "optional": false,
+                    "description": "",
+                    "line": 11
                 },
                 {
                     "name": "createTime",
@@ -4053,7 +5449,7 @@
                     "type": "Date | string",
                     "optional": false,
                     "description": "",
-                    "line": 13
+                    "line": 20
                 },
                 {
                     "name": "description",
@@ -4062,7 +5458,7 @@
                     "type": "string",
                     "optional": false,
                     "description": "",
-                    "line": 6
+                    "line": 10
                 },
                 {
                     "name": "id",
@@ -4071,7 +5467,7 @@
                     "type": "string",
                     "optional": false,
                     "description": "",
-                    "line": 2
+                    "line": 6
                 },
                 {
                     "name": "images",
@@ -4080,7 +5476,7 @@
                     "type": "Array<string>",
                     "optional": false,
                     "description": "",
-                    "line": 7
+                    "line": 12
                 },
                 {
                     "name": "isLive",
@@ -4089,34 +5485,52 @@
                     "type": "boolean",
                     "optional": false,
                     "description": "",
-                    "line": 12
+                    "line": 19
                 },
                 {
-                    "name": "offerId",
+                    "name": "maxDispatchTime",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "type": "string",
+                    "type": "number",
                     "optional": false,
                     "description": "",
-                    "line": 9
+                    "line": 18
+                },
+                {
+                    "name": "minDispatchTime",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "number",
+                    "optional": false,
+                    "description": "",
+                    "line": 17
+                },
+                {
+                    "name": "offer",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Offer",
+                    "optional": false,
+                    "description": "",
+                    "line": 14
                 },
                 {
                     "name": "price",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "type": "literal type",
+                    "type": "Price",
                     "optional": false,
                     "description": "",
-                    "line": 11
+                    "line": 16
                 },
                 {
                     "name": "qty",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "type": "literal type",
+                    "type": "Qty",
                     "optional": false,
                     "description": "",
-                    "line": 10
+                    "line": 15
                 },
                 {
                     "name": "sizes",
@@ -4125,7 +5539,7 @@
                     "type": "Array<string>",
                     "optional": false,
                     "description": "",
-                    "line": 8
+                    "line": 13
                 },
                 {
                     "name": "title",
@@ -4134,7 +5548,7 @@
                     "type": "string",
                     "optional": false,
                     "description": "",
-                    "line": 4
+                    "line": 8
                 },
                 {
                     "name": "uid",
@@ -4143,7 +5557,7 @@
                     "type": "string",
                     "optional": false,
                     "description": "",
-                    "line": 3
+                    "line": 7
                 },
                 {
                     "name": "updateTime",
@@ -4152,14 +5566,75 @@
                     "type": "Date | string",
                     "optional": false,
                     "description": "",
-                    "line": 14
+                    "line": 21
                 }
             ],
-            "methods": [],
+            "methods": [
+                {
+                    "name": "setSizes",
+                    "args": [
+                        {
+                            "name": "v",
+                            "type": "Array<string>",
+                            "deprecated": false,
+                            "deprecationMessage": ""
+                        }
+                    ],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 54,
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "modifierKind": [
+                        125
+                    ],
+                    "jsdoctags": [
+                        {
+                            "name": "v",
+                            "type": "Array<string>",
+                            "deprecated": false,
+                            "deprecationMessage": "",
+                            "tagName": {
+                                "text": "param"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "toNumeric",
+                    "args": [
+                        {
+                            "name": "value",
+                            "type": "Price | Qty | Offer",
+                            "deprecated": false,
+                            "deprecationMessage": ""
+                        }
+                    ],
+                    "optional": false,
+                    "returnType": "Price | Qty | Offer",
+                    "typeParameters": [],
+                    "line": 42,
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "modifierKind": [
+                        123
+                    ],
+                    "jsdoctags": [
+                        {
+                            "name": "value",
+                            "type": "Price | Qty | Offer",
+                            "deprecated": false,
+                            "deprecationMessage": "",
+                            "tagName": {
+                                "text": "param"
+                            }
+                        }
+                    ]
+                }
+            ],
             "indexSignatures": [],
             "extends": [],
-            "inputsClass": [],
-            "outputsClass": [],
             "hostBindings": [],
             "hostListeners": []
         },
@@ -4199,6 +5674,8 @@
                     }
                 ]
             },
+            "inputsClass": [],
+            "outputsClass": [],
             "properties": [
                 {
                     "name": "bio",
@@ -4303,8 +5780,6 @@
             "methods": [],
             "indexSignatures": [],
             "extends": [],
-            "inputsClass": [],
-            "outputsClass": [],
             "hostBindings": [],
             "hostListeners": []
         },
@@ -4344,6 +5819,8 @@
                     }
                 ]
             },
+            "inputsClass": [],
+            "outputsClass": [],
             "properties": [
                 {
                     "name": "name",
@@ -4367,8 +5844,88 @@
             "methods": [],
             "indexSignatures": [],
             "extends": [],
+            "hostBindings": [],
+            "hostListeners": []
+        },
+        {
+            "name": "Wishlist",
+            "id": "class-Wishlist-4e2731a42cebb5003c558dc8c34e930cf933bbc9d27cb7985fcdd21aadbe28e10b551f9ba4977efb3ebacdd453d5497b001e1da343082c7d2acd0b38002c1e52",
+            "file": "projects/ngx-core/helpers-ecommerce/src/classes/wishlist.class.ts",
+            "deprecated": false,
+            "deprecationMessage": "",
+            "type": "class",
+            "sourceCode": "export class Wishlist {\r\n  id: string; // uid is id\r\n  productIds: Array<string>;\r\n  createTime: Date | string;\r\n  updateTime: Date | string;\r\n\r\n  constructor(data: any = null) {\r\n    this.id = data?.id || '';\r\n    this.productIds = data?.productIds || [];\r\n    this.createTime = data?.createTime || '';\r\n    this.updateTime = data?.updateTime || '';\r\n  }\r\n}\r\n",
+            "constructorObj": {
+                "name": "constructor",
+                "description": "",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "args": [
+                    {
+                        "name": "data",
+                        "type": "any",
+                        "deprecated": false,
+                        "deprecationMessage": "",
+                        "defaultValue": "null"
+                    }
+                ],
+                "line": 5,
+                "jsdoctags": [
+                    {
+                        "name": "data",
+                        "type": "any",
+                        "deprecated": false,
+                        "deprecationMessage": "",
+                        "defaultValue": "null",
+                        "tagName": {
+                            "text": "param"
+                        }
+                    }
+                ]
+            },
             "inputsClass": [],
             "outputsClass": [],
+            "properties": [
+                {
+                    "name": "createTime",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Date | string",
+                    "optional": false,
+                    "description": "",
+                    "line": 4
+                },
+                {
+                    "name": "id",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "string",
+                    "optional": false,
+                    "description": "",
+                    "line": 2
+                },
+                {
+                    "name": "productIds",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Array<string>",
+                    "optional": false,
+                    "description": "",
+                    "line": 3
+                },
+                {
+                    "name": "updateTime",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Date | string",
+                    "optional": false,
+                    "description": "",
+                    "line": 5
+                }
+            ],
+            "methods": [],
+            "indexSignatures": [],
+            "extends": [],
             "hostBindings": [],
             "hostListeners": []
         }
@@ -4385,6 +5942,42 @@
             "file": "projects/ngx-core/app-config/src/app-config.module.ts",
             "methods": [],
             "sourceCode": "import { NgModule } from '@angular/core';\r\nimport { CommonModule } from '@angular/common';\r\nimport { RouterModule } from '@angular/router';\r\n\r\n\r\n/**\r\n * Responsible for adding Library configuration as a provider in the root,\r\n * so that all library modules can use it, if needed. This module should be imported in App module with .forRoot().\r\n * @date 17/3/2022 - 7:58:51 pm\r\n *\r\n * @export\r\n * @class AppConfigModule\r\n * @typedef {AppConfigModule}\r\n */\r\n@NgModule({\r\n  declarations: [],\r\n  providers: [],\r\n  imports: [\r\n    CommonModule,\r\n    RouterModule,\r\n  ],\r\n  exports: [],\r\n})\r\nexport class AppConfigModule {\r\n  constructor() { }\r\n}\r\n",
+            "children": [
+                {
+                    "type": "providers",
+                    "elements": []
+                },
+                {
+                    "type": "declarations",
+                    "elements": []
+                },
+                {
+                    "type": "imports",
+                    "elements": []
+                },
+                {
+                    "type": "exports",
+                    "elements": []
+                },
+                {
+                    "type": "bootstrap",
+                    "elements": []
+                },
+                {
+                    "type": "classes",
+                    "elements": []
+                }
+            ]
+        },
+        {
+            "name": "AppErrorModule",
+            "id": "module-AppErrorModule-064ffbd74a2d2b2ae9879c4e19e5842d2ca628d6aa1f6f67eda81bf9ff47207a00a5f2a2cee707eb8b33a6e45fc4b3c3223e949d480b779b347a6d6867fc489b",
+            "description": "",
+            "deprecationMessage": "",
+            "deprecated": false,
+            "file": "projects/ngx-core/app-error/src/app-error.module.ts",
+            "methods": [],
+            "sourceCode": "\nimport { NgModule } from '@angular/core';\nimport { CommonModule } from '@angular/common';\n\n\n\n@NgModule({\n  declarations: [],\n  imports: [\n    CommonModule\n  ]\n})\nexport class AppErrorModule { }\n",
             "children": [
                 {
                     "type": "providers",
@@ -4486,13 +6079,13 @@
         },
         {
             "name": "HelpersCategoriesModule",
-            "id": "module-HelpersCategoriesModule-ffdb10c3d1d36d718f137fc6a51684edd43cf8c3d8c5d150065692f0110c75ef05133883a854dee3e0d4efbbbce77dcce2e7bdfacb7b68f58715654b0ba7703c",
+            "id": "module-HelpersCategoriesModule-905cd8a9796072617e923920a57c165164cf7664360ef4300f80acec9f5d56dbb70d30c4eeffbde5159be61bbdb3977a5b868e027324bdc918c2a9a68ae6324e",
             "description": "",
             "deprecationMessage": "",
             "deprecated": false,
             "file": "projects/ngx-core/helpers-categories/src/helpers-categories.module.ts",
             "methods": [],
-            "sourceCode": "\nimport { NgModule } from '@angular/core';\nimport { CommonModule } from '@angular/common';\nimport { FlatchildrenPipe } from './pipes/flatchildren.pipe';\n\n\n\n@NgModule({\n  declarations: [\n    FlatchildrenPipe\n  ],\n  imports: [\n    CommonModule\n  ]\n})\nexport class HelpersCategoriesModule { }\n",
+            "sourceCode": "import { NgModule } from '@angular/core';\nimport { CommonModule } from '@angular/common';\nimport { CategoryChildrenPipe } from './pipes/category-children.pipe';\nimport { CategoryImageUrlPipe } from './pipes/category-image-url.pipe';\n\n@NgModule({\n  declarations: [CategoryChildrenPipe, CategoryImageUrlPipe],\n  imports: [CommonModule],\n  exports: [CategoryChildrenPipe, CategoryImageUrlPipe]\n})\nexport class HelpersCategoriesModule {}\n",
             "children": [
                 {
                     "type": "providers",
@@ -4502,7 +6095,10 @@
                     "type": "declarations",
                     "elements": [
                         {
-                            "name": "FlatchildrenPipe"
+                            "name": "CategoryChildrenPipe"
+                        },
+                        {
+                            "name": "CategoryImageUrlPipe"
                         }
                     ]
                 },
@@ -4512,7 +6108,14 @@
                 },
                 {
                     "type": "exports",
-                    "elements": []
+                    "elements": [
+                        {
+                            "name": "CategoryChildrenPipe"
+                        },
+                        {
+                            "name": "CategoryImageUrlPipe"
+                        }
+                    ]
                 },
                 {
                     "type": "bootstrap",
@@ -4526,13 +6129,13 @@
         },
         {
             "name": "HelpersEcommerceModule",
-            "id": "module-HelpersEcommerceModule-8a595af505a4bfef4e9751d7d05d55177bb464804abbf0bbdd7e68e1c1b93f9433cc038d80773cff378939aef264d6da52d625d8eed1486fe9a189df92c7e7ab",
+            "id": "module-HelpersEcommerceModule-f7a9e3d97e7ee7aeac1eba1c304ee0c22c2047567ff9b653b77326c6e56f7b7181d556a73fe5a2c6874f713091b131cf5f5aa026471754df89093c96f91f732b",
             "description": "",
             "deprecationMessage": "",
             "deprecated": false,
             "file": "projects/ngx-core/helpers-ecommerce/src/helpers-ecommerce.module.ts",
             "methods": [],
-            "sourceCode": "\nimport { NgModule } from '@angular/core';\nimport { CommonModule } from '@angular/common';\n\n\n\n@NgModule({\n  declarations: [],\n  imports: [\n    CommonModule\n  ]\n})\nexport class HelpersEcommerceModule { }\n",
+            "sourceCode": "import { NgModule } from '@angular/core';\nimport { CommonModule } from '@angular/common';\nimport { ProductImageUrlPipe } from './pipes/product-image-url.pipe';\nimport { SellingPricePipe } from './pipes/selling-price.pipe';\nimport { AppImageUrlPipe } from './pipes/app-image-url.pipe';\n\n@NgModule({\n  declarations: [ProductImageUrlPipe, SellingPricePipe, AppImageUrlPipe],\n  imports: [CommonModule],\n  exports: [ProductImageUrlPipe, SellingPricePipe, AppImageUrlPipe]\n})\nexport class HelpersEcommerceModule {}\n",
             "children": [
                 {
                     "type": "providers",
@@ -4540,7 +6143,17 @@
                 },
                 {
                     "type": "declarations",
-                    "elements": []
+                    "elements": [
+                        {
+                            "name": "AppImageUrlPipe"
+                        },
+                        {
+                            "name": "ProductImageUrlPipe"
+                        },
+                        {
+                            "name": "SellingPricePipe"
+                        }
+                    ]
                 },
                 {
                     "type": "imports",
@@ -4548,7 +6161,17 @@
                 },
                 {
                     "type": "exports",
-                    "elements": []
+                    "elements": [
+                        {
+                            "name": "AppImageUrlPipe"
+                        },
+                        {
+                            "name": "ProductImageUrlPipe"
+                        },
+                        {
+                            "name": "SellingPricePipe"
+                        }
+                    ]
                 },
                 {
                     "type": "bootstrap",
@@ -4701,6 +6324,16 @@
                 "defaultValue": "'ngx-core'"
             },
             {
+                "name": "numericValidator",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/ngx-core/helpers-forms/src/sync-validators/numeric.validator.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "",
+                "defaultValue": "(\r\n  control: AbstractControl\r\n): ValidationErrors | null => {\r\n  // Regular expression for numeric\r\n  const regex = /^\\d+$/;\r\n  const numericValue = control.value || '';\r\n\r\n  if (!numericValue.trim()) {\r\n    return {\r\n      required: true\r\n    };\r\n  }\r\n\r\n  // Remove any non-numeric characters\r\n  const sanitizedNumber = numericValue.replace(/\\D/g, '');\r\n\r\n  // Check if the sanitized number matches the regex pattern\r\n  if (regex.test(sanitizedNumber)) {\r\n    return null;\r\n  } else {\r\n    return {\r\n      numericValue: {\r\n        message: 'Invalid number format'\r\n      }\r\n    };\r\n  }\r\n}"
+            },
+            {
                 "name": "SAMPLE_CONFIG",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
@@ -4822,10 +6455,10 @@
                         "value": "date"
                     },
                     {
-                        "name": "file",
+                        "name": "image",
                         "deprecated": false,
                         "deprecationMessage": "",
-                        "value": "file"
+                        "value": "image"
                     },
                     {
                         "name": "password",
@@ -6504,52 +8137,76 @@
                         "value": "themeAccentColor"
                     },
                     {
-                        "name": "pageImagePath",
+                        "name": "appImagePath",
                         "deprecated": false,
                         "deprecationMessage": "",
-                        "value": "pageImagePath"
+                        "value": "appImagePath"
                     },
                     {
-                        "name": "productImagePath",
+                        "name": "userImagePath",
                         "deprecated": false,
                         "deprecationMessage": "",
-                        "value": "productImagePath"
+                        "value": "userImagePath"
                     },
                     {
-                        "name": "categoryImagePath",
+                        "name": "productsImagePath",
                         "deprecated": false,
                         "deprecationMessage": "",
-                        "value": "categoryImagePath"
+                        "value": "productsImagePath"
                     },
                     {
-                        "name": "primaryBannersImagePath",
+                        "name": "categoriesImagePath",
                         "deprecated": false,
                         "deprecationMessage": "",
-                        "value": "primaryBannersImagePath"
+                        "value": "categoriesImagePath"
                     },
                     {
-                        "name": "secondaryBannersImagePath",
+                        "name": "bannerImageUrls",
                         "deprecated": false,
                         "deprecationMessage": "",
-                        "value": "secondaryBannersImagePath"
+                        "value": "bannerImageUrls"
                     },
                     {
-                        "name": "categoryBannersImagePath",
+                        "name": "profileImageDimensions",
                         "deprecated": false,
                         "deprecationMessage": "",
-                        "value": "categoryBannersImagePath"
+                        "value": "profileImageDimensions"
                     },
                     {
-                        "name": "primaryBannersImageUrls",
+                        "name": "productImageDimensions",
                         "deprecated": false,
                         "deprecationMessage": "",
-                        "value": "primaryBannersImageUrls"
+                        "value": "productImageDimensions"
                     },
                     {
-                        "name": "secondaryBannersImageUrls",
+                        "name": "productThumbImageDimensions",
                         "deprecated": false,
                         "deprecationMessage": "",
-                        "value": "secondaryBannersImageUrls"
+                        "value": "productThumbImageDimensions"
+                    },
+                    {
+                        "name": "categoryImageDimensions",
+                        "deprecated": false,
+                        "deprecationMessage": "",
+                        "value": "categoryImageDimensions"
+                    },
+                    {
+                        "name": "bannerImageDimensions",
+                        "deprecated": false,
+                        "deprecationMessage": "",
+                        "value": "bannerImageDimensions"
+                    },
+                    {
+                        "name": "productSizes",
+                        "deprecated": false,
+                        "deprecationMessage": "",
+                        "value": "productSizes"
+                    },
+                    {
+                        "name": "maxProductImageCount",
+                        "deprecated": false,
+                        "deprecationMessage": "",
+                        "value": "maxProductImageCount"
                     }
                 ],
                 "ctype": "miscellaneous",
@@ -6918,6 +8575,18 @@
                     "defaultValue": "'ngx-core'"
                 }
             ],
+            "projects/ngx-core/helpers-forms/src/sync-validators/numeric.validator.ts": [
+                {
+                    "name": "numericValidator",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/ngx-core/helpers-forms/src/sync-validators/numeric.validator.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "(\r\n  control: AbstractControl\r\n): ValidationErrors | null => {\r\n  // Regular expression for numeric\r\n  const regex = /^\\d+$/;\r\n  const numericValue = control.value || '';\r\n\r\n  if (!numericValue.trim()) {\r\n    return {\r\n      required: true\r\n    };\r\n  }\r\n\r\n  // Remove any non-numeric characters\r\n  const sanitizedNumber = numericValue.replace(/\\D/g, '');\r\n\r\n  // Check if the sanitized number matches the regex pattern\r\n  if (regex.test(sanitizedNumber)) {\r\n    return null;\r\n  } else {\r\n    return {\r\n      numericValue: {\r\n        message: 'Invalid number format'\r\n      }\r\n    };\r\n  }\r\n}"
+                }
+            ],
             "projects/ngx-core/helpers-forms/src/constants/sample-config.constant.ts": [
                 {
                     "name": "SAMPLE_CONFIG",
@@ -7048,10 +8717,10 @@
                             "value": "date"
                         },
                         {
-                            "name": "file",
+                            "name": "image",
                             "deprecated": false,
                             "deprecationMessage": "",
-                            "value": "file"
+                            "value": "image"
                         },
                         {
                             "name": "password",
@@ -8738,52 +10407,76 @@
                             "value": "themeAccentColor"
                         },
                         {
-                            "name": "pageImagePath",
+                            "name": "appImagePath",
                             "deprecated": false,
                             "deprecationMessage": "",
-                            "value": "pageImagePath"
+                            "value": "appImagePath"
                         },
                         {
-                            "name": "productImagePath",
+                            "name": "userImagePath",
                             "deprecated": false,
                             "deprecationMessage": "",
-                            "value": "productImagePath"
+                            "value": "userImagePath"
                         },
                         {
-                            "name": "categoryImagePath",
+                            "name": "productsImagePath",
                             "deprecated": false,
                             "deprecationMessage": "",
-                            "value": "categoryImagePath"
+                            "value": "productsImagePath"
                         },
                         {
-                            "name": "primaryBannersImagePath",
+                            "name": "categoriesImagePath",
                             "deprecated": false,
                             "deprecationMessage": "",
-                            "value": "primaryBannersImagePath"
+                            "value": "categoriesImagePath"
                         },
                         {
-                            "name": "secondaryBannersImagePath",
+                            "name": "bannerImageUrls",
                             "deprecated": false,
                             "deprecationMessage": "",
-                            "value": "secondaryBannersImagePath"
+                            "value": "bannerImageUrls"
                         },
                         {
-                            "name": "categoryBannersImagePath",
+                            "name": "profileImageDimensions",
                             "deprecated": false,
                             "deprecationMessage": "",
-                            "value": "categoryBannersImagePath"
+                            "value": "profileImageDimensions"
                         },
                         {
-                            "name": "primaryBannersImageUrls",
+                            "name": "productImageDimensions",
                             "deprecated": false,
                             "deprecationMessage": "",
-                            "value": "primaryBannersImageUrls"
+                            "value": "productImageDimensions"
                         },
                         {
-                            "name": "secondaryBannersImageUrls",
+                            "name": "productThumbImageDimensions",
                             "deprecated": false,
                             "deprecationMessage": "",
-                            "value": "secondaryBannersImageUrls"
+                            "value": "productThumbImageDimensions"
+                        },
+                        {
+                            "name": "categoryImageDimensions",
+                            "deprecated": false,
+                            "deprecationMessage": "",
+                            "value": "categoryImageDimensions"
+                        },
+                        {
+                            "name": "bannerImageDimensions",
+                            "deprecated": false,
+                            "deprecationMessage": "",
+                            "value": "bannerImageDimensions"
+                        },
+                        {
+                            "name": "productSizes",
+                            "deprecated": false,
+                            "deprecationMessage": "",
+                            "value": "productSizes"
+                        },
+                        {
+                            "name": "maxProductImageCount",
+                            "deprecated": false,
+                            "deprecationMessage": "",
+                            "value": "maxProductImageCount"
                         }
                     ],
                     "ctype": "miscellaneous",
@@ -9114,7 +10807,7 @@
     },
     "routes": [],
     "coverage": {
-        "count": 3,
+        "count": 2,
         "status": "low",
         "files": [
             {
@@ -9131,6 +10824,15 @@
                 "type": "injectable",
                 "linktype": "injectable",
                 "name": "AppConfigService",
+                "coveragePercent": 0,
+                "coverageCount": "0/4",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/ngx-core/app-error/src/classes/app-error.class.ts",
+                "type": "class",
+                "linktype": "classe",
+                "name": "AppError",
                 "coveragePercent": 0,
                 "coverageCount": "0/4",
                 "status": "low"
@@ -9159,16 +10861,34 @@
                 "linktype": "classe",
                 "name": "Category",
                 "coveragePercent": 0,
-                "coverageCount": "0/12",
+                "coverageCount": "0/13",
                 "status": "low"
             },
             {
-                "filePath": "projects/ngx-core/helpers-categories/src/pipes/flatchildren.pipe.ts",
+                "filePath": "projects/ngx-core/helpers-categories/src/pipes/category-children.pipe.ts",
                 "type": "pipe",
                 "linktype": "pipe",
-                "name": "FlatchildrenPipe",
+                "name": "CategoryChildrenPipe",
                 "coveragePercent": 0,
                 "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/ngx-core/helpers-categories/src/pipes/category-image-url.pipe.ts",
+                "type": "pipe",
+                "linktype": "pipe",
+                "name": "CategoryImageUrlPipe",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/ngx-core/helpers-categories/src/services/categories-query.service.ts",
+                "type": "injectable",
+                "linktype": "injectable",
+                "name": "CategoriesQueryService",
+                "coveragePercent": 0,
+                "coverageCount": "0/4",
                 "status": "low"
             },
             {
@@ -9190,12 +10910,30 @@
                 "status": "low"
             },
             {
+                "filePath": "projects/ngx-core/helpers-ecommerce/src/classes/cart.class.ts",
+                "type": "class",
+                "linktype": "classe",
+                "name": "Cart",
+                "coveragePercent": 0,
+                "coverageCount": "0/6",
+                "status": "low"
+            },
+            {
                 "filePath": "projects/ngx-core/helpers-ecommerce/src/classes/delivery-instruction.class.ts",
                 "type": "class",
                 "linktype": "classe",
                 "name": "DeliveryInstruction",
                 "coveragePercent": 0,
                 "coverageCount": "0/4",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/ngx-core/helpers-ecommerce/src/classes/in-cart-product.class.ts",
+                "type": "class",
+                "linktype": "classe",
+                "name": "InCartProduct",
+                "coveragePercent": 0,
+                "coverageCount": "0/5",
                 "status": "low"
             },
             {
@@ -9213,7 +10951,16 @@
                 "linktype": "classe",
                 "name": "Product",
                 "coveragePercent": 0,
-                "coverageCount": "0/15",
+                "coverageCount": "0/20",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/ngx-core/helpers-ecommerce/src/classes/wishlist.class.ts",
+                "type": "class",
+                "linktype": "classe",
+                "name": "Wishlist",
+                "coveragePercent": 0,
+                "coverageCount": "0/6",
                 "status": "low"
             },
             {
@@ -9224,6 +10971,105 @@
                 "name": "ADDRESS_FIELD_LENGTH",
                 "coveragePercent": 0,
                 "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/ngx-core/helpers-ecommerce/src/interfaces/cart-products.interface.ts",
+                "type": "interface",
+                "linktype": "interface",
+                "name": "CartProducts",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/ngx-core/helpers-ecommerce/src/interfaces/offer.interface.ts",
+                "type": "interface",
+                "linktype": "interface",
+                "name": "Offer",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/ngx-core/helpers-ecommerce/src/interfaces/price.interface.ts",
+                "type": "interface",
+                "linktype": "interface",
+                "name": "Price",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/ngx-core/helpers-ecommerce/src/interfaces/qty.interface.ts",
+                "type": "interface",
+                "linktype": "interface",
+                "name": "Qty",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/ngx-core/helpers-ecommerce/src/pipes/app-image-url.pipe.ts",
+                "type": "pipe",
+                "linktype": "pipe",
+                "name": "AppImageUrlPipe",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/ngx-core/helpers-ecommerce/src/pipes/product-image-url.pipe.ts",
+                "type": "pipe",
+                "linktype": "pipe",
+                "name": "ProductImageUrlPipe",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/ngx-core/helpers-ecommerce/src/pipes/selling-price.pipe.ts",
+                "type": "pipe",
+                "linktype": "pipe",
+                "name": "SellingPricePipe",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/ngx-core/helpers-ecommerce/src/services/product-image-resize.service.ts",
+                "type": "injectable",
+                "linktype": "injectable",
+                "name": "ProductImageResizeService",
+                "coveragePercent": 0,
+                "coverageCount": "0/4",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/ngx-core/helpers-ecommerce/src/services/product-query.service.ts",
+                "type": "injectable",
+                "linktype": "injectable",
+                "name": "ProductQueryService",
+                "coveragePercent": 0,
+                "coverageCount": "0/8",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/ngx-core/helpers-ecommerce/src/services/product-query.service.ts",
+                "type": "interface",
+                "linktype": "interface",
+                "name": "CatsProducts",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/ngx-core/helpers-forms/src/async-validators/image-validator.service.ts",
+                "type": "injectable",
+                "linktype": "injectable",
+                "name": "ImageValidatorService",
+                "coveragePercent": 0,
+                "coverageCount": "0/7",
                 "status": "low"
             },
             {
@@ -9291,6 +11137,15 @@
                 "status": "low"
             },
             {
+                "filePath": "projects/ngx-core/helpers-forms/src/interfaces/image-dims.interface.ts",
+                "type": "interface",
+                "linktype": "interface",
+                "name": "ImageDims",
+                "coveragePercent": 0,
+                "coverageCount": "0/4",
+                "status": "low"
+            },
+            {
                 "filePath": "projects/ngx-core/helpers-forms/src/services/form-config.service.ts",
                 "type": "injectable",
                 "linktype": "injectable",
@@ -9315,6 +11170,16 @@
                 "linktype": "miscellaneous",
                 "linksubtype": "variable",
                 "name": "indiaMobileValidator",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/ngx-core/helpers-forms/src/sync-validators/numeric.validator.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "numericValidator",
                 "coveragePercent": 0,
                 "coverageCount": "0/1",
                 "status": "low"
@@ -9363,7 +11228,7 @@
                 "linktype": "injectable",
                 "name": "UtilsService",
                 "coveragePercent": 86,
-                "coverageCount": "19/22",
+                "coverageCount": "20/23",
                 "status": "very-good"
             }
         ]

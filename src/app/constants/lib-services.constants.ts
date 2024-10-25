@@ -1,6 +1,5 @@
 
         // ngx-common-ui imports
-        import { CategoriesService } from '@annuadvent/ngx-common-ui/categories';
         import { HighlightService } from '@annuadvent/ngx-common-ui/code-block';
         import { MetaService } from '@annuadvent/ngx-common-ui/meta';
         import { NestedNavService } from '@annuadvent/ngx-common-ui/nested-nav';
@@ -16,10 +15,14 @@
         
         // ngx-core imports
         import { AppConfigService } from '@annuadvent/ngx-core/app-config';
+        import { CategoriesQueryService } from '@annuadvent/ngx-core/helpers-categories';
         import { CategoriesUtilsService } from '@annuadvent/ngx-core/helpers-categories';
         import { FormConfigService } from '@annuadvent/ngx-core/helpers-forms';
         import { GlobalConfigService } from '@annuadvent/ngx-core/global-config';
+        import { ImageValidatorService } from '@annuadvent/ngx-core/helpers-forms';
         import { PincodeValidatorService } from '@annuadvent/ngx-core/helpers-forms';
+        import { ProductImageResizeService } from '@annuadvent/ngx-core/helpers-ecommerce';
+        import { ProductQueryService } from '@annuadvent/ngx-core/helpers-ecommerce';
         import { UtilsService } from '@annuadvent/ngx-core/utils';
         
         // ngx-tools imports
@@ -49,11 +52,16 @@
         import { SitemapService } from '@annuadvent/ngx-tools/fire-storage';
         
         // ngx-ecommerce imports
-        import { AddressFormService } from '@annuadvent/ngx-ecommerce/address';
+        import { AddressService } from '@annuadvent/ngx-ecommerce/address';
+        import { AppImagesService } from '@annuadvent/ngx-ecommerce/app-images';
+        import { CartService } from '@annuadvent/ngx-ecommerce/cart';
+        import { InventoryService } from '@annuadvent/ngx-ecommerce/manage-product';
+        import { ManageProductService } from '@annuadvent/ngx-ecommerce/manage-product';
+        import { ProductDetailService } from '@annuadvent/ngx-ecommerce/product-detail';
+        import { WishlistService } from '@annuadvent/ngx-ecommerce/wishlist';
         export const libServiceClasses = {
     'ngx-common-ui': {
-        CategoriesService,
-    HighlightService,
+        HighlightService,
     MetaService,
     NestedNavService,
     ThemeService
@@ -68,10 +76,14 @@
 },
     'ngx-core': {
         AppConfigService,
+    CategoriesQueryService,
     CategoriesUtilsService,
     FormConfigService,
     GlobalConfigService,
+    ImageValidatorService,
     PincodeValidatorService,
+    ProductImageResizeService,
+    ProductQueryService,
     UtilsService
 },
     'ngx-tools': {
@@ -101,6 +113,12 @@
     SitemapService
 },
     'ngx-ecommerce': {
-        AddressFormService
+        AddressService,
+    AppImagesService,
+    CartService,
+    InventoryService,
+    ManageProductService,
+    ProductDetailService,
+    WishlistService
 },
 }
